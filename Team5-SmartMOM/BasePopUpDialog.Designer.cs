@@ -30,20 +30,20 @@
         {
             this.panelFull = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.panelBottom = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelDock = new System.Windows.Forms.Panel();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tileUpdate = new MetroFramework.Controls.MetroTile();
             this.tileSave = new MetroFramework.Controls.MetroTile();
             this.label1 = new System.Windows.Forms.Label();
-            this.tileUpdate = new MetroFramework.Controls.MetroTile();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panelBottom = new System.Windows.Forms.Panel();
             this.panelFull.SuspendLayout();
             this.panelMain.SuspendLayout();
-            this.panelBottom.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelFull
@@ -66,41 +66,6 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(613, 425);
             this.panelMain.TabIndex = 0;
-            // 
-            // panelBottom
-            // 
-            this.panelBottom.Controls.Add(this.button2);
-            this.panelBottom.Controls.Add(this.button1);
-            this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(0, 377);
-            this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(613, 48);
-            this.panelBottom.TabIndex = 2;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(142)))), ((int)(((byte)(150)))));
-            this.button2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(310, 10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 30);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "취소";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
-            this.button1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(234, 10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "저장";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // panelDock
             // 
@@ -132,6 +97,18 @@
             this.panel1.Size = new System.Drawing.Size(613, 38);
             this.panel1.TabIndex = 0;
             // 
+            // tileUpdate
+            // 
+            this.tileUpdate.CustomBackground = true;
+            this.tileUpdate.Location = new System.Drawing.Point(3, 13);
+            this.tileUpdate.Name = "tileUpdate";
+            this.tileUpdate.Size = new System.Drawing.Size(16, 16);
+            this.tileUpdate.Style = MetroFramework.MetroColorStyle.White;
+            this.tileUpdate.TabIndex = 6;
+            this.tileUpdate.TileImage = global::Team5_SmartMOM.Properties.Resources.edit1;
+            this.tileUpdate.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tileUpdate.UseTileImage = true;
+            // 
             // tileSave
             // 
             this.tileSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -157,17 +134,40 @@
             this.label1.Text = "여기다가제목";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tileUpdate
+            // button1
             // 
-            this.tileUpdate.CustomBackground = true;
-            this.tileUpdate.Location = new System.Drawing.Point(3, 13);
-            this.tileUpdate.Name = "tileUpdate";
-            this.tileUpdate.Size = new System.Drawing.Size(16, 16);
-            this.tileUpdate.Style = MetroFramework.MetroColorStyle.White;
-            this.tileUpdate.TabIndex = 6;
-            this.tileUpdate.TileImage = global::Team5_SmartMOM.Properties.Resources.edit1;
-            this.tileUpdate.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.tileUpdate.UseTileImage = true;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.button1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(234, 10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(70, 30);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "저장";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(142)))), ((int)(((byte)(150)))));
+            this.button2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(310, 10);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(70, 30);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "취소";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // panelBottom
+            // 
+            this.panelBottom.Controls.Add(this.button2);
+            this.panelBottom.Controls.Add(this.button1);
+            this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBottom.Location = new System.Drawing.Point(0, 377);
+            this.panelBottom.Name = "panelBottom";
+            this.panelBottom.Size = new System.Drawing.Size(613, 48);
+            this.panelBottom.TabIndex = 2;
             // 
             // BasePopUpDialog
             // 
@@ -181,10 +181,10 @@
             this.Text = "BasePopUpDialog";
             this.panelFull.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
-            this.panelBottom.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -193,14 +193,14 @@
 
         protected System.Windows.Forms.Panel panelFull;
         protected System.Windows.Forms.Panel panelMain;
-        protected System.Windows.Forms.Panel panelBottom;
         protected System.Windows.Forms.Panel panelDock;
         protected System.Windows.Forms.Panel panelTop;
         protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Label label1;
-        protected System.Windows.Forms.Button button2;
-        protected System.Windows.Forms.Button button1;
         protected MetroFramework.Controls.MetroTile tileSave;
         private MetroFramework.Controls.MetroTile tileUpdate;
+        protected System.Windows.Forms.Panel panelBottom;
+        protected System.Windows.Forms.Button button2;
+        protected System.Windows.Forms.Button button1;
     }
 }
