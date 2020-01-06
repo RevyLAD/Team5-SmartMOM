@@ -202,6 +202,30 @@
     <Compile Include="KIS\Sales_Price_Management_detail.Designer.cs">
       <DependentUpon>Sales_Price_Management_detail.cs</DependentUpon>
     </Compile>
+    <Compile Include="LBJ\Import_check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LBJ\Import_check.Designer.cs">
+      <DependentUpon>Import_check.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LBJ\office_hours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LBJ\office_hours.Designer.cs">
+      <DependentUpon>office_hours.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LBJ\office_hours_Insert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LBJ\office_hours_Insert.Designer.cs">
+      <DependentUpon>office_hours_Insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LBJ\office_hours_management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LBJ\office_hours_management.Designer.cs">
+      <DependentUpon>office_hours_management.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +307,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KIS\Sales_Price_Management_detail.resx">
       <DependentUpon>Sales_Price_Management_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LBJ\Import_check.resx">
+      <DependentUpon>Import_check.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LBJ\office_hours.resx">
+      <DependentUpon>office_hours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LBJ\office_hours_Insert.resx">
+      <DependentUpon>office_hours_Insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LBJ\office_hours_management.resx">
+      <DependentUpon>office_hours_management.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
