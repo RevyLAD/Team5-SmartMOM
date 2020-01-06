@@ -1,6 +1,6 @@
 ﻿namespace Team5_SmartMOM
 {
-    partial class BaseGridForm
+    partial class BaseOnlyGridForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,6 @@
         {
             this.panelFull = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.panelTop = new System.Windows.Forms.Panel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.panelMid = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -41,10 +39,6 @@
             this.dgvMain = new System.Windows.Forms.DataGridView();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -61,44 +55,17 @@
             this.panelFull.Location = new System.Drawing.Point(0, 0);
             this.panelFull.Name = "panelFull";
             this.panelFull.Padding = new System.Windows.Forms.Padding(10);
-            this.panelFull.Size = new System.Drawing.Size(1222, 609);
-            this.panelFull.TabIndex = 0;
+            this.panelFull.Size = new System.Drawing.Size(1066, 591);
+            this.panelFull.TabIndex = 1;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.splitContainer1);
+            this.panel1.Controls.Add(this.splitContainer2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1202, 589);
+            this.panel1.Size = new System.Drawing.Size(1046, 571);
             this.panel1.TabIndex = 0;
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.panelTop);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1202, 589);
-            this.splitContainer1.SplitterDistance = 110;
-            this.splitContainer1.TabIndex = 0;
-            // 
-            // panelTop
-            // 
-            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(245)))));
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1202, 110);
-            this.panelTop.TabIndex = 11;
             // 
             // splitContainer2
             // 
@@ -114,9 +81,9 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dgvMain);
-            this.splitContainer2.Size = new System.Drawing.Size(1202, 475);
-            this.splitContainer2.SplitterDistance = 47;
-            this.splitContainer2.TabIndex = 0;
+            this.splitContainer2.Size = new System.Drawing.Size(1046, 571);
+            this.splitContainer2.SplitterDistance = 55;
+            this.splitContainer2.TabIndex = 1;
             // 
             // panelMid
             // 
@@ -127,13 +94,13 @@
             this.panelMid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMid.Location = new System.Drawing.Point(0, 0);
             this.panelMid.Name = "panelMid";
-            this.panelMid.Size = new System.Drawing.Size(1202, 47);
+            this.panelMid.Size = new System.Drawing.Size(1046, 55);
             this.panelMid.TabIndex = 12;
             // 
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(1059, 19);
+            this.button3.Location = new System.Drawing.Point(903, 19);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(45, 24);
             this.button3.TabIndex = 1;
@@ -143,7 +110,7 @@
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(1107, 19);
+            this.button2.Location = new System.Drawing.Point(951, 19);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(45, 24);
             this.button2.TabIndex = 1;
@@ -153,7 +120,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(1154, 19);
+            this.button1.Location = new System.Drawing.Point(998, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(45, 24);
             this.button1.TabIndex = 1;
@@ -177,25 +144,19 @@
             this.dgvMain.Location = new System.Drawing.Point(0, 0);
             this.dgvMain.Name = "dgvMain";
             this.dgvMain.RowTemplate.Height = 23;
-            this.dgvMain.Size = new System.Drawing.Size(1202, 424);
+            this.dgvMain.Size = new System.Drawing.Size(1046, 512);
             this.dgvMain.TabIndex = 9;
             // 
-            // BaseGridForm
+            // BaseOnlyGridForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1222, 609);
+            this.ClientSize = new System.Drawing.Size(1066, 591);
             this.Controls.Add(this.panelFull);
-            this.Name = "BaseGridForm";
-            this.Text = "BaseGridForm";
-            this.Load += new System.EventHandler(this.BaseGridForm_Load);
+            this.Name = "BaseOnlyGridForm";
+            this.Text = "BaseOnlyGridForm";
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
@@ -208,11 +169,8 @@
         }
 
         #endregion
-
         protected System.Windows.Forms.Panel panelFull;
         protected System.Windows.Forms.Panel panel1;
-        protected System.Windows.Forms.SplitContainer splitContainer1;
-        protected System.Windows.Forms.Panel panelTop;
         protected System.Windows.Forms.SplitContainer splitContainer2;
         protected System.Windows.Forms.Panel panelMid;
         protected System.Windows.Forms.Button button3;

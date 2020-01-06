@@ -70,6 +70,12 @@
     <Compile Include="BaseGridForm.Designer.cs">
       <DependentUpon>BaseGridForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseOnlyGridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseOnlyGridForm.Designer.cs">
+      <DependentUpon>BaseOnlyGridForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BasePopUpDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +247,9 @@
     <Compile Include="Utility\UtilityClass.cs" />
     <EmbeddedResource Include="BaseGridForm.resx">
       <DependentUpon>BaseGridForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseOnlyGridForm.resx">
+      <DependentUpon>BaseOnlyGridForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BasePopUpDialog.resx">
       <DependentUpon>BasePopUpDialog.cs</DependentUpon>
