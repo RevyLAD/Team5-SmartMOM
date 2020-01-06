@@ -190,26 +190,30 @@ namespace Team5_SmartMOM
             // 공장관리ToolStripMenuItem
             // 
             this.공장관리ToolStripMenuItem.Name = "공장관리ToolStripMenuItem";
-            this.공장관리ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.공장관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.공장관리ToolStripMenuItem.Text = "공장관리";
+            this.공장관리ToolStripMenuItem.Click += new System.EventHandler(this.공장관리ToolStripMenuItem_Click);
             // 
             // 설비관리ToolStripMenuItem
             // 
             this.설비관리ToolStripMenuItem.Name = "설비관리ToolStripMenuItem";
-            this.설비관리ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.설비관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.설비관리ToolStripMenuItem.Text = "설비관리";
+            this.설비관리ToolStripMenuItem.Click += new System.EventHandler(this.설비관리ToolStripMenuItem_Click);
             // 
             // 업체관리ToolStripMenuItem
             // 
             this.업체관리ToolStripMenuItem.Name = "업체관리ToolStripMenuItem";
-            this.업체관리ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.업체관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.업체관리ToolStripMenuItem.Text = "업체관리";
+            this.업체관리ToolStripMenuItem.Click += new System.EventHandler(this.업체관리ToolStripMenuItem_Click);
             // 
             // bORToolStripMenuItem
             // 
             this.bORToolStripMenuItem.Name = "bORToolStripMenuItem";
-            this.bORToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.bORToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bORToolStripMenuItem.Text = "BOR";
+            this.bORToolStripMenuItem.Click += new System.EventHandler(this.bORToolStripMenuItem_Click);
             // 
             // 생산관리ToolStripMenuItem
             // 
@@ -578,7 +582,6 @@ namespace Team5_SmartMOM
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1066, 1012);
-            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 1;
             // 
             // panelSideMenu
