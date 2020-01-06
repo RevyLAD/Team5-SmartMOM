@@ -71,61 +71,61 @@
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Location = new System.Drawing.Point(1060, 7);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button3.Location = new System.Drawing.Point(1060, 13);
             this.button3.Text = "등록";
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Location = new System.Drawing.Point(1108, 7);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button2.Location = new System.Drawing.Point(1108, 13);
             this.button2.Text = "복사";
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(1155, 7);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Location = new System.Drawing.Point(1155, 13);
             this.button1.Text = "엑셀";
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(15, 6);
-            this.label1.Size = new System.Drawing.Size(100, 22);
-            this.label1.Text = "  공장 관리";
+            this.label1.Location = new System.Drawing.Point(2, 15);
+            this.label1.Size = new System.Drawing.Size(80, 22);
+            this.label1.Text = "공장 관리";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(12, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 17);
+            this.label2.Size = new System.Drawing.Size(96, 18);
             this.label2.TabIndex = 0;
             this.label2.Text = "ㆍ 시설코드/명";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(409, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 17);
+            this.label3.Size = new System.Drawing.Size(65, 18);
             this.label3.TabIndex = 1;
             this.label3.Text = "ㆍ 시설군";
             // 
             // cboFacCrow
             // 
-            this.cboFacCrow.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboFacCrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboFacCrow.FormattingEnabled = true;
             this.cboFacCrow.Location = new System.Drawing.Point(487, 16);
             this.cboFacCrow.Name = "cboFacCrow";
-            this.cboFacCrow.Size = new System.Drawing.Size(168, 22);
+            this.cboFacCrow.Size = new System.Drawing.Size(168, 24);
             this.cboFacCrow.TabIndex = 2;
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox1.Location = new System.Drawing.Point(128, 15);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(187, 22);
@@ -135,7 +135,7 @@
             // 
             this.btnInquiry.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnInquiry.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnInquiry.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnInquiry.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInquiry.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInquiry.Location = new System.Drawing.Point(1107, 11);
             this.btnInquiry.Name = "btnInquiry";
