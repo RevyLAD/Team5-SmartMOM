@@ -30,8 +30,9 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cboCheckDay = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -50,7 +51,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtProduct = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -152,15 +152,14 @@
             this.panel2.Size = new System.Drawing.Size(1202, 37);
             this.panel2.TabIndex = 2;
             // 
-            // label2
+            // button4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(31, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 19);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "이력조회";
+            this.button4.Location = new System.Drawing.Point(1034, 8);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "엑셀";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -171,6 +170,16 @@
             this.label3.Size = new System.Drawing.Size(18, 12);
             this.label3.TabIndex = 1;
             this.label3.Text = "ㆍ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 22);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "이력조회";
             // 
             // label4
             // 
@@ -336,15 +345,6 @@
             this.btnSearch.TabIndex = 19;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(1034, 8);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "엑셀";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // Import_check
             // 
