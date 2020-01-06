@@ -148,6 +148,54 @@
     <Compile Include="HSC\FactoryRegister.Designer.cs">
       <DependentUpon>FactoryRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="HSM\Demand_Plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\Demand_Plan.Designer.cs">
+      <DependentUpon>Demand_Plan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\MasterCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\MasterCreate.Designer.cs">
+      <DependentUpon>MasterCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\MasterUpload%28PO%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\MasterUpload%28PO%29.Designer.cs">
+      <DependentUpon>MasterUpload%28PO%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\Meterial_Plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\Meterial_Plan.Designer.cs">
+      <DependentUpon>Meterial_Plan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\OutSourcing_Plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\OutSourcing_Plan.Designer.cs">
+      <DependentUpon>OutSourcing_Plan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\Product_Plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\Product_Plan.Designer.cs">
+      <DependentUpon>Product_Plan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\Sales_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\Sales_Master.Designer.cs">
+      <DependentUpon>Sales_Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\SO_Insert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\SO_Insert.Designer.cs">
+      <DependentUpon>SO_Insert.cs</DependentUpon>
+    </Compile>
     <Compile Include="KIS\BOM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +334,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HSC\FactoryRegister.resx">
       <DependentUpon>FactoryRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\Demand_Plan.resx">
+      <DependentUpon>Demand_Plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\MasterCreate.resx">
+      <DependentUpon>MasterCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\MasterUpload%28PO%29.resx">
+      <DependentUpon>MasterUpload%28PO%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\Meterial_Plan.resx">
+      <DependentUpon>Meterial_Plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\OutSourcing_Plan.resx">
+      <DependentUpon>OutSourcing_Plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\Product_Plan.resx">
+      <DependentUpon>Product_Plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\Sales_Master.resx">
+      <DependentUpon>Sales_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\SO_Insert.resx">
+      <DependentUpon>SO_Insert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KIS\BOM.resx">
       <DependentUpon>BOM.cs</DependentUpon>
