@@ -30,46 +30,32 @@
         {
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.panelMid.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.None;
-            // 
-            // splitContainer1
-            // 
-            // 
-            // panelTop
-            // 
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.None;
-            // 
             // splitContainer2
             // 
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(898, 20);
-            this.button3.Size = new System.Drawing.Size(109, 24);
+            this.button3.Location = new System.Drawing.Point(754, 19);
+            this.button3.Size = new System.Drawing.Size(101, 24);
             this.button3.Text = "영업마스터생성";
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1013, 20);
-            this.button2.Size = new System.Drawing.Size(91, 24);
+            this.button2.Location = new System.Drawing.Point(861, 19);
+            this.button2.Size = new System.Drawing.Size(94, 24);
             this.button2.Text = "양식다운로드";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1110, 20);
-            this.button1.Size = new System.Drawing.Size(79, 24);
+            this.button1.Location = new System.Drawing.Point(961, 19);
+            this.button1.Size = new System.Drawing.Size(82, 24);
             this.button1.Text = "Excel등록";
             // 
             // label1
@@ -80,14 +66,10 @@
             // MasterUpload_PO_
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(1222, 609);
+            this.ClientSize = new System.Drawing.Size(1066, 591);
             this.Name = "MasterUpload_PO_";
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);

@@ -8,17 +8,11 @@ using System.Windows.Forms;
 
 namespace Team5_SmartMOM.HSM
 {
-    public partial class MasterUpload_PO_ : Team5_SmartMOM.BaseOnlyGridForm
+    public partial class Sales_Master : Team5_SmartMOM.BaseGridForm
     {
-        public MasterUpload_PO_()
+        public Sales_Master()
         {
             InitializeComponent();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            MasterCreate frm = new MasterCreate();
-            frm.Show();
         }
     }
 }
