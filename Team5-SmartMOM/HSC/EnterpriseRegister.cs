@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Team5_SmartMOM.HSC
+namespace Team5_SmartMOM
 {
-    public partial class Form2 : Form
+    public partial class EnterpriseRegister : Team5_SmartMOM.BasePopUpDialog
     {
-        public Form2()
+        public EnterpriseRegister()
         {
             InitializeComponent();
+        }
+
+        private void panelDock_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

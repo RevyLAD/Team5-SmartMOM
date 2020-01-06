@@ -1,6 +1,6 @@
-﻿namespace Team5_SmartMOM.HSC
+﻿namespace Team5_SmartMOM
 {
-    partial class Form1
+    partial class Facilities
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -40,32 +40,64 @@
             this.panelMid.SuspendLayout();
             this.SuspendLayout();
             // 
+            // panelFull
+            // 
+            this.panelFull.Size = new System.Drawing.Size(387, 649);
+            // 
+            // panel1
+            // 
+            this.panel1.Size = new System.Drawing.Size(367, 629);
+            // 
             // splitContainer1
             // 
-            this.splitContainer1.SplitterDistance = 83;
+            this.splitContainer1.Panel1MinSize = 5;
+            this.splitContainer1.Size = new System.Drawing.Size(367, 629);
+            this.splitContainer1.SplitterDistance = 26;
             // 
             // panelTop
             // 
-            this.panelTop.Size = new System.Drawing.Size(1202, 83);
+            this.panelTop.Size = new System.Drawing.Size(367, 26);
             // 
             // splitContainer2
             // 
-            this.splitContainer2.Size = new System.Drawing.Size(1202, 502);
-            this.splitContainer2.SplitterDistance = 49;
+            this.splitContainer2.Size = new System.Drawing.Size(367, 599);
+            this.splitContainer2.SplitterDistance = 41;
             // 
             // panelMid
             // 
-            this.panelMid.Size = new System.Drawing.Size(1202, 49);
+            this.panelMid.Size = new System.Drawing.Size(367, 40);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button3.Location = new System.Drawing.Point(224, 9);
+            this.button3.Text = "등록";
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button2.Location = new System.Drawing.Point(272, 9);
+            this.button2.Text = "복사";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Location = new System.Drawing.Point(319, 9);
+            this.button1.Text = "삭제";
             // 
             // label1
             // 
-            this.label1.Text = "156165";
+            this.label1.Location = new System.Drawing.Point(5, 8);
+            this.label1.Size = new System.Drawing.Size(55, 22);
+            this.label1.Text = "설비군";
             // 
-            // Form1
+            // Facilities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(1222, 609);
-            this.Name = "Form1";
+            this.ClientSize = new System.Drawing.Size(387, 649);
+            this.Name = "Facilities";
+            this.Text = "설비 관리";
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);

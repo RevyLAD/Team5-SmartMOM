@@ -76,17 +76,71 @@
     <Compile Include="BasePopUpDialog.Designer.cs">
       <DependentUpon>BasePopUpDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="HSC\Form1.cs">
+    <Compile Include="HSC\BOR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HSC\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="HSC\BOR.Designer.cs">
+      <DependentUpon>BOR.cs</DependentUpon>
     </Compile>
-    <Compile Include="HSC\Form2.cs">
+    <Compile Include="HSC\BORRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HSC\Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="HSC\BORRegister.Designer.cs">
+      <DependentUpon>BORRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\Enterprise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\Enterprise.Designer.cs">
+      <DependentUpon>Enterprise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\EnterpriseRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\EnterpriseRegister.Designer.cs">
+      <DependentUpon>EnterpriseRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\Facilities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\Facilities.Designer.cs">
+      <DependentUpon>Facilities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\FacilitiesCrowRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\FacilitiesCrowRegister.Designer.cs">
+      <DependentUpon>FacilitiesCrowRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\FacilitiesDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\FacilitiesDetail.Designer.cs">
+      <DependentUpon>FacilitiesDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\FacilitiesMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\FacilitiesMain.Designer.cs">
+      <DependentUpon>FacilitiesMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\FacilitiesRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\FacilitiesRegister.Designer.cs">
+      <DependentUpon>FacilitiesRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\FactoryManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\FactoryManager.Designer.cs">
+      <DependentUpon>FactoryManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\FactoryRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\FactoryRegister.Designer.cs">
+      <DependentUpon>FactoryRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="KIS\BOM.cs">
       <SubType>Form</SubType>
@@ -167,8 +221,38 @@
     <EmbeddedResource Include="BasePopUpDialog.resx">
       <DependentUpon>BasePopUpDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HSC\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="HSC\BOR.resx">
+      <DependentUpon>BOR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\BORRegister.resx">
+      <DependentUpon>BORRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\Enterprise.resx">
+      <DependentUpon>Enterprise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\EnterpriseRegister.resx">
+      <DependentUpon>EnterpriseRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\Facilities.resx">
+      <DependentUpon>Facilities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\FacilitiesCrowRegister.resx">
+      <DependentUpon>FacilitiesCrowRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\FacilitiesDetail.resx">
+      <DependentUpon>FacilitiesDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\FacilitiesMain.resx">
+      <DependentUpon>FacilitiesMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\FacilitiesRegister.resx">
+      <DependentUpon>FacilitiesRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\FactoryManager.resx">
+      <DependentUpon>FactoryManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\FactoryRegister.resx">
+      <DependentUpon>FactoryRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KIS\BOM.resx">
       <DependentUpon>BOM.cs</DependentUpon>
