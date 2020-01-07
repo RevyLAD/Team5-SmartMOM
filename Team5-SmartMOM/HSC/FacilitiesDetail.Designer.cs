@@ -37,6 +37,7 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.SuspendLayout();
@@ -59,16 +60,21 @@
             // 
             this.panelTop.Size = new System.Drawing.Size(820, 26);
             // 
+            // panel2
+            // 
+            this.panel2.Size = new System.Drawing.Size(820, 599);
+            // 
             // splitContainer2
             // 
             this.splitContainer2.Size = new System.Drawing.Size(820, 599);
+            this.splitContainer2.SplitterDistance = 51;
             // 
             // panelMid
             // 
             this.panelMid.Controls.Add(this.button6);
             this.panelMid.Controls.Add(this.button5);
             this.panelMid.Controls.Add(this.button4);
-            this.panelMid.Size = new System.Drawing.Size(820, 40);
+            this.panelMid.Size = new System.Drawing.Size(820, 51);
             this.panelMid.Controls.SetChildIndex(this.label1, 0);
             this.panelMid.Controls.SetChildIndex(this.button1, 0);
             this.panelMid.Controls.SetChildIndex(this.button2, 0);
@@ -79,26 +85,27 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1530, 9);
+            this.button3.Location = new System.Drawing.Point(1983, 9);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1578, 9);
+            this.button2.Location = new System.Drawing.Point(2031, 9);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1625, 9);
+            this.button1.Location = new System.Drawing.Point(2078, 9);
             // 
             // label1
             // 
+            this.label1.Location = new System.Drawing.Point(3, 30);
             this.label1.Size = new System.Drawing.Size(40, 22);
             this.label1.Text = "설비";
             // 
             // button6
             // 
             this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button6.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button6.Location = new System.Drawing.Point(772, 10);
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button6.Location = new System.Drawing.Point(999, 10);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(45, 23);
             this.button6.TabIndex = 15;
@@ -108,8 +115,8 @@
             // button5
             // 
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button5.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.Location = new System.Drawing.Point(725, 10);
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button5.Location = new System.Drawing.Point(952, 10);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(45, 23);
             this.button5.TabIndex = 14;
@@ -119,8 +126,8 @@
             // button4
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Location = new System.Drawing.Point(677, 10);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button4.Location = new System.Drawing.Point(904, 10);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(45, 23);
             this.button4.TabIndex = 13;
@@ -139,6 +146,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);

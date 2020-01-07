@@ -36,7 +36,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.panelMid = new System.Windows.Forms.Panel();
-            this.dgvMain = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -54,7 +53,6 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.panelMid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,7 +132,6 @@
             // 
             // panelMid
             // 
-            this.panelMid.Controls.Add(this.dgvMain);
             this.panelMid.Controls.Add(this.button3);
             this.panelMid.Controls.Add(this.button2);
             this.panelMid.Controls.Add(this.button1);
@@ -147,12 +144,6 @@
             // 
             // dgvMain
             // 
-            this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMain.Location = new System.Drawing.Point(-3, 81);
-            this.dgvMain.Name = "dgvMain";
-            this.dgvMain.RowTemplate.Height = 23;
-            this.dgvMain.Size = new System.Drawing.Size(1202, 424);
-            this.dgvMain.TabIndex = 13;
             // 
             // button3
             // 
@@ -236,7 +227,6 @@
             this.splitContainer2.ResumeLayout(false);
             this.panelMid.ResumeLayout(false);
             this.panelMid.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -251,7 +241,6 @@
         protected System.Windows.Forms.Panel panel2;
         protected System.Windows.Forms.SplitContainer splitContainer2;
         protected System.Windows.Forms.Panel panelMid;
-        protected System.Windows.Forms.DataGridView dgvMain;
         protected System.Windows.Forms.Button button3;
         protected System.Windows.Forms.Button button2;
         protected System.Windows.Forms.Button button1;
