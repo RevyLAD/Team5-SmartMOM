@@ -126,6 +126,8 @@ namespace Team5_SmartMOM
         }
 
         #endregion
+
+        #region 탭페이지 이미지, x버튼
         private void metroTabControl1_DrawItem(object sender, DrawItemEventArgs e)
         {
             try
@@ -169,66 +171,7 @@ namespace Team5_SmartMOM
             }
         }
 
-        
-
-        private void btnMatList_Click(object sender, EventArgs e)
-        {
-            BaseGridForm frm = new BaseGridForm();
-            CreateTabPages(btnMatList.Text, frm);
-
-        }
-
-
-        //버튼클릭시 탭페이지 생성 + 컨트롤 생성하기
-        //private void CreateTabPages(string text,Form OpenForm)
-        //{
-        //    bool bcheck = true;
-        //    //창이 열려있으면 또 안열리게
-        //    foreach (TabPage childForm in this.tabControl1.TabPages)
-        //    {
-        //        if (childForm.Text == text)
-        //            bcheck = false;
-        //        childForm.Focus();
-
-        //    }
-        //    if (!bcheck)
-        //        return;
-
-        //    TabPage myTabPage = new TabPage();
-        //    myTabPage.Text = text;
-        //    tabControl1.Controls.Add(myTabPage);
-
-        //    myTabPage.Focus();
-        //    OpenForm.TopLevel = false;
-        //    OpenForm.Parent = this;
-        //    myTabPage.Controls.Add(OpenForm);
-        //    //창이 열리면서 최대화
-
-        //    OpenForm.Dock = DockStyle.Fill;
-        //    OpenForm.FormBorderStyle = FormBorderStyle.None;
-        //    OpenForm.Show();
-        //}
-
-        private void 공장관리ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CreateTabPages("공장관리", new FactoryManager());
-
-        }
-
-        private void 설비관리ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CreateTabPages("설비관리", new FacilitiesMain());
-        }
-
-        private void 업체관리ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CreateTabPages("업체관리", new Enterprise());
-        }
-
-        private void bORToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CreateTabPages("BOR", new BOR());
-        }
+        #endregion
 
         private void CreateTabPages(string text, Form OpenForm)
         {
@@ -252,12 +195,43 @@ namespace Team5_SmartMOM
             OpenForm.Parent = this;
             myTabPage.Controls.Add(OpenForm);
             //창이 열리면서 최대화
-            
+
             OpenForm.Dock = DockStyle.Fill;
             OpenForm.FormBorderStyle = FormBorderStyle.None;
             OpenForm.Show();
 
             tabControl1.SelectedTab = myTabPage;
         }
+
+
+        private void btnMatList_Click(object sender, EventArgs e)
+        {
+            BaseGridForm frm = new BaseGridForm();
+            CreateTabPages(btnMatList.Text, frm);
+
+        }
+
+        private void 공장관리ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("공장관리", new FactoryManager());
+
+        }
+
+        private void 설비관리ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("설비관리", new FacilitiesMain());
+        }
+
+        private void 업체관리ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("업체관리", new Enterprise());
+        }
+
+        private void bORToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("BOR", new BOR());
+        }
+
+       
     }
 }
