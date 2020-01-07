@@ -84,7 +84,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(214, 7);
+            this.button2.Location = new System.Drawing.Point(221, 7);
             this.button2.Size = new System.Drawing.Size(70, 34);
             // 
             // button1
@@ -95,7 +95,7 @@
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(-128, 10);
+            this.tileSave.Location = new System.Drawing.Point(-396, 10);
             // 
             // label2
             // 
