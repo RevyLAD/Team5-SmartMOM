@@ -148,6 +148,12 @@
     <Compile Include="HSC\FactoryRegister.Designer.cs">
       <DependentUpon>FactoryRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="HSM\Client_Deadline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\Client_Deadline.Designer.cs">
+      <DependentUpon>Client_Deadline.cs</DependentUpon>
+    </Compile>
     <Compile Include="HSM\Demand_Plan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,18 @@
     </Compile>
     <Compile Include="HSM\Product_Plan.Designer.cs">
       <DependentUpon>Product_Plan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\Sales_Closing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\Sales_Closing.Designer.cs">
+      <DependentUpon>Sales_Closing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\Sales_Closing_detailcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\Sales_Closing_detailcs.Designer.cs">
+      <DependentUpon>Sales_Closing_detailcs.cs</DependentUpon>
     </Compile>
     <Compile Include="HSM\Sales_Master.cs">
       <SubType>Form</SubType>
@@ -398,6 +416,9 @@
     <EmbeddedResource Include="HSC\FactoryRegister.resx">
       <DependentUpon>FactoryRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HSM\Client_Deadline.resx">
+      <DependentUpon>Client_Deadline.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HSM\Demand_Plan.resx">
       <DependentUpon>Demand_Plan.cs</DependentUpon>
     </EmbeddedResource>
@@ -415,6 +436,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HSM\Product_Plan.resx">
       <DependentUpon>Product_Plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\Sales_Closing.resx">
+      <DependentUpon>Sales_Closing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\Sales_Closing_detailcs.resx">
+      <DependentUpon>Sales_Closing_detailcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HSM\Sales_Master.resx">
       <DependentUpon>Sales_Master.cs</DependentUpon>
