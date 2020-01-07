@@ -42,19 +42,24 @@
             this.label16 = new System.Windows.Forms.Label();
             this.panelFull.SuspendLayout();
             this.panelMain.SuspendLayout();
+            this.panelBottom.SuspendLayout();
             this.panelDock.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panelBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelFull
             // 
-            this.panelFull.Size = new System.Drawing.Size(429, 504);
+            this.panelFull.Size = new System.Drawing.Size(430, 504);
             // 
             // panelMain
             // 
-            this.panelMain.Size = new System.Drawing.Size(409, 484);
+            this.panelMain.Size = new System.Drawing.Size(410, 484);
+            // 
+            // panelBottom
+            // 
+            this.panelBottom.Location = new System.Drawing.Point(0, 436);
+            this.panelBottom.Size = new System.Drawing.Size(410, 48);
             // 
             // panelDock
             // 
@@ -70,46 +75,35 @@
             this.panelDock.Controls.Add(this.txtFacName);
             this.panelDock.Controls.Add(this.label6);
             this.panelDock.Controls.Add(this.label3);
-            this.panelDock.Size = new System.Drawing.Size(409, 436);
+            this.panelDock.Size = new System.Drawing.Size(410, 436);
             // 
             // panelTop
             // 
-            this.panelTop.Size = new System.Drawing.Size(409, 48);
+            this.panelTop.Size = new System.Drawing.Size(410, 48);
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(409, 38);
+            this.panel1.Size = new System.Drawing.Size(410, 38);
             // 
             // label1
             // 
             this.label1.Size = new System.Drawing.Size(55, 22);
             this.label1.Text = "설비군";
             // 
-            // tileSave
-            // 
-            this.tileSave.Location = new System.Drawing.Point(-29, 9);
-            this.tileSave.Click += new System.EventHandler(this.tileSave_Click);
-            // 
-            // panelBottom
-            // 
-            this.panelBottom.Location = new System.Drawing.Point(0, 436);
-            this.panelBottom.Size = new System.Drawing.Size(409, 48);
-            // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(202, 11);
+            this.button2.Location = new System.Drawing.Point(-203, 10);
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(126, 11);
+            this.button1.Location = new System.Drawing.Point(127, 10);
+            // 
+            // tileSave
+            // 
+            this.tileSave.Location = new System.Drawing.Point(175, 9);
+            this.tileSave.Click += new System.EventHandler(this.tileSave_Click);
             // 
             // cboUMU
             // 
@@ -226,16 +220,16 @@
             // FacilitiesCrowRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(429, 504);
+            this.ClientSize = new System.Drawing.Size(430, 504);
             this.Name = "FacilitiesCrowRegister";
             this.panelFull.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
+            this.panelBottom.ResumeLayout(false);
             this.panelDock.ResumeLayout(false);
             this.panelDock.PerformLayout();
             this.panelTop.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panelBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
