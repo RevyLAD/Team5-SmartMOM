@@ -430,6 +430,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\star.png" />
+    <None Include="Resources\plus-sign %281%29.png" />
+    <None Include="Resources\file1.png" />
+    <None Include="Resources\oos.png" />
+    <None Include="Resources\delivery1.png" />
+    <None Include="Resources\document.png" />
+    <None Include="Resources\box %282%29.png" />
+    <None Include="Resources\architecture.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\checklist1.png" />
+    <None Include="Resources\courier.png" />
+    <None Include="Resources\deliveryman.png" />
+    <None Include="Resources\delivery.png" />
+    <None Include="Resources\waiting.png" />
+    <None Include="Resources\profile.png" />
+    <None Include="Resources\video-conference.png" />
     <None Include="Resources\x-button2.png" />
     <None Include="Resources\x-button1.png" />
     <None Include="Resources\x-button.png" />
