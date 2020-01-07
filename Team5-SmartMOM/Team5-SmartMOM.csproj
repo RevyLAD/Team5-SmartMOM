@@ -306,6 +306,69 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PSM\CircularButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PSM\Material_Ledger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Material_Ledger.Designer.cs">
+      <DependentUpon>Material_Ledger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\Material_Ledger_Export.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Material_Ledger_Export.Designer.cs">
+      <DependentUpon>Material_Ledger_Export.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\Material_Ledger_State.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Material_Ledger_State.Designer.cs">
+      <DependentUpon>Material_Ledger_State.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\Materia_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Materia_Request.Designer.cs">
+      <DependentUpon>Materia_Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\Purchasing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Purchasing.Designer.cs">
+      <DependentUpon>Purchasing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\Purchasing_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Purchasing_Order.Designer.cs">
+      <DependentUpon>Purchasing_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\Purchasing_State.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Purchasing_State.Designer.cs">
+      <DependentUpon>Purchasing_State.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\Stock_RF_State.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Stock_RF_State.Designer.cs">
+      <DependentUpon>Stock_RF_State.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\Stock_State.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Stock_State.Designer.cs">
+      <DependentUpon>Stock_State.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Supplier.Designer.cs">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility\CommonUtil.cs" />
     <Compile Include="Utility\ExcelExportImport.cs" />
     <Compile Include="Utility\GlobalClass.cs" />
@@ -441,6 +504,36 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="PSM\Material_Ledger.resx">
+      <DependentUpon>Material_Ledger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\Material_Ledger_Export.resx">
+      <DependentUpon>Material_Ledger_Export.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\Material_Ledger_State.resx">
+      <DependentUpon>Material_Ledger_State.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\Materia_Request.resx">
+      <DependentUpon>Materia_Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\Purchasing.resx">
+      <DependentUpon>Purchasing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\Purchasing_Order.resx">
+      <DependentUpon>Purchasing_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\Purchasing_State.resx">
+      <DependentUpon>Purchasing_State.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\Stock_RF_State.resx">
+      <DependentUpon>Stock_RF_State.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\Stock_State.resx">
+      <DependentUpon>Stock_State.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\Supplier.resx">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
