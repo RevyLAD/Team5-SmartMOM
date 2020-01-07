@@ -148,7 +148,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(412, 10);
+            this.button2.Location = new System.Drawing.Point(358, 10);
             // 
             // button1
             // 
@@ -156,7 +156,7 @@
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(973, 10);
+            this.tileSave.Location = new System.Drawing.Point(1107, 10);
             // 
             // textBox3
             // 
@@ -532,11 +532,11 @@
             this.label21.TabIndex = 117;
             this.label21.Text = "ㆍ사용유무";
             // 
-            // FacilitiesDetailRegister
+            // EnterpriseRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(767, 445);
-            this.Name = "FacilitiesDetailRegister";
+            this.Name = "EnterpriseRegister";
             this.panelFull.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.panelBottom.ResumeLayout(false);
