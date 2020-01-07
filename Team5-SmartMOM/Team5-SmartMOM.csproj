@@ -94,6 +94,12 @@
     <Compile Include="HSC\BORRegister.Designer.cs">
       <DependentUpon>BORRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="HSC\CustomerOrderStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\CustomerOrderStatus.Designer.cs">
+      <DependentUpon>CustomerOrderStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="HSC\Enterprise.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,11 +154,17 @@
     <Compile Include="HSC\FactoryRegister.Designer.cs">
       <DependentUpon>FactoryRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="HSM\Client_Deadline.cs">
+    <Compile Include="HSC\ProductShipment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HSM\Client_Deadline.Designer.cs">
-      <DependentUpon>Client_Deadline.cs</DependentUpon>
+    <Compile Include="HSC\ProductShipment.Designer.cs">
+      <DependentUpon>ProductShipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\ShipmentStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\ShipmentStatus.Designer.cs">
+      <DependentUpon>ShipmentStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="HSM\Demand_Plan.cs">
       <SubType>Form</SubType>
@@ -189,18 +201,6 @@
     </Compile>
     <Compile Include="HSM\Product_Plan.Designer.cs">
       <DependentUpon>Product_Plan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HSM\Sales_Closing.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HSM\Sales_Closing.Designer.cs">
-      <DependentUpon>Sales_Closing.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HSM\Sales_Closing_detailcs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HSM\Sales_Closing_detailcs.Designer.cs">
-      <DependentUpon>Sales_Closing_detailcs.cs</DependentUpon>
     </Compile>
     <Compile Include="HSM\Sales_Master.cs">
       <SubType>Form</SubType>
@@ -389,6 +389,9 @@
     <EmbeddedResource Include="HSC\BORRegister.resx">
       <DependentUpon>BORRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HSC\CustomerOrderStatus.resx">
+      <DependentUpon>CustomerOrderStatus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HSC\Enterprise.resx">
       <DependentUpon>Enterprise.cs</DependentUpon>
     </EmbeddedResource>
@@ -416,8 +419,11 @@
     <EmbeddedResource Include="HSC\FactoryRegister.resx">
       <DependentUpon>FactoryRegister.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HSM\Client_Deadline.resx">
-      <DependentUpon>Client_Deadline.cs</DependentUpon>
+    <EmbeddedResource Include="HSC\ProductShipment.resx">
+      <DependentUpon>ProductShipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\ShipmentStatus.resx">
+      <DependentUpon>ShipmentStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HSM\Demand_Plan.resx">
       <DependentUpon>Demand_Plan.cs</DependentUpon>
@@ -436,12 +442,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HSM\Product_Plan.resx">
       <DependentUpon>Product_Plan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HSM\Sales_Closing.resx">
-      <DependentUpon>Sales_Closing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HSM\Sales_Closing_detailcs.resx">
-      <DependentUpon>Sales_Closing_detailcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HSM\Sales_Master.resx">
       <DependentUpon>Sales_Master.cs</DependentUpon>
