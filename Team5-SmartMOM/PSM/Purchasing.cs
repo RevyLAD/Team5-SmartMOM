@@ -41,5 +41,17 @@ namespace Team5_SmartMOM.PSM
         {
 
         }
+
+        private void Purchasing_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Purchasing_Order frm = new Purchasing_Order();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
+        }
     }
 }
