@@ -198,7 +198,7 @@
         protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Label label1;
         protected MetroFramework.Controls.MetroTile tileSave;
-        private MetroFramework.Controls.MetroTile tileUpdate;
+        protected MetroFramework.Controls.MetroTile tileUpdate;
         protected System.Windows.Forms.Panel panelBottom;
         protected System.Windows.Forms.Button button2;
         protected System.Windows.Forms.Button button1;

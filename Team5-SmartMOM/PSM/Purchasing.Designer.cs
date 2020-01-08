@@ -61,23 +61,15 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panelTop.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.panelMid.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelFull
-            // 
-            this.panelFull.Size = new System.Drawing.Size(1238, 604);
-            // 
-            // panel1
-            // 
-            this.panel1.Size = new System.Drawing.Size(1218, 584);
-            // 
             // splitContainer1
             // 
-            this.splitContainer1.Size = new System.Drawing.Size(1218, 584);
             this.splitContainer1.SplitterDistance = 109;
             // 
             // panelTop
@@ -108,33 +100,38 @@
             this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Size = new System.Drawing.Size(1218, 109);
+            this.panelTop.Size = new System.Drawing.Size(1202, 109);
             this.panelTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTop_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.Size = new System.Drawing.Size(1202, 476);
             // 
             // splitContainer2
             // 
-            this.splitContainer2.Size = new System.Drawing.Size(1218, 471);
+            this.splitContainer2.Size = new System.Drawing.Size(1202, 476);
             this.splitContainer2.SplitterDistance = 43;
             // 
             // panelMid
             // 
-            this.panelMid.Size = new System.Drawing.Size(1218, 43);
+            this.panelMid.Size = new System.Drawing.Size(1202, 43);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1066, 18);
+            this.button3.Location = new System.Drawing.Point(1040, 17);
             this.button3.Size = new System.Drawing.Size(50, 24);
             this.button3.Text = "MRP";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1119, 18);
+            this.button2.Location = new System.Drawing.Point(1093, 17);
             this.button2.Size = new System.Drawing.Size(50, 24);
             this.button2.Text = "발주";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1171, 18);
+            this.button1.Location = new System.Drawing.Point(1145, 17);
             this.button1.Size = new System.Drawing.Size(50, 24);
             this.button1.Text = "엑셀";
             // 
@@ -354,7 +351,8 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(1177, 73);
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.Location = new System.Drawing.Point(1172, 77);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(30, 30);
             this.button5.TabIndex = 25;
@@ -363,10 +361,11 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1098, 73);
+            this.btnSearch.Location = new System.Drawing.Point(1093, 77);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(81, 30);
             this.btnSearch.TabIndex = 26;
@@ -377,9 +376,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1238, 604);
+            this.ClientSize = new System.Drawing.Size(1222, 609);
             this.Name = "Purchasing";
             this.Text = "Purchasing";
+            this.Load += new System.EventHandler(this.Purchasing_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -388,6 +388,7 @@
             this.splitContainer1.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);

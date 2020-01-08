@@ -21,5 +21,10 @@ namespace Team5_SmartMOM
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
         }
+
+        private void panelMid_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

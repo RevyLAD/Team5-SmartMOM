@@ -19,6 +19,16 @@ namespace Team5_Pop
 
         private void MainPOP_Load(object sender, EventArgs e)
         {
+            lblTimeNow.Text = DateTime.Now.ToString();
+
+            timer1.Interval = 1000;
+            timer1.Enabled = true;
+
+
+            timer1.Tick += timer1_Tick;
+
+
+
             //창이 열려있으면 또 안열리게
             foreach (Form childForm in this.panelMain.Controls)
             {
@@ -26,14 +36,14 @@ namespace Team5_Pop
             }
             foreach (Form childForm in Application.OpenForms)
             {
-                if (childForm.GetType() == typeof(WorkOrderRegister))
+                if (childForm.GetType() == typeof(WorkOrderList))
                 {
                     //메모리 재할당 x 
                     childForm.Activate();
                     return;
                 }
             }
-            WorkOrderRegister frm = new WorkOrderRegister();
+            WorkOrderList frm = new WorkOrderList();
             frm.TopLevel = false;
             frm.Parent = this;
             frm.FormBorderStyle = FormBorderStyle.None;
@@ -42,7 +52,12 @@ namespace Team5_Pop
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblTimeNow.Text = DateTime.Now.ToString();
 
+
+        }
         private void metroTile1_Click(object sender, EventArgs e)
         {
             //창이 열려있으면 또 안열리게
@@ -143,5 +158,7 @@ namespace Team5_Pop
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+
     }
 }
