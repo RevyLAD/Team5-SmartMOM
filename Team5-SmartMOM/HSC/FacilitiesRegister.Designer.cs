@@ -56,10 +56,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panelFull.SuspendLayout();
             this.panelMain.SuspendLayout();
-            this.panelBottom.SuspendLayout();
             this.panelDock.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelFull
@@ -69,10 +69,6 @@
             // panelMain
             // 
             this.panelMain.Size = new System.Drawing.Size(700, 425);
-            // 
-            // panelBottom
-            // 
-            this.panelBottom.Size = new System.Drawing.Size(700, 48);
             // 
             // panelDock
             // 
@@ -118,19 +114,26 @@
             this.label1.Size = new System.Drawing.Size(40, 22);
             this.label1.Text = "설비";
             // 
+            // tileSave
+            // 
+            this.tileSave.Location = new System.Drawing.Point(1021, 10);
+            this.tileSave.Click += new System.EventHandler(this.tileSave_Click);
+            // 
+            // panelBottom
+            // 
+            this.panelBottom.Size = new System.Drawing.Size(700, 48);
+            // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(359, 10);
+            this.button2.Location = new System.Drawing.Point(340, 10);
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            // 
-            // tileSave
-            // 
-            this.tileSave.Location = new System.Drawing.Point(847, 10);
-            this.tileSave.Click += new System.EventHandler(this.tileSave_Click);
+            this.button1.Location = new System.Drawing.Point(264, 10);
             // 
             // txtExplain
             // 
@@ -388,12 +391,12 @@
             this.Name = "FacilitiesRegister";
             this.panelFull.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
-            this.panelBottom.ResumeLayout(false);
             this.panelDock.ResumeLayout(false);
             this.panelDock.PerformLayout();
             this.panelTop.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

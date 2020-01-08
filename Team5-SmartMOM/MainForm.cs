@@ -143,7 +143,7 @@ namespace Team5_SmartMOM
 
                 e.Graphics.DrawString(title, f, TitleBrush, new PointF(r.X, r.Y));
 
-                if (tabControl1.SelectedIndex >= 1)
+                if (tabControl1.SelectedIndex >= 0)
                 {
                     e.Graphics.DrawImage(img, new Point(r.X + (this.tabControl1.GetTabRect(e.Index).Width - _imageLocation.X)-7, _imageLocation.Y));
                 }
@@ -161,7 +161,7 @@ namespace Team5_SmartMOM
             r.Offset(_tabWidth, _imgHitArea.Y);
             r.Width = 16;
             r.Height = 16;
-            if (tabControl1.SelectedIndex >= 1)
+            if (tabControl1.SelectedIndex >= 0)
             {
                 if (r.Contains(p))
                 {

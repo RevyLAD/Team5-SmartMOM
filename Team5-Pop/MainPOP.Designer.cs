@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelFull = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTimeNow = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelFull.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -54,6 +56,14 @@
             this.panelFull.Size = new System.Drawing.Size(1038, 506);
             this.panelFull.TabIndex = 0;
             // 
+            // panelMain
+            // 
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(112, 71);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(926, 435);
+            this.panelMain.TabIndex = 2;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.metroTile4);
@@ -65,35 +75,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(112, 435);
             this.panel2.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1038, 71);
-            this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(279, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(468, 37);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "생산지점관리시스템(POP)";
-            // 
-            // panelMain
-            // 
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(112, 71);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(926, 435);
-            this.panelMain.TabIndex = 2;
             // 
             // metroTile4
             // 
@@ -161,16 +142,41 @@
             this.metroTile1.UseTileImage = true;
             this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
             // 
-            // label2
+            // panel1
             // 
-            this.label2.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.ForeColor = System.Drawing.Color.Gold;
-            this.label2.Location = new System.Drawing.Point(791, 11);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(244, 57);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "2020-01-06 13:00:52";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.panel1.Controls.Add(this.lblTimeNow);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1038, 71);
+            this.panel1.TabIndex = 0;
+            // 
+            // lblTimeNow
+            // 
+            this.lblTimeNow.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTimeNow.ForeColor = System.Drawing.Color.Gold;
+            this.lblTimeNow.Location = new System.Drawing.Point(841, 11);
+            this.lblTimeNow.Name = "lblTimeNow";
+            this.lblTimeNow.Size = new System.Drawing.Size(194, 57);
+            this.lblTimeNow.TabIndex = 1;
+            this.lblTimeNow.Text = "2020-01-06 13:00:52";
+            this.lblTimeNow.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(279, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(468, 37);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "생산지점관리시스템(POP)";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MainPOP
             // 
@@ -202,7 +208,8 @@
         private MetroFramework.Controls.MetroTile metroTile2;
         private MetroFramework.Controls.MetroTile metroTile4;
         private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTimeNow;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

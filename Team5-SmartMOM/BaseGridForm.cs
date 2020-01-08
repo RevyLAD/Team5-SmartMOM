@@ -28,7 +28,6 @@ namespace Team5_SmartMOM
 
             m_headerCheckBox.Size = new Size(15, 15);
 
-            this.dgvMain.Controls.Add(m_headerCheckBox);
             m_headerCheckBox.Visible = true;
             m_headerCheckBox.TabIndex = 1;
         }
