@@ -160,7 +160,7 @@ namespace Team5_SmartMOM
             r.Offset(_tabWidth, _imgHitArea.Y);
             r.Width = 16;
             r.Height = 16;
-            if (tabControl1.SelectedIndex >= 1)
+            if (tabControl1.SelectedIndex >= 0)
             {
                 if (r.Contains(p))
                 {
