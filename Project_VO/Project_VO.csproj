@@ -42,7 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComboItemVO.cs" />
+    <Compile Include="FactoryVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShiftVO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Team5_DEV.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

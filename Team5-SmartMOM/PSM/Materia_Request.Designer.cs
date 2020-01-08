@@ -30,8 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.circularButton3 = new Team5_SmartMOM.PSM.CircularButton();
-            this.circularButton4 = new Team5_SmartMOM.PSM.CircularButton();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -55,6 +53,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.circularButton3 = new Team5_SmartMOM.PSM.CircularButton();
+            this.circularButton4 = new Team5_SmartMOM.PSM.CircularButton();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -89,24 +89,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1202, 31);
             this.panel5.TabIndex = 5;
-            // 
-            // circularButton3
-            // 
-            this.circularButton3.Location = new System.Drawing.Point(632, 1);
-            this.circularButton3.Name = "circularButton3";
-            this.circularButton3.Size = new System.Drawing.Size(31, 30);
-            this.circularButton3.TabIndex = 15;
-            this.circularButton3.Text = ">";
-            this.circularButton3.UseVisualStyleBackColor = true;
-            // 
-            // circularButton4
-            // 
-            this.circularButton4.Location = new System.Drawing.Point(550, 1);
-            this.circularButton4.Name = "circularButton4";
-            this.circularButton4.Size = new System.Drawing.Size(31, 30);
-            this.circularButton4.TabIndex = 13;
-            this.circularButton4.Text = "<";
-            this.circularButton4.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -246,6 +228,7 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
@@ -332,6 +315,24 @@
             this.label8.Size = new System.Drawing.Size(63, 12);
             this.label8.TabIndex = 35;
             this.label8.Text = "* 시작일자";
+            // 
+            // circularButton3
+            // 
+            this.circularButton3.Location = new System.Drawing.Point(632, 1);
+            this.circularButton3.Name = "circularButton3";
+            this.circularButton3.Size = new System.Drawing.Size(31, 30);
+            this.circularButton3.TabIndex = 15;
+            this.circularButton3.Text = ">";
+            this.circularButton3.UseVisualStyleBackColor = true;
+            // 
+            // circularButton4
+            // 
+            this.circularButton4.Location = new System.Drawing.Point(550, 1);
+            this.circularButton4.Name = "circularButton4";
+            this.circularButton4.Size = new System.Drawing.Size(31, 30);
+            this.circularButton4.TabIndex = 13;
+            this.circularButton4.Text = "<";
+            this.circularButton4.UseVisualStyleBackColor = true;
             // 
             // Materia_Request
             // 
