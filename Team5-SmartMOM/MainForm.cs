@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Team5_SmartMOM.LBJ;
 
 namespace Team5_SmartMOM
 {
@@ -232,6 +233,19 @@ namespace Team5_SmartMOM
             CreateTabPages("BOR", new BOR());
         }
 
-       
+        private void shift기준정보ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("Shift기준정보", new office_hours());
+        }
+
+        private void shift스케줄관리ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("Shift스케줄 관리", new office_hours_management());
+        }
+
+        private void 수입검사ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("수입검사현황", new Import_check());
+        }
     }
 }
