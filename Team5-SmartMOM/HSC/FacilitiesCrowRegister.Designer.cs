@@ -50,11 +50,11 @@
             // 
             // panelFull
             // 
-            this.panelFull.Size = new System.Drawing.Size(425, 504);
+            this.panelFull.Size = new System.Drawing.Size(424, 504);
             // 
             // panelMain
             // 
-            this.panelMain.Size = new System.Drawing.Size(405, 484);
+            this.panelMain.Size = new System.Drawing.Size(404, 484);
             // 
             // panelDock
             // 
@@ -70,15 +70,15 @@
             this.panelDock.Controls.Add(this.txtFacName);
             this.panelDock.Controls.Add(this.label6);
             this.panelDock.Controls.Add(this.label3);
-            this.panelDock.Size = new System.Drawing.Size(405, 436);
+            this.panelDock.Size = new System.Drawing.Size(404, 436);
             // 
             // panelTop
             // 
-            this.panelTop.Size = new System.Drawing.Size(405, 48);
+            this.panelTop.Size = new System.Drawing.Size(404, 48);
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(405, 38);
+            this.panel1.Size = new System.Drawing.Size(404, 38);
             // 
             // label1
             // 
@@ -87,31 +87,26 @@
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(-33, 9);
+            this.tileSave.Location = new System.Drawing.Point(-453, 9);
             this.tileSave.Click += new System.EventHandler(this.tileSave_Click);
             // 
             // panelBottom
             // 
             this.panelBottom.Location = new System.Drawing.Point(0, 436);
-            this.panelBottom.Size = new System.Drawing.Size(405, 48);
+            this.panelBottom.Size = new System.Drawing.Size(404, 48);
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(203, 10);
-            this.button2.Size = new System.Drawing.Size(73, 30);
+            this.button2.Location = new System.Drawing.Point(196, 9);
+            this.button2.Size = new System.Drawing.Size(71, 30);
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(127, 10);
-            this.button1.Size = new System.Drawing.Size(73, 30);
+            this.button1.Location = new System.Drawing.Point(120, 9);
+            this.button1.Size = new System.Drawing.Size(71, 30);
             // 
             // cboUMU
             // 
@@ -228,7 +223,7 @@
             // FacilitiesCrowRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(425, 504);
+            this.ClientSize = new System.Drawing.Size(424, 504);
             this.Name = "FacilitiesCrowRegister";
             this.panelFull.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
