@@ -60,10 +60,10 @@
             this.label16 = new System.Windows.Forms.Label();
             this.panelFull.SuspendLayout();
             this.panelMain.SuspendLayout();
-            this.panelBottom.SuspendLayout();
             this.panelDock.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelDock
@@ -104,17 +104,19 @@
             this.label1.Size = new System.Drawing.Size(80, 22);
             this.label1.Text = "공장 정보";
             // 
+            // tileSave
+            // 
+            this.tileSave.Click += new System.EventHandler(this.tileSave_Click);
+            // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            // 
-            // tileSave
-            // 
-            this.tileSave.Click += new System.EventHandler(this.tileSave_Click);
             // 
             // label2
             // 
@@ -411,12 +413,12 @@
             this.Name = "FactoryRegister";
             this.panelFull.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
-            this.panelBottom.ResumeLayout(false);
             this.panelDock.ResumeLayout(false);
             this.panelDock.PerformLayout();
             this.panelTop.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -116,7 +116,7 @@
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(934, 10);
+            this.tileSave.Location = new System.Drawing.Point(1021, 10);
             this.tileSave.Click += new System.EventHandler(this.tileSave_Click);
             // 
             // panelBottom
@@ -125,13 +125,15 @@
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(331, 10);
+            this.button2.Location = new System.Drawing.Point(340, 10);
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(255, 10);
+            this.button1.Location = new System.Drawing.Point(264, 10);
             // 
             // txtExplain
             // 
