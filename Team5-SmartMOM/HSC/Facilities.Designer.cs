@@ -53,47 +53,47 @@
             // 
             this.splitContainer1.Panel1MinSize = 5;
             this.splitContainer1.Size = new System.Drawing.Size(367, 629);
-            this.splitContainer1.SplitterDistance = 26;
             // 
             // panelTop
             // 
-            this.panelTop.Size = new System.Drawing.Size(367, 26);
+            this.panelTop.Size = new System.Drawing.Size(367, 110);
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(367, 599);
+            this.panel2.Size = new System.Drawing.Size(367, 515);
             // 
             // splitContainer2
             // 
-            this.splitContainer2.Size = new System.Drawing.Size(367, 599);
-            this.splitContainer2.SplitterDistance = 41;
+            this.splitContainer2.Size = new System.Drawing.Size(367, 515);
+            this.splitContainer2.SplitterDistance = 36;
             // 
             // panelMid
             // 
-            this.panelMid.Size = new System.Drawing.Size(367, 41);
+            this.panelMid.Size = new System.Drawing.Size(367, 36);
+            this.panelMid.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMid_Paint);
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Location = new System.Drawing.Point(-611, 9);
+            this.button3.Location = new System.Drawing.Point(-1446, 9);
             this.button3.Text = "등록";
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Location = new System.Drawing.Point(-563, 9);
+            this.button2.Location = new System.Drawing.Point(-1398, 9);
             this.button2.Text = "복사";
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(-516, 9);
+            this.button1.Location = new System.Drawing.Point(-1351, 9);
             this.button1.Text = "삭제";
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(5, 20);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Size = new System.Drawing.Size(55, 22);
             this.label1.Text = "설비군";
             // 

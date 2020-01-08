@@ -142,9 +142,6 @@
             this.panelMid.Size = new System.Drawing.Size(1202, 39);
             this.panelMid.TabIndex = 17;
             // 
-            // dgvMain
-            // 
-            // 
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));

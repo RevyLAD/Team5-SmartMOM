@@ -70,10 +70,10 @@
             this.label21 = new System.Windows.Forms.Label();
             this.panelFull.SuspendLayout();
             this.panelMain.SuspendLayout();
-            this.panelBottom.SuspendLayout();
             this.panelDock.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelFull
@@ -83,10 +83,6 @@
             // panelMain
             // 
             this.panelMain.Size = new System.Drawing.Size(747, 425);
-            // 
-            // panelBottom
-            // 
-            this.panelBottom.Size = new System.Drawing.Size(747, 48);
             // 
             // panelDock
             // 
@@ -146,17 +142,27 @@
             this.label1.Size = new System.Drawing.Size(70, 22);
             this.label1.Text = "업체정보";
             // 
+            // tileSave
+            // 
+            this.tileSave.Location = new System.Drawing.Point(1107, 10);
+            // 
+            // panelBottom
+            // 
+            this.panelBottom.Size = new System.Drawing.Size(747, 48);
+            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(412, 10);
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(358, 10);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(252, 10);
-            // 
-            // tileSave
-            // 
-            this.tileSave.Location = new System.Drawing.Point(973, 10);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(276, 10);
             // 
             // textBox3
             // 
@@ -532,19 +538,19 @@
             this.label21.TabIndex = 117;
             this.label21.Text = "ㆍ사용유무";
             // 
-            // FacilitiesDetailRegister
+            // EnterpriseRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(767, 445);
-            this.Name = "FacilitiesDetailRegister";
+            this.Name = "EnterpriseRegister";
             this.panelFull.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
-            this.panelBottom.ResumeLayout(false);
             this.panelDock.ResumeLayout(false);
             this.panelDock.PerformLayout();
             this.panelTop.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
