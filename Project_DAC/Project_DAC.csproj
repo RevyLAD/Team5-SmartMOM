@@ -43,7 +43,8 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="ConnectionAccess.cs" />
-    <Compile Include="FactoryDAC.cs" />
+    <Compile Include="HSC\BORDAC.cs" />
+    <Compile Include="HSC\FactoryDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
