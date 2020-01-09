@@ -45,6 +45,7 @@
     <Compile Include="ConnectionAccess.cs" />
     <Compile Include="FactoryDAC.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="KIS\BOM_DAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,5 +57,6 @@
   <ItemGroup>
     <Content Include="Team5_DEV.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
