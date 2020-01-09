@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace Team5_SmartMOM
 {
@@ -33,7 +34,44 @@ namespace Team5_SmartMOM
             tabControl1.Padding = new Point(10, 3);
 
 
+
         }
+        private void Form_Gradient(object sender, PaintEventArgs e)
+        {
+            LinearGradientBrush br = new LinearGradientBrush(this.panelSideMenu.ClientRectangle,
+                                                                Color.FromArgb(155, 155, 155),
+                                                                Color.FromArgb(200, 200, 200),
+                                                                0,
+                                                                false);
+            e.Graphics.FillRectangle(br, this.ClientRectangle);
+        }
+        private void SidePanel_Gradient(object sender, PaintEventArgs e)
+        {
+            Color startColor = Color.FromArgb(0, 0, 0);
+            Color middleColor = Color.FromArgb(121, 159, 229);
+            Color endColor = Color.FromArgb(0, 0, 0);
+
+            LinearGradientBrush br = new LinearGradientBrush(this.panelSideMenu.ClientRectangle,
+                                                                Color.Black,
+                                                                Color.Black,
+                                                                0,
+                                                                false);
+
+            ColorBlend cb = new ColorBlend();
+            cb.Positions = new[] { 0, 1 / 2f, 1 };
+            cb.Colors = new[] { startColor, middleColor, endColor };
+
+            br.InterpolationColors = cb;
+            br.RotateTransform(45);
+            e.Graphics.FillRectangle(br, this.ClientRectangle);
+        }
+
+        private void SubPanel_Gradient(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
         #region Slide Menu Design
 
         //private void hideSubMenu()
@@ -186,6 +224,7 @@ namespace Team5_SmartMOM
 
             TabPage myTabPage = new TabPage();
             myTabPage.Text = text;
+            myTabPage.ImageIndex = 1;
             tabControl1.Controls.Add(myTabPage);
 
 

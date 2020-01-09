@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Team5_SmartMOM.KIS
+namespace Team5_SmartMOM
 {
     public partial class BOM : Team5_SmartMOM.BaseGridForm
     {

@@ -29,17 +29,23 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.circularButton3 = new Team5_SmartMOM.PSM.CircularButton();
+            this.circularButton4 = new Team5_SmartMOM.PSM.CircularButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -51,19 +57,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.circularButton3 = new Team5_SmartMOM.PSM.CircularButton();
-            this.label6 = new System.Windows.Forms.Label();
-            this.circularButton4 = new Team5_SmartMOM.PSM.CircularButton();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,76 +81,53 @@
             this.panel1.Size = new System.Drawing.Size(1222, 609);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // panel5
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(245)))));
-            this.panel2.Controls.Add(this.btnSearch);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.dateTimePicker2);
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1202, 87);
-            this.panel2.TabIndex = 0;
+            this.panel5.BackColor = System.Drawing.Color.Silver;
+            this.panel5.Controls.Add(this.circularButton3);
+            this.panel5.Controls.Add(this.circularButton4);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Location = new System.Drawing.Point(12, 337);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1202, 31);
+            this.panel5.TabIndex = 5;
             // 
-            // panel3
+            // circularButton3
             // 
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(12, 105);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1202, 47);
-            this.panel3.TabIndex = 1;
+            this.circularButton3.Location = new System.Drawing.Point(632, 1);
+            this.circularButton3.Name = "circularButton3";
+            this.circularButton3.Size = new System.Drawing.Size(31, 30);
+            this.circularButton3.TabIndex = 15;
+            this.circularButton3.Text = ">";
+            this.circularButton3.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // circularButton4
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 22);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "입고대기리스트";
+            this.circularButton4.Location = new System.Drawing.Point(550, 1);
+            this.circularButton4.Name = "circularButton4";
+            this.circularButton4.Size = new System.Drawing.Size(31, 30);
+            this.circularButton4.TabIndex = 13;
+            this.circularButton4.Text = "<";
+            this.circularButton4.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // label6
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(1096, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(45, 24);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "선택";
-            this.button3.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(587, 11);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 12);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "1  /  1";
             // 
-            // button2
+            // dataGridView2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(1144, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(45, 24);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "엑셀";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 158);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1202, 180);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(12, 421);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 23;
+            this.dataGridView2.Size = new System.Drawing.Size(1202, 180);
+            this.dataGridView2.TabIndex = 4;
             // 
             // panel4
             // 
@@ -192,15 +169,96 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "자재입고관리";
             // 
-            // dataGridView2
+            // dataGridView1
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 421);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1202, 180);
-            this.dataGridView2.TabIndex = 4;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 158);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(1202, 180);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Location = new System.Drawing.Point(12, 105);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1202, 47);
+            this.panel3.TabIndex = 1;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(1096, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(45, 24);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "선택";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(1144, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(45, 24);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "엑셀";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 22);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "입고대기리스트";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(245)))));
+            this.panel2.Controls.Add(this.btnSearch);
+            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.dateTimePicker2);
+            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1202, 87);
+            this.panel2.TabIndex = 0;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(1111, 52);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(81, 30);
+            this.btnSearch.TabIndex = 51;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(95, 52);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(191, 21);
+            this.textBox3.TabIndex = 50;
             // 
             // textBox2
             // 
@@ -296,79 +354,22 @@
             this.label8.TabIndex = 35;
             this.label8.Text = "* 납기일자";
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(95, 52);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(191, 21);
-            this.textBox3.TabIndex = 50;
-            // 
-            // circularButton3
-            // 
-            this.circularButton3.Location = new System.Drawing.Point(632, 1);
-            this.circularButton3.Name = "circularButton3";
-            this.circularButton3.Size = new System.Drawing.Size(31, 30);
-            this.circularButton3.TabIndex = 15;
-            this.circularButton3.Text = ">";
-            this.circularButton3.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(587, 11);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 12);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "1  /  1";
-            // 
-            // circularButton4
-            // 
-            this.circularButton4.Location = new System.Drawing.Point(550, 1);
-            this.circularButton4.Name = "circularButton4";
-            this.circularButton4.Size = new System.Drawing.Size(31, 30);
-            this.circularButton4.TabIndex = 13;
-            this.circularButton4.Text = "<";
-            this.circularButton4.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Silver;
-            this.panel5.Controls.Add(this.circularButton3);
-            this.panel5.Controls.Add(this.circularButton4);
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Location = new System.Drawing.Point(12, 337);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1202, 31);
-            this.panel5.TabIndex = 5;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
-            this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1111, 52);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(81, 30);
-            this.btnSearch.TabIndex = 51;
-            this.btnSearch.Text = "조회";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
             // Supplier
             // 
             this.ClientSize = new System.Drawing.Size(1222, 609);
             this.Controls.Add(this.panel1);
             this.Name = "Supplier";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
