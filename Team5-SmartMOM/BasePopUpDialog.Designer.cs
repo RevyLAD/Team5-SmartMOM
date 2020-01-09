@@ -32,7 +32,7 @@
             // 
             // BasePopUpDialog
             // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(897, 559);
             this.Name = "BasePopUpDialog";
             this.ResumeLayout(false);
 
