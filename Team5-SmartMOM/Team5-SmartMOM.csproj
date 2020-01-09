@@ -400,10 +400,34 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="TabControl\ThemedColors.cs" />
+    <Compile Include="Utility\ButtonZ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\CheckBoxZ.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utility\CommonUtil.cs" />
     <Compile Include="Utility\ExcelExportImport.cs" />
+    <Compile Include="Utility\FsButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\FsButton.designer.cs">
+      <DependentUpon>FsButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility\GlobalClass.cs" />
     <Compile Include="Utility\ImageConverterHelper.cs" />
+    <Compile Include="Utility\LabelZ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\PanelZ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\RadioButtonZ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\TabControlZ.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utility\UtilityClass.cs" />
     <EmbeddedResource Include="BaseGridForm.resx">
       <DependentUpon>BaseGridForm.cs</DependentUpon>
