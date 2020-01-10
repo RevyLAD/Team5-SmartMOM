@@ -46,6 +46,7 @@
     <Compile Include="HSC\EnterpriseVO.cs" />
     <Compile Include="HSC\FacilitieVO.cs" />
     <Compile Include="HSC\FactoryVO.cs" />
+    <Compile Include="LBJ\ImportVO.cs" />
     <Compile Include="LBJ\ShiftVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

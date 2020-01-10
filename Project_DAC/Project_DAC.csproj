@@ -49,6 +49,7 @@
     <Compile Include="HSC\FactoryDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="KIS\BOM_DAC.cs" />
+    <Compile Include="LBJ\ImportDAC.cs" />
     <Compile Include="LBJ\ShiftDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

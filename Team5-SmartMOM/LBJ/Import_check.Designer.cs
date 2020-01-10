@@ -50,12 +50,12 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.panelTop.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panelMid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.panelMid.SuspendLayout();
+            this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -71,33 +71,11 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.SplitterDistance = 121;
-            // 
-            // panelTop
-            // 
-            this.panelTop.Controls.Add(this.btnSearch);
-            this.panelTop.Controls.Add(this.txtProduct);
-            this.panelTop.Controls.Add(this.txtStartNum);
-            this.panelTop.Controls.Add(this.cboCompany);
-            this.panelTop.Controls.Add(this.cboResult);
-            this.panelTop.Controls.Add(this.label5);
-            this.panelTop.Controls.Add(this.label6);
-            this.panelTop.Controls.Add(this.label4);
-            this.panelTop.Controls.Add(this.label3);
-            this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Controls.Add(this.dtpCheckday2);
-            this.panelTop.Controls.Add(this.dtpCheckday);
-            this.panelTop.Controls.Add(this.cboCheckDay);
-            this.panelTop.Size = new System.Drawing.Size(1202, 121);
+            this.splitContainer1.SplitterDistance = 120;
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1202, 464);
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Size = new System.Drawing.Size(1202, 464);
-            this.splitContainer2.SplitterDistance = 52;
+            this.panel2.Size = new System.Drawing.Size(1202, 465);
             // 
             // panelMid
             // 
@@ -120,6 +98,28 @@
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(7, 4);
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Size = new System.Drawing.Size(1202, 465);
+            this.splitContainer2.SplitterDistance = 52;
+            // 
+            // panelTop
+            // 
+            this.panelTop.Controls.Add(this.btnSearch);
+            this.panelTop.Controls.Add(this.txtProduct);
+            this.panelTop.Controls.Add(this.txtStartNum);
+            this.panelTop.Controls.Add(this.cboCompany);
+            this.panelTop.Controls.Add(this.cboResult);
+            this.panelTop.Controls.Add(this.label5);
+            this.panelTop.Controls.Add(this.label6);
+            this.panelTop.Controls.Add(this.label4);
+            this.panelTop.Controls.Add(this.label3);
+            this.panelTop.Controls.Add(this.label2);
+            this.panelTop.Controls.Add(this.dtpCheckday2);
+            this.panelTop.Controls.Add(this.dtpCheckday);
+            this.panelTop.Controls.Add(this.cboCheckDay);
+            this.panelTop.Size = new System.Drawing.Size(1202, 120);
             // 
             // txtProduct
             // 
@@ -272,20 +272,21 @@
             this.ClientSize = new System.Drawing.Size(1222, 609);
             this.Name = "Import_check";
             this.Text = "수입검사현황";
+            this.Load += new System.EventHandler(this.Import_check_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.panelTop.ResumeLayout(false);
-            this.panelTop.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panelMid.ResumeLayout(false);
+            this.panelMid.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.panelMid.ResumeLayout(false);
-            this.panelMid.PerformLayout();
+            this.panelTop.ResumeLayout(false);
+            this.panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

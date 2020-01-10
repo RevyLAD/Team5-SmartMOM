@@ -17,5 +17,15 @@ namespace Team5_SmartMOM.Service
             ShiftDAC dac = new ShiftDAC();
             return dac.Shift();
         }
+        public List<ShiftManagementVO> ShiftManage()
+        {
+            ShiftDAC dac = new ShiftDAC();
+            return dac.ShiftManage();
+        }
+        public List<ImportVO> Imports()
+        {
+            ImportDAC dac = new ImportDAC();
+            return dac.Imports();
+        }
     }
 }
