@@ -211,7 +211,7 @@ namespace Team5_SmartMOM
 
         private void 업체관리ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateTabPages("업체관리", new Enterprise());
+            CreateTabPages("업체관리", new EnterPriseMain());
         }
 
         private void bORToolStripMenuItem_Click(object sender, EventArgs e)
@@ -232,6 +232,61 @@ namespace Team5_SmartMOM
         private void 수입검사ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateTabPages("수입 검사 현황", new Import_check());
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOrderManagement_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAS_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button235_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

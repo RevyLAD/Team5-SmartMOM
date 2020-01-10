@@ -1,5 +1,4 @@
-﻿using Project_VO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +9,9 @@ using Team5_SmartMOM.Service;
 
 namespace Team5_SmartMOM
 {
-    public partial class Enterprise : Team5_SmartMOM.BaseGridForm
+    public partial class EnterPriseMain : Team5_SmartMOM.BaseGridForm
     {
-        public Enterprise()
+        public EnterPriseMain()
         {
             InitializeComponent();
         }
@@ -64,11 +63,11 @@ namespace Team5_SmartMOM
         {
             DataGridView dgv = new DataGridView();
 
-            foreach(DataGridViewRow item in dataGridView1.Rows)
+            foreach (DataGridViewRow item in dataGridView1.Rows)
             {
-                if(item.Cells[0].Value.ToString() == no &&
+                if (item.Cells[0].Value.ToString() == no &&
                     item.Cells[1].Value.ToString() == code &&
-                    item.Cells[2].Value.ToString() == name&&
+                    item.Cells[2].Value.ToString() == name &&
                     item.Cells[3].Value.ToString() == code)
                     dgv.Rows.Add(item);
             }
