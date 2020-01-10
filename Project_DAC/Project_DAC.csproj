@@ -46,6 +46,7 @@
     <Compile Include="FactoryDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShiftDAC.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Project_VO\Project_VO.csproj">

@@ -8,15 +8,16 @@ namespace Project_VO
 {
     public class ShiftVO
     {
-        public string Code { get; set; }
-        public int StartTime { get; set; }
-        public int EndTime { get; set; }
-        public string StartDate { get; set; }
-        public string EndDate { get; set; }
-        public string InputPeople { get; set; }
-        public string UserOrNot { get; set; }
-        public string Modifier { get; set; }
-        public string ModifiyDate { get; set; }
-        public string Others { get; set; }
+        public int SHIFT_ID { get; set; }
+        public string FAC_Code { get; set; }
+        public int SHIFT_StartTime { get; set; }
+        public int SHIFT_EndTime { get; set; }
+        public string SHIFT_StartDate { get; set; }
+        public string SHIFT_EndDate { get; set; }
+        public string SHIFT_InputPeople { get; set; }
+        public string SHIFT_UserOrNot { get; set; }
+        public string SHIFT_Modifier { get; set; }
+        public string SHIFT_ModifiyDate { get; set; }
+        public string SHIFT_Others { get; set; }
     }
 }
