@@ -55,15 +55,11 @@
             // splitContainer1
             // 
             this.splitContainer1.Size = new System.Drawing.Size(762, 629);
-            this.splitContainer1.SplitterDistance = 117;
-            // 
-            // panelTop
-            // 
-            this.panelTop.Size = new System.Drawing.Size(762, 117);
+            this.splitContainer1.SplitterDistance = 116;
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(762, 508);
+            this.panel2.Size = new System.Drawing.Size(762, 509);
             // 
             // panelMid
             // 
@@ -81,32 +77,36 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(2378, 9);
+            this.button3.Location = new System.Drawing.Point(2861, 9);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(2426, 9);
+            this.button2.Location = new System.Drawing.Point(2909, 9);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(2473, 9);
+            this.button1.Location = new System.Drawing.Point(2956, 9);
             // 
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(3, 13);
-            this.label1.Size = new System.Drawing.Size(40, 22);
+            this.label1.Size = new System.Drawing.Size(59, 32);
             this.label1.Text = "설비";
             // 
             // splitContainer2
             // 
-            this.splitContainer2.Size = new System.Drawing.Size(762, 508);
+            this.splitContainer2.Size = new System.Drawing.Size(762, 509);
             this.splitContainer2.SplitterDistance = 36;
+            // 
+            // panelTop
+            // 
+            this.panelTop.Size = new System.Drawing.Size(762, 116);
             // 
             // button6
             // 
             this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button6.Location = new System.Drawing.Point(715, 10);
+            this.button6.Location = new System.Drawing.Point(1198, 10);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(45, 23);
             this.button6.TabIndex = 24;
@@ -117,7 +117,7 @@
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.Location = new System.Drawing.Point(668, 10);
+            this.button5.Location = new System.Drawing.Point(1151, 10);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(45, 23);
             this.button5.TabIndex = 23;
@@ -128,7 +128,7 @@
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Location = new System.Drawing.Point(620, 10);
+            this.button4.Location = new System.Drawing.Point(1103, 10);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(45, 23);
             this.button4.TabIndex = 22;
@@ -140,6 +140,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(782, 649);
             this.Name = "FacilitiesDetail";
+            this.Load += new System.EventHandler(this.FacilitiesDetail_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
