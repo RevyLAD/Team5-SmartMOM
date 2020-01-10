@@ -367,6 +367,7 @@
       <DependentUpon>Supplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Service\HSC_Service.cs" />
+    <Compile Include="Service\LBJ_Service.cs" />
     <Compile Include="TabControl\CustomTabControl.cs">
       <SubType>Component</SubType>
     </Compile>

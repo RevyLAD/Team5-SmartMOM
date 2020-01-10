@@ -366,8 +366,9 @@ namespace Team5_SmartMOM
             // 수입검사ToolStripMenuItem
             // 
             this.수입검사ToolStripMenuItem.Name = "수입검사ToolStripMenuItem";
-            this.수입검사ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.수입검사ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.수입검사ToolStripMenuItem.Text = "수입검사";
+            this.수입검사ToolStripMenuItem.Click += new System.EventHandler(this.수입검사ToolStripMenuItem_Click);
             // 
             // 공정관리ToolStripMenuItem
             // 
@@ -430,14 +431,16 @@ namespace Team5_SmartMOM
             // shift기준정보ToolStripMenuItem
             // 
             this.shift기준정보ToolStripMenuItem.Name = "shift기준정보ToolStripMenuItem";
-            this.shift기준정보ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.shift기준정보ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.shift기준정보ToolStripMenuItem.Text = "Shift 기준정보";
+            this.shift기준정보ToolStripMenuItem.Click += new System.EventHandler(this.shift기준정보ToolStripMenuItem_Click);
             // 
             // shift스케줄관리ToolStripMenuItem
             // 
             this.shift스케줄관리ToolStripMenuItem.Name = "shift스케줄관리ToolStripMenuItem";
-            this.shift스케줄관리ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.shift스케줄관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.shift스케줄관리ToolStripMenuItem.Text = "Shift 스케줄관리";
+            this.shift스케줄관리ToolStripMenuItem.Click += new System.EventHandler(this.shift스케줄관리ToolStripMenuItem_Click);
             // 
             // BottomToolStripPanel
             // 
