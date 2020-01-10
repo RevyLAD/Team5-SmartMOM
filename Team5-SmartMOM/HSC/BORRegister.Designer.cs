@@ -105,7 +105,7 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(318, 10);
+            this.button2.Location = new System.Drawing.Point(326, 10);
             // 
             // button1
             // 
@@ -113,12 +113,12 @@
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(594, 10);
+            this.tileSave.Location = new System.Drawing.Point(602, 10);
             this.tileSave.Click += new System.EventHandler(this.tileSave_Click);
             // 
             // txtExplain
             // 
-            this.txtExplain.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtExplain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtExplain.Location = new System.Drawing.Point(128, 143);
             this.txtExplain.Multiline = true;
             this.txtExplain.Name = "txtExplain";
@@ -128,36 +128,36 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label16.Location = new System.Drawing.Point(8, 146);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(43, 14);
+            this.label16.Size = new System.Drawing.Size(41, 16);
             this.label16.TabIndex = 58;
             this.label16.Text = "ㆍ비고";
             // 
             // cboUse
             // 
-            this.cboUse.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboUse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboUse.FormattingEnabled = true;
             this.cboUse.Location = new System.Drawing.Point(433, 111);
             this.cboUse.Name = "cboUse";
-            this.cboUse.Size = new System.Drawing.Size(172, 21);
+            this.cboUse.Size = new System.Drawing.Size(172, 23);
             this.cboUse.TabIndex = 57;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label15.ForeColor = System.Drawing.Color.Tomato;
             this.label15.Location = new System.Drawing.Point(325, 113);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(67, 14);
+            this.label15.Size = new System.Drawing.Size(63, 16);
             this.label15.TabIndex = 56;
             this.label15.Text = "ㆍ사용유무";
             // 
             // txtTurn
             // 
-            this.txtTurn.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtTurn.Location = new System.Drawing.Point(128, 77);
             this.txtTurn.Name = "txtTurn";
             this.txtTurn.Size = new System.Drawing.Size(172, 21);
@@ -166,46 +166,46 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.Location = new System.Drawing.Point(9, 111);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 14);
+            this.label10.Size = new System.Drawing.Size(41, 16);
             this.label10.TabIndex = 47;
             this.label10.Text = "ㆍ수출";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label11.Location = new System.Drawing.Point(9, 80);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(110, 14);
+            this.label11.Size = new System.Drawing.Size(112, 16);
             this.label11.TabIndex = 46;
             this.label11.Text = "ㆍ공정선행일(Day)";
             // 
             // cboUMU
             // 
-            this.cboUMU.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboUMU.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboUMU.FormattingEnabled = true;
             this.cboUMU.Location = new System.Drawing.Point(433, 79);
             this.cboUMU.Name = "cboUMU";
-            this.cboUMU.Size = new System.Drawing.Size(172, 21);
+            this.cboUMU.Size = new System.Drawing.Size(172, 23);
             this.cboUMU.TabIndex = 41;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.Color.Tomato;
             this.label7.Location = new System.Drawing.Point(325, 49);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 14);
+            this.label7.Size = new System.Drawing.Size(85, 16);
             this.label7.TabIndex = 40;
-            this.label7.Text = "ㆍTac Time(sec)";
+            this.label7.Text = "ㆍTac Time";
             // 
             // txtFacName
             // 
-            this.txtFacName.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtFacName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFacName.Location = new System.Drawing.Point(433, 47);
             this.txtFacName.Name = "txtFacName";
             this.txtFacName.Size = new System.Drawing.Size(172, 21);
@@ -213,67 +213,67 @@
             // 
             // cboHighFac
             // 
-            this.cboHighFac.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboHighFac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboHighFac.FormattingEnabled = true;
             this.cboHighFac.Location = new System.Drawing.Point(433, 15);
             this.cboHighFac.Name = "cboHighFac";
-            this.cboHighFac.Size = new System.Drawing.Size(172, 21);
+            this.cboHighFac.Size = new System.Drawing.Size(172, 23);
             this.cboHighFac.TabIndex = 38;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.Color.Tomato;
             this.label6.Location = new System.Drawing.Point(325, 17);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 14);
+            this.label6.Size = new System.Drawing.Size(41, 16);
             this.label6.TabIndex = 37;
             this.label6.Text = "ㆍ공정";
             // 
             // cboFacCate
             // 
-            this.cboFacCate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboFacCate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboFacCate.FormattingEnabled = true;
             this.cboFacCate.Location = new System.Drawing.Point(128, 45);
             this.cboFacCate.Name = "cboFacCate";
-            this.cboFacCate.Size = new System.Drawing.Size(172, 21);
+            this.cboFacCate.Size = new System.Drawing.Size(172, 23);
             this.cboFacCate.TabIndex = 36;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.Tomato;
             this.label4.Location = new System.Drawing.Point(9, 47);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 14);
+            this.label4.Size = new System.Drawing.Size(41, 16);
             this.label4.TabIndex = 34;
             this.label4.Text = "ㆍ설비";
             // 
             // cboFacCrow
             // 
-            this.cboFacCrow.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboFacCrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboFacCrow.FormattingEnabled = true;
             this.cboFacCrow.Location = new System.Drawing.Point(128, 13);
             this.cboFacCrow.Name = "cboFacCrow";
-            this.cboFacCrow.Size = new System.Drawing.Size(172, 21);
+            this.cboFacCrow.Size = new System.Drawing.Size(172, 23);
             this.cboFacCrow.TabIndex = 31;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.Color.Tomato;
             this.label2.Location = new System.Drawing.Point(9, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 14);
+            this.label2.Size = new System.Drawing.Size(41, 16);
             this.label2.TabIndex = 30;
             this.label2.Text = "ㆍ품목";
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox1.Location = new System.Drawing.Point(128, 109);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(172, 21);
@@ -282,11 +282,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.Color.Tomato;
             this.label3.Location = new System.Drawing.Point(325, 81);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 14);
+            this.label3.Size = new System.Drawing.Size(63, 16);
             this.label3.TabIndex = 61;
             this.label3.Text = "ㆍ우선순위";
             // 

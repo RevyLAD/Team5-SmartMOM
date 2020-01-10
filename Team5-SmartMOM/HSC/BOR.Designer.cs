@@ -34,45 +34,19 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.cboFacCrow = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelMid.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.panelMid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panelTop
-            // 
-            this.panelTop.Controls.Add(this.textBox2);
-            this.panelTop.Controls.Add(this.label4);
-            this.panelTop.Controls.Add(this.btnInquiry);
-            this.panelTop.Controls.Add(this.textBox1);
-            this.panelTop.Controls.Add(this.cboFacCrow);
-            this.panelTop.Controls.Add(this.label3);
-            this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Location = new System.Drawing.Point(0, 40);
-            this.panelTop.Size = new System.Drawing.Size(1202, 60);
-            this.panelTop.Controls.SetChildIndex(this.label2, 0);
-            this.panelTop.Controls.SetChildIndex(this.label3, 0);
-            this.panelTop.Controls.SetChildIndex(this.cboFacCrow, 0);
-            this.panelTop.Controls.SetChildIndex(this.textBox1, 0);
-            this.panelTop.Controls.SetChildIndex(this.btnInquiry, 0);
-            this.panelTop.Controls.SetChildIndex(this.label4, 0);
-            this.panelTop.Controls.SetChildIndex(this.textBox2, 0);
-            this.panelTop.Controls.SetChildIndex(this.splitContainer2, 0);
-            this.panelTop.Controls.SetChildIndex(this.panel2, 0);
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Size = new System.Drawing.Size(1202, 525);
-            this.splitContainer2.SplitterDistance = 40;
             // 
             // panelMid
             // 
@@ -89,36 +63,64 @@
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Dock = System.Windows.Forms.DockStyle.None;
             this.button3.Location = new System.Drawing.Point(881, 11);
-            this.button3.Text = "등록";
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Dock = System.Windows.Forms.DockStyle.None;
             this.button2.Location = new System.Drawing.Point(929, 11);
-            this.button2.Text = "복사";
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Dock = System.Windows.Forms.DockStyle.None;
             this.button1.Location = new System.Drawing.Point(980, 11);
             this.button1.Size = new System.Drawing.Size(65, 24);
             this.button1.Text = "이력조회";
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1202, 525);
+            this.panel2.Location = new System.Drawing.Point(0, 40);
+            this.panel2.Size = new System.Drawing.Size(1202, 78);
+            // 
+            // panelTop
+            // 
+            this.panelTop.Controls.Add(this.textBox2);
+            this.panelTop.Controls.Add(this.label4);
+            this.panelTop.Controls.Add(this.btnInquiry);
+            this.panelTop.Controls.Add(this.textBox1);
+            this.panelTop.Controls.Add(this.cboFacCrow);
+            this.panelTop.Controls.Add(this.label3);
+            this.panelTop.Controls.Add(this.label2);
+            this.panelTop.Size = new System.Drawing.Size(1202, 60);
+            this.panelTop.Controls.SetChildIndex(this.label3, 0);
+            this.panelTop.Controls.SetChildIndex(this.cboFacCrow, 0);
+            this.panelTop.Controls.SetChildIndex(this.textBox1, 0);
+            this.panelTop.Controls.SetChildIndex(this.btnInquiry, 0);
+            this.panelTop.Controls.SetChildIndex(this.label4, 0);
+            this.panelTop.Controls.SetChildIndex(this.textBox2, 0);
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Size = new System.Drawing.Size(1202, 525);
+            this.splitContainer2.SplitterDistance = 40;
             // 
             // splitContainer1
             // 
+            this.splitContainer1.Size = new System.Drawing.Size(1158, 525);
             this.splitContainer1.SplitterDistance = 60;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(2, 2);
-            this.label1.Size = new System.Drawing.Size(255, 32);
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Size = new System.Drawing.Size(255, 36);
             this.label1.Text = "Bill Of Resource";
+            // 
+            // label2
+            // 
             // 
             // textBox2
             // 
@@ -178,16 +180,6 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "ㆍ 공정";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(54, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 18);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "ㆍ 품목";
-            // 
             // metroButton2
             // 
             this.metroButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -215,13 +207,13 @@
             this.Load += new System.EventHandler(this.BOR_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panelMid.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.panelMid.ResumeLayout(false);
-            this.panelMid.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
