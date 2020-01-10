@@ -17,8 +17,7 @@ namespace Project_DAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "GetAllBOR";
-                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "select ITEM_Code, FACG_Code, FAC_Code, BOR_TactTime, BOR_Priority, BOR_yeild, BOR_UseOrNot, BOR_Ohters from BOR";
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
