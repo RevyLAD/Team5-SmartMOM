@@ -27,5 +27,16 @@ namespace Team5_SmartMOM.Service
             EnterpriseDAC dac = new EnterpriseDAC();
             return dac.GetAllEnterprise();
         }
+
+        public List<FacilitieDetailVO> GetAllFacilitiesDetail()
+        {
+            FacilitieDAC dac = new FacilitieDAC();
+            return dac.GetAllFacilitiesDetail();
+        }
+        public List<FacilitieVO> GetAllFacilities()
+        {
+            FacilitieDAC dac = new FacilitieDAC();
+            return dac.GetAllFacilities();
+        }
     }
 }

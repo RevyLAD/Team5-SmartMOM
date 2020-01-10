@@ -45,6 +45,7 @@
     <Compile Include="ConnectionAccess.cs" />
     <Compile Include="HSC\BORDAC.cs" />
     <Compile Include="HSC\EnterpriseDAC.cs" />
+    <Compile Include="HSC\FacilitieDAC.cs" />
     <Compile Include="HSC\FactoryDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="KIS\BOM_DAC.cs" />

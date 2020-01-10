@@ -53,15 +53,11 @@
             // 
             this.splitContainer1.Panel1MinSize = 5;
             this.splitContainer1.Size = new System.Drawing.Size(279, 629);
-            this.splitContainer1.SplitterDistance = 117;
-            // 
-            // panelTop
-            // 
-            this.panelTop.Size = new System.Drawing.Size(279, 117);
+            this.splitContainer1.SplitterDistance = 116;
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(279, 508);
+            this.panel2.Size = new System.Drawing.Size(279, 509);
             // 
             // panelMid
             // 
@@ -71,32 +67,36 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Location = new System.Drawing.Point(-2369, 9);
+            this.button3.Location = new System.Drawing.Point(-3292, 9);
             this.button3.Text = "등록";
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Location = new System.Drawing.Point(-2321, 9);
+            this.button2.Location = new System.Drawing.Point(-3244, 9);
             this.button2.Text = "복사";
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(-2274, 9);
+            this.button1.Location = new System.Drawing.Point(-3197, 9);
             this.button1.Text = "삭제";
             // 
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(3, 7);
-            this.label1.Size = new System.Drawing.Size(55, 22);
+            this.label1.Size = new System.Drawing.Size(81, 32);
             this.label1.Text = "설비군";
             // 
             // splitContainer2
             // 
-            this.splitContainer2.Size = new System.Drawing.Size(279, 508);
+            this.splitContainer2.Size = new System.Drawing.Size(279, 509);
             this.splitContainer2.SplitterDistance = 35;
+            // 
+            // panelTop
+            // 
+            this.panelTop.Size = new System.Drawing.Size(279, 116);
             // 
             // Facilities
             // 
@@ -104,6 +104,7 @@
             this.ClientSize = new System.Drawing.Size(299, 649);
             this.Name = "Facilities";
             this.Text = "설비 관리";
+            this.Load += new System.EventHandler(this.Facilities_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
