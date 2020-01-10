@@ -28,20 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnInsert = new FButton.FsButton();
-            this.btnDel = new FButton.FsButton();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panelMid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panelTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelFull
@@ -52,16 +48,6 @@
             // 
             this.panel1.Size = new System.Drawing.Size(279, 629);
             // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Panel1MinSize = 5;
-            this.splitContainer1.Size = new System.Drawing.Size(279, 629);
-            this.splitContainer1.SplitterDistance = 116;
-            // 
-            // panel2
-            // 
-            this.panel2.Size = new System.Drawing.Size(279, 509);
-            // 
             // panelMid
             // 
             this.panelMid.Size = new System.Drawing.Size(279, 35);
@@ -70,66 +56,51 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Location = new System.Drawing.Point(-4215, 9);
-            this.button3.Text = "등록";
+            this.button3.Location = new System.Drawing.Point(104, 0);
+            this.button3.Size = new System.Drawing.Size(57, 31);
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Location = new System.Drawing.Point(-4167, 9);
-            this.button2.Text = "복사";
+            this.button2.Location = new System.Drawing.Point(161, 0);
+            this.button2.Size = new System.Drawing.Size(57, 31);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(-4120, 9);
+            this.button1.Location = new System.Drawing.Point(218, 0);
+            this.button1.Size = new System.Drawing.Size(57, 31);
             this.button1.Text = "삭제";
             // 
-            // label1
+            // panel2
             // 
-            this.label1.Location = new System.Drawing.Point(3, 7);
-            this.label1.Size = new System.Drawing.Size(81, 32);
-            this.label1.Text = "설비군";
+            this.panel2.Location = new System.Drawing.Point(0, 35);
+            this.panel2.Size = new System.Drawing.Size(279, 135);
+            // 
+            // panelTop
+            // 
+            this.panelTop.Size = new System.Drawing.Size(279, 116);
             // 
             // splitContainer2
             // 
             this.splitContainer2.Size = new System.Drawing.Size(279, 509);
             this.splitContainer2.SplitterDistance = 35;
             // 
-            // panelTop
+            // splitContainer1
             // 
-            this.panelTop.Controls.Add(this.btnDel);
-            this.panelTop.Controls.Add(this.btnInsert);
-            this.panelTop.Size = new System.Drawing.Size(279, 116);
+            this.splitContainer1.Panel1MinSize = 5;
+            this.splitContainer1.Size = new System.Drawing.Size(240, 509);
+            this.splitContainer1.SplitterDistance = 167;
             // 
-            // btnInsert
+            // label1
             // 
-            this.btnInsert.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnInsert.FlasherButtonColorOff = System.Drawing.SystemColors.Control;
-            this.btnInsert.FlasherButtonColorOn = System.Drawing.Color.LightGreen;
-            this.btnInsert.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnInsert.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnInsert.Location = new System.Drawing.Point(186, 90);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(42, 23);
-            this.btnInsert.TabIndex = 0;
-            this.btnInsert.Text = "등록";
-            this.btnInsert.UseVisualStyleBackColor = false;
+            this.label1.Size = new System.Drawing.Size(81, 31);
+            this.label1.Text = "설비군";
             // 
-            // btnDel
+            // label2
             // 
-            this.btnDel.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnDel.FlasherButtonColorOff = System.Drawing.SystemColors.Control;
-            this.btnDel.FlasherButtonColorOn = System.Drawing.Color.LightGreen;
-            this.btnDel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnDel.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDel.Location = new System.Drawing.Point(234, 90);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(42, 23);
-            this.btnDel.TabIndex = 2;
-            this.btnDel.Text = "삭제";
-            this.btnDel.UseVisualStyleBackColor = false;
+            this.label2.Size = new System.Drawing.Size(16, 31);
             // 
             // Facilities
             // 
@@ -140,24 +111,18 @@
             this.Load += new System.EventHandler(this.Facilities_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panelMid.ResumeLayout(false);
-            this.panelMid.PerformLayout();
-            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panelTop.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.panelTop.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private FButton.FsButton btnDel;
-        private FButton.FsButton btnInsert;
     }
 }

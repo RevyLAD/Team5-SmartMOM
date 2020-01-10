@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using Team5_SmartMOM.LBJ;
+using Team5_SmartMOM.HSC;
 
 namespace Team5_SmartMOM
 {
@@ -39,9 +40,9 @@ namespace Team5_SmartMOM
         }
         private void SidePanel_Gradient(object sender, PaintEventArgs e)
         {
-            Color startColor = Color.FromArgb(0, 0, 0);
+            Color startColor = Color.FromArgb(250,250,250);
             Color middleColor = Color.FromArgb(121, 159, 229);
-            Color endColor = Color.FromArgb(0, 0, 0);
+            Color endColor = Color.FromArgb(250, 250, 250);
 
             LinearGradientBrush br = new LinearGradientBrush(this.panelSideMenu.ClientRectangle,
                                                                 Color.Black,
