@@ -48,8 +48,8 @@
     <Compile Include="HSC\FactoryDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="KIS\BOM_DAC.cs" />
+    <Compile Include="LBJ\ShiftDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShiftDAC.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Project_VO\Project_VO.csproj">
