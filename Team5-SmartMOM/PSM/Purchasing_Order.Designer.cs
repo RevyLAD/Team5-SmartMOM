@@ -32,17 +32,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.circularButton3 = new Team5_SmartMOM.PSM.CircularButton();
             this.label8 = new System.Windows.Forms.Label();
-            this.circularButton4 = new Team5_SmartMOM.PSM.CircularButton();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.circularButton2 = new Team5_SmartMOM.PSM.CircularButton();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.circularButton1 = new Team5_SmartMOM.PSM.CircularButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -52,6 +48,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tileUpdate = new MetroFramework.Controls.MetroTile();
+            this.circularButton3 = new Team5_SmartMOM.PSM.CircularButton();
+            this.circularButton4 = new Team5_SmartMOM.PSM.CircularButton();
+            this.circularButton2 = new Team5_SmartMOM.PSM.CircularButton();
+            this.circularButton1 = new Team5_SmartMOM.PSM.CircularButton();
             this.Mainpanel.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -84,6 +84,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "닫기";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel5
             // 
@@ -112,15 +113,6 @@
             this.button1.Text = "발주";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // circularButton3
-            // 
-            this.circularButton3.Location = new System.Drawing.Point(408, 314);
-            this.circularButton3.Name = "circularButton3";
-            this.circularButton3.Size = new System.Drawing.Size(31, 30);
-            this.circularButton3.TabIndex = 12;
-            this.circularButton3.Text = ">";
-            this.circularButton3.UseVisualStyleBackColor = true;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -129,15 +121,6 @@
             this.label8.Size = new System.Drawing.Size(39, 12);
             this.label8.TabIndex = 11;
             this.label8.Text = "1  /  1";
-            // 
-            // circularButton4
-            // 
-            this.circularButton4.Location = new System.Drawing.Point(326, 314);
-            this.circularButton4.Name = "circularButton4";
-            this.circularButton4.Size = new System.Drawing.Size(31, 30);
-            this.circularButton4.TabIndex = 10;
-            this.circularButton4.Text = "<";
-            this.circularButton4.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -150,6 +133,7 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(3, 30);
             this.dataGridView2.Name = "dataGridView2";
@@ -168,15 +152,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(234, 353);
             this.panel4.TabIndex = 2;
-            // 
-            // circularButton2
-            // 
-            this.circularButton2.Location = new System.Drawing.Point(137, 314);
-            this.circularButton2.Name = "circularButton2";
-            this.circularButton2.Size = new System.Drawing.Size(31, 30);
-            this.circularButton2.TabIndex = 7;
-            this.circularButton2.Text = ">";
-            this.circularButton2.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -198,21 +173,13 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 31);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(228, 277);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // circularButton1
-            // 
-            this.circularButton1.Location = new System.Drawing.Point(55, 314);
-            this.circularButton1.Name = "circularButton1";
-            this.circularButton1.Size = new System.Drawing.Size(31, 30);
-            this.circularButton1.TabIndex = 4;
-            this.circularButton1.Text = "<";
-            this.circularButton1.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -307,6 +274,42 @@
             this.tileUpdate.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.tileUpdate.UseTileImage = true;
             // 
+            // circularButton3
+            // 
+            this.circularButton3.Location = new System.Drawing.Point(408, 314);
+            this.circularButton3.Name = "circularButton3";
+            this.circularButton3.Size = new System.Drawing.Size(31, 30);
+            this.circularButton3.TabIndex = 12;
+            this.circularButton3.Text = ">";
+            this.circularButton3.UseVisualStyleBackColor = true;
+            // 
+            // circularButton4
+            // 
+            this.circularButton4.Location = new System.Drawing.Point(326, 314);
+            this.circularButton4.Name = "circularButton4";
+            this.circularButton4.Size = new System.Drawing.Size(31, 30);
+            this.circularButton4.TabIndex = 10;
+            this.circularButton4.Text = "<";
+            this.circularButton4.UseVisualStyleBackColor = true;
+            // 
+            // circularButton2
+            // 
+            this.circularButton2.Location = new System.Drawing.Point(137, 314);
+            this.circularButton2.Name = "circularButton2";
+            this.circularButton2.Size = new System.Drawing.Size(31, 30);
+            this.circularButton2.TabIndex = 7;
+            this.circularButton2.Text = ">";
+            this.circularButton2.UseVisualStyleBackColor = true;
+            // 
+            // circularButton1
+            // 
+            this.circularButton1.Location = new System.Drawing.Point(55, 314);
+            this.circularButton1.Name = "circularButton1";
+            this.circularButton1.Size = new System.Drawing.Size(31, 30);
+            this.circularButton1.TabIndex = 4;
+            this.circularButton1.Text = "<";
+            this.circularButton1.UseVisualStyleBackColor = true;
+            // 
             // Purchasing_Order
             // 
             this.ClientSize = new System.Drawing.Size(1051, 533);
@@ -315,6 +318,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Purchasing_Order";
+            this.Load += new System.EventHandler(this.Purchasing_Order_Load);
             this.Mainpanel.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();

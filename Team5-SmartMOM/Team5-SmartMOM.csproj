@@ -367,6 +367,7 @@
       <DependentUpon>Supplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Service\HSC_Service.cs" />
+    <Compile Include="Service\PSM_Service.cs" />
     <Compile Include="Utility\CommonUtil.cs" />
     <Compile Include="Utility\ExcelExportImport.cs" />
     <Compile Include="Utility\GlobalClass.cs" />
