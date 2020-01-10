@@ -34,27 +34,5 @@ namespace Team5_SmartMOM
             m_headerCheckBox.TabIndex = 1;
         }
 
-        private void Panel_Gradient(object sender, PaintEventArgs e)
-        {
-            Color startColor = Color.FromArgb(213, 227, 247);
-            Color middleColor = Color.FromArgb(225, 236, 249);
-            Color endColor = Color.FromArgb(219, 231, 248);
-
-
-
-            LinearGradientBrush br = new LinearGradientBrush(this.ClientRectangle,
-                                                                Color.Black,
-                                                                Color.Black,
-                                                                0,
-                                                                false);
-
-            ColorBlend cb = new ColorBlend();
-            cb.Positions = new[] { 0, 1 / 2f, 1 };
-            cb.Colors = new[] { startColor, middleColor, endColor };
-
-            br.InterpolationColors = cb;
-            br.RotateTransform(45);
-            e.Graphics.FillRectangle(br, this.ClientRectangle);
-        }
     }
 }

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelFull = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.panelTop = new System.Windows.Forms.Panel();
+            this.panelTop = new PanelZ.PanelZ();
             this.panel2 = new System.Windows.Forms.Panel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.panelMid = new System.Windows.Forms.Panel();
@@ -58,7 +58,7 @@
             // 
             // panelFull
             // 
-            this.panelFull.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.panelFull.BackColor = System.Drawing.Color.White;
             this.panelFull.Controls.Add(this.panel1);
             this.panelFull.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFull.Location = new System.Drawing.Point(0, 0);
@@ -66,7 +66,6 @@
             this.panelFull.Padding = new System.Windows.Forms.Padding(10);
             this.panelFull.Size = new System.Drawing.Size(1222, 609);
             this.panelFull.TabIndex = 0;
-            this.panelFull.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient);
             // 
             // panel1
             // 
@@ -76,7 +75,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1202, 589);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient);
             // 
             // splitContainer1
             // 
@@ -98,12 +96,16 @@
             // 
             // panelTop
             // 
-            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(245)))));
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTop.EndColor = System.Drawing.Color.AliceBlue;
+            this.panelTop.GradientAngle = 90;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1202, 110);
-            this.panelTop.TabIndex = 11;
+            this.panelTop.StartColor = System.Drawing.Color.SteelBlue;
+            this.panelTop.TabIndex = 19;
+            this.panelTop.Transparent1 = 150;
+            this.panelTop.Transparent2 = 150;
             // 
             // panel2
             // 
@@ -143,7 +145,6 @@
             this.panelMid.Name = "panelMid";
             this.panelMid.Size = new System.Drawing.Size(1202, 39);
             this.panelMid.TabIndex = 17;
-            this.panelMid.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient);
             // 
             // button3
             // 
@@ -178,24 +179,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 21);
+            this.label1.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(2, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 22);
+            this.label1.Size = new System.Drawing.Size(103, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "항목이름";
             // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -237,7 +238,6 @@
         protected System.Windows.Forms.Panel panelFull;
         protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.SplitContainer splitContainer1;
-        protected System.Windows.Forms.Panel panelTop;
         protected System.Windows.Forms.Panel panel2;
         protected System.Windows.Forms.Panel panelMid;
         protected System.Windows.Forms.Button button3;
@@ -246,5 +246,6 @@
         protected System.Windows.Forms.Label label1;
         protected System.Windows.Forms.SplitContainer splitContainer2;
         protected System.Windows.Forms.DataGridView dataGridView1;
+        protected PanelZ.PanelZ panelTop;
     }
 }

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Team5_SmartMOM.Service;
 
 namespace Team5_SmartMOM
 {
@@ -25,6 +26,16 @@ namespace Team5_SmartMOM
             EnterpriseRegister frm = new EnterpriseRegister();
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
+        }
+
+        private void Enterprise_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataLoad()
+        {
+            HSC_Service service = new HSC_Service();
         }
     }
 }

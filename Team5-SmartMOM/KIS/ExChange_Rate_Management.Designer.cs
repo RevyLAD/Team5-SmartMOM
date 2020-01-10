@@ -1,4 +1,4 @@
-﻿namespace Team5_SmartMOM.KIS
+﻿namespace Team5_SmartMOM
 {
     partial class ExChange_Rate_Management
     {

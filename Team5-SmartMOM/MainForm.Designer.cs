@@ -86,7 +86,6 @@ namespace Team5_SmartMOM
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.SidePanel1 = new System.Windows.Forms.Panel();
             this.panelSubMenu8 = new System.Windows.Forms.Panel();
@@ -133,6 +132,7 @@ namespace Team5_SmartMOM
             this.btnMatList = new System.Windows.Forms.Button();
             this.btnSubMenu1 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
+            this.tabControl1 = new TabControlZ.TabControlZ();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -480,6 +480,7 @@ namespace Team5_SmartMOM
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(228)))));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton2,
@@ -585,20 +586,6 @@ namespace Team5_SmartMOM
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1066, 1012);
             this.panel1.TabIndex = 6;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.tabControl1.ItemSize = new System.Drawing.Size(150, 20);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1066, 1012);
-            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControl1.TabIndex = 1;
-            this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.metroTabControl1_DrawItem);
-            this.tabControl1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.metroTabControl1_MouseClick);
             // 
             // panelSideMenu
             // 
@@ -1368,6 +1355,26 @@ namespace Team5_SmartMOM
             this.button22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button22.UseVisualStyleBackColor = false;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.ActiveTabEndColor = System.Drawing.Color.Black;
+            this.tabControl1.ActiveTabStartColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(159)))), ((int)(((byte)(229)))));
+            this.tabControl1.CloseButtonColor = System.Drawing.Color.Red;
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabControl1.GradientAngle = 90;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.NonActiveTabEndColor = System.Drawing.Color.Black;
+            this.tabControl1.NonActiveTabStartColor = System.Drawing.Color.Navy;
+            this.tabControl1.Padding = new System.Drawing.Point(22, 4);
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1066, 1012);
+            this.tabControl1.TabIndex = 0;
+            this.tabControl1.TextColor = System.Drawing.Color.White;
+            this.tabControl1.Transparent1 = 150;
+            this.tabControl1.Transparent2 = 150;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1460,7 +1467,6 @@ namespace Team5_SmartMOM
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelSideMenu;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Panel SidePanel1;
         private System.Windows.Forms.Panel panelSubMenu8;
         private System.Windows.Forms.Button button5;
@@ -1508,6 +1514,7 @@ namespace Team5_SmartMOM
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripMenuItem 자재재고현황ToolStripMenuItem;
+        private TabControlZ.TabControlZ tabControl1;
     }
 }
 

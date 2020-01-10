@@ -15,5 +15,17 @@ namespace Team5_SmartMOM.Service
             FactoryDAC dac = new FactoryDAC();
             return dac.GetAllFactory();
         }
+
+        public List<BORVO> GetAllBOR()
+        {
+            BORDAC dac = new BORDAC();
+            return dac.GetAllBOR();
+        }
+
+        public List<EnterpriseVO> GetAllEnterprise()
+        {
+            EnterpriseDAC dac = new EnterpriseDAC();
+            return dac.GetAllEnterprise();
+        }
     }
 }
