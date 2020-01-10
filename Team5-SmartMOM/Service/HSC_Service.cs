@@ -21,5 +21,11 @@ namespace Team5_SmartMOM.Service
             BORDAC dac = new BORDAC();
             return dac.GetAllBOR();
         }
+
+        public List<EnterpriseVO> GetAllEnterprise()
+        {
+            EnterpriseDAC dac = new EnterpriseDAC();
+            return dac.GetAllEnterprise();
+        }
     }
 }

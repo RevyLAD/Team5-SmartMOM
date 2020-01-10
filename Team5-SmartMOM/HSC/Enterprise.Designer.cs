@@ -47,10 +47,10 @@
             this.splitContainer1.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panelMid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.panelMid.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -75,14 +75,11 @@
             // 
             this.panel2.Size = new System.Drawing.Size(1202, 497);
             // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Size = new System.Drawing.Size(1202, 497);
-            // 
             // panelMid
             // 
             this.panelMid.Controls.Add(this.metroButton2);
             this.panelMid.Controls.Add(this.metroButton1);
+            this.panelMid.Size = new System.Drawing.Size(1202, 40);
             this.panelMid.Controls.SetChildIndex(this.label1, 0);
             this.panelMid.Controls.SetChildIndex(this.button1, 0);
             this.panelMid.Controls.SetChildIndex(this.button2, 0);
@@ -113,6 +110,11 @@
             // 
             this.label1.Size = new System.Drawing.Size(100, 22);
             this.label1.Text = "업체코드정의";
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Size = new System.Drawing.Size(1202, 497);
+            this.splitContainer2.SplitterDistance = 40;
             // 
             // btnInquiry
             // 
@@ -223,6 +225,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1222, 609);
             this.Name = "Enterprise";
+            this.Load += new System.EventHandler(this.Enterprise_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -232,11 +235,11 @@
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panelMid.ResumeLayout(false);
+            this.panelMid.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.panelMid.ResumeLayout(false);
-            this.panelMid.PerformLayout();
             this.ResumeLayout(false);
 
         }
