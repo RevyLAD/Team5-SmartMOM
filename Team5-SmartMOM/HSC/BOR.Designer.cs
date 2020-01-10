@@ -43,28 +43,17 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.panelTop.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelMid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            this.panelTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
             // 
             this.splitContainer1.SplitterDistance = 60;
-            // 
-            // panelTop
-            // 
-            this.panelTop.Controls.Add(this.textBox2);
-            this.panelTop.Controls.Add(this.label4);
-            this.panelTop.Controls.Add(this.btnInquiry);
-            this.panelTop.Controls.Add(this.textBox1);
-            this.panelTop.Controls.Add(this.cboFacCrow);
-            this.panelTop.Controls.Add(this.label3);
-            this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Size = new System.Drawing.Size(1202, 60);
             // 
             // panel2
             // 
@@ -105,13 +94,24 @@
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(3, 19);
-            this.label1.Size = new System.Drawing.Size(170, 22);
+            this.label1.Size = new System.Drawing.Size(255, 32);
             this.label1.Text = "Bill Of Resource";
             // 
             // splitContainer2
             // 
             this.splitContainer2.Size = new System.Drawing.Size(1202, 525);
             this.splitContainer2.SplitterDistance = 40;
+            // 
+            // panelTop
+            // 
+            this.panelTop.Controls.Add(this.textBox2);
+            this.panelTop.Controls.Add(this.label4);
+            this.panelTop.Controls.Add(this.btnInquiry);
+            this.panelTop.Controls.Add(this.textBox1);
+            this.panelTop.Controls.Add(this.cboFacCrow);
+            this.panelTop.Controls.Add(this.label3);
+            this.panelTop.Controls.Add(this.label2);
+            this.panelTop.Size = new System.Drawing.Size(1202, 60);
             // 
             // textBox2
             // 
@@ -143,6 +143,7 @@
             this.btnInquiry.TabIndex = 15;
             this.btnInquiry.Text = "조회";
             this.btnInquiry.UseVisualStyleBackColor = false;
+            this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // textBox1
             // 
@@ -184,7 +185,7 @@
             // metroButton2
             // 
             this.metroButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton2.Location = new System.Drawing.Point(1131, 11);
+            this.metroButton2.Location = new System.Drawing.Point(1131, 8);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(62, 23);
             this.metroButton2.TabIndex = 5;
@@ -193,7 +194,7 @@
             // metroButton1
             // 
             this.metroButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton1.Location = new System.Drawing.Point(1051, 11);
+            this.metroButton1.Location = new System.Drawing.Point(1051, 8);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(74, 23);
             this.metroButton1.TabIndex = 4;
@@ -212,14 +213,14 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.panelTop.ResumeLayout(false);
-            this.panelTop.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panelMid.ResumeLayout(false);
             this.panelMid.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            this.panelTop.ResumeLayout(false);
+            this.panelTop.PerformLayout();
             this.ResumeLayout(false);
 
         }

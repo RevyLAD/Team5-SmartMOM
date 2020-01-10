@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnInsert = new FButton.FsButton();
+            this.btnDel = new FButton.FsButton();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -39,6 +41,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            this.panelTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelFull
@@ -67,20 +70,20 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Location = new System.Drawing.Point(-3292, 9);
+            this.button3.Location = new System.Drawing.Point(-4215, 9);
             this.button3.Text = "등록";
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Location = new System.Drawing.Point(-3244, 9);
+            this.button2.Location = new System.Drawing.Point(-4167, 9);
             this.button2.Text = "복사";
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(-3197, 9);
+            this.button1.Location = new System.Drawing.Point(-4120, 9);
             this.button1.Text = "삭제";
             // 
             // label1
@@ -96,7 +99,37 @@
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.btnDel);
+            this.panelTop.Controls.Add(this.btnInsert);
             this.panelTop.Size = new System.Drawing.Size(279, 116);
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnInsert.FlasherButtonColorOff = System.Drawing.SystemColors.Control;
+            this.btnInsert.FlasherButtonColorOn = System.Drawing.Color.LightGreen;
+            this.btnInsert.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnInsert.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnInsert.Location = new System.Drawing.Point(186, 90);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(42, 23);
+            this.btnInsert.TabIndex = 0;
+            this.btnInsert.Text = "등록";
+            this.btnInsert.UseVisualStyleBackColor = false;
+            // 
+            // btnDel
+            // 
+            this.btnDel.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnDel.FlasherButtonColorOff = System.Drawing.SystemColors.Control;
+            this.btnDel.FlasherButtonColorOn = System.Drawing.Color.LightGreen;
+            this.btnDel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDel.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnDel.Location = new System.Drawing.Point(234, 90);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(42, 23);
+            this.btnDel.TabIndex = 2;
+            this.btnDel.Text = "삭제";
+            this.btnDel.UseVisualStyleBackColor = false;
             // 
             // Facilities
             // 
@@ -117,10 +150,14 @@
             this.splitContainer2.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            this.panelTop.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private FButton.FsButton btnDel;
+        private FButton.FsButton btnInsert;
     }
 }

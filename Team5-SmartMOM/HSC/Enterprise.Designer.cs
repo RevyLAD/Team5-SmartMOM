@@ -45,31 +45,17 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.panelTop.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelMid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            this.panelTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
             // 
             this.splitContainer1.SplitterDistance = 88;
-            // 
-            // panelTop
-            // 
-            this.panelTop.Controls.Add(this.textBox3);
-            this.panelTop.Controls.Add(this.label5);
-            this.panelTop.Controls.Add(this.textBox2);
-            this.panelTop.Controls.Add(this.label4);
-            this.panelTop.Controls.Add(this.btnInquiry);
-            this.panelTop.Controls.Add(this.textBox1);
-            this.panelTop.Controls.Add(this.cboFacCrow);
-            this.panelTop.Controls.Add(this.label3);
-            this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Size = new System.Drawing.Size(1202, 88);
-            this.panelTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTop_Paint);
             // 
             // panel2
             // 
@@ -108,13 +94,27 @@
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(100, 22);
+            this.label1.Size = new System.Drawing.Size(147, 32);
             this.label1.Text = "업체코드정의";
             // 
             // splitContainer2
             // 
             this.splitContainer2.Size = new System.Drawing.Size(1202, 497);
             this.splitContainer2.SplitterDistance = 40;
+            // 
+            // panelTop
+            // 
+            this.panelTop.Controls.Add(this.textBox3);
+            this.panelTop.Controls.Add(this.label5);
+            this.panelTop.Controls.Add(this.textBox2);
+            this.panelTop.Controls.Add(this.label4);
+            this.panelTop.Controls.Add(this.btnInquiry);
+            this.panelTop.Controls.Add(this.textBox1);
+            this.panelTop.Controls.Add(this.cboFacCrow);
+            this.panelTop.Controls.Add(this.label3);
+            this.panelTop.Controls.Add(this.label2);
+            this.panelTop.Size = new System.Drawing.Size(1202, 88);
+            this.panelTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTop_Paint);
             // 
             // btnInquiry
             // 
@@ -128,6 +128,7 @@
             this.btnInquiry.TabIndex = 6;
             this.btnInquiry.Text = "조회";
             this.btnInquiry.UseVisualStyleBackColor = false;
+            this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // textBox1
             // 
@@ -232,14 +233,14 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.panelTop.ResumeLayout(false);
-            this.panelTop.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panelMid.ResumeLayout(false);
             this.panelMid.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            this.panelTop.ResumeLayout(false);
+            this.panelTop.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -70,10 +70,10 @@
             this.label21 = new System.Windows.Forms.Label();
             this.panelFull.SuspendLayout();
             this.panelMain.SuspendLayout();
+            this.panelBottom.SuspendLayout();
             this.panelDock.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panelBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelFull
@@ -83,6 +83,10 @@
             // panelMain
             // 
             this.panelMain.Size = new System.Drawing.Size(747, 425);
+            // 
+            // panelBottom
+            // 
+            this.panelBottom.Size = new System.Drawing.Size(747, 48);
             // 
             // panelDock
             // 
@@ -142,14 +146,6 @@
             this.label1.Size = new System.Drawing.Size(70, 22);
             this.label1.Text = "업체정보";
             // 
-            // tileSave
-            // 
-            this.tileSave.Location = new System.Drawing.Point(1375, 10);
-            // 
-            // panelBottom
-            // 
-            this.panelBottom.Size = new System.Drawing.Size(747, 48);
-            // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
@@ -162,6 +158,11 @@
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Location = new System.Drawing.Point(276, 10);
             this.button1.Size = new System.Drawing.Size(86, 30);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tileSave
+            // 
+            this.tileSave.Location = new System.Drawing.Point(1509, 10);
             // 
             // textBox3
             // 
@@ -544,12 +545,12 @@
             this.Name = "EnterpriseRegister";
             this.panelFull.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
+            this.panelBottom.ResumeLayout(false);
             this.panelDock.ResumeLayout(false);
             this.panelDock.PerformLayout();
             this.panelTop.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panelBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_VO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,6 +34,7 @@ namespace Team5_SmartMOM
             DataLoad();
         }
 
+
         private void DataLoad()
         {
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "번호", "COM_No", true, 80);
@@ -51,6 +53,26 @@ namespace Team5_SmartMOM
 
             HSC_Service service = new HSC_Service();
             dataGridView1.DataSource = service.GetAllEnterprise();
+        }
+
+        private void btnInquiry_Click(object sender, EventArgs e)
+        {
+            BORSearch(textBox1.Text.Trim(), textBox2.Text.Trim(), textBox3.Text.Trim(), cboFacCrow.Text.Trim());
+        }
+
+        private void BORSearch(string code, string name, string no, string type)
+        {
+            DataGridView dgv = new DataGridView();
+
+            foreach(DataGridViewRow item in dataGridView1.Rows)
+            {
+                if(item.Cells[0].Value.ToString() == no &&
+                    item.Cells[1].Value.ToString() == code &&
+                    item.Cells[2].Value.ToString() == name&&
+                    item.Cells[3].Value.ToString() == code)
+                    dgv.Rows.Add(item);
+            }
+            dataGridView1.DataSource = dgv;
         }
     }
 }
