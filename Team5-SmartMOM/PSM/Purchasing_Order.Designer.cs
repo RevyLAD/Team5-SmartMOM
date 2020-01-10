@@ -336,7 +336,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel Mainpanel;
         private System.Windows.Forms.Panel panel1;
         private MetroFramework.Controls.MetroTile tileUpdate;

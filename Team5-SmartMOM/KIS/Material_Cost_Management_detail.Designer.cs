@@ -1,4 +1,4 @@
-﻿namespace Team5_SmartMOM.KIS
+﻿namespace Team5_SmartMOM
 {
     partial class Material_Cost_Management_detail
     {

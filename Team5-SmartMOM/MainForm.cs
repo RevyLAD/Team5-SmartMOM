@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Team5_SmartMOM.PSM;
+using System.Drawing.Drawing2D;
+using Team5_SmartMOM.LBJ;
+using Team5_SmartMOM.HSC;
 
 namespace Team5_SmartMOM
 {
     public partial class MainForm : Form
     {
-        private readonly DrawItemEventHandler tabControl1_DrawItem;
         private Point _imageLocation = new Point(13, 5);
         private Point _imgHitArea = new Point(13, 2);
 
@@ -26,15 +27,44 @@ namespace Team5_SmartMOM
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.menuStrip1.BackColor = Color.FromArgb(255, 255, 230);
-
-            tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
-            tabControl1.DrawItem += tabControl1_DrawItem;
-            CloseImage = Properties.Resources.delete;
-            tabControl1.Padding = new Point(10, 3);
-
 
         }
+        private void Form_Gradient(object sender, PaintEventArgs e)
+        {
+            LinearGradientBrush br = new LinearGradientBrush(this.panelSideMenu.ClientRectangle,
+                                                                Color.FromArgb(155, 155, 155),
+                                                                Color.FromArgb(200, 200, 200),
+                                                                0,
+                                                                false);
+            e.Graphics.FillRectangle(br, this.ClientRectangle);
+        }
+        private void SidePanel_Gradient(object sender, PaintEventArgs e)
+        {
+            Color startColor = Color.FromArgb(250,250,250);
+            Color middleColor = Color.FromArgb(121, 159, 229);
+            Color endColor = Color.FromArgb(250, 250, 250);
+
+            LinearGradientBrush br = new LinearGradientBrush(this.panelSideMenu.ClientRectangle,
+                                                                Color.Black,
+                                                                Color.Black,
+                                                                0,
+                                                                false);
+
+            ColorBlend cb = new ColorBlend();
+            cb.Positions = new[] { 0, 1 / 2f, 1 };
+            cb.Colors = new[] { startColor, middleColor, endColor };
+
+            br.InterpolationColors = cb;
+            br.RotateTransform(45);
+            e.Graphics.FillRectangle(br, this.ClientRectangle);
+        }
+
+        private void SubPanel_Gradient(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
         #region Slide Menu Design
 
         //private void hideSubMenu()
@@ -128,52 +158,7 @@ namespace Team5_SmartMOM
 
         #endregion
 
-        #region 탭페이지 이미지, x버튼
-        private void metroTabControl1_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            try
-            {
-                Image img = new Bitmap(CloseImage);
-                Rectangle r = e.Bounds;
-                r = this.tabControl1.GetTabRect(e.Index);
-                r.Offset(2, 2);
-                Brush TitleBrush = new SolidBrush(Color.Black);
-                Font f = this.Font;
-                string title = this.tabControl1.TabPages[e.Index].Text;
-
-                e.Graphics.DrawString(title, f, TitleBrush, new PointF(r.X, r.Y));
-
-                if (tabControl1.SelectedIndex >= 0)
-                {
-                    e.Graphics.DrawImage(img, new Point(r.X + (this.tabControl1.GetTabRect(e.Index).Width - _imageLocation.X)-7, _imageLocation.Y));
-                }
-            }
-            catch (Exception) { }
-        }
-
-        private void metroTabControl1_MouseClick(object sender, MouseEventArgs e)
-        {
-            TabControl tc = (TabControl)sender;
-            Point p = e.Location;
-            int _tabWidth = 0;
-            _tabWidth = this.tabControl1.GetTabRect(tc.SelectedIndex).Width - (_imgHitArea.X);
-            Rectangle r = this.tabControl1.GetTabRect(tc.SelectedIndex);
-            r.Offset(_tabWidth, _imgHitArea.Y);
-            r.Width = 16;
-            r.Height = 16;
-            if (tabControl1.SelectedIndex >= 0)
-            {
-                if (r.Contains(p))
-                {
-                    TabPage TabP = (TabPage)tc.TabPages[tc.SelectedIndex];
-                    tc.TabPages.Remove(TabP);
-                }
-
-            }
-        }
-
-        #endregion
-
+        
         private void CreateTabPages(string text, Form OpenForm)
         {
             foreach (TabPage childForm in this.tabControl1.TabPages)
@@ -187,6 +172,7 @@ namespace Team5_SmartMOM
 
             TabPage myTabPage = new TabPage();
             myTabPage.Text = text;
+            myTabPage.ImageIndex = 1;
             tabControl1.Controls.Add(myTabPage);
 
 
@@ -225,7 +211,7 @@ namespace Team5_SmartMOM
 
         private void 업체관리ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateTabPages("업체관리", new Enterprise());
+            CreateTabPages("업체관리", new EnterPriseMain());
         }
 
         private void bORToolStripMenuItem_Click(object sender, EventArgs e)
@@ -233,51 +219,74 @@ namespace Team5_SmartMOM
             CreateTabPages("BOR", new BOR());
         }
 
-        private void 정규발주ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void shift기준정보ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateTabPages("정규발주", new Purchasing());
+            CreateTabPages("Shift 기준 정보", new office_hours());
         }
 
-        private void 발주현황ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void shift스케줄관리ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateTabPages("발주현황", new Purchasing_State());
+            CreateTabPages("Shift 스케줄 관리", new office_hours_management());
         }
 
-        private void 입고대기ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 수입검사ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateTabPages("입고대기", new Supplier());
+            CreateTabPages("수입 검사 현황", new Import_check());
         }
 
-        private void 자재입고ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-            CreateTabPages("자재입고", new Material_Ledger());
+
         }
 
-        private void 자재입고현황ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button23_Click(object sender, EventArgs e)
         {
-            CreateTabPages("자재입고현황", new Material_Ledger_State());
+
         }
 
-        private void 자재재고현황ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnOrderManagement_Click(object sender, EventArgs e)
         {
-            CreateTabPages("자재재고현황", new Stock_State());
+
         }
 
-        private void 자재불출요청ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnAS_Click(object sender, EventArgs e)
         {
-            CreateTabPages("자재불출요청", new Materia_Request());
+
         }
 
-        private void 원자재불출ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            CreateTabPages("원자재불출", new Material_Ledger_Export());
+
         }
 
-        private void 입출고현황ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
-            CreateTabPages("입출고현황", new Stock_RF_State());
+
         }
 
-        
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button235_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

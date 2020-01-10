@@ -79,6 +79,12 @@
     <Compile Include="BasePopUpDialog.Designer.cs">
       <DependentUpon>BasePopUpDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="HSC\EnterPriseMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\EnterPriseMain.Designer.cs">
+      <DependentUpon>EnterPriseMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="HSC\BOR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,12 +102,6 @@
     </Compile>
     <Compile Include="HSC\CustomerOrderStatus.Designer.cs">
       <DependentUpon>CustomerOrderStatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HSC\Enterprise.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HSC\Enterprise.Designer.cs">
-      <DependentUpon>Enterprise.cs</DependentUpon>
     </Compile>
     <Compile Include="HSC\EnterpriseRegister.cs">
       <SubType>Form</SubType>
@@ -367,11 +367,68 @@
       <DependentUpon>Supplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Service\HSC_Service.cs" />
-    <Compile Include="Service\PSM_Service.cs" />
+    <Compile Include="Service\LBJ_Service.cs" />
+    <Compile Include="TabControl\CustomTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\NativeMethods.cs" />
+    <Compile Include="TabControl\TabStyle.cs" />
+    <Compile Include="TabControl\TabStyleProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\TabStyleProviders\TabStyleAngledProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\TabStyleProviders\TabStyleChromeProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\TabStyleProviders\TabStyleDefaultProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\TabStyleProviders\TabStyleIE8Provider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\TabStyleProviders\TabStyleNoneProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\TabStyleProviders\TabStyleRoundedProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\TabStyleProviders\TabStyleVisualStudioProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\TabStyleProviders\TabStyleVS2010Provider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\ThemedColors.cs" />
+    <Compile Include="Utility\ButtonZ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\CheckBoxZ.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utility\CommonUtil.cs" />
     <Compile Include="Utility\ExcelExportImport.cs" />
+    <Compile Include="Utility\FsButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\FsButton.designer.cs">
+      <DependentUpon>FsButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility\GlobalClass.cs" />
     <Compile Include="Utility\ImageConverterHelper.cs" />
+    <Compile Include="Utility\LabelZ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\PanelZ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\RadioButtonZ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\TabControlZ.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utility\UtilityClass.cs" />
     <EmbeddedResource Include="BaseGridForm.resx">
       <DependentUpon>BaseGridForm.cs</DependentUpon>
@@ -382,6 +439,9 @@
     <EmbeddedResource Include="BasePopUpDialog.resx">
       <DependentUpon>BasePopUpDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HSC\EnterPriseMain.resx">
+      <DependentUpon>EnterPriseMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HSC\BOR.resx">
       <DependentUpon>BOR.cs</DependentUpon>
     </EmbeddedResource>
@@ -390,9 +450,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HSC\CustomerOrderStatus.resx">
       <DependentUpon>CustomerOrderStatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HSC\Enterprise.resx">
-      <DependentUpon>Enterprise.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HSC\EnterpriseRegister.resx">
       <DependentUpon>EnterpriseRegister.cs</DependentUpon>
@@ -492,6 +549,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -559,6 +617,10 @@
     <Content Include="bin\Debug\Team5-SmartMOM.pdb" />
     <Content Include="bin\Debug\Team5_DEV.xml" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\microsoft-excel.png" />
+    <None Include="Resources\pencil.png" />
+    <None Include="Resources\note.png" />
+    <None Include="Resources\arrow.png" />
     <None Include="Resources\star.png" />
     <None Include="Resources\plus-sign %281%29.png" />
     <None Include="Resources\file1.png" />

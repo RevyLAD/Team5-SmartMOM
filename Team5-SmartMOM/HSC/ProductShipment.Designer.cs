@@ -61,17 +61,53 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.panelTop.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panelMid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.panelMid.SuspendLayout();
+            this.panelTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
             // 
             this.splitContainer1.SplitterDistance = 165;
+            // 
+            // panel2
+            // 
+            this.panel2.Size = new System.Drawing.Size(1202, 420);
+            // 
+            // panelMid
+            // 
+            this.panelMid.Size = new System.Drawing.Size(1202, 34);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(994, 6);
+            this.button3.Size = new System.Drawing.Size(67, 24);
+            this.button3.Text = "B2BI I/F ";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1065, 6);
+            this.button2.Size = new System.Drawing.Size(61, 24);
+            this.button2.Text = "출하처리";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1130, 6);
+            this.button1.Size = new System.Drawing.Size(69, 24);
+            this.button1.Text = "엑셀";
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(3, 8);
+            this.label1.Text = "고객주문";
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Size = new System.Drawing.Size(1202, 420);
+            this.splitContainer2.SplitterDistance = 34;
             // 
             // panelTop
             // 
@@ -103,42 +139,6 @@
             this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.label2);
             this.panelTop.Size = new System.Drawing.Size(1202, 165);
-            // 
-            // panel2
-            // 
-            this.panel2.Size = new System.Drawing.Size(1202, 420);
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Size = new System.Drawing.Size(1202, 420);
-            this.splitContainer2.SplitterDistance = 34;
-            // 
-            // panelMid
-            // 
-            this.panelMid.Size = new System.Drawing.Size(1202, 34);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(994, 6);
-            this.button3.Size = new System.Drawing.Size(67, 24);
-            this.button3.Text = "B2BI I/F ";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1065, 6);
-            this.button2.Size = new System.Drawing.Size(61, 24);
-            this.button2.Text = "출하처리";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1130, 6);
-            this.button1.Size = new System.Drawing.Size(69, 24);
-            this.button1.Text = "엑셀";
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(3, 8);
-            this.label1.Text = "고객주문";
             // 
             // btnSearch
             // 
@@ -386,20 +386,21 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1222, 609);
             this.Name = "ProductShipment";
+            this.Load += new System.EventHandler(this.ProductShipment_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.panelTop.ResumeLayout(false);
-            this.panelTop.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panelMid.ResumeLayout(false);
+            this.panelMid.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.panelMid.ResumeLayout(false);
-            this.panelMid.PerformLayout();
+            this.panelTop.ResumeLayout(false);
+            this.panelTop.PerformLayout();
             this.ResumeLayout(false);
 
         }

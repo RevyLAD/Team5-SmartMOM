@@ -42,7 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComboItemVO.cs" />
-    <Compile Include="FactoryVO.cs" />
+    <Compile Include="HSC\BORVO.cs" />
+    <Compile Include="HSC\EnterpriseVO.cs" />
+    <Compile Include="HSC\FacilitieVO.cs" />
+    <Compile Include="HSC\FactoryVO.cs" />
+    <Compile Include="LBJ\ImportVO.cs" />
+    <Compile Include="LBJ\ShiftVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PurchasingVO.cs" />
   </ItemGroup>
