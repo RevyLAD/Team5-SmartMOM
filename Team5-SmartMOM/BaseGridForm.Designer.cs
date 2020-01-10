@@ -31,15 +31,27 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelFull = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.panelTop = new PanelZ.PanelZ();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.panelMid = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panelTop = new PanelZ.PanelZ();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.panelMid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -57,14 +69,70 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panelTop);
-            this.panel1.Controls.Add(this.panelMid);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.splitContainer1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1202, 589);
             this.panel1.TabIndex = 0;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.panelTop);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.panel2);
+            this.splitContainer1.Size = new System.Drawing.Size(1202, 589);
+            this.splitContainer1.SplitterDistance = 110;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // panelTop
+            // 
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTop.EndColor = System.Drawing.Color.AliceBlue;
+            this.panelTop.GradientAngle = 90;
+            this.panelTop.Location = new System.Drawing.Point(0, 0);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Size = new System.Drawing.Size(1202, 110);
+            this.panelTop.StartColor = System.Drawing.Color.SteelBlue;
+            this.panelTop.TabIndex = 19;
+            this.panelTop.Transparent1 = 150;
+            this.panelTop.Transparent2 = 150;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.splitContainer2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1202, 475);
+            this.panel2.TabIndex = 16;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.panelMid);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer2.Size = new System.Drawing.Size(1202, 475);
+            this.splitContainer2.SplitterDistance = 39;
+            this.splitContainer2.TabIndex = 2;
             // 
             // panelMid
             // 
@@ -72,11 +140,11 @@
             this.panelMid.Controls.Add(this.button2);
             this.panelMid.Controls.Add(this.button1);
             this.panelMid.Controls.Add(this.label1);
-            this.panelMid.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMid.Location = new System.Drawing.Point(0, 0);
             this.panelMid.Name = "panelMid";
-            this.panelMid.Size = new System.Drawing.Size(1202, 48);
-            this.panelMid.TabIndex = 23;
+            this.panelMid.Size = new System.Drawing.Size(1202, 39);
+            this.panelMid.TabIndex = 17;
             // 
             // button3
             // 
@@ -111,10 +179,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 16);
+            this.label1.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(2, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 24);
+            this.label1.Size = new System.Drawing.Size(103, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "항목이름";
             // 
@@ -134,21 +202,8 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1202, 589);
-            this.dataGridView1.TabIndex = 22;
-            // 
-            // panelTop
-            // 
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.EndColor = System.Drawing.Color.PowderBlue;
-            this.panelTop.GradientAngle = 90;
-            this.panelTop.Location = new System.Drawing.Point(0, 48);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1202, 137);
-            this.panelTop.StartColor = System.Drawing.Color.SteelBlue;
-            this.panelTop.TabIndex = 25;
-            this.panelTop.Transparent1 = 150;
-            this.panelTop.Transparent2 = 150;
+            this.dataGridView1.Size = new System.Drawing.Size(1202, 432);
+            this.dataGridView1.TabIndex = 18;
             // 
             // BaseGridForm
             // 
@@ -162,6 +217,15 @@
             this.Load += new System.EventHandler(this.BaseGridForm_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.panelMid.ResumeLayout(false);
             this.panelMid.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -173,12 +237,15 @@
 
         protected System.Windows.Forms.Panel panelFull;
         protected System.Windows.Forms.Panel panel1;
-        protected PanelZ.PanelZ panelTop;
+        protected System.Windows.Forms.SplitContainer splitContainer1;
+        protected System.Windows.Forms.Panel panel2;
         protected System.Windows.Forms.Panel panelMid;
         protected System.Windows.Forms.Button button3;
         protected System.Windows.Forms.Button button2;
         protected System.Windows.Forms.Button button1;
         protected System.Windows.Forms.Label label1;
+        protected System.Windows.Forms.SplitContainer splitContainer2;
         protected System.Windows.Forms.DataGridView dataGridView1;
+        protected PanelZ.PanelZ panelTop;
     }
 }
