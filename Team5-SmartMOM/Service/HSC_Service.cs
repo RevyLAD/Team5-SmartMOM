@@ -38,5 +38,11 @@ namespace Team5_SmartMOM.Service
             FacilitieDAC dac = new FacilitieDAC();
             return dac.GetAllFacilities();
         }
+
+        public List<OrderVO> GetAllOrder()
+        {
+            OrderDAC dac = new OrderDAC();
+            return dac.GetAllOrder();
+        }
     }
 }

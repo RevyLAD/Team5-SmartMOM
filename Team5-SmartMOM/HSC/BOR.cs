@@ -42,5 +42,10 @@ namespace Team5_SmartMOM
         {
             DataLoad();
         }
+
+        private void btnInquiry_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

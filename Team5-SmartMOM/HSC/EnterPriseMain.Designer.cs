@@ -1,6 +1,6 @@
 ﻿namespace Team5_SmartMOM
 {
-    partial class BOR
+    partial class EnterPriseMain
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnInquiry = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.cboFacCrow = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -48,97 +49,82 @@
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelMid
-            // 
-            this.panelMid.Controls.Add(this.metroButton2);
-            this.panelMid.Controls.Add(this.metroButton1);
-            this.panelMid.Size = new System.Drawing.Size(1202, 40);
-            this.panelMid.Controls.SetChildIndex(this.label1, 0);
-            this.panelMid.Controls.SetChildIndex(this.button1, 0);
-            this.panelMid.Controls.SetChildIndex(this.button2, 0);
-            this.panelMid.Controls.SetChildIndex(this.button3, 0);
-            this.panelMid.Controls.SetChildIndex(this.metroButton1, 0);
-            this.panelMid.Controls.SetChildIndex(this.metroButton2, 0);
-            // 
             // button3
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Dock = System.Windows.Forms.DockStyle.None;
-            this.button3.Location = new System.Drawing.Point(881, 11);
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Dock = System.Windows.Forms.DockStyle.None;
-            this.button2.Location = new System.Drawing.Point(929, 11);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Dock = System.Windows.Forms.DockStyle.None;
-            this.button1.Location = new System.Drawing.Point(980, 11);
-            this.button1.Size = new System.Drawing.Size(65, 24);
-            this.button1.Text = "이력조회";
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(0, 40);
-            this.panel2.Size = new System.Drawing.Size(1202, 78);
+            this.panel2.Size = new System.Drawing.Size(1202, 101);
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.textBox3);
+            this.panelTop.Controls.Add(this.label5);
             this.panelTop.Controls.Add(this.textBox2);
+            this.panelTop.Controls.Add(this.label6);
             this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.btnInquiry);
             this.panelTop.Controls.Add(this.textBox1);
             this.panelTop.Controls.Add(this.cboFacCrow);
             this.panelTop.Controls.Add(this.label3);
-            this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Size = new System.Drawing.Size(1202, 60);
-            this.panelTop.Controls.SetChildIndex(this.label3, 0);
-            this.panelTop.Controls.SetChildIndex(this.cboFacCrow, 0);
-            this.panelTop.Controls.SetChildIndex(this.textBox1, 0);
-            this.panelTop.Controls.SetChildIndex(this.btnInquiry, 0);
-            this.panelTop.Controls.SetChildIndex(this.label4, 0);
-            this.panelTop.Controls.SetChildIndex(this.textBox2, 0);
+            this.panelTop.Size = new System.Drawing.Size(1202, 81);
             // 
             // splitContainer2
             // 
-            this.splitContainer2.Size = new System.Drawing.Size(1202, 525);
-            this.splitContainer2.SplitterDistance = 40;
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Size = new System.Drawing.Size(1158, 525);
-            this.splitContainer1.SplitterDistance = 60;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Size = new System.Drawing.Size(255, 36);
-            this.label1.Text = "Bill Of Resource";
+            this.label1.Text = "업체코드";
             // 
-            // label2
+            // textBox3
             // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox3.Location = new System.Drawing.Point(151, 47);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(187, 22);
+            this.textBox3.TabIndex = 21;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Location = new System.Drawing.Point(15, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(117, 18);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "ㆍ 사업자등록번호";
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.Location = new System.Drawing.Point(785, 20);
+            this.textBox2.Location = new System.Drawing.Point(465, 11);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(187, 22);
             this.textBox2.TabIndex = 19;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Location = new System.Drawing.Point(67, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 18);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "ㆍ 업체명";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(704, 22);
+            this.label4.Location = new System.Drawing.Point(384, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 18);
+            this.label4.Size = new System.Drawing.Size(65, 18);
             this.label4.TabIndex = 18;
-            this.label4.Text = "ㆍ 설비";
+            this.label4.Text = "ㆍ 업체명";
             // 
             // btnInquiry
             // 
@@ -146,65 +132,48 @@
             this.btnInquiry.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnInquiry.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInquiry.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInquiry.Location = new System.Drawing.Point(1107, 14);
+            this.btnInquiry.Location = new System.Drawing.Point(1077, 28);
             this.btnInquiry.Name = "btnInquiry";
             this.btnInquiry.Size = new System.Drawing.Size(92, 32);
-            this.btnInquiry.TabIndex = 15;
+            this.btnInquiry.TabIndex = 14;
             this.btnInquiry.Text = "조회";
             this.btnInquiry.UseVisualStyleBackColor = false;
+            this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(152, 18);
+            this.textBox1.Location = new System.Drawing.Point(151, 10);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(187, 22);
-            this.textBox1.TabIndex = 17;
+            this.textBox1.TabIndex = 16;
             // 
             // cboFacCrow
             // 
             this.cboFacCrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboFacCrow.FormattingEnabled = true;
-            this.cboFacCrow.Location = new System.Drawing.Point(478, 18);
+            this.cboFacCrow.Location = new System.Drawing.Point(799, 12);
             this.cboFacCrow.Name = "cboFacCrow";
             this.cboFacCrow.Size = new System.Drawing.Size(168, 24);
-            this.cboFacCrow.TabIndex = 16;
+            this.cboFacCrow.TabIndex = 15;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(383, 20);
+            this.label3.Location = new System.Drawing.Point(704, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 18);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "ㆍ 공정";
+            this.label3.Size = new System.Drawing.Size(78, 18);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "ㆍ 업체타입";
             // 
-            // metroButton2
-            // 
-            this.metroButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton2.Location = new System.Drawing.Point(1131, 11);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(62, 23);
-            this.metroButton2.TabIndex = 5;
-            this.metroButton2.Text = "Excel 등록";
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton1.Location = new System.Drawing.Point(1051, 11);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(74, 23);
-            this.metroButton1.TabIndex = 4;
-            this.metroButton1.Text = "양식다운로드";
-            // 
-            // BOR
+            // EnterPriseMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1222, 609);
-            this.Name = "BOR";
-            this.Text = "Bill Of Resource";
-            this.Load += new System.EventHandler(this.BOR_Load);
+            this.Name = "EnterPriseMain";
+            this.Load += new System.EventHandler(this.Enterprise_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelMid.ResumeLayout(false);
@@ -221,14 +190,15 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnInquiry;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox cboFacCrow;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private MetroFramework.Controls.MetroButton metroButton2;
-        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

@@ -79,6 +79,12 @@
     <Compile Include="BasePopUpDialog.Designer.cs">
       <DependentUpon>BasePopUpDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="HSC\EnterPriseMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\EnterPriseMain.Designer.cs">
+      <DependentUpon>EnterPriseMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="HSC\BOR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,12 +102,6 @@
     </Compile>
     <Compile Include="HSC\CustomerOrderStatus.Designer.cs">
       <DependentUpon>CustomerOrderStatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HSC\Enterprise.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HSC\Enterprise.Designer.cs">
-      <DependentUpon>Enterprise.cs</DependentUpon>
     </Compile>
     <Compile Include="HSC\EnterpriseRegister.cs">
       <SubType>Form</SubType>
@@ -439,6 +439,9 @@
     <EmbeddedResource Include="BasePopUpDialog.resx">
       <DependentUpon>BasePopUpDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HSC\EnterPriseMain.resx">
+      <DependentUpon>EnterPriseMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HSC\BOR.resx">
       <DependentUpon>BOR.cs</DependentUpon>
     </EmbeddedResource>
@@ -447,9 +450,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HSC\CustomerOrderStatus.resx">
       <DependentUpon>CustomerOrderStatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HSC\Enterprise.resx">
-      <DependentUpon>Enterprise.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HSC\EnterpriseRegister.resx">
       <DependentUpon>EnterpriseRegister.cs</DependentUpon>
@@ -617,6 +617,10 @@
     <Content Include="bin\Debug\Team5-SmartMOM.pdb" />
     <Content Include="bin\Debug\Team5_DEV.xml" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\microsoft-excel.png" />
+    <None Include="Resources\pencil.png" />
+    <None Include="Resources\note.png" />
+    <None Include="Resources\arrow.png" />
     <None Include="Resources\star.png" />
     <None Include="Resources\plus-sign %281%29.png" />
     <None Include="Resources\file1.png" />

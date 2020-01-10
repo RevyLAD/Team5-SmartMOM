@@ -1,5 +1,4 @@
-﻿using Project_DAC;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,27 +7,13 @@ using System.Text;
 using System.Windows.Forms;
 using Team5_SmartMOM.Service;
 
-namespace Team5_SmartMOM
+namespace Team5_SmartMOM.HSC
 {
-    //폼이름
     public partial class FactoryManager : Team5_SmartMOM.BaseGridForm
     {
         public FactoryManager()
         {
-
             InitializeComponent();
-        }
-
-        private void panelMid_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            FactoryRegister frm = new FactoryRegister();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.ShowDialog();
         }
 
         private void FactoryManager_Load(object sender, EventArgs e)
@@ -45,14 +30,24 @@ namespace Team5_SmartMOM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "모디", "FACT_Modifier", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "모디일", "FACT_ModifyDate", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "설명", "FACT_Information", true, 258);
-          
+
             Factory_DataLoad();
         }
+
 
         private void Factory_DataLoad()
         {
             HSC_Service service = new HSC_Service();
             dataGridView1.DataSource = service.GetAllFactory();
+        }
+
+
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FactoryRegister frm = new FactoryRegister();
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
         }
     }
 }

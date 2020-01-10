@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using Team5_SmartMOM.LBJ;
+using Team5_SmartMOM.HSC;
 
 namespace Team5_SmartMOM
 {
@@ -39,9 +40,9 @@ namespace Team5_SmartMOM
         }
         private void SidePanel_Gradient(object sender, PaintEventArgs e)
         {
-            Color startColor = Color.FromArgb(0, 0, 0);
+            Color startColor = Color.FromArgb(250,250,250);
             Color middleColor = Color.FromArgb(121, 159, 229);
-            Color endColor = Color.FromArgb(0, 0, 0);
+            Color endColor = Color.FromArgb(250, 250, 250);
 
             LinearGradientBrush br = new LinearGradientBrush(this.panelSideMenu.ClientRectangle,
                                                                 Color.Black,
@@ -210,7 +211,7 @@ namespace Team5_SmartMOM
 
         private void 업체관리ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateTabPages("업체관리", new Enterprise());
+            CreateTabPages("업체관리", new EnterPriseMain());
         }
 
         private void bORToolStripMenuItem_Click(object sender, EventArgs e)
@@ -231,6 +232,61 @@ namespace Team5_SmartMOM
         private void 수입검사ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateTabPages("수입 검사 현황", new Import_check());
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOrderManagement_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAS_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button235_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
