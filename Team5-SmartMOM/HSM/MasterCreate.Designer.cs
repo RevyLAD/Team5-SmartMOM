@@ -84,18 +84,18 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(221, 7);
+            this.button2.Location = new System.Drawing.Point(78, 6);
             this.button2.Size = new System.Drawing.Size(70, 34);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(21, 7);
+            this.button1.Location = new System.Drawing.Point(154, 6);
             this.button1.Size = new System.Drawing.Size(151, 35);
             this.button1.Text = "영업마스터 Upload";
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(-396, 10);
+            this.tileSave.Location = new System.Drawing.Point(-664, 10);
             // 
             // label2
             // 

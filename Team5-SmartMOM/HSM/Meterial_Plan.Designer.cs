@@ -33,7 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.cboPlanID = new System.Windows.Forms.ComboBox();
             this.cboCompany = new System.Windows.Forms.ComboBox();
             this.cboShortAge = new System.Windows.Forms.ComboBox();
@@ -41,24 +40,32 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dtpDateEnd = new System.Windows.Forms.DateTimePicker();
             this.txtProduct = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.panelMid.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.panelMid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // button3
             // 
+            this.button3.Location = new System.Drawing.Point(1032, 0);
+            this.button3.Size = new System.Drawing.Size(52, 24);
+            this.button3.Text = "엑셀";
+            // 
+            // panel2
+            // 
+            this.panel2.Size = new System.Drawing.Size(1202, 130);
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.btnSearch);
             this.panelTop.Controls.Add(this.txtProduct);
             this.panelTop.Controls.Add(this.label5);
             this.panelTop.Controls.Add(this.dtpDateEnd);
@@ -66,25 +73,19 @@
             this.panelTop.Controls.Add(this.cboShortAge);
             this.panelTop.Controls.Add(this.cboCompany);
             this.panelTop.Controls.Add(this.cboPlanID);
-            this.panelTop.Controls.Add(this.btnSearch);
             this.panelTop.Controls.Add(this.label11);
             this.panelTop.Controls.Add(this.label10);
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.label2);
+            this.panelTop.Size = new System.Drawing.Size(1202, 110);
             // 
             // splitContainer2
             // 
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(1049, 20);
-            this.button3.Size = new System.Drawing.Size(52, 24);
-            this.button3.Text = "엑셀";
-            // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(100, 22);
+            this.label1.Size = new System.Drawing.Size(100, 24);
             this.label1.Text = "자재소요계획";
             // 
             // label11
@@ -136,16 +137,6 @@
             this.label4.Size = new System.Drawing.Size(105, 22);
             this.label4.TabIndex = 9;
             this.label4.Text = "ㆍShortAge";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
-            this.btnSearch.Location = new System.Drawing.Point(1059, 62);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(109, 27);
-            this.btnSearch.TabIndex = 12;
-            this.btnSearch.Text = "조회";
-            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // cboPlanID
             // 
@@ -203,6 +194,19 @@
             this.txtProduct.Size = new System.Drawing.Size(143, 21);
             this.txtProduct.TabIndex = 16;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(1084, 27);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(93, 39);
+            this.btnSearch.TabIndex = 76;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
             // Meterial_Plan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -210,17 +214,15 @@
             this.Name = "Meterial_Plan";
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.panelMid.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
-            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.panelMid.ResumeLayout(false);
-            this.panelMid.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -237,8 +239,8 @@
         private System.Windows.Forms.ComboBox cboShortAge;
         private System.Windows.Forms.ComboBox cboCompany;
         private System.Windows.Forms.ComboBox cboPlanID;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.DateTimePicker dtpDateEnd;
+        protected System.Windows.Forms.Button btnSearch;
     }
 }

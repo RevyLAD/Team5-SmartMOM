@@ -106,7 +106,7 @@
             // 
             // label2
             // 
-            this.label2.Size = new System.Drawing.Size(16, 47);
+            //this.label2.Size = new System.Drawing.Size(16, 47);
             // 
             // label3
             // 

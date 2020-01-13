@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,24 +55,46 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.panelMid.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.panelMid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.None;
             // 
-            // splitContainer1
+            // panelMid
             // 
-            this.splitContainer1.SplitterDistance = 163;
+            this.panelMid.Size = new System.Drawing.Size(1202, 41);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(859, 0);
+            this.button3.Size = new System.Drawing.Size(96, 37);
+            this.button3.Text = "B2B1 I/F";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(955, 0);
+            this.button2.Size = new System.Drawing.Size(129, 37);
+            this.button2.Text = "영업마스터생성";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1084, 0);
+            this.button1.Size = new System.Drawing.Size(114, 37);
+            this.button1.Text = "수요계획생성";
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(0, 41);
+            this.panel2.Size = new System.Drawing.Size(1202, 183);
             // 
             // panelTop
             // 
@@ -110,59 +130,19 @@
             this.splitContainer2.Size = new System.Drawing.Size(1202, 422);
             this.splitContainer2.SplitterDistance = 41;
             // 
-            // panelMid
+            // splitContainer1
             // 
-            this.panelMid.Controls.Add(this.button5);
-            this.panelMid.Controls.Add(this.button4);
-            this.panelMid.Size = new System.Drawing.Size(1202, 41);
-            this.panelMid.Controls.SetChildIndex(this.label1, 0);
-            this.panelMid.Controls.SetChildIndex(this.button1, 0);
-            this.panelMid.Controls.SetChildIndex(this.button2, 0);
-            this.panelMid.Controls.SetChildIndex(this.button3, 0);
-            this.panelMid.Controls.SetChildIndex(this.button4, 0);
-            this.panelMid.Controls.SetChildIndex(this.button5, 0);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(770, 9);
-            this.button3.Size = new System.Drawing.Size(90, 24);
-            this.button3.Text = "B2B1 I/F";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(866, 9);
-            this.button2.Size = new System.Drawing.Size(101, 24);
-            this.button2.Text = "영업마스터생성";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(973, 9);
-            this.button1.Size = new System.Drawing.Size(93, 24);
-            this.button1.Text = "수요계획생성";
+            this.splitContainer1.Size = new System.Drawing.Size(1157, 422);
+            this.splitContainer1.SplitterDistance = 807;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(3, 11);
-            this.label1.Size = new System.Drawing.Size(85, 22);
+            this.label1.Size = new System.Drawing.Size(114, 37);
             this.label1.Text = "영업마스터";
             // 
-            // button4
+            // lblArrow
             // 
-            this.button4.Location = new System.Drawing.Point(1073, 9);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(52, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "등록";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(1131, 9);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(52, 23);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "엑셀";
-            this.button5.UseVisualStyleBackColor = true;
+            this.lblArrow.Size = new System.Drawing.Size(16, 37);
             // 
             // label2
             // 
@@ -377,11 +357,14 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
-            this.btnSearch.Location = new System.Drawing.Point(1073, 126);
+            this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(1090, 67);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(109, 27);
-            this.btnSearch.TabIndex = 10;
+            this.btnSearch.Size = new System.Drawing.Size(93, 39);
+            this.btnSearch.TabIndex = 76;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
@@ -392,25 +375,20 @@
             this.Name = "Sales_Master";
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.panelMid.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
-            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.panelMid.ResumeLayout(false);
-            this.panelMid.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboRemaining;
         private System.Windows.Forms.ComboBox cboDestination;
@@ -435,6 +413,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnSearch;
+        protected System.Windows.Forms.Button btnSearch;
     }
 }
