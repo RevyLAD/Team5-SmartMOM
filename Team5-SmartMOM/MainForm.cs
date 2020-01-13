@@ -300,5 +300,13 @@ namespace Team5_SmartMOM
         {
             CreateTabPages("영업마스터", new Sales_Master());
         }
-    }
+        private void 제품출하ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("고객주문별재고현황", new CustomerOrderStatus());
+        }
+
+        private void 출하현황ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("출하현황", new ShipmentStatus());
+        }
 }
