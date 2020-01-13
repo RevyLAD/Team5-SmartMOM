@@ -30,7 +30,7 @@ namespace Project_DAC.LBJ
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "select SHIFT_ID, a.SHIFT_StartTime, SHIFT_EndTime, SHIFT_InputPeople, b.FAC_Name from Shift A inner join Facility b on a.FAC_Code = b.FAC_Code                   where a.FAC_Code = 1";
+                cmd.CommandText = "select SHIFT_ID, a.SHIFT_StartTime, SHIFT_EndTime, SHIFT_InputPeople, b.FAC_Name from Shift A inner join Facility b on a.FAC_Code = b.FAC_Code where a.FAC_Code = 1";
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<ShiftManagementVO> list = Helper.DataReaderMapToList<ShiftManagementVO>(reader);

@@ -77,9 +77,9 @@
             this.panelTop.Controls.Add(this.label5);
             this.panelTop.Controls.Add(this.cbosystem);
             this.panelTop.Controls.Add(this.cboShift);
-            this.panelTop.Controls.Add(this.label2);
+            //this.panelTop.Controls.Add(this.label2);
             this.panelTop.Size = new System.Drawing.Size(1202, 57);
-            this.panelTop.Controls.SetChildIndex(this.label2, 0);
+            //this.panelTop.Controls.SetChildIndex(this.label2, 0);
             this.panelTop.Controls.SetChildIndex(this.cboShift, 0);
             this.panelTop.Controls.SetChildIndex(this.cbosystem, 0);
             this.panelTop.Controls.SetChildIndex(this.label5, 0);
@@ -103,8 +103,8 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(0, 10);
-            this.label2.Size = new System.Drawing.Size(16, 43);
+            //this.label2.Location = new System.Drawing.Point(0, 10);
+            //this.label2.Size = new System.Drawing.Size(16, 43);
             // 
             // cboShift
             // 
