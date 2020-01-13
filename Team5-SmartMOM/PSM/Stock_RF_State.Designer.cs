@@ -47,20 +47,23 @@
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.panelTop.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
             this.panelMid.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panelTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // button3
             // 
+            this.button3.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.Visible = false;
             // 
             // panelTop
             // 
@@ -81,28 +84,16 @@
             this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.label8);
             this.panelTop.Controls.Add(this.label9);
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTop.Size = new System.Drawing.Size(1202, 150);
             // 
             // splitContainer2
             // 
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(996, 19);
-            this.button3.Visible = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1047, 19);
-            this.button2.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.Text = "엑셀";
-            // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(85, 22);
-            this.label1.Text = "입출고입력";
+            this.label1.Size = new System.Drawing.Size(119, 24);
+            this.label1.Text = "입출고현황";
             // 
             // textBox1
             // 
@@ -125,7 +116,7 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1107, 69);
+            this.btnSearch.Location = new System.Drawing.Point(1105, 112);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(81, 30);
             this.btnSearch.TabIndex = 120;
@@ -262,18 +253,15 @@
             this.Name = "Stock_RF_State";
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.panelMid.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.panelMid.ResumeLayout(false);
-            this.panelMid.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
