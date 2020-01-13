@@ -17,7 +17,12 @@ namespace Team5_SmartMOM
 
         private void Item_Management_detail_Load(object sender, EventArgs e)
         {
-            txt_edit_date.Text = DateTime.Now.ToString();
+            txt_edit_date.Text = DateTime.Now.ToString("yyyy-MM-dd");
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
