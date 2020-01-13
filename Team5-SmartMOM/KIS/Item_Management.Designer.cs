@@ -47,8 +47,8 @@
             this.cbo_Company = new System.Windows.Forms.ComboBox();
             this.cbo_releasehouse = new System.Windows.Forms.ComboBox();
             this.cbo_UseorNot = new System.Windows.Forms.ComboBox();
-            this.btn_copy = new System.Windows.Forms.Button();
-            this.btn_newitem = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -63,15 +63,15 @@
             // 
             // panelMid
             // 
-            this.panelMid.Controls.Add(this.btn_newitem);
-            this.panelMid.Controls.Add(this.btn_copy);
+            this.panelMid.Controls.Add(this.button5);
+            this.panelMid.Controls.Add(this.button4);
             this.panelMid.Controls.SetChildIndex(this.lblArrow, 0);
             this.panelMid.Controls.SetChildIndex(this.label1, 0);
             this.panelMid.Controls.SetChildIndex(this.button1, 0);
             this.panelMid.Controls.SetChildIndex(this.button2, 0);
             this.panelMid.Controls.SetChildIndex(this.button3, 0);
-            this.panelMid.Controls.SetChildIndex(this.btn_copy, 0);
-            this.panelMid.Controls.SetChildIndex(this.btn_newitem, 0);
+            this.panelMid.Controls.SetChildIndex(this.button4, 0);
+            this.panelMid.Controls.SetChildIndex(this.button5, 0);
             // 
             // button3
             // 
@@ -122,81 +122,90 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(21, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.Size = new System.Drawing.Size(31, 12);
             this.label2.TabIndex = 0;
             this.label2.Text = "품목";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(20, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 12);
+            this.label3.Size = new System.Drawing.Size(57, 12);
             this.label3.TabIndex = 1;
             this.label3.Text = "납품업체";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(20, 76);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 12);
+            this.label4.Size = new System.Drawing.Size(44, 12);
             this.label4.TabIndex = 2;
             this.label4.Text = "담당자";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.Location = new System.Drawing.Point(380, 22);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.Size = new System.Drawing.Size(31, 12);
             this.label5.TabIndex = 3;
             this.label5.Text = "규격";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.Location = new System.Drawing.Point(380, 50);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 12);
+            this.label6.Size = new System.Drawing.Size(57, 12);
             this.label6.TabIndex = 4;
             this.label6.Text = "입고창고";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.Location = new System.Drawing.Point(380, 76);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 12);
+            this.label7.Size = new System.Drawing.Size(57, 12);
             this.label7.TabIndex = 5;
             this.label7.Text = "품목유형";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label8.Location = new System.Drawing.Point(748, 22);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 12);
+            this.label8.Size = new System.Drawing.Size(31, 12);
             this.label8.TabIndex = 6;
             this.label8.Text = "업체";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.Location = new System.Drawing.Point(748, 50);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 12);
+            this.label9.Size = new System.Drawing.Size(57, 12);
             this.label9.TabIndex = 7;
             this.label9.Text = "출고창고";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.Location = new System.Drawing.Point(748, 76);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 12);
+            this.label10.Size = new System.Drawing.Size(57, 12);
             this.label10.TabIndex = 8;
             this.label10.Text = "사용유무";
             // 
@@ -281,26 +290,36 @@
             this.cbo_UseorNot.Size = new System.Drawing.Size(217, 20);
             this.cbo_UseorNot.TabIndex = 18;
             // 
-            // btn_copy
+            // button4
             // 
-            this.btn_copy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_copy.Location = new System.Drawing.Point(904, 1);
-            this.btn_copy.Name = "btn_copy";
-            this.btn_copy.Size = new System.Drawing.Size(45, 24);
-            this.btn_copy.TabIndex = 2;
-            this.btn_copy.Text = "복사";
-            this.btn_copy.UseVisualStyleBackColor = true;
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button4.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button4.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(898, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(57, 24);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "복사";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = false;
             // 
-            // btn_newitem
+            // button5
             // 
-            this.btn_newitem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_newitem.Location = new System.Drawing.Point(853, 1);
-            this.btn_newitem.Name = "btn_newitem";
-            this.btn_newitem.Size = new System.Drawing.Size(45, 24);
-            this.btn_newitem.TabIndex = 3;
-            this.btn_newitem.Text = "등록";
-            this.btn_newitem.UseVisualStyleBackColor = true;
-            this.btn_newitem.Click += new System.EventHandler(this.Btn_newitem_Click);
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button5.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button5.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(841, 0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(57, 24);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "등록";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.Btn_newitem_Click);
             // 
             // Item_Management
             // 
@@ -343,7 +362,7 @@
         private System.Windows.Forms.ComboBox cbo_Warehouse;
         private System.Windows.Forms.ComboBox cbo_manager;
         private System.Windows.Forms.ComboBox cbo_Supplier;
-        protected System.Windows.Forms.Button btn_newitem;
-        protected System.Windows.Forms.Button btn_copy;
+        protected System.Windows.Forms.Button button5;
+        protected System.Windows.Forms.Button button4;
     }
 }
