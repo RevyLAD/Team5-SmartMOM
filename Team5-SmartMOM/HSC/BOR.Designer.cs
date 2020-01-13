@@ -36,6 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.labelZ1 = new LabelZ.LabelZ();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -50,15 +51,17 @@
             // 
             // panelMid
             // 
+            this.panelMid.Controls.Add(this.labelZ1);
             this.panelMid.Controls.Add(this.metroButton2);
             this.panelMid.Controls.Add(this.metroButton1);
             this.panelMid.Size = new System.Drawing.Size(1202, 40);
+            this.panelMid.Controls.SetChildIndex(this.metroButton1, 0);
+            this.panelMid.Controls.SetChildIndex(this.metroButton2, 0);
+            this.panelMid.Controls.SetChildIndex(this.labelZ1, 0);
             this.panelMid.Controls.SetChildIndex(this.label1, 0);
             this.panelMid.Controls.SetChildIndex(this.button1, 0);
             this.panelMid.Controls.SetChildIndex(this.button2, 0);
             this.panelMid.Controls.SetChildIndex(this.button3, 0);
-            this.panelMid.Controls.SetChildIndex(this.metroButton1, 0);
-            this.panelMid.Controls.SetChildIndex(this.metroButton2, 0);
             // 
             // button3
             // 
@@ -95,7 +98,7 @@
             this.panelTop.Controls.Add(this.cboFacCrow);
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Size = new System.Drawing.Size(1202, 60);
+            this.panelTop.Size = new System.Drawing.Size(1202, 58);
             this.panelTop.Controls.SetChildIndex(this.label3, 0);
             this.panelTop.Controls.SetChildIndex(this.cboFacCrow, 0);
             this.panelTop.Controls.SetChildIndex(this.textBox1, 0);
@@ -115,12 +118,13 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Location = new System.Drawing.Point(25, 0);
             this.label1.Size = new System.Drawing.Size(255, 36);
             this.label1.Text = "Bill Of Resource";
             // 
             // label2
             // 
+
             // 
             // textBox2
             // 
@@ -146,7 +150,7 @@
             this.btnInquiry.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnInquiry.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInquiry.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInquiry.Location = new System.Drawing.Point(1107, 14);
+            this.btnInquiry.Location = new System.Drawing.Point(1107, 13);
             this.btnInquiry.Name = "btnInquiry";
             this.btnInquiry.Size = new System.Drawing.Size(92, 32);
             this.btnInquiry.TabIndex = 15;
@@ -198,6 +202,22 @@
             this.metroButton1.TabIndex = 4;
             this.metroButton1.Text = "양식다운로드";
             // 
+            // labelZ1
+            // 
+            this.labelZ1.DisplayText = "";
+            this.labelZ1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelZ1.EndColor = System.Drawing.Color.DarkBlue;
+            this.labelZ1.ForeColor = System.Drawing.Color.Transparent;
+            this.labelZ1.GradientAngle = 90;
+            this.labelZ1.Image = global::Team5_SmartMOM.Properties.Resources.arrow;
+            this.labelZ1.Location = new System.Drawing.Point(0, 0);
+            this.labelZ1.Name = "labelZ1";
+            this.labelZ1.Size = new System.Drawing.Size(25, 36);
+            this.labelZ1.StartColor = System.Drawing.Color.LightPink;
+            this.labelZ1.TabIndex = 22;
+            this.labelZ1.Transparent1 = 150;
+            this.labelZ1.Transparent2 = 150;
+            // 
             // BOR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -230,5 +250,6 @@
         private System.Windows.Forms.Label label2;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton metroButton1;
+        private LabelZ.LabelZ labelZ1;
     }
 }

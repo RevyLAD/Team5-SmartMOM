@@ -41,6 +41,8 @@ namespace Team5_SmartMOM
         private void BOR_Load(object sender, EventArgs e)
         {
             DataLoad();
+
+
         }
 
         private void btnInquiry_Click(object sender, EventArgs e)

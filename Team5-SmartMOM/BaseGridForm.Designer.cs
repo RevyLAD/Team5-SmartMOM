@@ -34,16 +34,16 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panelTop = new PanelZ.PanelZ();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelMid = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.panelTop = new PanelZ.PanelZ();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -119,21 +119,6 @@
             this.panel2.Size = new System.Drawing.Size(1202, 160);
             this.panel2.TabIndex = 33;
             // 
-            // panelTop
-            // 
-            this.panelTop.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTop.EndColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
-            this.panelTop.GradientAngle = 90;
-            this.panelTop.Location = new System.Drawing.Point(0, 10);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panelTop.Size = new System.Drawing.Size(1202, 140);
-            this.panelTop.StartColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(210)))), ((int)(((byte)(220)))));
-            this.panelTop.TabIndex = 27;
-            this.panelTop.Transparent1 = 150;
-            this.panelTop.Transparent2 = 150;
-            // 
             // splitContainer2
             // 
             this.splitContainer2.Location = new System.Drawing.Point(960, 392);
@@ -167,8 +152,8 @@
             // panelMid
             // 
             this.panelMid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelMid.Controls.Add(this.label1);
             this.panelMid.Controls.Add(this.label2);
+            this.panelMid.Controls.Add(this.label1);
             this.panelMid.Controls.Add(this.button3);
             this.panelMid.Controls.Add(this.button2);
             this.panelMid.Controls.Add(this.button1);
@@ -178,28 +163,26 @@
             this.panelMid.Size = new System.Drawing.Size(1202, 28);
             this.panelMid.TabIndex = 23;
             // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label2.Image = global::Team5_SmartMOM.Properties.Resources.arrow;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 24);
+            this.label2.TabIndex = 13;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // label1
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(16, 0);
+            this.label1.Location = new System.Drawing.Point(34, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 24);
             this.label1.TabIndex = 12;
             this.label1.Text = "항목이름";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label2.Image = global::Team5_SmartMOM.Properties.Resources.arrow;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.label2.Size = new System.Drawing.Size(16, 24);
-            this.label2.TabIndex = 11;
             // 
             // button3
             // 
@@ -246,6 +229,21 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // panelTop
+            // 
+            this.panelTop.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTop.EndColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.panelTop.GradientAngle = 90;
+            this.panelTop.Location = new System.Drawing.Point(0, 10);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.panelTop.Size = new System.Drawing.Size(1202, 140);
+            this.panelTop.StartColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(210)))), ((int)(((byte)(220)))));
+            this.panelTop.TabIndex = 27;
+            this.panelTop.Transparent1 = 150;
+            this.panelTop.Transparent2 = 150;
+            // 
             // BaseGridForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -285,7 +283,7 @@
         protected System.Windows.Forms.SplitContainer splitContainer2;
         protected System.Windows.Forms.SplitContainer splitContainer1;
         protected System.Windows.Forms.Label label1;
-        protected System.Windows.Forms.Label label2;
         protected System.Windows.Forms.DataGridView dataGridView1;
+        protected System.Windows.Forms.Label label2;
     }
 }
