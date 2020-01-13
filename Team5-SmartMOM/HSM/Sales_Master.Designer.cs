@@ -65,36 +65,33 @@
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.None;
-            // 
             // panelMid
             // 
-            this.panelMid.Size = new System.Drawing.Size(1202, 41);
+            this.panelMid.Size = new System.Drawing.Size(1202, 35);
             // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(859, 0);
-            this.button3.Size = new System.Drawing.Size(96, 37);
+            this.button3.Size = new System.Drawing.Size(96, 31);
             this.button3.Text = "B2B1 I/F";
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(955, 0);
-            this.button2.Size = new System.Drawing.Size(129, 37);
+            this.button2.Size = new System.Drawing.Size(129, 31);
             this.button2.Text = "영업마스터생성";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(1084, 0);
-            this.button1.Size = new System.Drawing.Size(114, 37);
+            this.button1.Size = new System.Drawing.Size(114, 31);
             this.button1.Text = "수요계획생성";
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(0, 41);
-            this.panel2.Size = new System.Drawing.Size(1202, 183);
+            this.panel2.Location = new System.Drawing.Point(0, 35);
+            this.panel2.Size = new System.Drawing.Size(1202, 168);
             // 
             // panelTop
             // 
@@ -123,7 +120,7 @@
             this.panelTop.Controls.Add(this.label11);
             this.panelTop.Controls.Add(this.label7);
             this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Size = new System.Drawing.Size(1202, 163);
+            this.panelTop.Size = new System.Drawing.Size(1202, 148);
             // 
             // splitContainer2
             // 
@@ -137,50 +134,50 @@
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(114, 37);
+            this.label1.Size = new System.Drawing.Size(114, 31);
             this.label1.Text = "영업마스터";
             // 
             // lblArrow
             // 
-            this.lblArrow.Size = new System.Drawing.Size(16, 37);
+            this.lblArrow.Size = new System.Drawing.Size(16, 31);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(18, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 22);
+            this.label2.Size = new System.Drawing.Size(81, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "ㆍ고객납기일";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 49);
+            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(18, 44);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 22);
+            this.label3.Size = new System.Drawing.Size(120, 19);
             this.label3.TabIndex = 0;
             this.label3.Text = "ㆍModelSuffix";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 87);
+            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(18, 78);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 22);
+            this.label4.Size = new System.Drawing.Size(81, 19);
             this.label4.TabIndex = 0;
             this.label4.Text = "ㆍ고객사라인";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(18, 121);
+            this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(18, 109);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 22);
+            this.label5.Size = new System.Drawing.Size(45, 19);
             this.label5.TabIndex = 0;
             this.label5.Text = "ㆍ상태";
             // 
@@ -211,7 +208,7 @@
             // 
             // txtModelSuffix
             // 
-            this.txtModelSuffix.Location = new System.Drawing.Point(162, 49);
+            this.txtModelSuffix.Location = new System.Drawing.Point(162, 44);
             this.txtModelSuffix.Name = "txtModelSuffix";
             this.txtModelSuffix.Size = new System.Drawing.Size(229, 21);
             this.txtModelSuffix.TabIndex = 4;
@@ -219,7 +216,7 @@
             // cboCustomerLine
             // 
             this.cboCustomerLine.FormattingEnabled = true;
-            this.cboCustomerLine.Location = new System.Drawing.Point(162, 86);
+            this.cboCustomerLine.Location = new System.Drawing.Point(162, 77);
             this.cboCustomerLine.Name = "cboCustomerLine";
             this.cboCustomerLine.Size = new System.Drawing.Size(229, 20);
             this.cboCustomerLine.TabIndex = 5;
@@ -227,7 +224,7 @@
             // cboState
             // 
             this.cboState.FormattingEnabled = true;
-            this.cboState.Location = new System.Drawing.Point(162, 121);
+            this.cboState.Location = new System.Drawing.Point(162, 109);
             this.cboState.Name = "cboState";
             this.cboState.Size = new System.Drawing.Size(229, 20);
             this.cboState.TabIndex = 5;
@@ -235,40 +232,40 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(425, 13);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 22);
+            this.label7.Size = new System.Drawing.Size(57, 19);
             this.label7.TabIndex = 0;
             this.label7.Text = "ㆍ고객사";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(425, 49);
+            this.label8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(425, 44);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 22);
+            this.label8.Size = new System.Drawing.Size(45, 19);
             this.label8.TabIndex = 0;
             this.label8.Text = "ㆍ품목";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(425, 87);
+            this.label9.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(425, 78);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 22);
+            this.label9.Size = new System.Drawing.Size(57, 19);
             this.label9.TabIndex = 0;
             this.label9.Text = "ㆍ등록일";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(425, 121);
+            this.label10.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(425, 109);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 22);
+            this.label10.Size = new System.Drawing.Size(69, 19);
             this.label10.TabIndex = 0;
             this.label10.Text = "ㆍ발주구분";
             // 
@@ -283,21 +280,21 @@
             // cboOrdering
             // 
             this.cboOrdering.FormattingEnabled = true;
-            this.cboOrdering.Location = new System.Drawing.Point(516, 121);
+            this.cboOrdering.Location = new System.Drawing.Point(516, 109);
             this.cboOrdering.Name = "cboOrdering";
             this.cboOrdering.Size = new System.Drawing.Size(190, 20);
             this.cboOrdering.TabIndex = 5;
             // 
             // txtProduct
             // 
-            this.txtProduct.Location = new System.Drawing.Point(516, 49);
+            this.txtProduct.Location = new System.Drawing.Point(516, 44);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(190, 21);
             this.txtProduct.TabIndex = 6;
             // 
             // dtpEnrollment
             // 
-            this.dtpEnrollment.Location = new System.Drawing.Point(516, 87);
+            this.dtpEnrollment.Location = new System.Drawing.Point(516, 78);
             this.dtpEnrollment.Name = "dtpEnrollment";
             this.dtpEnrollment.Size = new System.Drawing.Size(190, 21);
             this.dtpEnrollment.TabIndex = 7;
@@ -305,30 +302,30 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(749, 13);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(115, 22);
+            this.label11.Size = new System.Drawing.Size(93, 19);
             this.label11.TabIndex = 0;
             this.label11.Text = "ㆍ고객주문번호";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(749, 49);
+            this.label12.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(749, 44);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 22);
+            this.label12.Size = new System.Drawing.Size(57, 19);
             this.label12.TabIndex = 0;
             this.label12.Text = "ㆍ도착지";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(749, 87);
+            this.label13.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(749, 78);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(55, 22);
+            this.label13.Size = new System.Drawing.Size(45, 19);
             this.label13.TabIndex = 0;
             this.label13.Text = "ㆍ잔량";
             // 
@@ -342,7 +339,7 @@
             // cboDestination
             // 
             this.cboDestination.FormattingEnabled = true;
-            this.cboDestination.Location = new System.Drawing.Point(871, 50);
+            this.cboDestination.Location = new System.Drawing.Point(871, 45);
             this.cboDestination.Name = "cboDestination";
             this.cboDestination.Size = new System.Drawing.Size(150, 20);
             this.cboDestination.TabIndex = 9;
@@ -350,7 +347,7 @@
             // cboRemaining
             // 
             this.cboRemaining.FormattingEnabled = true;
-            this.cboRemaining.Location = new System.Drawing.Point(871, 86);
+            this.cboRemaining.Location = new System.Drawing.Point(871, 77);
             this.cboRemaining.Name = "cboRemaining";
             this.cboRemaining.Size = new System.Drawing.Size(150, 20);
             this.cboRemaining.TabIndex = 9;

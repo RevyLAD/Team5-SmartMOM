@@ -65,14 +65,18 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1007, 0);
+            this.button3.Location = new System.Drawing.Point(985, 0);
             this.button3.Size = new System.Drawing.Size(67, 24);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1074, 0);
-            this.button2.Size = new System.Drawing.Size(67, 24);
+            this.button2.Location = new System.Drawing.Point(1052, 0);
+            this.button2.Size = new System.Drawing.Size(89, 24);
             this.button2.Text = "마감처리";
+            // 
+            // panel2
+            // 
+            this.panel2.Size = new System.Drawing.Size(1202, 142);
             // 
             // panelTop
             // 
@@ -99,12 +103,14 @@
             this.panelTop.Controls.Add(this.label5);
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label8);
+            this.panelTop.Size = new System.Drawing.Size(1202, 122);
             // 
             // splitContainer2
             // 
             // 
             // label1
             // 
+            this.label1.Size = new System.Drawing.Size(89, 24);
             this.label1.Text = "고객주문";
             // 
             // comboBox1
