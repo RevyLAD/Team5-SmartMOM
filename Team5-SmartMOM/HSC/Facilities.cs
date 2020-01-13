@@ -40,8 +40,8 @@ namespace Team5_SmartMOM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "코드", "FACG_Code", true, 60);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "이름", "FACG_Name", true, 60);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "FACG_UseOrNot", true, 90);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "모디", "FACG_Modifier", true, 60);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "모디일", "FACG_ModifyDate", true, 75);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정자", "FACG_Modifier", true, 70);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정일", "FACG_ModifyDate", true, 75);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "설명", "FACG_Information", true, 63);
 
             DataLoad();

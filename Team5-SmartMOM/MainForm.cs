@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using Team5_SmartMOM.LBJ;
 using Team5_SmartMOM.HSC;
+using Team5_SmartMOM.PSM;
 
 namespace Team5_SmartMOM
 {
@@ -287,6 +288,50 @@ namespace Team5_SmartMOM
         private void button235_Click(object sender, EventArgs e)
         {
 
+        }
+        private void 정규발주ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("정규발주", new Purchasing());
+        }
+
+        private void 발주현황ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("발주현황", new Purchasing_State());
+        }
+
+        private void 입고대기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("입고대기", new Supplier());
+        }
+
+        private void 자재입고ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("자재입고", new Material_Ledger());
+        }
+
+        private void 자재입고현황ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("자재입고현황", new Material_Ledger_State());
+        }
+
+        private void 자재재고현황ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("자재재고현황", new Stock_State());
+        }
+
+        private void 자재불출요청ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("자재불출요청", new Materia_Request());
+        }
+
+        private void 원자재불출ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("원자재불출", new Material_Ledger_Export());
+        }
+
+        private void 입출고현황ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("입출고현황", new Stock_RF_State());
         }
     }
 }

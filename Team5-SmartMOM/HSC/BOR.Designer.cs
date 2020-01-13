@@ -36,7 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.labelZ1 = new LabelZ.LabelZ();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -49,15 +48,22 @@
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // panelFull
+            // 
+            this.panelFull.Size = new System.Drawing.Size(1382, 609);
+            // 
+            // panel1
+            // 
+            this.panel1.Size = new System.Drawing.Size(1362, 589);
+            // 
             // panelMid
             // 
-            this.panelMid.Controls.Add(this.labelZ1);
             this.panelMid.Controls.Add(this.metroButton2);
             this.panelMid.Controls.Add(this.metroButton1);
-            this.panelMid.Size = new System.Drawing.Size(1202, 40);
+            this.panelMid.Size = new System.Drawing.Size(1362, 40);
+            this.panelMid.Controls.SetChildIndex(this.lblArrow, 0);
             this.panelMid.Controls.SetChildIndex(this.metroButton1, 0);
             this.panelMid.Controls.SetChildIndex(this.metroButton2, 0);
-            this.panelMid.Controls.SetChildIndex(this.labelZ1, 0);
             this.panelMid.Controls.SetChildIndex(this.label1, 0);
             this.panelMid.Controls.SetChildIndex(this.button1, 0);
             this.panelMid.Controls.SetChildIndex(this.button2, 0);
@@ -67,27 +73,27 @@
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Dock = System.Windows.Forms.DockStyle.None;
-            this.button3.Location = new System.Drawing.Point(881, 11);
+            this.button3.Location = new System.Drawing.Point(1041, 11);
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Dock = System.Windows.Forms.DockStyle.None;
-            this.button2.Location = new System.Drawing.Point(929, 11);
+            this.button2.Location = new System.Drawing.Point(1089, 11);
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Dock = System.Windows.Forms.DockStyle.None;
-            this.button1.Location = new System.Drawing.Point(980, 11);
+            this.button1.Location = new System.Drawing.Point(1140, 11);
             this.button1.Size = new System.Drawing.Size(65, 24);
             this.button1.Text = "이력조회";
             // 
             // panel2
             // 
             this.panel2.Location = new System.Drawing.Point(0, 40);
-            this.panel2.Size = new System.Drawing.Size(1202, 78);
+            this.panel2.Size = new System.Drawing.Size(1362, 78);
             // 
             // panelTop
             // 
@@ -97,14 +103,7 @@
             this.panelTop.Controls.Add(this.textBox1);
             this.panelTop.Controls.Add(this.cboFacCrow);
             this.panelTop.Controls.Add(this.label3);
-            this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Size = new System.Drawing.Size(1202, 58);
-            this.panelTop.Controls.SetChildIndex(this.label3, 0);
-            this.panelTop.Controls.SetChildIndex(this.cboFacCrow, 0);
-            this.panelTop.Controls.SetChildIndex(this.textBox1, 0);
-            this.panelTop.Controls.SetChildIndex(this.btnInquiry, 0);
-            this.panelTop.Controls.SetChildIndex(this.label4, 0);
-            this.panelTop.Controls.SetChildIndex(this.textBox2, 0);
+            this.panelTop.Size = new System.Drawing.Size(1362, 58);
             // 
             // splitContainer2
             // 
@@ -118,13 +117,12 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(25, 0);
             this.label1.Size = new System.Drawing.Size(255, 36);
             this.label1.Text = "Bill Of Resource";
             // 
-            // label2
+            // lblArrow
             // 
-
+            this.lblArrow.Size = new System.Drawing.Size(16, 36);
             // 
             // textBox2
             // 
@@ -150,7 +148,7 @@
             this.btnInquiry.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnInquiry.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInquiry.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInquiry.Location = new System.Drawing.Point(1107, 13);
+            this.btnInquiry.Location = new System.Drawing.Point(1267, 13);
             this.btnInquiry.Name = "btnInquiry";
             this.btnInquiry.Size = new System.Drawing.Size(92, 32);
             this.btnInquiry.TabIndex = 15;
@@ -187,7 +185,7 @@
             // metroButton2
             // 
             this.metroButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton2.Location = new System.Drawing.Point(1131, 11);
+            this.metroButton2.Location = new System.Drawing.Point(1291, 11);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(62, 23);
             this.metroButton2.TabIndex = 5;
@@ -196,32 +194,16 @@
             // metroButton1
             // 
             this.metroButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton1.Location = new System.Drawing.Point(1051, 11);
+            this.metroButton1.Location = new System.Drawing.Point(1211, 11);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(74, 23);
             this.metroButton1.TabIndex = 4;
             this.metroButton1.Text = "양식다운로드";
             // 
-            // labelZ1
-            // 
-            this.labelZ1.DisplayText = "";
-            this.labelZ1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelZ1.EndColor = System.Drawing.Color.DarkBlue;
-            this.labelZ1.ForeColor = System.Drawing.Color.Transparent;
-            this.labelZ1.GradientAngle = 90;
-            this.labelZ1.Image = global::Team5_SmartMOM.Properties.Resources.arrow;
-            this.labelZ1.Location = new System.Drawing.Point(0, 0);
-            this.labelZ1.Name = "labelZ1";
-            this.labelZ1.Size = new System.Drawing.Size(25, 36);
-            this.labelZ1.StartColor = System.Drawing.Color.LightPink;
-            this.labelZ1.TabIndex = 22;
-            this.labelZ1.Transparent1 = 150;
-            this.labelZ1.Transparent2 = 150;
-            // 
             // BOR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(1222, 609);
+            this.ClientSize = new System.Drawing.Size(1382, 609);
             this.Name = "BOR";
             this.Text = "Bill Of Resource";
             this.Load += new System.EventHandler(this.BOR_Load);
@@ -250,6 +232,5 @@
         private System.Windows.Forms.Label label2;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton metroButton1;
-        private LabelZ.LabelZ labelZ1;
     }
 }

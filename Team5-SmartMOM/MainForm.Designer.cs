@@ -133,6 +133,8 @@ namespace Team5_SmartMOM
             this.btnSubMenu1 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.tabControl1 = new TabControlZ.TabControlZ();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -306,54 +308,63 @@ namespace Team5_SmartMOM
             this.정규발주ToolStripMenuItem.Name = "정규발주ToolStripMenuItem";
             this.정규발주ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.정규발주ToolStripMenuItem.Text = "정규발주";
+            this.정규발주ToolStripMenuItem.Click += new System.EventHandler(this.정규발주ToolStripMenuItem_Click);
             // 
             // 발주현황ToolStripMenuItem
             // 
             this.발주현황ToolStripMenuItem.Name = "발주현황ToolStripMenuItem";
             this.발주현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.발주현황ToolStripMenuItem.Text = "발주현황";
+            this.발주현황ToolStripMenuItem.Click += new System.EventHandler(this.발주현황ToolStripMenuItem_Click);
             // 
             // 입고대기ToolStripMenuItem
             // 
             this.입고대기ToolStripMenuItem.Name = "입고대기ToolStripMenuItem";
             this.입고대기ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.입고대기ToolStripMenuItem.Text = "입고대기";
+            this.입고대기ToolStripMenuItem.Click += new System.EventHandler(this.입고대기ToolStripMenuItem_Click);
             // 
             // 자재입고ToolStripMenuItem
             // 
             this.자재입고ToolStripMenuItem.Name = "자재입고ToolStripMenuItem";
             this.자재입고ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.자재입고ToolStripMenuItem.Text = "자재입고";
+            this.자재입고ToolStripMenuItem.Click += new System.EventHandler(this.자재입고ToolStripMenuItem_Click);
             // 
             // 자재입고현황ToolStripMenuItem
             // 
             this.자재입고현황ToolStripMenuItem.Name = "자재입고현황ToolStripMenuItem";
             this.자재입고현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.자재입고현황ToolStripMenuItem.Text = "자재입고현황";
+            this.자재입고현황ToolStripMenuItem.Click += new System.EventHandler(this.자재입고현황ToolStripMenuItem_Click);
             // 
             // 자재재고현황ToolStripMenuItem
             // 
             this.자재재고현황ToolStripMenuItem.Name = "자재재고현황ToolStripMenuItem";
             this.자재재고현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.자재재고현황ToolStripMenuItem.Text = "자재재고현황";
+            this.자재재고현황ToolStripMenuItem.Click += new System.EventHandler(this.자재재고현황ToolStripMenuItem_Click);
             // 
             // 자재불출요청ToolStripMenuItem
             // 
             this.자재불출요청ToolStripMenuItem.Name = "자재불출요청ToolStripMenuItem";
             this.자재불출요청ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.자재불출요청ToolStripMenuItem.Text = "자재불출요청";
+            this.자재불출요청ToolStripMenuItem.Click += new System.EventHandler(this.자재불출요청ToolStripMenuItem_Click);
             // 
             // 원자재불출ToolStripMenuItem
             // 
             this.원자재불출ToolStripMenuItem.Name = "원자재불출ToolStripMenuItem";
             this.원자재불출ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.원자재불출ToolStripMenuItem.Text = "원자재불출";
+            this.원자재불출ToolStripMenuItem.Click += new System.EventHandler(this.원자재불출ToolStripMenuItem_Click);
             // 
             // 입출고현황ToolStripMenuItem
             // 
             this.입출고현황ToolStripMenuItem.Name = "입출고현황ToolStripMenuItem";
             this.입출고현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.입출고현황ToolStripMenuItem.Text = "입출고현황";
+            this.입출고현황ToolStripMenuItem.Click += new System.EventHandler(this.입출고현황ToolStripMenuItem_Click);
             // 
             // 품질관리ToolStripMenuItem
             // 
@@ -488,7 +499,9 @@ namespace Team5_SmartMOM
             this.toolStripButton3,
             this.toolStripButton4,
             this.toolStripSeparator1,
-            this.toolStripLabel1});
+            this.toolStripLabel1,
+            this.toolStripLabel2,
+            this.toolStripLabel3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1286, 50);
@@ -649,7 +662,7 @@ namespace Team5_SmartMOM
             this.button5.Dock = System.Windows.Forms.DockStyle.Top;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button5.ForeColor = System.Drawing.Color.Gray;
             this.button5.Image = global::Team5_SmartMOM.Properties.Resources.file1;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -668,7 +681,7 @@ namespace Team5_SmartMOM
             this.button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button4.ForeColor = System.Drawing.Color.Gray;
             this.button4.Image = global::Team5_SmartMOM.Properties.Resources.oos;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -687,7 +700,7 @@ namespace Team5_SmartMOM
             this.btnAS.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAS.FlatAppearance.BorderSize = 0;
             this.btnAS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAS.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnAS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnAS.ForeColor = System.Drawing.Color.Gray;
             this.btnAS.Image = global::Team5_SmartMOM.Properties.Resources.delivery1;
             this.btnAS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -706,7 +719,7 @@ namespace Team5_SmartMOM
             this.btnOrderManagement.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnOrderManagement.FlatAppearance.BorderSize = 0;
             this.btnOrderManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrderManagement.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnOrderManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnOrderManagement.ForeColor = System.Drawing.Color.Gray;
             this.btnOrderManagement.Image = global::Team5_SmartMOM.Properties.Resources.document;
             this.btnOrderManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -725,7 +738,7 @@ namespace Team5_SmartMOM
             this.button23.Dock = System.Windows.Forms.DockStyle.Top;
             this.button23.FlatAppearance.BorderSize = 0;
             this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button23.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button23.ForeColor = System.Drawing.Color.Gray;
             this.button23.Image = global::Team5_SmartMOM.Properties.Resources.checklist;
             this.button23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -744,7 +757,7 @@ namespace Team5_SmartMOM
             this.button235.Dock = System.Windows.Forms.DockStyle.Top;
             this.button235.FlatAppearance.BorderSize = 0;
             this.button235.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button235.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button235.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button235.ForeColor = System.Drawing.Color.Gray;
             this.button235.Image = global::Team5_SmartMOM.Properties.Resources.box__2_;
             this.button235.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -763,7 +776,7 @@ namespace Team5_SmartMOM
             this.btnSubMenu8.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSubMenu8.FlatAppearance.BorderSize = 0;
             this.btnSubMenu8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubMenu8.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSubMenu8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSubMenu8.ForeColor = System.Drawing.Color.Black;
             this.btnSubMenu8.Image = global::Team5_SmartMOM.Properties.Resources.purchase__1_;
             this.btnSubMenu8.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -793,7 +806,7 @@ namespace Team5_SmartMOM
             this.button7.Dock = System.Windows.Forms.DockStyle.Top;
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button7.ForeColor = System.Drawing.Color.Gray;
             this.button7.Image = global::Team5_SmartMOM.Properties.Resources.architecture;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -812,7 +825,7 @@ namespace Team5_SmartMOM
             this.button8.Dock = System.Windows.Forms.DockStyle.Top;
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button8.ForeColor = System.Drawing.Color.Gray;
             this.button8.Image = global::Team5_SmartMOM.Properties.Resources.search;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -831,7 +844,7 @@ namespace Team5_SmartMOM
             this.btnSubMenu7.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSubMenu7.FlatAppearance.BorderSize = 0;
             this.btnSubMenu7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubMenu7.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSubMenu7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSubMenu7.ForeColor = System.Drawing.Color.Black;
             this.btnSubMenu7.Image = global::Team5_SmartMOM.Properties.Resources.happy__1_;
             this.btnSubMenu7.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -861,7 +874,7 @@ namespace Team5_SmartMOM
             this.button6.Dock = System.Windows.Forms.DockStyle.Top;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button6.ForeColor = System.Drawing.Color.Gray;
             this.button6.Image = global::Team5_SmartMOM.Properties.Resources.checklist1;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -880,7 +893,7 @@ namespace Team5_SmartMOM
             this.button10.Dock = System.Windows.Forms.DockStyle.Top;
             this.button10.FlatAppearance.BorderSize = 0;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button10.ForeColor = System.Drawing.Color.Gray;
             this.button10.Image = global::Team5_SmartMOM.Properties.Resources.courier;
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -899,7 +912,7 @@ namespace Team5_SmartMOM
             this.btnSubMenu6.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSubMenu6.FlatAppearance.BorderSize = 0;
             this.btnSubMenu6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubMenu6.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSubMenu6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSubMenu6.ForeColor = System.Drawing.Color.Black;
             this.btnSubMenu6.Image = global::Team5_SmartMOM.Properties.Resources.employee;
             this.btnSubMenu6.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -929,7 +942,7 @@ namespace Team5_SmartMOM
             this.button19.Dock = System.Windows.Forms.DockStyle.Top;
             this.button19.FlatAppearance.BorderSize = 0;
             this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button19.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button19.ForeColor = System.Drawing.Color.Gray;
             this.button19.Image = global::Team5_SmartMOM.Properties.Resources.deliveryman;
             this.button19.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -948,7 +961,7 @@ namespace Team5_SmartMOM
             this.button20.Dock = System.Windows.Forms.DockStyle.Top;
             this.button20.FlatAppearance.BorderSize = 0;
             this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button20.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button20.ForeColor = System.Drawing.Color.Gray;
             this.button20.Image = global::Team5_SmartMOM.Properties.Resources.delivery;
             this.button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -966,7 +979,7 @@ namespace Team5_SmartMOM
             this.btnSubMenu5.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSubMenu5.FlatAppearance.BorderSize = 0;
             this.btnSubMenu5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubMenu5.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSubMenu5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSubMenu5.ForeColor = System.Drawing.Color.Black;
             this.btnSubMenu5.Image = global::Team5_SmartMOM.Properties.Resources.truck;
             this.btnSubMenu5.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -997,7 +1010,7 @@ namespace Team5_SmartMOM
             this.btnSaleManage.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSaleManage.FlatAppearance.BorderSize = 0;
             this.btnSaleManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaleManage.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSaleManage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSaleManage.ForeColor = System.Drawing.Color.Gray;
             this.btnSaleManage.Image = global::Team5_SmartMOM.Properties.Resources.profile;
             this.btnSaleManage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1015,7 +1028,7 @@ namespace Team5_SmartMOM
             this.btnSellReiceve.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSellReiceve.FlatAppearance.BorderSize = 0;
             this.btnSellReiceve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSellReiceve.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSellReiceve.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSellReiceve.ForeColor = System.Drawing.Color.Gray;
             this.btnSellReiceve.Image = global::Team5_SmartMOM.Properties.Resources.waiting;
             this.btnSellReiceve.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1033,7 +1046,7 @@ namespace Team5_SmartMOM
             this.btnSellingList.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSellingList.FlatAppearance.BorderSize = 0;
             this.btnSellingList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSellingList.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSellingList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSellingList.ForeColor = System.Drawing.Color.Gray;
             this.btnSellingList.Image = global::Team5_SmartMOM.Properties.Resources.video_conference;
             this.btnSellingList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1051,7 +1064,7 @@ namespace Team5_SmartMOM
             this.btnSubMenu4.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSubMenu4.FlatAppearance.BorderSize = 0;
             this.btnSubMenu4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubMenu4.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSubMenu4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSubMenu4.ForeColor = System.Drawing.Color.Black;
             this.btnSubMenu4.Image = global::Team5_SmartMOM.Properties.Resources.process__1_;
             this.btnSubMenu4.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -1081,7 +1094,7 @@ namespace Team5_SmartMOM
             this.button17.Dock = System.Windows.Forms.DockStyle.Top;
             this.button17.FlatAppearance.BorderSize = 0;
             this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button17.ForeColor = System.Drawing.Color.Gray;
             this.button17.Image = global::Team5_SmartMOM.Properties.Resources.warehouse;
             this.button17.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1099,7 +1112,7 @@ namespace Team5_SmartMOM
             this.button18.Dock = System.Windows.Forms.DockStyle.Top;
             this.button18.FlatAppearance.BorderSize = 0;
             this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button18.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button18.ForeColor = System.Drawing.Color.Gray;
             this.button18.Image = global::Team5_SmartMOM.Properties.Resources.box__1_;
             this.button18.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1117,7 +1130,7 @@ namespace Team5_SmartMOM
             this.btnSubMenu3.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSubMenu3.FlatAppearance.BorderSize = 0;
             this.btnSubMenu3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubMenu3.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSubMenu3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSubMenu3.ForeColor = System.Drawing.Color.Black;
             this.btnSubMenu3.Image = global::Team5_SmartMOM.Properties.Resources.shopping_bag;
             this.btnSubMenu3.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -1147,7 +1160,7 @@ namespace Team5_SmartMOM
             this.button14.Dock = System.Windows.Forms.DockStyle.Top;
             this.button14.FlatAppearance.BorderSize = 0;
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button14.ForeColor = System.Drawing.Color.Gray;
             this.button14.Image = global::Team5_SmartMOM.Properties.Resources.process;
             this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1165,7 +1178,7 @@ namespace Team5_SmartMOM
             this.button15.Dock = System.Windows.Forms.DockStyle.Top;
             this.button15.FlatAppearance.BorderSize = 0;
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button15.ForeColor = System.Drawing.Color.Gray;
             this.button15.Image = global::Team5_SmartMOM.Properties.Resources.material;
             this.button15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1183,7 +1196,7 @@ namespace Team5_SmartMOM
             this.btnSubMenu2.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSubMenu2.FlatAppearance.BorderSize = 0;
             this.btnSubMenu2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubMenu2.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSubMenu2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSubMenu2.ForeColor = System.Drawing.Color.Black;
             this.btnSubMenu2.Image = global::Team5_SmartMOM.Properties.Resources.material__1_;
             this.btnSubMenu2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -1219,7 +1232,7 @@ namespace Team5_SmartMOM
             this.button24.Dock = System.Windows.Forms.DockStyle.Top;
             this.button24.FlatAppearance.BorderSize = 0;
             this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button24.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button24.ForeColor = System.Drawing.Color.Gray;
             this.button24.Image = global::Team5_SmartMOM.Properties.Resources.file;
             this.button24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1237,7 +1250,7 @@ namespace Team5_SmartMOM
             this.button25.Dock = System.Windows.Forms.DockStyle.Top;
             this.button25.FlatAppearance.BorderSize = 0;
             this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button25.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button25.ForeColor = System.Drawing.Color.Gray;
             this.button25.Image = global::Team5_SmartMOM.Properties.Resources.checklist;
             this.button25.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1255,7 +1268,7 @@ namespace Team5_SmartMOM
             this.button26.Dock = System.Windows.Forms.DockStyle.Top;
             this.button26.FlatAppearance.BorderSize = 0;
             this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button26.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button26.ForeColor = System.Drawing.Color.Gray;
             this.button26.Image = global::Team5_SmartMOM.Properties.Resources.process;
             this.button26.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1273,7 +1286,7 @@ namespace Team5_SmartMOM
             this.button27.Dock = System.Windows.Forms.DockStyle.Top;
             this.button27.FlatAppearance.BorderSize = 0;
             this.button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button27.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button27.ForeColor = System.Drawing.Color.Gray;
             this.button27.Image = global::Team5_SmartMOM.Properties.Resources.happy;
             this.button27.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1291,7 +1304,7 @@ namespace Team5_SmartMOM
             this.button28.Dock = System.Windows.Forms.DockStyle.Top;
             this.button28.FlatAppearance.BorderSize = 0;
             this.button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button28.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button28.ForeColor = System.Drawing.Color.Gray;
             this.button28.Image = global::Team5_SmartMOM.Properties.Resources.delivery_truck;
             this.button28.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1309,7 +1322,7 @@ namespace Team5_SmartMOM
             this.button29.Dock = System.Windows.Forms.DockStyle.Top;
             this.button29.FlatAppearance.BorderSize = 0;
             this.button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button29.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button29.ForeColor = System.Drawing.Color.Gray;
             this.button29.Image = global::Team5_SmartMOM.Properties.Resources.logistics__1_;
             this.button29.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1327,7 +1340,7 @@ namespace Team5_SmartMOM
             this.button30.Dock = System.Windows.Forms.DockStyle.Top;
             this.button30.FlatAppearance.BorderSize = 0;
             this.button30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button30.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button30.ForeColor = System.Drawing.Color.Gray;
             this.button30.Image = global::Team5_SmartMOM.Properties.Resources.handshake;
             this.button30.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1345,7 +1358,7 @@ namespace Team5_SmartMOM
             this.btnMatList.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMatList.FlatAppearance.BorderSize = 0;
             this.btnMatList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMatList.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnMatList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnMatList.ForeColor = System.Drawing.Color.Gray;
             this.btnMatList.Image = global::Team5_SmartMOM.Properties.Resources.material;
             this.btnMatList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1364,7 +1377,7 @@ namespace Team5_SmartMOM
             this.btnSubMenu1.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSubMenu1.FlatAppearance.BorderSize = 0;
             this.btnSubMenu1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubMenu1.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSubMenu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSubMenu1.ForeColor = System.Drawing.Color.Black;
             this.btnSubMenu1.Image = global::Team5_SmartMOM.Properties.Resources.bars_chart;
             this.btnSubMenu1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -1414,6 +1427,18 @@ namespace Team5_SmartMOM
             this.tabControl1.TextColor = System.Drawing.Color.White;
             this.tabControl1.Transparent1 = 150;
             this.tabControl1.Transparent2 = 150;
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(88, 47);
+            this.toolStripLabel2.Text = "toolStripLabel2";
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(88, 47);
+            this.toolStripLabel3.Text = "toolStripLabel3";
             // 
             // MainForm
             // 
@@ -1555,6 +1580,8 @@ namespace Team5_SmartMOM
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripMenuItem 자재재고현황ToolStripMenuItem;
         private TabControlZ.TabControlZ tabControl1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
     }
 }
 
