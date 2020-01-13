@@ -16,5 +16,10 @@ namespace Team5_SmartMOM.PSM
         {
             InitializeComponent();
         }
+
+        private void Supplier_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

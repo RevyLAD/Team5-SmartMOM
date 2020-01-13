@@ -42,7 +42,7 @@ namespace Team5_SmartMOM
         }
         private void SidePanel_Gradient(object sender, PaintEventArgs e)
         {
-            Color startColor = Color.FromArgb(250,250,250);
+            Color startColor = Color.FromArgb(250, 250, 250);
             Color middleColor = Color.FromArgb(121, 159, 229);
             Color endColor = Color.FromArgb(250, 250, 250);
 
@@ -160,7 +160,7 @@ namespace Team5_SmartMOM
 
         #endregion
 
-        
+
         private void CreateTabPages(string text, Form OpenForm)
         {
             foreach (TabPage childForm in this.tabControl1.TabPages)
@@ -300,21 +300,14 @@ namespace Team5_SmartMOM
         {
             CreateTabPages("영업마스터", new Sales_Master());
         }
-
-        private void toolStripButton3_Click(object sender, EventArgs e)
+        private void 제품출하ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (ToolStripLabel toolStripLabel in this.toolStrip1.Items)
-            {
-                if (toolStripLabel.Text == tabControl1.SelectedTab.Text)
-                    return;
-            }
-            ToolStripLabel toolStripLabel1 = new ToolStripLabel();
+            CreateTabPages("고객주문별재고현황", new CustomerOrderStatus());
+        }
 
-            toolStripLabel1.Name = tabControl1.SelectedTab.Text;
-            toolStripLabel1.Size = new System.Drawing.Size(88, 47);
-            toolStripLabel1.Text = tabControl1.SelectedTab.Text;
-
-            toolStrip1.Items.Add(toolStripLabel1);
+        private void 출하현황ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("출하현황", new ShipmentStatus());
         }
     }
 }

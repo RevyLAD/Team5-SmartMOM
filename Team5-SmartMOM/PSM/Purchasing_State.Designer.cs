@@ -46,20 +46,45 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.panelTop.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panelMid.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // panelMid
             // 
+            this.panelMid.Controls.Add(this.button4);
+            this.panelMid.Controls.SetChildIndex(this.lblArrow, 0);
+            this.panelMid.Controls.SetChildIndex(this.label1, 0);
+            this.panelMid.Controls.SetChildIndex(this.button1, 0);
+            this.panelMid.Controls.SetChildIndex(this.button2, 0);
+            this.panelMid.Controls.SetChildIndex(this.button3, 0);
+            this.panelMid.Controls.SetChildIndex(this.button4, 0);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(979, 0);
+            this.button3.Size = new System.Drawing.Size(96, 24);
+            this.button3.Text = "납기일자변경";
+            this.button3.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1075, 0);
+            this.button2.Size = new System.Drawing.Size(75, 24);
+            this.button2.Text = "발주취소";
+            this.button2.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1150, 0);
+            this.button1.Size = new System.Drawing.Size(48, 24);
+            this.button1.Visible = false;
             // 
             // panelTop
             // 
@@ -79,41 +104,14 @@
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label2);
             // 
-            // panelMid
+            // splitContainer2
             // 
-            this.panelMid.Controls.Add(this.button4);
-            this.panelMid.Controls.SetChildIndex(this.label1, 0);
-            this.panelMid.Controls.SetChildIndex(this.button1, 0);
-            this.panelMid.Controls.SetChildIndex(this.button2, 0);
-            this.panelMid.Controls.SetChildIndex(this.button3, 0);
-            this.panelMid.Controls.SetChildIndex(this.button4, 0);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(953, 13);
-            this.button3.Size = new System.Drawing.Size(96, 24);
-            this.button3.Text = "납기일자변경";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1055, 13);
-            this.button2.Size = new System.Drawing.Size(75, 24);
-            this.button2.Text = "발주취소";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1136, 13);
-            this.button1.Size = new System.Drawing.Size(48, 24);
-            this.button1.Text = "엑셀";
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Size = new System.Drawing.Size(94, 24);
             this.label1.Text = "발주현황";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // splitContainer2
-            // 
             // 
             // button4
             // 
@@ -124,6 +122,7 @@
             this.button4.TabIndex = 2;
             this.button4.Text = "발주서 출력";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
             // 
             // label2
             // 
@@ -267,18 +266,15 @@
             this.Load += new System.EventHandler(this.Purchasing_State_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.panelMid.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panelMid.ResumeLayout(false);
-            this.panelMid.PerformLayout();
-            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
