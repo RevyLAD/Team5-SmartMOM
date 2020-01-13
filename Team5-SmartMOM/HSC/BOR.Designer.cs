@@ -51,17 +51,17 @@
             // 
             // panelFull
             // 
-            this.panelFull.Size = new System.Drawing.Size(1382, 609);
+            this.panelFull.Size = new System.Drawing.Size(1120, 609);
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(1362, 589);
+            this.panel1.Size = new System.Drawing.Size(1100, 589);
             // 
             // panelMid
             // 
             this.panelMid.Controls.Add(this.metroButton2);
             this.panelMid.Controls.Add(this.metroButton1);
-            this.panelMid.Size = new System.Drawing.Size(1362, 40);
+            this.panelMid.Size = new System.Drawing.Size(1100, 40);
             this.panelMid.Controls.SetChildIndex(this.lblArrow, 0);
             this.panelMid.Controls.SetChildIndex(this.metroButton1, 0);
             this.panelMid.Controls.SetChildIndex(this.metroButton2, 0);
@@ -74,27 +74,27 @@
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Dock = System.Windows.Forms.DockStyle.None;
-            this.button3.Location = new System.Drawing.Point(1201, 11);
+            this.button3.Location = new System.Drawing.Point(939, 11);
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Dock = System.Windows.Forms.DockStyle.None;
-            this.button2.Location = new System.Drawing.Point(1249, 11);
+            this.button2.Location = new System.Drawing.Point(987, 11);
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Dock = System.Windows.Forms.DockStyle.None;
-            this.button1.Location = new System.Drawing.Point(1300, 11);
+            this.button1.Location = new System.Drawing.Point(1038, 11);
             this.button1.Size = new System.Drawing.Size(65, 24);
             this.button1.Text = "이력조회";
             // 
             // panel2
             // 
             this.panel2.Location = new System.Drawing.Point(0, 40);
-            this.panel2.Size = new System.Drawing.Size(1362, 78);
+            this.panel2.Size = new System.Drawing.Size(1100, 78);
             // 
             // panelTop
             // 
@@ -105,7 +105,7 @@
             this.panelTop.Controls.Add(this.textBox1);
             this.panelTop.Controls.Add(this.cboFacCrow);
             this.panelTop.Controls.Add(this.label3);
-            this.panelTop.Size = new System.Drawing.Size(1362, 58);
+            this.panelTop.Size = new System.Drawing.Size(1100, 58);
             // 
             // splitContainer2
             // 
@@ -137,6 +137,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(218)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(704, 22);
             this.label4.Name = "label4";
@@ -150,7 +151,7 @@
             this.btnInquiry.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnInquiry.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInquiry.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInquiry.Location = new System.Drawing.Point(1267, 13);
+            this.btnInquiry.Location = new System.Drawing.Point(1005, 13);
             this.btnInquiry.Name = "btnInquiry";
             this.btnInquiry.Size = new System.Drawing.Size(92, 32);
             this.btnInquiry.TabIndex = 15;
@@ -177,6 +178,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(218)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(383, 20);
             this.label3.Name = "label3";
@@ -187,7 +189,7 @@
             // metroButton2
             // 
             this.metroButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton2.Location = new System.Drawing.Point(1291, 11);
+            this.metroButton2.Location = new System.Drawing.Point(1029, 11);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(62, 23);
             this.metroButton2.TabIndex = 5;
@@ -196,7 +198,7 @@
             // metroButton1
             // 
             this.metroButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton1.Location = new System.Drawing.Point(1211, 11);
+            this.metroButton1.Location = new System.Drawing.Point(949, 11);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(74, 23);
             this.metroButton1.TabIndex = 4;
@@ -205,17 +207,18 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(218)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.Location = new System.Drawing.Point(63, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 18);
             this.label5.TabIndex = 20;
-            this.label5.Text = "ㆍ 공정";
+            this.label5.Text = "ㆍ 품목";
             // 
             // BOR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(1382, 609);
+            this.ClientSize = new System.Drawing.Size(1120, 609);
             this.Name = "BOR";
             this.Text = "Bill Of Resource";
             this.Load += new System.EventHandler(this.BOR_Load);
