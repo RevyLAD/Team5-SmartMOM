@@ -100,7 +100,7 @@
             // 
             // label2
             // 
-            this.label2.Size = new System.Drawing.Size(16, 31);
+            this.lblArrow.Size = new System.Drawing.Size(16, 31);
             // 
             // Facilities
             // 
