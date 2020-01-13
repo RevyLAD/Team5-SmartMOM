@@ -34,26 +34,59 @@
             this.dtp_ExistingDate = new System.Windows.Forms.DateTimePicker();
             this.txt_item = new System.Windows.Forms.TextBox();
             this.cbo_Company = new System.Windows.Forms.ComboBox();
-            this.btn_newitem = new System.Windows.Forms.Button();
-            this.btn_delete = new System.Windows.Forms.Button();
-            this.btn_copy = new System.Windows.Forms.Button();
             this.btn_Search = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.panelMid.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.panelMid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // panelMid
             // 
-            this.splitContainer1.SplitterDistance = 44;
+            this.panelMid.Controls.Add(this.button6);
+            this.panelMid.Controls.Add(this.button5);
+            this.panelMid.Controls.Add(this.button4);
+            this.panelMid.Size = new System.Drawing.Size(1202, 32);
+            this.panelMid.Controls.SetChildIndex(this.lblArrow, 0);
+            this.panelMid.Controls.SetChildIndex(this.label1, 0);
+            this.panelMid.Controls.SetChildIndex(this.button1, 0);
+            this.panelMid.Controls.SetChildIndex(this.button2, 0);
+            this.panelMid.Controls.SetChildIndex(this.button3, 0);
+            this.panelMid.Controls.SetChildIndex(this.button4, 0);
+            this.panelMid.Controls.SetChildIndex(this.button5, 0);
+            this.panelMid.Controls.SetChildIndex(this.button6, 0);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(934, 0);
+            this.button3.Size = new System.Drawing.Size(57, 28);
+            this.button3.Text = "엑셀";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(991, 0);
+            this.button2.Size = new System.Drawing.Size(109, 28);
+            this.button2.Text = "양식 다운로드";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1100, 0);
+            this.button1.Size = new System.Drawing.Size(98, 28);
+            this.button1.Text = "Excel등록";
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(0, 32);
+            this.panel2.Size = new System.Drawing.Size(1202, 78);
             // 
             // panelTop
             // 
@@ -64,73 +97,54 @@
             this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Size = new System.Drawing.Size(1202, 44);
+            this.panelTop.Size = new System.Drawing.Size(1202, 58);
             // 
             // splitContainer2
             // 
             this.splitContainer2.Size = new System.Drawing.Size(1202, 541);
             this.splitContainer2.SplitterDistance = 53;
             // 
-            // panelMid
+            // splitContainer1
             // 
-            this.panelMid.Controls.Add(this.btn_copy);
-            this.panelMid.Controls.Add(this.btn_newitem);
-            this.panelMid.Controls.Add(this.btn_delete);
-            this.panelMid.Size = new System.Drawing.Size(1202, 53);
-            this.panelMid.Controls.SetChildIndex(this.label1, 0);
-            this.panelMid.Controls.SetChildIndex(this.button1, 0);
-            this.panelMid.Controls.SetChildIndex(this.button2, 0);
-            this.panelMid.Controls.SetChildIndex(this.button3, 0);
-            this.panelMid.Controls.SetChildIndex(this.btn_delete, 0);
-            this.panelMid.Controls.SetChildIndex(this.btn_newitem, 0);
-            this.panelMid.Controls.SetChildIndex(this.btn_copy, 0);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(935, 19);
-            this.button3.Text = "엑셀";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(986, 19);
-            this.button2.Size = new System.Drawing.Size(109, 24);
-            this.button2.Text = "양식 다운로드";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1101, 19);
-            this.button1.Size = new System.Drawing.Size(98, 24);
-            this.button1.Text = "Excel등록";
+            this.splitContainer1.Size = new System.Drawing.Size(1145, 541);
+            this.splitContainer1.SplitterDistance = 524;
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(100, 22);
+            this.label1.Size = new System.Drawing.Size(100, 28);
             this.label1.Text = "자재단가관리";
+            // 
+            // lblArrow
+            // 
+            this.lblArrow.Size = new System.Drawing.Size(16, 28);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(17, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 12);
+            this.label2.Size = new System.Drawing.Size(70, 12);
             this.label2.TabIndex = 0;
             this.label2.Text = "ㆍ기준일자";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(357, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.Size = new System.Drawing.Size(44, 12);
             this.label3.TabIndex = 1;
             this.label3.Text = "ㆍ품목";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(706, 17);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 12);
+            this.label4.Size = new System.Drawing.Size(44, 12);
             this.label4.TabIndex = 2;
             this.label4.Text = "ㆍ업체";
             // 
@@ -157,37 +171,6 @@
             this.cbo_Company.Size = new System.Drawing.Size(207, 20);
             this.cbo_Company.TabIndex = 5;
             // 
-            // btn_newitem
-            // 
-            this.btn_newitem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_newitem.Location = new System.Drawing.Point(782, 19);
-            this.btn_newitem.Name = "btn_newitem";
-            this.btn_newitem.Size = new System.Drawing.Size(45, 24);
-            this.btn_newitem.TabIndex = 14;
-            this.btn_newitem.Text = "등록";
-            this.btn_newitem.UseVisualStyleBackColor = true;
-            this.btn_newitem.Click += new System.EventHandler(this.Btn_newitem_Click);
-            // 
-            // btn_delete
-            // 
-            this.btn_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_delete.Location = new System.Drawing.Point(833, 19);
-            this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(45, 24);
-            this.btn_delete.TabIndex = 13;
-            this.btn_delete.Text = "삭제";
-            this.btn_delete.UseVisualStyleBackColor = true;
-            // 
-            // btn_copy
-            // 
-            this.btn_copy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_copy.Location = new System.Drawing.Point(884, 19);
-            this.btn_copy.Name = "btn_copy";
-            this.btn_copy.Size = new System.Drawing.Size(45, 24);
-            this.btn_copy.TabIndex = 15;
-            this.btn_copy.Text = "복사";
-            this.btn_copy.UseVisualStyleBackColor = true;
-            // 
             // btn_Search
             // 
             this.btn_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
@@ -199,6 +182,52 @@
             this.btn_Search.Text = "조회";
             this.btn_Search.UseVisualStyleBackColor = false;
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button4.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button4.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(877, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(57, 28);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "복사";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button5.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button5.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(820, 0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(57, 28);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "삭제";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button6.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button6.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(763, 0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(57, 28);
+            this.button6.TabIndex = 18;
+            this.button6.Text = "등록";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.Btn_newitem_Click);
+            // 
             // Material_Cost_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -206,17 +235,15 @@
             this.Name = "Material_Cost_Management";
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.panelMid.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
-            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.panelMid.ResumeLayout(false);
-            this.panelMid.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -230,8 +257,8 @@
         private System.Windows.Forms.TextBox txt_item;
         private System.Windows.Forms.DateTimePicker dtp_ExistingDate;
         private System.Windows.Forms.Button btn_Search;
-        protected System.Windows.Forms.Button btn_copy;
-        protected System.Windows.Forms.Button btn_newitem;
-        protected System.Windows.Forms.Button btn_delete;
+        protected System.Windows.Forms.Button button6;
+        protected System.Windows.Forms.Button button5;
+        protected System.Windows.Forms.Button button4;
     }
 }

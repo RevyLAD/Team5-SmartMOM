@@ -188,15 +188,17 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(402, 10);
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button2.Location = new System.Drawing.Point(401, 10);
             // 
             // button1
             // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Location = new System.Drawing.Point(305, 10);
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(1033, 10);
+            this.tileSave.Location = new System.Drawing.Point(1182, 10);
             // 
             // label2
             // 
