@@ -41,19 +41,32 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.panelMid.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.panelMid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // button3
             // 
+            this.button3.Location = new System.Drawing.Point(976, 0);
+            this.button3.Size = new System.Drawing.Size(77, 24);
+            this.button3.Text = "이동처리";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1053, 0);
+            this.button2.Size = new System.Drawing.Size(75, 24);
+            this.button2.Text = "상세조회";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1128, 0);
+            this.button1.Size = new System.Drawing.Size(70, 24);
             // 
             // panelTop
             // 
@@ -72,27 +85,10 @@
             // splitContainer2
             // 
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(1048, 22);
-            this.button3.Size = new System.Drawing.Size(77, 24);
-            this.button3.Text = "이동처리";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(967, 22);
-            this.button2.Size = new System.Drawing.Size(75, 24);
-            this.button2.Text = "상세조회";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1129, 22);
-            this.button1.Size = new System.Drawing.Size(70, 24);
-            this.button1.Text = "엑셀";
-            // 
             // label1
             // 
-            this.label1.Text = "재고현황";
+            this.label1.Size = new System.Drawing.Size(200, 24);
+            this.label1.Text = "고객주문별 재고현황";
             // 
             // label2
             // 
@@ -201,19 +197,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1222, 609);
             this.Name = "CustomerOrderStatus";
+            this.Load += new System.EventHandler(this.CustomerOrderStatus_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.panelMid.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
-            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.panelMid.ResumeLayout(false);
-            this.panelMid.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -333,5 +333,15 @@ namespace Team5_SmartMOM
         {
             CreateTabPages("입출고현황", new Stock_RF_State());
         }
+
+        private void 제품출하ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("고객주문별재고현황", new CustomerOrderStatus());
+        }
+
+        private void 출하현황ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("출하현황", new ShipmentStatus());
+        }
     }
 }

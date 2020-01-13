@@ -81,6 +81,8 @@ namespace Team5_SmartMOM
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -133,8 +135,6 @@ namespace Team5_SmartMOM
             this.btnSubMenu1 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.tabControl1 = new TabControlZ.TabControlZ();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -306,63 +306,63 @@ namespace Team5_SmartMOM
             // 정규발주ToolStripMenuItem
             // 
             this.정규발주ToolStripMenuItem.Name = "정규발주ToolStripMenuItem";
-            this.정규발주ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.정규발주ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.정규발주ToolStripMenuItem.Text = "정규발주";
             this.정규발주ToolStripMenuItem.Click += new System.EventHandler(this.정규발주ToolStripMenuItem_Click);
             // 
             // 발주현황ToolStripMenuItem
             // 
             this.발주현황ToolStripMenuItem.Name = "발주현황ToolStripMenuItem";
-            this.발주현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.발주현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.발주현황ToolStripMenuItem.Text = "발주현황";
             this.발주현황ToolStripMenuItem.Click += new System.EventHandler(this.발주현황ToolStripMenuItem_Click);
             // 
             // 입고대기ToolStripMenuItem
             // 
             this.입고대기ToolStripMenuItem.Name = "입고대기ToolStripMenuItem";
-            this.입고대기ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.입고대기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.입고대기ToolStripMenuItem.Text = "입고대기";
             this.입고대기ToolStripMenuItem.Click += new System.EventHandler(this.입고대기ToolStripMenuItem_Click);
             // 
             // 자재입고ToolStripMenuItem
             // 
             this.자재입고ToolStripMenuItem.Name = "자재입고ToolStripMenuItem";
-            this.자재입고ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.자재입고ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.자재입고ToolStripMenuItem.Text = "자재입고";
             this.자재입고ToolStripMenuItem.Click += new System.EventHandler(this.자재입고ToolStripMenuItem_Click);
             // 
             // 자재입고현황ToolStripMenuItem
             // 
             this.자재입고현황ToolStripMenuItem.Name = "자재입고현황ToolStripMenuItem";
-            this.자재입고현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.자재입고현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.자재입고현황ToolStripMenuItem.Text = "자재입고현황";
             this.자재입고현황ToolStripMenuItem.Click += new System.EventHandler(this.자재입고현황ToolStripMenuItem_Click);
             // 
             // 자재재고현황ToolStripMenuItem
             // 
             this.자재재고현황ToolStripMenuItem.Name = "자재재고현황ToolStripMenuItem";
-            this.자재재고현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.자재재고현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.자재재고현황ToolStripMenuItem.Text = "자재재고현황";
             this.자재재고현황ToolStripMenuItem.Click += new System.EventHandler(this.자재재고현황ToolStripMenuItem_Click);
             // 
             // 자재불출요청ToolStripMenuItem
             // 
             this.자재불출요청ToolStripMenuItem.Name = "자재불출요청ToolStripMenuItem";
-            this.자재불출요청ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.자재불출요청ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.자재불출요청ToolStripMenuItem.Text = "자재불출요청";
             this.자재불출요청ToolStripMenuItem.Click += new System.EventHandler(this.자재불출요청ToolStripMenuItem_Click);
             // 
             // 원자재불출ToolStripMenuItem
             // 
             this.원자재불출ToolStripMenuItem.Name = "원자재불출ToolStripMenuItem";
-            this.원자재불출ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.원자재불출ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.원자재불출ToolStripMenuItem.Text = "원자재불출";
             this.원자재불출ToolStripMenuItem.Click += new System.EventHandler(this.원자재불출ToolStripMenuItem_Click);
             // 
             // 입출고현황ToolStripMenuItem
             // 
             this.입출고현황ToolStripMenuItem.Name = "입출고현황ToolStripMenuItem";
-            this.입출고현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.입출고현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.입출고현황ToolStripMenuItem.Text = "입출고현황";
             this.입출고현황ToolStripMenuItem.Click += new System.EventHandler(this.입출고현황ToolStripMenuItem_Click);
             // 
@@ -421,14 +421,16 @@ namespace Team5_SmartMOM
             // 제품출하ToolStripMenuItem
             // 
             this.제품출하ToolStripMenuItem.Name = "제품출하ToolStripMenuItem";
-            this.제품출하ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.제품출하ToolStripMenuItem.Text = "제품출하";
+            this.제품출하ToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.제품출하ToolStripMenuItem.Text = "고객주문별재고현황";
+            this.제품출하ToolStripMenuItem.Click += new System.EventHandler(this.제품출하ToolStripMenuItem_Click);
             // 
             // 출하현황ToolStripMenuItem
             // 
             this.출하현황ToolStripMenuItem.Name = "출하현황ToolStripMenuItem";
-            this.출하현황ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.출하현황ToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.출하현황ToolStripMenuItem.Text = "출하현황";
+            this.출하현황ToolStripMenuItem.Click += new System.EventHandler(this.출하현황ToolStripMenuItem_Click);
             // 
             // 근무시간관리ToolStripMenuItem
             // 
@@ -555,6 +557,18 @@ namespace Team5_SmartMOM
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(88, 47);
             this.toolStripLabel1.Text = "toolStripLabel1";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(88, 47);
+            this.toolStripLabel2.Text = "toolStripLabel2";
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(88, 47);
+            this.toolStripLabel3.Text = "toolStripLabel3";
             // 
             // tabPage1
             // 
@@ -1427,18 +1441,6 @@ namespace Team5_SmartMOM
             this.tabControl1.TextColor = System.Drawing.Color.White;
             this.tabControl1.Transparent1 = 150;
             this.tabControl1.Transparent2 = 150;
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(88, 47);
-            this.toolStripLabel2.Text = "toolStripLabel2";
-            // 
-            // toolStripLabel3
-            // 
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(88, 47);
-            this.toolStripLabel3.Text = "toolStripLabel3";
             // 
             // MainForm
             // 
