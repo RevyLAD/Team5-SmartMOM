@@ -34,29 +34,36 @@
             this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
             this.cboEquipment = new System.Windows.Forms.ComboBox();
             this.cboPlanID = new System.Windows.Forms.ComboBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.panelMid.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.panelMid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // button3
             // 
+            this.button3.Location = new System.Drawing.Point(1019, 0);
+            this.button3.Size = new System.Drawing.Size(65, 24);
+            this.button3.Text = "엑셀";
+            // 
+            // panel2
+            // 
+            this.panel2.Size = new System.Drawing.Size(1202, 130);
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.btnSearch);
             this.panelTop.Controls.Add(this.txtProduct);
             this.panelTop.Controls.Add(this.label10);
             this.panelTop.Controls.Add(this.label5);
@@ -66,17 +73,11 @@
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label11);
             this.panelTop.Controls.Add(this.cboEquipment);
-            this.panelTop.Controls.Add(this.btnSearch);
             this.panelTop.Controls.Add(this.cboPlanID);
+            this.panelTop.Size = new System.Drawing.Size(1202, 110);
             // 
             // splitContainer2
             // 
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(1039, 19);
-            this.button3.Size = new System.Drawing.Size(65, 24);
-            this.button3.Text = "엑셀";
             // 
             // label1
             // 
@@ -84,9 +85,9 @@
             // 
             // txtProduct
             // 
-            this.txtProduct.Location = new System.Drawing.Point(828, 21);
+            this.txtProduct.Location = new System.Drawing.Point(464, 64);
             this.txtProduct.Name = "txtProduct";
-            this.txtProduct.Size = new System.Drawing.Size(143, 21);
+            this.txtProduct.Size = new System.Drawing.Size(225, 21);
             this.txtProduct.TabIndex = 29;
             // 
             // label5
@@ -130,16 +131,6 @@
             this.cboPlanID.Size = new System.Drawing.Size(121, 20);
             this.cboPlanID.TabIndex = 25;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
-            this.btnSearch.Location = new System.Drawing.Point(1038, 68);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(109, 27);
-            this.btnSearch.TabIndex = 22;
-            this.btnSearch.Text = "조회";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -164,7 +155,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(767, 21);
+            this.label3.Location = new System.Drawing.Point(380, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 22);
             this.label3.TabIndex = 18;
@@ -180,6 +171,19 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "ㆍDate";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(1084, 36);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(93, 39);
+            this.btnSearch.TabIndex = 76;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
             // Product_Plan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -187,17 +191,15 @@
             this.Name = "Product_Plan";
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.panelMid.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
-            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.panelMid.ResumeLayout(false);
-            this.panelMid.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -210,10 +212,10 @@
         private System.Windows.Forms.DateTimePicker dtpDateStart;
         private System.Windows.Forms.ComboBox cboEquipment;
         private System.Windows.Forms.ComboBox cboPlanID;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        protected System.Windows.Forms.Button btnSearch;
     }
 }
