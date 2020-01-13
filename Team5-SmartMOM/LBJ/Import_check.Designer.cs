@@ -36,7 +36,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            //this.label2 = new System.Windows.Forms.Label();
             this.dtpCheckday2 = new System.Windows.Forms.DateTimePicker();
             this.dtpCheckday = new System.Windows.Forms.DateTimePicker();
             this.cboCheckDay = new System.Windows.Forms.ComboBox();
@@ -115,7 +115,7 @@
             this.panelTop.Controls.Add(this.label6);
             this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.label3);
-            this.panelTop.Controls.Add(this.label2);
+            //this.panelTop.Controls.Add(this.label2);
             this.panelTop.Controls.Add(this.dtpCheckday2);
             this.panelTop.Controls.Add(this.dtpCheckday);
             this.panelTop.Controls.Add(this.cboCheckDay);
@@ -193,12 +193,12 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(199, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(14, 12);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "~";
+            //this.label2.AutoSize = true;
+            //this.label2.Location = new System.Drawing.Point(199, 17);
+            //this.label2.Name = "label2";
+            //this.label2.Size = new System.Drawing.Size(14, 12);
+            //this.label2.TabIndex = 13;
+            //this.label2.Text = "~";
             // 
             // dtpCheckday2
             // 
@@ -296,7 +296,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel3;
+        //private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TextBox txtProduct;
@@ -307,7 +307,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        //private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpCheckday2;
         private System.Windows.Forms.DateTimePicker dtpCheckday;
         private System.Windows.Forms.ComboBox cboCheckDay;

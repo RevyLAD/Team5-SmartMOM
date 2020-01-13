@@ -18,7 +18,7 @@
                 components.Dispose();
             }
             base.Dispose(disposing);
-        }
+        }  
 
         #region Windows Form 디자이너에서 생성한 코드
 
@@ -28,47 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
             this.cboShift = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbosystem = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.panelTop.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
             this.panelMid.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panelTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.None;
-            this.splitContainer1.SplitterDistance = 65;
-            // 
-            // panelTop
-            // 
-            this.panelTop.Controls.Add(this.btnSearch);
-            this.panelTop.Controls.Add(this.label5);
-            this.panelTop.Controls.Add(this.cbosystem);
-            this.panelTop.Controls.Add(this.cboShift);
-            this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Size = new System.Drawing.Size(1202, 65);
-            // 
-            // panel2
-            // 
-            this.panel2.Size = new System.Drawing.Size(1202, 520);
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Size = new System.Drawing.Size(1202, 520);
-            this.splitContainer2.SplitterDistance = 51;
             // 
             // panelMid
             // 
@@ -76,37 +50,61 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(930, 21);
-            this.button3.Size = new System.Drawing.Size(81, 24);
-            this.button3.Text = "등록";
+            this.button3.Location = new System.Drawing.Point(955, 0);
+            this.button3.Size = new System.Drawing.Size(81, 47);
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1017, 21);
-            this.button2.Size = new System.Drawing.Size(81, 24);
+            this.button2.Location = new System.Drawing.Point(1036, 0);
+            this.button2.Size = new System.Drawing.Size(81, 47);
             this.button2.Text = "삭제";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1104, 21);
-            this.button1.Size = new System.Drawing.Size(81, 24);
+            this.button1.Location = new System.Drawing.Point(1117, 0);
+            this.button1.Size = new System.Drawing.Size(81, 47);
             this.button1.Text = "복사";
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(0, 51);
+            this.panel2.Size = new System.Drawing.Size(1202, 77);
+            // 
+            // panelTop
+            // 
+            this.panelTop.Controls.Add(this.btnSearch);
+            this.panelTop.Controls.Add(this.label5);
+            this.panelTop.Controls.Add(this.cbosystem);
+            this.panelTop.Controls.Add(this.cboShift);
+            //this.panelTop.Controls.Add(this.label2);
+            this.panelTop.Size = new System.Drawing.Size(1202, 57);
+            //this.panelTop.Controls.SetChildIndex(this.label2, 0);
+            this.panelTop.Controls.SetChildIndex(this.cboShift, 0);
+            this.panelTop.Controls.SetChildIndex(this.cbosystem, 0);
+            this.panelTop.Controls.SetChildIndex(this.label5, 0);
+            this.panelTop.Controls.SetChildIndex(this.btnSearch, 0);
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Size = new System.Drawing.Size(1202, 520);
+            this.splitContainer2.SplitterDistance = 51;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.None;
+            this.splitContainer1.SplitterDistance = 65;
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(100, 22);
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Size = new System.Drawing.Size(100, 47);
             this.label1.Text = "SHIFT 관리";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(33, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 21);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "ㆍShift";
+            //this.label2.Location = new System.Drawing.Point(0, 10);
+            //this.label2.Size = new System.Drawing.Size(16, 43);
             // 
             // cboShift
             // 
@@ -155,25 +153,22 @@
             this.Load += new System.EventHandler(this.office_hours_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.panelMid.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.panelMid.ResumeLayout(false);
-            this.panelMid.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.ComboBox cboShift;
-        private System.Windows.Forms.Label label2;
+        //private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbosystem;
         protected System.Windows.Forms.Button btnSearch;
