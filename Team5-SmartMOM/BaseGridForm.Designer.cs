@@ -40,7 +40,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelMid = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblArrow = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -168,7 +168,7 @@
             // 
             this.panelMid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelMid.Controls.Add(this.label1);
-            this.panelMid.Controls.Add(this.label2);
+            this.panelMid.Controls.Add(this.lblArrow);
             this.panelMid.Controls.Add(this.button3);
             this.panelMid.Controls.Add(this.button2);
             this.panelMid.Controls.Add(this.button1);
@@ -190,16 +190,16 @@
             this.label1.Text = "항목이름";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label2
+            // lblArrow
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label2.Image = global::Team5_SmartMOM.Properties.Resources.arrow;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.label2.Size = new System.Drawing.Size(16, 24);
-            this.label2.TabIndex = 11;
+            this.lblArrow.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblArrow.Image = global::Team5_SmartMOM.Properties.Resources.arrow;
+            this.lblArrow.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblArrow.Location = new System.Drawing.Point(0, 0);
+            this.lblArrow.Name = "lblArrow";
+            this.lblArrow.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.lblArrow.Size = new System.Drawing.Size(16, 24);
+            this.lblArrow.TabIndex = 11;
             // 
             // button3
             // 
@@ -285,7 +285,7 @@
         protected System.Windows.Forms.SplitContainer splitContainer2;
         protected System.Windows.Forms.SplitContainer splitContainer1;
         protected System.Windows.Forms.Label label1;
-        protected System.Windows.Forms.Label label2;
+        protected System.Windows.Forms.Label lblArrow;
         protected System.Windows.Forms.DataGridView dataGridView1;
     }
 }
