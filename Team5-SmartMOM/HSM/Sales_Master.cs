@@ -14,5 +14,13 @@ namespace Team5_SmartMOM.HSM
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MasterCreate frm = new MasterCreate();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
+
+        }
     }
 }

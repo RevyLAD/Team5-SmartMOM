@@ -35,20 +35,38 @@
             this.btn_Search = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.panelMid.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.panelMid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // panelMid
             // 
-            this.splitContainer1.SplitterDistance = 51;
+            this.panelMid.Size = new System.Drawing.Size(1202, 36);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(974, 0);
+            this.button3.Size = new System.Drawing.Size(110, 32);
+            this.button3.Text = "현행화";
+            // 
+            // button2
+            // 
+            this.button2.Size = new System.Drawing.Size(57, 32);
+            // 
+            // button1
+            // 
+            this.button1.Size = new System.Drawing.Size(57, 32);
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(0, 36);
+            this.panel2.Size = new System.Drawing.Size(1202, 83);
             // 
             // panelTop
             // 
@@ -57,26 +75,26 @@
             this.panelTop.Controls.Add(this.dtp_ExistingDate);
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Size = new System.Drawing.Size(1202, 51);
+            this.panelTop.Size = new System.Drawing.Size(1202, 63);
             // 
             // splitContainer2
             // 
             this.splitContainer2.Size = new System.Drawing.Size(1202, 534);
             this.splitContainer2.SplitterDistance = 52;
             // 
-            // panelMid
+            // splitContainer1
             // 
-            this.panelMid.Size = new System.Drawing.Size(1202, 52);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(991, 19);
-            this.button3.Size = new System.Drawing.Size(110, 24);
-            this.button3.Text = "현행화";
+            this.splitContainer1.Size = new System.Drawing.Size(1146, 534);
+            this.splitContainer1.SplitterDistance = 608;
             // 
             // label1
             // 
+            this.label1.Size = new System.Drawing.Size(88, 32);
             this.label1.Text = "환율정보";
+            // 
+            // lblArrow
+            // 
+            this.lblArrow.Size = new System.Drawing.Size(16, 32);
             // 
             // txt_Currency
             // 
@@ -96,18 +114,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(504, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 12);
+            this.label3.Size = new System.Drawing.Size(70, 12);
             this.label3.TabIndex = 13;
             this.label3.Text = "ㆍ화폐단위";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(17, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 12);
+            this.label2.Size = new System.Drawing.Size(70, 12);
             this.label2.TabIndex = 12;
             this.label2.Text = "ㆍ기준일자";
             // 
@@ -129,17 +149,15 @@
             this.Name = "ExChange_Rate_Management";
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.panelMid.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
-            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.panelMid.ResumeLayout(false);
-            this.panelMid.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

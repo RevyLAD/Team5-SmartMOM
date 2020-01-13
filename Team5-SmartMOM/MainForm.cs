@@ -11,6 +11,7 @@ using System.Drawing.Drawing2D;
 using Team5_SmartMOM.LBJ;
 using Team5_SmartMOM.HSC;
 using Team5_SmartMOM.PSM;
+using Team5_SmartMOM.HSM;
 
 namespace Team5_SmartMOM
 {
@@ -41,7 +42,7 @@ namespace Team5_SmartMOM
         }
         private void SidePanel_Gradient(object sender, PaintEventArgs e)
         {
-            Color startColor = Color.FromArgb(250,250,250);
+            Color startColor = Color.FromArgb(250, 250, 250);
             Color middleColor = Color.FromArgb(121, 159, 229);
             Color endColor = Color.FromArgb(250, 250, 250);
 
@@ -159,7 +160,7 @@ namespace Team5_SmartMOM
 
         #endregion
 
-        
+
         private void CreateTabPages(string text, Form OpenForm)
         {
             foreach (TabPage childForm in this.tabControl1.TabPages)
@@ -235,60 +236,6 @@ namespace Team5_SmartMOM
             CreateTabPages("수입 검사 현황", new Import_Check());
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button23_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnOrderManagement_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAS_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button235_Click(object sender, EventArgs e)
-        {
-
-        }
         private void 정규발주ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateTabPages("정규발주", new Purchasing());
@@ -332,6 +279,35 @@ namespace Team5_SmartMOM
         private void 입출고현황ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateTabPages("입출고현황", new Stock_RF_State());
+        }
+
+        private void 자재소요계호기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("자재소요계획", new Meterial_Plan());
+        }
+
+        private void 생산계획ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("생산계획", new Product_Plan());
+        }
+
+        private void 외주계획ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("외주계획", new OutSourcing_Plan());
+        }
+
+        private void 영업마스터ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("영업마스터", new Sales_Master());
+        }
+        private void 제품출하ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("고객주문별재고현황", new CustomerOrderStatus());
+        }
+
+        private void 출하현황ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("출하현황", new ShipmentStatus());
         }
     }
 }

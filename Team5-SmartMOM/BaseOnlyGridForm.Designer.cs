@@ -89,12 +89,12 @@
             // 
             // panelMid
             // 
-            this.panelMid.Controls.Add(this.panelTop);
-            this.panelMid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMid.Location = new System.Drawing.Point(0, 0);
-            this.panelMid.Name = "panelMid";
-            this.panelMid.Size = new System.Drawing.Size(1046, 55);
-            this.panelMid.TabIndex = 12;
+            //this.panelMid.Controls.Add(this.panelTop);
+            //this.panelMid.Dock = System.Windows.Forms.DockStyle.Fill;
+            //this.panelMid.Location = new System.Drawing.Point(0, 0);
+            //this.panelMid.Name = "panelMid";
+            //this.panelMid.Size = new System.Drawing.Size(1046, 55);
+            //this.panelMid.TabIndex = 12;
             // 
             // dgvMain
             // 

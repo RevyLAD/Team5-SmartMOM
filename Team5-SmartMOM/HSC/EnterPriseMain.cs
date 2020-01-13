@@ -40,14 +40,14 @@ namespace Team5_SmartMOM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "코드", "COM_Code", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "이름", "COM_Name", true, 110);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "타입", "COM_Type", true, 110);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "오너", "COM_Owner", true, 110);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "섹터", "COM_Sector", true, 110);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "대표자명", "COM_Owner", true, 125);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업종", "COM_Sector", true, 110);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "관리자", "COM_Manager", true, 110);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "E-mail", "COM_Email", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "연락처", "COM_Phone", true, 130);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "COM_UseOrNot", true, 130);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "모디", "COM_Modifier", true, 110);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "모디일", "COM_ModifiyDate", true, 120);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정일", "COM_Modifier", true, 110);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정일", "COM_ModifiyDate", true, 120);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "설명", "COM_Information", true, 257);
 
             HSC_Service service = new HSC_Service();
