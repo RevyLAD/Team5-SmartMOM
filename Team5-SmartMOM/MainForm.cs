@@ -300,5 +300,21 @@ namespace Team5_SmartMOM
         {
             CreateTabPages("영업마스터", new Sales_Master());
         }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            foreach (ToolStripLabel toolStripLabel in this.toolStrip1.Items)
+            {
+                if (toolStripLabel.Text == tabControl1.SelectedTab.Text)
+                    return;
+            }
+            ToolStripLabel toolStripLabel1 = new ToolStripLabel();
+
+            toolStripLabel1.Name = tabControl1.SelectedTab.Text;
+            toolStripLabel1.Size = new System.Drawing.Size(88, 47);
+            toolStripLabel1.Text = tabControl1.SelectedTab.Text;
+
+            toolStrip1.Items.Add(toolStripLabel1);
+        }
     }
 }
