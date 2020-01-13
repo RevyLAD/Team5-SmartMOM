@@ -79,7 +79,7 @@
             this.panelTop.Controls.Add(this.cboShift);
             //this.panelTop.Controls.Add(this.label2);
             this.panelTop.Size = new System.Drawing.Size(1202, 57);
-            //his.panelTop.Controls.SetChildIndex(this.label2, 0);
+            //this.panelTop.Controls.SetChildIndex(this.label2, 0);
             this.panelTop.Controls.SetChildIndex(this.cboShift, 0);
             this.panelTop.Controls.SetChildIndex(this.cbosystem, 0);
             this.panelTop.Controls.SetChildIndex(this.label5, 0);
