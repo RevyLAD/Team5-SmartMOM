@@ -296,7 +296,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel3;
+        //private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TextBox txtProduct;
@@ -307,7 +307,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        //private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpCheckday2;
         private System.Windows.Forms.DateTimePicker dtpCheckday;
         private System.Windows.Forms.ComboBox cboCheckDay;
