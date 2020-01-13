@@ -42,7 +42,7 @@ namespace Team5_SmartMOM
         }
         private void SidePanel_Gradient(object sender, PaintEventArgs e)
         {
-            Color startColor = Color.FromArgb(250,250,250);
+            Color startColor = Color.FromArgb(250, 250, 250);
             Color middleColor = Color.FromArgb(121, 159, 229);
             Color endColor = Color.FromArgb(250, 250, 250);
 
@@ -160,7 +160,7 @@ namespace Team5_SmartMOM
 
         #endregion
 
-        
+
         private void CreateTabPages(string text, Form OpenForm)
         {
             foreach (TabPage childForm in this.tabControl1.TabPages)
@@ -309,4 +309,5 @@ namespace Team5_SmartMOM
         {
             CreateTabPages("출하현황", new ShipmentStatus());
         }
+    }
 }
