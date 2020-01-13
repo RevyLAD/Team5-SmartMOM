@@ -51,19 +51,44 @@
             this.btn_newitem = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.panelMid.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.panelMid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // panelMid
             // 
+            this.panelMid.Controls.Add(this.btn_newitem);
+            this.panelMid.Controls.Add(this.btn_copy);
+            this.panelMid.Controls.SetChildIndex(this.lblArrow, 0);
+            this.panelMid.Controls.SetChildIndex(this.label1, 0);
+            this.panelMid.Controls.SetChildIndex(this.button1, 0);
+            this.panelMid.Controls.SetChildIndex(this.button2, 0);
+            this.panelMid.Controls.SetChildIndex(this.button3, 0);
+            this.panelMid.Controls.SetChildIndex(this.btn_copy, 0);
+            this.panelMid.Controls.SetChildIndex(this.btn_newitem, 0);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(955, 0);
+            this.button3.Text = "엑셀";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1012, 0);
+            this.button2.Size = new System.Drawing.Size(107, 24);
+            this.button2.Text = "양식 다운로드";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1119, 0);
+            this.button1.Size = new System.Drawing.Size(79, 24);
+            this.button1.Text = "Excel등록";
             // 
             // panelTop
             // 
@@ -89,34 +114,6 @@
             // 
             // splitContainer2
             // 
-            // 
-            // panelMid
-            // 
-            this.panelMid.Controls.Add(this.btn_newitem);
-            this.panelMid.Controls.Add(this.btn_copy);
-            this.panelMid.Controls.SetChildIndex(this.label1, 0);
-            this.panelMid.Controls.SetChildIndex(this.button1, 0);
-            this.panelMid.Controls.SetChildIndex(this.button2, 0);
-            this.panelMid.Controls.SetChildIndex(this.button3, 0);
-            this.panelMid.Controls.SetChildIndex(this.btn_copy, 0);
-            this.panelMid.Controls.SetChildIndex(this.btn_newitem, 0);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(956, 19);
-            this.button3.Text = "엑셀";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1007, 19);
-            this.button2.Size = new System.Drawing.Size(107, 24);
-            this.button2.Text = "양식 다운로드";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1120, 19);
-            this.button1.Size = new System.Drawing.Size(79, 24);
-            this.button1.Text = "Excel등록";
             // 
             // label1
             // 
@@ -287,7 +284,7 @@
             // btn_copy
             // 
             this.btn_copy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_copy.Location = new System.Drawing.Point(905, 19);
+            this.btn_copy.Location = new System.Drawing.Point(904, 1);
             this.btn_copy.Name = "btn_copy";
             this.btn_copy.Size = new System.Drawing.Size(45, 24);
             this.btn_copy.TabIndex = 2;
@@ -297,7 +294,7 @@
             // btn_newitem
             // 
             this.btn_newitem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_newitem.Location = new System.Drawing.Point(854, 19);
+            this.btn_newitem.Location = new System.Drawing.Point(853, 1);
             this.btn_newitem.Name = "btn_newitem";
             this.btn_newitem.Size = new System.Drawing.Size(45, 24);
             this.btn_newitem.TabIndex = 3;
@@ -312,17 +309,15 @@
             this.Name = "Item_Management";
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.panelMid.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
-            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.panelMid.ResumeLayout(false);
-            this.panelMid.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

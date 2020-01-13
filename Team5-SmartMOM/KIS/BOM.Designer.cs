@@ -41,20 +41,50 @@
             this.btn_Search = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.panelMid.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.panelMid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // panelMid
             // 
-            this.splitContainer1.SplitterDistance = 84;
+            this.panelMid.Controls.Add(this.btn_newitem);
+            this.panelMid.Controls.Add(this.g);
+            this.panelMid.Size = new System.Drawing.Size(1202, 49);
+            this.panelMid.Controls.SetChildIndex(this.lblArrow, 0);
+            this.panelMid.Controls.SetChildIndex(this.label1, 0);
+            this.panelMid.Controls.SetChildIndex(this.button1, 0);
+            this.panelMid.Controls.SetChildIndex(this.button2, 0);
+            this.panelMid.Controls.SetChildIndex(this.button3, 0);
+            this.panelMid.Controls.SetChildIndex(this.g, 0);
+            this.panelMid.Controls.SetChildIndex(this.btn_newitem, 0);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(904, 0);
+            this.button3.Size = new System.Drawing.Size(70, 45);
+            this.button3.Text = "엑셀";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(974, 0);
+            this.button2.Size = new System.Drawing.Size(120, 45);
+            this.button2.Text = "약식 다운로드";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1094, 0);
+            this.button1.Size = new System.Drawing.Size(104, 45);
+            this.button1.Text = "Excel 등록";
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(0, 49);
             // 
             // panelTop
             // 
@@ -67,46 +97,25 @@
             this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Size = new System.Drawing.Size(1202, 84);
             // 
             // splitContainer2
             // 
             this.splitContainer2.Size = new System.Drawing.Size(1202, 501);
             this.splitContainer2.SplitterDistance = 49;
             // 
-            // panelMid
+            // splitContainer1
             // 
-            this.panelMid.Controls.Add(this.btn_newitem);
-            this.panelMid.Controls.Add(this.g);
-            this.panelMid.Size = new System.Drawing.Size(1202, 49);
-            this.panelMid.Controls.SetChildIndex(this.label1, 0);
-            this.panelMid.Controls.SetChildIndex(this.button1, 0);
-            this.panelMid.Controls.SetChildIndex(this.button2, 0);
-            this.panelMid.Controls.SetChildIndex(this.button3, 0);
-            this.panelMid.Controls.SetChildIndex(this.g, 0);
-            this.panelMid.Controls.SetChildIndex(this.btn_newitem, 0);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(944, 19);
-            this.button3.Text = "엑셀";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(995, 19);
-            this.button2.Size = new System.Drawing.Size(107, 24);
-            this.button2.Text = "약식 다운로드";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1108, 19);
-            this.button1.Size = new System.Drawing.Size(91, 24);
-            this.button1.Text = "Excel 등록";
+            this.splitContainer1.Size = new System.Drawing.Size(1149, 501);
+            this.splitContainer1.SplitterDistance = 801;
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(40, 22);
+            this.label1.Size = new System.Drawing.Size(63, 45);
             this.label1.Text = "BOM";
+            // 
+            // lblArrow
+            // 
+            this.lblArrow.Size = new System.Drawing.Size(16, 45);
             // 
             // label2
             // 
@@ -179,7 +188,7 @@
             // g
             // 
             this.g.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.g.Location = new System.Drawing.Point(893, 19);
+            this.g.Location = new System.Drawing.Point(843, 18);
             this.g.Name = "g";
             this.g.Size = new System.Drawing.Size(45, 24);
             this.g.TabIndex = 9;
@@ -189,7 +198,7 @@
             // btn_newitem
             // 
             this.btn_newitem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_newitem.Location = new System.Drawing.Point(842, 19);
+            this.btn_newitem.Location = new System.Drawing.Point(792, 18);
             this.btn_newitem.Name = "btn_newitem";
             this.btn_newitem.Size = new System.Drawing.Size(45, 24);
             this.btn_newitem.TabIndex = 10;
@@ -215,17 +224,15 @@
             this.Name = "BOM";
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.panelMid.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
-            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.panelMid.ResumeLayout(false);
-            this.panelMid.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
