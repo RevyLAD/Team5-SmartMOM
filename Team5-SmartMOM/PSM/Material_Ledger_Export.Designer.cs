@@ -51,20 +51,28 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.panelTop.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
             this.panelMid.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panelTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // button3
             // 
+            this.button3.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.Text = "출고";
+            this.button2.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Visible = false;
             // 
             // panelTop
             // 
@@ -93,22 +101,9 @@
             // splitContainer2
             // 
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(965, 19);
-            this.button3.Visible = false;
-            // 
-            // button2
-            // 
-            this.button2.Text = "출고";
-            // 
-            // button1
-            // 
-            this.button1.Text = "엑셀";
-            // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(85, 22);
+            this.label1.Size = new System.Drawing.Size(121, 24);
             this.label1.Text = "원자재불출";
             // 
             // btnSearch
@@ -301,18 +296,15 @@
             this.Name = "Material_Ledger_Export";
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.panelMid.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.panelMid.ResumeLayout(false);
-            this.panelMid.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

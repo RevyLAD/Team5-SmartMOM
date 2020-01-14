@@ -175,6 +175,12 @@
     <Compile Include="HSM\Demand_Plan.Designer.cs">
       <DependentUpon>Demand_Plan.cs</DependentUpon>
     </Compile>
+    <Compile Include="HSM\MPS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\MPS.Designer.cs">
+      <DependentUpon>MPS.cs</DependentUpon>
+    </Compile>
     <Compile Include="HSM\MasterCreate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,11 +295,11 @@
     <Compile Include="KIS\Sales_Price_Management_detail.Designer.cs">
       <DependentUpon>Sales_Price_Management_detail.cs</DependentUpon>
     </Compile>
-    <Compile Include="LBJ\Import_check.cs">
+    <Compile Include="LBJ\Import_Check.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LBJ\Import_check.Designer.cs">
-      <DependentUpon>Import_check.cs</DependentUpon>
+    <Compile Include="LBJ\Import_Check.Designer.cs">
+      <DependentUpon>Import_Check.cs</DependentUpon>
     </Compile>
     <Compile Include="LBJ\office_hours.cs">
       <SubType>Form</SubType>
@@ -516,6 +522,9 @@
     <EmbeddedResource Include="HSM\Meterial_Plan.resx">
       <DependentUpon>Meterial_Plan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HSM\MPS.resx">
+      <DependentUpon>MPS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HSM\OutSourcing_Plan.resx">
       <DependentUpon>OutSourcing_Plan.cs</DependentUpon>
     </EmbeddedResource>
@@ -564,8 +573,8 @@
     <EmbeddedResource Include="KIS\Sales_Price_Management_detail.resx">
       <DependentUpon>Sales_Price_Management_detail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LBJ\Import_check.resx">
-      <DependentUpon>Import_check.cs</DependentUpon>
+    <EmbeddedResource Include="LBJ\Import_Check.resx">
+      <DependentUpon>Import_Check.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LBJ\office_hours.resx">
       <DependentUpon>office_hours.cs</DependentUpon>

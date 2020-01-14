@@ -233,7 +233,7 @@ namespace Team5_SmartMOM
 
         private void 수입검사ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateTabPages("수입 검사 현황", new Import_check());
+            CreateTabPages("수입 검사 현황", new Import_Check());
         }
 
         private void 정규발주ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -308,6 +308,11 @@ namespace Team5_SmartMOM
         private void 출하현황ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateTabPages("출하현황", new ShipmentStatus());
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

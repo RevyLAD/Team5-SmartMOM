@@ -59,10 +59,11 @@
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1202, 130);
+            this.panel2.Size = new System.Drawing.Size(1202, 102);
             // 
             // panelTop
             // 
+            this.panelTop.BackColor = System.Drawing.Color.Transparent;
             this.panelTop.Controls.Add(this.btnSearch);
             this.panelTop.Controls.Add(this.txtProduct);
             this.panelTop.Controls.Add(this.label10);
@@ -74,7 +75,7 @@
             this.panelTop.Controls.Add(this.label11);
             this.panelTop.Controls.Add(this.cboEquipment);
             this.panelTop.Controls.Add(this.cboPlanID);
-            this.panelTop.Size = new System.Drawing.Size(1202, 110);
+            this.panelTop.Size = new System.Drawing.Size(1202, 82);
             // 
             // splitContainer2
             // 
@@ -85,7 +86,7 @@
             // 
             // txtProduct
             // 
-            this.txtProduct.Location = new System.Drawing.Point(464, 64);
+            this.txtProduct.Location = new System.Drawing.Point(438, 51);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(225, 21);
             this.txtProduct.TabIndex = 29;
@@ -93,7 +94,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(570, 27);
+            this.label5.Location = new System.Drawing.Point(544, 14);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(14, 12);
             this.label5.TabIndex = 28;
@@ -102,7 +103,7 @@
             // dtpDateEnd
             // 
             this.dtpDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateEnd.Location = new System.Drawing.Point(590, 22);
+            this.dtpDateEnd.Location = new System.Drawing.Point(564, 9);
             this.dtpDateEnd.Name = "dtpDateEnd";
             this.dtpDateEnd.Size = new System.Drawing.Size(99, 21);
             this.dtpDateEnd.TabIndex = 26;
@@ -110,7 +111,7 @@
             // dtpDateStart
             // 
             this.dtpDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateStart.Location = new System.Drawing.Point(464, 22);
+            this.dtpDateStart.Location = new System.Drawing.Point(438, 9);
             this.dtpDateStart.Name = "dtpDateStart";
             this.dtpDateStart.Size = new System.Drawing.Size(99, 21);
             this.dtpDateStart.TabIndex = 27;
@@ -118,7 +119,7 @@
             // cboEquipment
             // 
             this.cboEquipment.FormattingEnabled = true;
-            this.cboEquipment.Location = new System.Drawing.Point(114, 64);
+            this.cboEquipment.Location = new System.Drawing.Point(109, 51);
             this.cboEquipment.Name = "cboEquipment";
             this.cboEquipment.Size = new System.Drawing.Size(121, 20);
             this.cboEquipment.TabIndex = 24;
@@ -126,7 +127,7 @@
             // cboPlanID
             // 
             this.cboPlanID.FormattingEnabled = true;
-            this.cboPlanID.Location = new System.Drawing.Point(114, 22);
+            this.cboPlanID.Location = new System.Drawing.Point(109, 9);
             this.cboPlanID.Name = "cboPlanID";
             this.cboPlanID.Size = new System.Drawing.Size(121, 20);
             this.cboPlanID.TabIndex = 25;
@@ -134,40 +135,44 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(22, 62);
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(17, 49);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 22);
+            this.label11.Size = new System.Drawing.Size(45, 19);
             this.label11.TabIndex = 17;
             this.label11.Text = "ㆍ설비";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(22, 23);
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(17, 10);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 22);
+            this.label10.Size = new System.Drawing.Size(75, 19);
             this.label10.TabIndex = 21;
             this.label10.Text = "ㆍPlanID";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(380, 64);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(375, 51);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 22);
+            this.label3.Size = new System.Drawing.Size(45, 19);
             this.label3.TabIndex = 18;
             this.label3.Text = "ㆍ품목";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(370, 21);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(365, 8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 22);
+            this.label2.Size = new System.Drawing.Size(57, 19);
             this.label2.TabIndex = 20;
             this.label2.Text = "ㆍDate";
             // 
@@ -177,7 +182,7 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1084, 36);
+            this.btnSearch.Location = new System.Drawing.Point(1084, 24);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(93, 39);
             this.btnSearch.TabIndex = 76;
@@ -189,6 +194,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1222, 609);
             this.Name = "Product_Plan";
+            this.Load += new System.EventHandler(this.Product_Plan_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelMid.ResumeLayout(false);

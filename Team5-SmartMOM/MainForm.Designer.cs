@@ -89,7 +89,6 @@ namespace Team5_SmartMOM
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tabControl1 = new TabControlZ.TabControlZ();
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.SidePanel1 = new System.Windows.Forms.Panel();
             this.panelSubMenu8 = new System.Windows.Forms.Panel();
@@ -136,6 +135,8 @@ namespace Team5_SmartMOM
             this.btnMatList = new System.Windows.Forms.Button();
             this.btnSubMenu1 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.tabControl1 = new TabControlZ.TabControlZ();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -154,7 +155,7 @@ namespace Team5_SmartMOM
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.BackColor = System.Drawing.Color.FloralWhite;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.메뉴ToolStripMenuItem,
@@ -515,7 +516,8 @@ namespace Team5_SmartMOM
             this.toolStripSeparator1,
             this.toolStripLabel1,
             this.toolStripLabel2,
-            this.toolStripLabel3});
+            this.toolStripLabel3,
+            this.toolStripButton5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1286, 50);
@@ -524,11 +526,12 @@ namespace Team5_SmartMOM
             // 
             // toolStripButton1
             // 
+            this.toolStripButton1.AutoSize = false;
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton1.Image = global::Team5_SmartMOM.Properties.Resources.menu;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 47);
+            this.toolStripButton1.Size = new System.Drawing.Size(30, 50);
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -549,6 +552,7 @@ namespace Team5_SmartMOM
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(23, 47);
             this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripButton4
             // 
@@ -626,27 +630,6 @@ namespace Team5_SmartMOM
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1066, 987);
             this.panel1.TabIndex = 6;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.ActiveTabEndColor = System.Drawing.Color.LightSkyBlue;
-            this.tabControl1.ActiveTabStartColor = System.Drawing.Color.RoyalBlue;
-            this.tabControl1.CloseButtonColor = System.Drawing.Color.WhiteSmoke;
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabControl1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tabControl1.GradientAngle = 90;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.NonActiveTabEndColor = System.Drawing.Color.DarkSlateGray;
-            this.tabControl1.NonActiveTabStartColor = System.Drawing.Color.SteelBlue;
-            this.tabControl1.Padding = new System.Drawing.Point(22, 4);
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1066, 987);
-            this.tabControl1.TabIndex = 0;
-            this.tabControl1.TextColor = System.Drawing.Color.White;
-            this.tabControl1.Transparent1 = 150;
-            this.tabControl1.Transparent2 = 150;
             // 
             // panelSideMenu
             // 
@@ -1443,6 +1426,40 @@ namespace Team5_SmartMOM
             this.button22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button22.UseVisualStyleBackColor = false;
             // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.AutoSize = false;
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton5.Image = global::Team5_SmartMOM.Properties.Resources.arrow;
+            this.toolStripButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(100, 50);
+            this.toolStripButton5.Text = "하이요";
+            this.toolStripButton5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripButton5.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.ActiveTabEndColor = System.Drawing.Color.LightSkyBlue;
+            this.tabControl1.ActiveTabStartColor = System.Drawing.Color.RoyalBlue;
+            this.tabControl1.CloseButtonColor = System.Drawing.Color.WhiteSmoke;
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabControl1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tabControl1.GradientAngle = 90;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.NonActiveTabEndColor = System.Drawing.Color.DarkSlateGray;
+            this.tabControl1.NonActiveTabStartColor = System.Drawing.Color.SteelBlue;
+            this.tabControl1.Padding = new System.Drawing.Point(22, 4);
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1066, 987);
+            this.tabControl1.TabIndex = 0;
+            this.tabControl1.TextColor = System.Drawing.Color.White;
+            this.tabControl1.Transparent1 = 150;
+            this.tabControl1.Transparent2 = 150;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1586,6 +1603,7 @@ namespace Team5_SmartMOM
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
         private System.Windows.Forms.ToolStripMenuItem 영업마스터ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton5;
     }
 }
 
