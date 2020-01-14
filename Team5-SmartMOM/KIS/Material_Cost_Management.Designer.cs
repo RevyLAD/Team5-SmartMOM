@@ -233,6 +233,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1222, 609);
             this.Name = "Material_Cost_Management";
+            this.Load += new System.EventHandler(this.Material_Cost_Management_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelMid.ResumeLayout(false);
