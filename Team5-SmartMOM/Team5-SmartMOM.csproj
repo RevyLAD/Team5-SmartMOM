@@ -175,6 +175,12 @@
     <Compile Include="HSM\Demand_Plan.Designer.cs">
       <DependentUpon>Demand_Plan.cs</DependentUpon>
     </Compile>
+    <Compile Include="HSM\MPS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\MPS.Designer.cs">
+      <DependentUpon>MPS.cs</DependentUpon>
+    </Compile>
     <Compile Include="HSM\MasterCreate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -515,6 +521,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HSM\Meterial_Plan.resx">
       <DependentUpon>Meterial_Plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\MPS.resx">
+      <DependentUpon>MPS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HSM\OutSourcing_Plan.resx">
       <DependentUpon>OutSourcing_Plan.cs</DependentUpon>

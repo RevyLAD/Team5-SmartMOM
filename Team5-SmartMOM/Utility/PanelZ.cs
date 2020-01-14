@@ -72,13 +72,21 @@ namespace PanelZ
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            base.OnPaint(e);
-            Color c1 = Color.FromArgb(color1Transparent, color1);
-            Color c2 = Color.FromArgb(color2Transparent, color2);
-            Brush b = new System.Drawing.Drawing2D.LinearGradientBrush(ClientRectangle, c1, c2, angle);
-            //fill rectangle with panel size
-            e.Graphics.FillRectangle(b, ClientRectangle);
-            b.Dispose();
+            try
+            {
+
+                base.OnPaint(e);
+                Color c1 = Color.FromArgb(color1Transparent, color1);
+                Color c2 = Color.FromArgb(color2Transparent, color2);
+                Brush b = new System.Drawing.Drawing2D.LinearGradientBrush(ClientRectangle, c1, c2, angle);
+                //fill rectangle with panel size
+                e.Graphics.FillRectangle(b, ClientRectangle);
+                b.Dispose();
+            }
+            catch
+            {
+
+            }
         }
     }
 }

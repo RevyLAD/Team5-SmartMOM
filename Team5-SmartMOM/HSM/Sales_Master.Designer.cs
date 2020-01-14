@@ -71,23 +71,24 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(859, 0);
-            this.button3.Size = new System.Drawing.Size(96, 25);
-            this.button3.Text = "B2B1 I/F";
-            this.button3.Visible = false;
+            this.button3.Location = new System.Drawing.Point(883, 0);
+            this.button3.Size = new System.Drawing.Size(84, 25);
+            this.button3.Text = "수동생성";
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(955, 0);
-            this.button2.Size = new System.Drawing.Size(129, 25);
+            this.button2.Location = new System.Drawing.Point(967, 0);
+            this.button2.Size = new System.Drawing.Size(123, 25);
             this.button2.Text = "영업마스터생성";
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1084, 0);
-            this.button1.Size = new System.Drawing.Size(114, 25);
-            this.button1.Text = "수요계획생성";
+            this.button1.Location = new System.Drawing.Point(1090, 0);
+            this.button1.Size = new System.Drawing.Size(108, 25);
+            this.button1.Text = "생산계획생성";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -197,7 +198,8 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(270, 19);
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Location = new System.Drawing.Point(271, 18);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(14, 12);
             this.label6.TabIndex = 2;
@@ -370,7 +372,7 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1090, 67);
+            this.btnSearch.Location = new System.Drawing.Point(1084, 58);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(93, 39);
             this.btnSearch.TabIndex = 76;
@@ -382,6 +384,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1222, 609);
             this.Name = "Sales_Master";
+            this.Load += new System.EventHandler(this.Sales_Master_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelMid.ResumeLayout(false);
