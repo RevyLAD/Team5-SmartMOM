@@ -309,5 +309,10 @@ namespace Team5_SmartMOM
         {
             CreateTabPages("출하현황", new ShipmentStatus());
         }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
