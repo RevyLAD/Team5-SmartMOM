@@ -60,7 +60,6 @@
             this.panelTop.Controls.Add(this.textBox2);
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label4);
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTop.Size = new System.Drawing.Size(1202, 56);
             // 
             // splitContainer2
@@ -81,6 +80,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(218)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(307, 18);
             this.label4.Name = "label4";
@@ -91,6 +91,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(218)))));
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(18, 19);

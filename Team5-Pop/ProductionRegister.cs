@@ -16,5 +16,11 @@ namespace Team5_Pop
         {
             InitializeComponent();
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            RegisterPopUp frm = new RegisterPopUp();
+            frm.ShowDialog();
+        }
     }
 }

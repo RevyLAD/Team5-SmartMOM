@@ -69,13 +69,13 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1017, 0);
+            this.button3.Location = new System.Drawing.Point(999, 0);
             this.button3.Visible = false;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1074, 0);
-            this.button2.Size = new System.Drawing.Size(67, 24);
+            this.button2.Location = new System.Drawing.Point(1056, 0);
+            this.button2.Size = new System.Drawing.Size(85, 24);
             this.button2.Text = "마감취소";
             // 
             // panel2
@@ -118,6 +118,7 @@
             // 
             // label1
             // 
+            this.label1.Size = new System.Drawing.Size(97, 24);
             this.label1.Text = "고객주문";
             // 
             // comboBox4

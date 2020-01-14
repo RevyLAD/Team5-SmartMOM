@@ -85,7 +85,7 @@
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(100, 24);
+            this.label1.Size = new System.Drawing.Size(132, 24);
             this.label1.Text = "자재소요계획";
             // 
             // label11

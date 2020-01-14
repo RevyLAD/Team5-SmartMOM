@@ -50,20 +50,30 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.panelTop.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
             this.panelMid.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panelTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // button3
             // 
+            this.button3.Location = new System.Drawing.Point(1002, 0);
+            this.button3.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1059, 0);
+            this.button2.Size = new System.Drawing.Size(82, 24);
+            this.button2.Text = "입고취소";
+            // 
+            // panel2
+            // 
+            this.panel2.Size = new System.Drawing.Size(1202, 173);
             // 
             // panelTop
             // 
@@ -87,28 +97,14 @@
             this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.label8);
             this.panelTop.Controls.Add(this.label9);
+            this.panelTop.Size = new System.Drawing.Size(1202, 153);
             // 
             // splitContainer2
             // 
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(777, 0);
-            this.button3.Visible = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1088, 19);
-            this.button2.Size = new System.Drawing.Size(64, 24);
-            this.button2.Text = "입고취소";
-            // 
-            // button1
-            // 
-            this.button1.Text = "엑셀";
-            // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(100, 22);
+            this.label1.Size = new System.Drawing.Size(136, 24);
             this.label1.Text = "자재입고현황";
             // 
             // textBox2
@@ -291,18 +287,15 @@
             this.Name = "Material_Ledger_State";
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.panelMid.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.panelMid.ResumeLayout(false);
-            this.panelMid.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
