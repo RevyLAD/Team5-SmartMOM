@@ -46,5 +46,12 @@ namespace Team5_SmartMOM
             HSC_Service service = new HSC_Service();
             dataGridView1.DataSource = service.GetAllFacilitiesDetail();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FacilitiesRegister frm = new FacilitiesRegister();
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
+        }
     }
 }
