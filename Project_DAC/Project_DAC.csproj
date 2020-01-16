@@ -41,20 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="ConnectionAccess.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="HSC\BORDAC.cs" />
     <Compile Include="HSC\EnterpriseDAC.cs" />
     <Compile Include="HSC\FacilitieDAC.cs" />
     <Compile Include="HSC\FactoryDAC.cs" />
-    <Compile Include="Helper.cs" />
     <Compile Include="KIS\BOM_DAC.cs" />
     <Compile Include="KIS\ITEM_DAC.cs" />
     <Compile Include="LBJ\ImportDAC.cs" />
     <Compile Include="LBJ\ShiftDAC.cs" />
     <Compile Include="HSC\OrderDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PurchasingDAC.cs" />
+    <Compile Include="PSM\PurchasingDAC.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Project_VO\Project_VO.csproj">
