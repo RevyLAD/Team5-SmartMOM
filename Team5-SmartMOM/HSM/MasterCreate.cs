@@ -79,17 +79,20 @@ namespace Team5_SmartMOM.HSM
                     // 데이터테이블에 엑셀 칼럼만큼 칼럼 추가
                     for (int i = 1; i <= range.Columns.Count; i++)
                     {
-                        dt.Columns.Add(i.ToString(), typeof(string));
+                        dt.Columns.Add(data[1, i].ToString(), typeof(string));
                     }
 
                     // 데이터테이블에 2차원 배열에 담은 엑셀데이터 추가
-                    for (int r = 1; r < range.Rows.Count; r++)
+                    for (int r = 2; r <= range.Rows.Count; r++)
                     {
                         DataRow dr = dt.Rows.Add();
 
-                        for (int c = 1; c < range.Columns.Count; c++)
+                        for (int c = 1; c <= range.Columns.Count; c++)
                         {
-                            dr[c - 1] = data[r, c];
+                            if (c == 1)
+                                dr[c - 1] = dtpPlanDate.Value.ToShortDateString();
+                            else
+                                dr[c - 1] = data[r, c];
                         }
                     }
 

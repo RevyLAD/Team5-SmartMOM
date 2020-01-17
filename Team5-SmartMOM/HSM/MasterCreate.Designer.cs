@@ -33,9 +33,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtFileName = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpPlanDate = new System.Windows.Forms.DateTimePicker();
             this.txtVersion = new System.Windows.Forms.TextBox();
-            this.dtpPlanDate = new System.Windows.Forms.Button();
+            this.btnFileSelect = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.panelFull.SuspendLayout();
@@ -61,8 +61,8 @@
             // 
             // panelDock
             // 
+            this.panelDock.Controls.Add(this.btnFileSelect);
             this.panelDock.Controls.Add(this.dtpPlanDate);
-            this.panelDock.Controls.Add(this.dateTimePicker1);
             this.panelDock.Controls.Add(this.txtVersion);
             this.panelDock.Controls.Add(this.txtFileName);
             this.panelDock.Controls.Add(this.label5);
@@ -104,7 +104,7 @@
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(-1444, 10);
+            this.tileSave.Location = new System.Drawing.Point(-1704, 10);
             // 
             // label2
             // 
@@ -154,13 +154,13 @@
             this.txtFileName.Size = new System.Drawing.Size(189, 21);
             this.txtFileName.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // dtpPlanDate
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(141, 82);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(98, 21);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dtpPlanDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpPlanDate.Location = new System.Drawing.Point(141, 82);
+            this.dtpPlanDate.Name = "dtpPlanDate";
+            this.dtpPlanDate.Size = new System.Drawing.Size(98, 21);
+            this.dtpPlanDate.TabIndex = 2;
             // 
             // txtVersion
             // 
@@ -169,17 +169,17 @@
             this.txtVersion.Size = new System.Drawing.Size(98, 21);
             this.txtVersion.TabIndex = 1;
             // 
-            // dtpPlanDate
+            // btnFileSelect
             // 
-            this.dtpPlanDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
-            this.dtpPlanDate.ForeColor = System.Drawing.Color.White;
-            this.dtpPlanDate.Location = new System.Drawing.Point(140, 17);
-            this.dtpPlanDate.Name = "dtpPlanDate";
-            this.dtpPlanDate.Size = new System.Drawing.Size(75, 27);
-            this.dtpPlanDate.TabIndex = 3;
-            this.dtpPlanDate.Text = "파일 선택";
-            this.dtpPlanDate.UseVisualStyleBackColor = false;
-            this.dtpPlanDate.Click += new System.EventHandler(this.btnFindFile_Click);
+            this.btnFileSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.btnFileSelect.ForeColor = System.Drawing.Color.White;
+            this.btnFileSelect.Location = new System.Drawing.Point(140, 17);
+            this.btnFileSelect.Name = "btnFileSelect";
+            this.btnFileSelect.Size = new System.Drawing.Size(75, 27);
+            this.btnFileSelect.TabIndex = 3;
+            this.btnFileSelect.Text = "파일 선택";
+            this.btnFileSelect.UseVisualStyleBackColor = false;
+            this.btnFileSelect.Click += new System.EventHandler(this.btnFindFile_Click);
             // 
             // openFileDialog1
             // 
@@ -221,8 +221,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button dtpPlanDate;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button btnFileSelect;
+        private System.Windows.Forms.DateTimePicker dtpPlanDate;
         private System.Windows.Forms.TextBox txtVersion;
         private System.Windows.Forms.TextBox txtFileName;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;

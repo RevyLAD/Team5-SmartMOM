@@ -36,9 +36,9 @@
             this.panelDock = new System.Windows.Forms.Panel();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tileUpdate = new MetroFramework.Controls.MetroTile();
             this.tileSave = new MetroFramework.Controls.MetroTile();
             this.label1 = new System.Windows.Forms.Label();
-            this.tileUpdate = new MetroFramework.Controls.MetroTile();
             this.panelFull.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelBottom.SuspendLayout();
@@ -48,6 +48,7 @@
             // 
             // panelFull
             // 
+            this.panelFull.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelFull.Controls.Add(this.panelMain);
             this.panelFull.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFull.Location = new System.Drawing.Point(0, 0);
@@ -64,7 +65,7 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(10, 10);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(613, 425);
+            this.panelMain.Size = new System.Drawing.Size(611, 423);
             this.panelMain.TabIndex = 0;
             // 
             // panelBottom
@@ -72,9 +73,9 @@
             this.panelBottom.Controls.Add(this.button2);
             this.panelBottom.Controls.Add(this.button1);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(0, 377);
+            this.panelBottom.Location = new System.Drawing.Point(0, 375);
             this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(613, 48);
+            this.panelBottom.Size = new System.Drawing.Size(611, 48);
             this.panelBottom.TabIndex = 2;
             // 
             // button2
@@ -83,7 +84,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(142)))), ((int)(((byte)(150)))));
             this.button2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(310, 10);
+            this.button2.Location = new System.Drawing.Point(308, 10);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(70, 30);
             this.button2.TabIndex = 0;
@@ -107,7 +108,7 @@
             this.panelDock.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDock.Location = new System.Drawing.Point(0, 48);
             this.panelDock.Name = "panelDock";
-            this.panelDock.Size = new System.Drawing.Size(613, 377);
+            this.panelDock.Size = new System.Drawing.Size(611, 375);
             this.panelDock.TabIndex = 1;
             // 
             // panelTop
@@ -117,7 +118,7 @@
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
             this.panelTop.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.panelTop.Size = new System.Drawing.Size(613, 48);
+            this.panelTop.Size = new System.Drawing.Size(611, 48);
             this.panelTop.TabIndex = 0;
             // 
             // panel1
@@ -129,14 +130,26 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(613, 38);
+            this.panel1.Size = new System.Drawing.Size(611, 38);
             this.panel1.TabIndex = 0;
+            // 
+            // tileUpdate
+            // 
+            this.tileUpdate.CustomBackground = true;
+            this.tileUpdate.Location = new System.Drawing.Point(3, 13);
+            this.tileUpdate.Name = "tileUpdate";
+            this.tileUpdate.Size = new System.Drawing.Size(16, 16);
+            this.tileUpdate.Style = MetroFramework.MetroColorStyle.White;
+            this.tileUpdate.TabIndex = 6;
+            this.tileUpdate.TileImage = global::Team5_SmartMOM.Properties.Resources.edit1;
+            this.tileUpdate.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tileUpdate.UseTileImage = true;
             // 
             // tileSave
             // 
             this.tileSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tileSave.CustomBackground = true;
-            this.tileSave.Location = new System.Drawing.Point(586, 10);
+            this.tileSave.Location = new System.Drawing.Point(584, 10);
             this.tileSave.Name = "tileSave";
             this.tileSave.Size = new System.Drawing.Size(20, 20);
             this.tileSave.TabIndex = 5;
@@ -156,18 +169,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "여기다가제목";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tileUpdate
-            // 
-            this.tileUpdate.CustomBackground = true;
-            this.tileUpdate.Location = new System.Drawing.Point(3, 13);
-            this.tileUpdate.Name = "tileUpdate";
-            this.tileUpdate.Size = new System.Drawing.Size(16, 16);
-            this.tileUpdate.Style = MetroFramework.MetroColorStyle.White;
-            this.tileUpdate.TabIndex = 6;
-            this.tileUpdate.TileImage = global::Team5_SmartMOM.Properties.Resources.edit1;
-            this.tileUpdate.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.tileUpdate.UseTileImage = true;
             // 
             // BasePopUpDialog
             // 
