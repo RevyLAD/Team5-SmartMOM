@@ -79,6 +79,7 @@
     <Compile Include="BaseForm\BasePopUpDialog.Designer.cs">
       <DependentUpon>BasePopUpDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseForm\CommonCodeService.cs" />
     <Compile Include="HSC\EnterPriseMain.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComboItemVO.cs" />
+    <Compile Include="CommonCodeVO.cs" />
     <Compile Include="HSC\BORVO.cs" />
     <Compile Include="HSC\EnterpriseVO.cs" />
     <Compile Include="HSC\FacilitieVO.cs" />

@@ -149,6 +149,7 @@
             // 
             this.tileSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tileSave.CustomBackground = true;
+            this.tileSave.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.tileSave.Location = new System.Drawing.Point(584, 10);
             this.tileSave.Name = "tileSave";
             this.tileSave.Size = new System.Drawing.Size(20, 20);

@@ -36,8 +36,9 @@ namespace Team5_SmartMOM.HSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "취소수량", "SALES_CancelQty", true, 90);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "SALES_Duedate", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "주문일", "SALES_OrderDate", true, 100);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "SALES_OrderDate", true,380);
 
-    }
+        }
 
         private void button3_Click(object sender, EventArgs e)
         {
