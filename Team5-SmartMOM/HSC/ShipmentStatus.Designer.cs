@@ -73,15 +73,16 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1014, 0);
-            this.button3.Size = new System.Drawing.Size(67, 29);
+            this.button3.Location = new System.Drawing.Point(973, 0);
+            this.button3.Size = new System.Drawing.Size(86, 29);
             this.button3.Text = "출하취소";
+            this.button3.Visible = false;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1081, 0);
-            this.button2.Size = new System.Drawing.Size(60, 29);
-            this.button2.Text = "엑셀";
+            this.button2.Location = new System.Drawing.Point(1059, 0);
+            this.button2.Size = new System.Drawing.Size(82, 29);
+            this.button2.Text = "출하취소";
             // 
             // button1
             // 
@@ -121,6 +122,7 @@
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label11);
             this.panelTop.Controls.Add(this.label4);
+            this.panelTop.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelTop.Size = new System.Drawing.Size(1202, 171);
             // 
             // splitContainer2
@@ -231,7 +233,7 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1082, 127);
+            this.btnSearch.Location = new System.Drawing.Point(1103, 121);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(81, 30);
             this.btnSearch.TabIndex = 38;
@@ -241,6 +243,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Location = new System.Drawing.Point(240, 28);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(14, 12);
@@ -266,132 +269,144 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(216)))), ((int)(((byte)(222)))));
-            this.label14.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label14.Location = new System.Drawing.Point(739, 128);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(125, 22);
+            this.label14.Size = new System.Drawing.Size(105, 19);
             this.label14.TabIndex = 31;
             this.label14.Text = "ㆍB2BI취소수량";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(216)))), ((int)(((byte)(222)))));
-            this.label10.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label10.Location = new System.Drawing.Point(408, 128);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 22);
+            this.label10.Size = new System.Drawing.Size(45, 19);
             this.label10.TabIndex = 30;
             this.label10.Text = "ㆍ환종";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(216)))), ((int)(((byte)(222)))));
-            this.label8.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label8.Location = new System.Drawing.Point(40, 127);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 22);
+            this.label8.Size = new System.Drawing.Size(75, 19);
             this.label8.TabIndex = 29;
             this.label8.Text = "ㆍMARKET";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(216)))), ((int)(((byte)(222)))));
-            this.label13.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label13.Location = new System.Drawing.Point(739, 95);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(85, 22);
+            this.label13.Size = new System.Drawing.Size(69, 19);
             this.label13.TabIndex = 28;
             this.label13.Text = "ㆍ주문구분";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(216)))), ((int)(((byte)(222)))));
-            this.label9.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label9.Location = new System.Drawing.Point(408, 95);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 22);
+            this.label9.Size = new System.Drawing.Size(57, 19);
             this.label9.TabIndex = 27;
             this.label9.Text = "ㆍ도착지";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(216)))), ((int)(((byte)(222)))));
-            this.label7.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label7.Location = new System.Drawing.Point(40, 94);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 22);
+            this.label7.Size = new System.Drawing.Size(81, 19);
             this.label7.TabIndex = 26;
             this.label7.Text = "ㆍ출하처리자";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(216)))), ((int)(((byte)(222)))));
-            this.label12.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label12.Location = new System.Drawing.Point(739, 58);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(85, 22);
+            this.label12.Size = new System.Drawing.Size(69, 19);
             this.label12.TabIndex = 25;
             this.label12.Text = "ㆍ주문상태";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(216)))), ((int)(((byte)(222)))));
-            this.label5.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label5.Location = new System.Drawing.Point(408, 58);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(115, 22);
+            this.label5.Size = new System.Drawing.Size(93, 19);
             this.label5.TabIndex = 24;
             this.label5.Text = "ㆍ고객주문번호";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(216)))), ((int)(((byte)(222)))));
-            this.label3.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label3.Location = new System.Drawing.Point(40, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 22);
+            this.label3.Size = new System.Drawing.Size(45, 19);
             this.label3.TabIndex = 23;
             this.label3.Text = "ㆍ품목";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(216)))), ((int)(((byte)(222)))));
-            this.label11.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label11.Location = new System.Drawing.Point(739, 23);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(85, 22);
+            this.label11.Size = new System.Drawing.Size(69, 19);
             this.label11.TabIndex = 33;
             this.label11.Text = "ㆍ고객창고";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(216)))), ((int)(((byte)(222)))));
-            this.label4.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label4.Location = new System.Drawing.Point(408, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 22);
+            this.label4.Size = new System.Drawing.Size(57, 19);
             this.label4.TabIndex = 34;
             this.label4.Text = "ㆍ고객사";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(216)))), ((int)(((byte)(222)))));
-            this.label15.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label15.Location = new System.Drawing.Point(40, 23);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(55, 22);
+            this.label15.Size = new System.Drawing.Size(45, 19);
             this.label15.TabIndex = 50;
             this.label15.Text = "ㆍ기간";
             // 
@@ -399,6 +414,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1222, 609);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "ShipmentStatus";
             this.Load += new System.EventHandler(this.ShipmentStatus_Load);
             this.panelFull.ResumeLayout(false);

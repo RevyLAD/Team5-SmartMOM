@@ -61,24 +61,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseGridForm.cs">
+    <Compile Include="BaseForm\BaseGridForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaseGridForm.Designer.cs">
+    <Compile Include="BaseForm\BaseGridForm.Designer.cs">
       <DependentUpon>BaseGridForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseOnlyGridForm.cs">
+    <Compile Include="BaseForm\BaseOnlyGridForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaseOnlyGridForm.Designer.cs">
+    <Compile Include="BaseForm\BaseOnlyGridForm.Designer.cs">
       <DependentUpon>BaseOnlyGridForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BasePopUpDialog.cs">
+    <Compile Include="BaseForm\BasePopUpDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BasePopUpDialog.Designer.cs">
+    <Compile Include="BaseForm\BasePopUpDialog.Designer.cs">
       <DependentUpon>BasePopUpDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseForm\CommonCodeService.cs" />
     <Compile Include="HSC\EnterPriseMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,17 +176,23 @@
     <Compile Include="HSM\Demand_Plan.Designer.cs">
       <DependentUpon>Demand_Plan.cs</DependentUpon>
     </Compile>
+    <Compile Include="HSM\Sales_Master_Upload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\Sales_Master_Upload.Designer.cs">
+      <DependentUpon>Sales_Master_Upload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\MPS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\MPS.Designer.cs">
+      <DependentUpon>MPS.cs</DependentUpon>
+    </Compile>
     <Compile Include="HSM\MasterCreate.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HSM\MasterCreate.Designer.cs">
       <DependentUpon>MasterCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HSM\MasterUpload%28PO%29.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HSM\MasterUpload%28PO%29.Designer.cs">
-      <DependentUpon>MasterUpload%28PO%29.cs</DependentUpon>
     </Compile>
     <Compile Include="HSM\Meterial_Plan.cs">
       <SubType>Form</SubType>
@@ -385,6 +392,7 @@
       <DependentUpon>Supplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Service\HSC_Service.cs" />
+    <Compile Include="Service\HSM_Service.cs" />
     <Compile Include="Service\KIS_Service.cs" />
     <Compile Include="Service\LBJ_Service.cs" />
     <Compile Include="Service\PSM_Service.cs" />
@@ -450,13 +458,13 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utility\UtilityClass.cs" />
-    <EmbeddedResource Include="BaseGridForm.resx">
+    <EmbeddedResource Include="BaseForm\BaseGridForm.resx">
       <DependentUpon>BaseGridForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaseOnlyGridForm.resx">
+    <EmbeddedResource Include="BaseForm\BaseOnlyGridForm.resx">
       <DependentUpon>BaseOnlyGridForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BasePopUpDialog.resx">
+    <EmbeddedResource Include="BaseForm\BasePopUpDialog.resx">
       <DependentUpon>BasePopUpDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HSC\EnterPriseMain.resx">
@@ -507,14 +515,17 @@
     <EmbeddedResource Include="HSM\Demand_Plan.resx">
       <DependentUpon>Demand_Plan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HSM\Sales_Master_Upload.resx">
+      <DependentUpon>Sales_Master_Upload.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HSM\MasterCreate.resx">
       <DependentUpon>MasterCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HSM\MasterUpload%28PO%29.resx">
-      <DependentUpon>MasterUpload%28PO%29.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HSM\Meterial_Plan.resx">
       <DependentUpon>Meterial_Plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\MPS.resx">
+      <DependentUpon>MPS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HSM\OutSourcing_Plan.resx">
       <DependentUpon>OutSourcing_Plan.cs</DependentUpon>

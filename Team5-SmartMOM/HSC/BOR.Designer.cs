@@ -30,13 +30,13 @@
         {
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnInquiry = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.cboFacCrow = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -74,20 +74,20 @@
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Dock = System.Windows.Forms.DockStyle.None;
-            this.button3.Location = new System.Drawing.Point(939, 11);
+            this.button3.Location = new System.Drawing.Point(837, 11);
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Dock = System.Windows.Forms.DockStyle.None;
-            this.button2.Location = new System.Drawing.Point(987, 11);
+            this.button2.Location = new System.Drawing.Point(885, 11);
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Dock = System.Windows.Forms.DockStyle.None;
-            this.button1.Location = new System.Drawing.Point(1038, 11);
+            this.button1.Location = new System.Drawing.Point(936, 11);
             this.button1.Size = new System.Drawing.Size(65, 24);
             this.button1.Text = "이력조회";
             // 
@@ -98,10 +98,10 @@
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.btnSearch);
             this.panelTop.Controls.Add(this.label5);
             this.panelTop.Controls.Add(this.textBox2);
             this.panelTop.Controls.Add(this.label4);
-            this.panelTop.Controls.Add(this.btnInquiry);
             this.panelTop.Controls.Add(this.textBox1);
             this.panelTop.Controls.Add(this.cboFacCrow);
             this.panelTop.Controls.Add(this.label3);
@@ -137,26 +137,13 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(218)))));
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(704, 22);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 18);
+            this.label4.Size = new System.Drawing.Size(54, 19);
             this.label4.TabIndex = 18;
             this.label4.Text = "ㆍ 설비";
-            // 
-            // btnInquiry
-            // 
-            this.btnInquiry.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnInquiry.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnInquiry.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnInquiry.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInquiry.Location = new System.Drawing.Point(1005, 13);
-            this.btnInquiry.Name = "btnInquiry";
-            this.btnInquiry.Size = new System.Drawing.Size(92, 32);
-            this.btnInquiry.TabIndex = 15;
-            this.btnInquiry.Text = "조회";
-            this.btnInquiry.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
@@ -178,11 +165,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(218)))));
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(383, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 18);
+            this.label3.Size = new System.Drawing.Size(54, 19);
             this.label3.TabIndex = 14;
             this.label3.Text = "ㆍ 공정";
             // 
@@ -207,13 +194,26 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(218)))));
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(63, 19);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 18);
+            this.label5.Size = new System.Drawing.Size(54, 19);
             this.label5.TabIndex = 20;
             this.label5.Text = "ㆍ 품목";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(1012, 16);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(81, 30);
+            this.btnSearch.TabIndex = 21;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // BOR
             // 
@@ -240,7 +240,6 @@
         #endregion
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnInquiry;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox cboFacCrow;
         private System.Windows.Forms.Label label3;
@@ -248,5 +247,6 @@
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.Label label5;
+        protected System.Windows.Forms.Button btnSearch;
     }
 }

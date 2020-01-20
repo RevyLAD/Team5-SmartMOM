@@ -142,14 +142,14 @@ namespace Team5_Pop
             }
             foreach (Form childForm in Application.OpenForms)
             {
-                if (childForm.GetType() == typeof(WorkOrderRegister))
+                if (childForm.GetType() == typeof(ProductionRegister))
                 {
                     //메모리 재할당 x 
                     childForm.Activate();
                     return;
                 }
             }
-            WorkOrderRegister frm = new WorkOrderRegister();
+            ProductionRegister frm = new ProductionRegister();
             frm.TopLevel = false;
             frm.Parent = this;
             frm.FormBorderStyle = FormBorderStyle.None;

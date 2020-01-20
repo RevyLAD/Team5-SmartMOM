@@ -42,11 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComboItemVO.cs" />
+    <Compile Include="CommonCodeVO.cs" />
     <Compile Include="HSC\BORVO.cs" />
     <Compile Include="HSC\EnterpriseVO.cs" />
     <Compile Include="HSC\FacilitieVO.cs" />
     <Compile Include="HSC\FactoryVO.cs" />
     <Compile Include="HSC\OrderVO.cs" />
+    <Compile Include="HSM\SalesMasterVO.cs" />
     <Compile Include="KIS\BOM_VO.cs" />
     <Compile Include="KIS\ITEM_VO.cs" />
     <Compile Include="LBJ\ImportVO.cs" />
