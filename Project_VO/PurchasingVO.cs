@@ -8,8 +8,9 @@ namespace Project_VO
 {
     public class PurchasingVO
     {
-        public string Com_Code { get; set; }
-        public string Com_Name { get; set; }
+        public string COM_No { get; set; }
+        public string COM_Code { get; set; }
+        public string COM_Name { get; set; }
         public string ITEM_Code { get; set; }
         public int Vo_Quantity { get; set; }
         public DateTime Vo_EndDate { get; set; }
@@ -22,7 +23,7 @@ namespace Project_VO
     public class PurchasingStateVO
     {
         public int VO_ID { get; set; }
-        public int COM_No { get; set; }        
+        public string COM_No { get; set; }        
         public string MATERIAL_ORDER_STATE { get; set; }
         public int VO_Quantity { get; set; }
         public string ITEM_Code { get; set; }
