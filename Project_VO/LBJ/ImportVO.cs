@@ -16,4 +16,12 @@ namespace Project_VO.LBJ
         public int VOD_GoodEA { get; set; }
         public int VOD_BadEA { get; set; }
     }
+    public class ImportSearch
+    {
+        public int VO_ID { get; set; }
+        public string ITEM_Code { get; set; }
+        public string INS_Name { get; set; }
+        public string ITEM_Size { get; set; }
+        public int VOD_BadEA { get; set; }
+    }
 }
