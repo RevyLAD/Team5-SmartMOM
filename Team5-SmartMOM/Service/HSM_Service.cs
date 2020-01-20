@@ -16,6 +16,12 @@ namespace Team5_SmartMOM.Service
             return dac.UploadSalesMaster(sales);
         }
 
+        public bool UploadPassiveSalesMaster(SalesMasterAllVO sales)
+        {
+            SalesMasterDAC dac = new SalesMasterDAC();
+            return dac.UploadPassiveSalesMaster(sales);
+        }
+
         public List<SalesMasterAllVO> GetAllSalesMaster()
         {
             SalesMasterDAC dac = new SalesMasterDAC();

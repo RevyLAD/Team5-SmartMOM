@@ -1,4 +1,5 @@
 ﻿using Project_VO;
+using Project_VO.HSM;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,6 +48,45 @@ namespace Team5_SmartMOM.HSM
 
         }
 
+        private void button1_Click(object sender, EventArgs e) //저장
+        {
+            if(txtCustomerWO.TextLength > 0 || txtOrderQuantity.TextLength > 0)
+            {
+                if (txtShippingQuantity.Text == "")
+                    txtShippingQuantity.Text = "0";
+                if (txtCancelQuantity.Text == "")
+                    txtCancelQuantity.Text = "0";
 
+                SalesMasterAllVO sale = new SalesMasterAllVO();
+
+                sale.SO_WorkOrderID = txtCustomerWO.Text.Trim();
+                sale.PO_Type = cboOrderDivision.Text;
+                sale.ITEM_Code = cboProduct.SelectedValue.ToString();
+                sale.COM_Code = cboCustomer.SelectedValue.ToString();
+                sale.SALES_Duedate = dtpDueDate.Value.ToShortDateString();
+                sale.SALES_OrderQty = Convert.ToInt32(txtOrderQuantity.Text);
+                sale.SALES_ShipQty = Convert.ToInt32(txtShippingQuantity.Text);
+                sale.SALES_CancelQty = Convert.ToInt32(txtCancelQuantity.Text);
+                sale.SALES_Remark = txtNote.Text;
+
+                HSM_Service service = new HSM_Service();
+
+                if (service.UploadPassiveSalesMaster(sale))
+                {
+                    MessageBox.Show("영업마스터가 저장되었습니다.");
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("저장실패");
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("필수항목을 입력해주세요.");
+            }
+            
+        }
     }
 }
