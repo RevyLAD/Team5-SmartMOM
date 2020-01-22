@@ -57,7 +57,23 @@ namespace Project_DAC
             }
         }
 
-        
+        public List<PlanIDVO> GetAllPlanID()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "  select distinct Plan_ID from salesmaster where Plan_ID is not null ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<PlanIDVO> list = Helper.DataReaderMapToList<PlanIDVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+
 
     }
 }

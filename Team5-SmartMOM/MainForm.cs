@@ -319,5 +319,10 @@ namespace Team5_SmartMOM
         {
             CreateTabPages("영업마스터업로드", new Sales_Master_Upload());
         }
+
+        private void 수요계획ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("수요계획", new Demand_Plan());
+        }
     }
 }

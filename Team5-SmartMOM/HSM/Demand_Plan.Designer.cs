@@ -36,9 +36,9 @@
             this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpDateEnd = new System.Windows.Forms.DateTimePicker();
-            this.txtProduct = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.cboProduct = new System.Windows.Forms.ComboBox();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -69,23 +69,23 @@
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1202, 135);
+            this.panel2.Size = new System.Drawing.Size(1202, 116);
             // 
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.Transparent;
             this.panelTop.Controls.Add(this.btnSearch);
-            this.panelTop.Controls.Add(this.txtProduct);
             this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.dtpDateEnd);
             this.panelTop.Controls.Add(this.dtpDateStart);
+            this.panelTop.Controls.Add(this.cboProduct);
             this.panelTop.Controls.Add(this.cboCompany);
             this.panelTop.Controls.Add(this.cboPlanID);
             this.panelTop.Controls.Add(this.label5);
             this.panelTop.Controls.Add(this.label11);
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Size = new System.Drawing.Size(1202, 115);
+            this.panelTop.Size = new System.Drawing.Size(1202, 96);
             // 
             // splitContainer2
             // 
@@ -138,7 +138,7 @@
             // cboCompany
             // 
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(118, 63);
+            this.cboCompany.Location = new System.Drawing.Point(117, 61);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(121, 20);
             this.cboCompany.TabIndex = 7;
@@ -155,7 +155,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(552, 27);
+            this.label4.Location = new System.Drawing.Point(552, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(14, 12);
             this.label4.TabIndex = 9;
@@ -168,13 +168,7 @@
             this.dtpDateEnd.Name = "dtpDateEnd";
             this.dtpDateEnd.Size = new System.Drawing.Size(99, 21);
             this.dtpDateEnd.TabIndex = 8;
-            // 
-            // txtProduct
-            // 
-            this.txtProduct.Location = new System.Drawing.Point(446, 61);
-            this.txtProduct.Name = "txtProduct";
-            this.txtProduct.Size = new System.Drawing.Size(225, 21);
-            this.txtProduct.TabIndex = 10;
+            this.dtpDateEnd.ValueChanged += new System.EventHandler(this.dtpDateEnd_ValueChanged);
             // 
             // label5
             // 
@@ -193,18 +187,28 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1082, 42);
+            this.btnSearch.Location = new System.Drawing.Point(1082, 25);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(93, 39);
             this.btnSearch.TabIndex = 76;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // cboProduct
+            // 
+            this.cboProduct.FormattingEnabled = true;
+            this.cboProduct.Location = new System.Drawing.Point(446, 60);
+            this.cboProduct.Name = "cboProduct";
+            this.cboProduct.Size = new System.Drawing.Size(225, 20);
+            this.cboProduct.TabIndex = 7;
             // 
             // Demand_Plan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1222, 609);
             this.Name = "Demand_Plan";
+            this.Load += new System.EventHandler(this.Demand_Plan_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelMid.ResumeLayout(false);
@@ -221,8 +225,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpDateEnd;
         private System.Windows.Forms.DateTimePicker dtpDateStart;
@@ -233,5 +235,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         protected System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ComboBox cboProduct;
     }
 }

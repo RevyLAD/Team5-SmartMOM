@@ -27,5 +27,11 @@ namespace Team5_SmartMOM.BaseForm
             CommonCodeDAC dac = new CommonCodeDAC();
             return dac.GetAllItemCode();
         }
+
+        public List<PlanIDVO> GetAllPlanID()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.GetAllPlanID();
+        }
     }
 }
