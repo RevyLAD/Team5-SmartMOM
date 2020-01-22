@@ -88,5 +88,11 @@ namespace Team5_SmartMOM.HSM
                 return;
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MPS frm = new MPS();
+            frm.ShowDialog();
+        }
     }
 }

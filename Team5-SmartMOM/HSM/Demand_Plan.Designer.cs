@@ -56,6 +56,7 @@
             this.button3.Location = new System.Drawing.Point(970, 0);
             this.button3.Size = new System.Drawing.Size(112, 24);
             this.button3.Text = "생산계획생성";
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
