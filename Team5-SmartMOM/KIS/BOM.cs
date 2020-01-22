@@ -14,6 +14,7 @@ namespace Team5_SmartMOM
         public BOM()
         {
             InitializeComponent();
+            LoadPage();
         }
 
         private void Btn_newitem_Click(object sender, EventArgs e)
@@ -32,6 +33,11 @@ namespace Team5_SmartMOM
         }
 
         private void BOM_Load(object sender, EventArgs e)
+        {
+            LoadPage();
+        }
+
+        private void LoadPage()
         {
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "No", "BOM_No", true, 40);
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();

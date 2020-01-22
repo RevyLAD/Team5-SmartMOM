@@ -319,5 +319,10 @@ namespace Team5_SmartMOM
         {
             CreateTabPages("영업마스터업로드", new Sales_Master_Upload());
         }
+
+        private void BOMToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("BOM", new BOM());
+        }
     }
 }

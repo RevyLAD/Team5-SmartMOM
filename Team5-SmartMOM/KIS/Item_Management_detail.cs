@@ -20,7 +20,9 @@ namespace Team5_SmartMOM
             txt_edit_date.Text = DateTime.Now.ToString("yyyy-MM-dd");
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+      
+
+        private void Button1_Click_1(object sender, EventArgs e)
         {
 
         }

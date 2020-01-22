@@ -102,12 +102,12 @@
             // 
             // panelMain
             // 
-            this.panelMain.Size = new System.Drawing.Size(762, 553);
+            this.panelMain.Size = new System.Drawing.Size(760, 551);
             // 
             // panelBottom
             // 
-            this.panelBottom.Location = new System.Drawing.Point(0, 505);
-            this.panelBottom.Size = new System.Drawing.Size(762, 48);
+            this.panelBottom.Location = new System.Drawing.Point(0, 503);
+            this.panelBottom.Size = new System.Drawing.Size(760, 48);
             // 
             // panelDock
             // 
@@ -171,15 +171,15 @@
             this.panelDock.Controls.Add(this.label4);
             this.panelDock.Controls.Add(this.label3);
             this.panelDock.Controls.Add(this.label2);
-            this.panelDock.Size = new System.Drawing.Size(762, 505);
+            this.panelDock.Size = new System.Drawing.Size(760, 503);
             // 
             // panelTop
             // 
-            this.panelTop.Size = new System.Drawing.Size(762, 48);
+            this.panelTop.Size = new System.Drawing.Size(760, 48);
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(762, 38);
+            this.panel1.Size = new System.Drawing.Size(760, 38);
             // 
             // label1
             // 
@@ -189,16 +189,17 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(401, 10);
+            this.button2.Location = new System.Drawing.Point(395, 10);
             // 
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Location = new System.Drawing.Point(305, 10);
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(1182, 10);
+            this.tileSave.Location = new System.Drawing.Point(1331, 10);
             // 
             // label2
             // 
