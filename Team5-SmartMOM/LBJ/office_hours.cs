@@ -4,15 +4,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Team5_SmartMOM.Service;
+using Project_VO;
 
 namespace Team5_SmartMOM.LBJ
 {
     public partial class office_hours : Team5_SmartMOM.BaseGridForm
     {
-        List<ShiftVO> list;
+
         public office_hours()
         {
             InitializeComponent();
@@ -37,7 +39,7 @@ namespace Team5_SmartMOM.LBJ
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "투입인원", "SHIFT_INPUTPeople", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "SHIFT_UserOrNot", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정자", "SHIFT_Modifier", true, 140);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정시간", "SHIFT_ModifiyDate", true, 145);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정시간", "SHIFT_ModifierDate", true, 145);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "SHIFT_Others", true, 160);
 
             DataLoad();
@@ -45,21 +47,15 @@ namespace Team5_SmartMOM.LBJ
         public void DataLoad()
         {
             LBJ_Service service = new LBJ_Service();
-            
-            dataGridView1.DataSource = service.Shift();
+            List<ShiftVO> Shiftlist = service.Shift();
+            dataGridView1.DataSource = Shiftlist;
 
-            list = service.Shift();
 
+            List<ShiftListVO> list = new List<ShiftListVO>();
+            list = service.ShiftListVO();
             cboShift.DataSource = list;
             cboShift.DisplayMember = "SHIFT";
             cboShift.ValueMember = "SHIFT_ID";
-            cboShift.SelectedIndex = 0;
-            
-        }
-
-        private void cboShift_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
         }
     }
 }

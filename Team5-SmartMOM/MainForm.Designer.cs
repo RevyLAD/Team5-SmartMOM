@@ -138,7 +138,9 @@ namespace Team5_SmartMOM
             this.btnSubMenu1 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.tabControl1 = new TabControlZ.TabControlZ();
-            this.수요계획ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.단가관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.자재단가관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.영업단가관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -166,6 +168,7 @@ namespace Team5_SmartMOM
             this.품목관리ToolStripMenuItem,
             this.생산관리ToolStripMenuItem1,
             this.구매관리ToolStripMenuItem,
+            this.단가관리ToolStripMenuItem,
             this.품질관리ToolStripMenuItem,
             this.공정관리ToolStripMenuItem,
             this.출하관리ToolStripMenuItem,
@@ -196,28 +199,28 @@ namespace Team5_SmartMOM
             // 공장관리ToolStripMenuItem
             // 
             this.공장관리ToolStripMenuItem.Name = "공장관리ToolStripMenuItem";
-            this.공장관리ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.공장관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.공장관리ToolStripMenuItem.Text = "공장관리";
             this.공장관리ToolStripMenuItem.Click += new System.EventHandler(this.공장관리ToolStripMenuItem_Click);
             // 
             // 설비관리ToolStripMenuItem
             // 
             this.설비관리ToolStripMenuItem.Name = "설비관리ToolStripMenuItem";
-            this.설비관리ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.설비관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.설비관리ToolStripMenuItem.Text = "설비관리";
             this.설비관리ToolStripMenuItem.Click += new System.EventHandler(this.설비관리ToolStripMenuItem_Click);
             // 
             // 업체관리ToolStripMenuItem
             // 
             this.업체관리ToolStripMenuItem.Name = "업체관리ToolStripMenuItem";
-            this.업체관리ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.업체관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.업체관리ToolStripMenuItem.Text = "업체관리";
             this.업체관리ToolStripMenuItem.Click += new System.EventHandler(this.업체관리ToolStripMenuItem_Click);
             // 
             // bORToolStripMenuItem
             // 
             this.bORToolStripMenuItem.Name = "bORToolStripMenuItem";
-            this.bORToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.bORToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bORToolStripMenuItem.Text = "BOR";
             this.bORToolStripMenuItem.Click += new System.EventHandler(this.bORToolStripMenuItem_Click);
             // 
@@ -233,13 +236,13 @@ namespace Team5_SmartMOM
             // 자재현황ToolStripMenuItem
             // 
             this.자재현황ToolStripMenuItem.Name = "자재현황ToolStripMenuItem";
-            this.자재현황ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.자재현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.자재현황ToolStripMenuItem.Text = "자재현황";
             // 
             // 자재등록ToolStripMenuItem
             // 
             this.자재등록ToolStripMenuItem.Name = "자재등록ToolStripMenuItem";
-            this.자재등록ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.자재등록ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.자재등록ToolStripMenuItem.Text = "자재등록";
             // 
             // 품목관리ToolStripMenuItem
@@ -254,21 +257,22 @@ namespace Team5_SmartMOM
             // 품목관리ToolStripMenuItem1
             // 
             this.품목관리ToolStripMenuItem1.Name = "품목관리ToolStripMenuItem1";
-            this.품목관리ToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.품목관리ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.품목관리ToolStripMenuItem1.Text = "품목관리";
+            this.품목관리ToolStripMenuItem1.Click += new System.EventHandler(this.품목관리ToolStripMenuItem1_Click);
             // 
             // bOMToolStripMenuItem
             // 
             this.bOMToolStripMenuItem.Name = "bOMToolStripMenuItem";
-            this.bOMToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.bOMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bOMToolStripMenuItem.Text = "BOM";
+            this.bOMToolStripMenuItem.Click += new System.EventHandler(this.BOMToolStripMenuItem_Click);
             // 
             // 생산관리ToolStripMenuItem1
             // 
             this.생산관리ToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.영업마스터ToolStripMenuItem,
-            this.수요계획ToolStripMenuItem,
             this.자재소요계호기ToolStripMenuItem,
             this.생산계획ToolStripMenuItem,
             this.외주계획ToolStripMenuItem});
@@ -330,63 +334,63 @@ namespace Team5_SmartMOM
             // 정규발주ToolStripMenuItem
             // 
             this.정규발주ToolStripMenuItem.Name = "정규발주ToolStripMenuItem";
-            this.정규발주ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.정규발주ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.정규발주ToolStripMenuItem.Text = "정규발주";
             this.정규발주ToolStripMenuItem.Click += new System.EventHandler(this.정규발주ToolStripMenuItem_Click);
             // 
             // 발주현황ToolStripMenuItem
             // 
             this.발주현황ToolStripMenuItem.Name = "발주현황ToolStripMenuItem";
-            this.발주현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.발주현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.발주현황ToolStripMenuItem.Text = "발주현황";
             this.발주현황ToolStripMenuItem.Click += new System.EventHandler(this.발주현황ToolStripMenuItem_Click);
             // 
             // 입고대기ToolStripMenuItem
             // 
             this.입고대기ToolStripMenuItem.Name = "입고대기ToolStripMenuItem";
-            this.입고대기ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.입고대기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.입고대기ToolStripMenuItem.Text = "입고대기";
             this.입고대기ToolStripMenuItem.Click += new System.EventHandler(this.입고대기ToolStripMenuItem_Click);
             // 
             // 자재입고ToolStripMenuItem
             // 
             this.자재입고ToolStripMenuItem.Name = "자재입고ToolStripMenuItem";
-            this.자재입고ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.자재입고ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.자재입고ToolStripMenuItem.Text = "자재입고";
             this.자재입고ToolStripMenuItem.Click += new System.EventHandler(this.자재입고ToolStripMenuItem_Click);
             // 
             // 자재입고현황ToolStripMenuItem
             // 
             this.자재입고현황ToolStripMenuItem.Name = "자재입고현황ToolStripMenuItem";
-            this.자재입고현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.자재입고현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.자재입고현황ToolStripMenuItem.Text = "자재입고현황";
             this.자재입고현황ToolStripMenuItem.Click += new System.EventHandler(this.자재입고현황ToolStripMenuItem_Click);
             // 
             // 자재재고현황ToolStripMenuItem
             // 
             this.자재재고현황ToolStripMenuItem.Name = "자재재고현황ToolStripMenuItem";
-            this.자재재고현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.자재재고현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.자재재고현황ToolStripMenuItem.Text = "자재재고현황";
             this.자재재고현황ToolStripMenuItem.Click += new System.EventHandler(this.자재재고현황ToolStripMenuItem_Click);
             // 
             // 자재불출요청ToolStripMenuItem
             // 
             this.자재불출요청ToolStripMenuItem.Name = "자재불출요청ToolStripMenuItem";
-            this.자재불출요청ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.자재불출요청ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.자재불출요청ToolStripMenuItem.Text = "자재불출요청";
             this.자재불출요청ToolStripMenuItem.Click += new System.EventHandler(this.자재불출요청ToolStripMenuItem_Click);
             // 
             // 원자재불출ToolStripMenuItem
             // 
             this.원자재불출ToolStripMenuItem.Name = "원자재불출ToolStripMenuItem";
-            this.원자재불출ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.원자재불출ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.원자재불출ToolStripMenuItem.Text = "원자재불출";
             this.원자재불출ToolStripMenuItem.Click += new System.EventHandler(this.원자재불출ToolStripMenuItem_Click);
             // 
             // 입출고현황ToolStripMenuItem
             // 
             this.입출고현황ToolStripMenuItem.Name = "입출고현황ToolStripMenuItem";
-            this.입출고현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.입출고현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.입출고현황ToolStripMenuItem.Text = "입출고현황";
             this.입출고현황ToolStripMenuItem.Click += new System.EventHandler(this.입출고현황ToolStripMenuItem_Click);
             // 
@@ -401,7 +405,7 @@ namespace Team5_SmartMOM
             // 수입검사ToolStripMenuItem
             // 
             this.수입검사ToolStripMenuItem.Name = "수입검사ToolStripMenuItem";
-            this.수입검사ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.수입검사ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.수입검사ToolStripMenuItem.Text = "수입검사";
             this.수입검사ToolStripMenuItem.Click += new System.EventHandler(this.수입검사ToolStripMenuItem_Click);
             // 
@@ -418,19 +422,19 @@ namespace Team5_SmartMOM
             // 작업지시생성ToolStripMenuItem
             // 
             this.작업지시생성ToolStripMenuItem.Name = "작업지시생성ToolStripMenuItem";
-            this.작업지시생성ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.작업지시생성ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.작업지시생성ToolStripMenuItem.Text = "작업지시생성";
             // 
             // 작업지시현황ToolStripMenuItem
             // 
             this.작업지시현황ToolStripMenuItem.Name = "작업지시현황ToolStripMenuItem";
-            this.작업지시현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.작업지시현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.작업지시현황ToolStripMenuItem.Text = "작업지시현황";
             // 
             // 공정재고현황ToolStripMenuItem
             // 
             this.공정재고현황ToolStripMenuItem.Name = "공정재고현황ToolStripMenuItem";
-            this.공정재고현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.공정재고현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.공정재고현황ToolStripMenuItem.Text = "공정재고현황";
             // 
             // 출하관리ToolStripMenuItem
@@ -468,14 +472,14 @@ namespace Team5_SmartMOM
             // shift기준정보ToolStripMenuItem
             // 
             this.shift기준정보ToolStripMenuItem.Name = "shift기준정보ToolStripMenuItem";
-            this.shift기준정보ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.shift기준정보ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.shift기준정보ToolStripMenuItem.Text = "Shift 기준정보";
             this.shift기준정보ToolStripMenuItem.Click += new System.EventHandler(this.shift기준정보ToolStripMenuItem_Click);
             // 
             // shift스케줄관리ToolStripMenuItem
             // 
             this.shift스케줄관리ToolStripMenuItem.Name = "shift스케줄관리ToolStripMenuItem";
-            this.shift스케줄관리ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.shift스케줄관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.shift스케줄관리ToolStripMenuItem.Text = "Shift 스케줄관리";
             this.shift스케줄관리ToolStripMenuItem.Click += new System.EventHandler(this.shift스케줄관리ToolStripMenuItem_Click);
             // 
@@ -1471,12 +1475,26 @@ namespace Team5_SmartMOM
             this.tabControl1.Transparent1 = 150;
             this.tabControl1.Transparent2 = 150;
             // 
-            // 수요계획ToolStripMenuItem
+            // 단가관리ToolStripMenuItem
             // 
-            this.수요계획ToolStripMenuItem.Name = "수요계획ToolStripMenuItem";
-            this.수요계획ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.수요계획ToolStripMenuItem.Text = "수요계획";
-            this.수요계획ToolStripMenuItem.Click += new System.EventHandler(this.수요계획ToolStripMenuItem_Click);
+            this.단가관리ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.자재단가관리ToolStripMenuItem,
+            this.영업단가관리ToolStripMenuItem});
+            this.단가관리ToolStripMenuItem.Name = "단가관리ToolStripMenuItem";
+            this.단가관리ToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.단가관리ToolStripMenuItem.Text = "단가 관리";
+            // 
+            // 자재단가관리ToolStripMenuItem
+            // 
+            this.자재단가관리ToolStripMenuItem.Name = "자재단가관리ToolStripMenuItem";
+            this.자재단가관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.자재단가관리ToolStripMenuItem.Text = "자재단가관리";
+            // 
+            // 영업단가관리ToolStripMenuItem
+            // 
+            this.영업단가관리ToolStripMenuItem.Name = "영업단가관리ToolStripMenuItem";
+            this.영업단가관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.영업단가관리ToolStripMenuItem.Text = "영업단가관리";
             // 
             // MainForm
             // 
@@ -1623,7 +1641,9 @@ namespace Team5_SmartMOM
         private System.Windows.Forms.ToolStripMenuItem 영업마스터ToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 수요계획ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 단가관리ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 자재단가관리ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 영업단가관리ToolStripMenuItem;
     }
 }
 

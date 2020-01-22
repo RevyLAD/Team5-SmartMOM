@@ -37,8 +37,9 @@
             this.txt_Item = new System.Windows.Forms.TextBox();
             this.cbo_Deployement = new System.Windows.Forms.ComboBox();
             this.btn_Search = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -55,11 +56,13 @@
             // 
             this.panelMid.Controls.Add(this.button5);
             this.panelMid.Controls.Add(this.button4);
+            this.panelMid.Controls.Add(this.button6);
             this.panelMid.Controls.SetChildIndex(this.lblArrow, 0);
             this.panelMid.Controls.SetChildIndex(this.label1, 0);
             this.panelMid.Controls.SetChildIndex(this.button1, 0);
             this.panelMid.Controls.SetChildIndex(this.button2, 0);
             this.panelMid.Controls.SetChildIndex(this.button3, 0);
+            this.panelMid.Controls.SetChildIndex(this.button6, 0);
             this.panelMid.Controls.SetChildIndex(this.button4, 0);
             this.panelMid.Controls.SetChildIndex(this.button5, 0);
             // 
@@ -196,20 +199,20 @@
             this.btn_Search.Text = "조회";
             this.btn_Search.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // button6
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button4.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(847, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(57, 24);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "복사";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button6.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button6.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(847, 0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(57, 24);
+            this.button6.TabIndex = 15;
+            this.button6.Text = "삭제";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button6.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
@@ -218,14 +221,30 @@
             this.button5.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button5.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(790, 0);
+            this.button5.Location = new System.Drawing.Point(733, 0);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(57, 24);
-            this.button5.TabIndex = 14;
+            this.button5.TabIndex = 17;
             this.button5.Text = "등록";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.Btn_newitem_Click_1);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button4.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button4.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(790, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(57, 24);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "복사";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.Btn_newitem_Click_1);
             // 
             // BOM
             // 
@@ -260,5 +279,6 @@
         private System.Windows.Forms.Button btn_Search;
         protected System.Windows.Forms.Button button5;
         protected System.Windows.Forms.Button button4;
+        protected System.Windows.Forms.Button button6;
     }
 }
