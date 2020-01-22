@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Project_VO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Team5_SmartMOM.BaseForm;
 using Team5_SmartMOM.Service;
 
 namespace Team5_SmartMOM.HSM
@@ -36,7 +39,30 @@ namespace Team5_SmartMOM.HSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "취소수량", "SALES_CancelQty", true, 90);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "SALES_Duedate", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "주문일", "SALES_OrderDate", true, 100);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "SALES_OrderDate", true,380);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "SALES_Remark", true,380);
+
+            InitCombo();
+
+        }
+
+        private void InitCombo()
+        {
+            CommonCodeService service = new CommonCodeService();
+
+            List<CommonCodeVO> listGubunCode = service.GetAllCommonCode();
+            List<CompanyCodeVO> listCompanyCode = service.GetAllCompanyCode();
+            List<ItemCodeVO> listItemCode = service.GetAllItemCode();
+
+
+            //공통코드링큐
+            List<CommonCodeVO> OrderGubunList = (from item in listGubunCode
+                                                 where item.Common_Type == "ORDER_GUBUN"
+                                                 select item).ToList();
+
+
+            CommonUtil.ComboBinding(cboState, OrderGubunList, "Common_Key", "Common_Value");
+            CommonUtil.ComboBinding(cboCustomer, listCompanyCode, "COM_Code", "COM_Name");
+            CommonUtil.ComboBinding(cboProduct, listItemCode, "ITEM_Code", "ITEM_Name");
 
         }
 
@@ -44,7 +70,10 @@ namespace Team5_SmartMOM.HSM
         {
             SO_Insert frm = new SO_Insert();
             frm.StartPosition = FormStartPosition.CenterScreen;
-            frm.ShowDialog();
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                button2.PerformClick();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

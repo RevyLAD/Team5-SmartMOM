@@ -32,17 +32,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.circularButton3 = new Team5_SmartMOM.PSM.CircularButton();
             this.label8 = new System.Windows.Forms.Label();
-            this.circularButton4 = new Team5_SmartMOM.PSM.CircularButton();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.circularButton2 = new Team5_SmartMOM.PSM.CircularButton();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.circularButton1 = new Team5_SmartMOM.PSM.CircularButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -52,6 +48,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tileUpdate = new MetroFramework.Controls.MetroTile();
+            this.circularButton3 = new Team5_SmartMOM.PSM.CircularButton();
+            this.circularButton4 = new Team5_SmartMOM.PSM.CircularButton();
+            this.circularButton2 = new Team5_SmartMOM.PSM.CircularButton();
+            this.circularButton1 = new Team5_SmartMOM.PSM.CircularButton();
             this.Mainpanel.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -97,8 +97,7 @@
             this.panel5.Location = new System.Drawing.Point(271, 127);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(769, 353);
-            this.panel5.TabIndex = 3;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            this.panel5.TabIndex = 3;            
             // 
             // button1
             // 
@@ -113,15 +112,6 @@
             this.button1.Text = "발주";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // circularButton3
-            // 
-            this.circularButton3.Location = new System.Drawing.Point(469, 314);
-            this.circularButton3.Name = "circularButton3";
-            this.circularButton3.Size = new System.Drawing.Size(31, 30);
-            this.circularButton3.TabIndex = 12;
-            this.circularButton3.Text = ">";
-            this.circularButton3.UseVisualStyleBackColor = true;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -131,21 +121,13 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "1  /  1";
             // 
-            // circularButton4
-            // 
-            this.circularButton4.Location = new System.Drawing.Point(387, 314);
-            this.circularButton4.Name = "circularButton4";
-            this.circularButton4.Size = new System.Drawing.Size(31, 30);
-            this.circularButton4.TabIndex = 10;
-            this.circularButton4.Text = "<";
-            this.circularButton4.UseVisualStyleBackColor = true;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 10);
+            this.label5.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(6, 2);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.Size = new System.Drawing.Size(50, 28);
             this.label5.TabIndex = 3;
             this.label5.Text = "발주";
             // 
@@ -171,15 +153,6 @@
             this.panel4.Size = new System.Drawing.Size(234, 353);
             this.panel4.TabIndex = 2;
             // 
-            // circularButton2
-            // 
-            this.circularButton2.Location = new System.Drawing.Point(137, 314);
-            this.circularButton2.Name = "circularButton2";
-            this.circularButton2.Size = new System.Drawing.Size(31, 30);
-            this.circularButton2.TabIndex = 7;
-            this.circularButton2.Text = ">";
-            this.circularButton2.UseVisualStyleBackColor = true;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -192,9 +165,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 11);
+            this.label4.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(3, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.Size = new System.Drawing.Size(88, 28);
             this.label4.TabIndex = 1;
             this.label4.Text = "발주업체";
             // 
@@ -207,15 +181,6 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(228, 277);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // circularButton1
-            // 
-            this.circularButton1.Location = new System.Drawing.Point(55, 314);
-            this.circularButton1.Name = "circularButton1";
-            this.circularButton1.Size = new System.Drawing.Size(31, 30);
-            this.circularButton1.TabIndex = 4;
-            this.circularButton1.Text = "<";
-            this.circularButton1.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -244,34 +209,34 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(558, 15);
+            this.textBox1.Location = new System.Drawing.Point(587, 15);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(184, 21);
             this.textBox1.TabIndex = 4;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(494, 20);
+            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(487, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 12);
+            this.label3.Size = new System.Drawing.Size(94, 23);
             this.label3.TabIndex = 3;
             this.label3.Text = "* Part No";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(57, 15);
+            this.comboBox1.Location = new System.Drawing.Point(64, 15);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(197, 20);
             this.comboBox1.TabIndex = 2;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 18);
+            this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 12);
+            this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "* 업체";
             // 
@@ -309,6 +274,42 @@
             this.tileUpdate.TileImage = global::Team5_SmartMOM.Properties.Resources.edit1;
             this.tileUpdate.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.tileUpdate.UseTileImage = true;
+            // 
+            // circularButton3
+            // 
+            this.circularButton3.Location = new System.Drawing.Point(469, 314);
+            this.circularButton3.Name = "circularButton3";
+            this.circularButton3.Size = new System.Drawing.Size(31, 30);
+            this.circularButton3.TabIndex = 12;
+            this.circularButton3.Text = ">";
+            this.circularButton3.UseVisualStyleBackColor = true;
+            // 
+            // circularButton4
+            // 
+            this.circularButton4.Location = new System.Drawing.Point(387, 314);
+            this.circularButton4.Name = "circularButton4";
+            this.circularButton4.Size = new System.Drawing.Size(31, 30);
+            this.circularButton4.TabIndex = 10;
+            this.circularButton4.Text = "<";
+            this.circularButton4.UseVisualStyleBackColor = true;
+            // 
+            // circularButton2
+            // 
+            this.circularButton2.Location = new System.Drawing.Point(137, 314);
+            this.circularButton2.Name = "circularButton2";
+            this.circularButton2.Size = new System.Drawing.Size(31, 30);
+            this.circularButton2.TabIndex = 7;
+            this.circularButton2.Text = ">";
+            this.circularButton2.UseVisualStyleBackColor = true;
+            // 
+            // circularButton1
+            // 
+            this.circularButton1.Location = new System.Drawing.Point(55, 314);
+            this.circularButton1.Name = "circularButton1";
+            this.circularButton1.Size = new System.Drawing.Size(31, 30);
+            this.circularButton1.TabIndex = 4;
+            this.circularButton1.Text = "<";
+            this.circularButton1.UseVisualStyleBackColor = true;
             // 
             // Purchasing_Order
             // 

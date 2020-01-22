@@ -18,12 +18,7 @@ namespace Team5_SmartMOM.PSM
         public Purchasing_Order()
         {
             InitializeComponent();
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        }       
 
         private void Purchasing_Order_Load(object sender, EventArgs e)
         {
@@ -34,7 +29,7 @@ namespace Team5_SmartMOM.PSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체번호", "COM_No", true, 80);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체이름", "COM_Name", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체코드", "COM_Code", false, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_CODE", false, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", false, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주업체", "ITEM_OrderComp ", false, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주수량", "Vo_Quantity ", false, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "최소발주수량", "ITEM_MinOrderQuantity  ", false, 150);
@@ -48,13 +43,15 @@ namespace Team5_SmartMOM.PSM
 
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "업체이름", "COM_Name", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "업체코드", "COM_Code", true, 100);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품목", "ITEM_CODE", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품목", "ITEM_Code", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "발주업체", "ITEM_OrderComp ", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "발주수량", "Vo_Quantity ", true, 80);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "최소발주수량", "ITEM_MinOrderQuantity  ", true, 120);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "납기일", "Vo_EndDate", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "수입검사여부", "ITEM_ImportIns ", true, 120);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "규격", "ITEM_Size", true, 100);
+
+            DataLoad();
         }
 
         public void DataLoad()
