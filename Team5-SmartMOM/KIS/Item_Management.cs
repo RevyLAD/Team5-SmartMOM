@@ -58,5 +58,9 @@ namespace Team5_SmartMOM
             KIS_Service service = new KIS_Service();
             dataGridView1.DataSource = service.ShowITEM();
         }
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

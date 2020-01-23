@@ -118,12 +118,12 @@ namespace Team5_SmartMOM
             List<CommonCodeVO> OrderGubunList3= (from item in listGubunCode3
                                                   where item.Common_Type == "USE_FLAG"
                                                   select item).ToList();
-            List<ItemCodeVO> listItemCode = service.GetAllItemCode();
+          
             
             CommonUtil.ComboBinding(cbo_UseorNot, OrderGubunList1, "Common_Key", "Common_Value");
             CommonUtil.ComboBinding(cbo_AutoDeduction, OrderGubunList2, "Common_Key", "Common_Value");
             CommonUtil.ComboBinding(cbo_Required_plan, OrderGubunList3, "Common_Key", "Common_Value");
-            CommonUtil.ComboBinding(cbo_Item, listItemCode, "ITEM_Code", "ITEM_Name");
+            
         }
 
         private void Button1_Click_1(object sender, EventArgs e)

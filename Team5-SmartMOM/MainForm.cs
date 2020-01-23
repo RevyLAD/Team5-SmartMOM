@@ -324,5 +324,10 @@ namespace Team5_SmartMOM
         {
             CreateTabPages("BOM", new BOM());
         }
+
+        private void 품목관리ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("품목관리", new Item_Management());
+        }
     }
 }
