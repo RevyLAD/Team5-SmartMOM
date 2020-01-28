@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace Project_DAC.LBJ
 {
-    public class ShiftDAC:ConnectionAccess
+    public class ShiftDAC : ConnectionAccess
     {
         public List<ShiftVO> Shift()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "SELECT SHIFT_ID, FAC_Code ,SHIFT_StartTime, SHIFT_EndTime, SHIFT_StartDate, SHIFT_EndDate, SHIFT_InputPeople, SHIFT_UserOrNot, SHIFT_Modifier, SHIFT_ModifierDate, SHIFT_Others, SHIFT FROM Shift";
+                cmd.CommandText = "SELECT SHIFT_ID, FAC_Code ,SHIFT_StartTime, SHIFT_EndTime, SHIFT_StartDate, SHIFT_EndDate, SHIFT_InputPeople, SHIFT_UserOrNot,   SHIFT_Modifier, SHIFT_ModifierDate, SHIFT_Others, SHIFT FROM Shift";
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<ShiftVO> list = Helper.DataReaderMapToList<ShiftVO>(reader);
@@ -25,6 +25,9 @@ namespace Project_DAC.LBJ
                 return list;
             }
         }
+
+
+
         public List<ShiftManagementVO> ShiftManage()
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -39,20 +42,29 @@ namespace Project_DAC.LBJ
                 return list;
             }
         }
-        public List<Shift_TypeVO> ShiftType()
+        public void ShiftInsert(ShiftVO svo)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "select SHIFT FROM Shift";
-                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "INSERT INTO Shift(SHIFT_ID, SHIFT, FAC_Code ,SHIFT_StartTime, SHIFT_EndTime, SHIFT_StartDate, SHIFT_EndDate, SHIFT_InputPeople, SHIFT_UserOrNot,   SHIFT_Modifier, SHIFT_ModifierDate, SHIFT_Others) VALUES(@SHIFT_ID, @SHIFT, @FAC_Code ,@SHIFT_StartTime, @SHIFT_EndTime, @SHIFT_StartDate, @SHIFT_EndDate, @SHIFT_InputPeople, @SHIFT_UserOrNot, @SHIFT_Modifier, @SHIFT_ModifierDate, @SHIFT_Others)";
+
+                cmd.Parameters.AddWithValue("@SHIFT_ID", svo.SHIFT_ID);
+                cmd.Parameters.AddWithValue("@SHIFT", svo.SHIFT);
+                cmd.Parameters.AddWithValue("@FAC_Code", svo.FAC_Code);
+                cmd.Parameters.AddWithValue("@SHIFT_StartTime", svo.SHIFT_StartTime);
+                cmd.Parameters.AddWithValue("@SHIFT_EndTime", svo.SHIFT_EndTime);
+                cmd.Parameters.AddWithValue("@SHIFT_StartDate", svo.SHIFT_StartDate);
+                cmd.Parameters.AddWithValue("@SHIFT_EndDate", svo.SHIFT_EndDate);
+                cmd.Parameters.AddWithValue("@SHIFT_InputPeople", svo.SHIFT_InputPeople);
+                cmd.Parameters.AddWithValue("@SHIFT_UserOrNot", svo.SHIFT_UserOrNot);
+                cmd.Parameters.AddWithValue("@SHIFT_Modifier", svo.SHIFT_Modifier);
+                cmd.Parameters.AddWithValue("@SHIFT_ModifierDate", svo.SHIFT_ModifierDate);
+                cmd.Parameters.AddWithValue("@SHIFT_Others", svo.SHIFT_Others);
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<Shift_TypeVO> list = Helper.DataReaderMapToList<Shift_TypeVO>(reader);
                 cmd.Connection.Close();
-
-                return list;
             }
         }
     }

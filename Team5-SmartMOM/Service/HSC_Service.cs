@@ -44,5 +44,47 @@ namespace Team5_SmartMOM.Service
             OrderDAC dac = new OrderDAC();
             return dac.GetAllOrder();
         }
+
+        public void InsertFactory(FactoryVO fvo)
+        {
+            FactoryDAC dac = new FactoryDAC();
+            dac.InsertFactory(fvo);
+        }
+
+        public List<FacGroupVO> GetAllFacilitesCode()
+        {
+            FactoryDAC dac = new FactoryDAC();
+            return dac.GetAllFacilitesCode();
+        }
+
+        public string GetModiTime(string code)
+        {
+            FactoryDAC dac = new FactoryDAC();
+            return dac.GetModiTime(code);
+        }
+
+        public void UpdateFactory(FactoryVO fvo, string code)
+        {
+            FactoryDAC dac = new FactoryDAC();
+            dac.UpdateFactory(fvo, code);
+        }
+
+        public void InsertBOR(BORVO bvo)
+        {
+            BORDAC dac = new BORDAC();
+            dac.InsertBOR(bvo);
+        }
+
+        public void InsertEnterprise(EnterpriseVO evo)
+        {
+            EnterpriseDAC dac = new EnterpriseDAC();
+            dac.InsertEnterprise(evo);
+        }
+
+        public void InsertFacilities(FacilitieVO vo)
+        {
+            FacilitieDAC dac = new FacilitieDAC();
+            dac.InsertFacilities(vo);
+        }
     }
 }

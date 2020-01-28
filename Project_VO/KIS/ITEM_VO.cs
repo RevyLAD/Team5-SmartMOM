@@ -9,6 +9,7 @@ namespace Project_VO
     public class ITEM_VO
     {
         public int ITEM_No { get; set; }
+        public string ITEM_Name { get; set; }
         public string ITEM_Code { get; set; }
         public string ITEM_Size { get; set; }
         public string ITEM_Unit { get; set; }

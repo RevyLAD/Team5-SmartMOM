@@ -64,11 +64,11 @@
             // 
             // panelMain
             // 
-            this.panelMain.Size = new System.Drawing.Size(613, 442);
+            this.panelMain.Size = new System.Drawing.Size(611, 440);
             // 
             // panelBottom
             // 
-            this.panelBottom.Location = new System.Drawing.Point(0, 394);
+            this.panelBottom.Location = new System.Drawing.Point(0, 392);
             // 
             // panelDock
             // 
@@ -95,7 +95,7 @@
             this.panelDock.Controls.Add(this.label3);
             this.panelDock.Controls.Add(this.label2);
             this.panelDock.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.panelDock.Size = new System.Drawing.Size(613, 394);
+            this.panelDock.Size = new System.Drawing.Size(611, 392);
             // 
             // button2
             // 
@@ -105,6 +105,7 @@
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
             // 
             // label2
             // 
@@ -313,6 +314,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(633, 462);
             this.Name = "BOM_detail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelFull.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.panelBottom.ResumeLayout(false);

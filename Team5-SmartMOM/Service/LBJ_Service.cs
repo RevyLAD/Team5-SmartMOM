@@ -32,10 +32,10 @@ namespace Team5_SmartMOM.Service
             ImportDAC dac = new ImportDAC();
             return dac.ImportsSearch();
         }
-        public List<Shift_TypeVO> ShiftType()
+        public void ShiftInsert(ShiftVO svo)
         {
             ShiftDAC dac = new ShiftDAC();
-            return dac.ShiftType();
+            dac.ShiftInsert(svo);
         }
     }
 }

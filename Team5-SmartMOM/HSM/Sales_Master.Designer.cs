@@ -85,7 +85,7 @@
             this.button1.Location = new System.Drawing.Point(1090, 0);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Size = new System.Drawing.Size(108, 25);
-            this.button1.Text = "생산계획생성";
+            this.button1.Text = "수요계획생성";
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2

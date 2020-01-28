@@ -102,23 +102,22 @@
             // 
             // cboShift
             // 
-            this.cboShift.FormattingEnabled = true;
-            this.cboShift.Location = new System.Drawing.Point(109, 21);
-            this.cboShift.Name = "cboShift";
-            this.cboShift.Size = new System.Drawing.Size(142, 20);
-            this.cboShift.TabIndex = 1;
-            this.cboShift.SelectedIndexChanged += new System.EventHandler(this.cboShift_SelectedIndexChanged);
+            //this.cboShift.FormattingEnabled = true;
+            //this.cboShift.Location = new System.Drawing.Point(109, 21);
+            //this.cboShift.Name = "cboShift";
+            //this.cboShift.Size = new System.Drawing.Size(142, 20);
+            //this.cboShift.TabIndex = 1;
+            //this.cboShift.SelectedIndexChanged += new System.EventHandler(this.cboShift_SelectedIndexChanged);
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(372, 20);
+            this.label5.Location = new System.Drawing.Point(334, 20);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 24);
+            this.label5.Size = new System.Drawing.Size(95, 24);
             this.label5.TabIndex = 4;
-            this.label5.Text = "ㆍ설비";
+            this.label5.Text = "ㆍ설비코드";
             // 
             // cbosystem
             // 
@@ -139,6 +138,7 @@
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label2
             // 

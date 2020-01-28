@@ -17,8 +17,8 @@ namespace Project_VO.LBJ
         public DateTime SHIFT_EndDate { get; set; }
         public int SHIFT_InputPeople { get; set; }
         public string SHIFT_UserOrNot { get; set; }
-        public string Modifier { get; set; }
-        public DateTime SHIFT_ModifiyDate { get; set; }
+        public string SHIFT_Modifier { get; set; }
+        public string SHIFT_ModifierDate { get; set; }
         public string SHIFT_Others { get; set; }
     }
     public class ShiftManagementVO
@@ -28,11 +28,11 @@ namespace Project_VO.LBJ
         public int SHIFT_StartTime { get; set; }
         public int SHIFT_EndTime { get; set; }
         public string SHIFT_InputPeople { get; set; }
-      
+
     }
-    public class Shift_TypeVO
+    public class ShiftListVO
     {
-            public string Shift_morning { get; set; }
-            public string Shift_night { get; set; }
+        public string SHIFT_ID { get; set; }
+        public string SHIFT { get; set; }
     }
 }

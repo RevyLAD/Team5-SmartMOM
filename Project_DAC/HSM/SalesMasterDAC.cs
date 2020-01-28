@@ -137,5 +137,46 @@ namespace Project_DAC.HSM
             }
 
         }
+
+        public bool UpdatePlanID(List<UpdatePlanIDVO> plan)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+
+                    foreach (var item in plan)
+                    {
+                        cmd.Connection = new SqlConnection(this.ConnectionString);
+                        cmd.Connection.Open();
+
+                        cmd.CommandText = "UPDATE SalesMaster SET Plan_ID = @Plan_ID, Sales_Order_State = '생산대기' WHERE SO_WorkOrderID = @SO_WorkOrderID";
+
+                        cmd.Parameters.Clear();
+
+                        cmd.Parameters.AddWithValue("@SO_WorkOrderID", item.SO_WorkOrderID);
+                        cmd.Parameters.AddWithValue("@Plan_ID", item.Plan_ID);
+
+
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    cmd.Connection.Close();
+
+
+                }
+
+                return true;
+
+
+            }
+            catch (Exception err)
+            {
+
+                return false;
+            }
+
+        }
     }
 }

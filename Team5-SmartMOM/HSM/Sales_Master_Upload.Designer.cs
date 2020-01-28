@@ -45,9 +45,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(880, 0);
+            this.button3.Location = new System.Drawing.Point(868, 0);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Size = new System.Drawing.Size(146, 24);
+            this.button3.Size = new System.Drawing.Size(158, 24);
             this.button3.Text = "영업마스터 업로드";
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
