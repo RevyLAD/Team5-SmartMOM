@@ -16,7 +16,6 @@ namespace Team5_SmartMOM.LBJ
     public partial class office_hours : Team5_SmartMOM.BaseGridForm
     {
         List<ShiftVO> list;
-
         public office_hours()
         {
             InitializeComponent();
@@ -44,6 +43,8 @@ namespace Team5_SmartMOM.LBJ
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정시간", "SHIFT_Modifier", true, 170);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "SHIFT_Others", true, 235);
 
+            LBJ_Service service = new LBJ_Service();
+            dataGridView1.DataSource = list = service.Shift();
             DataLoad();
             ComboLoad();
         }
@@ -52,14 +53,11 @@ namespace Team5_SmartMOM.LBJ
             LBJ_Service service = new LBJ_Service();
             List<ShiftVO> Shiftlist = service.Shift();
             dataGridView1.DataSource = Shiftlist;
-        }
 
-        public void ComboLoad()
-        {
             List<CommonCodeVO> list = new List<CommonCodeVO>();
 
-            CommonCodeService service = new CommonCodeService();
-            list = service.GetAllCommonCode();
+            CommonCodeService service1 = new CommonCodeService();
+            list = service1.GetAllCommonCode();
 
             //공통코드링큐
             List<CommonCodeVO> OrderShiftList = (from item in list
@@ -67,23 +65,79 @@ namespace Team5_SmartMOM.LBJ
                                                  select item).ToList();
 
             CommonUtil.ComboBinding(cboShift, OrderShiftList, "Common_Key", "Common_Value");
+
+
+        }
+
+        public void ComboLoad()
+        {
+            List<FacilitieDetailVO> list = new List<FacilitieDetailVO>();
+
+            HSC_Service service = new HSC_Service();
+
+            list = service.GetAllFacilitiesDetail();
+            string FacCode = cbosystem.Text.Trim();
+
+            List<FacilitieDetailVO> temp = (from item in list
+                                           where item.FAC_Code.Contains(FacCode)
+                                           select item).Distinct().ToList();
+
+
+
+            List<FacilitieDetailVO> FacList = new List<FacilitieDetailVO>();
+
+            foreach (FacilitieDetailVO item1 in temp)
+            {
+                bool addok = true;
+                if (FacList.Count < 1)
+                    FacList.Add(item1);
+                else
+                {
+                    for (int i = 0; i < FacList.Count; i++)
+                        if (FacList[i].FAC_Code.Trim() == item1.FAC_Code.Trim())
+                            addok = false;
+
+                    if (addok)
+                        FacList.Add(item1);
+                    else
+                        continue;
+                }
+            }
+
+            CommonUtil.ComboBinding(cbosystem, FacList, "FAC_No", "FAC_Code");
+
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string shift = cboShift.Text;
             string shift2 = cbosystem.Text;
 
-            List<ShiftVO> temp = new List<ShiftVO>();
+            List<ShiftVO> list = new List<ShiftVO>();
+
+            //foreach (var item in list)
+            //    if (cboShift.Text.Trim() == item.SHIFT && cbosystem.Text.Trim() == item.FAC_Code)
+            //    {
+            //        list.Add(item);
+            //    }
+
+            if (cboShift.Text.Trim() == "" && cbosystem.Text.Trim() == "")
+            {
+
+            } 
+            else
+                dataGridView1.DataSource = ShiftSearch();
+        }
+        private List<ShiftVO> ShiftSearch()
+        {
+            List<ShiftVO> shiftvo = new List<ShiftVO>();
 
             foreach (var item in list)
             {
-                if (cboShift.Text.Trim() == item.SHIFT &&
-                    cbosystem.Text.Trim() == item.FAC_Code)
-                {
-                    temp.Add(item);
-                }
+                if (item.SHIFT.Trim().Contains(cboShift.Text.Trim()) &&
+                        item.FAC_Code.Trim().Contains(cbosystem.Text.Trim()))
+                    shiftvo.Add(item);
             }
-            dataGridView1.DataSource = temp;
+            return shiftvo;
         }
 
         private void cboShift_SelectedIndexChanged(object sender, EventArgs e)
