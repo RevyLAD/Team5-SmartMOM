@@ -36,7 +36,7 @@ namespace Team5_SmartMOM.HSM
 
         }
 
-        private void InitCombo()
+        private void InitCombo() //콥보박스 바인딩
         {
             CommonCodeService service = new CommonCodeService();
 
@@ -89,7 +89,7 @@ namespace Team5_SmartMOM.HSM
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) //생산계획 생성
         {
             MPS frm = new MPS();
             frm.ShowDialog();

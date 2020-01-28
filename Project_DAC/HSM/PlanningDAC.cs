@@ -49,6 +49,8 @@ namespace Project_DAC.HSM
             }
         }
 
+
+
         public DataSet GetAllDemandPlanByPlanID(PlanningVO plan)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -64,6 +66,28 @@ namespace Project_DAC.HSM
 
                 SqlDataAdapter adpt = new SqlDataAdapter(cmd);
                 adpt.Fill(ds, "GetDemandPlanByPlanID");
+
+                cmd.Connection.Close();
+                return ds;
+
+            }
+        }
+
+        public DataSet GetMRP(PlanningVO plan)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                DataSet ds = new DataSet();
+                cmd.CommandText = "MRP";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Plan_ID", plan.PlanId);
+                cmd.Parameters.AddWithValue("@StartDateTime", plan.SALES_OrderDate);
+                cmd.Parameters.AddWithValue("@EndDateTime", plan.SALES_DueDate);
+
+                SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                adpt.Fill(ds, "GetMRP");
 
                 cmd.Connection.Close();
                 return ds;

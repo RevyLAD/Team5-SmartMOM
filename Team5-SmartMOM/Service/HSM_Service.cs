@@ -40,6 +40,12 @@ namespace Team5_SmartMOM.Service
             return dac.GetAllDemandPlanByPlanID(plan);
         }
 
+        public DataSet GetMRP(PlanningVO plan)
+        {
+            PlanningDAC dac = new PlanningDAC();
+            return dac.GetMRP(plan);
+        }
+
 
         public bool UpdatePlanID(List<UpdatePlanIDVO> plan)
         {

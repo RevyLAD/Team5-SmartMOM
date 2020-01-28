@@ -37,7 +37,7 @@ namespace Team5_SmartMOM.HSM
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)//저장
         {
             List<SalesMasterVO> sales = new List<SalesMasterVO>();
 
