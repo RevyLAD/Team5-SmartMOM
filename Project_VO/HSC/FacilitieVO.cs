@@ -28,7 +28,7 @@ namespace Project_VO
         public string FAC_BadWareHouse { get; set; }
         public string FAC_UseOrNot { get; set; }
         public string FAC_Modifier { get; set; }
-        public string FAC_ModifiyDate { get; set; }
+        public DateTime FAC_ModifiyDate { get; set; }
         public string FAC_Remark { get; set; }
         public string FAC_Others { get; set; }
     }

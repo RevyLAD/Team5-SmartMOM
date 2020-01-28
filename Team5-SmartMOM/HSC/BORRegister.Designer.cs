@@ -44,7 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cboFacCrow = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtYeild = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panelFull.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -57,20 +57,21 @@
             // panelFull
             // 
             this.panelFull.Size = new System.Drawing.Size(641, 390);
+            this.panelFull.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFull_Paint);
             // 
             // panelMain
             // 
-            this.panelMain.Size = new System.Drawing.Size(621, 370);
+            this.panelMain.Size = new System.Drawing.Size(619, 368);
             // 
             // panelBottom
             // 
-            this.panelBottom.Location = new System.Drawing.Point(0, 322);
-            this.panelBottom.Size = new System.Drawing.Size(621, 48);
+            this.panelBottom.Location = new System.Drawing.Point(0, 320);
+            this.panelBottom.Size = new System.Drawing.Size(619, 48);
             // 
             // panelDock
             // 
             this.panelDock.Controls.Add(this.label3);
-            this.panelDock.Controls.Add(this.textBox1);
+            this.panelDock.Controls.Add(this.txtYeild);
             this.panelDock.Controls.Add(this.txtExplain);
             this.panelDock.Controls.Add(this.label16);
             this.panelDock.Controls.Add(this.cboUse);
@@ -87,15 +88,15 @@
             this.panelDock.Controls.Add(this.label4);
             this.panelDock.Controls.Add(this.cboFacCrow);
             this.panelDock.Controls.Add(this.label2);
-            this.panelDock.Size = new System.Drawing.Size(621, 322);
+            this.panelDock.Size = new System.Drawing.Size(619, 320);
             // 
             // panelTop
             // 
-            this.panelTop.Size = new System.Drawing.Size(621, 48);
+            this.panelTop.Size = new System.Drawing.Size(619, 48);
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(621, 38);
+            this.panel1.Size = new System.Drawing.Size(619, 38);
             // 
             // label1
             // 
@@ -105,15 +106,15 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(326, 10);
+            this.button2.Location = new System.Drawing.Point(350, 10);
             // 
             // button1
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(602, 10);
+            this.tileSave.Location = new System.Drawing.Point(626, 10);
             this.tileSave.Click += new System.EventHandler(this.tileSave_Click);
             // 
             // txtExplain
@@ -171,7 +172,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 16);
             this.label10.TabIndex = 47;
-            this.label10.Text = "ㆍ수출";
+            this.label10.Text = "ㆍ수율";
             // 
             // label11
             // 
@@ -271,13 +272,13 @@
             this.label2.TabIndex = 30;
             this.label2.Text = "ㆍ품목";
             // 
-            // textBox1
+            // txtYeild
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(128, 109);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 21);
-            this.textBox1.TabIndex = 60;
+            this.txtYeild.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtYeild.Location = new System.Drawing.Point(128, 109);
+            this.txtYeild.Name = "txtYeild";
+            this.txtYeild.Size = new System.Drawing.Size(172, 21);
+            this.txtYeild.TabIndex = 60;
             // 
             // label3
             // 
@@ -310,7 +311,7 @@
         #endregion
 
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtYeild;
         private System.Windows.Forms.TextBox txtExplain;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cboUse;

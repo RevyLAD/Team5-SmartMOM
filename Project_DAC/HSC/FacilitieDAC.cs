@@ -33,7 +33,9 @@ namespace Project_DAC
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = "select FAC_No, FACG_Code, FAC_Code, FAC_Name, FAC_OutWareHouse, FAC_InWareHouse, FAC_BadWareHouse, FAC_UseOrNot, FAC_Modifier, FAC_ModifiyDate, FAC_Remark, FAC_Others from Facility";
-            
+
+
+
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<FacilitieDetailVO> list = Helper.DataReaderMapToList<FacilitieDetailVO>(reader);

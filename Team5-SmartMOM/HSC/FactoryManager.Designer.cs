@@ -49,6 +49,10 @@
             // 
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button2
+            // 
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // panel2
             // 
             this.panel2.Size = new System.Drawing.Size(1202, 76);
@@ -76,6 +80,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(187, 22);
             this.textBox2.TabIndex = 12;
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // label4
             // 
@@ -107,6 +112,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(187, 22);
             this.textBox1.TabIndex = 12;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // btnInquiry
             // 
@@ -114,12 +120,13 @@
             this.btnInquiry.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnInquiry.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInquiry.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInquiry.Location = new System.Drawing.Point(1103, 16);
+            this.btnInquiry.Location = new System.Drawing.Point(1103, 11);
             this.btnInquiry.Name = "btnInquiry";
             this.btnInquiry.Size = new System.Drawing.Size(92, 32);
             this.btnInquiry.TabIndex = 16;
             this.btnInquiry.Text = "조회";
             this.btnInquiry.UseVisualStyleBackColor = false;
+            this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // FactoryManager
             // 
