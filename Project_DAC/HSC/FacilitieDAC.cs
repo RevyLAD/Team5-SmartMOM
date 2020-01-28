@@ -17,7 +17,6 @@ namespace Project_DAC
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = "select FACG_No, FACG_Code, FACG_Name, FACG_UseOrNot, FACG_Modifier, FACG_ModifyDate, FACG_Information from FacilityGroup";
-
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<FacilitieVO> list = Helper.DataReaderMapToList<FacilitieVO>(reader);
@@ -42,6 +41,30 @@ namespace Project_DAC
                 cmd.Connection.Close();
 
                 return list;
+            }
+        }
+
+        public void InsertFacilities(FacilitieVO vo)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "Insert into FacilityGroup(FACG_NO, [FACG_Code], [FACG_Name], [FACG_UseOrNot], [FACG_Modifier], [FACG_ModifyDate], " +
+                                                                            "[FACG_Information]) values(@FACG_NO, @FACG_Code, @FACG_Name, @FACG_UseOrNot, " +
+                                                                            "@FACG_Modifier, @FACG_ModifyDate, @FACG_Information)";
+
+                cmd.Parameters.AddWithValue("@FACG_No", vo.FACG_No);
+                cmd.Parameters.AddWithValue("@FACG_Code", vo.FACG_Code);
+                cmd.Parameters.AddWithValue("@FACG_Name", vo.FACG_Name);
+                cmd.Parameters.AddWithValue("@FACG_UseOrNot", vo.FACG_UseOrNot);
+                cmd.Parameters.AddWithValue("@FACG_Modifier", vo.FACG_Modifier);
+                cmd.Parameters.AddWithValue("@FACG_ModifyDate", vo.FACG_ModifyDate);
+                cmd.Parameters.AddWithValue("@FACG_Information", vo.FACG_Information);
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<FacilitieDetailVO> list = Helper.DataReaderMapToList<FacilitieDetailVO>(reader);
+                cmd.Connection.Close();
             }
         }
     }

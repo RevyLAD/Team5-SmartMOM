@@ -26,6 +26,7 @@ namespace Team5_SmartMOM
             EnterpriseRegister frm = new EnterpriseRegister();
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
+            DataLoad();
         }
 
         private void Enterprise_Load(object sender, EventArgs e)
@@ -46,7 +47,7 @@ namespace Team5_SmartMOM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "E-mail", "COM_Email", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "연락처", "COM_Phone", true, 130);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "COM_UseOrNot", true, 130);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정일", "COM_Modifier", true, 110);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정자", "COM_Modifier", true, 110);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정일", "COM_ModifiyDate", true, 120);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "설명", "COM_Information", true, 257);
 

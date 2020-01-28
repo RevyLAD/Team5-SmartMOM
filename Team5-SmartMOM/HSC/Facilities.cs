@@ -21,6 +21,7 @@ namespace Team5_SmartMOM
             FacilitiesCrowRegister frm = new FacilitiesCrowRegister();
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
+            DataLoad();
         }
 
         private void panelMid_Paint(object sender, PaintEventArgs e)

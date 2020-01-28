@@ -187,5 +187,23 @@ namespace Project_DAC
                 return list;
             }
         }
+
+
+        public List<CommonCodeVO> GetVENDOR()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select Common_Type, Common_Key, Common_Value from Common_Code where Common_Type = 'VENDOR_TYPE'";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<CommonCodeVO> list = Helper.DataReaderMapToList<CommonCodeVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+        
     }
 }

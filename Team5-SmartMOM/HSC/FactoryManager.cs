@@ -54,10 +54,8 @@ namespace Team5_SmartMOM.HSC
         {
             FactoryRegister frm = new FactoryRegister();
             frm.StartPosition = FormStartPosition.CenterParent;
-            if(frm.ShowDialog() != DialogResult.Cancel)
-            {
-                Factory_DataLoad();
-            }
+            frm.ShowDialog();
+            Factory_DataLoad();
         }
 
         private void btnInquiry_Click(object sender, EventArgs e)

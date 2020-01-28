@@ -22,10 +22,8 @@ namespace Team5_SmartMOM
         {
             BORRegister frm = new BORRegister(1);
             frm.StartPosition = FormStartPosition.CenterParent;
-            if (!(frm.ShowDialog() == DialogResult.Cancel))
-            {
-                
-            }
+            frm.ShowDialog();
+            DataLoad();
         }
 
         private void DataLoad()

@@ -13,7 +13,7 @@ namespace Project_VO
         public string FACG_Name { get; set; }
         public string FACG_UseOrNot { get; set; }
         public string FACG_Modifier { get; set; }
-        public string FACG_ModifyDate { get; set; }
+        public DateTime FACG_ModifyDate { get; set; }
         public string FACG_Information { get; set; }
     }
 
