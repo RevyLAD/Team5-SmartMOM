@@ -2,6 +2,7 @@
 using Project_VO.HSM;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,24 @@ namespace Team5_SmartMOM.Service
         {
             SalesMasterDAC dac = new SalesMasterDAC();
             return dac.GetAllSalesMaster();
+        }
+
+        public DataSet GetAllDemandPlan(PlanningVO plan)
+        {
+            PlanningDAC dac = new PlanningDAC();
+            return dac.GetAllDemandPlan(plan);
+        }
+        public DataSet GetAllDemandPlanByPlanID(PlanningVO plan)
+        {
+            PlanningDAC dac = new PlanningDAC();
+            return dac.GetAllDemandPlanByPlanID(plan);
+        }
+
+
+        public bool UpdatePlanID(List<UpdatePlanIDVO> plan)
+        {
+            SalesMasterDAC dac = new SalesMasterDAC();
+            return dac.UpdatePlanID(plan);
         }
     }
 }

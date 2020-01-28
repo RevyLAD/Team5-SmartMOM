@@ -75,13 +75,14 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(955, 0);
+            this.button3.Location = new System.Drawing.Point(935, 0);
+            this.button3.Size = new System.Drawing.Size(62, 24);
             this.button3.Text = "엑셀";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1012, 0);
-            this.button2.Size = new System.Drawing.Size(107, 24);
+            this.button2.Location = new System.Drawing.Point(997, 0);
+            this.button2.Size = new System.Drawing.Size(122, 24);
             this.button2.Text = "양식 다운로드";
             // 
             // button1
@@ -297,10 +298,10 @@
             this.button4.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button4.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(898, 0);
+            this.button4.Location = new System.Drawing.Point(878, 0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(57, 24);
-            this.button4.TabIndex = 13;
+            this.button4.TabIndex = 17;
             this.button4.Text = "복사";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = false;
@@ -312,10 +313,10 @@
             this.button5.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button5.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(841, 0);
+            this.button5.Location = new System.Drawing.Point(821, 0);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(57, 24);
-            this.button5.TabIndex = 14;
+            this.button5.TabIndex = 18;
             this.button5.Text = "등록";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = false;

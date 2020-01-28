@@ -102,12 +102,12 @@
             // 
             // cboShift
             // 
-            this.cboShift.FormattingEnabled = true;
-            this.cboShift.Location = new System.Drawing.Point(109, 21);
-            this.cboShift.Name = "cboShift";
-            this.cboShift.Size = new System.Drawing.Size(142, 20);
-            this.cboShift.TabIndex = 1;
-            this.cboShift.SelectedIndexChanged += new System.EventHandler(this.cboShift_SelectedIndexChanged);
+            //this.cboShift.FormattingEnabled = true;
+            //this.cboShift.Location = new System.Drawing.Point(109, 21);
+            //this.cboShift.Name = "cboShift";
+            //this.cboShift.Size = new System.Drawing.Size(142, 20);
+            //this.cboShift.TabIndex = 1;
+            //this.cboShift.SelectedIndexChanged += new System.EventHandler(this.cboShift_SelectedIndexChanged);
             // 
             // label5
             // 

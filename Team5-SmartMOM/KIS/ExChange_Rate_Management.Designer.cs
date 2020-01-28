@@ -114,20 +114,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(504, 21);
+            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(506, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 12);
+            this.label3.Size = new System.Drawing.Size(69, 19);
             this.label3.TabIndex = 13;
             this.label3.Text = "ㆍ화폐단위";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(17, 19);
+            this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(17, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 12);
+            this.label2.Size = new System.Drawing.Size(69, 19);
             this.label2.TabIndex = 12;
             this.label2.Text = "ㆍ기준일자";
             // 

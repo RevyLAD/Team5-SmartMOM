@@ -52,5 +52,40 @@ namespace Project_DAC
                 return rowsAffected > 0;
             }
         }
+        public bool DeleteBOM(string list)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "Delete From BOM where BOM_No in ( " + list  + ")";
+               
+                //cmd.Parameters.AddWithValue("@List ",Convert.ToInt32(list));
+                cmd.Connection.Open();
+                var rowsAffected = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                
+                return rowsAffected > 0;
+            }
+        }
+
+
+        public List<BOM_Serch_VO> BOM_SearchData(string name)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "BOMSearchData";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@BOM_Name ", name);
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<BOM_Serch_VO> list = Helper.DataReaderMapToList<BOM_Serch_VO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
     }
 }

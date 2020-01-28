@@ -1,4 +1,5 @@
 ﻿using Project_VO;
+using Project_VO.HSM;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,15 +20,11 @@ namespace Team5_SmartMOM.HSM
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e) //영업마스터 생성
-        {
-            HSM_Service service = new HSM_Service();
-            dataGridView1.DataSource= service.GetAllSalesMaster();
 
-        }
 
         private void Sales_Master_Load(object sender, EventArgs e)
         {
+
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "고객WO", "SO_WorkOrderID", true, 160);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "고객사코드", "COM_Code", true, 80);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "고객사명", "COM_Name", true, 140);
@@ -39,7 +36,7 @@ namespace Team5_SmartMOM.HSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "취소수량", "SALES_CancelQty", true, 90);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "SALES_Duedate", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "주문일", "SALES_OrderDate", true, 100);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "SALES_Remark", true,380);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "SALES_Remark", true, 380);
 
             InitCombo();
 
@@ -65,8 +62,26 @@ namespace Team5_SmartMOM.HSM
             CommonUtil.ComboBinding(cboProduct, listItemCode, "ITEM_Code", "ITEM_Name");
 
         }
+        private void button2_Click(object sender, EventArgs e) //영업마스터 생성
+        {
+            HSM_Service service = new HSM_Service();
 
-        private void button3_Click(object sender, EventArgs e)
+            List<SalesMasterAllVO> list = new List<SalesMasterAllVO>();
+            list = service.GetAllSalesMaster();
+
+            if (list.Count != 0)
+            {
+                dataGridView1.DataSource = list;
+            }
+            else
+                MessageBox.Show("생성할 영업마스터 정보가 없습니다.\n영업마스터를 업로드 해주시길 바랍니다.", "확인");
+           
+
+            
+
+        }
+
+        private void button3_Click(object sender, EventArgs e) //영업마스터 수동생성
         {
             SO_Insert frm = new SO_Insert();
             frm.StartPosition = FormStartPosition.CenterScreen;
@@ -76,11 +91,35 @@ namespace Team5_SmartMOM.HSM
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //수요계획 생성 버튼
         {
-            MPS frm = new MPS();
-            frm.StartPosition = FormStartPosition.CenterScreen;
-            frm.ShowDialog();
+            List<UpdatePlanIDVO> plans = new List<UpdatePlanIDVO>();
+
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[0].Value==null)
+                    break;
+                UpdatePlanIDVO plan = new UpdatePlanIDVO();
+                plan.SO_WorkOrderID = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                //Plan_ID : 20200101_P 형식
+                plan.Plan_ID = dataGridView1.Rows[i].Cells[10].Value.ToString().Replace("-","")+ "_" +
+                    dataGridView1.Rows[i].Cells[5].Value.ToString().Substring(0,1);
+
+                plans.Add(plan);
+            }
+
+            HSM_Service service = new HSM_Service();
+           
+
+            if (service.UpdatePlanID(plans))
+            {
+                MessageBox.Show("수요계획이 생성되었습니다.");
+                button2.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("수요계획생성실패");
+            }
         }
     }
 }
