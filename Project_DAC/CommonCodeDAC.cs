@@ -74,6 +74,101 @@ namespace Project_DAC
         }
 
 
+              public List<CommonCodeVO> GetFacilityClass()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select Common_Type, Common_Key, Common_Value from Common_Code where Common_Type = 'FACILITY_CLASS_ID'";
 
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<CommonCodeVO> list = Helper.DataReaderMapToList<CommonCodeVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+
+        public List<CommonCodeVO> GetFacilityType()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select Common_Type, Common_Key, Common_Value from Common_Code where Common_Type = 'FACILITY_TYPE'";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<CommonCodeVO> list = Helper.DataReaderMapToList<CommonCodeVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public List<CommonCodeVO> GetUse()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select Common_Type, Common_Key, Common_Value from Common_Code where Common_Type = 'USE_FLAG'";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<CommonCodeVO> list = Helper.DataReaderMapToList<CommonCodeVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public List<CommonCodeVO> GetOffer()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select Common_Type, Common_Key, Common_Value from Common_Code where Common_Type = 'FREE_OFFER'";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<CommonCodeVO> list = Helper.DataReaderMapToList<CommonCodeVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public List<CompanyCodeVO> GetCompanyList()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select COM_Code, COM_Name from Company";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<CompanyCodeVO> list = Helper.DataReaderMapToList<CompanyCodeVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public List<FacVO> GetFactoryList()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select FACT_Code, FACT_Name from Factory";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<FacVO> list = Helper.DataReaderMapToList<FacVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
     }
 }

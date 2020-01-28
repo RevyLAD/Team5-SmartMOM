@@ -29,4 +29,16 @@ namespace Project_VO
     {
         public string Plan_ID { get; set; }
     }
+
+        public class FacGroupVO
+    {
+        public string FACG_Code { get; set; }
+        public string FACG_Name { get; set; }
+    }
+
+    public class FacVO
+    {
+        public string FACT_Code { get; set; }
+        public string FACT_Name { get; set; }
+    }
 }
