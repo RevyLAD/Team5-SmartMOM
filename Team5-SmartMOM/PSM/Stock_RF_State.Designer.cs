@@ -65,6 +65,10 @@
             // 
             this.button2.Visible = false;
             // 
+            // panel2
+            // 
+            this.panel2.Size = new System.Drawing.Size(1202, 138);
+            // 
             // panelTop
             // 
             this.panelTop.Controls.Add(this.comboBox5);
@@ -85,7 +89,7 @@
             this.panelTop.Controls.Add(this.label8);
             this.panelTop.Controls.Add(this.label9);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Size = new System.Drawing.Size(1202, 150);
+            this.panelTop.Size = new System.Drawing.Size(1202, 125);
             // 
             // splitContainer2
             // 
@@ -97,7 +101,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(775, 14);
+            this.textBox1.Location = new System.Drawing.Point(782, 14);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(161, 21);
             this.textBox1.TabIndex = 125;
@@ -105,7 +109,7 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(113, 70);
+            this.comboBox3.Location = new System.Drawing.Point(120, 70);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(191, 20);
             this.comboBox3.TabIndex = 121;
@@ -116,7 +120,7 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1105, 112);
+            this.btnSearch.Location = new System.Drawing.Point(1105, 89);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(81, 30);
             this.btnSearch.TabIndex = 120;
@@ -126,41 +130,43 @@
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(775, 42);
+            this.comboBox4.Location = new System.Drawing.Point(782, 42);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(161, 20);
             this.comboBox4.TabIndex = 119;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(706, 45);
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(694, 42);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 12);
+            this.label6.Size = new System.Drawing.Size(75, 19);
             this.label6.TabIndex = 118;
             this.label6.Text = "* 품목유형";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(447, 42);
+            this.comboBox1.Location = new System.Drawing.Point(454, 42);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(161, 20);
             this.comboBox1.TabIndex = 117;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(361, 45);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(349, 42);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 12);
+            this.label2.Size = new System.Drawing.Size(75, 19);
             this.label2.TabIndex = 116;
             this.label2.Text = "* 카테고리";
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(447, 14);
+            this.comboBox2.Location = new System.Drawing.Point(454, 14);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(161, 20);
             this.comboBox2.TabIndex = 114;
@@ -168,7 +174,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(221, 12);
+            this.dateTimePicker2.Location = new System.Drawing.Point(228, 12);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(83, 21);
             this.dateTimePicker2.TabIndex = 113;
@@ -177,7 +183,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(113, 12);
+            this.dateTimePicker1.Location = new System.Drawing.Point(120, 12);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(83, 21);
             this.dateTimePicker1.TabIndex = 112;
@@ -186,7 +192,8 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(199, 18);
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Location = new System.Drawing.Point(206, 18);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(19, 12);
             this.label10.TabIndex = 111;
@@ -194,54 +201,59 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(706, 20);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(694, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 12);
+            this.label3.Size = new System.Drawing.Size(51, 19);
             this.label3.TabIndex = 110;
             this.label3.Text = "* 품목";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 45);
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(3, 42);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 12);
+            this.label7.Size = new System.Drawing.Size(87, 19);
             this.label7.TabIndex = 109;
             this.label7.Text = "* 입출고유형";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 74);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(4, 71);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 12);
+            this.label4.Size = new System.Drawing.Size(75, 19);
             this.label4.TabIndex = 107;
             this.label4.Text = "* 관리등급";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(361, 17);
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(349, 14);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 12);
+            this.label8.Size = new System.Drawing.Size(51, 19);
             this.label8.TabIndex = 106;
             this.label8.Text = "* 창고";
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(15, 17);
+            this.label9.Location = new System.Drawing.Point(3, 14);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 12);
+            this.label9.Size = new System.Drawing.Size(75, 19);
             this.label9.TabIndex = 105;
             this.label9.Text = "* 입출고일";
             // 
             // comboBox5
             // 
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(113, 42);
+            this.comboBox5.Location = new System.Drawing.Point(120, 42);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(191, 20);
             this.comboBox5.TabIndex = 126;
@@ -251,6 +263,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1222, 609);
             this.Name = "Stock_RF_State";
+            this.Load += new System.EventHandler(this.Stock_RF_State_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelMid.ResumeLayout(false);

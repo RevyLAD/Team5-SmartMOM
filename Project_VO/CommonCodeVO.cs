@@ -19,9 +19,27 @@ namespace Project_VO
         public string COM_Name { get; set; }
     }
 
+    public class CompanyCodeDetailVO
+    {
+        public string COM_Code { get; set; }
+        public string COM_Name { get; set; }
+        public string ITEM_Name { get; set; }
+        public string ITEM_Type { get; set; }
+        public string ITEM_Size { get; set; }
+        public string COM_Owner { get; set; }
+        public string COM_Phone { get; set; }
+        public string COM_Information { get; set; }
+    }
+
     public class ItemCodeVO
     {
         public string ITEM_Code { get; set; }
         public string ITEM_Name { get; set; }
     }
+
+    public class MATERIAL_ORDER_STATEVO
+    {
+        public string MATERIAL_ORDER_STATE { get; set; }
+    }
+
 }

@@ -10,6 +10,7 @@ namespace Project_DAC
 {
     public class CommonCodeDAC : ConnectionAccess
     {
+        
         public List<CommonCodeVO> GetAllCommonCode()
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -36,6 +37,27 @@ namespace Project_DAC
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<CompanyCodeVO> list = Helper.DataReaderMapToList<CompanyCodeVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public List<CompanyCodeDetailVO> GetAllCompanyDetail(string query)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+
+                cmd.CommandText = "select COM_Code, COM_Name, ITEM_Name,ITEM_Type, ITEM_Size, COM_Owner, COM_Phone, " +
+                        "COM_Information from Company c , ITEM i where COM_No = @COM_No and c.COM_Code = i.ITEM_Code";
+
+                cmd.Parameters.AddWithValue("@COM_No", query);
+                
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<CompanyCodeDetailVO> list = Helper.DataReaderMapToList<CompanyCodeDetailVO>(reader);
                 cmd.Connection.Close();
 
                 return list;

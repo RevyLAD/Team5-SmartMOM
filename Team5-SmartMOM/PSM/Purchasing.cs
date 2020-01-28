@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_VO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Team5_SmartMOM.BaseForm;
 
 namespace Team5_SmartMOM.PSM
 {
@@ -15,32 +17,7 @@ namespace Team5_SmartMOM.PSM
         public Purchasing()
         {
             InitializeComponent();
-        }
-
-        private void panelTop_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        }       
 
         private void Purchasing_Load(object sender, EventArgs e)
         {
@@ -74,9 +51,18 @@ namespace Team5_SmartMOM.PSM
             dataGridView1.Columns.Add("날짜", "날짜");
             dataGridView1.Columns.Add("날짜", "날짜");
             dataGridView1.Columns.Add("날짜", "날짜");
+            dataGridView1.Columns.Add("날짜", "날짜");
+            dataGridView1.Columns.Add("날짜", "날짜");
 
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
+            DataLoad();
+        }
+
+
+        public void DataLoad()
+        {
+            CommonCodeService service = new CommonCodeService();
+            List<CommonCodeVO> common = service.GetAllCommonCode();            
+            CommonUtil.ComboBinding(cboProduct, common, "Common_Key", "Common_Value", "전체");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -84,6 +70,16 @@ namespace Team5_SmartMOM.PSM
             Purchasing_Order frm = new Purchasing_Order();
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
+        }
+
+        private void dtpDateEnd_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpDateStart.Value > dtpDateEnd.Value.AddDays(1))
+            {
+                MessageBox.Show("시작일보다 빠를 수 없습니다.");
+                dtpDateEnd.Value = dtpDateStart.Value.AddMonths(1);
+                return;
+            }
         }
     }
 }

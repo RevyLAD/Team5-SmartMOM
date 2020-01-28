@@ -31,8 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.circularButton5 = new Team5_SmartMOM.PSM.CircularButton();
-            this.circularButton6 = new Team5_SmartMOM.PSM.CircularButton();
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -41,11 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.circularButton1 = new Team5_SmartMOM.PSM.CircularButton();
-            this.circularButton2 = new Team5_SmartMOM.PSM.CircularButton();
             this.label11 = new System.Windows.Forms.Label();
-            this.circularButton3 = new Team5_SmartMOM.PSM.CircularButton();
-            this.circularButton4 = new Team5_SmartMOM.PSM.CircularButton();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -60,14 +54,20 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.circularButton5 = new Team5_SmartMOM.PSM.CircularButton();
+            this.circularButton6 = new Team5_SmartMOM.PSM.CircularButton();
+            this.circularButton1 = new Team5_SmartMOM.PSM.CircularButton();
+            this.circularButton2 = new Team5_SmartMOM.PSM.CircularButton();
+            this.circularButton3 = new Team5_SmartMOM.PSM.CircularButton();
+            this.circularButton4 = new Team5_SmartMOM.PSM.CircularButton();
             this.panelZ1 = new PanelZ.PanelZ();
             this.btnSearch = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cbocompany = new System.Windows.Forms.ComboBox();
+            this.dtpDateEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -96,7 +96,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1222, 662);
+            this.panel1.Size = new System.Drawing.Size(1222, 952);
             this.panel1.TabIndex = 0;
             // 
             // panel7
@@ -112,7 +112,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 32);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1222, 630);
+            this.panel7.Size = new System.Drawing.Size(1222, 920);
             this.panel7.TabIndex = 1;
             // 
             // panel9
@@ -122,28 +122,10 @@
             this.panel9.Controls.Add(this.circularButton6);
             this.panel9.Controls.Add(this.label12);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 636);
+            this.panel9.Location = new System.Drawing.Point(0, 887);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1222, 31);
             this.panel9.TabIndex = 7;
-            // 
-            // circularButton5
-            // 
-            this.circularButton5.Location = new System.Drawing.Point(704, 0);
-            this.circularButton5.Name = "circularButton5";
-            this.circularButton5.Size = new System.Drawing.Size(31, 30);
-            this.circularButton5.TabIndex = 15;
-            this.circularButton5.Text = ">";
-            this.circularButton5.UseVisualStyleBackColor = true;
-            // 
-            // circularButton6
-            // 
-            this.circularButton6.Location = new System.Drawing.Point(622, 0);
-            this.circularButton6.Name = "circularButton6";
-            this.circularButton6.Size = new System.Drawing.Size(31, 30);
-            this.circularButton6.TabIndex = 13;
-            this.circularButton6.Text = "<";
-            this.circularButton6.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -159,10 +141,10 @@
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 413);
+            this.dataGridView2.Location = new System.Drawing.Point(0, 543);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1222, 223);
+            this.dataGridView2.Size = new System.Drawing.Size(1222, 344);
             this.dataGridView2.TabIndex = 6;
             // 
             // panel5
@@ -171,7 +153,7 @@
             this.panel5.Controls.Add(this.button4);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 367);
+            this.panel5.Location = new System.Drawing.Point(0, 497);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1222, 46);
             this.panel5.TabIndex = 4;
@@ -224,7 +206,7 @@
             this.panel6.Controls.Add(this.circularButton4);
             this.panel6.Controls.Add(this.label6);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 336);
+            this.panel6.Location = new System.Drawing.Point(0, 466);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1222, 31);
             this.panel6.TabIndex = 5;
@@ -241,24 +223,6 @@
             this.panel8.Size = new System.Drawing.Size(1222, 31);
             this.panel8.TabIndex = 16;
             // 
-            // circularButton1
-            // 
-            this.circularButton1.Location = new System.Drawing.Point(704, 1);
-            this.circularButton1.Name = "circularButton1";
-            this.circularButton1.Size = new System.Drawing.Size(31, 30);
-            this.circularButton1.TabIndex = 15;
-            this.circularButton1.Text = ">";
-            this.circularButton1.UseVisualStyleBackColor = true;
-            // 
-            // circularButton2
-            // 
-            this.circularButton2.Location = new System.Drawing.Point(622, 1);
-            this.circularButton2.Name = "circularButton2";
-            this.circularButton2.Size = new System.Drawing.Size(31, 30);
-            this.circularButton2.TabIndex = 13;
-            this.circularButton2.Text = "<";
-            this.circularButton2.UseVisualStyleBackColor = true;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -267,24 +231,6 @@
             this.label11.Size = new System.Drawing.Size(39, 12);
             this.label11.TabIndex = 14;
             this.label11.Text = "1  /  1";
-            // 
-            // circularButton3
-            // 
-            this.circularButton3.Location = new System.Drawing.Point(632, 1);
-            this.circularButton3.Name = "circularButton3";
-            this.circularButton3.Size = new System.Drawing.Size(31, 30);
-            this.circularButton3.TabIndex = 15;
-            this.circularButton3.Text = ">";
-            this.circularButton3.UseVisualStyleBackColor = true;
-            // 
-            // circularButton4
-            // 
-            this.circularButton4.Location = new System.Drawing.Point(550, 1);
-            this.circularButton4.Name = "circularButton4";
-            this.circularButton4.Size = new System.Drawing.Size(31, 30);
-            this.circularButton4.TabIndex = 13;
-            this.circularButton4.Text = "<";
-            this.circularButton4.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -303,7 +249,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 133);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1222, 203);
+            this.dataGridView1.Size = new System.Drawing.Size(1222, 333);
             this.dataGridView1.TabIndex = 2;
             // 
             // panel4
@@ -462,6 +408,60 @@
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Visible = false;
             // 
+            // circularButton5
+            // 
+            this.circularButton5.Location = new System.Drawing.Point(704, 0);
+            this.circularButton5.Name = "circularButton5";
+            this.circularButton5.Size = new System.Drawing.Size(31, 30);
+            this.circularButton5.TabIndex = 15;
+            this.circularButton5.Text = ">";
+            this.circularButton5.UseVisualStyleBackColor = true;
+            // 
+            // circularButton6
+            // 
+            this.circularButton6.Location = new System.Drawing.Point(622, 0);
+            this.circularButton6.Name = "circularButton6";
+            this.circularButton6.Size = new System.Drawing.Size(31, 30);
+            this.circularButton6.TabIndex = 13;
+            this.circularButton6.Text = "<";
+            this.circularButton6.UseVisualStyleBackColor = true;
+            // 
+            // circularButton1
+            // 
+            this.circularButton1.Location = new System.Drawing.Point(704, 1);
+            this.circularButton1.Name = "circularButton1";
+            this.circularButton1.Size = new System.Drawing.Size(31, 30);
+            this.circularButton1.TabIndex = 15;
+            this.circularButton1.Text = ">";
+            this.circularButton1.UseVisualStyleBackColor = true;
+            // 
+            // circularButton2
+            // 
+            this.circularButton2.Location = new System.Drawing.Point(622, 1);
+            this.circularButton2.Name = "circularButton2";
+            this.circularButton2.Size = new System.Drawing.Size(31, 30);
+            this.circularButton2.TabIndex = 13;
+            this.circularButton2.Text = "<";
+            this.circularButton2.UseVisualStyleBackColor = true;
+            // 
+            // circularButton3
+            // 
+            this.circularButton3.Location = new System.Drawing.Point(632, 1);
+            this.circularButton3.Name = "circularButton3";
+            this.circularButton3.Size = new System.Drawing.Size(31, 30);
+            this.circularButton3.TabIndex = 15;
+            this.circularButton3.Text = ">";
+            this.circularButton3.UseVisualStyleBackColor = true;
+            // 
+            // circularButton4
+            // 
+            this.circularButton4.Location = new System.Drawing.Point(550, 1);
+            this.circularButton4.Name = "circularButton4";
+            this.circularButton4.Size = new System.Drawing.Size(31, 30);
+            this.circularButton4.TabIndex = 13;
+            this.circularButton4.Text = "<";
+            this.circularButton4.UseVisualStyleBackColor = true;
+            // 
             // panelZ1
             // 
             this.panelZ1.BackColor = System.Drawing.Color.White;
@@ -469,9 +469,9 @@
             this.panelZ1.Controls.Add(this.textBox3);
             this.panelZ1.Controls.Add(this.textBox2);
             this.panelZ1.Controls.Add(this.textBox1);
-            this.panelZ1.Controls.Add(this.comboBox2);
-            this.panelZ1.Controls.Add(this.dateTimePicker2);
-            this.panelZ1.Controls.Add(this.dateTimePicker1);
+            this.panelZ1.Controls.Add(this.cbocompany);
+            this.panelZ1.Controls.Add(this.dtpDateEnd);
+            this.panelZ1.Controls.Add(this.dtpDateStart);
             this.panelZ1.Controls.Add(this.label10);
             this.panelZ1.Controls.Add(this.label7);
             this.panelZ1.Controls.Add(this.label5);
@@ -504,55 +504,57 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(94, 47);
+            this.textBox3.Location = new System.Drawing.Point(106, 47);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(216, 21);
             this.textBox3.TabIndex = 76;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(807, 14);
+            this.textBox2.Location = new System.Drawing.Point(813, 14);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(160, 21);
             this.textBox2.TabIndex = 75;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(489, 47);
+            this.textBox1.Location = new System.Drawing.Point(502, 47);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(160, 21);
             this.textBox1.TabIndex = 74;
             // 
-            // comboBox2
+            // cbocompany
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(489, 11);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(161, 20);
-            this.comboBox2.TabIndex = 73;
+            this.cbocompany.FormattingEnabled = true;
+            this.cbocompany.Location = new System.Drawing.Point(502, 11);
+            this.cbocompany.Name = "cbocompany";
+            this.cbocompany.Size = new System.Drawing.Size(161, 20);
+            this.cbocompany.TabIndex = 73;
             // 
-            // dateTimePicker2
+            // dtpDateEnd
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(218, 11);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(92, 21);
-            this.dateTimePicker2.TabIndex = 72;
-            this.dateTimePicker2.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
+            this.dtpDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateEnd.Location = new System.Drawing.Point(240, 13);
+            this.dtpDateEnd.Name = "dtpDateEnd";
+            this.dtpDateEnd.Size = new System.Drawing.Size(92, 21);
+            this.dtpDateEnd.TabIndex = 72;
+            this.dtpDateEnd.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
+            this.dtpDateEnd.ValueChanged += new System.EventHandler(this.dtpDateEnd_ValueChanged);
             // 
-            // dateTimePicker1
+            // dtpDateStart
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(94, 10);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(93, 21);
-            this.dateTimePicker1.TabIndex = 71;
-            this.dateTimePicker1.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
+            this.dtpDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateStart.Location = new System.Drawing.Point(106, 11);
+            this.dtpDateStart.Name = "dtpDateStart";
+            this.dtpDateStart.Size = new System.Drawing.Size(93, 21);
+            this.dtpDateStart.TabIndex = 71;
+            this.dtpDateStart.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(193, 16);
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Location = new System.Drawing.Point(205, 16);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(19, 12);
             this.label10.TabIndex = 70;
@@ -560,57 +562,57 @@
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(738, 17);
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(737, 13);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 12);
+            this.label7.Size = new System.Drawing.Size(51, 19);
             this.label7.TabIndex = 69;
             this.label7.Text = "* 품목";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(420, 51);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(404, 47);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 12);
+            this.label5.Size = new System.Drawing.Size(92, 19);
             this.label5.TabIndex = 68;
             this.label5.Text = "* 납품업체";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(420, 17);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(404, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 12);
+            this.label4.Size = new System.Drawing.Size(51, 19);
             this.label4.TabIndex = 67;
             this.label4.Text = "* 업체";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(11, 50);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(10, 46);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 12);
+            this.label3.Size = new System.Drawing.Size(75, 19);
             this.label3.TabIndex = 66;
             this.label3.Text = "* 발주완료";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(11, 16);
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(10, 12);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 12);
+            this.label8.Size = new System.Drawing.Size(75, 19);
             this.label8.TabIndex = 65;
             this.label8.Text = "* 납기일자";
             // 
             // Supplier
             // 
-            this.ClientSize = new System.Drawing.Size(1222, 662);
+            this.ClientSize = new System.Drawing.Size(1222, 952);
             this.Controls.Add(this.panel1);
             this.Name = "Supplier";
             this.Load += new System.EventHandler(this.Supplier_Load);
@@ -676,9 +678,9 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox cbocompany;
+        private System.Windows.Forms.DateTimePicker dtpDateEnd;
+        private System.Windows.Forms.DateTimePicker dtpDateStart;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
