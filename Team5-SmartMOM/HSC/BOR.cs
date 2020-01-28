@@ -63,7 +63,9 @@ namespace Team5_SmartMOM
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text.Trim()==""&& 
+            List<BORVO> newlist = new List<BORVO>();
+
+            if (textBox1.Text.Trim()==""&& 
                 textBox2.Text.Trim()==""&&
                 cboFacCrow.Text.Trim()=="")
             {
@@ -71,6 +73,14 @@ namespace Team5_SmartMOM
             }
             else
             {
+                foreach (var li in list)
+                {
+                    if (Convert.ToString(li.ITEM_Code).Trim().Contains(textBox1.Text.Trim()) &&
+                        li.FACG_Code.Trim().Contains(cboFacCrow.Text.Trim())&&
+                        li.FAC_Code.Trim().Contains(textBox2.Text.Trim()))
+                            newlist.Add(li);
+                }
+                dataGridView1.DataSource = newlist;
                 dataGridView1.DataSource = SearchBOR();
             }
         }

@@ -76,7 +76,6 @@ namespace Team5_SmartMOM.HSC
                 }
                 dataGridView1.DataSource = newlist;
             }
-
         }
 
         private void button2_Click(object sender, EventArgs e)
