@@ -32,6 +32,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cbosystem = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -73,17 +74,12 @@
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.label2);
             this.panelTop.Controls.Add(this.btnSearch);
             this.panelTop.Controls.Add(this.label5);
             this.panelTop.Controls.Add(this.cbosystem);
             this.panelTop.Controls.Add(this.cboShift);
-            //this.panelTop.Controls.Add(this.label2);
             this.panelTop.Size = new System.Drawing.Size(1202, 57);
-            //this.panelTop.Controls.SetChildIndex(this.label2, 0);
-            this.panelTop.Controls.SetChildIndex(this.cboShift, 0);
-            this.panelTop.Controls.SetChildIndex(this.cbosystem, 0);
-            this.panelTop.Controls.SetChildIndex(this.label5, 0);
-            this.panelTop.Controls.SetChildIndex(this.btnSearch, 0);
             // 
             // splitContainer2
             // 
@@ -97,30 +93,30 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Size = new System.Drawing.Size(100, 47);
+            this.label1.Size = new System.Drawing.Size(136, 47);
             this.label1.Text = "SHIFT 관리";
             // 
-            // label2
+            // lblArrow
             // 
-            //this.label2.Location = new System.Drawing.Point(0, 10);
-            //this.label2.Size = new System.Drawing.Size(16, 43);
+            this.lblArrow.Size = new System.Drawing.Size(16, 47);
             // 
             // cboShift
             // 
-            this.cboShift.FormattingEnabled = true;
-            this.cboShift.Location = new System.Drawing.Point(109, 21);
-            this.cboShift.Name = "cboShift";
-            this.cboShift.Size = new System.Drawing.Size(142, 20);
-            this.cboShift.TabIndex = 1;
+            //this.cboShift.FormattingEnabled = true;
+            //this.cboShift.Location = new System.Drawing.Point(109, 21);
+            //this.cboShift.Name = "cboShift";
+            //this.cboShift.Size = new System.Drawing.Size(142, 20);
+            //this.cboShift.TabIndex = 1;
+            //this.cboShift.SelectedIndexChanged += new System.EventHandler(this.cboShift_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(353, 21);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(372, 20);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 21);
+            this.label5.Size = new System.Drawing.Size(58, 24);
             this.label5.TabIndex = 4;
             this.label5.Text = "ㆍ설비";
             // 
@@ -143,6 +139,17 @@
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(39, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 24);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Shift";
             // 
             // office_hours
             // 
@@ -172,5 +179,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbosystem;
         protected System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -16,7 +16,7 @@ namespace Project_DAC.LBJ
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "SELECT SHIFT_ID, FAC_Code ,SHIFT_StartTime, SHIFT_EndTime, SHIFT_StartDate, SHIFT_EndDate, SHIFT_InputPeople, SHIFT_UserOrNot, SHIFT_Modifier, SHIFT_ModifierDate, SHIFT_Others FROM Shift";
+                cmd.CommandText = "SELECT SHIFT_ID, FAC_Code ,SHIFT_StartTime, SHIFT_EndTime, SHIFT_StartDate, SHIFT_EndDate, SHIFT_InputPeople, SHIFT_UserOrNot,   SHIFT_Modifier, SHIFT_ModifierDate, SHIFT_Others, SHIFT FROM Shift";
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<ShiftVO> list = Helper.DataReaderMapToList<ShiftVO>(reader);
@@ -25,6 +25,7 @@ namespace Project_DAC.LBJ
                 return list;
             }
         }
+
         public List<ShiftManagementVO> ShiftManage()
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -34,6 +35,20 @@ namespace Project_DAC.LBJ
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<ShiftManagementVO> list = Helper.DataReaderMapToList<ShiftManagementVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+        public List<ShiftListVO> ShiftListVO()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "SELECT SHIFT_ID, SHIFT FROM Shift";
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ShiftListVO> list = Helper.DataReaderMapToList<ShiftListVO>(reader);
                 cmd.Connection.Close();
 
                 return list;

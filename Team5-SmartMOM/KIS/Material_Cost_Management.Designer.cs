@@ -56,30 +56,30 @@
             this.panelMid.Controls.Add(this.button5);
             this.panelMid.Controls.Add(this.button4);
             this.panelMid.Size = new System.Drawing.Size(1202, 32);
+            this.panelMid.Controls.SetChildIndex(this.button4, 0);
+            this.panelMid.Controls.SetChildIndex(this.button5, 0);
+            this.panelMid.Controls.SetChildIndex(this.button6, 0);
             this.panelMid.Controls.SetChildIndex(this.lblArrow, 0);
             this.panelMid.Controls.SetChildIndex(this.label1, 0);
             this.panelMid.Controls.SetChildIndex(this.button1, 0);
             this.panelMid.Controls.SetChildIndex(this.button2, 0);
             this.panelMid.Controls.SetChildIndex(this.button3, 0);
-            this.panelMid.Controls.SetChildIndex(this.button4, 0);
-            this.panelMid.Controls.SetChildIndex(this.button5, 0);
-            this.panelMid.Controls.SetChildIndex(this.button6, 0);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(934, 0);
+            this.button3.Location = new System.Drawing.Point(763, 0);
             this.button3.Size = new System.Drawing.Size(57, 28);
             this.button3.Text = "엑셀";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(991, 0);
+            this.button2.Location = new System.Drawing.Point(820, 0);
             this.button2.Size = new System.Drawing.Size(109, 28);
             this.button2.Text = "양식 다운로드";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1100, 0);
+            this.button1.Location = new System.Drawing.Point(929, 0);
             this.button1.Size = new System.Drawing.Size(98, 28);
             this.button1.Text = "Excel등록";
             // 
@@ -189,7 +189,7 @@
             this.button4.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button4.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(877, 0);
+            this.button4.Location = new System.Drawing.Point(1141, 0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(57, 28);
             this.button4.TabIndex = 16;
@@ -204,7 +204,7 @@
             this.button5.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button5.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(820, 0);
+            this.button5.Location = new System.Drawing.Point(1084, 0);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(57, 28);
             this.button5.TabIndex = 17;
@@ -219,7 +219,7 @@
             this.button6.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button6.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(763, 0);
+            this.button6.Location = new System.Drawing.Point(1027, 0);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(57, 28);
             this.button6.TabIndex = 18;

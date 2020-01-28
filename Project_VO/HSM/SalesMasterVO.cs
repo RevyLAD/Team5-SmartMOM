@@ -31,6 +31,12 @@ namespace Project_VO.HSM
         public int SALES_CancelQty { get; set; }
         public string SALES_Duedate { get; set; }
         public string SALES_OrderDate { get; set; }
+        public string SALES_Remark { get; set; }
+    }
 
+    public class UpdatePlanIDVO
+    {
+        public string SO_WorkOrderID { get; set; }
+        public string Plan_ID { get; set; }
     }
 }

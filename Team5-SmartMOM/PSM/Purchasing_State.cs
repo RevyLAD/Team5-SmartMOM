@@ -38,18 +38,19 @@ namespace Team5_SmartMOM.PSM
 
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주번호", "VO_ID", true, 120);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체코드", "COM_Code", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체타입", "COM_Type", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체번호", "COM_No", true, 150);                 
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체이름", "COM_Name", true, 150);            
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주상태", "MATERIAL_ORDER_STATE", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목번호", "ITEM_No", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code  ", true, 180);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "규격", "ITEM_Size  ", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "단위", "ITEM_Unit   ", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "VO_EndDate ", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주량", "VO_Quantity ", true, 100);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주일", "VO_StartDate ", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "입고일", "VO_InDate ", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "규격", "ITEM_Size", true, 120);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "단위", "ITEM_Unit", true, 120);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "VO_EndDate", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주량", "VO_Quantity", true, 100);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주일", "VO_StartDate", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "입고일", "VO_InDate", true, 150);
 
-
+            DataLoad();
         }
 
         public void DataLoad()
@@ -58,6 +59,11 @@ namespace Team5_SmartMOM.PSM
             list = service.GetAllPurChasingState();
             dataGridView1.DataSource = list;
             
+        }
+
+        private void panelTop_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

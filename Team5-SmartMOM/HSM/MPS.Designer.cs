@@ -48,16 +48,16 @@
             // 
             // panelFull
             // 
-            this.panelFull.Size = new System.Drawing.Size(423, 298);
+            this.panelFull.Size = new System.Drawing.Size(423, 348);
             // 
             // panelMain
             // 
-            this.panelMain.Size = new System.Drawing.Size(403, 278);
+            this.panelMain.Size = new System.Drawing.Size(401, 326);
             // 
             // panelBottom
             // 
-            this.panelBottom.Location = new System.Drawing.Point(0, 230);
-            this.panelBottom.Size = new System.Drawing.Size(403, 48);
+            this.panelBottom.Location = new System.Drawing.Point(0, 278);
+            this.panelBottom.Size = new System.Drawing.Size(401, 48);
             // 
             // panelDock
             // 
@@ -71,15 +71,15 @@
             this.panelDock.Controls.Add(this.label3);
             this.panelDock.Controls.Add(this.label7);
             this.panelDock.Controls.Add(this.label2);
-            this.panelDock.Size = new System.Drawing.Size(403, 230);
+            this.panelDock.Size = new System.Drawing.Size(401, 278);
             // 
             // panelTop
             // 
-            this.panelTop.Size = new System.Drawing.Size(403, 48);
+            this.panelTop.Size = new System.Drawing.Size(401, 48);
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(403, 38);
+            this.panel1.Size = new System.Drawing.Size(401, 38);
             // 
             // label1
             // 
@@ -87,27 +87,27 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(202, 10);
+            this.button2.Location = new System.Drawing.Point(208, 9);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(121, 10);
+            this.button1.Location = new System.Drawing.Point(121, 9);
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(376, 10);
+            this.tileSave.Location = new System.Drawing.Point(377, 10);
             // 
             // cboCustomer
             // 
             this.cboCustomer.FormattingEnabled = true;
-            this.cboCustomer.Location = new System.Drawing.Point(118, 56);
+            this.cboCustomer.Location = new System.Drawing.Point(118, 59);
             this.cboCustomer.Name = "cboCustomer";
             this.cboCustomer.Size = new System.Drawing.Size(118, 20);
             this.cboCustomer.TabIndex = 15;
             // 
             // txtModelSuffix
             // 
-            this.txtModelSuffix.Location = new System.Drawing.Point(119, 136);
+            this.txtModelSuffix.Location = new System.Drawing.Point(119, 133);
             this.txtModelSuffix.Name = "txtModelSuffix";
             this.txtModelSuffix.Size = new System.Drawing.Size(229, 21);
             this.txtModelSuffix.TabIndex = 14;
@@ -135,7 +135,7 @@
             this.dtpDueDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDueDateStart.Location = new System.Drawing.Point(118, 21);
             this.dtpDueDateStart.Name = "dtpDueDateStart";
-            this.dtpDueDateStart.Size = new System.Drawing.Size(186, 21);
+            this.dtpDueDateStart.Size = new System.Drawing.Size(118, 21);
             this.dtpDueDateStart.TabIndex = 11;
             // 
             // label8
@@ -143,7 +143,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(26, 54);
+            this.label8.Location = new System.Drawing.Point(26, 57);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(81, 19);
             this.label8.TabIndex = 7;
@@ -154,7 +154,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 138);
+            this.label3.Location = new System.Drawing.Point(27, 133);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 19);
             this.label3.TabIndex = 8;
@@ -193,7 +193,7 @@
             // MPS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(423, 298);
+            this.ClientSize = new System.Drawing.Size(423, 348);
             this.Name = "MPS";
             this.panelFull.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);

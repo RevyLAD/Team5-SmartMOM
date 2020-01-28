@@ -28,47 +28,10 @@ namespace Team5_SmartMOM.BaseForm
             return dac.GetAllItemCode();
         }
 
-        public List<CommonCodeVO> GetFacilityClass()
+        public List<PlanIDVO> GetAllPlanID()
         {
             CommonCodeDAC dac = new CommonCodeDAC();
-            return dac.GetFacilityClass();
+            return dac.GetAllPlanID();
         }
-
-        public List<CommonCodeVO> GetFacilityType()
-        {
-            CommonCodeDAC dac = new CommonCodeDAC();
-            return dac.GetFacilityType();
-        }
-
-        public List<CommonCodeVO> GetROUTE()
-        {
-            CommonCodeDAC dac = new CommonCodeDAC();
-            return dac.GetROUTE();
-        }
-
-        public List<CommonCodeVO> GetUse()
-        {
-            CommonCodeDAC dac = new CommonCodeDAC();
-            return dac.GetUse();
-        }
-
-        public List<CommonCodeVO> GetOffer()
-        {
-            CommonCodeDAC dac = new CommonCodeDAC();
-            return dac.GetOffer();
-        }
-        public List<CompanyCodeVO> GetCompanyList()
-        {
-            CommonCodeDAC dac = new CommonCodeDAC();
-            return dac.GetCompanyList();
-        }
-
-        public List<FacVO> GetFactoryList()
-        {
-            CommonCodeDAC dac = new CommonCodeDAC();
-            return dac.GetFactoryList();
-        }
-
-
     }
 }

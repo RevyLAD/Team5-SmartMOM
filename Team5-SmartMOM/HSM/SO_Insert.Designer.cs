@@ -40,12 +40,12 @@
             this.txtCustomerWO = new System.Windows.Forms.TextBox();
             this.cboCustomer = new System.Windows.Forms.ComboBox();
             this.cboProduct = new System.Windows.Forms.ComboBox();
-            this.txtDueDate = new System.Windows.Forms.TextBox();
             this.txtOrderQuantity = new System.Windows.Forms.TextBox();
             this.txtCancelQuantity = new System.Windows.Forms.TextBox();
             this.txtShippingQuantity = new System.Windows.Forms.TextBox();
             this.cboOrderDivision = new System.Windows.Forms.ComboBox();
             this.txtNote = new System.Windows.Forms.TextBox();
+            this.dtpDueDate = new System.Windows.Forms.DateTimePicker();
             this.panelFull.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelBottom.SuspendLayout();
@@ -70,11 +70,11 @@
             // 
             // panelDock
             // 
+            this.panelDock.Controls.Add(this.dtpDueDate);
             this.panelDock.Controls.Add(this.txtNote);
             this.panelDock.Controls.Add(this.txtShippingQuantity);
             this.panelDock.Controls.Add(this.txtCancelQuantity);
             this.panelDock.Controls.Add(this.txtOrderQuantity);
-            this.panelDock.Controls.Add(this.txtDueDate);
             this.panelDock.Controls.Add(this.cboOrderDivision);
             this.panelDock.Controls.Add(this.cboProduct);
             this.panelDock.Controls.Add(this.cboCustomer);
@@ -111,6 +111,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(215, 10);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tileSave
             // 
@@ -142,6 +143,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Orange;
             this.label2.Location = new System.Drawing.Point(17, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 22);
@@ -212,7 +214,7 @@
             // 
             // txtCustomerWO
             // 
-            this.txtCustomerWO.Location = new System.Drawing.Point(113, 16);
+            this.txtCustomerWO.Location = new System.Drawing.Point(127, 16);
             this.txtCustomerWO.Name = "txtCustomerWO";
             this.txtCustomerWO.Size = new System.Drawing.Size(140, 21);
             this.txtCustomerWO.TabIndex = 5;
@@ -220,7 +222,7 @@
             // cboCustomer
             // 
             this.cboCustomer.FormattingEnabled = true;
-            this.cboCustomer.Location = new System.Drawing.Point(113, 55);
+            this.cboCustomer.Location = new System.Drawing.Point(127, 55);
             this.cboCustomer.Name = "cboCustomer";
             this.cboCustomer.Size = new System.Drawing.Size(140, 20);
             this.cboCustomer.TabIndex = 6;
@@ -232,13 +234,6 @@
             this.cboProduct.Name = "cboProduct";
             this.cboProduct.Size = new System.Drawing.Size(140, 20);
             this.cboProduct.TabIndex = 6;
-            // 
-            // txtDueDate
-            // 
-            this.txtDueDate.Location = new System.Drawing.Point(113, 92);
-            this.txtDueDate.Name = "txtDueDate";
-            this.txtDueDate.Size = new System.Drawing.Size(140, 21);
-            this.txtDueDate.TabIndex = 7;
             // 
             // txtOrderQuantity
             // 
@@ -256,7 +251,7 @@
             // 
             // txtShippingQuantity
             // 
-            this.txtShippingQuantity.Location = new System.Drawing.Point(113, 136);
+            this.txtShippingQuantity.Location = new System.Drawing.Point(127, 136);
             this.txtShippingQuantity.Name = "txtShippingQuantity";
             this.txtShippingQuantity.Size = new System.Drawing.Size(140, 21);
             this.txtShippingQuantity.TabIndex = 7;
@@ -271,11 +266,19 @@
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(113, 180);
+            this.txtNote.Location = new System.Drawing.Point(127, 180);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(439, 116);
+            this.txtNote.Size = new System.Drawing.Size(425, 116);
             this.txtNote.TabIndex = 7;
+            // 
+            // dtpDueDate
+            // 
+            this.dtpDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDueDate.Location = new System.Drawing.Point(127, 95);
+            this.dtpDueDate.Name = "dtpDueDate";
+            this.dtpDueDate.Size = new System.Drawing.Size(140, 21);
+            this.dtpDueDate.TabIndex = 8;
             // 
             // SO_Insert
             // 
@@ -301,7 +304,6 @@
         private System.Windows.Forms.TextBox txtShippingQuantity;
         private System.Windows.Forms.TextBox txtCancelQuantity;
         private System.Windows.Forms.TextBox txtOrderQuantity;
-        private System.Windows.Forms.TextBox txtDueDate;
         private System.Windows.Forms.ComboBox cboOrderDivision;
         private System.Windows.Forms.ComboBox cboProduct;
         private System.Windows.Forms.ComboBox cboCustomer;
@@ -315,5 +317,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpDueDate;
     }
 }
