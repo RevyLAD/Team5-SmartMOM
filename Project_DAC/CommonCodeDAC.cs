@@ -139,6 +139,23 @@ namespace Project_DAC
             }
         }
 
+
+                public List<CommonCodeVO> GetROUTE()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select Common_Type, Common_Key, Common_Value from Common_Code where Common_Type = 'ROUTE'";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<CommonCodeVO> list = Helper.DataReaderMapToList<CommonCodeVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
         public List<CompanyCodeVO> GetCompanyList()
         {
             using (SqlCommand cmd = new SqlCommand())
