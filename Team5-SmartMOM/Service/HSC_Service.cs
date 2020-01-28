@@ -75,6 +75,28 @@ namespace Team5_SmartMOM.Service
             dac.InsertBOR(bvo);
         }
 
+        public void InsertEnterprise(EnterpriseVO evo)
+        {
+            EnterpriseDAC dac = new EnterpriseDAC();
+            dac.InsertEnterprise(evo);
+        }
 
+        public void InsertFacilities(FacilitieVO vo)
+        {
+            FacilitieDAC dac = new FacilitieDAC();
+            dac.InsertFacilities(vo);
+        }
+
+        public void InsertFacilitieDetail(FacilitieDetailVO vo)
+        { 
+            FacilitieDAC dac = new FacilitieDAC();
+            dac.InsertFacilitieDetail(vo);
+        }
+
+        public List<FacilitieDetailVO> FindFacDetail(string Code)
+        {
+            FacilitieDAC dac = new FacilitieDAC();
+            return dac.FindFacDetail(Code);
+        }
     }
 }

@@ -30,22 +30,20 @@
         {
             this.txtExplain = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.cboUse = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtTurn = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.cboUMU = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtFacName = new System.Windows.Forms.TextBox();
-            this.cboHighFac = new System.Windows.Forms.ComboBox();
+            this.txtTacTime = new System.Windows.Forms.TextBox();
+            this.cboFACG_Code = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cboFacCate = new System.Windows.Forms.ComboBox();
+            this.cboFacCode = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cboFacCrow = new System.Windows.Forms.ComboBox();
+            this.cboITEMCode = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtYeild = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtPriority = new System.Windows.Forms.TextBox();
             this.panelFull.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelBottom.SuspendLayout();
@@ -70,23 +68,21 @@
             // 
             // panelDock
             // 
+            this.panelDock.Controls.Add(this.txtPriority);
             this.panelDock.Controls.Add(this.label3);
             this.panelDock.Controls.Add(this.txtYeild);
             this.panelDock.Controls.Add(this.txtExplain);
             this.panelDock.Controls.Add(this.label16);
-            this.panelDock.Controls.Add(this.cboUse);
-            this.panelDock.Controls.Add(this.label15);
-            this.panelDock.Controls.Add(this.txtTurn);
-            this.panelDock.Controls.Add(this.label10);
-            this.panelDock.Controls.Add(this.label11);
             this.panelDock.Controls.Add(this.cboUMU);
+            this.panelDock.Controls.Add(this.label15);
+            this.panelDock.Controls.Add(this.label10);
             this.panelDock.Controls.Add(this.label7);
-            this.panelDock.Controls.Add(this.txtFacName);
-            this.panelDock.Controls.Add(this.cboHighFac);
+            this.panelDock.Controls.Add(this.txtTacTime);
+            this.panelDock.Controls.Add(this.cboFACG_Code);
             this.panelDock.Controls.Add(this.label6);
-            this.panelDock.Controls.Add(this.cboFacCate);
+            this.panelDock.Controls.Add(this.cboFacCode);
             this.panelDock.Controls.Add(this.label4);
-            this.panelDock.Controls.Add(this.cboFacCrow);
+            this.panelDock.Controls.Add(this.cboITEMCode);
             this.panelDock.Controls.Add(this.label2);
             this.panelDock.Size = new System.Drawing.Size(619, 320);
             // 
@@ -106,7 +102,7 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(350, 10);
+            this.button2.Location = new System.Drawing.Point(382, 10);
             // 
             // button1
             // 
@@ -114,7 +110,7 @@
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(626, 10);
+            this.tileSave.Location = new System.Drawing.Point(658, 10);
             this.tileSave.Click += new System.EventHandler(this.tileSave_Click);
             // 
             // txtExplain
@@ -136,14 +132,14 @@
             this.label16.TabIndex = 58;
             this.label16.Text = "ㆍ비고";
             // 
-            // cboUse
+            // cboUMU
             // 
-            this.cboUse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cboUse.FormattingEnabled = true;
-            this.cboUse.Location = new System.Drawing.Point(433, 111);
-            this.cboUse.Name = "cboUse";
-            this.cboUse.Size = new System.Drawing.Size(172, 23);
-            this.cboUse.TabIndex = 57;
+            this.cboUMU.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboUMU.FormattingEnabled = true;
+            this.cboUMU.Location = new System.Drawing.Point(433, 111);
+            this.cboUMU.Name = "cboUMU";
+            this.cboUMU.Size = new System.Drawing.Size(172, 23);
+            this.cboUMU.TabIndex = 57;
             // 
             // label15
             // 
@@ -156,42 +152,15 @@
             this.label15.TabIndex = 56;
             this.label15.Text = "ㆍ사용유무";
             // 
-            // txtTurn
-            // 
-            this.txtTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtTurn.Location = new System.Drawing.Point(128, 77);
-            this.txtTurn.Name = "txtTurn";
-            this.txtTurn.Size = new System.Drawing.Size(172, 21);
-            this.txtTurn.TabIndex = 49;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.Location = new System.Drawing.Point(9, 111);
+            this.label10.Location = new System.Drawing.Point(9, 83);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 16);
             this.label10.TabIndex = 47;
             this.label10.Text = "ㆍ수율";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.Location = new System.Drawing.Point(9, 80);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(112, 16);
-            this.label11.TabIndex = 46;
-            this.label11.Text = "ㆍ공정선행일(Day)";
-            // 
-            // cboUMU
-            // 
-            this.cboUMU.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cboUMU.FormattingEnabled = true;
-            this.cboUMU.Location = new System.Drawing.Point(433, 79);
-            this.cboUMU.Name = "cboUMU";
-            this.cboUMU.Size = new System.Drawing.Size(172, 23);
-            this.cboUMU.TabIndex = 41;
             // 
             // label7
             // 
@@ -204,22 +173,22 @@
             this.label7.TabIndex = 40;
             this.label7.Text = "ㆍTac Time";
             // 
-            // txtFacName
+            // txtTacTime
             // 
-            this.txtFacName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtFacName.Location = new System.Drawing.Point(433, 47);
-            this.txtFacName.Name = "txtFacName";
-            this.txtFacName.Size = new System.Drawing.Size(172, 21);
-            this.txtFacName.TabIndex = 39;
+            this.txtTacTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtTacTime.Location = new System.Drawing.Point(433, 47);
+            this.txtTacTime.Name = "txtTacTime";
+            this.txtTacTime.Size = new System.Drawing.Size(172, 21);
+            this.txtTacTime.TabIndex = 39;
             // 
-            // cboHighFac
+            // cboFACG_Code
             // 
-            this.cboHighFac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cboHighFac.FormattingEnabled = true;
-            this.cboHighFac.Location = new System.Drawing.Point(433, 15);
-            this.cboHighFac.Name = "cboHighFac";
-            this.cboHighFac.Size = new System.Drawing.Size(172, 23);
-            this.cboHighFac.TabIndex = 38;
+            this.cboFACG_Code.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboFACG_Code.FormattingEnabled = true;
+            this.cboFACG_Code.Location = new System.Drawing.Point(433, 15);
+            this.cboFACG_Code.Name = "cboFACG_Code";
+            this.cboFACG_Code.Size = new System.Drawing.Size(172, 23);
+            this.cboFACG_Code.TabIndex = 38;
             // 
             // label6
             // 
@@ -232,14 +201,14 @@
             this.label6.TabIndex = 37;
             this.label6.Text = "ㆍ공정";
             // 
-            // cboFacCate
+            // cboFacCode
             // 
-            this.cboFacCate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cboFacCate.FormattingEnabled = true;
-            this.cboFacCate.Location = new System.Drawing.Point(128, 45);
-            this.cboFacCate.Name = "cboFacCate";
-            this.cboFacCate.Size = new System.Drawing.Size(172, 23);
-            this.cboFacCate.TabIndex = 36;
+            this.cboFacCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboFacCode.FormattingEnabled = true;
+            this.cboFacCode.Location = new System.Drawing.Point(128, 45);
+            this.cboFacCode.Name = "cboFacCode";
+            this.cboFacCode.Size = new System.Drawing.Size(172, 23);
+            this.cboFacCode.TabIndex = 36;
             // 
             // label4
             // 
@@ -252,14 +221,14 @@
             this.label4.TabIndex = 34;
             this.label4.Text = "ㆍ설비";
             // 
-            // cboFacCrow
+            // cboITEMCode
             // 
-            this.cboFacCrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cboFacCrow.FormattingEnabled = true;
-            this.cboFacCrow.Location = new System.Drawing.Point(128, 13);
-            this.cboFacCrow.Name = "cboFacCrow";
-            this.cboFacCrow.Size = new System.Drawing.Size(172, 23);
-            this.cboFacCrow.TabIndex = 31;
+            this.cboITEMCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboITEMCode.FormattingEnabled = true;
+            this.cboITEMCode.Location = new System.Drawing.Point(128, 13);
+            this.cboITEMCode.Name = "cboITEMCode";
+            this.cboITEMCode.Size = new System.Drawing.Size(172, 23);
+            this.cboITEMCode.TabIndex = 31;
             // 
             // label2
             // 
@@ -275,7 +244,7 @@
             // txtYeild
             // 
             this.txtYeild.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtYeild.Location = new System.Drawing.Point(128, 109);
+            this.txtYeild.Location = new System.Drawing.Point(128, 81);
             this.txtYeild.Name = "txtYeild";
             this.txtYeild.Size = new System.Drawing.Size(172, 21);
             this.txtYeild.TabIndex = 60;
@@ -290,6 +259,14 @@
             this.label3.Size = new System.Drawing.Size(63, 16);
             this.label3.TabIndex = 61;
             this.label3.Text = "ㆍ우선순위";
+            // 
+            // txtPriority
+            // 
+            this.txtPriority.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtPriority.Location = new System.Drawing.Point(433, 80);
+            this.txtPriority.Name = "txtPriority";
+            this.txtPriority.Size = new System.Drawing.Size(172, 21);
+            this.txtPriority.TabIndex = 62;
             // 
             // BORRegister
             // 
@@ -314,19 +291,17 @@
         private System.Windows.Forms.TextBox txtYeild;
         private System.Windows.Forms.TextBox txtExplain;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox cboUse;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtTurn;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cboUMU;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtFacName;
-        private System.Windows.Forms.ComboBox cboHighFac;
+        private System.Windows.Forms.TextBox txtTacTime;
+        private System.Windows.Forms.ComboBox cboFACG_Code;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cboFacCate;
+        private System.Windows.Forms.ComboBox cboFacCode;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cboFacCrow;
+        private System.Windows.Forms.ComboBox cboITEMCode;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPriority;
     }
 }

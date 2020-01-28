@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,8 +58,6 @@
             // panelTop
             // 
             this.panelTop.Controls.Add(this.btnSearch);
-            this.panelTop.Controls.Add(this.textBox3);
-            this.panelTop.Controls.Add(this.label5);
             this.panelTop.Controls.Add(this.textBox2);
             this.panelTop.Controls.Add(this.label6);
             this.panelTop.Controls.Add(this.label4);
@@ -77,25 +73,6 @@
             // 
             this.label1.Text = "업체코드";
             // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox3.Location = new System.Drawing.Point(151, 47);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(187, 22);
-            this.textBox3.TabIndex = 21;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 48);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 19);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "ㆍ 사업자등록번호";
-            // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -103,6 +80,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(187, 22);
             this.textBox2.TabIndex = 19;
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // label6
             // 
@@ -133,6 +111,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(187, 22);
             this.textBox1.TabIndex = 16;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // cboFacCrow
             // 
@@ -166,6 +145,7 @@
             this.btnSearch.TabIndex = 22;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // EnterPriseMain
             // 
@@ -189,9 +169,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;

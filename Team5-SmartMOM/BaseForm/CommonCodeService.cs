@@ -74,6 +74,10 @@ namespace Team5_SmartMOM.BaseForm
             CommonCodeDAC dac = new CommonCodeDAC();
             return dac.GetFactoryList();
         }
-
+        public List<CommonCodeVO> GetVENDOR()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.GetVENDOR();
+        }
     }
 }

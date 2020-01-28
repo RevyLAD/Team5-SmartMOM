@@ -107,6 +107,38 @@ namespace Project_DAC
             }
         }
 
+        public List<CommonCodeVO> GetWareHouse1()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select Common_Type, Common_Key, Common_Value from Common_Code where Common_Type = 'FACILITY_TYPE' and ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<CommonCodeVO> list = Helper.DataReaderMapToList<CommonCodeVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public List<CommonCodeVO> GetWareHouse2()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select Common_Type, Common_Key, Common_Value from Common_Code where Common_Type = 'FACILITY_TYPE'";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<CommonCodeVO> list = Helper.DataReaderMapToList<CommonCodeVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
         public List<CommonCodeVO> GetUse()
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -187,5 +219,23 @@ namespace Project_DAC
                 return list;
             }
         }
+
+
+        public List<CommonCodeVO> GetVENDOR()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select Common_Type, Common_Key, Common_Value from Common_Code where Common_Type = 'VENDOR_TYPE'";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<CommonCodeVO> list = Helper.DataReaderMapToList<CommonCodeVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+        
     }
 }

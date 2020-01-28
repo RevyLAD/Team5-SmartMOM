@@ -28,23 +28,25 @@ namespace Team5_SmartMOM
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(cboFacCrow.Text.Trim()!=""&&
-                cboFacCate.Text.Trim()!=""&&
-                cboHighFac.Text.Trim()!=""&&
-                cboUMU.Text.Trim()!=""&&
-                cboUse.Text.Trim()!="")
+            if(cboITEMCode.Text.Trim()!=""&&
+                cboFacCode.Text.Trim()!=""&&
+                cboFACG_Code.Text.Trim()!=""&&
+                txtPriority.Text.Trim()!=""&&
+                cboUMU.Text.Trim()!="")
             {
                 BORVO vo = new BORVO();
                 HSC_Service service = new HSC_Service();
                 vo.BOR_Ohters = txtExplain.Text;
-                vo.BOR_Priority = Convert.ToInt32(cboUMU.Text);
-                vo.BOR_TactTime = Convert.ToInt32(txtFacName.Text);
-                vo.BOR_UseOrNot = cboUse.Text;
+                vo.BOR_Priority = Convert.ToInt32(txtPriority.Text);
+                vo.BOR_TactTime = Convert.ToInt32(txtTacTime.Text);
+                vo.BOR_UseOrNot = cboUMU.Text;
                 vo.BOR_yeild = Convert.ToInt32(txtYeild.Text);
-                vo.FACG_Code = cboHighFac.Text.Trim();
-                vo.FAC_Code = cboFacCate.Text;
-                vo.ITEM_Code = cboFacCrow.Text;
+                vo.FACG_Code = cboFACG_Code.Text.Trim();
+                vo.FAC_Code = cboFacCode.Text;
+                vo.ITEM_Code = cboITEMCode.Text;
                 service.InsertBOR(vo);
+                MessageBox.Show("성공적으로 등록되었습니다");
+                this.Close();
             }
             else
             {
@@ -56,12 +58,12 @@ namespace Team5_SmartMOM
         {
             CommonCodeService cmservice = new CommonCodeService();
             HSC_Service service = new HSC_Service();
+            KIS_Service kser = new KIS_Service();
 
-            CommonUtil.ComboBinding(cboFacCrow, cmservice.GetFacilityClass(), "Common_Key", "Common_Value");
-            CommonUtil.ComboBinding(cboUse, cmservice.GetUse(), "Common_Key", "Common_Value");
-            CommonUtil.ComboBinding(cboUMU, cmservice.GetOffer(), "Common_Key", "Common_Value");
-            CommonUtil.ComboBinding(cboHighFac, cmservice.GetROUTE(), "Common_Key", "Common_Value");
-            CommonUtil.ComboBinding(cboFacCate, service.GetAllFacilitiesDetail(), "FAC_Code", "FAC_Name");
+            CommonUtil.ComboBinding(cboITEMCode, kser.ShowITEM(), "ITEM_Code", "ITEM_Name");
+            CommonUtil.ComboBinding(cboUMU, cmservice.GetUse(), "Common_Key", "Common_Value");
+            CommonUtil.ComboBinding(cboFACG_Code, cmservice.GetROUTE(), "Common_Key", "Common_Value");
+            CommonUtil.ComboBinding(cboFacCode, service.GetAllFacilitiesDetail(), "FAC_Code", "FAC_Name");
         }
     }
 }
