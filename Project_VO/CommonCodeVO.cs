@@ -24,4 +24,9 @@ namespace Project_VO
         public string ITEM_Code { get; set; }
         public string ITEM_Name { get; set; }
     }
+
+    public class PlanIDVO
+    {
+        public string Plan_ID { get; set; }
+    }
 }

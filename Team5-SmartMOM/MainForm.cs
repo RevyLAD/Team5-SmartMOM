@@ -329,5 +329,10 @@ namespace Team5_SmartMOM
         {
             CreateTabPages("품목관리", new Item_Management());
         }
+
+        private void 수요계획ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("수요계획", new Demand_Plan());
+        }
     }
 }
