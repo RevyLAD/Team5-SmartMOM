@@ -26,6 +26,25 @@ namespace Team5_SmartMOM.Service
             ITEM_DAC cmd = new ITEM_DAC();
             return cmd.ShowAllITEM();
         }
+        public bool InsertItem(ITEM_VO list)
+        {
+            ITEM_DAC cmd = new ITEM_DAC();
+            return cmd.InsertItem(list);
+        }
+
+        
+
+         public bool DeleteBOM(string list)
+        {
+            BOM_DAC cmd = new BOM_DAC();
+            return cmd.DeleteBOM(list);
+        }
+
+        public List<BOM_Serch_VO> SearchBOM(string name)
+        {
+            BOM_DAC cmd = new BOM_DAC();
+            return cmd.BOM_SearchData(name);
+        }
 
     }
 }

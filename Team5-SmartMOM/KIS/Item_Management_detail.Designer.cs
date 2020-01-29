@@ -155,10 +155,11 @@
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Location = new System.Drawing.Point(305, 10);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(1629, 10);
+            this.tileSave.Location = new System.Drawing.Point(1778, 10);
             // 
             // label2
             // 

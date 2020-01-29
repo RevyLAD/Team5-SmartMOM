@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Team5_SmartMOM.BaseForm;
+using Team5_SmartMOM.Service;
 
 namespace Team5_SmartMOM
 {
@@ -83,8 +84,104 @@ namespace Team5_SmartMOM
             CommonUtil.ComboBinding(cbo_orderType, OrderGubunList10, "Common_Key", "Common_Value");
         }
 
-        private void Button1_Click_1(object sender, EventArgs e)
+
+
+        private void Button1_Click(object sender, EventArgs e)
         {
+            bool check = true;
+            try
+            {
+                if (txt_item.Text == "")
+                {
+                    MessageBox.Show("품목을 작성해주시기 바랍니다.");
+                    check = false;
+                    this.DialogResult = DialogResult.None;
+                }
+                else if (txt_itemname.Text == null)
+                {
+                    MessageBox.Show("등록할 품명을 작성해주시기 바랍니다.");
+                    check = false;
+                    this.DialogResult = DialogResult.None;
+                }
+                else if (cbo_unit.Text == null)
+                {
+                    MessageBox.Show("단위를 작성해 주시기 바랍니다.");
+                    check = false;
+                    this.DialogResult = DialogResult.None;
+                }
+                else if (cbo_itemtype.Text == null)
+                {
+                    MessageBox.Show("품목 유형을 선택해 주시기 바랍니다..");
+                    check = false;
+                    this.DialogResult = DialogResult.None;
+                }
+                else if (cbo_import_check.Text == null)
+                {
+                    MessageBox.Show("수입검사여부를 설정해 주시기 바랍니다.");
+                    check = false;
+                    this.DialogResult = DialogResult.None;
+                }
+                else if (cbo_process_check.Text == null)
+                {
+                    MessageBox.Show("공장검사여부를 설정해 주시기 바랍니다.");
+                    check = false;
+                    this.DialogResult = DialogResult.None;
+                }
+                else if (cbo_shipment_Check.Text == null)
+                {
+                    MessageBox.Show("출하검사여부를 설정해 주시기 바랍니다.");
+                    check = false;
+                    this.DialogResult = DialogResult.None;
+                }
+                else if (cbo_UseorNot.Text == null)
+                {
+                    MessageBox.Show("사용유무를 설정해 주시기 바랍니다.");
+                    check = false;
+                    this.DialogResult = DialogResult.None;
+                }
+               else if(check)
+                {
+                    ITEM_VO item = new ITEM_VO();
+                    item.ITEM_Name = txt_itemname.Text;
+                    item.ITEM_Code = txt_item.Text;
+                    item.ITEM_Size = txt_size.Text;
+                    item.ITEM_Unit = cbo_unit.Text;
+                    item.ITEM_Type = cbo_itemtype.Text;
+                    item.ITEM_ImportIns = cbo_import_check.Text;
+                    item.ITEM_ProcessIns = cbo_process_check.Text;
+                    item.ITEM_ShipmentIns = cbo_shipment_Check.Text;
+                    item.ITEM_OrderComp = cbo_Client.Text;
+                    item.ITEM_InWarehouse = cbo_Warehouse.Text;
+                    item.ITEM_OutWarehouse = cbo_releasehouse.Text;
+                    item.ITEM_MinOrderQuantity =Convert.ToInt32(cbo_MinOrder_count.Text);
+                    item.ITEM_SafeQuantity =Convert.ToInt32(txt_Safety_Count.Text);
+                    item.ITEM_Grade = cbo_Management_ranking.Text;
+                    item.ITEM_Manager = cbo_manager.Text;
+                    item.ITEM_Modifier = txt_edituser.Text;
+                    item.ITEM_ModifiyDate =Convert.ToDateTime(txt_edit_date.Text);
+                    item.ITEM_UserOrNot = cbo_UseorNot.Text;
+                    item.ITEM_OrderMethod = cbo_orderType.Text;
+                    item.ITEM_Others = txt_Remarks.Text;
+
+                    KIS_Service service = new KIS_Service();
+                    bool bResult= service.InsertItem(item);
+
+                    if (bResult)
+                    {
+                        MessageBox.Show("성공적으로 등록되었습니다");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("등록중 오류가 발생하였습니다 다시 시도해주세요");
+                    }
+
+                }
+            }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
 
         }
     }

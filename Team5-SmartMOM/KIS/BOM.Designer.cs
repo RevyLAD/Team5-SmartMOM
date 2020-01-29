@@ -198,6 +198,7 @@
             this.btn_Search.TabIndex = 17;
             this.btn_Search.Text = "조회";
             this.btn_Search.UseVisualStyleBackColor = false;
+            this.btn_Search.Click += new System.EventHandler(this.Btn_Search_Click);
             // 
             // button6
             // 
@@ -213,6 +214,7 @@
             this.button6.Text = "삭제";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // button5
             // 
@@ -251,6 +253,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1222, 609);
             this.Name = "BOM";
+            this.Load += new System.EventHandler(this.BOM_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelMid.ResumeLayout(false);

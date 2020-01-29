@@ -14,6 +14,7 @@ namespace Team5_SmartMOM
         public Item_Management()
         {
             InitializeComponent();
+            LoadPage();
         }
 
         private void Btn_newitem_Click(object sender, EventArgs e)
@@ -27,11 +28,17 @@ namespace Team5_SmartMOM
 
         private void Item_Management_Load(object sender, EventArgs e)
         {
+           
+        }
+
+        private void LoadPage()
+        {
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목번호", "ITEM_No", true, 40);
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             chk.Width = 40;
             chk.HeaderText = "선택";
             dataGridView1.Columns.Add(chk);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "규격", "ITEM_Size", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "단위", "ITEM_Unit", true, 80);
@@ -53,6 +60,7 @@ namespace Team5_SmartMOM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "ITEM_Others", true, 140);
             DataLoad();
         }
+
         public void DataLoad()
         {
             KIS_Service service = new KIS_Service();
