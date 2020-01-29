@@ -91,8 +91,28 @@ namespace Team5_SmartMOM.HSM
 
         private void button3_Click(object sender, EventArgs e) //생산계획 생성
         {
-            MPS frm = new MPS();
-            frm.ShowDialog();
+            HSM_Service service = new HSM_Service();
+            
+            if(dataGridView1.Rows.Count>0)
+            {
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    string workId = row.Cells[0].Value.ToString();
+                    service.UpdatePlanID(workId);
+
+                    if(!service.UpdatePlanID(workId))
+                    {
+                        MessageBox.Show("저장실패");
+                        return;
+                    }
+                }
+                MessageBox.Show("생산계획 생성 완료");
+                btnSearch.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("조회후 생산계획을 생성하세요", "확인");
+            }
         }
     }
 }

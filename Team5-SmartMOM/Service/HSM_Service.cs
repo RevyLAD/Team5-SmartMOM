@@ -46,11 +46,23 @@ namespace Team5_SmartMOM.Service
             return dac.GetMRP(plan);
         }
 
+        public DataSet GetProductPlan(PlanningVO plan)
+        {
+            PlanningDAC dac = new PlanningDAC();
+            return dac.GetProductPlan(plan);
+        }
+
 
         public bool UpdatePlanID(List<UpdatePlanIDVO> plan)
         {
             SalesMasterDAC dac = new SalesMasterDAC();
             return dac.UpdatePlanID(plan);
+        }
+
+        public bool UpdatePlanID(string workId)
+        {
+            SalesMasterDAC dac = new SalesMasterDAC();
+            return dac.UpdatePlanID(workId);
         }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtProduct = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpDateEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
@@ -39,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.cboProduct = new System.Windows.Forms.ComboBox();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -65,7 +65,6 @@
             // 
             this.panelTop.BackColor = System.Drawing.Color.Transparent;
             this.panelTop.Controls.Add(this.btnSearch);
-            this.panelTop.Controls.Add(this.txtProduct);
             this.panelTop.Controls.Add(this.label10);
             this.panelTop.Controls.Add(this.label5);
             this.panelTop.Controls.Add(this.label2);
@@ -73,6 +72,7 @@
             this.panelTop.Controls.Add(this.dtpDateStart);
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label11);
+            this.panelTop.Controls.Add(this.cboProduct);
             this.panelTop.Controls.Add(this.cboEquipment);
             this.panelTop.Controls.Add(this.cboPlanID);
             this.panelTop.Size = new System.Drawing.Size(1202, 82);
@@ -83,13 +83,6 @@
             // label1
             // 
             this.label1.Text = "생산계획";
-            // 
-            // txtProduct
-            // 
-            this.txtProduct.Location = new System.Drawing.Point(438, 51);
-            this.txtProduct.Name = "txtProduct";
-            this.txtProduct.Size = new System.Drawing.Size(225, 21);
-            this.txtProduct.TabIndex = 29;
             // 
             // label5
             // 
@@ -107,6 +100,7 @@
             this.dtpDateEnd.Name = "dtpDateEnd";
             this.dtpDateEnd.Size = new System.Drawing.Size(99, 21);
             this.dtpDateEnd.TabIndex = 26;
+            this.dtpDateEnd.ValueChanged += new System.EventHandler(this.dtpDateEnd_ValueChanged);
             // 
             // dtpDateStart
             // 
@@ -115,6 +109,7 @@
             this.dtpDateStart.Name = "dtpDateStart";
             this.dtpDateStart.Size = new System.Drawing.Size(99, 21);
             this.dtpDateStart.TabIndex = 27;
+            this.dtpDateStart.ValueChanged += new System.EventHandler(this.dtpDateStart_ValueChanged);
             // 
             // cboEquipment
             // 
@@ -188,6 +183,15 @@
             this.btnSearch.TabIndex = 76;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // cboProduct
+            // 
+            this.cboProduct.FormattingEnabled = true;
+            this.cboProduct.Location = new System.Drawing.Point(437, 51);
+            this.cboProduct.Name = "cboProduct";
+            this.cboProduct.Size = new System.Drawing.Size(226, 20);
+            this.cboProduct.TabIndex = 24;
             // 
             // Product_Plan
             // 
@@ -211,8 +215,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpDateEnd;
         private System.Windows.Forms.DateTimePicker dtpDateStart;
@@ -223,5 +225,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         protected System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ComboBox cboProduct;
     }
 }

@@ -95,5 +95,27 @@ namespace Project_DAC.HSM
             }
         }
 
+        public DataSet GetProductPlan(PlanningVO plan)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                DataSet ds = new DataSet();
+                cmd.CommandText = "GetProductPlan";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Plan_ID", plan.PlanId);
+                cmd.Parameters.AddWithValue("@StartDateTime", plan.SALES_OrderDate);
+                cmd.Parameters.AddWithValue("@EndDateTime", plan.SALES_DueDate);
+
+                SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                adpt.Fill(ds, "GetProductPlan");
+
+                cmd.Connection.Close();
+                return ds;
+
+            }
+        }
+
     }
 }
