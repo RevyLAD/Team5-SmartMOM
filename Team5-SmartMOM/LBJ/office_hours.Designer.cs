@@ -102,18 +102,16 @@
             // 
             // cboShift
             // 
-            //this.cboShift.FormattingEnabled = true;
-            //this.cboShift.Location = new System.Drawing.Point(109, 21);
-            //this.cboShift.Name = "cboShift";
-            //this.cboShift.Size = new System.Drawing.Size(142, 20);
-            //this.cboShift.TabIndex = 1;
-            //this.cboShift.SelectedIndexChanged += new System.EventHandler(this.cboShift_SelectedIndexChanged);
+            this.cboShift.Location = new System.Drawing.Point(112, 19);
+            this.cboShift.Name = "cboShift";
+            this.cboShift.Size = new System.Drawing.Size(121, 20);
+            this.cboShift.TabIndex = 8;
             // 
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(334, 20);
+            this.label5.Location = new System.Drawing.Point(334, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 24);
             this.label5.TabIndex = 4;
@@ -122,7 +120,7 @@
             // cbosystem
             // 
             this.cbosystem.FormattingEnabled = true;
-            this.cbosystem.Location = new System.Drawing.Point(431, 22);
+            this.cbosystem.Location = new System.Drawing.Point(431, 19);
             this.cbosystem.Name = "cbosystem";
             this.cbosystem.Size = new System.Drawing.Size(142, 20);
             this.cbosystem.TabIndex = 1;
@@ -145,7 +143,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(39, 19);
+            this.label2.Location = new System.Drawing.Point(39, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 24);
             this.label2.TabIndex = 7;

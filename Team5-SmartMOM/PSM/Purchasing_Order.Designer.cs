@@ -29,29 +29,25 @@
         private void InitializeComponent()
         {
             this.Mainpanel = new System.Windows.Forms.Panel();
+            this.btnLeft = new System.Windows.Forms.Button();
+            this.btnRight = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.btnOrder = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPartNo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbocompany = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tileUpdate = new MetroFramework.Controls.MetroTile();
-            this.circularButton3 = new Team5_SmartMOM.PSM.CircularButton();
-            this.circularButton4 = new Team5_SmartMOM.PSM.CircularButton();
-            this.circularButton2 = new Team5_SmartMOM.PSM.CircularButton();
-            this.circularButton1 = new Team5_SmartMOM.PSM.CircularButton();
             this.Mainpanel.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -64,6 +60,8 @@
             // Mainpanel
             // 
             this.Mainpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.Mainpanel.Controls.Add(this.btnLeft);
+            this.Mainpanel.Controls.Add(this.btnRight);
             this.Mainpanel.Controls.Add(this.button2);
             this.Mainpanel.Controls.Add(this.panel5);
             this.Mainpanel.Controls.Add(this.panel4);
@@ -75,6 +73,26 @@
             this.Mainpanel.Padding = new System.Windows.Forms.Padding(10);
             this.Mainpanel.Size = new System.Drawing.Size(1051, 533);
             this.Mainpanel.TabIndex = 0;
+            // 
+            // btnLeft
+            // 
+            this.btnLeft.Location = new System.Drawing.Point(250, 297);
+            this.btnLeft.Name = "btnLeft";
+            this.btnLeft.Size = new System.Drawing.Size(43, 23);
+            this.btnLeft.TabIndex = 6;
+            this.btnLeft.Text = "<";
+            this.btnLeft.UseVisualStyleBackColor = true;
+            this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
+            // 
+            // btnRight
+            // 
+            this.btnRight.Location = new System.Drawing.Point(250, 239);
+            this.btnRight.Name = "btnRight";
+            this.btnRight.Size = new System.Drawing.Size(43, 23);
+            this.btnRight.TabIndex = 5;
+            this.btnRight.Text = ">";
+            this.btnRight.UseVisualStyleBackColor = true;
+            this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
             // button2
             // 
@@ -88,38 +106,27 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.button1);
-            this.panel5.Controls.Add(this.circularButton3);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.circularButton4);
+            this.panel5.Controls.Add(this.btnOrder);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.dataGridView2);
-            this.panel5.Location = new System.Drawing.Point(271, 127);
+            this.panel5.Location = new System.Drawing.Point(296, 127);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(769, 353);
-            this.panel5.TabIndex = 3;            
+            this.panel5.Size = new System.Drawing.Size(744, 353);
+            this.panel5.TabIndex = 3;
             // 
-            // button1
+            // btnOrder
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
-            this.button1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(676, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 26);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "발주";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(424, 324);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 12);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "1  /  1";
+            this.btnOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.btnOrder.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrder.ForeColor = System.Drawing.Color.White;
+            this.btnOrder.Location = new System.Drawing.Point(651, 3);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(81, 26);
+            this.btnOrder.TabIndex = 27;
+            this.btnOrder.Text = "발주";
+            this.btnOrder.UseVisualStyleBackColor = false;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // label5
             // 
@@ -138,29 +145,17 @@
             this.dataGridView2.Location = new System.Drawing.Point(3, 30);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(763, 277);
+            this.dataGridView2.Size = new System.Drawing.Size(763, 320);
             this.dataGridView2.TabIndex = 1;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.circularButton2);
-            this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.dataGridView1);
-            this.panel4.Controls.Add(this.circularButton1);
             this.panel4.Location = new System.Drawing.Point(13, 126);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(234, 353);
             this.panel4.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(92, 324);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 12);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "1  /  1";
             // 
             // label4
             // 
@@ -179,15 +174,15 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 31);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(228, 277);
+            this.dataGridView1.Size = new System.Drawing.Size(228, 319);
             this.dataGridView1.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnSearch);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.txtPartNo);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.cbocompany);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(13, 67);
             this.panel3.Name = "panel3";
@@ -206,13 +201,15 @@
             this.btnSearch.TabIndex = 27;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // textBox1
+            // txtPartNo
             // 
-            this.textBox1.Location = new System.Drawing.Point(587, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 21);
-            this.textBox1.TabIndex = 4;
+            this.txtPartNo.Location = new System.Drawing.Point(587, 15);
+            this.txtPartNo.Name = "txtPartNo";
+            this.txtPartNo.Size = new System.Drawing.Size(184, 21);
+            this.txtPartNo.TabIndex = 4;
+            this.txtPartNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPartNo_KeyPress);
             // 
             // label3
             // 
@@ -223,13 +220,14 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "* Part No";
             // 
-            // comboBox1
+            // cbocompany
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(64, 15);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(197, 20);
-            this.comboBox1.TabIndex = 2;
+            this.cbocompany.FormattingEnabled = true;
+            this.cbocompany.Location = new System.Drawing.Point(64, 15);
+            this.cbocompany.Name = "cbocompany";
+            this.cbocompany.Size = new System.Drawing.Size(197, 20);
+            this.cbocompany.TabIndex = 2;
+            this.cbocompany.SelectedIndexChanged += new System.EventHandler(this.cboCompany_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -275,42 +273,6 @@
             this.tileUpdate.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.tileUpdate.UseTileImage = true;
             // 
-            // circularButton3
-            // 
-            this.circularButton3.Location = new System.Drawing.Point(469, 314);
-            this.circularButton3.Name = "circularButton3";
-            this.circularButton3.Size = new System.Drawing.Size(31, 30);
-            this.circularButton3.TabIndex = 12;
-            this.circularButton3.Text = ">";
-            this.circularButton3.UseVisualStyleBackColor = true;
-            // 
-            // circularButton4
-            // 
-            this.circularButton4.Location = new System.Drawing.Point(387, 314);
-            this.circularButton4.Name = "circularButton4";
-            this.circularButton4.Size = new System.Drawing.Size(31, 30);
-            this.circularButton4.TabIndex = 10;
-            this.circularButton4.Text = "<";
-            this.circularButton4.UseVisualStyleBackColor = true;
-            // 
-            // circularButton2
-            // 
-            this.circularButton2.Location = new System.Drawing.Point(137, 314);
-            this.circularButton2.Name = "circularButton2";
-            this.circularButton2.Size = new System.Drawing.Size(31, 30);
-            this.circularButton2.TabIndex = 7;
-            this.circularButton2.Text = ">";
-            this.circularButton2.UseVisualStyleBackColor = true;
-            // 
-            // circularButton1
-            // 
-            this.circularButton1.Location = new System.Drawing.Point(55, 314);
-            this.circularButton1.Name = "circularButton1";
-            this.circularButton1.Size = new System.Drawing.Size(31, 30);
-            this.circularButton1.TabIndex = 4;
-            this.circularButton1.Text = "<";
-            this.circularButton1.UseVisualStyleBackColor = true;
-            // 
             // Purchasing_Order
             // 
             this.ClientSize = new System.Drawing.Size(1051, 533);
@@ -342,9 +304,9 @@
         private MetroFramework.Controls.MetroTile tileUpdate;
         private System.Windows.Forms.Panel panel3;
         protected System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbocompany;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPartNo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
@@ -353,13 +315,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private CircularButton circularButton1;
-        private CircularButton circularButton3;
-        private System.Windows.Forms.Label label8;
-        private CircularButton circularButton4;
-        private CircularButton circularButton2;
-        protected System.Windows.Forms.Button button1;
+        protected System.Windows.Forms.Button btnOrder;
         protected System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnRight;
+        private System.Windows.Forms.Button btnLeft;
     }
 }

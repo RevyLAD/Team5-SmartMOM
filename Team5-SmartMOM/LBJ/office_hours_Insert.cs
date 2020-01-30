@@ -25,6 +25,7 @@ namespace Team5_SmartMOM.LBJ
             txtReviceDay.Text = DateTime.Now.ToString();
             DataLoad();
             DataLoad2();
+            DataLoad3();
         }
         public void DataLoad()
         {
@@ -51,7 +52,43 @@ namespace Team5_SmartMOM.LBJ
 
             CommonUtil.ComboBinding(cboShift, OrderShiftList, "Common_Key", "Common_Value");
         }
+        public void DataLoad3()
+        {
+            List<FacilitieDetailVO> list = new List<FacilitieDetailVO>();
 
+            HSC_Service service = new HSC_Service();
+
+            list = service.GetAllFacilitiesDetail();
+            string FacCode = cboCode.Text.Trim();
+
+            List<FacilitieDetailVO> temp = (from item in list
+                                            where item.FAC_Code.Contains(FacCode)
+                                            select item).Distinct().ToList();
+
+
+
+            List<FacilitieDetailVO> FacList = new List<FacilitieDetailVO>();
+
+            foreach (FacilitieDetailVO item1 in temp)
+            {
+                bool addok = true;
+                if (FacList.Count < 1)
+                    FacList.Add(item1);
+                else
+                {
+                    for (int i = 0; i < FacList.Count; i++)
+                        if (FacList[i].FAC_Code.Trim() == item1.FAC_Code.Trim())
+                            addok = false;
+
+                    if (addok)
+                        FacList.Add(item1);
+                    else
+                        continue;
+                }
+            }
+
+            CommonUtil.ComboBinding(cboCode, FacList, "FAC_No", "FAC_Code");
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             if(txtStartTime.Text.Length < 1)
@@ -93,5 +130,7 @@ namespace Team5_SmartMOM.LBJ
                 e.Handled = true;
             }
         }
+
+      
     }
 }

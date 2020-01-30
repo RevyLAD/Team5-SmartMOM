@@ -186,7 +186,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Orange;
-            this.label11.Location = new System.Drawing.Point(315, 123);
+            this.label11.Location = new System.Drawing.Point(322, 123);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 19);
             this.label11.TabIndex = 0;
@@ -218,7 +218,7 @@
             // 
             this.label14.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Orange;
-            this.label14.Location = new System.Drawing.Point(315, 12);
+            this.label14.Location = new System.Drawing.Point(322, 12);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(66, 19);
             this.label14.TabIndex = 1;
@@ -229,7 +229,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Orange;
-            this.label15.Location = new System.Drawing.Point(314, 49);
+            this.label15.Location = new System.Drawing.Point(321, 49);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(69, 19);
             this.label15.TabIndex = 1;
@@ -240,7 +240,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Orange;
-            this.label16.Location = new System.Drawing.Point(314, 86);
+            this.label16.Location = new System.Drawing.Point(321, 86);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(93, 19);
             this.label16.TabIndex = 1;
@@ -251,7 +251,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(315, 160);
+            this.label23.Location = new System.Drawing.Point(322, 160);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(57, 19);
             this.label23.TabIndex = 1;
@@ -263,34 +263,35 @@
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(446, 94);
-            this.txtNote.TabIndex = 3;
+            this.txtNote.TabIndex = 10;
             // 
             // cboCode
             // 
             this.cboCode.FormattingEnabled = true;
             this.cboCode.Location = new System.Drawing.Point(139, 8);
             this.cboCode.Name = "cboCode";
-            this.cboCode.Size = new System.Drawing.Size(167, 27);
-            this.cboCode.TabIndex = 4;
+            this.cboCode.Size = new System.Drawing.Size(177, 27);
+            this.cboCode.TabIndex = 1;
             // 
             // txtStartTime
             // 
             this.txtStartTime.Location = new System.Drawing.Point(139, 42);
             this.txtStartTime.Name = "txtStartTime";
-            this.txtStartTime.Size = new System.Drawing.Size(167, 26);
-            this.txtStartTime.TabIndex = 5;
+            this.txtStartTime.Size = new System.Drawing.Size(177, 26);
+            this.txtStartTime.TabIndex = 3;
             this.txtStartTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStartTime_KeyPress);
             // 
             // txtPeople
             // 
             this.txtPeople.Location = new System.Drawing.Point(139, 116);
             this.txtPeople.Name = "txtPeople";
-            this.txtPeople.Size = new System.Drawing.Size(167, 26);
-            this.txtPeople.TabIndex = 6;
+            this.txtPeople.Size = new System.Drawing.Size(177, 26);
+            this.txtPeople.TabIndex = 7;
             // 
             // cboUse
             // 
             this.cboUse.FormattingEnabled = true;
+            this.cboUse.ItemHeight = 19;
             this.cboUse.Location = new System.Drawing.Point(435, 118);
             this.cboUse.Name = "cboUse";
             this.cboUse.Size = new System.Drawing.Size(150, 27);
@@ -302,14 +303,14 @@
             this.cboShift.Location = new System.Drawing.Point(435, 8);
             this.cboShift.Name = "cboShift";
             this.cboShift.Size = new System.Drawing.Size(150, 27);
-            this.cboShift.TabIndex = 13;
+            this.cboShift.TabIndex = 2;
             // 
             // txtCompleteTime
             // 
             this.txtCompleteTime.Location = new System.Drawing.Point(435, 44);
             this.txtCompleteTime.Name = "txtCompleteTime";
             this.txtCompleteTime.Size = new System.Drawing.Size(150, 26);
-            this.txtCompleteTime.TabIndex = 14;
+            this.txtCompleteTime.TabIndex = 4;
             this.txtCompleteTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCompleteTime_KeyPress);
             // 
             // txtReviceDay
@@ -317,23 +318,23 @@
             this.txtReviceDay.Enabled = false;
             this.txtReviceDay.Location = new System.Drawing.Point(140, 156);
             this.txtReviceDay.Name = "txtReviceDay";
-            this.txtReviceDay.Size = new System.Drawing.Size(167, 26);
-            this.txtReviceDay.TabIndex = 21;
+            this.txtReviceDay.Size = new System.Drawing.Size(176, 26);
+            this.txtReviceDay.TabIndex = 4;
             // 
             // txtRevicePeople
             // 
             this.txtRevicePeople.Location = new System.Drawing.Point(435, 157);
             this.txtRevicePeople.Name = "txtRevicePeople";
             this.txtRevicePeople.Size = new System.Drawing.Size(150, 26);
-            this.txtRevicePeople.TabIndex = 22;
+            this.txtRevicePeople.TabIndex = 9;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(139, 80);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(168, 26);
-            this.dateTimePicker1.TabIndex = 25;
+            this.dateTimePicker1.Size = new System.Drawing.Size(178, 26);
+            this.dateTimePicker1.TabIndex = 5;
             // 
             // dateTimePicker2
             // 
@@ -341,7 +342,7 @@
             this.dateTimePicker2.Location = new System.Drawing.Point(435, 82);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(151, 26);
-            this.dateTimePicker2.TabIndex = 26;
+            this.dateTimePicker2.TabIndex = 6;
             // 
             // office_hours_Insert
             // 
