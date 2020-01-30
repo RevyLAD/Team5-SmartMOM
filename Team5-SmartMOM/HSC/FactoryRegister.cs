@@ -50,6 +50,7 @@ namespace Team5_SmartMOM
                 fvo.FACT_Class = cboFacCate.Text.Trim();
                 fvo.FACT_Code = txtFacCode.Text.Trim();
                 fvo.FACT_Group = cboFacCrow.Text.Trim();
+                fvo.FACT_Type = cboFacCate.DisplayMember.Trim();
                 fvo.FACT_Information = txtExplain.Text.Trim();
                 fvo.FACT_MATDeducation = cboMaterials.Text.Trim();
                 fvo.FACT_Modifier = txtModifier.Text.Trim();

@@ -178,5 +178,37 @@ namespace Project_DAC.HSM
             }
 
         }
+
+        public bool UpdatePlanID(string workID)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+
+                    cmd.Connection = new SqlConnection(this.ConnectionString);
+                    cmd.Connection.Open();
+                    cmd.CommandText = "UPDATE SalesMaster SET Sales_Order_State = '작업대기' WHERE SO_WorkOrderID = @SO_WorkOrderID";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@SO_WorkOrderID", workID);
+
+
+                    cmd.ExecuteNonQuery();
+                    cmd.Connection.Close();
+
+
+                }
+
+                return true;
+
+
+            }
+            catch (Exception err)
+            {
+
+                return false;
+            }
+
+        }
     }
 }

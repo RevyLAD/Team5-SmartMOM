@@ -86,5 +86,17 @@ namespace Team5_SmartMOM.Service
             FacilitieDAC dac = new FacilitieDAC();
             dac.InsertFacilities(vo);
         }
+
+        public void InsertFacilitieDetail(FacilitieDetailVO vo)
+        { 
+            FacilitieDAC dac = new FacilitieDAC();
+            dac.InsertFacilitieDetail(vo);
+        }
+
+        public List<FacilitieDetailVO> FindFacDetail(string Code)
+        {
+            FacilitieDAC dac = new FacilitieDAC();
+            return dac.FindFacDetail(Code);
+        }
     }
 }

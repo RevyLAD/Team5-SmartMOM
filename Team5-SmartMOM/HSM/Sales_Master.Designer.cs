@@ -275,6 +275,7 @@
             this.btnSearch.TabIndex = 76;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // cboProduct
             // 
