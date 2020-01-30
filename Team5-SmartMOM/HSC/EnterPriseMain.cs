@@ -92,5 +92,13 @@ namespace Team5_SmartMOM
                 btnSearch_Click(this, new EventArgs());
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            EnterpriseRegister frm = new EnterpriseRegister();
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
+            DataLoad();
+        }
     }
 }

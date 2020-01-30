@@ -102,7 +102,7 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(382, 10);
+            this.button2.Location = new System.Drawing.Point(310, 10);
             // 
             // button1
             // 
@@ -110,7 +110,7 @@
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(658, 10);
+            this.tileSave.Location = new System.Drawing.Point(674, 10);
             this.tileSave.Click += new System.EventHandler(this.tileSave_Click);
             // 
             // txtExplain
@@ -273,6 +273,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(641, 390);
             this.Name = "BORRegister";
+            this.Load += new System.EventHandler(this.BORRegister_Load);
             this.panelFull.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.panelBottom.ResumeLayout(false);

@@ -100,11 +100,23 @@ namespace Team5_SmartMOM
             return newlist;
         }
 
+        
         private void button2_Click(object sender, EventArgs e)
         {
-            BORRegister frm = new BORRegister(2);
+            BORVO vo = new BORVO();
+            vo.ITEM_Code = dataGridView1.Rows[temp.RowIndex].Cells[0].Value.ToString();
+            vo.FACG_Code = dataGridView1.Rows[temp.RowIndex].Cells[1].Value.ToString();
+            vo.FAC_Code = dataGridView1.Rows[temp.RowIndex].Cells[2].Value.ToString();
+            vo.BOR_TactTime = Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[3].Value.ToString());
+            vo.BOR_Priority = Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[4].Value.ToString());
+            vo.BOR_UseOrNot = dataGridView1.Rows[temp.RowIndex].Cells[6].Value.ToString();
+            vo.BOR_yeild = Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[5].Value.ToString());
+            vo.BOR_Ohters = dataGridView1.Rows[temp.RowIndex].Cells[7].Value?.ToString()??null;
+
+            BORRegister frm = new BORRegister(2, vo);
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
+            DataLoad();
         }
         DataGridViewCellEventArgs temp;
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

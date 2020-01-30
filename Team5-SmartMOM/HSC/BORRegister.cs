@@ -13,12 +13,14 @@ namespace Team5_SmartMOM
 {
     public partial class BORRegister : Team5_SmartMOM.BasePopUpDialog
     {
+        BORVO vo;
         int mode;
-        public BORRegister(int mode)
+        public BORRegister(int mode, BORVO vo = null)
         {
             InitializeComponent();
 
             this.mode = mode;
+            this.vo = vo;
         }
 
         private void tileSave_Click(object sender, EventArgs e)
@@ -44,8 +46,17 @@ namespace Team5_SmartMOM
                 vo.FACG_Code = cboFACG_Code.Text.Trim();
                 vo.FAC_Code = cboFacCode.Text;
                 vo.ITEM_Code = cboITEMCode.Text;
+
+                if (mode == 2)
+                {
+                    service.DeleteBOR(vo.ITEM_Code);
+                }
                 service.InsertBOR(vo);
-                MessageBox.Show("성공적으로 등록되었습니다");
+
+                if (mode == 1)
+                    MessageBox.Show("성공적으로 등록되었습니다");
+                else
+                    MessageBox.Show("성공적으로 수정되었습니다");
                 this.Close();
             }
             else
@@ -64,6 +75,22 @@ namespace Team5_SmartMOM
             CommonUtil.ComboBinding(cboUMU, cmservice.GetUse(), "Common_Key", "Common_Value");
             CommonUtil.ComboBinding(cboFACG_Code, cmservice.GetROUTE(), "Common_Key", "Common_Value");
             CommonUtil.ComboBinding(cboFacCode, service.GetAllFacilitiesDetail(), "FAC_Code", "FAC_Name");
+        }
+
+        private void BORRegister_Load(object sender, EventArgs e)
+        {
+            if(mode == 2)
+            {
+                txtExplain.Text = vo.BOR_Ohters;
+                txtPriority.Text = Convert.ToString(vo.BOR_Priority);
+                txtTacTime.Text= Convert.ToString(vo.BOR_TactTime);
+                cboUMU.Text = vo.BOR_UseOrNot;
+                txtYeild.Text = Convert.ToString(vo.BOR_yeild);
+                cboFACG_Code.Text = vo.FACG_Code;
+                cboFacCode.Text=  vo.FAC_Code;
+                cboITEMCode.Text = vo.ITEM_Code;
+                cboITEMCode.Enabled = false;
+            }
         }
     }
 }
