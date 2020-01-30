@@ -22,8 +22,8 @@ namespace Team5_SmartMOM.PSM
             InitializeComponent();
         }
 
-        
 
+        #region 데이터그리드뷰 체크박스 및 데이터그리드뷰 컬럼띄우기
         private void Purchasing_State_Load(object sender, EventArgs e)
         {
             dataGridView1.AutoGenerateColumns = false;
@@ -59,10 +59,11 @@ namespace Team5_SmartMOM.PSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "입고일", "VO_InDate", true, 150);
 
             DataLoad();            
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            //CheckBoxTrue();
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);            
         }
+        #endregion
 
+        //콤보 바인딩 및 데이터 조회
         public void DataLoad()
         {
             PSM_Service service = new PSM_Service();
@@ -74,9 +75,9 @@ namespace Team5_SmartMOM.PSM
 
             CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "전체");
             CommonUtil.ComboBinding(cbostate, ORDER_STATEVO, "MATERIAL_ORDER_STATE", "MATERIAL_ORDER_STATE", "전체");
-
-
+            
             CheckBoxTrue();
+
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 dataGridView1.Rows[i].Cells[11].ReadOnly = false;
@@ -85,6 +86,7 @@ namespace Team5_SmartMOM.PSM
 
 
         }
+        //데이터그리드뷰 헤더체크박스 
         private void HeaderCheckBox_Click(object sender, EventArgs e)
         {
             dataGridView1.EndEdit();
@@ -94,7 +96,7 @@ namespace Team5_SmartMOM.PSM
                 chkBox.Value = headerCheckBox.Checked;
             }
         }
-
+        //데이트타임피커 기준정보
         private void DtpDateEnd_ValueChanged(object sender, EventArgs e)
         {
             if (dtpDateStart.Value > dtpDateEnd.Value.AddDays(1))
@@ -105,6 +107,7 @@ namespace Team5_SmartMOM.PSM
             }
         }
 
+        //업체정보 콤보박스 검색
         private void cbocompany_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -137,7 +140,7 @@ namespace Team5_SmartMOM.PSM
             }
         }
     
-
+        //발주상태 콤보박스 검색
         private void cbostate_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -170,6 +173,7 @@ namespace Team5_SmartMOM.PSM
             }
         }
 
+        //조회버튼 클릭시 검색조건 기준으로 검색 후 텍스트박스 초기화
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (txtProduct.Text.Length < 1 && txtVoID.Text.Length < 1)
@@ -202,8 +206,11 @@ namespace Team5_SmartMOM.PSM
             {
                 DataLoad();
             }
+            txtProduct.Text = "";
+            txtVoID.Text = "";
         }
 
+        //체크된 항목만 납기일자 변경
         private void button3_Click(object sender, EventArgs e)
         {
             
@@ -240,11 +247,9 @@ namespace Team5_SmartMOM.PSM
 
             DataLoad();
 
-
-
-
         }
         
+        //체크된 항목만 발주 취소기능
         private void button2_Click(object sender, EventArgs e)
         {
             bool bFlag = false;
@@ -279,6 +284,7 @@ namespace Team5_SmartMOM.PSM
             DataLoad();
         }
 
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == 0)
@@ -306,6 +312,25 @@ namespace Team5_SmartMOM.PSM
             }
             
         }
-    }
-    
+
+        //검색후 엔터로 조회버튼
+        private void txtProduct_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar == 13))
+            {
+                btnSearch_Click(null, new EventArgs());
+            }          
+        }
+
+        //숫자로만 입력 및 검색후 엔터로 조회버튼
+        private void txtVoID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
+                e.Handled = true;
+            if ((e.KeyChar == 13))
+            {
+                btnSearch_Click(null, new EventArgs());
+            }
+        }
+    }    
 }

@@ -79,6 +79,22 @@ namespace Project_DAC
             }
         }
 
+        public List<ItemTypeVO> GetAllItemType()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select distinct ITEM_Type from ITEM ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ItemTypeVO> list = Helper.DataReaderMapToList<ItemTypeVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
         public List<PlanIDVO> GetAllPlanID()
         {
             using (SqlCommand cmd = new SqlCommand())

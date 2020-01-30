@@ -216,6 +216,7 @@
             this.txtVoID.Name = "txtVoID";
             this.txtVoID.Size = new System.Drawing.Size(160, 21);
             this.txtVoID.TabIndex = 32;
+            this.txtVoID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVoID_KeyPress);
             // 
             // txtProduct
             // 
@@ -223,6 +224,7 @@
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(160, 21);
             this.txtProduct.TabIndex = 34;
+            this.txtProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
             // 
             // btnSearch
             // 

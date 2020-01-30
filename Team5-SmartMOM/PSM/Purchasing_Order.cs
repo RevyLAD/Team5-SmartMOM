@@ -23,7 +23,7 @@ namespace Team5_SmartMOM.PSM
         {
             InitializeComponent();
         }
-
+        #region 데이터그리드뷰 체크박스 및 데이터그리드뷰 컬럼띄우기
         private void Purchasing_Order_Load(object sender, EventArgs e)
         {
             dataGridView1.AutoGenerateColumns = false;
@@ -83,6 +83,9 @@ namespace Team5_SmartMOM.PSM
             DataLoad();
             CheckBoxTrue();
         }
+        #endregion
+
+        //콤보 바인딩 및 데이터 조회
         public void DataLoad()
         {
             PSM_Service service = new PSM_Service();
@@ -97,6 +100,7 @@ namespace Team5_SmartMOM.PSM
 
         }
 
+        //데이터그리드뷰 헤더체크박스 
         private void HeaderCheckBox_Click(object sender, EventArgs e)
         {
             dataGridView1.EndEdit();
@@ -107,6 +111,7 @@ namespace Team5_SmartMOM.PSM
             }
         }
 
+        //데이터그리드뷰 헤더체크박스 
         private void HeaderCheckBox_Click2(object sender, EventArgs e)
         {
             dataGridView2.EndEdit();
@@ -122,6 +127,7 @@ namespace Team5_SmartMOM.PSM
             this.Close();
         }
 
+        //업체이름 콤보박스 검색
         private void cboCompany_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -156,14 +162,18 @@ namespace Team5_SmartMOM.PSM
             }
         }
 
+        //텍스트박스 검색시 엔터로 검색가능 및 숫자만 입력
         private void txtPartNo_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
+                e.Handled = true;
             if ((e.KeyChar == 13))
             {
                 btnSearch_Click(null, new EventArgs());
             }
         }
 
+        //조회버튼시 검색조건 만족
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (txtPartNo.Text.Length < 1)
@@ -187,6 +197,7 @@ namespace Team5_SmartMOM.PSM
             }
         }
 
+        //데이터그리드뷰 체크박스 false
         private void CheckBoxTrue()
         {
             for (int i = 0; i < dataGridView1.RowCount; i++)
@@ -194,6 +205,7 @@ namespace Team5_SmartMOM.PSM
                 dataGridView1.Rows[i].Cells[0].Value = false;
             }
         }
+        //데이터그리드뷰 체크박스 false
         private void CheckBoxTrue2()
         {
             for (int i = 0; i < dataGridView2.RowCount; i++)
@@ -202,6 +214,7 @@ namespace Team5_SmartMOM.PSM
             }
         }
 
+        //왼쪽 마스터 그리드뷰에서 체크된 정보를 마스터디테일 그리드뷰로 정보 넣기
         private void btnRight_Click(object sender, EventArgs e)
         {
             PSM_Service service = new PSM_Service();
@@ -217,6 +230,7 @@ namespace Team5_SmartMOM.PSM
             CheckBoxTrue2();
         }
 
+        //오른쪽 마스터디테일에서 체크된 정보 빼기
         private void btnLeft_Click(object sender, EventArgs e)
         {
             List<CompanyCodeDetailVO> lists = new List<CompanyCodeDetailVO>();
@@ -243,6 +257,7 @@ namespace Team5_SmartMOM.PSM
             CheckBoxTrue2();
         }
 
+        #region 마스터디테일 그리드뷰에서 체크된 항목만 발주신청
         private void btnOrder_Click(object sender, EventArgs e)
         {
             bool bFlag = false;
@@ -276,6 +291,7 @@ namespace Team5_SmartMOM.PSM
             dataGridView2.DataSource = null;
 
         }
+        #endregion
     }
 }
 

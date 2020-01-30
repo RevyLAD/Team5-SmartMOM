@@ -31,6 +31,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.circularButton5 = new Team5_SmartMOM.PSM.CircularButton();
+            this.circularButton6 = new Team5_SmartMOM.PSM.CircularButton();
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -39,7 +41,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.circularButton1 = new Team5_SmartMOM.PSM.CircularButton();
+            this.circularButton2 = new Team5_SmartMOM.PSM.CircularButton();
             this.label11 = new System.Windows.Forms.Label();
+            this.circularButton3 = new Team5_SmartMOM.PSM.CircularButton();
+            this.circularButton4 = new Team5_SmartMOM.PSM.CircularButton();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -47,6 +53,18 @@
             this.button9 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panelZ1 = new PanelZ.PanelZ();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtOrderNum = new System.Windows.Forms.TextBox();
+            this.txtProduct = new System.Windows.Forms.TextBox();
+            this.cbocompany = new System.Windows.Forms.ComboBox();
+            this.dtpDateEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelMid = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -54,26 +72,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.circularButton5 = new Team5_SmartMOM.PSM.CircularButton();
-            this.circularButton6 = new Team5_SmartMOM.PSM.CircularButton();
-            this.circularButton1 = new Team5_SmartMOM.PSM.CircularButton();
-            this.circularButton2 = new Team5_SmartMOM.PSM.CircularButton();
-            this.circularButton3 = new Team5_SmartMOM.PSM.CircularButton();
-            this.circularButton4 = new Team5_SmartMOM.PSM.CircularButton();
-            this.panelZ1 = new PanelZ.PanelZ();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cbocompany = new System.Windows.Forms.ComboBox();
-            this.dtpDateEnd = new System.Windows.Forms.DateTimePicker();
-            this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -84,9 +82,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panelZ1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelMid.SuspendLayout();
-            this.panelZ1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -126,6 +124,24 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1222, 31);
             this.panel9.TabIndex = 7;
+            // 
+            // circularButton5
+            // 
+            this.circularButton5.Location = new System.Drawing.Point(704, 0);
+            this.circularButton5.Name = "circularButton5";
+            this.circularButton5.Size = new System.Drawing.Size(31, 30);
+            this.circularButton5.TabIndex = 15;
+            this.circularButton5.Text = ">";
+            this.circularButton5.UseVisualStyleBackColor = true;
+            // 
+            // circularButton6
+            // 
+            this.circularButton6.Location = new System.Drawing.Point(622, 0);
+            this.circularButton6.Name = "circularButton6";
+            this.circularButton6.Size = new System.Drawing.Size(31, 30);
+            this.circularButton6.TabIndex = 13;
+            this.circularButton6.Text = "<";
+            this.circularButton6.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -223,6 +239,24 @@
             this.panel8.Size = new System.Drawing.Size(1222, 31);
             this.panel8.TabIndex = 16;
             // 
+            // circularButton1
+            // 
+            this.circularButton1.Location = new System.Drawing.Point(704, 1);
+            this.circularButton1.Name = "circularButton1";
+            this.circularButton1.Size = new System.Drawing.Size(31, 30);
+            this.circularButton1.TabIndex = 15;
+            this.circularButton1.Text = ">";
+            this.circularButton1.UseVisualStyleBackColor = true;
+            // 
+            // circularButton2
+            // 
+            this.circularButton2.Location = new System.Drawing.Point(622, 1);
+            this.circularButton2.Name = "circularButton2";
+            this.circularButton2.Size = new System.Drawing.Size(31, 30);
+            this.circularButton2.TabIndex = 13;
+            this.circularButton2.Text = "<";
+            this.circularButton2.UseVisualStyleBackColor = true;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -231,6 +265,24 @@
             this.label11.Size = new System.Drawing.Size(39, 12);
             this.label11.TabIndex = 14;
             this.label11.Text = "1  /  1";
+            // 
+            // circularButton3
+            // 
+            this.circularButton3.Location = new System.Drawing.Point(632, 1);
+            this.circularButton3.Name = "circularButton3";
+            this.circularButton3.Size = new System.Drawing.Size(31, 30);
+            this.circularButton3.TabIndex = 15;
+            this.circularButton3.Text = ">";
+            this.circularButton3.UseVisualStyleBackColor = true;
+            // 
+            // circularButton4
+            // 
+            this.circularButton4.Location = new System.Drawing.Point(550, 1);
+            this.circularButton4.Name = "circularButton4";
+            this.circularButton4.Size = new System.Drawing.Size(31, 30);
+            this.circularButton4.TabIndex = 13;
+            this.circularButton4.Text = "<";
+            this.circularButton4.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -312,6 +364,139 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1222, 87);
             this.panel3.TabIndex = 0;
+            // 
+            // panelZ1
+            // 
+            this.panelZ1.BackColor = System.Drawing.Color.White;
+            this.panelZ1.Controls.Add(this.btnSearch);
+            this.panelZ1.Controls.Add(this.txtOrderNum);
+            this.panelZ1.Controls.Add(this.txtProduct);
+            this.panelZ1.Controls.Add(this.cbocompany);
+            this.panelZ1.Controls.Add(this.dtpDateEnd);
+            this.panelZ1.Controls.Add(this.dtpDateStart);
+            this.panelZ1.Controls.Add(this.label10);
+            this.panelZ1.Controls.Add(this.label7);
+            this.panelZ1.Controls.Add(this.label4);
+            this.panelZ1.Controls.Add(this.label3);
+            this.panelZ1.Controls.Add(this.label8);
+            this.panelZ1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelZ1.EndColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.panelZ1.GradientAngle = 90;
+            this.panelZ1.Location = new System.Drawing.Point(0, 0);
+            this.panelZ1.Name = "panelZ1";
+            this.panelZ1.Size = new System.Drawing.Size(1222, 87);
+            this.panelZ1.StartColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(210)))), ((int)(((byte)(220)))));
+            this.panelZ1.TabIndex = 1;
+            this.panelZ1.Transparent1 = 150;
+            this.panelZ1.Transparent2 = 150;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(1130, 47);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(81, 30);
+            this.btnSearch.TabIndex = 77;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtOrderNum
+            // 
+            this.txtOrderNum.Location = new System.Drawing.Point(106, 47);
+            this.txtOrderNum.Name = "txtOrderNum";
+            this.txtOrderNum.Size = new System.Drawing.Size(216, 21);
+            this.txtOrderNum.TabIndex = 76;
+            this.txtOrderNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOrderNum_KeyPress);
+            // 
+            // txtProduct
+            // 
+            this.txtProduct.Location = new System.Drawing.Point(813, 14);
+            this.txtProduct.Name = "txtProduct";
+            this.txtProduct.Size = new System.Drawing.Size(160, 21);
+            this.txtProduct.TabIndex = 75;
+            this.txtProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
+            // 
+            // cbocompany
+            // 
+            this.cbocompany.FormattingEnabled = true;
+            this.cbocompany.Location = new System.Drawing.Point(502, 11);
+            this.cbocompany.Name = "cbocompany";
+            this.cbocompany.Size = new System.Drawing.Size(161, 20);
+            this.cbocompany.TabIndex = 73;
+            this.cbocompany.SelectedIndexChanged += new System.EventHandler(this.cbocompany_SelectedIndexChanged);
+            // 
+            // dtpDateEnd
+            // 
+            this.dtpDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateEnd.Location = new System.Drawing.Point(240, 13);
+            this.dtpDateEnd.Name = "dtpDateEnd";
+            this.dtpDateEnd.Size = new System.Drawing.Size(92, 21);
+            this.dtpDateEnd.TabIndex = 72;
+            this.dtpDateEnd.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
+            this.dtpDateEnd.ValueChanged += new System.EventHandler(this.dtpDateEnd_ValueChanged);
+            // 
+            // dtpDateStart
+            // 
+            this.dtpDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateStart.Location = new System.Drawing.Point(106, 11);
+            this.dtpDateStart.Name = "dtpDateStart";
+            this.dtpDateStart.Size = new System.Drawing.Size(93, 21);
+            this.dtpDateStart.TabIndex = 71;
+            this.dtpDateStart.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Location = new System.Drawing.Point(205, 16);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(19, 12);
+            this.label10.TabIndex = 70;
+            this.label10.Text = " - ";
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(737, 13);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 19);
+            this.label7.TabIndex = 69;
+            this.label7.Text = "* 품명";
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(404, 13);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 19);
+            this.label4.TabIndex = 67;
+            this.label4.Text = "* 업체";
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(10, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 19);
+            this.label3.TabIndex = 66;
+            this.label3.Text = "* 발주번호";
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(10, 12);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 19);
+            this.label8.TabIndex = 65;
+            this.label8.Text = "* 납기일자";
             // 
             // panel2
             // 
@@ -408,208 +593,6 @@
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Visible = false;
             // 
-            // circularButton5
-            // 
-            this.circularButton5.Location = new System.Drawing.Point(704, 0);
-            this.circularButton5.Name = "circularButton5";
-            this.circularButton5.Size = new System.Drawing.Size(31, 30);
-            this.circularButton5.TabIndex = 15;
-            this.circularButton5.Text = ">";
-            this.circularButton5.UseVisualStyleBackColor = true;
-            // 
-            // circularButton6
-            // 
-            this.circularButton6.Location = new System.Drawing.Point(622, 0);
-            this.circularButton6.Name = "circularButton6";
-            this.circularButton6.Size = new System.Drawing.Size(31, 30);
-            this.circularButton6.TabIndex = 13;
-            this.circularButton6.Text = "<";
-            this.circularButton6.UseVisualStyleBackColor = true;
-            // 
-            // circularButton1
-            // 
-            this.circularButton1.Location = new System.Drawing.Point(704, 1);
-            this.circularButton1.Name = "circularButton1";
-            this.circularButton1.Size = new System.Drawing.Size(31, 30);
-            this.circularButton1.TabIndex = 15;
-            this.circularButton1.Text = ">";
-            this.circularButton1.UseVisualStyleBackColor = true;
-            // 
-            // circularButton2
-            // 
-            this.circularButton2.Location = new System.Drawing.Point(622, 1);
-            this.circularButton2.Name = "circularButton2";
-            this.circularButton2.Size = new System.Drawing.Size(31, 30);
-            this.circularButton2.TabIndex = 13;
-            this.circularButton2.Text = "<";
-            this.circularButton2.UseVisualStyleBackColor = true;
-            // 
-            // circularButton3
-            // 
-            this.circularButton3.Location = new System.Drawing.Point(632, 1);
-            this.circularButton3.Name = "circularButton3";
-            this.circularButton3.Size = new System.Drawing.Size(31, 30);
-            this.circularButton3.TabIndex = 15;
-            this.circularButton3.Text = ">";
-            this.circularButton3.UseVisualStyleBackColor = true;
-            // 
-            // circularButton4
-            // 
-            this.circularButton4.Location = new System.Drawing.Point(550, 1);
-            this.circularButton4.Name = "circularButton4";
-            this.circularButton4.Size = new System.Drawing.Size(31, 30);
-            this.circularButton4.TabIndex = 13;
-            this.circularButton4.Text = "<";
-            this.circularButton4.UseVisualStyleBackColor = true;
-            // 
-            // panelZ1
-            // 
-            this.panelZ1.BackColor = System.Drawing.Color.White;
-            this.panelZ1.Controls.Add(this.btnSearch);
-            this.panelZ1.Controls.Add(this.textBox3);
-            this.panelZ1.Controls.Add(this.textBox2);
-            this.panelZ1.Controls.Add(this.textBox1);
-            this.panelZ1.Controls.Add(this.cbocompany);
-            this.panelZ1.Controls.Add(this.dtpDateEnd);
-            this.panelZ1.Controls.Add(this.dtpDateStart);
-            this.panelZ1.Controls.Add(this.label10);
-            this.panelZ1.Controls.Add(this.label7);
-            this.panelZ1.Controls.Add(this.label5);
-            this.panelZ1.Controls.Add(this.label4);
-            this.panelZ1.Controls.Add(this.label3);
-            this.panelZ1.Controls.Add(this.label8);
-            this.panelZ1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelZ1.EndColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
-            this.panelZ1.GradientAngle = 90;
-            this.panelZ1.Location = new System.Drawing.Point(0, 0);
-            this.panelZ1.Name = "panelZ1";
-            this.panelZ1.Size = new System.Drawing.Size(1222, 87);
-            this.panelZ1.StartColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(210)))), ((int)(((byte)(220)))));
-            this.panelZ1.TabIndex = 1;
-            this.panelZ1.Transparent1 = 150;
-            this.panelZ1.Transparent2 = 150;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
-            this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1130, 47);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(81, 30);
-            this.btnSearch.TabIndex = 77;
-            this.btnSearch.Text = "조회";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(106, 47);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(216, 21);
-            this.textBox3.TabIndex = 76;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(813, 14);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 21);
-            this.textBox2.TabIndex = 75;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(502, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 21);
-            this.textBox1.TabIndex = 74;
-            // 
-            // cbocompany
-            // 
-            this.cbocompany.FormattingEnabled = true;
-            this.cbocompany.Location = new System.Drawing.Point(502, 11);
-            this.cbocompany.Name = "cbocompany";
-            this.cbocompany.Size = new System.Drawing.Size(161, 20);
-            this.cbocompany.TabIndex = 73;
-            // 
-            // dtpDateEnd
-            // 
-            this.dtpDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateEnd.Location = new System.Drawing.Point(240, 13);
-            this.dtpDateEnd.Name = "dtpDateEnd";
-            this.dtpDateEnd.Size = new System.Drawing.Size(92, 21);
-            this.dtpDateEnd.TabIndex = 72;
-            this.dtpDateEnd.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
-            this.dtpDateEnd.ValueChanged += new System.EventHandler(this.dtpDateEnd_ValueChanged);
-            // 
-            // dtpDateStart
-            // 
-            this.dtpDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateStart.Location = new System.Drawing.Point(106, 11);
-            this.dtpDateStart.Name = "dtpDateStart";
-            this.dtpDateStart.Size = new System.Drawing.Size(93, 21);
-            this.dtpDateStart.TabIndex = 71;
-            this.dtpDateStart.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Location = new System.Drawing.Point(205, 16);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(19, 12);
-            this.label10.TabIndex = 70;
-            this.label10.Text = " - ";
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(737, 13);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 19);
-            this.label7.TabIndex = 69;
-            this.label7.Text = "* 품목";
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(404, 47);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 19);
-            this.label5.TabIndex = 68;
-            this.label5.Text = "* 납품업체";
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(404, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 19);
-            this.label4.TabIndex = 67;
-            this.label4.Text = "* 업체";
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(10, 46);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 19);
-            this.label3.TabIndex = 66;
-            this.label3.Text = "* 발주완료";
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(10, 12);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 19);
-            this.label8.TabIndex = 65;
-            this.label8.Text = "* 납기일자";
-            // 
             // Supplier
             // 
             this.ClientSize = new System.Drawing.Size(1222, 952);
@@ -631,10 +614,10 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panelMid.ResumeLayout(false);
             this.panelZ1.ResumeLayout(false);
             this.panelZ1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panelMid.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -675,15 +658,13 @@
         protected System.Windows.Forms.Button button7;
         private PanelZ.PanelZ panelZ1;
         protected System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtOrderNum;
+        private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.ComboBox cbocompany;
         private System.Windows.Forms.DateTimePicker dtpDateEnd;
         private System.Windows.Forms.DateTimePicker dtpDateStart;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;

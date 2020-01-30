@@ -13,7 +13,7 @@ using Team5_SmartMOM.BaseForm;
 namespace Team5_SmartMOM.PSM
 {
     public partial class Purchasing : BaseGridForm
-    {
+    {        
         public Purchasing()
         {
             InitializeComponent();
@@ -61,10 +61,19 @@ namespace Team5_SmartMOM.PSM
         public void DataLoad()
         {
             CommonCodeService service = new CommonCodeService();
-            List<CommonCodeVO> common = service.GetAllCommonCode();            
-            CommonUtil.ComboBinding(cboProduct, common, "Common_Key", "Common_Value", "전체");
-        }
+            List<ItemTypeVO> common = service.GetAllItemType();
+            List<PlanIDVO> listPlanID = service.GetAllPlanID();
+            List<CompanyCodeVO> company = service.GetAllCompanyCode();
 
+            //콤보박스 콤보바인딩
+            CommonUtil.ComboBinding(cboPlanID, listPlanID, "Plan_ID", "Plan_ID", "전체");
+            CommonUtil.ComboBinding(cboProduct, common, "ITEM_Type", "ITEM_Type", "전체");
+            CommonUtil.ComboBinding(cbocompany, company, "COM_Name", "COM_Code", "전체");
+
+
+            
+        }
+        //발주 팝업창
         private void button2_Click(object sender, EventArgs e)
         {
             Purchasing_Order frm = new Purchasing_Order();
@@ -72,6 +81,7 @@ namespace Team5_SmartMOM.PSM
             frm.ShowDialog();
         }
 
+        //데이트타임피커 기준정보
         private void dtpDateEnd_ValueChanged(object sender, EventArgs e)
         {
             if (dtpDateStart.Value > dtpDateEnd.Value.AddDays(1))

@@ -183,5 +183,22 @@ VO_StartDate,  VO_InDate) VALUES (@COM_Code, @MATERIAL_ORDER_STATE, @ITEM_Code, 
 
             }
         }
+        public List<SupplierVO> Supplier()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "SELECT VO_ID, VO_StartDate, ITEM_OrderComp, v.COM_Code, COM_Name, v.ITEM_Code, ITEM_Name, ITEM_Size, ITEM_Unit, " +
+                    "ITEM_ImportIns, VO_Quantity, VO_EndDate, ITEM_OrderMethod FROM VendorOrder v " +
+                    "inner join ITEM i on v.ITEM_Code = i.ITEM_Code inner join Company c on v.COM_Code = c.COM_Code";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<SupplierVO> list = Helper.DataReaderMapToList<SupplierVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
     }
 }

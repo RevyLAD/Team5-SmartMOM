@@ -64,5 +64,11 @@ namespace Team5_SmartMOM.Service
             return dac.OrderDelete(deletelist);
         }
 
+        public List<SupplierVO> Supplier()
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.Supplier();
+        }
+
     }
 }
