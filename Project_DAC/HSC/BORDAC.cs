@@ -51,5 +51,20 @@ namespace Project_DAC
                 cmd.Connection.Close();
             }
         }
+
+        public void DeleteBOR(string Code)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "delete from BOR where ITEM_Code = @ITEM_Code";
+
+                cmd.Connection.Open();
+
+                cmd.Parameters.AddWithValue("@ITEM_Code", Code);
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+        }
     }
 }

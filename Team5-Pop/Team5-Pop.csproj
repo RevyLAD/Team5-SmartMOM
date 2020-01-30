@@ -68,6 +68,18 @@
     <Compile Include="Monitor.Designer.cs">
       <DependentUpon>Monitor.cs</DependentUpon>
     </Compile>
+    <Compile Include="POPGaDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPGaDong.Designer.cs">
+      <DependentUpon>POPGaDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PoPMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PoPMain.Designer.cs">
+      <DependentUpon>PoPMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductionRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +111,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Monitor.resx">
       <DependentUpon>Monitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPGaDong.resx">
+      <DependentUpon>POPGaDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PoPMain.resx">
+      <DependentUpon>PoPMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionRegister.resx">
       <DependentUpon>ProductionRegister.cs</DependentUpon>
