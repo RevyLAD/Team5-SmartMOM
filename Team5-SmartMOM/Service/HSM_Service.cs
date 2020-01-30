@@ -23,11 +23,29 @@ namespace Team5_SmartMOM.Service
             return dac.UploadPassiveSalesMaster(sales);
         }
 
+        public List<WorkOrderVO> GetWorkOrderByPlanId(string planId)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.GetWorkOrderByPlanId(planId);
+        }
+
+        public bool InsertWorkOrder(string planId)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.InsertWorkOrder(planId);
+        }
+
         public List<SalesMasterAllVO> GetAllSalesMaster()
         {
             SalesMasterDAC dac = new SalesMasterDAC();
             return dac.GetAllSalesMaster();
         }
+        public List<SalesMasterWorkOrder> GetSalesMasterByPlanID(string planId)
+        {
+            SalesMasterDAC dac = new SalesMasterDAC();
+            return dac.GetSalesMasterByPlanID(planId);
+        }
+        
 
         public DataSet GetAllDemandPlan(PlanningVO plan)
         {
