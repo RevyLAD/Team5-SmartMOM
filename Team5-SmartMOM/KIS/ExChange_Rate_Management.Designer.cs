@@ -114,6 +114,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(506, 16);
             this.label3.Name = "label3";
@@ -124,6 +125,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(17, 16);
             this.label2.Name = "label2";

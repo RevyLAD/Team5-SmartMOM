@@ -53,6 +53,8 @@ namespace Team5_SmartMOM
             combo.DisplayMember = CodeNm;
             combo.ValueMember = Code;
         }
+
+
         #endregion
 
     }
