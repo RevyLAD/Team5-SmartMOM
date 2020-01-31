@@ -32,7 +32,7 @@ namespace Team5_SmartMOM.HSM
 
             dtpDateEnd.Value = DateTime.Now.AddMonths(1);
             InitCombo();
-
+            btnSearch.PerformClick();
 
         }
 

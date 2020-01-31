@@ -24,6 +24,7 @@ namespace Team5_SmartMOM.HSM
 
             dtpDateEnd.Value = DateTime.Now.AddMonths(1);
             InitCombo();
+            btnSearch.PerformClick();
         }
 
 
@@ -36,7 +37,7 @@ namespace Team5_SmartMOM.HSM
 
 
 
-            CommonUtil.ComboBinding(cboPlanID, listPlanID, "Plan_ID", "Plan_ID", "전체");
+            CommonUtil.ComboBinding(cboPlanID, listPlanID, "Plan_ID", "Plan_ID");
             CommonUtil.ComboBinding(cboProduct, listItemCode, "ITEM_Code", "ITEM_Name", "");
 
         }
