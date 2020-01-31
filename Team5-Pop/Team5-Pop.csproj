@@ -68,6 +68,7 @@
     <Compile Include="Monitor.Designer.cs">
       <DependentUpon>Monitor.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopDAC.cs" />
     <Compile Include="POPGaDong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +81,8 @@
     <Compile Include="PoPMain.Designer.cs">
       <DependentUpon>PoPMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopService.cs" />
+    <Compile Include="PopVO.cs" />
     <Compile Include="ProductionRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +97,7 @@
     <Compile Include="RegisterPopUp.Designer.cs">
       <DependentUpon>RegisterPopUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="UtilityClass.cs" />
     <Compile Include="WorkOrderList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +196,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Free_Sample_By_Wix.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Project_DAC\Project_DAC.csproj">
+      <Project>{68769EEE-D910-4EF3-AECF-E27AC2621D80}</Project>
+      <Name>Project_DAC</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -29,30 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblNowDate = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblNowTime = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.MenuGroup = new System.Windows.Forms.GroupBox();
-            this.btnStart = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
             this.TextGroup = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.btn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtBadNum = new System.Windows.Forms.TextBox();
+            this.txtGoodNum = new System.Windows.Forms.TextBox();
+            this.txtProductNum = new System.Windows.Forms.TextBox();
+            this.txtSNum = new System.Windows.Forms.TextBox();
+            this.txtOrderNum = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -63,35 +60,47 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtOrderNum = new System.Windows.Forms.TextBox();
-            this.txtSNum = new System.Windows.Forms.TextBox();
-            this.txtProductNum = new System.Windows.Forms.TextBox();
-            this.txtGoodNum = new System.Windows.Forms.TextBox();
-            this.txtBadNum = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btn = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnPageText = new System.Windows.Forms.Button();
+            this.btnBeforePage = new System.Windows.Forms.Button();
+            this.btnNextPage = new System.Windows.Forms.Button();
+            this.btnEndPage = new System.Windows.Forms.Button();
+            this.btnFirstPage = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnFirstPage = new System.Windows.Forms.Button();
-            this.btnEndPage = new System.Windows.Forms.Button();
-            this.btnNextPage = new System.Windows.Forms.Button();
-            this.btnBeforePage = new System.Windows.Forms.Button();
-            this.btnPageText = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.MenuGroup.SuspendLayout();
             this.TextGroup.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNowDate
@@ -120,20 +129,6 @@
             this.panel1.Size = new System.Drawing.Size(984, 43);
             this.panel1.TabIndex = 2;
             // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(385, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(233, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "생산실적관리 [POP]";
-            // 
             // lblNowTime
             // 
             this.lblNowTime.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -148,29 +143,38 @@
             this.lblNowTime.Text = "time";
             this.lblNowTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(385, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(233, 24);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "생산실적관리 [POP]";
+            // 
             // MenuGroup
             // 
             this.MenuGroup.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.MenuGroup.Controls.Add(this.button8);
+            this.MenuGroup.Controls.Add(this.button7);
+            this.MenuGroup.Controls.Add(this.button6);
+            this.MenuGroup.Controls.Add(this.button5);
+            this.MenuGroup.Controls.Add(this.button4);
+            this.MenuGroup.Controls.Add(this.button3);
             this.MenuGroup.Controls.Add(this.button1);
             this.MenuGroup.Controls.Add(this.btnStart);
             this.MenuGroup.Dock = System.Windows.Forms.DockStyle.Right;
             this.MenuGroup.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MenuGroup.Location = new System.Drawing.Point(907, 43);
             this.MenuGroup.Name = "MenuGroup";
-            this.MenuGroup.Size = new System.Drawing.Size(77, 618);
+            this.MenuGroup.Size = new System.Drawing.Size(77, 605);
             this.MenuGroup.TabIndex = 3;
             this.MenuGroup.TabStop = false;
-            // 
-            // btnStart
-            // 
-            this.btnStart.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnStart.Image = global::Team5_Pop.Properties.Resources._checked;
-            this.btnStart.Location = new System.Drawing.Point(3, 17);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(71, 73);
-            this.btnStart.TabIndex = 0;
-            this.btnStart.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -182,6 +186,17 @@
             this.button1.Size = new System.Drawing.Size(71, 73);
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnStart
+            // 
+            this.btnStart.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnStart.Image = global::Team5_Pop.Properties.Resources._checked;
+            this.btnStart.Location = new System.Drawing.Point(3, 17);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(71, 73);
+            this.btnStart.TabIndex = 0;
+            this.btnStart.UseVisualStyleBackColor = true;
             // 
             // TextGroup
             // 
@@ -229,157 +244,115 @@
             this.TextGroup.TabIndex = 4;
             this.TextGroup.TabStop = false;
             // 
-            // label1
+            // label18
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(12, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "작업 일자";
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label18.Location = new System.Drawing.Point(644, 163);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(63, 13);
+            this.label18.TabIndex = 35;
+            this.label18.Text = "불량 수량";
             // 
-            // label3
+            // label17
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(12, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 15);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "공       정";
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label17.Location = new System.Drawing.Point(644, 128);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(63, 13);
+            this.label17.TabIndex = 34;
+            this.label17.Text = "양품 수량";
             // 
-            // label4
+            // label16
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(12, 103);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 15);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "지시 번호";
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label16.Location = new System.Drawing.Point(644, 94);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(63, 13);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "생산 잔량";
             // 
-            // label5
+            // label15
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(12, 132);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 15);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "실적 번호";
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label15.Location = new System.Drawing.Point(644, 59);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(63, 13);
+            this.label15.TabIndex = 32;
+            this.label15.Text = "실적 합계";
             // 
-            // label6
+            // label14
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(12, 74);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 15);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "작  업  장";
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label14.Location = new System.Drawing.Point(644, 24);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(63, 13);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "지시 수량";
             // 
-            // label7
+            // txtBadNum
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(12, 161);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 15);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "시작 시간";
+            this.txtBadNum.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtBadNum.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBadNum.ForeColor = System.Drawing.Color.Crimson;
+            this.txtBadNum.Location = new System.Drawing.Point(710, 154);
+            this.txtBadNum.Name = "txtBadNum";
+            this.txtBadNum.Size = new System.Drawing.Size(190, 30);
+            this.txtBadNum.TabIndex = 30;
+            this.txtBadNum.Text = "0";
+            this.txtBadNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox1
+            // txtGoodNum
             // 
-            this.textBox1.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(77, 158);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(208, 22);
-            this.textBox1.TabIndex = 6;
+            this.txtGoodNum.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtGoodNum.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGoodNum.ForeColor = System.Drawing.Color.PaleGreen;
+            this.txtGoodNum.Location = new System.Drawing.Point(710, 119);
+            this.txtGoodNum.Name = "txtGoodNum";
+            this.txtGoodNum.Size = new System.Drawing.Size(190, 30);
+            this.txtGoodNum.TabIndex = 29;
+            this.txtGoodNum.Text = "0";
+            this.txtGoodNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox2
+            // txtProductNum
             // 
-            this.textBox2.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.Location = new System.Drawing.Point(77, 129);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(208, 22);
-            this.textBox2.TabIndex = 7;
+            this.txtProductNum.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtProductNum.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductNum.ForeColor = System.Drawing.Color.DarkOrange;
+            this.txtProductNum.Location = new System.Drawing.Point(710, 84);
+            this.txtProductNum.Name = "txtProductNum";
+            this.txtProductNum.Size = new System.Drawing.Size(190, 30);
+            this.txtProductNum.TabIndex = 28;
+            this.txtProductNum.Text = "0";
+            this.txtProductNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox3
+            // txtSNum
             // 
-            this.textBox3.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox3.Location = new System.Drawing.Point(77, 100);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(208, 22);
-            this.textBox3.TabIndex = 8;
+            this.txtSNum.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtSNum.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSNum.ForeColor = System.Drawing.Color.DarkOrange;
+            this.txtSNum.Location = new System.Drawing.Point(710, 49);
+            this.txtSNum.Name = "txtSNum";
+            this.txtSNum.Size = new System.Drawing.Size(190, 30);
+            this.txtSNum.TabIndex = 27;
+            this.txtSNum.Text = "0";
+            this.txtSNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox4
+            // txtOrderNum
             // 
-            this.textBox4.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox4.Location = new System.Drawing.Point(77, 71);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(180, 22);
-            this.textBox4.TabIndex = 9;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox5.Location = new System.Drawing.Point(77, 42);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(180, 22);
-            this.textBox5.TabIndex = 10;
-            // 
-            // btn
-            // 
-            this.btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn.Location = new System.Drawing.Point(253, 71);
-            this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(32, 22);
-            this.btn.TabIndex = 11;
-            this.btn.Text = "●";
-            this.btn.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Location = new System.Drawing.Point(253, 42);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(32, 22);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "●";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(77, 15);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(122, 22);
-            this.dateTimePicker1.TabIndex = 13;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateTimePicker2.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(227, 15);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(122, 22);
-            this.dateTimePicker2.TabIndex = 14;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(208, 19);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(12, 15);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "-";
+            this.txtOrderNum.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtOrderNum.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtOrderNum.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtOrderNum.Location = new System.Drawing.Point(710, 14);
+            this.txtOrderNum.Name = "txtOrderNum";
+            this.txtOrderNum.Size = new System.Drawing.Size(190, 30);
+            this.txtOrderNum.TabIndex = 26;
+            this.txtOrderNum.Text = "0";
+            this.txtOrderNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox6
             // 
@@ -471,115 +444,157 @@
             this.label13.TabIndex = 16;
             this.label13.Text = "품       번";
             // 
-            // txtOrderNum
+            // label8
             // 
-            this.txtOrderNum.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtOrderNum.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtOrderNum.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtOrderNum.Location = new System.Drawing.Point(710, 14);
-            this.txtOrderNum.Name = "txtOrderNum";
-            this.txtOrderNum.Size = new System.Drawing.Size(190, 30);
-            this.txtOrderNum.TabIndex = 26;
-            this.txtOrderNum.Text = "0";
-            this.txtOrderNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.Location = new System.Drawing.Point(208, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(12, 15);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "-";
             // 
-            // txtSNum
+            // dateTimePicker2
             // 
-            this.txtSNum.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtSNum.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSNum.ForeColor = System.Drawing.Color.DarkOrange;
-            this.txtSNum.Location = new System.Drawing.Point(710, 49);
-            this.txtSNum.Name = "txtSNum";
-            this.txtSNum.Size = new System.Drawing.Size(190, 30);
-            this.txtSNum.TabIndex = 27;
-            this.txtSNum.Text = "0";
-            this.txtSNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dateTimePicker2.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(227, 15);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(122, 22);
+            this.dateTimePicker2.TabIndex = 14;
             // 
-            // txtProductNum
+            // dateTimePicker1
             // 
-            this.txtProductNum.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtProductNum.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductNum.ForeColor = System.Drawing.Color.DarkOrange;
-            this.txtProductNum.Location = new System.Drawing.Point(710, 84);
-            this.txtProductNum.Name = "txtProductNum";
-            this.txtProductNum.Size = new System.Drawing.Size(190, 30);
-            this.txtProductNum.TabIndex = 28;
-            this.txtProductNum.Text = "0";
-            this.txtProductNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dateTimePicker1.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(77, 15);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(122, 22);
+            this.dateTimePicker1.TabIndex = 13;
             // 
-            // txtGoodNum
+            // button2
             // 
-            this.txtGoodNum.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtGoodNum.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGoodNum.ForeColor = System.Drawing.Color.PaleGreen;
-            this.txtGoodNum.Location = new System.Drawing.Point(710, 119);
-            this.txtGoodNum.Name = "txtGoodNum";
-            this.txtGoodNum.Size = new System.Drawing.Size(190, 30);
-            this.txtGoodNum.TabIndex = 29;
-            this.txtGoodNum.Text = "0";
-            this.txtGoodNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button2.Location = new System.Drawing.Point(253, 42);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(32, 22);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "●";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // txtBadNum
+            // btn
             // 
-            this.txtBadNum.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtBadNum.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBadNum.ForeColor = System.Drawing.Color.Crimson;
-            this.txtBadNum.Location = new System.Drawing.Point(710, 154);
-            this.txtBadNum.Name = "txtBadNum";
-            this.txtBadNum.Size = new System.Drawing.Size(190, 30);
-            this.txtBadNum.TabIndex = 30;
-            this.txtBadNum.Text = "0";
-            this.txtBadNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn.Location = new System.Drawing.Point(253, 71);
+            this.btn.Name = "btn";
+            this.btn.Size = new System.Drawing.Size(32, 22);
+            this.btn.TabIndex = 11;
+            this.btn.Text = "●";
+            this.btn.UseVisualStyleBackColor = true;
             // 
-            // label14
+            // textBox5
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label14.Location = new System.Drawing.Point(644, 24);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(63, 13);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "지시 수량";
+            this.textBox5.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox5.Location = new System.Drawing.Point(77, 42);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(180, 22);
+            this.textBox5.TabIndex = 10;
             // 
-            // label15
+            // textBox4
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label15.Location = new System.Drawing.Point(644, 59);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(63, 13);
-            this.label15.TabIndex = 32;
-            this.label15.Text = "실적 합계";
+            this.textBox4.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox4.Location = new System.Drawing.Point(77, 71);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(180, 22);
+            this.textBox4.TabIndex = 9;
             // 
-            // label16
+            // textBox3
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label16.Location = new System.Drawing.Point(644, 94);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(63, 13);
-            this.label16.TabIndex = 33;
-            this.label16.Text = "생산 잔량";
+            this.textBox3.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox3.Location = new System.Drawing.Point(77, 100);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(208, 22);
+            this.textBox3.TabIndex = 8;
             // 
-            // label17
+            // textBox2
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label17.Location = new System.Drawing.Point(644, 128);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(63, 13);
-            this.label17.TabIndex = 34;
-            this.label17.Text = "양품 수량";
+            this.textBox2.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox2.Location = new System.Drawing.Point(77, 129);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(208, 22);
+            this.textBox2.TabIndex = 7;
             // 
-            // label18
+            // textBox1
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label18.Location = new System.Drawing.Point(644, 163);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(63, 13);
-            this.label18.TabIndex = 35;
-            this.label18.Text = "불량 수량";
+            this.textBox1.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox1.Location = new System.Drawing.Point(77, 158);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(208, 22);
+            this.textBox1.TabIndex = 6;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Location = new System.Drawing.Point(12, 161);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 15);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "시작 시간";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Location = new System.Drawing.Point(12, 74);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 15);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "작  업  장";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Location = new System.Drawing.Point(12, 132);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 15);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "실적 번호";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(12, 103);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 15);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "지시 번호";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(12, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 15);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "공       정";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(12, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "작업 일자";
             // 
             // tabControl1
             // 
@@ -591,7 +606,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 236);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(907, 425);
+            this.tabControl1.Size = new System.Drawing.Size(907, 412);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage1
@@ -603,10 +618,113 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tabPage1.Size = new System.Drawing.Size(899, 391);
+            this.tabPage1.Size = new System.Drawing.Size(899, 378);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "생산 현황";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnPageText);
+            this.groupBox1.Controls.Add(this.btnBeforePage);
+            this.groupBox1.Controls.Add(this.btnNextPage);
+            this.groupBox1.Controls.Add(this.btnEndPage);
+            this.groupBox1.Controls.Add(this.btnFirstPage);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Location = new System.Drawing.Point(3, 325);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(893, 50);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            // 
+            // btnPageText
+            // 
+            this.btnPageText.Enabled = false;
+            this.btnPageText.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPageText.Location = new System.Drawing.Point(300, 16);
+            this.btnPageText.Name = "btnPageText";
+            this.btnPageText.Size = new System.Drawing.Size(296, 32);
+            this.btnPageText.TabIndex = 4;
+            this.btnPageText.Text = "Page";
+            this.btnPageText.UseVisualStyleBackColor = true;
+            // 
+            // btnBeforePage
+            // 
+            this.btnBeforePage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBeforePage.Location = new System.Drawing.Point(154, 16);
+            this.btnBeforePage.Name = "btnBeforePage";
+            this.btnBeforePage.Size = new System.Drawing.Size(140, 32);
+            this.btnBeforePage.TabIndex = 3;
+            this.btnBeforePage.Text = "<";
+            this.btnBeforePage.UseVisualStyleBackColor = true;
+            this.btnBeforePage.Click += new System.EventHandler(this.btnBeforePage_Click);
+            // 
+            // btnNextPage
+            // 
+            this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNextPage.Location = new System.Drawing.Point(602, 16);
+            this.btnNextPage.Name = "btnNextPage";
+            this.btnNextPage.Size = new System.Drawing.Size(140, 32);
+            this.btnNextPage.TabIndex = 2;
+            this.btnNextPage.Text = ">";
+            this.btnNextPage.UseVisualStyleBackColor = true;
+            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
+            // 
+            // btnEndPage
+            // 
+            this.btnEndPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEndPage.Location = new System.Drawing.Point(748, 16);
+            this.btnEndPage.Name = "btnEndPage";
+            this.btnEndPage.Size = new System.Drawing.Size(140, 32);
+            this.btnEndPage.TabIndex = 1;
+            this.btnEndPage.Text = ">>";
+            this.btnEndPage.UseVisualStyleBackColor = true;
+            this.btnEndPage.Click += new System.EventHandler(this.btnEndPage_Click);
+            // 
+            // btnFirstPage
+            // 
+            this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFirstPage.Location = new System.Drawing.Point(8, 16);
+            this.btnFirstPage.Name = "btnFirstPage";
+            this.btnFirstPage.Size = new System.Drawing.Size(140, 32);
+            this.btnFirstPage.TabIndex = 0;
+            this.btnFirstPage.Text = "<<";
+            this.btnFirstPage.UseVisualStyleBackColor = true;
+            this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
+            // 
+            // dataGridView1
+            // 
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(893, 329);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
             // tabPage2
             // 
@@ -627,91 +745,82 @@
             this.tabPage3.Text = "투입 현황";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(893, 329);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnPageText);
-            this.groupBox1.Controls.Add(this.btnBeforePage);
-            this.groupBox1.Controls.Add(this.btnNextPage);
-            this.groupBox1.Controls.Add(this.btnEndPage);
-            this.groupBox1.Controls.Add(this.btnFirstPage);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(3, 338);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(893, 50);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            // 
-            // btnFirstPage
-            // 
-            this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFirstPage.Location = new System.Drawing.Point(8, 16);
-            this.btnFirstPage.Name = "btnFirstPage";
-            this.btnFirstPage.Size = new System.Drawing.Size(140, 32);
-            this.btnFirstPage.TabIndex = 0;
-            this.btnFirstPage.Text = ">>";
-            this.btnFirstPage.UseVisualStyleBackColor = true;
-            // 
-            // btnEndPage
-            // 
-            this.btnEndPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEndPage.Location = new System.Drawing.Point(748, 16);
-            this.btnEndPage.Name = "btnEndPage";
-            this.btnEndPage.Size = new System.Drawing.Size(140, 32);
-            this.btnEndPage.TabIndex = 1;
-            this.btnEndPage.Text = "<<";
-            this.btnEndPage.UseVisualStyleBackColor = true;
-            // 
-            // btnNextPage
-            // 
-            this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNextPage.Location = new System.Drawing.Point(602, 16);
-            this.btnNextPage.Name = "btnNextPage";
-            this.btnNextPage.Size = new System.Drawing.Size(140, 32);
-            this.btnNextPage.TabIndex = 2;
-            this.btnNextPage.Text = "<";
-            this.btnNextPage.UseVisualStyleBackColor = true;
-            // 
-            // btnBeforePage
-            // 
-            this.btnBeforePage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBeforePage.Location = new System.Drawing.Point(154, 16);
-            this.btnBeforePage.Name = "btnBeforePage";
-            this.btnBeforePage.Size = new System.Drawing.Size(140, 32);
-            this.btnBeforePage.TabIndex = 3;
-            this.btnBeforePage.Text = ">";
-            this.btnBeforePage.UseVisualStyleBackColor = true;
-            // 
-            // btnPageText
-            // 
-            this.btnPageText.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPageText.Location = new System.Drawing.Point(300, 16);
-            this.btnPageText.Name = "btnPageText";
-            this.btnPageText.Size = new System.Drawing.Size(296, 32);
-            this.btnPageText.TabIndex = 4;
-            this.btnPageText.Text = "Page";
-            this.btnPageText.UseVisualStyleBackColor = true;
-            // 
             // timer1
             // 
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Image = global::Team5_Pop.Properties.Resources._checked;
+            this.button3.Location = new System.Drawing.Point(3, 163);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(71, 73);
+            this.button3.TabIndex = 2;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Image = global::Team5_Pop.Properties.Resources._checked;
+            this.button4.Location = new System.Drawing.Point(3, 236);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(71, 73);
+            this.button4.TabIndex = 3;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Image = global::Team5_Pop.Properties.Resources._checked;
+            this.button5.Location = new System.Drawing.Point(3, 309);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(71, 73);
+            this.button5.TabIndex = 4;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button6.Image = global::Team5_Pop.Properties.Resources.cancel__1_;
+            this.button6.Location = new System.Drawing.Point(3, 382);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(71, 73);
+            this.button6.TabIndex = 5;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button7.Image = global::Team5_Pop.Properties.Resources.cancel__1_;
+            this.button7.Location = new System.Drawing.Point(3, 455);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(71, 73);
+            this.button7.TabIndex = 6;
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button8.Image = global::Team5_Pop.Properties.Resources.cancel__1_;
+            this.button8.Location = new System.Drawing.Point(3, 528);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(71, 73);
+            this.button8.TabIndex = 7;
+            this.button8.UseVisualStyleBackColor = true;
+            // 
             // PoPMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 661);
+            this.ClientSize = new System.Drawing.Size(984, 648);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.TextGroup);
             this.Controls.Add(this.MenuGroup);
@@ -727,8 +836,8 @@
             this.TextGroup.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -790,5 +899,11 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
     }
 }
