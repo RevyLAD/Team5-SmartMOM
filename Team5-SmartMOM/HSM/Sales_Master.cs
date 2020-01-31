@@ -121,5 +121,10 @@ namespace Team5_SmartMOM.HSM
                 MessageBox.Show("수요계획생성실패");
             }
         }
+
+        private void btnSearch_Click(object sender, EventArgs e) //조회
+        {
+
+        }
     }
 }

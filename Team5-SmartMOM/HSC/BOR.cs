@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_VO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,11 +17,13 @@ namespace Team5_SmartMOM
             InitializeComponent();
         }
 
+        List<BORVO> list;
         private void button3_Click(object sender, EventArgs e)
         {
-            BORRegister frm = new BORRegister();
+            BORRegister frm = new BORRegister(1);
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
+            DataLoad();
         }
 
         private void DataLoad()
@@ -35,19 +38,91 @@ namespace Team5_SmartMOM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "BOR_Ohters", true, 208);
 
             HSC_Service service = new HSC_Service();
-            dataGridView1.DataSource = service.GetAllBOR();
+            dataGridView1.DataSource = list = service.GetAllBOR();
         }
 
         private void BOR_Load(object sender, EventArgs e)
         {
             DataLoad();
 
-
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
         }
 
         private void btnInquiry_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSearch_Click(this, new EventArgs());
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            List<BORVO> newlist = new List<BORVO>();
+
+            if (textBox1.Text.Trim()==""&& 
+                textBox2.Text.Trim()==""&&
+                cboFacCrow.Text.Trim()=="")
+            {
+                MessageBox.Show("검색어를 입력해주세요");
+            }
+            else
+            {
+                foreach (var li in list)
+                {
+                    if (Convert.ToString(li.ITEM_Code).Trim().Contains(textBox1.Text.Trim()) &&
+                        li.FACG_Code.Trim().Contains(cboFacCrow.Text.Trim())&&
+                        li.FAC_Code.Trim().Contains(textBox2.Text.Trim()))
+                            newlist.Add(li);
+                }
+                dataGridView1.DataSource = newlist;
+                dataGridView1.DataSource = SearchBOR();
+            }
+        }
+
+        private List<BORVO> SearchBOR()
+        {
+            List<BORVO> newlist = new List<BORVO>();
+
+            foreach (var li in list)
+            {
+                if (Convert.ToString(li.ITEM_Code).Trim().Contains(textBox1.Text.Trim())&&
+                        li.FAC_Code.Trim().Contains(textBox2.Text.Trim())&&
+                        li.FACG_Code.Trim().Contains(cboFacCrow.Text.Trim()))
+                    newlist.Add(li);
+            }
+
+            return newlist;
+        }
+
+        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            BORVO vo = new BORVO();
+            vo.ITEM_Code = dataGridView1.Rows[temp.RowIndex].Cells[0].Value.ToString();
+            vo.FACG_Code = dataGridView1.Rows[temp.RowIndex].Cells[1].Value.ToString();
+            vo.FAC_Code = dataGridView1.Rows[temp.RowIndex].Cells[2].Value.ToString();
+            vo.BOR_TactTime = Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[3].Value.ToString());
+            vo.BOR_Priority = Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[4].Value.ToString());
+            vo.BOR_UseOrNot = dataGridView1.Rows[temp.RowIndex].Cells[6].Value.ToString();
+            vo.BOR_yeild = Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[5].Value.ToString());
+            vo.BOR_Ohters = dataGridView1.Rows[temp.RowIndex].Cells[7].Value?.ToString()??null;
+
+            BORRegister frm = new BORRegister(2, vo);
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
+            DataLoad();
+        }
+        DataGridViewCellEventArgs temp;
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            temp = e;
+        }
+
     }
 }

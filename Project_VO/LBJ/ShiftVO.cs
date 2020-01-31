@@ -18,7 +18,7 @@ namespace Project_VO.LBJ
         public int SHIFT_InputPeople { get; set; }
         public string SHIFT_UserOrNot { get; set; }
         public string SHIFT_Modifier { get; set; }
-        public DateTime SHIFT_ModifierDate { get; set; }
+        public string SHIFT_ModifierDate { get; set; }
         public string SHIFT_Others { get; set; }
     }
     public class ShiftManagementVO

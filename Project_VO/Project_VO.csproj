@@ -31,6 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,6 +52,7 @@
     <Compile Include="HSC\OrderVO.cs" />
     <Compile Include="HSM\PlanningVO.cs" />
     <Compile Include="HSM\SalesMasterVO.cs" />
+    <Compile Include="HSM\WorkOrderVO.cs" />
     <Compile Include="KIS\BOM_Serch_VO.cs" />
     <Compile Include="KIS\BOM_VO.cs" />
     <Compile Include="KIS\ITEM_VO.cs" />

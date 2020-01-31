@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_VO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace Team5_SmartMOM
             InitializeComponent();
         }
 
+        List<FacilitieDetailVO> list;
         private void button4_Click(object sender, EventArgs e)
         {
             FacilitiesRegister frm = new FacilitiesRegister();
@@ -44,7 +46,7 @@ namespace Team5_SmartMOM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "FAC_Others", true, 107);
 
             HSC_Service service = new HSC_Service();
-            dataGridView1.DataSource = service.GetAllFacilitiesDetail();
+            dataGridView1.DataSource = list = service.GetAllFacilitiesDetail();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -52,6 +54,40 @@ namespace Team5_SmartMOM
             FacilitiesRegister frm = new FacilitiesRegister();
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
+            DataLoad();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if ((textBox1.Text.Trim() == "") && (textBox2.Text.Trim() == ""))
+            {
+                MessageBox.Show("검색어를 입력해주세요");
+            }
+            else
+            {
+                dataGridView1.DataSource = SearchFacilities();
+            }
+        }
+
+        private List<FacilitieDetailVO> SearchFacilities()
+        {
+            List<FacilitieDetailVO> newlist = new List<FacilitieDetailVO>();
+
+            foreach (var li in list)
+            {
+                if (Convert.ToString(li.FAC_No).Trim().Contains(textBox1.Text.Trim()) &&
+                        li.FAC_Name.Trim().Contains(textBox2.Text.Trim()))
+                    newlist.Add(li);
+            }
+            return newlist;
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSearch_Click(this, new EventArgs());
+            }
         }
     }
 }

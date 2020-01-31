@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_VO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,40 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Team5_SmartMOM.BaseForm;
 
 namespace Team5_SmartMOM.PSM
 {
     public partial class Purchasing : BaseGridForm
-    {
+    {        
         public Purchasing()
         {
             InitializeComponent();
-        }
-
-        private void panelTop_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        }       
 
         private void Purchasing_Load(object sender, EventArgs e)
         {
@@ -74,16 +51,45 @@ namespace Team5_SmartMOM.PSM
             dataGridView1.Columns.Add("날짜", "날짜");
             dataGridView1.Columns.Add("날짜", "날짜");
             dataGridView1.Columns.Add("날짜", "날짜");
+            dataGridView1.Columns.Add("날짜", "날짜");
+            dataGridView1.Columns.Add("날짜", "날짜");
 
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
+            DataLoad();
         }
 
+
+        public void DataLoad()
+        {
+            CommonCodeService service = new CommonCodeService();
+            List<ItemTypeVO> common = service.GetAllItemType();
+            List<PlanIDVO> listPlanID = service.GetAllPlanID();
+            List<CompanyCodeVO> company = service.GetAllCompanyCode();
+
+            //콤보박스 콤보바인딩
+            CommonUtil.ComboBinding(cboPlanID, listPlanID, "Plan_ID", "Plan_ID", "전체");
+            CommonUtil.ComboBinding(cboProduct, common, "ITEM_Type", "ITEM_Type", "전체");
+            CommonUtil.ComboBinding(cbocompany, company, "COM_Name", "COM_Code", "전체");
+
+
+            
+        }
+        //발주 팝업창
         private void button2_Click(object sender, EventArgs e)
         {
             Purchasing_Order frm = new Purchasing_Order();
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
+        }
+
+        //데이트타임피커 기준정보
+        private void dtpDateEnd_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpDateStart.Value > dtpDateEnd.Value.AddDays(1))
+            {
+                MessageBox.Show("시작일보다 빠를 수 없습니다.");
+                dtpDateEnd.Value = dtpDateStart.Value.AddMonths(1);
+                return;
+            }
         }
     }
 }

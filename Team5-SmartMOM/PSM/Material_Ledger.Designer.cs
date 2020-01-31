@@ -93,7 +93,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1222, 689);
+            this.panel1.Size = new System.Drawing.Size(1222, 645);
             this.panel1.TabIndex = 0;
             // 
             // panel6
@@ -109,7 +109,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 28);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1222, 661);
+            this.panel6.Size = new System.Drawing.Size(1222, 617);
             this.panel6.TabIndex = 2;
             // 
             // panel8
@@ -119,7 +119,7 @@
             this.panel8.Controls.Add(this.circularButton2);
             this.panel8.Controls.Add(this.label12);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 610);
+            this.panel8.Location = new System.Drawing.Point(0, 586);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1222, 31);
             this.panel8.TabIndex = 8;
@@ -156,7 +156,7 @@
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 384);
+            this.dataGridView2.Location = new System.Drawing.Point(0, 360);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(1222, 226);
@@ -168,7 +168,7 @@
             this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 352);
+            this.panel4.Location = new System.Drawing.Point(0, 328);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1222, 32);
             this.panel4.TabIndex = 4;
@@ -220,7 +220,7 @@
             this.panel5.Controls.Add(this.circularButton4);
             this.panel5.Controls.Add(this.label11);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 321);
+            this.panel5.Location = new System.Drawing.Point(0, 297);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1222, 31);
             this.panel5.TabIndex = 6;
@@ -257,10 +257,10 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 122);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 116);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1222, 199);
+            this.dataGridView1.Size = new System.Drawing.Size(1222, 181);
             this.dataGridView1.TabIndex = 2;
             // 
             // panel3
@@ -271,7 +271,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 87);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1222, 35);
+            this.panel3.Size = new System.Drawing.Size(1222, 29);
             this.panel3.TabIndex = 1;
             // 
             // button3
@@ -283,7 +283,7 @@
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(1108, 0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(57, 35);
+            this.button3.Size = new System.Drawing.Size(57, 29);
             this.button3.TabIndex = 9;
             this.button3.Text = "선택";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -298,7 +298,7 @@
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.Location = new System.Drawing.Point(1165, 0);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(57, 35);
+            this.button5.Size = new System.Drawing.Size(57, 29);
             this.button5.TabIndex = 11;
             this.button5.Text = "엑셀";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -351,7 +351,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(95, 52);
+            this.comboBox1.Location = new System.Drawing.Point(101, 52);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(191, 20);
             this.comboBox1.TabIndex = 74;
@@ -371,14 +371,14 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(430, 12);
+            this.textBox2.Location = new System.Drawing.Point(434, 12);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(160, 21);
             this.textBox2.TabIndex = 72;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(789, 12);
+            this.textBox1.Location = new System.Drawing.Point(804, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(160, 21);
             this.textBox1.TabIndex = 71;
@@ -386,7 +386,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(203, 12);
+            this.dateTimePicker2.Location = new System.Drawing.Point(209, 12);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(83, 21);
             this.dateTimePicker2.TabIndex = 70;
@@ -395,7 +395,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(95, 12);
+            this.dateTimePicker1.Location = new System.Drawing.Point(101, 12);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(83, 21);
             this.dateTimePicker1.TabIndex = 69;
@@ -404,7 +404,8 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(181, 18);
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Location = new System.Drawing.Point(187, 18);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(19, 12);
             this.label10.TabIndex = 68;
@@ -412,41 +413,41 @@
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(361, 15);
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(365, 12);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 12);
+            this.label7.Size = new System.Drawing.Size(63, 18);
             this.label7.TabIndex = 67;
             this.label7.Text = "* 품목";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(691, 16);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(691, 13);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 12);
+            this.label5.Size = new System.Drawing.Size(90, 20);
             this.label5.TabIndex = 66;
             this.label5.Text = "* 작업지시 ID";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 52);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 12);
+            this.label3.Size = new System.Drawing.Size(61, 20);
             this.label3.TabIndex = 65;
             this.label3.Text = "* 설비";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(12, 18);
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(12, 13);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 12);
+            this.label8.Size = new System.Drawing.Size(83, 20);
             this.label8.TabIndex = 64;
             this.label8.Text = "* 시작일자";
             // 
@@ -568,10 +569,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1222, 689);
+            this.ClientSize = new System.Drawing.Size(1222, 645);
             this.Controls.Add(this.panel1);
             this.Name = "Material_Ledger";
             this.Text = "Material_Ledger";
+            this.Load += new System.EventHandler(this.Material_Ledger_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);

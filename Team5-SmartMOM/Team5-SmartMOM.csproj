@@ -43,10 +43,9 @@
     <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Microsoft.Office.Interop.Excel">
+      <HintPath>..\..\..\ListLinqSample\winLinqUI\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>..\..\..\..\..\Downloads\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -175,6 +174,18 @@
     </Compile>
     <Compile Include="HSM\Demand_Plan.Designer.cs">
       <DependentUpon>Demand_Plan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\WorkOrderPoPUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\WorkOrderPoPUp.Designer.cs">
+      <DependentUpon>WorkOrderPoPUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\WorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\WorkOrder.Designer.cs">
+      <DependentUpon>WorkOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="HSM\Sales_Master_Upload.cs">
       <SubType>Form</SubType>
@@ -515,6 +526,9 @@
     <EmbeddedResource Include="HSM\Demand_Plan.resx">
       <DependentUpon>Demand_Plan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HSM\WorkOrderPoPUp.resx">
+      <DependentUpon>WorkOrderPoPUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HSM\Sales_Master_Upload.resx">
       <DependentUpon>Sales_Master_Upload.cs</DependentUpon>
     </EmbeddedResource>
@@ -544,6 +558,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HSM\SO_Insert.resx">
       <DependentUpon>SO_Insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\WorkOrder.resx">
+      <DependentUpon>WorkOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KIS\BOM.resx">
       <DependentUpon>BOM.cs</DependentUpon>
