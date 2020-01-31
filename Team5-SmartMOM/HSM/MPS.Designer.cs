@@ -95,7 +95,7 @@
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(378, 9);
+            this.tileSave.Location = new System.Drawing.Point(168, 9);
             // 
             // cboCustomer
             // 

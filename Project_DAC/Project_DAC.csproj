@@ -50,6 +50,7 @@
     <Compile Include="HSC\FactoryDAC.cs" />
     <Compile Include="HSM\PlanningDAC.cs" />
     <Compile Include="HSM\SalesMasterDAC.cs" />
+    <Compile Include="HSM\WorkOrderDAC.cs" />
     <Compile Include="KIS\BOM_DAC.cs" />
     <Compile Include="KIS\ITEM_DAC.cs" />
     <Compile Include="LBJ\ImportDAC.cs" />

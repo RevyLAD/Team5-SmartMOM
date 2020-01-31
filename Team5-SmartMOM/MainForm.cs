@@ -334,5 +334,15 @@ namespace Team5_SmartMOM
         {
             CreateTabPages("수요계획", new Demand_Plan());
         }
+
+        private void 작업지시생성ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("작업지시생성", new WorkOrder());
+        }
+
+        private void 작업지시현황ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("작업지시현황", new WorkOrderList());
+        }
     }
 }
