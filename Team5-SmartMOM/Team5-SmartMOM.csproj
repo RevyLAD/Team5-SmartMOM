@@ -745,6 +745,10 @@
       <Project>{c48d50b0-fd18-4417-9dee-8fabb0b4ab3e}</Project>
       <Name>Project_VO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Team5-Pop\Team5-Pop.csproj">
+      <Project>{7832EC0A-67BF-4CD5-8827-97061167B8D5}</Project>
+      <Name>Team5-Pop</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />

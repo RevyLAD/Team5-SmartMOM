@@ -16,7 +16,7 @@ namespace Team5_Pop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PoPMain());
+            Application.Run(new MainPoPForm());
         }
     }
 }
