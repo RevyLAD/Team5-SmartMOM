@@ -27,12 +27,33 @@ namespace ClientWork
             machineID = rnd.Next(1, 10);
 
             Console.WriteLine("생산량 전송 프로그램 시작");
-            SetTimer();
+            //SetTimer();
 
             Console.ReadLine();
             timer1.Stop();
             timer1.Dispose();
             Console.WriteLine("생산량 전송 프로그램 종료");
+        }
+
+        private static void TcpStart()
+        {
+            TcpClient tc = new TcpClient("127.0.0.1", 7000);
+            NetworkStream stream = tc.GetStream();
+
+            string msg = "설비준비완료";
+            byte[] buff = Encoding.ASCII.GetBytes(msg);
+
+            stream.Write(buff, 0, buff.Length);
+
+            byte[] outbuff = new byte[1024];
+            int nbytes = stream.Read(outbuff, 0, outbuff.Length);
+            string outMsg = Encoding.ASCII.GetString(outbuff, 0, nbytes);
+
+            stream.Close();
+            tc.Close();
+
+            Console.WriteLine($"{nbytes} bytes : {outMsg}");
+            Log.WriteInfo($"{nbytes} bytes : {outMsg}");
         }
 
         private static void SetTimer()

@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -43,6 +46,7 @@
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
@@ -57,9 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonUtil.cs" />
-    <Compile Include="MainPOP.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="LoggingUtility.cs" />
+    <Compile Include="MainPOP.cs" />
     <Compile Include="MainPOP.Designer.cs">
       <DependentUpon>MainPOP.cs</DependentUpon>
     </Compile>
@@ -68,12 +71,6 @@
     </Compile>
     <Compile Include="MainPoPForm.Designer.cs">
       <DependentUpon>MainPoPForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Monitor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Monitor.Designer.cs">
-      <DependentUpon>Monitor.cs</DependentUpon>
     </Compile>
     <Compile Include="PopDAC.cs" />
     <Compile Include="PoPFAC.cs">
@@ -102,12 +99,6 @@
     </Compile>
     <Compile Include="PopService.cs" />
     <Compile Include="PopVO.cs" />
-    <Compile Include="ProductionRegister.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProductionRegister.Designer.cs">
-      <DependentUpon>ProductionRegister.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -140,9 +131,6 @@
     <EmbeddedResource Include="MainPoPForm.resx">
       <DependentUpon>MainPoPForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Monitor.resx">
-      <DependentUpon>Monitor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PoPFAC.resx">
       <DependentUpon>PoPFAC.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,9 +142,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PoPMain.resx">
       <DependentUpon>PoPMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProductionRegister.resx">
-      <DependentUpon>ProductionRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

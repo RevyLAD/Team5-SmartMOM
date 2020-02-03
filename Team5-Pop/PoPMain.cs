@@ -2,9 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +18,8 @@ namespace Team5_Pop
 {
     public partial class PoPMain : Form
     {
+        string strConn = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
+
         public PoPMain(MainPoPForm frm)
         {
             InitializeComponent();
@@ -32,8 +38,65 @@ namespace Team5_Pop
 
             DataLoad();
             ComboLoad();
-            
+
+            AsyncEchoServer();
+
+
         }
+
+        //비동기 서버 시작
+        async Task AsyncEchoServer()
+        {
+            TcpListener listener = new TcpListener(IPAddress.Any, 7000);
+            listener.Start();
+            while (true)
+            {
+                TcpClient tc = await listener.AcceptTcpClientAsync().ConfigureAwait(false);
+                await Task.Factory.StartNew(AsyncTcpProcess, tc);
+            }
+        }
+
+        private async void AsyncTcpProcess(object o)
+        {
+            TcpClient tc = (TcpClient)o;
+            NetworkStream stream = tc.GetStream();
+
+            byte[] buff = new byte[1024];
+            var readTask = stream.ReadAsync(buff, 0, buff.Length);
+            int nbytes = readTask.Result;
+            if (nbytes > 0)
+            {
+                ////20200204 12:01:20 Machine7/65/4/0
+                //string[] arrData = Encoding.ASCII.GetString(buff, 0, nbytes).Split('/');
+                //if (arrData.Length == 5)
+                //{
+                //    using (SqlCommand cmd = new SqlCommand())
+                //    {
+                //        cmd.Connection = new SqlConnection(strConn);
+                //        cmd.CommandText = "insert into WorkQtyLog(ProductID, MachineID, Qty, BadQty) values (@ProductID, @MachineID, @Qty, @BadQty)";
+
+                //        cmd.Parameters.AddWithValue("@ProductID", int.Parse(arrData[2]));
+                //        cmd.Parameters.AddWithValue("@MachineID", int.Parse(arrData[1]));
+                //        cmd.Parameters.AddWithValue("@Qty", int.Parse(arrData[3]));
+                //        cmd.Parameters.AddWithValue("@BadQty", int.Parse(arrData[4]));
+
+                //        cmd.Connection.Open();
+                //        cmd.ExecuteNonQuery();
+                //        cmd.Connection.Close();
+                //    }
+                //}
+
+                MessageBox.Show(Encoding.ASCII.GetString(buff, 0, nbytes));
+                //Console.WriteLine(Encoding.ASCII.GetString(buff, 0, nbytes));
+                Program.Log.WriteInfo(Encoding.ASCII.GetString(buff, 0, nbytes));
+
+                await stream.WriteAsync(buff, 0, nbytes).ConfigureAwait(false);
+            }
+
+            stream.Close();
+            tc.Close();
+        }
+
         private void ComboLoad()
         {
             CommonUtil.ComboBinding(comboBox1, service.GetFACGName(), "FACG_Code", "FACG_Name", "전체");
