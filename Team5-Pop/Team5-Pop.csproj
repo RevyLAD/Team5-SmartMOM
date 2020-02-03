@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -46,9 +43,7 @@
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -61,12 +56,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoggingUtility.cs" />
-    <Compile Include="MainPOP.cs" />
+    <Compile Include="CommonUtil.cs" />
+    <Compile Include="MainPOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainPOP.Designer.cs">
       <DependentUpon>MainPOP.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainPoPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainPoPForm.Designer.cs">
+      <DependentUpon>MainPoPForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monitor.Designer.cs">
+      <DependentUpon>Monitor.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopDAC.cs" />
+    <Compile Include="PoPFAC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PoPFAC.Designer.cs">
+      <DependentUpon>PoPFAC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PoPFACG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PoPFACG.Designer.cs">
+      <DependentUpon>PoPFACG.cs</DependentUpon>
+    </Compile>
     <Compile Include="POPGaDong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,19 +102,24 @@
     </Compile>
     <Compile Include="PopService.cs" />
     <Compile Include="PopVO.cs" />
+    <Compile Include="ProductionRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductionRegister.Designer.cs">
+      <DependentUpon>ProductionRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RegisterPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegisterPopUp.Designer.cs">
       <DependentUpon>RegisterPopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProductionService.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ProductionService.Designer.cs">
-      <DependentUpon>ProductionService.cs</DependentUpon>
     </Compile>
     <Compile Include="UtilityClass.cs" />
     <Compile Include="WorkOrderList.cs">
@@ -111,22 +137,32 @@
     <EmbeddedResource Include="MainPOP.resx">
       <DependentUpon>MainPOP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainPoPForm.resx">
+      <DependentUpon>MainPoPForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monitor.resx">
+      <DependentUpon>Monitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PoPFAC.resx">
+      <DependentUpon>PoPFAC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PoPFACG.resx">
+      <DependentUpon>PoPFACG.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="POPGaDong.resx">
       <DependentUpon>POPGaDong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PoPMain.resx">
       <DependentUpon>PoPMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProductionRegister.resx">
+      <DependentUpon>ProductionRegister.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="RegisterPopUp.resx">
       <DependentUpon>RegisterPopUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +229,10 @@
     <ProjectReference Include="..\Project_DAC\Project_DAC.csproj">
       <Project>{68769EEE-D910-4EF3-AECF-E27AC2621D80}</Project>
       <Name>Project_DAC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project_VO\Project_VO.csproj">
+      <Project>{C48D50B0-FD18-4417-9DEE-8FABB0B4AB3E}</Project>
+      <Name>Project_VO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
