@@ -259,7 +259,7 @@ namespace Team5_Pop
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count < -1) 
+            if (dataGridView1.SelectedRows.Count >0) 
             { 
                 gadong_vo.WO_ID = dataGridView1.Rows[e_temp.RowIndex].Cells[0].Value.ToString();
                 gadong_vo.ITEM_Code = dataGridView1.Rows[e_temp.RowIndex].Cells[1].Value.ToString();
