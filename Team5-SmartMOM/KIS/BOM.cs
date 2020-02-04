@@ -1,7 +1,9 @@
 ﻿using Project_VO;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
+using Team5_SmartMOM.BaseForm;
 using Team5_SmartMOM.Service;
 
 namespace Team5_SmartMOM
@@ -41,7 +43,14 @@ namespace Team5_SmartMOM
 
             DataLoad();
             CheckBox();
+            CommonCodeService service1 = new CommonCodeService();
 
+            List<CommonCodeVO> listGubunCode1 = service1.GetAllCommonCode();
+
+            List<CommonCodeVO> OrderGubunList1 = (from item in listGubunCode1
+                                                  where item.Common_Type == "USE_FLAG"
+                                                  select item).ToList();
+            CommonUtil.ComboBinding(cbo_UseorNot, OrderGubunList1, "Common_Key", "Common_Value");
         }
 
         private void ShowGridView()
@@ -49,15 +58,15 @@ namespace Team5_SmartMOM
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            
+
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn(false);
             checkBoxColumn.HeaderText = "Check";
             checkBoxColumn.Name = "check";
-      
+
             dataGridView1.Columns.Add(checkBoxColumn);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "NO", "BOM_No", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상위품목", "BOM_Code", true, 140);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 150);         
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "소요량", "BOM_Require", true, 70);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "시작일", "BOM_StartDate", true, 120);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "종료일", "BOM_EndDate", true, 120);
@@ -109,7 +118,7 @@ namespace Team5_SmartMOM
         /// datagridview에 대한 체크박스 이벤트 
         /// 컬럼을 선택할때마다 for문을 돌려 선택된 열의 value값을 true로 만든다. 
         /// </summary>
-        private void DataGridView1_CheckBoxValue(object sender, DataGridViewRowEventArgs e) 
+        private void DataGridView1_CheckBoxValue(object sender, DataGridViewRowEventArgs e)
         {
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
@@ -199,9 +208,9 @@ namespace Team5_SmartMOM
                 list = BomSearch(list, service);
 
             }
-            else if(cbo_Deployement.Text == "역전개")
+            else if (cbo_Deployement.Text == "역전개")
             {
-                type =2;
+                type = 2;
                 dataGridView1.Columns.Clear();
                 dataGridView1.DataSource = null;
                 dataGridView1.Rows.Clear();
@@ -227,9 +236,9 @@ namespace Team5_SmartMOM
 
 
                 //List<BOM_Serch_VO> BOM_List = (from item in list where item)
+                char[] aar = { '└', '─' };
 
-
-                if(type == 1)
+                if (type == 1)
                 {
                     for (int i = 0; i < list.Count; i++)
                     {
@@ -246,13 +255,13 @@ namespace Team5_SmartMOM
                                 i++;
                                 for (int k = 0; k < list.Count; k++)
                                 {
-                                    if (list[k].BOM_Code == list[j].ITEM_Code.Trim('ㆍ') && list[k].Levels == 2)
+                                    if (list[k].BOM_Code == list[j].ITEM_Code.Replace("└", "").Replace("'─", "").Trim() && list[k].Levels == 2)
                                     {
                                         list2.Add(list[k]);
                                         i++;
                                         for (int m = 0; m < list.Count; m++)
                                         {
-                                            if (list[m].BOM_Code == list[k].ITEM_Code.Trim('ㆍ') && list[m].Levels == 3)
+                                            if (list[m].BOM_Code == list[k].ITEM_Code.Replace("└", "").Replace("─", "").Trim() && list[m].Levels == 3)
                                             {
                                                 list2.Add(list[m]);
                                                 i++;
@@ -264,51 +273,61 @@ namespace Team5_SmartMOM
                             }
                         }
                     }
+                    ShowGridView2();
+                    dataGridView1.DataSource = list2;
                 }
-                else if(type ==2 )
+                else if (type == 2)
                 {
-                    for (int i = 0; i < list.Count; i++)
-                    {
-                        if (list[i].ITEM_Code == txt_Item.Text && list2.Count == 0)
-                        {
-                            list2.Add(list[i]);
-                          
-                            
-                        }
-                        for (int j = 0; j < list.Count; j++)
-                        {
-                            if (list[j].ITEM_Code.Trim('ㆍ') == list[i].BOM_Code && list[j].Levels == 1)
-                            {
-                                list2.Add(list[j]);
-                                i++;
-                                for (int k = 0; k < list.Count; k++)
-                                {
-                                    if (list[k].ITEM_Code.Trim('ㆍ') == list[j].BOM_Code && list[k].Levels == 2)
-                                    {
-                                        list2.Add(list[k]);
-                                        i++;
+                    //for (int i = 0; i < list.Count; i++)
+                    //{
+                    //    if (list[i].ITEM_Code.Replace("└", "").Replace("'─", "").Trim() == txt_Item.Text && list2.Count == 0)
+                    //    {
+                    //        list2.Add(list[i]);
 
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    //    }
+                    //    for (int j = 0; j < list.Count; j++)
+                    //    {
+                    //        if (list[j].ITEM_Code.Replace("└", "").Replace("'─", "").Trim() == list[i].BOM_Code)
+                    //        {
+                    //            list2.Add(list[j]);
+                    //            i++;
+                    //        }
+                    //        for (int k = 0; k < list.Count; k++)
+                    //        {
+                    //            if (list[k].ITEM_Code.Replace("└", "").Replace("'─", "").Trim() == list[j].BOM_Code)
+                    //            {
+                    //                list2.Add(list[k]);
+                    //                i++;
+                    //            }
+                    //            for (int m = 0; m < list.Count; m++)
+                    //            {
+                    //                if (list[m].ITEM_Code.Replace("└", "").Replace("'─", "").Trim() == list[k].BOM_Code && list[m].Levels == 3)
+                    //                {
+                    //                    list2.Add(list[m]);
+                    //                    i++;
+
+                    //                }
+                    //            }
+                    //        }
+                    //    }
+                    //}
+                    ShowGridView2();
+                    dataGridView1.DataSource = list;
 
                 }
-
-               
-                ShowGridView2();
-                dataGridView1.DataSource = list2;
+                
             }
-
             return list;
         }
+
+
+
 
         private void Btn_Copy_Click(object sender, EventArgs e)
         {
 
         }
+
+
     }
 }
-
-

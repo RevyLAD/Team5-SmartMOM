@@ -17,7 +17,7 @@ namespace Team5_SmartMOM
         public BOM_detail()
         {
             InitializeComponent();
-            txt_Revise_day.Text = DateTime.Now.ToString("yyyy-MM-dd");
+      
             
 
         }
@@ -97,7 +97,7 @@ namespace Team5_SmartMOM
 
         private void BOM_detail_Load(object sender, EventArgs e)
         {
-
+            txt_Revise_day.Text = DateTime.Now.ToString("yyyy-MM-dd");
             init_Combo();
 
         }
@@ -113,8 +113,8 @@ namespace Team5_SmartMOM
             List<CommonCodeVO> listGubunCode1 = service.GetAllCommonCode();
             List<CommonCodeVO> listGubunCode2 = service.GetAllCommonCode();
             List<CommonCodeVO> listGubunCode3 = service.GetAllCommonCode();
-            List<ITEM_VO> listGubunCode4 = service2.GetAllCommonCode();
-            List<BOM_VO1> listGubunCode5 = service2.GetAllCommonCode2();
+            List<ITEM_VO> listGubunitem = service2.GetAllCommonItem();
+            List<BOM_VO1> listGubunbom = service2.GetAllCommonBOM();
             //공통코드링큐
             List<CommonCodeVO> OrderGubunList1 = (from item in listGubunCode1
                                                  where item.Common_Type == "USE_FLAG"
@@ -125,16 +125,16 @@ namespace Team5_SmartMOM
             List<CommonCodeVO> OrderGubunList3= (from item in listGubunCode3
                                                   where item.Common_Type == "USE_FLAG"
                                                   select item).ToList();
-            List<ITEM_VO> OrderGubunList4 = (from item in listGubunCode4
+            List<ITEM_VO> OrderGubunListitem = (from item in listGubunitem
                                                   select item).ToList();   // 품목 유형
-            List<BOM_VO1> OrderGubunList5 = (from item in listGubunCode5
+            List<BOM_VO1> OrderGubunListbom = (from item in listGubunbom
                                              select item).ToList();   // 품목 유형
             
             CommonUtil.ComboBinding(cbo_UseorNot, OrderGubunList1, "Common_Key", "Common_Value");
             CommonUtil.ComboBinding(cbo_AutoDeduction, OrderGubunList2, "Common_Key", "Common_Value");
             CommonUtil.ComboBinding(cbo_Required_plan, OrderGubunList3, "Common_Key", "Common_Value");
-            CommonUtil.ComboBinding(cbo_Item, OrderGubunList4, "ITEM_Type", "ITEM_Name","4자리 이상 입력");
-            CommonUtil.ComboBinding(cbo_differenceItem, OrderGubunList5, "ITEM_Type", "BOM_Code", "4자리 이상 입력");
+            CommonUtil.ComboBinding(cbo_Item, OrderGubunListitem, "ITEM_Type", "ITEM_Name","4자리 이상 입력");
+            CommonUtil.ComboBinding(cbo_differenceItem, OrderGubunListbom, "ITEM_Type", "BOM_Code", "4자리 이상 입력");
         }
 
         private void Button1_Click_1(object sender, EventArgs e)
@@ -202,7 +202,7 @@ namespace Team5_SmartMOM
 
                     BOM_VO list = new BOM_VO();
                     list.BOM_Code = cbo_differenceItem.Text;
-                    list.ITEM_Code = cbo_Item.Text;
+                    list.ITEM_Code = cbo_Item.Text; 
                     list.BOM_Require = Convert.ToInt32(txt_Quantity.Text);
                     list.BOM_StartDate = Convert.ToDateTime(dtp_Startdate.Text);
                     list.BOM_EndDate = Convert.ToDateTime(dtp_Enddate.Text);
