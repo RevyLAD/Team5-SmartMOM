@@ -92,5 +92,67 @@ namespace Team5_Pop
                 return state;
             }
         }
+
+        public string[] GetGaDongInfo(string name)
+        {
+            {
+                string[] gname = new string[2];
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = new SqlConnection(this.ConnectionString);
+                    cmd.CommandText = "SELECT FACG_Code from Facility where FAC_Name=@FAC_Name";
+                    cmd.Parameters.AddWithValue("@FAC_Name", name);
+                    
+                    cmd.Connection.Open();
+                    gname[0] = Convert.ToString(cmd.ExecuteScalar());
+
+                    cmd.CommandText = "SELECT FACG_Name from FacilityGroup where FACG_Code = (SELECT FACG_Code from Facility where FAC_Name=@FAC_Name)";
+                    gname[1] = Convert.ToString(cmd.ExecuteScalar());
+
+                    cmd.Connection.Close();
+                }
+                return gname;
+            }
+        }
+
+        public string[] GetPlanTime(string name)
+        {
+            {
+                string[] time = new string[2];
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = new SqlConnection(this.ConnectionString);
+                    cmd.CommandText = "SELECT Shift_StartTime from Shift where FAC_Code = (Select FAC_Code from Facility where FAC_Name=@FAC_Name)";
+                    cmd.Parameters.AddWithValue("@FAC_Name", name);
+
+                    cmd.Connection.Open();
+                    time[0] = Convert.ToString(cmd.ExecuteScalar());
+
+                    cmd.CommandText = "SELECT Shift_EndTime from Shift where FAC_Code = (Select FAC_Code from Facility where FAC_Name=@FAC_Name)";
+                    time[1] = Convert.ToString(cmd.ExecuteScalar());
+
+                    cmd.Connection.Close();
+                }
+                return time;
+            }
+        }
+
+        public string GetItemName(string code)
+        {
+            string name = string.Empty;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "SELECT ITEM_Name from ITEM where ITEM_Code = @ITEM_Code";
+                cmd.Parameters.AddWithValue("@ITEM_Code", code);
+
+                cmd.Connection.Open();
+                name = Convert.ToString(cmd.ExecuteScalar());
+                cmd.Connection.Close();
+            }
+            return name;
+        }
+
+
     }
 }
