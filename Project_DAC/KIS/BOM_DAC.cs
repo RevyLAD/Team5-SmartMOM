@@ -102,7 +102,22 @@ namespace Project_DAC
             }
         }
       
-        public List<ITEM_VO> GetAllCommonCode()
+        public List<BOM_VO1> GetAllCommonCode1()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select * from ITEM";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<BOM_VO1> list = Helper.DataReaderMapToList<BOM_VO1>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+        public List<ITEM_VO> GetAllCommonItem()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -117,7 +132,22 @@ namespace Project_DAC
                 return list;
             }
         }
-        public List<BOM_VO1> GetAllCommonCode2()
+        public List<EnterpriseVO> GetAllCommonCode4()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select * from Company where COM_Type != '고객사'";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<EnterpriseVO> list = Helper.DataReaderMapToList<EnterpriseVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+        public List<BOM_VO1> GetAllCommonBOM()
         {
             using (SqlCommand cmd = new SqlCommand())
             {

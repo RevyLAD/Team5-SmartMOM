@@ -52,15 +52,33 @@ namespace Team5_SmartMOM.Service
             BOM_DAC cmd = new BOM_DAC();
             return cmd.BOM_SearchData(name , type);
         }
-        public List<ITEM_VO> GetAllCommonCode()
+        public List<ITEM_VO> GetAllCommonItem()
         {
             BOM_DAC dac = new BOM_DAC();
-            return dac.GetAllCommonCode();
+            return dac.GetAllCommonItem();
         }
-        public List<BOM_VO1> GetAllCommonCode2()
+        public List<BOM_VO1> GetAllCommonBOM()
         {
             BOM_DAC dac = new BOM_DAC();
-            return dac.GetAllCommonCode2();
+            return dac.GetAllCommonBOM();
         }
+        public List<EnterpriseVO> GetAllCommonCode3()
+        {
+            BOM_DAC dac = new BOM_DAC();
+            return dac.GetAllCommonCode4();
+        }
+        
+        public List<Material_VO_VIew> ShowMaterial()
+        {
+            Matarial_DAC cmd = new Matarial_DAC();
+            return cmd.ShowMaterial();
+        }
+
+        public bool InsertIMaterial(Material_VO list)
+        {
+            Matarial_DAC cmd = new Matarial_DAC();
+            return cmd.InsertIMaterial(list);
+        }
+    
     }
 }

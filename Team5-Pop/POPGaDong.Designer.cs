@@ -49,6 +49,8 @@
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -59,21 +61,19 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.textBox25 = new System.Windows.Forms.TextBox();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
             this.textBox28 = new System.Windows.Forms.TextBox();
             this.textBox29 = new System.Windows.Forms.TextBox();
+            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.textBox27 = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.textBox30 = new System.Windows.Forms.TextBox();
             this.textBox31 = new System.Windows.Forms.TextBox();
@@ -81,11 +81,11 @@
             this.textBox32 = new System.Windows.Forms.TextBox();
             this.textBox33 = new System.Windows.Forms.TextBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.textBox34 = new System.Windows.Forms.TextBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.textBox36 = new System.Windows.Forms.TextBox();
             this.textBox37 = new System.Windows.Forms.TextBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -208,7 +208,7 @@
             // textBox17
             // 
             this.textBox17.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox17.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox17.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.textBox17.Location = new System.Drawing.Point(243, 52);
             this.textBox17.Multiline = true;
@@ -233,7 +233,7 @@
             // textBox16
             // 
             this.textBox16.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox16.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox16.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.textBox16.Location = new System.Drawing.Point(98, 146);
             this.textBox16.Multiline = true;
@@ -258,7 +258,7 @@
             // textBox14
             // 
             this.textBox14.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox14.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox14.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.textBox14.Location = new System.Drawing.Point(99, 99);
             this.textBox14.Multiline = true;
@@ -296,7 +296,7 @@
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox3.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.textBox3.Location = new System.Drawing.Point(98, 52);
             this.textBox3.Multiline = true;
@@ -308,7 +308,7 @@
             // textBox4
             // 
             this.textBox4.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox4.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox4.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.textBox4.Location = new System.Drawing.Point(98, 6);
             this.textBox4.Multiline = true;
@@ -332,7 +332,7 @@
             // textBox20
             // 
             this.textBox20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox20.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox20.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.textBox20.Location = new System.Drawing.Point(6, 20);
             this.textBox20.Multiline = true;
@@ -345,7 +345,7 @@
             // textBox5
             // 
             this.textBox5.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox5.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox5.ForeColor = System.Drawing.Color.Lime;
             this.textBox5.Location = new System.Drawing.Point(6, 81);
             this.textBox5.Multiline = true;
@@ -369,6 +369,30 @@
             this.groupBox4.Size = new System.Drawing.Size(208, 191);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
+            // 
+            // button8
+            // 
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button8.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button8.ForeColor = System.Drawing.Color.DimGray;
+            this.button8.Location = new System.Drawing.Point(184, 6);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(18, 34);
+            this.button8.TabIndex = 13;
+            this.button8.Text = "▼";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button7.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button7.ForeColor = System.Drawing.Color.DimGray;
+            this.button7.Location = new System.Drawing.Point(184, 99);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(18, 34);
+            this.button7.TabIndex = 12;
+            this.button7.Text = "▼";
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // textBox19
             // 
@@ -399,7 +423,7 @@
             // textBox10
             // 
             this.textBox10.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox10.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox10.ForeColor = System.Drawing.Color.Yellow;
             this.textBox10.Location = new System.Drawing.Point(80, 99);
             this.textBox10.Multiline = true;
@@ -412,7 +436,7 @@
             // textBox11
             // 
             this.textBox11.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox11.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox11.ForeColor = System.Drawing.Color.Yellow;
             this.textBox11.Location = new System.Drawing.Point(80, 6);
             this.textBox11.Multiline = true;
@@ -493,10 +517,34 @@
             this.groupBox6.TabIndex = 14;
             this.groupBox6.TabStop = false;
             // 
+            // textBox24
+            // 
+            this.textBox24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox24.ForeColor = System.Drawing.Color.Azure;
+            this.textBox24.Location = new System.Drawing.Point(216, 6);
+            this.textBox24.Multiline = true;
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(78, 34);
+            this.textBox24.TabIndex = 13;
+            this.textBox24.Text = "경과시간";
+            this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox25
+            // 
+            this.textBox25.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.textBox25.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox25.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox25.Location = new System.Drawing.Point(290, 6);
+            this.textBox25.Multiline = true;
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(130, 34);
+            this.textBox25.TabIndex = 12;
+            // 
             // textBox21
             // 
             this.textBox21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox21.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox21.ForeColor = System.Drawing.Color.Azure;
             this.textBox21.Location = new System.Drawing.Point(6, 6);
             this.textBox21.Multiline = true;
@@ -530,36 +578,10 @@
             this.groupBox8.TabIndex = 11;
             this.groupBox8.TabStop = false;
             // 
-            // textBox26
-            // 
-            this.textBox26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox26.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox26.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox26.Location = new System.Drawing.Point(7, 6);
-            this.textBox26.Multiline = true;
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(193, 29);
-            this.textBox26.TabIndex = 13;
-            this.textBox26.Text = "오더 잔량";
-            this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox27
-            // 
-            this.textBox27.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox27.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox27.ForeColor = System.Drawing.Color.Red;
-            this.textBox27.Location = new System.Drawing.Point(7, 39);
-            this.textBox27.Multiline = true;
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(193, 48);
-            this.textBox27.TabIndex = 12;
-            this.textBox27.Text = "0000";
-            this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // textBox28
             // 
             this.textBox28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox28.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox28.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox28.ForeColor = System.Drawing.Color.Aqua;
             this.textBox28.Location = new System.Drawing.Point(224, 6);
             this.textBox28.Multiline = true;
@@ -572,7 +594,7 @@
             // textBox29
             // 
             this.textBox29.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox29.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 26.25F, System.Drawing.FontStyle.Bold);
+            this.textBox29.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
             this.textBox29.ForeColor = System.Drawing.Color.Red;
             this.textBox29.Location = new System.Drawing.Point(224, 39);
             this.textBox29.Multiline = true;
@@ -581,6 +603,32 @@
             this.textBox29.TabIndex = 14;
             this.textBox29.Text = "0000";
             this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox26
+            // 
+            this.textBox26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox26.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox26.Location = new System.Drawing.Point(7, 6);
+            this.textBox26.Multiline = true;
+            this.textBox26.Name = "textBox26";
+            this.textBox26.Size = new System.Drawing.Size(193, 29);
+            this.textBox26.TabIndex = 13;
+            this.textBox26.Text = "오더 잔량";
+            this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox27
+            // 
+            this.textBox27.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.textBox27.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox27.ForeColor = System.Drawing.Color.Red;
+            this.textBox27.Location = new System.Drawing.Point(7, 39);
+            this.textBox27.Multiline = true;
+            this.textBox27.Name = "textBox27";
+            this.textBox27.Size = new System.Drawing.Size(193, 48);
+            this.textBox27.TabIndex = 12;
+            this.textBox27.Text = "0000";
+            this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox7
             // 
@@ -594,10 +642,21 @@
             this.groupBox7.TabIndex = 15;
             this.groupBox7.TabStop = false;
             // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button6.ForeColor = System.Drawing.Color.DimGray;
+            this.button6.Location = new System.Drawing.Point(296, 6);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(122, 34);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "일시 정지";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
             // textBox6
             // 
             this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox6.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox6.ForeColor = System.Drawing.Color.Azure;
             this.textBox6.Location = new System.Drawing.Point(6, 6);
             this.textBox6.Multiline = true;
@@ -610,7 +669,7 @@
             // textBox22
             // 
             this.textBox22.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox22.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox22.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.textBox22.Location = new System.Drawing.Point(116, 6);
             this.textBox22.Multiline = true;
@@ -619,65 +678,6 @@
             this.textBox22.TabIndex = 0;
             this.textBox22.Text = "00 분";
             this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button6.ForeColor = System.Drawing.Color.DimGray;
-            this.button6.Location = new System.Drawing.Point(296, 6);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(122, 34);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "일시 정지";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button7.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button7.ForeColor = System.Drawing.Color.DimGray;
-            this.button7.Location = new System.Drawing.Point(184, 99);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(18, 34);
-            this.button7.TabIndex = 12;
-            this.button7.Text = "▼";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button8.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button8.ForeColor = System.Drawing.Color.DimGray;
-            this.button8.Location = new System.Drawing.Point(184, 6);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(18, 34);
-            this.button8.TabIndex = 13;
-            this.button8.Text = "▼";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // textBox24
-            // 
-            this.textBox24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox24.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox24.ForeColor = System.Drawing.Color.Azure;
-            this.textBox24.Location = new System.Drawing.Point(216, 6);
-            this.textBox24.Multiline = true;
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(78, 34);
-            this.textBox24.TabIndex = 13;
-            this.textBox24.Text = "경과시간";
-            this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox25
-            // 
-            this.textBox25.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox25.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox25.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox25.Location = new System.Drawing.Point(290, 6);
-            this.textBox25.Multiline = true;
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(130, 34);
-            this.textBox25.TabIndex = 12;
             // 
             // groupBox9
             // 
@@ -693,7 +693,7 @@
             // textBox30
             // 
             this.textBox30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox30.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox30.ForeColor = System.Drawing.Color.Azure;
             this.textBox30.Location = new System.Drawing.Point(7, 9);
             this.textBox30.Multiline = true;
@@ -706,7 +706,7 @@
             // textBox31
             // 
             this.textBox31.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox31.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox31.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox31.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.textBox31.Location = new System.Drawing.Point(144, 9);
             this.textBox31.Multiline = true;
@@ -730,7 +730,7 @@
             // textBox32
             // 
             this.textBox32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox32.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox32.ForeColor = System.Drawing.Color.Azure;
             this.textBox32.Location = new System.Drawing.Point(7, 9);
             this.textBox32.Multiline = true;
@@ -743,7 +743,7 @@
             // textBox33
             // 
             this.textBox33.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox33.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox33.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox33.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.textBox33.Location = new System.Drawing.Point(144, 9);
             this.textBox33.Multiline = true;
@@ -764,10 +764,20 @@
             this.groupBox11.TabIndex = 17;
             this.groupBox11.TabStop = false;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.BackColor = System.Drawing.Color.Gray;
+            this.progressBar1.ForeColor = System.Drawing.Color.Chartreuse;
+            this.progressBar1.Location = new System.Drawing.Point(116, 8);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(304, 34);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 14;
+            // 
             // textBox34
             // 
             this.textBox34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox34.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox34.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox34.ForeColor = System.Drawing.Color.Azure;
             this.textBox34.Location = new System.Drawing.Point(6, 8);
             this.textBox34.Multiline = true;
@@ -791,7 +801,7 @@
             // textBox36
             // 
             this.textBox36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox36.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox36.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox36.ForeColor = System.Drawing.Color.Azure;
             this.textBox36.Location = new System.Drawing.Point(6, 8);
             this.textBox36.Multiline = true;
@@ -804,7 +814,7 @@
             // textBox37
             // 
             this.textBox37.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox37.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox37.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox37.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.textBox37.Location = new System.Drawing.Point(116, 8);
             this.textBox37.Multiline = true;
@@ -813,16 +823,6 @@
             this.textBox37.TabIndex = 12;
             this.textBox37.Text = "00 분";
             this.textBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.BackColor = System.Drawing.Color.Gray;
-            this.progressBar1.ForeColor = System.Drawing.Color.Chartreuse;
-            this.progressBar1.Location = new System.Drawing.Point(116, 8);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(304, 34);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1.TabIndex = 14;
             // 
             // POPGaDong
             // 
@@ -844,6 +844,8 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "POPGaDong";
             this.Text = "POPGaDong";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.POPGaDong_FormClosed);
+            this.Load += new System.EventHandler(this.POPGaDong_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
