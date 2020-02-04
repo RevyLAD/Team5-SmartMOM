@@ -33,6 +33,7 @@ namespace Team5_SmartMOM.HSM
 
         private void button3_Click(object sender, EventArgs e) //영업마스터 업로드
         {
+            
             MasterCreate frm = new MasterCreate();
             frm.StartPosition = FormStartPosition.CenterScreen;
             
