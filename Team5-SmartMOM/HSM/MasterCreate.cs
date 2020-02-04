@@ -49,9 +49,17 @@ namespace Team5_SmartMOM.HSM
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            if(txtFileName.Text.Length <0)
+            using (CircleProgressBar frm = new CircleProgressBar(ImportExcel))
             {
-                MessageBox.Show("파일을 선택해주세요.","오류");
+                frm.ShowDialog(this);
+            }
+        }
+
+        private void ImportExcel()
+        {
+            if (txtFileName.Text.Length < 0)
+            {
+                MessageBox.Show("파일을 선택해주세요.", "오류");
             }
 
             else
