@@ -20,11 +20,8 @@ namespace Team5_Pop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new POPGaDong());
+            Application.Run(new MainPoPForm());
 
-            //ProductionService service = new ProductionService();
-            //service.OnStart();
-            //Console.ReadLine();
         }
     }
 }
