@@ -38,5 +38,23 @@ namespace Team5_Pop
             PopDAC dac = new PopDAC();
             return dac.GetFacState(name);
         }
+
+        public string[] GetGaDongInfo(string name)
+        {
+            PopDAC dac = new PopDAC();
+            return dac.GetGaDongInfo(name);
+        }
+
+        public string[] GetPlanTime(string name)
+        {
+            PopDAC dac = new PopDAC();
+            return dac.GetPlanTime(name);
+        }
+
+        public string GetItemName(string code)
+        {
+            PopDAC dac = new PopDAC();
+            return dac.GetItemName(code);
+        }
     }
 }

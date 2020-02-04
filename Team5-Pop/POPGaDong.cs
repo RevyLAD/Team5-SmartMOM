@@ -22,14 +22,19 @@ namespace Team5_Pop
         static int machineID = 1;
         static string writeFolder = AppDomain.CurrentDomain.BaseDirectory + "\\Production";
         static int iCnt = 0;
-        public POPGaDong()
+
+        PopVO thisvo;
+        public POPGaDong(PopVO vo)
         {
             InitializeComponent();
+
+            this.thisvo = vo;
         }
 
         private void POPGaDong_Load(object sender, EventArgs e)
         {
-            
+            DataLoad();
+
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
             machineID = rnd.Next(1, 10);
 
@@ -38,6 +43,55 @@ namespace Team5_Pop
 
             Console.ReadLine();
             Console.WriteLine("생산량 전송 프로그램 종료");
+        }
+
+        private void DataLoad()
+        {
+            PopService service = new PopService();
+
+            txtOrderID.Text = thisvo.WO_ID;
+            txtDirectQty.Text = Convert.ToString(thisvo.directQty);
+
+            txtFacName.Text = thisvo.FAC_Name;
+
+            string[] FACG = service.GetGaDongInfo(thisvo.FAC_Name);
+            txtFACGName.Text = FACG[0] + " / " + FACG[1];
+            txtItem.Text = $"{service.GetItemName(thisvo.ITEM_Code)} ({thisvo.ITEM_Code})";
+
+            string[] Time = service.GetPlanTime(thisvo.FAC_Name);
+
+
+            txtPlanTS.Text = TimeSub(Time[0]);
+            txtPlanTE.Text = TimeSub(Time[1]);
+
+            //thisvo.planQty;
+            //thisvo.Plan_ID;
+            //thisvo.WO_StartDate;
+            //thisvo.WO_EndDate;
+            //thisvo.WO_Priority;
+            //thisvo.WO_State;
+            //thisvo.WO_Time;
+        }
+
+        private string TimeSub(string time)
+        {
+            try
+            {
+                string temp = string.Empty;
+                if (time.Length > 5)
+                {
+                    temp = time.Substring(0, 2) + ":" + time.Substring(2, 2) + ":" + time.Substring(4, 2);
+                }
+                else if (time.Length <= 5)
+                {
+                    temp = "0" + time.Substring(0, 1) + ":" + time.Substring(1, 2) + ":" + time.Substring(3, 2);
+                }
+                return temp;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         private static void SetTimer()
