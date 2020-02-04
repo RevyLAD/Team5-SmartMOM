@@ -45,7 +45,9 @@ namespace Team5_Pop
         List<PopVO> nowlist;
         int CurrentPage;
         int MaxPage;
-        double ContentNum = 6.0;
+
+        //한 페이지에 보여줄 작업 수 ↓
+        double ContentNum = 5.0;
         private void DataLoad()
         {
             dataGridView1.Columns.Clear();
