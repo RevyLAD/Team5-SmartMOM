@@ -24,7 +24,6 @@ namespace Team5_SmartMOM
         private void frmWaitForm_Load(object sender, EventArgs e)
         {
 
-            Thread.Sleep(2000);
             Task.Factory.StartNew(Worker).ContinueWith(t => { this.Close(); }, TaskScheduler.FromCurrentSynchronizationContext());
         }
     }

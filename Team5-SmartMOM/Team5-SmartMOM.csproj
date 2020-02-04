@@ -712,6 +712,7 @@
     <Content Include="bin\Debug\Team5-SmartMOM.pdb" />
     <Content Include="bin\Debug\Team5_DEV.xml" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\please-wait-gif-8.gif" />
     <None Include="Resources\microsoft-excel.png" />
     <None Include="Resources\pencil.png" />
     <None Include="Resources\note.png" />

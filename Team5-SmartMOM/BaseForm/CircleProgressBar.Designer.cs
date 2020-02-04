@@ -28,54 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.radWaitingBar1 = new Telerik.WinControls.UI.RadWaitingBar();
-            this.segmentedRingWaitingBarIndicatorElement1 = new Telerik.WinControls.UI.SegmentedRingWaitingBarIndicatorElement();
-            ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar1)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // radWaitingBar1
+            // label1
             // 
-            this.radWaitingBar1.Location = new System.Drawing.Point(3, 1);
-            this.radWaitingBar1.Name = "radWaitingBar1";
-            // 
-            // 
-            // 
-            this.radWaitingBar1.RootElement.AutoSize = false;
-            this.radWaitingBar1.RootElement.ControlBounds = new System.Drawing.Rectangle(3, 1, 50, 53);
-            this.radWaitingBar1.Size = new System.Drawing.Size(50, 53);
-            this.radWaitingBar1.TabIndex = 1;
-            this.radWaitingBar1.Text = "radWaitingBar1";
-            this.radWaitingBar1.WaitingIndicators.Add(this.segmentedRingWaitingBarIndicatorElement1);
-            this.radWaitingBar1.WaitingSpeed = 20;
-            this.radWaitingBar1.WaitingStyle = Telerik.WinControls.Enumerations.WaitingBarStyles.SegmentedRing;
-            ((Telerik.WinControls.UI.RadWaitingBarElement)(this.radWaitingBar1.GetChildAt(0))).WaitingSpeed = 20;
-            ((Telerik.WinControls.UI.WaitingBarContentElement)(this.radWaitingBar1.GetChildAt(0).GetChildAt(0))).WaitingStyle = Telerik.WinControls.Enumerations.WaitingBarStyles.SegmentedRing;
-            ((Telerik.WinControls.UI.WaitingBarSeparatorElement)(this.radWaitingBar1.GetChildAt(0).GetChildAt(0).GetChildAt(0))).Dash = false;
-            // 
-            // segmentedRingWaitingBarIndicatorElement1
-            // 
-            this.segmentedRingWaitingBarIndicatorElement1.Name = "segmentedRingWaitingBarIndicatorElement1";
+            this.label1.Image = global::Team5_SmartMOM.Properties.Resources.please_wait_gif_8;
+            this.label1.Location = new System.Drawing.Point(4, -1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(184, 129);
+            this.label1.TabIndex = 0;
             // 
             // CircleProgressBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(55, 55);
-            this.Controls.Add(this.radWaitingBar1);
+            this.ClientSize = new System.Drawing.Size(192, 133);
+            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CircleProgressBar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CircleProgressBar";
             this.Load += new System.EventHandler(this.frmWaitForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Telerik.WinControls.UI.RadWaitingBar radWaitingBar1;
-        private Telerik.WinControls.UI.SegmentedRingWaitingBarIndicatorElement segmentedRingWaitingBarIndicatorElement1;
+        private System.Windows.Forms.Label label1;
     }
 }
