@@ -62,12 +62,6 @@
   <ItemGroup>
     <Compile Include="CommonUtil.cs" />
     <Compile Include="LoggingUtility.cs" />
-    <Compile Include="MainPOP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainPOP.Designer.cs">
-      <DependentUpon>MainPOP.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainPoPForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,28 +102,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RegisterPopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegisterPopUp.Designer.cs">
-      <DependentUpon>RegisterPopUp.cs</DependentUpon>
-    </Compile>
     <Compile Include="UtilityClass.cs" />
-    <Compile Include="WorkOrderList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WorkOrderList.Designer.cs">
-      <DependentUpon>WorkOrderList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WorkOrderRegister.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WorkOrderRegister.Designer.cs">
-      <DependentUpon>WorkOrderRegister.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="MainPOP.resx">
-      <DependentUpon>MainPOP.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainPoPForm.resx">
       <DependentUpon>MainPoPForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,15 +122,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RegisterPopUp.resx">
-      <DependentUpon>RegisterPopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WorkOrderList.resx">
-      <DependentUpon>WorkOrderList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WorkOrderRegister.resx">
-      <DependentUpon>WorkOrderRegister.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
