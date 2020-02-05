@@ -37,7 +37,7 @@ namespace Team5_SmartMOM
                 vo.COM_Information = txtInformation.Text;
                 vo.COM_Manager = txtCOM_Manager.Text.Trim();
                 vo.COM_Modifier = txtModifier.Text.Trim();
-                vo.COM_ModifiyDate = txtModifiyDate.Text.Trim();
+                vo.COM_ModifiyDate =Convert.ToDateTime(txtModifiyDate.Text.Trim());
                 vo.COM_Name = txtCOM_Name.Text.Trim();
                 vo.COM_Owner = txtCOM_Owner.Text.Trim();
                 vo.COM_Phone = txtCOM_Phone.Text.Trim();
