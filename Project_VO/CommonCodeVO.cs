@@ -42,6 +42,13 @@ namespace Project_VO
         public string FACT_Name { get; set; }
     }
 
+    public class FacVOp
+    {
+        public string FAC_Name { get; set; }
+        public string FAC_Code { get; set; }
+        public string FACG_Code { get; set; }
+    }
+
     public class CompanyCodeDetailVO
     {
         public string COM_Code { get; set; }

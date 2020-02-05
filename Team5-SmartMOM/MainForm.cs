@@ -340,14 +340,9 @@ namespace Team5_SmartMOM
             CreateTabPages("작업지시생성", new WorkOrder());
         }
 
-        private void 자재단가관리ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 작업지시현황ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            CreateTabPages("자재단가관리", new Material_Cost_Management());
-        }
-
-        private void 영업단가관리ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CreateTabPages("영업단가관리", new Sales_Price_Management());
+            CreateTabPages("작업지시현황", new WorkOrderList());
         }
     }
 }

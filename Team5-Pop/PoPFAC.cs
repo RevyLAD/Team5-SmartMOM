@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Team5_Pop
 {
-    public partial class Monitor : Form
+    public partial class PoPFAC : Form
     {
-        public Monitor()
+        public PoPFAC()
         {
             InitializeComponent();
         }

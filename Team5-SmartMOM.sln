@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Team5-Pop", "Team5-Pop\Team
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Team5-WebAPI", "Team5-WebAPI\Team5-WebAPI.csproj", "{A4B6919D-8CC1-45BC-8FAC-B4D053CD0F73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientWork", "ClientWork\ClientWork.csproj", "{C976C117-8D9C-4895-AE8D-D3752CA109F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A4B6919D-8CC1-45BC-8FAC-B4D053CD0F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4B6919D-8CC1-45BC-8FAC-B4D053CD0F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4B6919D-8CC1-45BC-8FAC-B4D053CD0F73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C976C117-8D9C-4895-AE8D-D3752CA109F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C976C117-8D9C-4895-AE8D-D3752CA109F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C976C117-8D9C-4895-AE8D-D3752CA109F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C976C117-8D9C-4895-AE8D-D3752CA109F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

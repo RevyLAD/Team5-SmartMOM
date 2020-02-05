@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Team5_Pop
 {
-    public partial class ProductionRegister : Form
+    public partial class PoPFACG : Form
     {
-        public ProductionRegister()
+        public PoPFACG()
         {
             InitializeComponent();
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            RegisterPopUp frm = new RegisterPopUp();
-            frm.ShowDialog();
         }
     }
 }
