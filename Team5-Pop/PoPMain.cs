@@ -335,20 +335,20 @@ namespace Team5_Pop
                     gadong_vo.WO_Priority = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[9].Value.ToString());
                     gadong_vo.WO_Time = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[9].Value.ToString());
 
-                    if (service.GetFacState(gadong_vo.FAC_Name) == "비가동")
-                    {
+                    //if (service.GetFacState(gadong_vo.FAC_Name) == "비가동")
+                    //{
                         //mainform.CreateTabPages("공정1", new POPGaDong(gadong_vo));
                         service.UpdateFacState(gadong_vo.FAC_Name, gadong_vo.WO_ID);
                         mainform.CreateTabPages(gadong_vo.FAC_Name, new POPGaDong(gadong_vo));
 
-                        AsyncEchoServer();
-                        DataLoad();
+                       
+                    //    DataLoad();
 
-                    }
-                    else
-                    {
-                        MessageBox.Show("이미 공정이 실행중입니다.");
-                    }
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("이미 공정이 실행중입니다.");
+                    //}
                 }
                 else
                 {

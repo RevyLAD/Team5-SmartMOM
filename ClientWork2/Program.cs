@@ -10,7 +10,7 @@ using log4net.Core;
 using WorkerService;
 using System.Configuration;
 
-namespace ClientWork
+namespace ClientWork2
 {
     class Program
     {
@@ -30,15 +30,15 @@ namespace ClientWork
             //SetTimer();
             //TcpStart();
             TcpConnection();
-            SetTimer();
+
             Console.ReadLine();
-            timer1.Stop();
-            timer1.Dispose();
+            //timer1.Stop();
+            //timer1.Dispose();
             Console.WriteLine("생산량 전송 프로그램 종료");
         }
         private static void TcpConnection()
         {
-            TcpClient tc = new TcpClient("127.0.0.1", 7000);
+            TcpClient tc = new TcpClient("127.0.0.2", 7000);
             NetworkStream stream = tc.GetStream();
 
             byte[] outbuff = new byte[1024];
@@ -56,15 +56,20 @@ namespace ClientWork
             TcpClient tc = new TcpClient("127.0.0.1", 7000);
             NetworkStream stream = tc.GetStream();
 
-            string msg = "생산시작";
+            string msg = "설비준비완료";
             byte[] buff = Encoding.ASCII.GetBytes(msg);
 
             stream.Write(buff, 0, buff.Length);
 
+            byte[] outbuff = new byte[1024];
+            int nbytes = stream.Read(outbuff, 0, outbuff.Length);
+            string outMsg = Encoding.ASCII.GetString(outbuff, 0, nbytes);
 
             stream.Close();
             tc.Close();
 
+            Console.WriteLine($"{nbytes} bytes : {outMsg}");
+            Log.WriteInfo($"{nbytes} bytes : {outMsg}");
         }
 
         private static void SetTimer()
@@ -94,8 +99,8 @@ namespace ClientWork
             stream.Close();
             tc.Close();
 
-            Console.WriteLine($"{nbytes} bytes : {msg}");
-            Log.WriteInfo($"{nbytes} bytes : {msg}");
+            Console.WriteLine($"{nbytes} bytes : {outMsg}");
+            Log.WriteInfo($"{nbytes} bytes : {outMsg}");
         }
     }
 }
