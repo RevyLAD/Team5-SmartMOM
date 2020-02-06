@@ -43,8 +43,7 @@ namespace Team5_SmartMOM.PSM
             headerCheckBox.Click += new EventHandler(HeaderCheckBox_Click);
             dataGridView1.Controls.Add(headerCheckBox);
 
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주번호", "VO_ID", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체번호", "COM_No", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주번호", "VO_ID", true, 120);            
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체이름", "COM_Name", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체코드", "COM_Code", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체타입", "COM_Type", true, 150);
@@ -225,7 +224,7 @@ namespace Team5_SmartMOM.PSM
             }
             if (bFlag == false)
             {
-                MessageBox.Show("발주하실 항목을 체크하세요");
+                MessageBox.Show("납기일자 변경하실 항목을 체크하세요");
                 return;
             }
             
@@ -236,7 +235,7 @@ namespace Team5_SmartMOM.PSM
                 {
                     EndDateChange date = new EndDateChange();
                     date.VO_ID = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value);
-                    date.VO_EndDate = (DateTime)dataGridView1.Rows[i].Cells[11].Value;
+                    date.VO_EndDate = (DateTime)dataGridView1.Rows[i].Cells[10].Value;
                     datelist.Add(date);
                 }
             }
@@ -299,9 +298,7 @@ namespace Team5_SmartMOM.PSM
                     }
                 }
                 headerCheckBox.Checked = isChecked;
-            }
-
-            
+            }            
         }
 
         private void CheckBoxTrue()
@@ -309,8 +306,7 @@ namespace Team5_SmartMOM.PSM
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
                 dataGridView1.Rows[i].Cells[0].Value = false;
-            }
-            
+            }            
         }
 
         //검색후 엔터로 조회버튼

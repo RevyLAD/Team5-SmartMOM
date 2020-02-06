@@ -12,7 +12,6 @@ namespace Project_VO.HSM
         public string COM_Code { get; set; }
         public string ITEM_Code { get; set; }
         public string SALES_OrderDate { get; set; }
-
         public string SALES_DueDate { get; set; }
     }
 }

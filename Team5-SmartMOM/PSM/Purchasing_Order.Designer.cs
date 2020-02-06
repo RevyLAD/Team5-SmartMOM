@@ -48,6 +48,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tileUpdate = new MetroFramework.Controls.MetroTile();
+            this.lblPlanID = new System.Windows.Forms.Label();
             this.Mainpanel.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -179,6 +180,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lblPlanID);
             this.panel3.Controls.Add(this.btnSearch);
             this.panel3.Controls.Add(this.txtPartNo);
             this.panel3.Controls.Add(this.label3);
@@ -273,6 +275,16 @@
             this.tileUpdate.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.tileUpdate.UseTileImage = true;
             // 
+            // lblPlanID
+            // 
+            this.lblPlanID.AutoSize = true;
+            this.lblPlanID.Location = new System.Drawing.Point(294, 23);
+            this.lblPlanID.Name = "lblPlanID";
+            this.lblPlanID.Size = new System.Drawing.Size(38, 12);
+            this.lblPlanID.TabIndex = 28;
+            this.lblPlanID.Text = "label6";
+            this.lblPlanID.Visible = false;
+            // 
             // Purchasing_Order
             // 
             this.ClientSize = new System.Drawing.Size(1051, 533);
@@ -319,5 +331,6 @@
         protected System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnRight;
         private System.Windows.Forms.Button btnLeft;
+        private System.Windows.Forms.Label lblPlanID;
     }
 }
