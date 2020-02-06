@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtProduct = new System.Windows.Forms.TextBox();
-            this.txtStartNum = new System.Windows.Forms.TextBox();
             this.cboCompany = new System.Windows.Forms.ComboBox();
             this.cboResult = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,6 +41,8 @@
             this.btnExcel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.cboProduct = new System.Windows.Forms.ComboBox();
+            this.btn_showAll = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -97,12 +96,11 @@
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.btn_showAll);
+            this.panelTop.Controls.Add(this.cboProduct);
             this.panelTop.Controls.Add(this.btnSearch);
-            this.panelTop.Controls.Add(this.txtProduct);
-            this.panelTop.Controls.Add(this.txtStartNum);
             this.panelTop.Controls.Add(this.cboCompany);
             this.panelTop.Controls.Add(this.cboResult);
-            this.panelTop.Controls.Add(this.label5);
             this.panelTop.Controls.Add(this.label6);
             this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.label3);
@@ -119,20 +117,6 @@
             this.label1.Size = new System.Drawing.Size(131, 24);
             this.label1.Text = "수입검사현황";
             // 
-            // txtProduct
-            // 
-            this.txtProduct.Location = new System.Drawing.Point(773, 12);
-            this.txtProduct.Name = "txtProduct";
-            this.txtProduct.Size = new System.Drawing.Size(138, 21);
-            this.txtProduct.TabIndex = 27;
-            // 
-            // txtStartNum
-            // 
-            this.txtStartNum.Location = new System.Drawing.Point(468, 46);
-            this.txtStartNum.Name = "txtStartNum";
-            this.txtStartNum.Size = new System.Drawing.Size(138, 21);
-            this.txtStartNum.TabIndex = 28;
-            // 
             // cboCompany
             // 
             this.cboCompany.FormattingEnabled = true;
@@ -148,17 +132,6 @@
             this.cboResult.Name = "cboResult";
             this.cboResult.Size = new System.Drawing.Size(190, 20);
             this.cboResult.TabIndex = 25;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(362, 46);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 22);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "ㆍ출발번호";
             // 
             // label6
             // 
@@ -272,6 +245,25 @@
             this.btnSearch.TabIndex = 27;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // cboProduct
+            // 
+            this.cboProduct.FormattingEnabled = true;
+            this.cboProduct.Location = new System.Drawing.Point(773, 12);
+            this.cboProduct.Name = "cboProduct";
+            this.cboProduct.Size = new System.Drawing.Size(140, 20);
+            this.cboProduct.TabIndex = 29;
+            // 
+            // btn_showAll
+            // 
+            this.btn_showAll.Location = new System.Drawing.Point(837, 52);
+            this.btn_showAll.Name = "btn_showAll";
+            this.btn_showAll.Size = new System.Drawing.Size(75, 23);
+            this.btn_showAll.TabIndex = 30;
+            this.btn_showAll.Text = "전체보기";
+            this.btn_showAll.UseVisualStyleBackColor = true;
+            this.btn_showAll.Click += new System.EventHandler(this.btn_showAll_Click);
             // 
             // Import_Check
             // 
@@ -298,12 +290,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtProduct;
-        private System.Windows.Forms.TextBox txtStartNum;
         private System.Windows.Forms.ComboBox cboCompany;
         private System.Windows.Forms.ComboBox cboResult;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -315,5 +303,7 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         protected System.Windows.Forms.Button btnExcel;
         protected System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ComboBox cboProduct;
+        private System.Windows.Forms.Button btn_showAll;
     }
 }

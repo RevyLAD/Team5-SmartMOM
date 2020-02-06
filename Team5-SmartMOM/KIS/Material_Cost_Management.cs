@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Project_VO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Team5_SmartMOM.Service;
 
 namespace Team5_SmartMOM
 {
@@ -23,27 +25,35 @@ namespace Team5_SmartMOM
 
         private void Material_Cost_Management_Load(object sender, EventArgs e)
         {
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "No", "BOM_No", true, 40);
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             chk.Width = 40;
             chk.HeaderText = "선택";
             dataGridView1.Columns.Add(chk);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체", "BOM_Code", true, 140);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "No", "Material_No", false, 140);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체", "COM_Code", true, 140);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체명", "COM_Name", true, 140);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 70);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 140);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "규격", "ITEM_SIze", true, 140);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "단위", "ITEM_Unit", true, 100);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "현재단가", "Material_Price_Now", true, 100);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "이전단가", "Material_Price_Previous", true, 100);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "시작일", "Material_StartDate", true, 140);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "종료일", "Material_EndDate", true, 140);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "Material_UseOrNot", true, 140);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정자", "Material_Editer", true, 140);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정일", "Material_EditDate", true, 140);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "Material_Others", true, 140);
+            DataLoad();
+        }
 
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "BOM_Require", true, 70);
-          
-        
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "Market", "BOM_Modifier", true, 100);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "환종", "BOM_ModifiyDate", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "현재단가", "BOM_AutoDeduction", true, 100);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "이전단가", "BOM_RequirePlan", true, 100);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "시작일", "BOM_Others", true, 140);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "종료일", "BOM_Others", true, 140);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "BOM_Others", true, 140);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정자", "BOM_Others", true, 140);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정일", "BOM_Others", true, 140);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "BOM_Others", true, 140);
+        public void DataLoad()
+        {
+            KIS_Service service = new KIS_Service();
+            List<Material_VO_VIew> list = new List<Material_VO_VIew>();
+            list = service.ShowMaterial();
 
+            dataGridView1.DataSource = list;
         }
     }
 }

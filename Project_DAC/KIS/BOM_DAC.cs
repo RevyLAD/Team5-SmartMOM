@@ -67,9 +67,24 @@ namespace Project_DAC
                 return rowsAffected > 0;
             }
         }
+        /// <summary>
+        ///  프로시저 내용 
+        ///  
+        /// 	WITH BOM_Table(BOM_Code, ITEM_Code, BOM_Require, BOM_StartDate, BOM_EndDate, BOM_UseOrNot, BOM_Modifier, BOM_ModifiyDate, BOM_AutoDeduction, BOM_RequirePlan, BOM_Others , Levels)
+        ///as
+        ///(
+        ///select BOM_Code, ITEM_Code, BOM_Require, BOM_StartDate, BOM_EndDate, BOM_UseOrNot, BOM_Modifier, BOM_ModifiyDate, BOM_AutoDeduction, BOM_RequirePlan, BOM_Others,0
+        ///from BOM
+        ///where ITEM_Code = @BOM_Name
+        ///UNION ALL
+        ///select AA.BOM_Code, AA.ITEM_Code, AA.BOM_Require, AA.BOM_StartDate, AA.BOM_EndDate, AA.BOM_UseOrNot, AA.BOM_Modifier, AA.BOM_ModifiyDate, AA.BOM_AutoDeduction, AA.BOM_RequirePlan, AA.BOM_Others , BB.Levels+1
+        ///from BOM as AA inner join BOM_Table as BB on AA.BOM_Code = BB.ITEM_Code
+        ///)
+        ///select BOM_Code, REPLICATE('ㆍ', Levels)+A.ITEM_Code as ITEM_Code ,REPLICATE('ㆍ', Levels)+B.ITEM_Name as ITEM_Name,B.ITEM_Type ,BOM_Require, BOM_StartDate, BOM_EndDate, BOM_UseOrNot, BOM_Modifier, BOM_ModifiyDate, BOM_AutoDeduction, BOM_RequirePlan, BOM_Others ,Levels from BOM_Table A inner join ITEM B on B.ITEM_Code = A.ITEM_Code order by Levels
+        /// </summary>
 
 
-        public List<BOM_Serch_VO> BOM_SearchData(string name)
+        public List<BOM_Serch_VO> BOM_SearchData(string name , int type)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -77,7 +92,7 @@ namespace Project_DAC
                 cmd.CommandText = "BOMSearchData";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@BOM_Name ", name);
-
+                cmd.Parameters.AddWithValue("@type ", type);
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<BOM_Serch_VO> list = Helper.DataReaderMapToList<BOM_Serch_VO>(reader);
@@ -86,6 +101,68 @@ namespace Project_DAC
                 return list;
             }
         }
+      
+        public List<BOM_VO1> GetAllCommonCode1()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select * from ITEM";
 
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<BOM_VO1> list = Helper.DataReaderMapToList<BOM_VO1>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+        public List<ITEM_VO> GetAllCommonItem()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select * from ITEM";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ITEM_VO> list = Helper.DataReaderMapToList<ITEM_VO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+        public List<EnterpriseVO> GetAllCommonCode4()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select * from Company where COM_Type != '고객사'";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<EnterpriseVO> list = Helper.DataReaderMapToList<EnterpriseVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+        public List<BOM_VO1> GetAllCommonBOM()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select BOM_No, BOM_Code, A.ITEM_Code, BOM_Require, BOM_StartDate, BOM_EndDate, BOM_UseOrNot, BOM_Modifier, BOM_ModifiyDate, BOM_AutoDeduction, BOM_RequirePlan, BOM_Others,B.ITEM_Type from BOM A inner join ITEM B on A.ITEM_Code = B.ITEM_Code";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<BOM_VO1> list = Helper.DataReaderMapToList<BOM_VO1>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        
     }
 }

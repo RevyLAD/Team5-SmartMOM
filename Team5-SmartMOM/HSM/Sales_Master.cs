@@ -64,6 +64,7 @@ namespace Team5_SmartMOM.HSM
         }
         private void button2_Click(object sender, EventArgs e) //영업마스터 생성
         {
+            dataGridView1.DataSource = null;
             HSM_Service service = new HSM_Service();
 
             List<SalesMasterAllVO> list = new List<SalesMasterAllVO>();

@@ -31,20 +31,54 @@ namespace Team5_SmartMOM.Service
             ITEM_DAC cmd = new ITEM_DAC();
             return cmd.InsertItem(list);
         }
-
-        
-
-         public bool DeleteBOM(string list)
+        public bool DeleteItem(string list)
+        {
+            ITEM_DAC cmd = new ITEM_DAC();
+            return cmd.DeleteItem(list);
+        }
+        public bool UpdateItem(ITEM_VO list)
+        {
+            ITEM_DAC cmd = new ITEM_DAC();
+            return cmd.UpdateItem(list);
+        }
+        public bool DeleteBOM(string list)
         {
             BOM_DAC cmd = new BOM_DAC();
             return cmd.DeleteBOM(list);
         }
 
-        public List<BOM_Serch_VO> SearchBOM(string name)
+        public List<BOM_Serch_VO> SearchBOM(string name , int type)
         {
             BOM_DAC cmd = new BOM_DAC();
-            return cmd.BOM_SearchData(name);
+            return cmd.BOM_SearchData(name , type);
+        }
+        public List<ITEM_VO> GetAllCommonItem()
+        {
+            BOM_DAC dac = new BOM_DAC();
+            return dac.GetAllCommonItem();
+        }
+        public List<BOM_VO1> GetAllCommonBOM()
+        {
+            BOM_DAC dac = new BOM_DAC();
+            return dac.GetAllCommonBOM();
+        }
+        public List<EnterpriseVO> GetAllCommonCode3()
+        {
+            BOM_DAC dac = new BOM_DAC();
+            return dac.GetAllCommonCode4();
+        }
+        
+        public List<Material_VO_VIew> ShowMaterial()
+        {
+            Matarial_DAC cmd = new Matarial_DAC();
+            return cmd.ShowMaterial();
         }
 
+        public bool InsertIMaterial(Material_VO list)
+        {
+            Matarial_DAC cmd = new Matarial_DAC();
+            return cmd.InsertIMaterial(list);
+        }
+    
     }
 }

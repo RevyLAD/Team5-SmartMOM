@@ -37,9 +37,9 @@
             this.txt_Item = new System.Windows.Forms.TextBox();
             this.cbo_Deployement = new System.Windows.Forms.ComboBox();
             this.btn_Search = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.Btn_Delete = new System.Windows.Forms.Button();
+            this.Btn_newitem = new System.Windows.Forms.Button();
+            this.Btn_Copy = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -54,17 +54,17 @@
             // 
             // panelMid
             // 
-            this.panelMid.Controls.Add(this.button5);
-            this.panelMid.Controls.Add(this.button4);
-            this.panelMid.Controls.Add(this.button6);
+            this.panelMid.Controls.Add(this.Btn_newitem);
+            this.panelMid.Controls.Add(this.Btn_Copy);
+            this.panelMid.Controls.Add(this.Btn_Delete);
             this.panelMid.Controls.SetChildIndex(this.lblArrow, 0);
             this.panelMid.Controls.SetChildIndex(this.label1, 0);
             this.panelMid.Controls.SetChildIndex(this.button1, 0);
             this.panelMid.Controls.SetChildIndex(this.button2, 0);
             this.panelMid.Controls.SetChildIndex(this.button3, 0);
-            this.panelMid.Controls.SetChildIndex(this.button6, 0);
-            this.panelMid.Controls.SetChildIndex(this.button4, 0);
-            this.panelMid.Controls.SetChildIndex(this.button5, 0);
+            this.panelMid.Controls.SetChildIndex(this.Btn_Delete, 0);
+            this.panelMid.Controls.SetChildIndex(this.Btn_Copy, 0);
+            this.panelMid.Controls.SetChildIndex(this.Btn_newitem, 0);
             // 
             // button3
             // 
@@ -119,6 +119,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(14, 18);
             this.label2.Name = "label2";
@@ -129,6 +130,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(14, 55);
             this.label3.Name = "label3";
@@ -139,6 +141,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label4.Location = new System.Drawing.Point(389, 18);
@@ -150,6 +153,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.Location = new System.Drawing.Point(752, 18);
             this.label5.Name = "label5";
@@ -200,53 +204,53 @@
             this.btn_Search.UseVisualStyleBackColor = false;
             this.btn_Search.Click += new System.EventHandler(this.Btn_Search_Click);
             // 
-            // button6
+            // Btn_Delete
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.button6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button6.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button6.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(847, 0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(57, 24);
-            this.button6.TabIndex = 15;
-            this.button6.Text = "삭제";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.Button6_Click);
+            this.Btn_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.Btn_Delete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_Delete.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Btn_Delete.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
+            this.Btn_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_Delete.Location = new System.Drawing.Point(847, 0);
+            this.Btn_Delete.Name = "Btn_Delete";
+            this.Btn_Delete.Size = new System.Drawing.Size(57, 24);
+            this.Btn_Delete.TabIndex = 15;
+            this.Btn_Delete.Text = "삭제";
+            this.Btn_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btn_Delete.UseVisualStyleBackColor = false;
+            this.Btn_Delete.Click += new System.EventHandler(this.Btn_Delete_Click);
             // 
-            // button5
+            // Btn_newitem
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.button5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button5.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(733, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(57, 24);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "등록";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.Btn_newitem_Click_1);
+            this.Btn_newitem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.Btn_newitem.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_newitem.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Btn_newitem.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
+            this.Btn_newitem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_newitem.Location = new System.Drawing.Point(733, 0);
+            this.Btn_newitem.Name = "Btn_newitem";
+            this.Btn_newitem.Size = new System.Drawing.Size(57, 24);
+            this.Btn_newitem.TabIndex = 17;
+            this.Btn_newitem.Text = "등록";
+            this.Btn_newitem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btn_newitem.UseVisualStyleBackColor = false;
+            this.Btn_newitem.Click += new System.EventHandler(this.Btn_newitem_Click_1);
             // 
-            // button4
+            // Btn_Copy
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button4.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(790, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(57, 24);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "복사";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.Btn_newitem_Click_1);
+            this.Btn_Copy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.Btn_Copy.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_Copy.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Btn_Copy.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
+            this.Btn_Copy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_Copy.Location = new System.Drawing.Point(790, 0);
+            this.Btn_Copy.Name = "Btn_Copy";
+            this.Btn_Copy.Size = new System.Drawing.Size(57, 24);
+            this.Btn_Copy.TabIndex = 16;
+            this.Btn_Copy.Text = "복사";
+            this.Btn_Copy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btn_Copy.UseVisualStyleBackColor = false;
+            this.Btn_Copy.Click += new System.EventHandler(this.Btn_Copy_Click);
             // 
             // BOM
             // 
@@ -280,8 +284,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_Search;
-        protected System.Windows.Forms.Button button5;
-        protected System.Windows.Forms.Button button4;
-        protected System.Windows.Forms.Button button6;
+        protected System.Windows.Forms.Button Btn_newitem;
+        protected System.Windows.Forms.Button Btn_Copy;
+        protected System.Windows.Forms.Button Btn_Delete;
     }
 }

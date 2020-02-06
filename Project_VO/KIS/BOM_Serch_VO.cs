@@ -20,5 +20,7 @@ namespace Project_VO
         public string BOM_RequirePlan { get; set; }
         public string BOM_Others { get; set; }
         public int Levels { get; set; }
+        public string ITEM_Name { get; set; }
+        public string ITEM_Type { get; set; }
     }
 }
