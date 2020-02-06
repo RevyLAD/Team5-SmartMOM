@@ -16,8 +16,7 @@ namespace Project_DAC.LBJ
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "select a.VO_ID, VOD_Result, VOD_BadEA, VOD_GoodEA, VOD_ResultDay, b.ITEM_Code, c.ITEM_Name, ITEM_Size, d.COM_Name " +
-                                  "from VendorOrderDetail a inner join VendorOrder b on a.VO_ID = b.VO_ID inner join ITEM c on b.ITEM_Code = c.ITEM_Code inner join Company d on b.COM_Code = d.COM_Code";
+                cmd.CommandText = "select a.VO_ID, VOD_Result, VOD_BadEA, VOD_GoodEA, VOD_ResultDay, b.ITEM_Code, c.ITEM_Name, ITEM_Size, d.COM_Name from VendorOrderDetail a inner join VendorOrder b on a.VO_ID = b.VO_ID inner join ITEM c on b.ITEM_Code = c.ITEM_Code inner join Company d on b.COM_Code = d.COM_Code";
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<ImportVO> list = Helper.DataReaderMapToList<ImportVO>(reader);

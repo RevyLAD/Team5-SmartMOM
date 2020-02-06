@@ -101,7 +101,6 @@ namespace Team5_SmartMOM.LBJ
                         continue;
                 }
             }
-
             CommonUtil.ComboBinding(cbosystem, FacList, "FAC_No", "FAC_Code");
 
         }
