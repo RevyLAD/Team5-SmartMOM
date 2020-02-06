@@ -34,6 +34,11 @@ namespace Team5_SmartMOM.Service
             return dac.GetAllCompanyCode();
         }
 
+        public List<GetOrderVO> GetOrder(string plan_id)
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.GetOrder(plan_id);
+        }
         public List<CompanyCodeDetailVO> GetAllCompanyDetail(string query)
         {
             CommonCodeDAC dac = new CommonCodeDAC();
@@ -46,28 +51,58 @@ namespace Team5_SmartMOM.Service
             return dac.GetAllOrderState();
         }
 
-        public bool VendorOrder(List<CodeVO> codelist)
+        public bool VendorOrder(List<VendorOrderVO> codelist, string Plan_ID)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.VendorOrder(codelist);
+            return dac.VendorOrder(codelist, Plan_ID);
         }
 
+        //납기일자변경
         public bool EndDateChange(List<EndDateChange> datelist)
         {
             PurchasingDAC dac = new PurchasingDAC();
             return dac.EndDateChange(datelist);
         }
 
+        //발주취소
         public bool OrderDelete(List<DeleteOrder> deletelist)
         {
             PurchasingDAC dac = new PurchasingDAC();
             return dac.OrderDelete(deletelist);
         }
 
+        //입고대기
+        public bool OrderChange(List<DeleteOrder> lists)
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.OrderChange(lists);
+        }
+
+        //입고대기취소
+        public bool OrderCancel(List<DeleteOrder> lists)
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.OrderCancel(lists); 
+        }
+
+        //입고대기
+        public bool WarehousingWait(List<DeleteOrder> lists)
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.WarehousingWait(lists); 
+        }
+
+
         public List<SupplierVO> Supplier()
         {
             PurchasingDAC dac = new PurchasingDAC();
             return dac.Supplier();
+        }
+
+        public List<SupplierStateVO> SupplierState()
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.SupplierState();
         }
 
     }

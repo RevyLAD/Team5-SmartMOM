@@ -1,6 +1,7 @@
 ﻿using Project_VO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -37,6 +38,25 @@ namespace Project_DAC
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<CompanyCodeVO> list = Helper.DataReaderMapToList<CompanyCodeVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public List<GetOrderVO> GetOrder(string plan_id)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "GetOrder";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Plan_ID", plan_id);
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<GetOrderVO> list = Helper.DataReaderMapToList<GetOrderVO>(reader);
                 cmd.Connection.Close();
 
                 return list;

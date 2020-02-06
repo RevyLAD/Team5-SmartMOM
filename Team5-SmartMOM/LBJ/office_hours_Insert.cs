@@ -94,7 +94,7 @@ namespace Team5_SmartMOM.LBJ
             if(txtStartTime.Text.Length < 1)
             {
                 MessageBox.Show("시작시간을 입력해주세요.");
-                this.txtStartTime.Focus();
+                this.txtStartTime.Focus(); 
             }
             ShiftVO svo = new ShiftVO();
             LBJ_Service service = new LBJ_Service();

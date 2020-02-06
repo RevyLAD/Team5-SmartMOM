@@ -1,4 +1,5 @@
 ﻿using Project_VO;
+using Project_VO.HSM;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,74 +10,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Team5_SmartMOM.BaseForm;
+using Team5_SmartMOM.Service;
 
 namespace Team5_SmartMOM.PSM
 {
     public partial class Purchasing : BaseGridForm
-    {        
+    {
+        List<PlanIDVO> listPlanID;
         public Purchasing()
         {
             InitializeComponent();
-        }       
+        }
 
         private void Purchasing_Load(object sender, EventArgs e)
         {
-            dataGridView1.Columns.Add("품목명", "품목명");
-            dataGridView1.Columns.Add("품목유형", "품목유형");
-            dataGridView1.Columns.Add("표준발주", "표준발주");
-            dataGridView1.Columns.Add("현재고", "현재고");
-            dataGridView1.Columns.Add("업체", "업체");
-            dataGridView1.Columns.Add("담당자", "담당자");
-            dataGridView1.Columns.Add("창고", "창고");
-            dataGridView1.Columns.Add("안전재고", "안전재고");
-            dataGridView1.Columns.Add("발주방식", "발주방식");
-            dataGridView1.Columns.Add("규격", "규격");
-            dataGridView1.Columns.Add("불량율", "불량율");
-            dataGridView1.Columns.Add("항목", "항목");
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
-            dataGridView1.Columns.Add("날짜", "날짜");
-
-            DataLoad();
+            dtpDateEnd.Value = DateTime.Now.AddMonths(1);
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);            
+            InitCombo();
         }
 
-
-        public void DataLoad()
+        public void InitCombo()
         {
             CommonCodeService service = new CommonCodeService();
-            List<ItemTypeVO> common = service.GetAllItemType();
-            List<PlanIDVO> listPlanID = service.GetAllPlanID();
-            List<CompanyCodeVO> company = service.GetAllCompanyCode();
+            listPlanID = service.GetAllPlanID();
 
             //콤보박스 콤보바인딩
-            CommonUtil.ComboBinding(cboPlanID, listPlanID, "Plan_ID", "Plan_ID", "전체");
-            CommonUtil.ComboBinding(cboProduct, common, "ITEM_Type", "ITEM_Type", "전체");
-            CommonUtil.ComboBinding(cbocompany, company, "COM_Name", "COM_Code", "전체");
-
-
-            
+            CommonUtil.ComboBinding(cboPlanID, listPlanID, "Plan_ID", "Plan_ID");
         }
+
         //발주 팝업창
         private void button2_Click(object sender, EventArgs e)
         {
-            Purchasing_Order frm = new Purchasing_Order();
+            PlanIDVO listPlanID = new PlanIDVO();
+            listPlanID.Plan_ID = cboPlanID.Text;
+
+            Purchasing_Order frm = new Purchasing_Order(listPlanID);
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
         }
@@ -89,6 +57,33 @@ namespace Team5_SmartMOM.PSM
                 MessageBox.Show("시작일보다 빠를 수 없습니다.");
                 dtpDateEnd.Value = dtpDateStart.Value.AddMonths(1);
                 return;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            PlanningVO plan = new PlanningVO();
+            HSM_Service service = new HSM_Service();
+
+            plan.PlanId = cboPlanID.Text;
+            plan.SALES_OrderDate = dtpDateStart.Value.ToShortDateString();
+            plan.SALES_DueDate = dtpDateEnd.Value.ToShortDateString();
+
+            DataSet ds = service.GetMRP(plan);
+            dataGridView1.DataSource = ds.Tables[0];
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {            
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                for (int j = 3; j < dataGridView1.ColumnCount; j++)
+                {
+                    if (Convert.ToInt32(dataGridView1.Rows[i].Cells[j].Value) != 0)
+                    {
+                        dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.Yellow;                        
+                    }
+                }
             }
         }
     }
