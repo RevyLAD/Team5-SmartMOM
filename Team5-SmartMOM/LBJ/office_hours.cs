@@ -65,8 +65,6 @@ namespace Team5_SmartMOM.LBJ
                                                  select item).ToList();
 
             CommonUtil.ComboBinding(cboShift, OrderShiftList, "Common_Key", "Common_Value");
-
-
         }
 
         public void ComboLoad()
@@ -109,16 +107,7 @@ namespace Team5_SmartMOM.LBJ
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string shift = cboShift.Text;
-            string shift2 = cbosystem.Text;
-
             List<ShiftVO> list = new List<ShiftVO>();
-
-            //foreach (var item in list)
-            //    if (cboShift.Text.Trim() == item.SHIFT && cbosystem.Text.Trim() == item.FAC_Code)
-            //    {
-            //        list.Add(item);
-            //    }
 
             if (cboShift.Text.Trim() == "" && cbosystem.Text.Trim() == "")
             {
@@ -140,9 +129,5 @@ namespace Team5_SmartMOM.LBJ
             return shiftvo;
         }
 
-        private void cboShift_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

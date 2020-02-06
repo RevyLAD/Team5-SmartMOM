@@ -103,8 +103,8 @@ namespace Team5_SmartMOM.LBJ
             svo.FAC_Code = cboCode.Text.Trim();
             svo.SHIFT_StartTime = Convert.ToInt32(txtStartTime.Text.Trim());
             svo.SHIFT_EndTime = Convert.ToInt32(txtCompleteTime.Text.Trim());
-            svo.SHIFT_StartDate = dateTimePicker1.Value;
-            svo.SHIFT_EndDate = dateTimePicker2.Value;
+            svo.SHIFT_StartDate = Convert.ToDateTime(dateTimePicker1.Value.ToShortDateString());
+            svo.SHIFT_EndDate = Convert.ToDateTime(dateTimePicker2.Value.ToShortDateString());
             svo.SHIFT_InputPeople = Convert.ToInt32(txtPeople.Text.Trim());
             svo.SHIFT_UserOrNot = cboUse.Text.Trim();
             svo.SHIFT_Modifier = txtReviceDay.Text.Trim();
