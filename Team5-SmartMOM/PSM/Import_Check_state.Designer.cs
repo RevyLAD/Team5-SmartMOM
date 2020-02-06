@@ -30,15 +30,19 @@
         {
             this.label4 = new System.Windows.Forms.Label();
             this.panelMid = new System.Windows.Forms.Panel();
+            this.lblArrow = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbocompany = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panelZ1 = new PanelZ.PanelZ();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cboResult = new System.Windows.Forms.ComboBox();
+            this.txtitem = new System.Windows.Forms.TextBox();
+            this.dtpDateEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,17 +53,13 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCheck_OK = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.lblArrow = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelMid.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -100,6 +100,65 @@
             this.panelMid.Size = new System.Drawing.Size(1219, 37);
             this.panelMid.TabIndex = 26;
             // 
+            // lblArrow
+            // 
+            this.lblArrow.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblArrow.Image = global::Team5_SmartMOM.Properties.Resources.arrow;
+            this.lblArrow.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblArrow.Location = new System.Drawing.Point(0, 0);
+            this.lblArrow.Name = "lblArrow";
+            this.lblArrow.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.lblArrow.Size = new System.Drawing.Size(16, 33);
+            this.lblArrow.TabIndex = 11;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button4.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button4.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(1044, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(57, 33);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "등록";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Visible = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button6.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button6.Image = global::Team5_SmartMOM.Properties.Resources.note;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(1101, 0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(57, 33);
+            this.button6.TabIndex = 7;
+            this.button6.Text = "복사";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Visible = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button7.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button7.Image = global::Team5_SmartMOM.Properties.Resources.microsoft_excel;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(1158, 0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(57, 33);
+            this.button7.TabIndex = 8;
+            this.button7.Text = "엑셀";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Visible = false;
+            // 
             // panel9
             // 
             this.panel9.Controls.Add(this.panelMid);
@@ -118,13 +177,14 @@
             this.panel2.Size = new System.Drawing.Size(1219, 40);
             this.panel2.TabIndex = 0;
             // 
-            // comboBox1
+            // cbocompany
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(425, 11);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(191, 20);
-            this.comboBox1.TabIndex = 63;
+            this.cbocompany.FormattingEnabled = true;
+            this.cbocompany.Location = new System.Drawing.Point(425, 11);
+            this.cbocompany.Name = "cbocompany";
+            this.cbocompany.Size = new System.Drawing.Size(191, 20);
+            this.cbocompany.TabIndex = 63;
+            this.cbocompany.SelectedIndexChanged += new System.EventHandler(this.cbocompany_SelectedIndexChanged);
             // 
             // btnSearch
             // 
@@ -138,15 +198,16 @@
             this.btnSearch.TabIndex = 62;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // panelZ1
             // 
-            this.panelZ1.Controls.Add(this.comboBox1);
+            this.panelZ1.Controls.Add(this.cboResult);
+            this.panelZ1.Controls.Add(this.cbocompany);
             this.panelZ1.Controls.Add(this.btnSearch);
-            this.panelZ1.Controls.Add(this.textBox2);
-            this.panelZ1.Controls.Add(this.textBox1);
-            this.panelZ1.Controls.Add(this.dateTimePicker2);
-            this.panelZ1.Controls.Add(this.dateTimePicker1);
+            this.panelZ1.Controls.Add(this.txtitem);
+            this.panelZ1.Controls.Add(this.dtpDateEnd);
+            this.panelZ1.Controls.Add(this.dtpDateStart);
             this.panelZ1.Controls.Add(this.label10);
             this.panelZ1.Controls.Add(this.label7);
             this.panelZ1.Controls.Add(this.label5);
@@ -163,37 +224,40 @@
             this.panelZ1.Transparent1 = 150;
             this.panelZ1.Transparent2 = 150;
             // 
-            // textBox2
+            // cboResult
             // 
-            this.textBox2.Location = new System.Drawing.Point(101, 49);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(191, 21);
-            this.textBox2.TabIndex = 61;
+            this.cboResult.FormattingEnabled = true;
+            this.cboResult.Location = new System.Drawing.Point(101, 52);
+            this.cboResult.Name = "cboResult";
+            this.cboResult.Size = new System.Drawing.Size(191, 20);
+            this.cboResult.TabIndex = 64;
+            this.cboResult.SelectedIndexChanged += new System.EventHandler(this.cboResult_SelectedIndexChanged);
             // 
-            // textBox1
+            // txtitem
             // 
-            this.textBox1.Location = new System.Drawing.Point(768, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 21);
-            this.textBox1.TabIndex = 60;
+            this.txtitem.Location = new System.Drawing.Point(768, 10);
+            this.txtitem.Name = "txtitem";
+            this.txtitem.Size = new System.Drawing.Size(160, 21);
+            this.txtitem.TabIndex = 60;
+            this.txtitem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtitem_KeyPress);
             // 
-            // dateTimePicker2
+            // dtpDateEnd
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(209, 10);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(83, 21);
-            this.dateTimePicker2.TabIndex = 59;
-            this.dateTimePicker2.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
+            this.dtpDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateEnd.Location = new System.Drawing.Point(209, 10);
+            this.dtpDateEnd.Name = "dtpDateEnd";
+            this.dtpDateEnd.Size = new System.Drawing.Size(83, 21);
+            this.dtpDateEnd.TabIndex = 59;
+            this.dtpDateEnd.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
             // 
-            // dateTimePicker1
+            // dtpDateStart
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(101, 10);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(83, 21);
-            this.dateTimePicker1.TabIndex = 58;
-            this.dateTimePicker1.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
+            this.dtpDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateStart.Location = new System.Drawing.Point(101, 10);
+            this.dtpDateStart.Name = "dtpDateStart";
+            this.dtpDateStart.Size = new System.Drawing.Size(83, 21);
+            this.dtpDateStart.TabIndex = 58;
+            this.dtpDateStart.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
             // 
             // label10
             // 
@@ -284,10 +348,10 @@
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 334);
+            this.dataGridView2.Location = new System.Drawing.Point(0, 403);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1219, 268);
+            this.dataGridView2.Size = new System.Drawing.Size(1219, 199);
             this.dataGridView2.TabIndex = 7;
             // 
             // panel6
@@ -295,10 +359,25 @@
             this.panel6.Controls.Add(this.button1);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 304);
+            this.panel6.Location = new System.Drawing.Point(0, 373);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1219, 30);
             this.panel6.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Image = global::Team5_SmartMOM.Properties.Resources.note;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(1162, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(57, 30);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "취소";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -318,12 +397,12 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 113);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1219, 191);
+            this.dataGridView1.Size = new System.Drawing.Size(1219, 260);
             this.dataGridView1.TabIndex = 2;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button5);
+            this.panel3.Controls.Add(this.btnCheck_OK);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -332,30 +411,21 @@
             this.panel3.Size = new System.Drawing.Size(1219, 26);
             this.panel3.TabIndex = 1;
             // 
-            // label1
+            // btnCheck_OK
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 22);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "수입검사현황";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Image = global::Team5_SmartMOM.Properties.Resources.note;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1162, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 30);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "취소";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnCheck_OK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.btnCheck_OK.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCheck_OK.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCheck_OK.Image = global::Team5_SmartMOM.Properties.Resources.note;
+            this.btnCheck_OK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCheck_OK.Location = new System.Drawing.Point(1046, 0);
+            this.btnCheck_OK.Name = "btnCheck_OK";
+            this.btnCheck_OK.Size = new System.Drawing.Size(116, 26);
+            this.btnCheck_OK.TabIndex = 13;
+            this.btnCheck_OK.Text = "검사확인완료";
+            this.btnCheck_OK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCheck_OK.UseVisualStyleBackColor = false;
+            this.btnCheck_OK.Click += new System.EventHandler(this.btnCheck_OK_Click);
             // 
             // button2
             // 
@@ -372,79 +442,15 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // lblArrow
+            // label1
             // 
-            this.lblArrow.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblArrow.Image = global::Team5_SmartMOM.Properties.Resources.arrow;
-            this.lblArrow.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblArrow.Location = new System.Drawing.Point(0, 0);
-            this.lblArrow.Name = "lblArrow";
-            this.lblArrow.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.lblArrow.Size = new System.Drawing.Size(16, 33);
-            this.lblArrow.TabIndex = 11;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button4.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(1044, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(57, 33);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "등록";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Visible = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.button6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button6.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button6.Image = global::Team5_SmartMOM.Properties.Resources.note;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(1101, 0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(57, 33);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "복사";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Visible = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.button7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button7.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button7.Image = global::Team5_SmartMOM.Properties.Resources.microsoft_excel;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(1158, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(57, 33);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "엑셀";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Visible = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.button5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button5.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.Image = global::Team5_SmartMOM.Properties.Resources.note;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(1105, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(57, 26);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "저장";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 22);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "수입검사현황";
             // 
             // Import_Check_state
             // 
@@ -483,13 +489,12 @@
         protected System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbocompany;
         protected System.Windows.Forms.Button btnSearch;
         private PanelZ.PanelZ panelZ1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtitem;
+        private System.Windows.Forms.DateTimePicker dtpDateEnd;
+        private System.Windows.Forms.DateTimePicker dtpDateStart;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
@@ -506,6 +511,7 @@
         private System.Windows.Forms.Panel panel3;
         protected System.Windows.Forms.Button button2;
         protected System.Windows.Forms.Label label1;
-        protected System.Windows.Forms.Button button5;
+        protected System.Windows.Forms.Button btnCheck_OK;
+        private System.Windows.Forms.ComboBox cboResult;
     }
 }
