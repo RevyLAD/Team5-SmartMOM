@@ -12,6 +12,8 @@ using System.Timers;
 using log4net.Core;
 using System.IO;
 using System.Configuration;
+using System.Net;
+using System.Data.SqlClient;
 
 namespace Team5_Pop
 {
@@ -22,6 +24,7 @@ namespace Team5_Pop
         static int machineID = 1;
         static string writeFolder = AppDomain.CurrentDomain.BaseDirectory + "\\Production";
         static int iCnt = 0;
+        string strConn = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
 
         PopVO thisvo;
         public POPGaDong(PopVO vo)
@@ -37,14 +40,12 @@ namespace Team5_Pop
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
             machineID = rnd.Next(1, 10);
 
-            Console.WriteLine("생산량 전송 프로그램 시작");
             SetTimer();
-
-            Console.ReadLine();
-            Console.WriteLine("생산량 전송 프로그램 종료");
 
             textBox23.Text = DateTime.Now.ToLongTimeString();
             timer2.Start();
+
+            AsyncEchoServer();
         }
 
         private void DataLoad()
@@ -74,7 +75,63 @@ namespace Team5_Pop
             //thisvo.WO_State;
             //thisvo.WO_Time;
         }
+        async Task AsyncEchoServer()
+        {
+            TcpListener listener = new TcpListener(IPAddress.Any, 7000);
+            listener.Start();
+            while (true)
+            {
+                TcpClient tc = await listener.AcceptTcpClientAsync().ConfigureAwait(false);
+                await Task.Factory.StartNew(AsyncTcpProcess, tc);
+            }
+        }
 
+        private async Task AsyncTcpProcess(object o)
+        {
+            TcpClient tc = (TcpClient)o;
+            NetworkStream stream = tc.GetStream();
+
+            string msg =  thisvo.ITEM_Code;
+            byte[] buff = Encoding.ASCII.GetBytes(msg);
+
+            stream.Write(buff, 0, buff.Length);
+
+            byte[] buff2 = new byte[1024];
+            var readTask = stream.ReadAsync(buff2, 0, buff2.Length);
+            int nbytes = readTask.Result;
+            if (nbytes > 0)
+            {
+                //20200204 12:01:20 Machine7/65/4/0
+                string[] arrData = Encoding.ASCII.GetString(buff2, 0, nbytes).Split('/');
+                //if (arrData.Length == 5)
+                //{
+                //    using (SqlCommand cmd = new SqlCommand())
+                //    {
+                //        cmd.Connection = new SqlConnection(strConn);
+                //        cmd.CommandText = "insert into WorkQtyLog(ProductID, MachineID, Qty, BadQty) values (@ProductID, @MachineID, @Qty, @BadQty)";
+
+                //        cmd.Parameters.AddWithValue("@ProductID", int.Parse(arrData[2]));
+                //        cmd.Parameters.AddWithValue("@MachineID", int.Parse(arrData[1]));
+                //        cmd.Parameters.AddWithValue("@Qty", int.Parse(arrData[3]));
+                //        cmd.Parameters.AddWithValue("@BadQty", int.Parse(arrData[4]));
+
+                //        cmd.Connection.Open();
+                //        cmd.ExecuteNonQuery();
+                //        cmd.Connection.Close();
+                //    }
+                //}
+
+                MessageBox.Show(Encoding.ASCII.GetString(buff2, 0, nbytes));
+                listBox1.Items.Insert(0,Encoding.ASCII.GetString(buff2, 0, nbytes));
+                //Console.WriteLine(Encoding.ASCII.GetString(buff, 0, nbytes));
+                Program.Log.WriteInfo(Encoding.ASCII.GetString(buff2, 0, nbytes));
+
+                await stream.WriteAsync(buff2, 0, nbytes).ConfigureAwait(false);
+            }
+
+            stream.Close();
+            tc.Close();
+        }
         private string TimeSub(string time)
         {
             try
@@ -190,6 +247,11 @@ namespace Team5_Pop
                 timer2.Start();
                 button6.Text = "일시 정지";
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
