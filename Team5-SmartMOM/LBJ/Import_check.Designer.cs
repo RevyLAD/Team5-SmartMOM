@@ -245,7 +245,6 @@
             this.btnSearch.TabIndex = 27;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // cboProduct
             // 
@@ -263,14 +262,12 @@
             this.btn_showAll.TabIndex = 30;
             this.btn_showAll.Text = "전체보기";
             this.btn_showAll.UseVisualStyleBackColor = true;
-            this.btn_showAll.Click += new System.EventHandler(this.btn_showAll_Click);
             // 
             // Import_Check
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1222, 615);
             this.Name = "Import_Check";
-            this.Load += new System.EventHandler(this.Import_Check_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelMid.ResumeLayout(false);
