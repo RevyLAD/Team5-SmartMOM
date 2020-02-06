@@ -30,7 +30,6 @@ namespace Team5_Pop
 
             this.thisvo = vo;
         }
-
         private void POPGaDong_Load(object sender, EventArgs e)
         {
             DataLoad();
@@ -43,6 +42,9 @@ namespace Team5_Pop
 
             Console.ReadLine();
             Console.WriteLine("생산량 전송 프로그램 종료");
+
+            textBox23.Text = DateTime.Now.ToLongTimeString();
+            timer2.Start();
         }
 
         private void DataLoad()
@@ -50,7 +52,7 @@ namespace Team5_Pop
             PopService service = new PopService();
 
             txtOrderID.Text = thisvo.WO_ID;
-            txtDirectQty.Text = Convert.ToString(thisvo.directQty);
+            txtDirectQty.Text = txtNoCount.Text = Convert.ToString(thisvo.directQty.ToString("0000"));
 
             txtFacName.Text = thisvo.FAC_Name;
 
@@ -131,6 +133,63 @@ namespace Team5_Pop
 
             timer1.Stop();
             timer1.Dispose();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+
+            GaDongTimeChange();
+        }
+
+        private void GaDongTimeChange()
+        {
+            int hour = Convert.ToInt32(txtHour.Text);
+            int min = Convert.ToInt32(txtMin.Text);
+            int sec = Convert.ToInt32(txtSec.Text);
+
+            if (++sec==60)
+            {
+                sec = 0;
+                if (++min == 60)
+                {
+                    min = 0;
+                    hour++;
+                }
+            }
+
+            txtHour.Text = Convert.ToString(hour.ToString("00"));
+            txtMin.Text = Convert.ToString(min.ToString("00"));
+            txtSec.Text = Convert.ToString(sec.ToString("00"));
+            textBox22.Text = txtMin.Text + " 분";
+
+            txtCount.Text = Convert.ToString((Convert.ToInt64(txtCount.Text)+1).ToString("0000"));
+            txtNoCount.Text = Convert.ToString((Convert.ToInt64(txtDirectQty.Text) - Convert.ToInt64(txtCount.Text)).ToString("0000"));
+
+            if (txtCount.Text.Trim() == txtDirectQty.Text.Trim())
+            {
+                timer2.Stop();
+                progressBar1.Value = 100;
+                button6.Enabled = false;
+                button3.Enabled = false;
+            }
+            else
+            {
+                progressBar1.Value = (int)((Convert.ToDouble(txtCount.Text) / Convert.ToDouble(txtDirectQty.Text)) * 100);
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (button6.Text == "일시 정지")
+            {
+                timer2.Stop();
+                button6.Text = "계속하기";
+            }
+            else if(button6.Text == "계속하기")
+            {
+                timer2.Start();
+                button6.Text = "일시 정지";
+            }
         }
     }
 }

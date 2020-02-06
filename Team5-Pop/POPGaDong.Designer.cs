@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtFacName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
@@ -47,6 +48,9 @@
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.txtDirectQty = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtPlanTE = new System.Windows.Forms.TextBox();
+            this.txtPlanTS = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -55,15 +59,17 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtSec = new System.Windows.Forms.TextBox();
+            this.txtMin = new System.Windows.Forms.TextBox();
             this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.txtHour = new System.Windows.Forms.TextBox();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.textBox28 = new System.Windows.Forms.TextBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.txtCount = new System.Windows.Forms.TextBox();
             this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.txtNoCount = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -80,9 +86,7 @@
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.textBox36 = new System.Windows.Forms.TextBox();
             this.textBox37 = new System.Windows.Forms.TextBox();
-            this.txtPlanTS = new System.Windows.Forms.TextBox();
-            this.txtPlanTE = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -359,6 +363,48 @@
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             // 
+            // txtPlanTE
+            // 
+            this.txtPlanTE.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtPlanTE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtPlanTE.ForeColor = System.Drawing.Color.Azure;
+            this.txtPlanTE.Location = new System.Drawing.Point(6, 124);
+            this.txtPlanTE.Multiline = true;
+            this.txtPlanTE.Name = "txtPlanTE";
+            this.txtPlanTE.ReadOnly = true;
+            this.txtPlanTE.Size = new System.Drawing.Size(193, 28);
+            this.txtPlanTE.TabIndex = 13;
+            this.txtPlanTE.Text = "00:00:00";
+            this.txtPlanTE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtPlanTS
+            // 
+            this.txtPlanTS.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtPlanTS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtPlanTS.ForeColor = System.Drawing.Color.Azure;
+            this.txtPlanTS.Location = new System.Drawing.Point(6, 92);
+            this.txtPlanTS.Multiline = true;
+            this.txtPlanTS.Name = "txtPlanTS";
+            this.txtPlanTS.ReadOnly = true;
+            this.txtPlanTS.Size = new System.Drawing.Size(193, 28);
+            this.txtPlanTS.TabIndex = 12;
+            this.txtPlanTS.Text = "00:00:00";
+            this.txtPlanTS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox4.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox4.ForeColor = System.Drawing.Color.LawnGreen;
+            this.textBox4.Location = new System.Drawing.Point(6, 63);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(193, 96);
+            this.textBox4.TabIndex = 14;
+            this.textBox4.Text = "공정 가동 시간";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // textBox18
             // 
             this.textBox18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -448,8 +494,10 @@
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox6.Controls.Add(this.txtSec);
+            this.groupBox6.Controls.Add(this.txtMin);
             this.groupBox6.Controls.Add(this.textBox24);
-            this.groupBox6.Controls.Add(this.textBox25);
+            this.groupBox6.Controls.Add(this.txtHour);
             this.groupBox6.Controls.Add(this.textBox21);
             this.groupBox6.Controls.Add(this.textBox23);
             this.groupBox6.Location = new System.Drawing.Point(453, 274);
@@ -457,6 +505,34 @@
             this.groupBox6.Size = new System.Drawing.Size(424, 45);
             this.groupBox6.TabIndex = 14;
             this.groupBox6.TabStop = false;
+            // 
+            // txtSec
+            // 
+            this.txtSec.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtSec.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtSec.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSec.Location = new System.Drawing.Point(384, 9);
+            this.txtSec.Multiline = true;
+            this.txtSec.Name = "txtSec";
+            this.txtSec.ReadOnly = true;
+            this.txtSec.Size = new System.Drawing.Size(36, 29);
+            this.txtSec.TabIndex = 15;
+            this.txtSec.Text = "00";
+            this.txtSec.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtMin
+            // 
+            this.txtMin.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtMin.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtMin.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtMin.Location = new System.Drawing.Point(342, 9);
+            this.txtMin.Multiline = true;
+            this.txtMin.Name = "txtMin";
+            this.txtMin.ReadOnly = true;
+            this.txtMin.Size = new System.Drawing.Size(36, 29);
+            this.txtMin.TabIndex = 14;
+            this.txtMin.Text = "00";
+            this.txtMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox24
             // 
@@ -472,17 +548,19 @@
             this.textBox24.Text = "경과시간";
             this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox25
+            // txtHour
             // 
-            this.textBox25.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox25.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox25.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox25.Location = new System.Drawing.Point(290, 6);
-            this.textBox25.Multiline = true;
-            this.textBox25.Name = "textBox25";
-            this.textBox25.ReadOnly = true;
-            this.textBox25.Size = new System.Drawing.Size(130, 34);
-            this.textBox25.TabIndex = 12;
+            this.txtHour.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtHour.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtHour.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtHour.Location = new System.Drawing.Point(300, 9);
+            this.txtHour.Multiline = true;
+            this.txtHour.Name = "txtHour";
+            this.txtHour.ReadOnly = true;
+            this.txtHour.Size = new System.Drawing.Size(36, 29);
+            this.txtHour.TabIndex = 12;
+            this.txtHour.Text = "00";
+            this.txtHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox21
             // 
@@ -514,9 +592,9 @@
             // 
             this.groupBox8.BackColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox8.Controls.Add(this.textBox28);
-            this.groupBox8.Controls.Add(this.textBox29);
+            this.groupBox8.Controls.Add(this.txtCount);
             this.groupBox8.Controls.Add(this.textBox26);
-            this.groupBox8.Controls.Add(this.textBox27);
+            this.groupBox8.Controls.Add(this.txtNoCount);
             this.groupBox8.Location = new System.Drawing.Point(14, 274);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(428, 97);
@@ -537,19 +615,19 @@
             this.textBox28.Text = "작업량(COUNT)";
             this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox29
+            // txtCount
             // 
-            this.textBox29.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox29.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
-            this.textBox29.ForeColor = System.Drawing.Color.Red;
-            this.textBox29.Location = new System.Drawing.Point(224, 39);
-            this.textBox29.Multiline = true;
-            this.textBox29.Name = "textBox29";
-            this.textBox29.ReadOnly = true;
-            this.textBox29.Size = new System.Drawing.Size(193, 48);
-            this.textBox29.TabIndex = 14;
-            this.textBox29.Text = "0000";
-            this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCount.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
+            this.txtCount.ForeColor = System.Drawing.Color.Red;
+            this.txtCount.Location = new System.Drawing.Point(224, 39);
+            this.txtCount.Multiline = true;
+            this.txtCount.Name = "txtCount";
+            this.txtCount.ReadOnly = true;
+            this.txtCount.Size = new System.Drawing.Size(193, 48);
+            this.txtCount.TabIndex = 14;
+            this.txtCount.Text = "0000";
+            this.txtCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox26
             // 
@@ -565,19 +643,19 @@
             this.textBox26.Text = "오더 잔량";
             this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox27
+            // txtNoCount
             // 
-            this.textBox27.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox27.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox27.ForeColor = System.Drawing.Color.Red;
-            this.textBox27.Location = new System.Drawing.Point(7, 39);
-            this.textBox27.Multiline = true;
-            this.textBox27.Name = "textBox27";
-            this.textBox27.ReadOnly = true;
-            this.textBox27.Size = new System.Drawing.Size(193, 48);
-            this.textBox27.TabIndex = 12;
-            this.textBox27.Text = "0000";
-            this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtNoCount.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtNoCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtNoCount.ForeColor = System.Drawing.Color.Red;
+            this.txtNoCount.Location = new System.Drawing.Point(7, 39);
+            this.txtNoCount.Multiline = true;
+            this.txtNoCount.Name = "txtNoCount";
+            this.txtNoCount.ReadOnly = true;
+            this.txtNoCount.Size = new System.Drawing.Size(193, 48);
+            this.txtNoCount.TabIndex = 12;
+            this.txtNoCount.Text = "0000";
+            this.txtNoCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox7
             // 
@@ -601,6 +679,7 @@
             this.button6.TabIndex = 4;
             this.button6.Text = "일시 정지";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // textBox6
             // 
@@ -722,7 +801,7 @@
             // progressBar1
             // 
             this.progressBar1.BackColor = System.Drawing.Color.Gray;
-            this.progressBar1.ForeColor = System.Drawing.Color.Chartreuse;
+            this.progressBar1.ForeColor = System.Drawing.Color.Aquamarine;
             this.progressBar1.Location = new System.Drawing.Point(116, 8);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(304, 34);
@@ -782,47 +861,10 @@
             this.textBox37.Text = "00 분";
             this.textBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // txtPlanTS
+            // timer2
             // 
-            this.txtPlanTS.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.txtPlanTS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtPlanTS.ForeColor = System.Drawing.Color.Azure;
-            this.txtPlanTS.Location = new System.Drawing.Point(6, 92);
-            this.txtPlanTS.Multiline = true;
-            this.txtPlanTS.Name = "txtPlanTS";
-            this.txtPlanTS.ReadOnly = true;
-            this.txtPlanTS.Size = new System.Drawing.Size(193, 28);
-            this.txtPlanTS.TabIndex = 12;
-            this.txtPlanTS.Text = "00:00:00";
-            this.txtPlanTS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtPlanTE
-            // 
-            this.txtPlanTE.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.txtPlanTE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtPlanTE.ForeColor = System.Drawing.Color.Azure;
-            this.txtPlanTE.Location = new System.Drawing.Point(6, 124);
-            this.txtPlanTE.Multiline = true;
-            this.txtPlanTE.Name = "txtPlanTE";
-            this.txtPlanTE.ReadOnly = true;
-            this.txtPlanTE.Size = new System.Drawing.Size(193, 28);
-            this.txtPlanTE.TabIndex = 13;
-            this.txtPlanTE.Text = "00:00:00";
-            this.txtPlanTE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox4.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox4.ForeColor = System.Drawing.Color.LawnGreen;
-            this.textBox4.Location = new System.Drawing.Point(6, 63);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(193, 96);
-            this.textBox4.TabIndex = 14;
-            this.textBox4.Text = "공정 가동 시간";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // POPGaDong
             // 
@@ -903,14 +945,14 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox txtHour;
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.TextBox textBox23;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.TextBox textBox29;
+        private System.Windows.Forms.TextBox txtCount;
         private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.TextBox txtNoCount;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox textBox6;
@@ -930,5 +972,8 @@
         private System.Windows.Forms.TextBox txtPlanTE;
         private System.Windows.Forms.TextBox txtPlanTS;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.TextBox txtSec;
+        private System.Windows.Forms.TextBox txtMin;
     }
 }
