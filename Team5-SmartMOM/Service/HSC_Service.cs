@@ -98,5 +98,11 @@ namespace Team5_SmartMOM.Service
             FacilitieDAC dac = new FacilitieDAC();
             return dac.FindFacDetail(Code);
         }
+
+        public void DeleteBOR(string Code)
+        {
+            BORDAC dac = new BORDAC();
+            dac.DeleteBOR(Code);
+        }
     }
 }

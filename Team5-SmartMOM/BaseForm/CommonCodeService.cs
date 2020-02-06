@@ -34,7 +34,19 @@ namespace Team5_SmartMOM.BaseForm
             return dac.GetAllPlanID();
         }
 
-         public List<CommonCodeVO> GetFacilityClass()
+        public List<PlanIDVO> GetPlanIDByWorkOrder()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.GetPlanIDByWorkOrder();
+        }
+
+        public List<PlanIDVO> GetPlanIDByWorkOrder2()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.GetPlanIDByWorkOrder2();
+        }
+
+        public List<CommonCodeVO> GetFacilityClass()
         {
             CommonCodeDAC dac = new CommonCodeDAC();
             return dac.GetFacilityClass();
@@ -79,5 +91,13 @@ namespace Team5_SmartMOM.BaseForm
             CommonCodeDAC dac = new CommonCodeDAC();
             return dac.GetVENDOR();
         }
+
+        public List<ItemTypeVO> GetAllItemType()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.GetAllItemType();
+        }
+
+        
     }
 }

@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Project_VO;
+using Project_VO.HSM;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Team5_SmartMOM.BaseForm;
+using Team5_SmartMOM.Service;
 
 namespace Team5_SmartMOM.HSM
 {
@@ -17,14 +21,59 @@ namespace Team5_SmartMOM.HSM
 
         private void Product_Plan_Load(object sender, EventArgs e)
         {
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "설비", "ITEM_Code", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "공정", "FACG_Code", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "FAC_Code", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "BOR_TactTime", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "날짜", "BOR_Priority", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "날짜", "BOR_UseOrNot", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "날짜", "BOR_yeild", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "날짜", "BOR_Ohters", true, 150);
+
+            dtpDateEnd.Value = DateTime.Now.AddMonths(1);
+            InitCombo();
+            btnSearch.PerformClick();
+        }
+
+
+        private void InitCombo() //콥보박스 바인딩
+        {
+            CommonCodeService service = new CommonCodeService();
+
+            List<PlanIDVO> listPlanID = service.GetAllPlanID();
+            List<ItemCodeVO> listItemCode = service.GetAllItemCode();
+
+
+
+            CommonUtil.ComboBinding(cboPlanID, listPlanID, "Plan_ID", "Plan_ID");
+            CommonUtil.ComboBinding(cboProduct, listItemCode, "ITEM_Code", "ITEM_Name", "");
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            PlanningVO plan = new PlanningVO();
+            HSM_Service service = new HSM_Service();
+
+            plan.PlanId = cboPlanID.Text;
+            plan.SALES_OrderDate = dtpDateStart.Value.ToShortDateString();
+            plan.SALES_DueDate = dtpDateEnd.Value.ToShortDateString();
+
+
+            DataSet ds = service.GetProductPlan(plan);
+            dataGridView1.DataSource = ds.Tables[0];
+        }
+
+        private void dtpDateEnd_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpDateStart.Value > dtpDateEnd.Value.AddDays(1))
+            {
+                MessageBox.Show("시작일보다 빠를 수 없습니다.");
+                dtpDateEnd.Value = dtpDateStart.Value.AddMonths(1);
+                return;
+            }
+        }
+
+        private void dtpDateStart_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpDateStart.Value > dtpDateEnd.Value)
+            {
+                MessageBox.Show("종료일보다 늦을 수 없습니다.");
+                dtpDateStart.Value = dtpDateEnd.Value.AddMonths(-1);
+                return;
+            }
         }
     }
 }

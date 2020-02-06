@@ -39,7 +39,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.txt_differenceItem = new System.Windows.Forms.ComboBox();
+            this.cbo_differenceItem = new System.Windows.Forms.ComboBox();
             this.txt_Quantity = new System.Windows.Forms.TextBox();
             this.dtp_Enddate = new System.Windows.Forms.DateTimePicker();
             this.txt_Reviser = new System.Windows.Forms.TextBox();
@@ -82,7 +82,7 @@
             this.panelDock.Controls.Add(this.txt_Reviser);
             this.panelDock.Controls.Add(this.dtp_Enddate);
             this.panelDock.Controls.Add(this.txt_Quantity);
-            this.panelDock.Controls.Add(this.txt_differenceItem);
+            this.panelDock.Controls.Add(this.cbo_differenceItem);
             this.panelDock.Controls.Add(this.label8);
             this.panelDock.Controls.Add(this.label9);
             this.panelDock.Controls.Add(this.label10);
@@ -96,6 +96,11 @@
             this.panelDock.Controls.Add(this.label2);
             this.panelDock.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.panelDock.Size = new System.Drawing.Size(611, 392);
+            // 
+            // label1
+            // 
+            this.label1.Size = new System.Drawing.Size(40, 22);
+            this.label1.Text = "BOM";
             // 
             // button2
             // 
@@ -226,13 +231,13 @@
             this.label12.TabIndex = 6;
             this.label12.Text = "ㆍ품목";
             // 
-            // txt_differenceItem
+            // cbo_differenceItem
             // 
-            this.txt_differenceItem.FormattingEnabled = true;
-            this.txt_differenceItem.Location = new System.Drawing.Point(118, 17);
-            this.txt_differenceItem.Name = "txt_differenceItem";
-            this.txt_differenceItem.Size = new System.Drawing.Size(175, 20);
-            this.txt_differenceItem.TabIndex = 11;
+            this.cbo_differenceItem.FormattingEnabled = true;
+            this.cbo_differenceItem.Location = new System.Drawing.Point(118, 17);
+            this.cbo_differenceItem.Name = "cbo_differenceItem";
+            this.cbo_differenceItem.Size = new System.Drawing.Size(175, 20);
+            this.cbo_differenceItem.TabIndex = 11;
             // 
             // txt_Quantity
             // 
@@ -278,6 +283,7 @@
             this.cbo_Item.Name = "cbo_Item";
             this.cbo_Item.Size = new System.Drawing.Size(177, 20);
             this.cbo_Item.TabIndex = 61;
+            this.cbo_Item.SelectedIndexChanged += new System.EventHandler(this.Cbo_Item_SelectedIndexChanged);
             // 
             // txt_Revise_day
             // 
@@ -315,6 +321,7 @@
             this.ClientSize = new System.Drawing.Size(633, 462);
             this.Name = "BOM_detail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.BOM_detail_Load);
             this.panelFull.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.panelBottom.ResumeLayout(false);
@@ -333,7 +340,7 @@
         private System.Windows.Forms.TextBox txt_Reviser;
         private System.Windows.Forms.DateTimePicker dtp_Enddate;
         private System.Windows.Forms.TextBox txt_Quantity;
-        private System.Windows.Forms.ComboBox txt_differenceItem;
+        private System.Windows.Forms.ComboBox cbo_differenceItem;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;

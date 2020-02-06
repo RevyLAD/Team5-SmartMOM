@@ -33,6 +33,32 @@ namespace Project_DAC.HSM
         }
 
         /// <summary>
+        /// 상태가 '작업대기'인 항목조회
+        /// </summary>
+        /// <returns></returns>
+        public List<SalesMasterWorkOrder> GetSalesMasterByPlanID(string planId)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = @"select s.ITEM_Code, i.ITEM_Name, s.SALES_OrderQty,Convert(nvarchar(10),SALES_Duedate,23) SALES_Duedate
+                                    from SalesMaster s , ITEM i
+                                    where Plan_ID = @Plan_ID
+                                    and SALES_ORDER_STATE = '작업대기'
+                                    and s.ITEM_Code = i.ITEM_Code";
+
+                cmd.Parameters.AddWithValue("@Plan_ID", planId);
+
+                cmd.Connection.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<SalesMasterWorkOrder> list = Helper.DataReaderMapToList<SalesMasterWorkOrder>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+        /// <summary>
         /// 엑셀파일 업로드
         /// </summary>
         /// <param name="sales"></param>
@@ -162,6 +188,38 @@ namespace Project_DAC.HSM
                         cmd.ExecuteNonQuery();
                     }
 
+                    cmd.Connection.Close();
+
+
+                }
+
+                return true;
+
+
+            }
+            catch (Exception err)
+            {
+
+                return false;
+            }
+
+        }
+
+        public bool UpdatePlanID(string workID)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+
+                    cmd.Connection = new SqlConnection(this.ConnectionString);
+                    cmd.Connection.Open();
+                    cmd.CommandText = "UPDATE SalesMaster SET Sales_Order_State = '작업대기' WHERE SO_WorkOrderID = @SO_WorkOrderID";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@SO_WorkOrderID", workID);
+
+
+                    cmd.ExecuteNonQuery();
                     cmd.Connection.Close();
 
 

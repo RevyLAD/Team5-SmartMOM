@@ -20,12 +20,20 @@ namespace Team5_SmartMOM.HSM
         }
         private void Sales_Master_Upload_Load(object sender, EventArgs e)
         {
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.MultiSelect = true;
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "planDate", "planDate", true, 160);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "WORK_ORDER_ID", "WORK_ORDER_ID", true, 140);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체CODE", "업체CODE", true, 100);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주구분", "발주구분", true, 90);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "ITEM CODE", "ITEM CODE ", true, 90);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "계획수량합계", "계획수량합계", true, 90);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "납기일", true, 90);
+
+
         }
 
         private void button3_Click(object sender, EventArgs e) //영업마스터 업로드
         {
+            
             MasterCreate frm = new MasterCreate();
             frm.StartPosition = FormStartPosition.CenterScreen;
             
@@ -37,32 +45,40 @@ namespace Team5_SmartMOM.HSM
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)//저장
         {
             List<SalesMasterVO> sales = new List<SalesMasterVO>();
 
-            for (int i = 0; i < dataGridView1.RowCount; i++)
+            if(dataGridView1.RowCount > 0)
             {
-                SalesMasterVO sale = new SalesMasterVO();
-                sale.SALES_OrderDate= dataGridView1.Rows[i].Cells["planDate"].Value.ToString();
-                sale.SO_WorkOrderID = dataGridView1.Rows[i].Cells["WORK_ORDER_ID"].Value.ToString();
-                sale.COM_Code = dataGridView1.Rows[i].Cells["업체CODE"].Value.ToString();
-                sale.PO_Type = dataGridView1.Rows[i].Cells["발주구분"].Value.ToString();
-                sale.ITEM_Code = dataGridView1.Rows[i].Cells["ITEM CODE"].Value.ToString();
-                sale.SALES_OrderQty = Convert.ToInt32(dataGridView1.Rows[i].Cells["계획수량합계"].Value);
-                sale.SALES_Duedate = dataGridView1.Rows[i].Cells["납기일"].Value.ToString();
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    SalesMasterVO sale = new SalesMasterVO();
+                    sale.SALES_OrderDate = dataGridView1.Rows[i].Cells["planDate"].Value.ToString();
+                    sale.SO_WorkOrderID = dataGridView1.Rows[i].Cells["WORK_ORDER_ID"].Value.ToString();
+                    sale.COM_Code = dataGridView1.Rows[i].Cells["업체CODE"].Value.ToString();
+                    sale.PO_Type = dataGridView1.Rows[i].Cells["발주구분"].Value.ToString();
+                    sale.ITEM_Code = dataGridView1.Rows[i].Cells["ITEM CODE"].Value.ToString();
+                    sale.SALES_OrderQty = Convert.ToInt32(dataGridView1.Rows[i].Cells["계획수량합계"].Value);
+                    sale.SALES_Duedate = dataGridView1.Rows[i].Cells["납기일"].Value.ToString();
 
-                sales.Add(sale);
-            }
+                    sales.Add(sale);
+                }
 
-            HSM_Service service = new HSM_Service();
-            if(service.UploadSalesMaster(sales))
-            {
-                MessageBox.Show("영업마스터가 저장되었습니다.");
+                HSM_Service service = new HSM_Service();
+                if (service.UploadSalesMaster(sales))
+                {
+                    MessageBox.Show("영업마스터가 저장되었습니다.");
+                }
+                else
+                {
+                    MessageBox.Show("저장실패");
+                }
+
             }
             else
             {
-                MessageBox.Show("저장실패");
+                MessageBox.Show("영업마스터를 먼저 업로드 하세요.");
             }
 
         }

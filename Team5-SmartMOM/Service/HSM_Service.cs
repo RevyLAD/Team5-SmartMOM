@@ -23,11 +23,42 @@ namespace Team5_SmartMOM.Service
             return dac.UploadPassiveSalesMaster(sales);
         }
 
+        public List<WorkOrderVO> GetWorkOrderByPlanId(string planId)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.GetWorkOrderByPlanId(planId);
+        }
+
+        public List<WorkOrderVO> GetWorkOrderByPlan()
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.GetWorkOrderByPlan();
+        }
+
+        public bool InsertWorkOrder(string planId)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.InsertWorkOrder(planId);
+        }
+
+        public bool UpdateWorkOrderConfirm(List<WorkOrderVO> wo)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.UpdateWorkOrderConfirm(wo);
+        }
+
+
         public List<SalesMasterAllVO> GetAllSalesMaster()
         {
             SalesMasterDAC dac = new SalesMasterDAC();
             return dac.GetAllSalesMaster();
         }
+        public List<SalesMasterWorkOrder> GetSalesMasterByPlanID(string planId)
+        {
+            SalesMasterDAC dac = new SalesMasterDAC();
+            return dac.GetSalesMasterByPlanID(planId);
+        }
+        
 
         public DataSet GetAllDemandPlan(PlanningVO plan)
         {
@@ -40,11 +71,29 @@ namespace Team5_SmartMOM.Service
             return dac.GetAllDemandPlanByPlanID(plan);
         }
 
+        public DataSet GetMRP(PlanningVO plan)
+        {
+            PlanningDAC dac = new PlanningDAC();
+            return dac.GetMRP(plan);
+        }
+
+        public DataSet GetProductPlan(PlanningVO plan)
+        {
+            PlanningDAC dac = new PlanningDAC();
+            return dac.GetProductPlan(plan);
+        }
+
 
         public bool UpdatePlanID(List<UpdatePlanIDVO> plan)
         {
             SalesMasterDAC dac = new SalesMasterDAC();
             return dac.UpdatePlanID(plan);
+        }
+
+        public bool UpdatePlanID(string workId)
+        {
+            SalesMasterDAC dac = new SalesMasterDAC();
+            return dac.UpdatePlanID(workId);
         }
     }
 }

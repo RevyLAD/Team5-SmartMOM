@@ -87,15 +87,15 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(208, 9);
+            this.button2.Location = new System.Drawing.Point(194, 11);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(121, 9);
+            this.button1.Location = new System.Drawing.Point(118, 11);
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(377, 10);
+            this.tileSave.Location = new System.Drawing.Point(168, 9);
             // 
             // cboCustomer
             // 

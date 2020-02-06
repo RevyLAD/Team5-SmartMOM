@@ -10,6 +10,7 @@ namespace Project_DAC
 {
     public class CommonCodeDAC : ConnectionAccess
     {
+        
         public List<CommonCodeVO> GetAllCommonCode()
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -41,6 +42,27 @@ namespace Project_DAC
                 return list;
             }
         }
+
+        public List<CompanyCodeDetailVO> GetAllCompanyDetail(string query)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+
+                cmd.CommandText = "select COM_Code, COM_Name, ITEM_Name,ITEM_Type, ITEM_Size, COM_Owner, COM_Phone, " +
+                        "COM_Information from Company c , ITEM i where COM_No = @COM_No and c.COM_Code = i.ITEM_Code";
+
+                cmd.Parameters.AddWithValue("@COM_No", query);
+                
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<CompanyCodeDetailVO> list = Helper.DataReaderMapToList<CompanyCodeDetailVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
         public List<ItemCodeVO> GetAllItemCode()
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -51,6 +73,22 @@ namespace Project_DAC
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<ItemCodeVO> list = Helper.DataReaderMapToList<ItemCodeVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public List<ItemTypeVO> GetAllItemType()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select distinct ITEM_Type from ITEM ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ItemTypeVO> list = Helper.DataReaderMapToList<ItemTypeVO>(reader);
                 cmd.Connection.Close();
 
                 return list;
@@ -72,9 +110,39 @@ namespace Project_DAC
                 return list;
             }
         }
+        public List<PlanIDVO> GetPlanIDByWorkOrder()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = " select distinct Plan_ID from salesmaster where Plan_ID is not null and SALES_ORDER_STATE ='작업대기' ";
 
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<PlanIDVO> list = Helper.DataReaderMapToList<PlanIDVO>(reader);
+                cmd.Connection.Close();
 
-              public List<CommonCodeVO> GetFacilityClass()
+                return list;
+            }
+        }
+
+        public List<PlanIDVO> GetPlanIDByWorkOrder2()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = " select distinct Plan_ID from salesmaster where Plan_ID is not null and SALES_ORDER_STATE ='작업생성' ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<PlanIDVO> list = Helper.DataReaderMapToList<PlanIDVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public List<CommonCodeVO> GetFacilityClass()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -172,7 +240,7 @@ namespace Project_DAC
         }
 
 
-                public List<CommonCodeVO> GetROUTE()
+        public List<CommonCodeVO> GetROUTE()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -236,6 +304,6 @@ namespace Project_DAC
                 return list;
             }
         }
-        
+
     }
 }

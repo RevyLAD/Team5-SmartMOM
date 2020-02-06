@@ -52,9 +52,11 @@
     <Compile Include="HSC\OrderVO.cs" />
     <Compile Include="HSM\PlanningVO.cs" />
     <Compile Include="HSM\SalesMasterVO.cs" />
+    <Compile Include="HSM\WorkOrderVO.cs" />
     <Compile Include="KIS\BOM_Serch_VO.cs" />
     <Compile Include="KIS\BOM_VO.cs" />
     <Compile Include="KIS\ITEM_VO.cs" />
+    <Compile Include="KIS\Material_VO.cs" />
     <Compile Include="LBJ\ImportVO.cs" />
     <Compile Include="LBJ\ShiftVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
