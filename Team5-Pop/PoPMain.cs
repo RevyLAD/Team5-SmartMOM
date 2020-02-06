@@ -337,9 +337,9 @@ namespace Team5_Pop
 
                     if (service.GetFacState(gadong_vo.FAC_Name) == "비가동")
                     {
-                        //mainform.CreateTabPages("공정1", new POPGaDong(gadong_vo)); <-- Gadong 폼 생성자에 PoPVO 추가해서 넘겨받아야함 (충돌땜에 내가 못했음)
+                        //mainform.CreateTabPages("공정1", new POPGaDong(gadong_vo));
                         service.UpdateFacState(gadong_vo.FAC_Name, gadong_vo.WO_ID);
-                        mainform.CreateTabPages(gadong_vo.FAC_Name, new POPGaDong());
+                        mainform.CreateTabPages(gadong_vo.FAC_Name, new POPGaDong(gadong_vo));
 
                         AsyncEchoServer();
                         DataLoad();
