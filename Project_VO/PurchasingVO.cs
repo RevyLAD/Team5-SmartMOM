@@ -28,8 +28,7 @@ namespace Project_VO
 
     public class PurchasingStateVO
     {
-        public int VO_ID { get; set; }
-        public string COM_No { get; set; }
+        public int VO_ID { get; set; }        
         public string MATERIAL_ORDER_STATE { get; set; }
         public int VO_Quantity { get; set; }
         public string ITEM_Code { get; set; }
@@ -46,6 +45,7 @@ namespace Project_VO
 
     public class VendorOrderVO
     {
+        public string Plan_ID { get; set; }        
         public string COM_Code { get; set; }
         public string MATERIAL_ORDER_STATE { get; set; }
         public string ITEM_Code { get; set; }
@@ -86,6 +86,25 @@ namespace Project_VO
         public int VO_Quantity { get; set; }        
         public DateTime VO_EndDate { get; set; }        
         public string ITEM_OrderMethod { get; set; }
+        public string MATERIAL_ORDER_STATE { get; set; }        
+    }
 
+    public class SupplierStateVO
+    {
+        public int VO_ID { get; set; } 
+        public DateTime VO_StartDate { get; set; }      
+        public string COM_Code { get; set; } 
+        public string COM_Name { get; set; } 
+        public string COM_Type { get; set; }
+        public string ITEM_Code { get; set; }
+        public string ITEM_Name { get; set; }
+        public string ITEM_Size { get; set; }
+        public string ITEM_Unit { get; set; }        
+        public int VO_Quantity { get; set; }
+        public DateTime VO_EndDate { get; set; }
+        public DateTime VO_InDate { get; set; }        
+        public string MATERIAL_ORDER_STATE { get; set; }
+        public int FACD_Qty { get; set; }
+        public string FACT_Name { get; set; }
     }
 }

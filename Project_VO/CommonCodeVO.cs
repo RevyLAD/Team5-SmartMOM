@@ -65,6 +65,18 @@ namespace Project_VO
         public string MATERIAL_ORDER_STATE { get; set; }
     }
 
+    public class GetOrderVO
+    {
+        public string COM_Name { get; set; }
+        public string COM_Type { get; set; }
+        public string ITEM_Code { get; set; }
+        public string COM_Code { get; set; }
+        public string ITEM_Size { get; set; }
+        public DateTime SALES_Duedate { get; set; }
+        public int SumQty { get; set; }
+        public string Order_State { get; set; }
+    }
+
 }
 
 
