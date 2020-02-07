@@ -1,6 +1,7 @@
 ﻿using Project_VO;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
@@ -38,6 +39,8 @@ namespace Team5_SmartMOM
         /// </summary>
         private void BOM_Load(object sender, EventArgs e)
         {
+         
+
             string[] type = { "-", "정전개", "역전개" };
             cbo_Deployement.Items.AddRange(type);
             cbo_Deployement.SelectedIndex = 0;
@@ -57,6 +60,7 @@ namespace Team5_SmartMOM
 
         private void ShowGridView()
         {
+          
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -69,7 +73,7 @@ namespace Team5_SmartMOM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "NO", "BOM_No", true, 50);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상위품목", "BOM_Code", true, 120);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 130);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "소요량", "BOM_Require", true, 70);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "소요량", "BOM_Require", true, 90);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "시작일", "BOM_StartDate", true, 120);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "종료일", "BOM_EndDate", true, 120);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "BOM_UseOrNot", true, 100);
@@ -89,7 +93,6 @@ namespace Team5_SmartMOM
 
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn(false);
 
-            checkBoxColumn.Name = "check";
 
             dataGridView1.Columns.Add(checkBoxColumn);
 

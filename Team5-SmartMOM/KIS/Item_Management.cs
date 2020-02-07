@@ -50,7 +50,7 @@ namespace Team5_SmartMOM
             but.HeaderText = "수정";
 
 
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목번호", "ITEM_No", true, 40);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "번호", "ITEM_No", true, 40);
             dataGridView1.Columns.Add(chk);
             dataGridView1.Columns.Add(but);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 140);
