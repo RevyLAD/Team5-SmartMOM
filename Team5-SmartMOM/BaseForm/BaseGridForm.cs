@@ -22,7 +22,11 @@ namespace Team5_SmartMOM
         {
             //AddHeaderCheckBox();
             //GridViewCustom();
-
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(55, 113, 138);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.ColumnHeadersHeight = 30;
+            dataGridView1.EnableHeadersVisualStyles = false;
+           
 
         }
         private void GridViewCustom()
