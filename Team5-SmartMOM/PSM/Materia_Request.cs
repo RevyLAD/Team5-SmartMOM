@@ -25,6 +25,18 @@ namespace Team5_SmartMOM.PSM
         DateTimePicker dtp;
         private void Materia_Request_Load(object sender, EventArgs e)
         {
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(55, 113, 138);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.ColumnHeadersHeight = 30;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+
+            dataGridView2.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(55, 113, 138);
+            dataGridView2.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView2.ColumnHeadersHeight = 30;
+            dataGridView2.EnableHeadersVisualStyles = false;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+
             dtp = new DateTimePicker();
             dateTimePicker1.Value = dtp.Value = DateTime.Now.AddDays(-7);
 
