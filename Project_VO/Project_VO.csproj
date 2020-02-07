@@ -57,6 +57,7 @@
     <Compile Include="KIS\BOM_VO.cs" />
     <Compile Include="KIS\ITEM_VO.cs" />
     <Compile Include="KIS\Material_VO.cs" />
+    <Compile Include="KIS\Sales_VO.cs" />
     <Compile Include="LBJ\ImportVO.cs" />
     <Compile Include="LBJ\MateriaVO.cs" />
     <Compile Include="LBJ\ShiftVO.cs" />

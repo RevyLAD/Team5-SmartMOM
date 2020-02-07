@@ -22,14 +22,6 @@ namespace Team5_SmartMOM.HSM
 
         private void Demand_Plan_Load(object sender, EventArgs e)
         {
-
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "고객WO", "SO_WorkOrderID", true, 200);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "고객사코드", "COM_Code", true, 80);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "고객사명", "COM_Name", true, 140);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 200);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "SALES_DueDate", true, 100);
-
-
             dtpDateEnd.Value = DateTime.Now.AddMonths(1);
             InitCombo();
             btnSearch.PerformClick();
@@ -112,6 +104,17 @@ namespace Team5_SmartMOM.HSM
             else
             {
                 MessageBox.Show("조회후 생산계획을 생성하세요", "확인");
+            }
+        }
+
+        private void cboPlanID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(!(cboPlanID.Text.ToString() == "전체"))
+            {
+                string[] arrDate = cboPlanID.Text.Split('_');
+               
+
+
             }
         }
     }

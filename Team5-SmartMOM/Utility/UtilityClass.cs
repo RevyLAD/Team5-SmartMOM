@@ -20,7 +20,7 @@ namespace Team5_SmartMOM
             col.ValueType = typeof(string);
             col.ReadOnly = true;
             col.DefaultCellStyle.Alignment = textAlign;
-
+            InitSettingDridView(dgv);
             dgv.Columns.Add(col);
         }
 

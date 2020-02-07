@@ -135,9 +135,9 @@
             // 
             this.btn_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btn_Search.ForeColor = System.Drawing.Color.White;
-            this.btn_Search.Location = new System.Drawing.Point(1045, 16);
+            this.btn_Search.Location = new System.Drawing.Point(1102, 8);
             this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(138, 23);
+            this.btn_Search.Size = new System.Drawing.Size(93, 39);
             this.btn_Search.TabIndex = 2;
             this.btn_Search.Text = "조회";
             this.btn_Search.UseVisualStyleBackColor = false;

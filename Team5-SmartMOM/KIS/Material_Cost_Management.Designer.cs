@@ -31,13 +31,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dtp_ExistingDate = new System.Windows.Forms.DateTimePicker();
             this.txt_item = new System.Windows.Forms.TextBox();
             this.cbo_Company = new System.Windows.Forms.ComboBox();
             this.btn_Search = new System.Windows.Forms.Button();
             this.btn_NewItem = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_copy = new System.Windows.Forms.Button();
+            this.dtp_ExistingDate = new Team5_SmartMOM.Textbox();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -70,18 +70,21 @@
             this.button3.Location = new System.Drawing.Point(934, 0);
             this.button3.Size = new System.Drawing.Size(57, 28);
             this.button3.Text = "엑셀";
+            this.button3.Visible = false;
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(991, 0);
             this.button2.Size = new System.Drawing.Size(109, 28);
             this.button2.Text = "양식 다운로드";
+            this.button2.Visible = false;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(1100, 0);
             this.button1.Size = new System.Drawing.Size(98, 28);
             this.button1.Text = "Excel등록";
+            this.button1.Visible = false;
             // 
             // panel2
             // 
@@ -90,10 +93,10 @@
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.dtp_ExistingDate);
             this.panelTop.Controls.Add(this.btn_Search);
             this.panelTop.Controls.Add(this.cbo_Company);
             this.panelTop.Controls.Add(this.txt_item);
-            this.panelTop.Controls.Add(this.dtp_ExistingDate);
             this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label2);
@@ -121,6 +124,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(17, 17);
             this.label2.Name = "label2";
@@ -131,6 +135,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(357, 17);
             this.label3.Name = "label3";
@@ -141,20 +146,13 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(706, 17);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 12);
             this.label4.TabIndex = 2;
             this.label4.Text = "ㆍ업체";
-            // 
-            // dtp_ExistingDate
-            // 
-            this.dtp_ExistingDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_ExistingDate.Location = new System.Drawing.Point(120, 13);
-            this.dtp_ExistingDate.Name = "dtp_ExistingDate";
-            this.dtp_ExistingDate.Size = new System.Drawing.Size(177, 21);
-            this.dtp_ExistingDate.TabIndex = 3;
             // 
             // txt_item
             // 
@@ -173,14 +171,16 @@
             // 
             // btn_Search
             // 
+            this.btn_Search.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btn_Search.ForeColor = System.Drawing.Color.White;
-            this.btn_Search.Location = new System.Drawing.Point(1072, 12);
+            this.btn_Search.Location = new System.Drawing.Point(1100, 12);
             this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(104, 23);
+            this.btn_Search.Size = new System.Drawing.Size(93, 39);
             this.btn_Search.TabIndex = 6;
             this.btn_Search.Text = "조회";
             this.btn_Search.UseVisualStyleBackColor = false;
+            this.btn_Search.Click += new System.EventHandler(this.Btn_Search_Click);
             // 
             // btn_NewItem
             // 
@@ -212,6 +212,7 @@
             this.btn_delete.Text = "삭제";
             this.btn_delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.Btn_delete_Click);
             // 
             // btn_copy
             // 
@@ -227,6 +228,14 @@
             this.btn_copy.Text = "복사";
             this.btn_copy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_copy.UseVisualStyleBackColor = false;
+            // 
+            // dtp_ExistingDate
+            // 
+            this.dtp_ExistingDate.BackColor = System.Drawing.Color.Transparent;
+            this.dtp_ExistingDate.Location = new System.Drawing.Point(112, 13);
+            this.dtp_ExistingDate.Name = "dtp_ExistingDate";
+            this.dtp_ExistingDate.Size = new System.Drawing.Size(193, 23);
+            this.dtp_ExistingDate.TabIndex = 14;
             // 
             // Material_Cost_Management
             // 
@@ -256,10 +265,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbo_Company;
         private System.Windows.Forms.TextBox txt_item;
-        private System.Windows.Forms.DateTimePicker dtp_ExistingDate;
         private System.Windows.Forms.Button btn_Search;
         protected System.Windows.Forms.Button btn_NewItem;
         protected System.Windows.Forms.Button btn_delete;
         protected System.Windows.Forms.Button btn_copy;
+        private Textbox dtp_ExistingDate;
     }
 }

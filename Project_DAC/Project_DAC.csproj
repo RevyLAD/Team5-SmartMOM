@@ -55,6 +55,7 @@
     <Compile Include="KIS\BOM_DAC.cs" />
     <Compile Include="KIS\ITEM_DAC.cs" />
     <Compile Include="KIS\Matarial_DAC.cs" />
+    <Compile Include="KIS\Sales_DAC.cs" />
     <Compile Include="LBJ\ImportDAC.cs" />
     <Compile Include="LBJ\MateriaDAC.cs" />
     <Compile Include="LBJ\ShiftDAC.cs" />
