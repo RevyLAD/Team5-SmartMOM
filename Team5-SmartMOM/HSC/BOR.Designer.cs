@@ -37,6 +37,8 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -59,12 +61,14 @@
             // 
             // panelMid
             // 
+            this.panelMid.Controls.Add(this.metroButton3);
             this.panelMid.Controls.Add(this.metroButton2);
             this.panelMid.Controls.Add(this.metroButton1);
             this.panelMid.Size = new System.Drawing.Size(1100, 40);
             this.panelMid.Controls.SetChildIndex(this.lblArrow, 0);
             this.panelMid.Controls.SetChildIndex(this.metroButton1, 0);
             this.panelMid.Controls.SetChildIndex(this.metroButton2, 0);
+            this.panelMid.Controls.SetChildIndex(this.metroButton3, 0);
             this.panelMid.Controls.SetChildIndex(this.label1, 0);
             this.panelMid.Controls.SetChildIndex(this.button1, 0);
             this.panelMid.Controls.SetChildIndex(this.button2, 0);
@@ -74,21 +78,21 @@
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Dock = System.Windows.Forms.DockStyle.None;
-            this.button3.Location = new System.Drawing.Point(729, 12);
+            this.button3.Location = new System.Drawing.Point(244, 3);
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Dock = System.Windows.Forms.DockStyle.None;
-            this.button2.Location = new System.Drawing.Point(785, 12);
+            this.button2.Location = new System.Drawing.Point(300, 3);
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Dock = System.Windows.Forms.DockStyle.None;
-            this.button1.Location = new System.Drawing.Point(841, 12);
+            this.button1.Location = new System.Drawing.Point(356, 3);
             this.button1.Size = new System.Drawing.Size(90, 24);
             this.button1.Text = "이력조회";
             // 
@@ -184,11 +188,12 @@
             this.metroButton2.Size = new System.Drawing.Size(62, 23);
             this.metroButton2.TabIndex = 5;
             this.metroButton2.Text = "Excel 등록";
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // metroButton1
             // 
             this.metroButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton1.Location = new System.Drawing.Point(949, 11);
+            this.metroButton1.Location = new System.Drawing.Point(836, 11);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(74, 23);
             this.metroButton1.TabIndex = 4;
@@ -218,6 +223,16 @@
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // metroButton3
+            // 
+            this.metroButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroButton3.Location = new System.Drawing.Point(958, 11);
+            this.metroButton3.Name = "metroButton3";
+            this.metroButton3.Size = new System.Drawing.Size(65, 23);
+            this.metroButton3.TabIndex = 5;
+            this.metroButton3.Text = "Excel 저장";
+            this.metroButton3.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // BOR
             // 
@@ -252,5 +267,7 @@
         private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.Label label5;
         protected System.Windows.Forms.Button btnSearch;
+        private MetroFramework.Controls.MetroButton metroButton3;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
