@@ -45,31 +45,27 @@
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelMid
-            // 
-            this.panelMid.Size = new System.Drawing.Size(1202, 51);
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(955, 0);
-            this.button3.Size = new System.Drawing.Size(81, 47);
+            this.button3.Size = new System.Drawing.Size(81, 24);
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(1036, 0);
-            this.button2.Size = new System.Drawing.Size(81, 47);
+            this.button2.Size = new System.Drawing.Size(81, 24);
             this.button2.Text = "삭제";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(1117, 0);
-            this.button1.Size = new System.Drawing.Size(81, 47);
+            this.button1.Size = new System.Drawing.Size(81, 24);
             this.button1.Text = "복사";
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(0, 51);
             this.panel2.Size = new System.Drawing.Size(1202, 77);
             // 
             // panelTop
@@ -93,12 +89,8 @@
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(136, 47);
+            this.label1.Size = new System.Drawing.Size(136, 24);
             this.label1.Text = "SHIFT 관리";
-            // 
-            // lblArrow
-            // 
-            this.lblArrow.Size = new System.Drawing.Size(16, 47);
             // 
             // cboShift
             // 
@@ -127,6 +119,7 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;

@@ -50,9 +50,8 @@ namespace Project_DAC.LBJ
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "INSERT INTO Shift(SHIFT_ID, SHIFT, FAC_Code ,SHIFT_StartTime, SHIFT_EndTime, SHIFT_StartDate, SHIFT_EndDate, SHIFT_InputPeople, SHIFT_UserOrNot,   SHIFT_Modifier, SHIFT_ModifierDate, SHIFT_Others) VALUES(@SHIFT_ID, @SHIFT, @FAC_Code ,@SHIFT_StartTime, @SHIFT_EndTime, @SHIFT_StartDate, @SHIFT_EndDate, @SHIFT_InputPeople, @SHIFT_UserOrNot, @SHIFT_Modifier, @SHIFT_ModifierDate, @SHIFT_Others)";
+                cmd.CommandText = "INSERT INTO Shift(SHIFT, FAC_Code ,SHIFT_StartTime, SHIFT_EndTime, SHIFT_StartDate, SHIFT_EndDate, SHIFT_InputPeople, SHIFT_UserOrNot,   SHIFT_Modifier, SHIFT_ModifierDate, SHIFT_Others) VALUES(@SHIFT, @FAC_Code ,@SHIFT_StartTime, @SHIFT_EndTime, @SHIFT_StartDate, @SHIFT_EndDate, @SHIFT_InputPeople, @SHIFT_UserOrNot, @SHIFT_Modifier, @SHIFT_ModifierDate, @SHIFT_Others)";
 
-                cmd.Parameters.AddWithValue("@SHIFT_ID", svo.SHIFT_ID);
                 cmd.Parameters.AddWithValue("@SHIFT", svo.SHIFT);
                 cmd.Parameters.AddWithValue("@FAC_Code", svo.FAC_Code);
                 cmd.Parameters.AddWithValue("@SHIFT_StartTime", svo.SHIFT_StartTime);
@@ -88,6 +87,20 @@ namespace Project_DAC.LBJ
                 cmd.Connection.Close();
                 return ds;
 
+            }
+        }
+        public bool DeleteShift(string list)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "Delete From Shift where SHIFT_ID in ( " + list + ")";
+
+                cmd.Connection.Open();
+                var rowsAffected = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+
+                return rowsAffected > 0;
             }
         }
     }
