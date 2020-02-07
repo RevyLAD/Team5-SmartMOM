@@ -9,6 +9,7 @@ using System.IO;
 using System.Data.OleDb;
 using Project_VO.HSM;
 using Team5_SmartMOM.Service;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Team5_SmartMOM.HSM
 {
@@ -72,6 +73,7 @@ namespace Team5_SmartMOM.HSM
                 if (service.UploadSalesMaster(sales))
                 {
                     MessageBox.Show("영업마스터가 저장되었습니다.");
+                    dataGridView1.DataSource = null;
                 }
                 else
                 {
@@ -85,5 +87,64 @@ namespace Team5_SmartMOM.HSM
             }
 
         }
+
+        private void button2_Click(object sender, EventArgs e) //양식다운로드
+        {
+            Excel.Application xlApp;
+            Excel.Workbook xlWorkBook;
+            Excel.Worksheet xlWorkSheet;
+
+            int i, j;
+
+            saveFileDialog1.Filter = "Excel Files (*.xls)|*.xls";
+            saveFileDialog1.InitialDirectory = "C:";
+            saveFileDialog1.Title = "Save";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                xlApp = new Excel.Application();
+                xlWorkBook = xlApp.Workbooks.Add();
+                xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                xlWorkSheet.Cells[1, 1] = "planDate";
+                xlWorkSheet.Cells[1, 2] = "순번";
+                xlWorkSheet.Cells[1, 3] = "WORK_ORDER_ID";
+                xlWorkSheet.Cells[1, 4] = "업체CODE";
+                xlWorkSheet.Cells[1, 5] = "납품처";
+                xlWorkSheet.Cells[1, 6] = "발주구분";
+                xlWorkSheet.Cells[1, 7] = "ITEM CODE";
+                xlWorkSheet.Cells[1, 8] = "계획수량합계";
+                xlWorkSheet.Cells[1, 9] = "납기일";
+
+
+
+
+                xlWorkBook.SaveAs(saveFileDialog1.FileName, Excel.XlFileFormat.xlWorkbookNormal);
+                xlWorkBook.Close(true);
+                xlApp.Quit();
+
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlApp);
+            }
+        }
+
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+
     }
 }
