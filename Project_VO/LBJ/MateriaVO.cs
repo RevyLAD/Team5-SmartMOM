@@ -26,6 +26,15 @@ namespace Project_VO.LBJ
         public DateTime WO_StartDate { get; set; }
         public DateTime WO_EndDate { get; set; }
     }
+    public class MateriaenVO
+    {
+        public string ITEM_Code { get; set; }
+        public string ITEM_Name { get; set; }
+        public string ITEM_Size { get; set; }
+        public string FAC_OutWareHouse { get; set; }
+        public DateTime WO_StartDate { get; set; }
+        public int planQty { get; set; }
+    }
 }
 
 

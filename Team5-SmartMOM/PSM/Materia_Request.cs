@@ -38,24 +38,16 @@ namespace Team5_SmartMOM.PSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "단위", "ITEM_Unit", true, 160);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "작업지시", "WO_State", true, 160);
 
-            dataGridView2.Columns.Add("품목", "품목");
-            dataGridView2.Columns.Add("품명", "품명");
-            dataGridView2.Columns.Add("규격", "규격");
-            dataGridView2.Columns.Add("요청창고", "요청창고");
-            dataGridView2.Columns.Add("요청일", "요청일");
-            dataGridView2.Columns.Add("재고량", "재고량");
-            dataGridView2.Columns.Add("표준불출수량", "표준불출수량");
-            dataGridView2.Columns.Add("계획요청수량", "계획요청수량");
-            dataGridView2.Columns.Add("요청수량", "요청수량");
-            dataGridView2.Columns.Add("출고수량", "출고수량");
-            dataGridView2.Columns.Add("잔량", "잔량");
-            dataGridView2.Columns.Add("사유", "사유");
-            dataGridView2.Columns.Add("품목", "계획시작일자");
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품목", "ITEM_Code", true, 200);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품명", "ITEM_Name", true, 200);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "규격", "ITEM_Size", true, 160);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "요청창고", "FAC_OutWareHouse", true, 160);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "요청일", "WO_StartDate", true, 160);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "계획요청수량", "planQty", true, 160);
 
             LBJ_Service service = new LBJ_Service();
             dataGridView1.DataSource = mvo = service.MateriaRequest();
-
-
+            dataGridView2.DataSource = service.Materiaen();
 
             DataLoad();
         }
@@ -65,6 +57,9 @@ namespace Team5_SmartMOM.PSM
             HSC_Service hscservice = new HSC_Service();
             List<MateriaVO> Materialist = lbjservice.MateriaRequest();
             dataGridView1.DataSource = Materialist;
+
+            List<MateriaenVO> Materiaenlist = lbjservice.Materiaen();
+            dataGridView2.DataSource = Materiaenlist;
 
             dataGridView1.DataSource = lbjservice.MateriaRequest();
 
@@ -78,8 +73,8 @@ namespace Team5_SmartMOM.PSM
 
             if (cboFacilities.Text.Trim() != "" && txtITEM_Code.Text != "" && txtWO_ID.Text != "")
             {
-                string a = dateTimePicker1.Value.ToString("yyyy-MM-dd");
-                string b = dateTimePicker2.Value.ToString("yyyy-MM-dd");
+                //string a = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+                //string b = dateTimePicker2.Value.ToString("yyyy-MM-dd");
                 dataGridView1.DataSource = MateriaSearch();
             }
             else
@@ -101,6 +96,11 @@ namespace Team5_SmartMOM.PSM
                     
             }
             return mvo2;
+        }
+
+        private void btnAllSearch_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = mvo;
         }
     }
 }
