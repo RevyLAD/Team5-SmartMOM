@@ -137,7 +137,7 @@ namespace Project_DAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "select * from Company where COM_Type != '고객사'";
+                cmd.CommandText = "select * from Company";
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();

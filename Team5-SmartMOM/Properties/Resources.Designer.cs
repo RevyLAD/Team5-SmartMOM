@@ -233,6 +233,26 @@ namespace Team5_SmartMOM.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap e438e1b7a4f6bb5a48cd5971f538571a {
+            get {
+                object obj = ResourceManager.GetObject("e438e1b7a4f6bb5a48cd5971f538571a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap e438e1b7a4f6bb5a48cd5971f538571a1 {
+            get {
+                object obj = ResourceManager.GetObject("e438e1b7a4f6bb5a48cd5971f538571a1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap edit {
             get {
                 object obj = ResourceManager.GetObject("edit", resourceCulture);

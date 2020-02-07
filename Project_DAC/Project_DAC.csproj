@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -54,7 +55,9 @@
     <Compile Include="KIS\BOM_DAC.cs" />
     <Compile Include="KIS\ITEM_DAC.cs" />
     <Compile Include="KIS\Matarial_DAC.cs" />
+    <Compile Include="KIS\Sales_DAC.cs" />
     <Compile Include="LBJ\ImportDAC.cs" />
+    <Compile Include="LBJ\MateriaDAC.cs" />
     <Compile Include="LBJ\ShiftDAC.cs" />
     <Compile Include="HSC\OrderDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

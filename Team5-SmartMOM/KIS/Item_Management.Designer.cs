@@ -50,6 +50,7 @@
             this.Btn_Copy = new System.Windows.Forms.Button();
             this.Btn_Delete = new System.Windows.Forms.Button();
             this.Btn_newitem = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -81,18 +82,21 @@
             this.button3.Location = new System.Drawing.Point(935, 0);
             this.button3.Size = new System.Drawing.Size(62, 24);
             this.button3.Text = "엑셀";
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(997, 0);
             this.button2.Size = new System.Drawing.Size(122, 24);
             this.button2.Text = "양식 다운로드";
+            this.button2.Visible = false;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(1119, 0);
             this.button1.Size = new System.Drawing.Size(79, 24);
             this.button1.Text = "Excel등록";
+            this.button1.Visible = false;
             // 
             // panel2
             // 
@@ -229,11 +233,12 @@
             // 
             // btn_Search
             // 
+            this.btn_Search.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btn_Search.ForeColor = System.Drawing.Color.White;
-            this.btn_Search.Location = new System.Drawing.Point(1083, 76);
+            this.btn_Search.Location = new System.Drawing.Point(1102, 57);
             this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(99, 23);
+            this.btn_Search.Size = new System.Drawing.Size(93, 39);
             this.btn_Search.TabIndex = 9;
             this.btn_Search.Text = "조회";
             this.btn_Search.UseVisualStyleBackColor = false;
@@ -400,5 +405,6 @@
         protected System.Windows.Forms.Button Btn_Copy;
         protected System.Windows.Forms.Button Btn_newitem;
         protected System.Windows.Forms.Button Btn_Delete;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

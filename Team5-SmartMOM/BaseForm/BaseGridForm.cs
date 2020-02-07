@@ -21,18 +21,26 @@ namespace Team5_SmartMOM
         private void BaseGridForm_Load(object sender, EventArgs e)
         {
             //AddHeaderCheckBox();
-
+            //GridViewCustom();
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(55, 113, 138);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.ColumnHeadersHeight = 30;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+           
 
         }
-        private void AddHeaderCheckBox()
+        private void GridViewCustom()
         {
-            CheckBox m_headerCheckBox;
-            m_headerCheckBox = new CheckBox();
 
-            m_headerCheckBox.Size = new Size(15, 15);
+            dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(200, 210, 250);
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
 
-            m_headerCheckBox.Visible = true;
-            m_headerCheckBox.TabIndex = 1;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
+
+            dataGridView1.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.AllowUserToResizeColumns = false;
         }
 
         private void label2_Click(object sender, EventArgs e)

@@ -26,7 +26,7 @@ namespace Team5_SmartMOM.HSM
         {
 
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "고객WO", "SO_WorkOrderID", true, 160);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "고객사코드", "COM_Code", true, 80);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "고객사", "COM_Code", true, 80);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "고객사명", "COM_Name", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 200);

@@ -97,8 +97,13 @@
             // 
             this.label1.Text = "자재단가관리";
             // 
+            // button2
+            // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            // 
             // button1
             // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // txt_end_date

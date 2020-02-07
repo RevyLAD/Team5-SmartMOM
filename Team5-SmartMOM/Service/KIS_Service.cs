@@ -79,6 +79,39 @@ namespace Team5_SmartMOM.Service
             Matarial_DAC cmd = new Matarial_DAC();
             return cmd.InsertIMaterial(list);
         }
-    
+        public bool InsertISales(Sales_VO list)
+        {
+            Sales_DAC cmd = new Sales_DAC();
+            return cmd.InsertISales(list);
+        }
+
+        public List<Sales_VO_VIew> ShowSales()
+        {
+            Sales_DAC cmd = new Sales_DAC();
+            return cmd.ShowSales();
+        }
+
+        public List<Sales_VO_VIew> SearchSales(string date , string name)
+        {
+            Sales_DAC cmd = new Sales_DAC();
+            return cmd.SearchSales(date , name);
+        }
+        
+        public bool DeleteSales(string list)
+        {
+            Sales_DAC cmd = new Sales_DAC();
+            return cmd.DeleteSales(list);
+        }
+        public List<Material_VO_VIew> SearchMaterial(string date, string name)
+        {
+            Matarial_DAC cmd = new Matarial_DAC();
+            return cmd.SearchMaterial(date, name);
+        }
+        
+        public bool DeleteMaterial(string list)
+        {
+            Matarial_DAC cmd = new Matarial_DAC();
+            return cmd.DeleteMaterial(list);
+        }
     }
 }

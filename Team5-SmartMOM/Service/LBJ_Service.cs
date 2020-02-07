@@ -44,10 +44,20 @@ namespace Team5_SmartMOM.Service
             ShiftDAC dac = new ShiftDAC();
             return dac.GetShiftManagement(mvo);
         }
-        //public DataSet GetAllDemandPlanByPlanID(ManagementVO management, PlanningVO plan)
-        //{
-        //    ShiftDAC dac = new ShiftDAC();
-        //    return dac.GetAllDemandPlanByPlanID(management, plan);
-        //}
+        public bool DeleteShift(string list)
+        {
+            ShiftDAC dac = new ShiftDAC();
+            return dac.DeleteShift(list);
+        }
+        public List<MateriaVO> MateriaRequest()
+        {
+            MateriaDAC dac = new MateriaDAC();
+            return dac.MateriaRequest();
+        }
+        public List<MateriaenVO> Materiaen()
+        {
+            MateriaDAC dac = new MateriaDAC();
+            return dac.Materiaen();
+        }
     }
 }
