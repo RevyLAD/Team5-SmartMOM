@@ -26,6 +26,7 @@ namespace Team5_SmartMOM
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView1.ColumnHeadersHeight = 30;
             dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
            
 
         }
