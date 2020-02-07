@@ -25,12 +25,29 @@ namespace Team5_SmartMOM.LBJ
         {
             office_hours_Insert frm = new office_hours_Insert();
             frm.StartPosition = FormStartPosition.CenterParent;
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                LBJ_Service service = new LBJ_Service();
+                dataGridView1.DataSource = list = service.Shift();
+            }
+            else
+            {
+                MessageBox.Show("등록실패", "실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void office_hours_Load(object sender, EventArgs e)
         {
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.Columns.Clear();
+
+            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+            chk.Width = 40;
+            chk.HeaderText = "선택";
+
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "No", "SHIFT_ID", true, 100);
+            dataGridView1.Columns.Add(chk);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "설비코드", "FAC_Code", true, 160);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "Shift", "SHIFT", true, 50);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "시작시간", "SHIFT_StartTime", true, 110);
@@ -69,6 +86,8 @@ namespace Team5_SmartMOM.LBJ
 
         public void ComboLoad()
         {
+            
+
             List<FacilitieDetailVO> list = new List<FacilitieDetailVO>();
 
             HSC_Service service = new HSC_Service();
@@ -128,5 +147,40 @@ namespace Team5_SmartMOM.LBJ
             return shiftvo;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LBJ_Service service = new LBJ_Service();
+            List<string> list = new List<string>();
+            bool check = true;
+            
+            for (int i=0; i<dataGridView1.RowCount; i++)
+            {
+                if (Convert.ToBoolean(dataGridView1.Rows[i].Cells[1].Value) == true)
+                {
+                    list.Add(dataGridView1.Rows[i].Cells[0].Value.ToString());
+                }
+            }
+            if (list.Count == 0)
+            {
+                MessageBox.Show("삭제할 품목을 선택해 주세요.");
+                check = false;
+            }
+            else if (check)
+            {
+
+                bool bResult = service.DeleteShift(string.Join(",", list));
+
+                if (bResult)
+                {
+                    MessageBox.Show("삭제되었습니다");
+                    DataLoad();
+                }
+                else
+                {
+                    MessageBox.Show("삭제할 수 없습니다. 다시 시도해주세요.");
+                }
+            }
+
+        }
     }
 }

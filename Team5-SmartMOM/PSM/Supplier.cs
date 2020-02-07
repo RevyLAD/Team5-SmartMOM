@@ -317,6 +317,7 @@ namespace Team5_SmartMOM.PSM
         private void btnWait_Click(object sender, EventArgs e)
         {
             List<DeleteOrder> lists = new List<DeleteOrder>();
+            List<VenderorderDetailVO> lists2 = new List<VenderorderDetailVO>();
 
             foreach (DataGridViewRow row in dataGridView2.Rows)
             {
@@ -324,13 +325,19 @@ namespace Team5_SmartMOM.PSM
 
                 if (isCellChecked)
                 {
-                    DeleteOrder list = new DeleteOrder();
-                    list.VO_ID = Convert.ToInt32(row.Cells[1].Value);
+                    DeleteOrder list = new DeleteOrder();                    
+                    list.VO_ID = Convert.ToInt32(row.Cells[1].Value);                    
                     lists.Add(list);
+
+                    VenderorderDetailVO list2 = new VenderorderDetailVO();
+                    list2.VO_ID = Convert.ToInt32(row.Cells[1].Value);
+                    list2.VOD_GoodEA = Convert.ToInt32(row.Cells[7].Value);
+                    list2.VO_StartDate = (DateTime)row.Cells[13].Value;
+                    lists2.Add(list2);
                 }
             }
             PSM_Service service = new PSM_Service();
-            service.WarehousingWait(lists);
+            service.WarehousingWait(lists, lists2);
 
             DataLoad();
         }

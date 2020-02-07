@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 using Team5_SmartMOM.BaseForm;
 using Team5_SmartMOM.Service;
@@ -60,13 +61,13 @@ namespace Team5_SmartMOM
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn(false);
-            checkBoxColumn.HeaderText = "Check";
+            
             checkBoxColumn.Name = "check";
 
             dataGridView1.Columns.Add(checkBoxColumn);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "NO", "BOM_No", true, 140);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상위품목", "BOM_Code", true, 140);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "NO", "BOM_No", true, 50);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상위품목", "BOM_Code", true, 120);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 130);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "소요량", "BOM_Require", true, 70);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "시작일", "BOM_StartDate", true, 120);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "종료일", "BOM_EndDate", true, 120);
@@ -86,17 +87,17 @@ namespace Team5_SmartMOM
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn(false);
-            checkBoxColumn.HeaderText = "Check";
+        
             checkBoxColumn.Name = "check";
 
             dataGridView1.Columns.Add(checkBoxColumn);
 
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상위품목", "BOM_Code", true, 40);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 70);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상위품목", "BOM_Code", true, 160);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 160);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 170);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "유형", "ITEM_Type", true, 70);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "타입", "Levels", true, 70);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "소요량", "BOM_Require", true, 100);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "소요량", "BOM_Require", true, 80);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "시작일", "BOM_StartDate", true, 120);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "종료일", "BOM_EndDate", true, 120);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "BOM_UseOrNot", true, 100);
@@ -188,7 +189,16 @@ namespace Team5_SmartMOM
         /// </summary>
         private void Btn_Search_Click(object sender, EventArgs e)
         {
+            using (Loading_Form frm = new Loading_Form(SearchBOM))
+            {
+                
+                frm.ShowDialog(this);
+              
+            }
+        }
 
+        private void SearchBOM()
+        {
             if (cbo_Deployement.Text == "-")
             {
                 MessageBox.Show("전개 방식을 선택해 주시기 바랍니다.");

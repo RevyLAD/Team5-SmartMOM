@@ -116,9 +116,34 @@ namespace Project_VO
         public string ITEM_Name { get; set; }
         public string ITEM_Size { get; set; }
         public string VOD_Result { get; set; }
-        public string VOD_GoodEA { get; set; }
-        public string VOD_BadEA { get; set; }
+        public int VOD_GoodEA { get; set; }
+        public int VOD_BadEA { get; set; }
         public DateTime VOD_ResultDay { get; set; }
 
+    }
+
+    public class VenderorderDetailVO
+    {
+        public int VO_ID { get; set; }
+        public int VOD_GoodEA { get; set; }
+        public int VOD_BadEA { get; set; }
+        public DateTime VO_StartDate { get; set; }
+        public string VOD_Result { get; set; }
+    }
+
+    public class Material_LedgerVO
+    {
+        public int VO_ID { get; set; }
+        public string COM_Name { get; set; }
+        public string ITEM_Code { get; set; }
+        public string ITEM_Name { get; set; }
+        public string ITEM_Size { get; set; }
+        public string ITEM_Unit { get; set; }
+        public int VOD_GoodEA { get; set; }
+        public int FACD_Qty { get; set; }
+        public DateTime VO_EndDate { get; set; }
+        public string VOD_Result { get; set; }
+        public string MATERIAL_ORDER_STATE { get; set; }
+        public DateTime VOD_ResultDay { get; set; }        
     }
 }

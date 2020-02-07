@@ -86,10 +86,10 @@ namespace Team5_SmartMOM.Service
         }
 
         //입고대기
-        public bool WarehousingWait(List<DeleteOrder> lists)
+        public bool WarehousingWait(List<DeleteOrder> lists, List<VenderorderDetailVO> lists2)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.WarehousingWait(lists); 
+            return dac.WarehousingWait(lists, lists2); 
         }
 
 
@@ -103,6 +103,24 @@ namespace Team5_SmartMOM.Service
         {
             PurchasingDAC dac = new PurchasingDAC();
             return dac.SupplierState();
+        }
+
+        public List<ImportCheckVO> ImportCheck()
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.ImportCheck();
+        }
+
+        public List<Material_LedgerVO> Material_Ledger()
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.Material_Ledger();
+        }
+
+        public bool Result(List<DeleteOrder> lists)
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.Result(lists);
         }
 
     }

@@ -105,14 +105,14 @@ namespace Team5_SmartMOM.LBJ
             svo.SHIFT_EndTime = Convert.ToInt32(txtCompleteTime.Text.Trim());
             svo.SHIFT_StartDate = Convert.ToDateTime(dateTimePicker1.Value.ToShortDateString());
             svo.SHIFT_EndDate = Convert.ToDateTime(dateTimePicker2.Value.ToShortDateString());
-            svo.SHIFT_InputPeople = Convert.ToInt32(txtPeople.Text.Trim());
+            svo.SHIFT_InputPeople = int.Parse(txtPeople.Text);
             svo.SHIFT_UserOrNot = cboUse.Text.Trim();
             svo.SHIFT_Modifier = txtReviceDay.Text.Trim();
             svo.SHIFT_ModifierDate = txtRevicePeople.Text.Trim();
             svo.SHIFT_Others = txtNote.Text.Trim();
 
-            service.ShiftInsert(svo);
-            MessageBox.Show("등록 완료");
+                service.ShiftInsert(svo);
+                MessageBox.Show("등록 완료", "완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void txtStartTime_KeyPress(object sender, KeyPressEventArgs e)

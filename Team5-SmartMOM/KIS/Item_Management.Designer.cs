@@ -81,18 +81,21 @@
             this.button3.Location = new System.Drawing.Point(935, 0);
             this.button3.Size = new System.Drawing.Size(62, 24);
             this.button3.Text = "엑셀";
+            this.button3.Visible = false;
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(997, 0);
             this.button2.Size = new System.Drawing.Size(122, 24);
             this.button2.Text = "양식 다운로드";
+            this.button2.Visible = false;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(1119, 0);
             this.button1.Size = new System.Drawing.Size(79, 24);
             this.button1.Text = "Excel등록";
+            this.button1.Visible = false;
             // 
             // panel2
             // 
@@ -229,6 +232,7 @@
             // 
             // btn_Search
             // 
+            this.btn_Search.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btn_Search.ForeColor = System.Drawing.Color.White;
             this.btn_Search.Location = new System.Drawing.Point(1083, 76);

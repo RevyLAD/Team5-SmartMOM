@@ -68,7 +68,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.WinControls, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Telerik.WinControls.UI, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="TelerikCommon, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
@@ -104,6 +106,18 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="BaseForm\CommonCodeService.cs" />
+    <Compile Include="BaseForm\Loading_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\Loading_Form.Designer.cs">
+      <DependentUpon>Loading_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\Textbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseForm\Textbox.Designer.cs">
+      <DependentUpon>Textbox.cs</DependentUpon>
+    </Compile>
     <Compile Include="HSC\EnterPriseMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -512,6 +526,12 @@
     <EmbeddedResource Include="BaseForm\CircleProgressBar.resx">
       <DependentUpon>CircleProgressBar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\Loading_Form.resx">
+      <DependentUpon>Loading_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\Textbox.resx">
+      <DependentUpon>Textbox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HSC\EnterPriseMain.resx">
       <DependentUpon>EnterPriseMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -711,6 +731,8 @@
     <Content Include="bin\Debug\Team5-SmartMOM.pdb" />
     <Content Include="bin\Debug\Team5_DEV.xml" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\e438e1b7a4f6bb5a48cd5971f538571a1.gif" />
+    <None Include="Resources\e438e1b7a4f6bb5a48cd5971f538571a.gif" />
     <None Include="Resources\please-wait-gif-8.gif" />
     <None Include="Resources\microsoft-excel.png" />
     <None Include="Resources\pencil.png" />

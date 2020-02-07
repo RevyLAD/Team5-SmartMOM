@@ -42,12 +42,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panelZ1 = new PanelZ.PanelZ();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cboFacilities = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtITEM_Code = new System.Windows.Forms.TextBox();
+            this.txtWO_ID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -234,12 +234,12 @@
             // 
             // panelZ1
             // 
-            this.panelZ1.Controls.Add(this.comboBox1);
-            this.panelZ1.Controls.Add(this.btnSearch);
-            this.panelZ1.Controls.Add(this.textBox2);
-            this.panelZ1.Controls.Add(this.textBox1);
             this.panelZ1.Controls.Add(this.dateTimePicker2);
             this.panelZ1.Controls.Add(this.dateTimePicker1);
+            this.panelZ1.Controls.Add(this.cboFacilities);
+            this.panelZ1.Controls.Add(this.btnSearch);
+            this.panelZ1.Controls.Add(this.txtITEM_Code);
+            this.panelZ1.Controls.Add(this.txtWO_ID);
             this.panelZ1.Controls.Add(this.label10);
             this.panelZ1.Controls.Add(this.label7);
             this.panelZ1.Controls.Add(this.label5);
@@ -256,13 +256,29 @@
             this.panelZ1.Transparent1 = 150;
             this.panelZ1.Transparent2 = 150;
             // 
-            // comboBox1
+            // dateTimePicker2
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(101, 50);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(191, 20);
-            this.comboBox1.TabIndex = 63;
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(207, 10);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(85, 21);
+            this.dateTimePicker2.TabIndex = 64;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(102, 10);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(85, 21);
+            this.dateTimePicker1.TabIndex = 64;
+            // 
+            // cboFacilities
+            // 
+            this.cboFacilities.FormattingEnabled = true;
+            this.cboFacilities.Location = new System.Drawing.Point(101, 50);
+            this.cboFacilities.Name = "cboFacilities";
+            this.cboFacilities.Size = new System.Drawing.Size(191, 20);
+            this.cboFacilities.TabIndex = 63;
             // 
             // btnSearch
             // 
@@ -276,42 +292,24 @@
             this.btnSearch.TabIndex = 62;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // textBox2
+            // txtITEM_Code
             // 
-            this.textBox2.Location = new System.Drawing.Point(434, 10);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 21);
-            this.textBox2.TabIndex = 61;
+            this.txtITEM_Code.Location = new System.Drawing.Point(434, 10);
+            this.txtITEM_Code.Name = "txtITEM_Code";
+            this.txtITEM_Code.Size = new System.Drawing.Size(160, 21);
+            this.txtITEM_Code.TabIndex = 61;
             // 
-            // textBox1
+            // txtWO_ID
             // 
-            this.textBox1.Location = new System.Drawing.Point(804, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 21);
-            this.textBox1.TabIndex = 60;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(209, 10);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(83, 21);
-            this.dateTimePicker2.TabIndex = 59;
-            this.dateTimePicker2.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(101, 10);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(83, 21);
-            this.dateTimePicker1.TabIndex = 58;
-            this.dateTimePicker1.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
+            this.txtWO_ID.Location = new System.Drawing.Point(804, 10);
+            this.txtWO_ID.Name = "txtWO_ID";
+            this.txtWO_ID.Size = new System.Drawing.Size(160, 21);
+            this.txtWO_ID.TabIndex = 60;
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Location = new System.Drawing.Point(187, 16);
             this.label10.Name = "label10";
@@ -514,16 +512,16 @@
         protected System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel7;
         private PanelZ.PanelZ panelZ1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboFacilities;
         protected System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtITEM_Code;
+        private System.Windows.Forms.TextBox txtWO_ID;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
