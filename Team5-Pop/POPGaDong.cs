@@ -103,25 +103,9 @@ namespace Team5_Pop
             {
                 //20200204 12:01:20 Machine7/65/4/0
                 string[] arrData = Encoding.ASCII.GetString(buff2, 0, nbytes).Split('/');
-                //if (arrData.Length == 5)
-                //{
-                //    using (SqlCommand cmd = new SqlCommand())
-                //    {
-                //        cmd.Connection = new SqlConnection(strConn);
-                //        cmd.CommandText = "insert into WorkQtyLog(ProductID, MachineID, Qty, BadQty) values (@ProductID, @MachineID, @Qty, @BadQty)";
 
-                //        cmd.Parameters.AddWithValue("@ProductID", int.Parse(arrData[2]));
-                //        cmd.Parameters.AddWithValue("@MachineID", int.Parse(arrData[1]));
-                //        cmd.Parameters.AddWithValue("@Qty", int.Parse(arrData[3]));
-                //        cmd.Parameters.AddWithValue("@BadQty", int.Parse(arrData[4]));
 
-                //        cmd.Connection.Open();
-                //        cmd.ExecuteNonQuery();
-                //        cmd.Connection.Close();
-                //    }
-                //}
-
-                MessageBox.Show(Encoding.ASCII.GetString(buff2, 0, nbytes));
+                //MessageBox.Show(Encoding.ASCII.GetString(buff2, 0, nbytes));
                 listBox1.Items.Insert(0,Encoding.ASCII.GetString(buff2, 0, nbytes));
                 //Console.WriteLine(Encoding.ASCII.GetString(buff, 0, nbytes));
                 Program.Log.WriteInfo(Encoding.ASCII.GetString(buff2, 0, nbytes));
