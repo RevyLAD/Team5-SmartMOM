@@ -39,7 +39,7 @@ namespace Team5_SmartMOM.PSM
             dataGridView1.Columns.Add(chk);
 
             Point headerLocation = dataGridView1.GetCellDisplayRectangle(0, -1, true).Location;
-            headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2);
+            headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 6);
             headerCheckBox.BackColor = Color.White;
             headerCheckBox.Size = new Size(18, 18);
             headerCheckBox.Click += new EventHandler(HeaderCheckBox_Click);
@@ -71,7 +71,7 @@ namespace Team5_SmartMOM.PSM
             dataGridView2.Columns.Add(chk2);
 
             Point headerLocation2 = dataGridView2.GetCellDisplayRectangle(0, -1, true).Location;
-            headerCheckBox2.Location = new Point(headerLocation2.X + 8, headerLocation2.Y + 2);
+            headerCheckBox2.Location = new Point(headerLocation2.X + 8, headerLocation2.Y + 6);
             headerCheckBox2.BackColor = Color.White;
             headerCheckBox2.Size = new Size(18, 18);
             headerCheckBox2.Click += new EventHandler(HeaderCheckBox_Click2);
@@ -93,11 +93,30 @@ namespace Team5_SmartMOM.PSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "", "VO_InDate", false, 150);
 
             DataLoad();
+            Datagridview();
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
         }        
 
         //콤보바인딩 및 데이터조회
+        public void Datagridview()
+        {
+            dtpDateStart.Value = DateTime.Now;
+            dtpDateEnd.Value = DateTime.Now.AddMonths(1);
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(55, 113, 138);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.ColumnHeadersHeight = 30;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+
+            dataGridView2.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(55, 113, 138);
+            dataGridView2.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView2.ColumnHeadersHeight = 30;
+            dataGridView2.EnableHeadersVisualStyles = false;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+        }
+
+
         public void DataLoad()
         {
             PSM_Service service = new PSM_Service();

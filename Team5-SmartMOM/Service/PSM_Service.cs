@@ -22,10 +22,10 @@ namespace Team5_SmartMOM.Service
             return dac.GetAllPurChasingDetail(query);
         }
 
-        public List<PurchasingStateVO> GetAllPurChasingState()
+        public List<PurchasingStateVO> GetAllPurChasingState(PurchaseSearchVO ps)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.GetAllPurChasingState();
+            return dac.GetAllPurChasingState(ps);
         }
 
         public List<CompanyCodeVO> GetAllCompanyCode()
@@ -139,6 +139,24 @@ namespace Team5_SmartMOM.Service
         {
             PurchasingDAC dac = new PurchasingDAC();
             return dac.Result(lists);
+        }
+
+        public List<MaterialsStateVO> MaterialsState()
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.MaterialsState();
+        }
+
+        public bool MaterialProcess(List<DeleteOrder> lists, List<MaterialsPlusVO> lists2)
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.MaterialProcess(lists, lists2);
+        }
+
+        public bool MaterialCancel(List<DeleteOrder> lists, List<MaterialsPlusVO> lists2)
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.MaterialCancel(lists, lists2);
         }
 
     }

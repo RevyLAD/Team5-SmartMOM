@@ -45,8 +45,8 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDateEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -123,7 +123,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button1.BackColor = System.Drawing.Color.Snow;
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
@@ -135,10 +135,11 @@
             this.button1.Text = "입고처리";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button2.BackColor = System.Drawing.Color.Snow;
             this.button2.Dock = System.Windows.Forms.DockStyle.Right;
             this.button2.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button2.Image = global::Team5_SmartMOM.Properties.Resources.note;
@@ -186,7 +187,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button3.BackColor = System.Drawing.Color.Snow;
             this.button3.Dock = System.Windows.Forms.DockStyle.Right;
             this.button3.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button3.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
@@ -202,7 +203,7 @@
             // 
             // btnexcel
             // 
-            this.btnexcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.btnexcel.BackColor = System.Drawing.Color.Snow;
             this.btnexcel.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnexcel.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnexcel.Image = global::Team5_SmartMOM.Properties.Resources.microsoft_excel;
@@ -241,8 +242,8 @@
             this.panelZ1.Controls.Add(this.comboBox2);
             this.panelZ1.Controls.Add(this.btnSearch);
             this.panelZ1.Controls.Add(this.textBox2);
-            this.panelZ1.Controls.Add(this.dateTimePicker2);
-            this.panelZ1.Controls.Add(this.dateTimePicker1);
+            this.panelZ1.Controls.Add(this.dtpDateEnd);
+            this.panelZ1.Controls.Add(this.dtpDateStart);
             this.panelZ1.Controls.Add(this.label10);
             this.panelZ1.Controls.Add(this.label7);
             this.panelZ1.Controls.Add(this.label5);
@@ -286,23 +287,23 @@
             this.textBox2.Size = new System.Drawing.Size(160, 21);
             this.textBox2.TabIndex = 72;
             // 
-            // dateTimePicker2
+            // dtpDateEnd
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(209, 32);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(83, 21);
-            this.dateTimePicker2.TabIndex = 70;
-            this.dateTimePicker2.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
+            this.dtpDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateEnd.Location = new System.Drawing.Point(209, 32);
+            this.dtpDateEnd.Name = "dtpDateEnd";
+            this.dtpDateEnd.Size = new System.Drawing.Size(83, 21);
+            this.dtpDateEnd.TabIndex = 70;
+            this.dtpDateEnd.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
             // 
-            // dateTimePicker1
+            // dtpDateStart
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(101, 32);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(83, 21);
-            this.dateTimePicker1.TabIndex = 69;
-            this.dateTimePicker1.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
+            this.dtpDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateStart.Location = new System.Drawing.Point(101, 32);
+            this.dtpDateStart.Name = "dtpDateStart";
+            this.dtpDateStart.Size = new System.Drawing.Size(83, 21);
+            this.dtpDateStart.TabIndex = 69;
+            this.dtpDateStart.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
             // 
             // label10
             // 
@@ -513,8 +514,8 @@
         private PanelZ.PanelZ panelZ1;
         protected System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpDateEnd;
+        private System.Windows.Forms.DateTimePicker dtpDateStart;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;

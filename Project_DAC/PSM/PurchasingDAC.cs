@@ -47,19 +47,33 @@ namespace Project_DAC
             }
         }
 
-        public List<PurchasingStateVO> GetAllPurChasingState()
+        public List<PurchasingStateVO> GetAllPurChasingState(PurchaseSearchVO ps)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = @"SELECT VO_ID, c.COM_Name, COM_Type, c.COM_Code, ITEM_Name, MATERIAL_ORDER_STATE, VO_Quantity, ITEM_Unit, ITEM_Size, a.ITEM_Code, VO_EndDate, VO_StartDate, VO_InDate
-FROM VendorOrder a inner join ITEM b on a.ITEM_Code = b.ITEM_Code inner join Company c on a.COM_Code = c.COM_Code Order by VO_ID";
+                string sql = @"SELECT VO_ID, c.COM_Name, COM_Type, c.COM_Code, ITEM_Name, MATERIAL_ORDER_STATE, VO_Quantity, ITEM_Unit, ITEM_Size, a.ITEM_Code, VO_EndDate, VO_StartDate, VO_InDate
+                                        FROM VendorOrder a inner join ITEM b on a.ITEM_Code = b.ITEM_Code inner join Company c on a.COM_Code = c.COM_Code
+                                        WHERE VO_EndDate Between @startDate and @endDate ";
 
-                cmd.Connection.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                List<PurchasingStateVO> list = Helper.DataReaderMapToList<PurchasingStateVO>(reader);
-                cmd.Connection.Close();
+                if (ps.Item != "")
+                {
+                    sql = sql + " and ITEM_Name = @ITEM_Name";
 
+                }
+
+                    cmd.CommandText = sql;
+
+                    cmd.Parameters.AddWithValue("@startDate", ps.startDate);
+                    cmd.Parameters.AddWithValue("@endDate", ps.endDate);
+                    cmd.Parameters.AddWithValue("@ITEM_Name", ps.Item);
+                    cmd.Connection.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    List<PurchasingStateVO> list = Helper.DataReaderMapToList<PurchasingStateVO>(reader);
+                    cmd.Connection.Close();
+
+
+                
                 return list;
             }
         }
@@ -475,6 +489,119 @@ order by VO_ID";
                     return false;
                 }
 
+            }
+        }
+
+        public List<MaterialsStateVO> MaterialsState()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = @"select v.VO_ID, VO_InDate, FACT_Name, v.ITEM_Code, ITEM_Name, ITEM_Size, ITEM_Unit, VOD_GoodEA, FACD_Qty, COM_Name
+from VendorOrder v inner join ITEM i on v.ITEM_Code = i.ITEM_Code inner join VendorOrderDetail d on v.VO_ID = d.VO_ID left outer join FactoryDetail f on v.ITEM_Code = f.ITEM_Code
+where MATERIAL_ORDER_STATE = '입고완료' and FACT_Name = '자재창고_01'
+order by VO_ID";
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<MaterialsStateVO> list = Helper.DataReaderMapToList<MaterialsStateVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public bool MaterialProcess(List<DeleteOrder> lists, List<MaterialsPlusVO> lists2)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                cmd.CommandType = CommandType.Text;
+                try
+                {
+                    foreach (var item in lists)
+                    {
+                        cmd.CommandText = @"UPDATE VendorOrder SET MATERIAL_ORDER_STATE = '입고완료' WHERE VO_ID = @VO_ID";
+
+                        cmd.Parameters.AddWithValue("@VO_ID", item.VO_ID);
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+
+                    foreach (var item in lists2)
+                    {
+                        cmd.CommandText = @"UPDATE FactoryDetail  SET FACD_Qty = FACD_Qty + @VOD_GoodEA
+FROM ITEM i join FactoryDetail f on i.ITEM_Code = f.ITEM_Code
+WHERE FACT_Name = '자재창고_01' and f.ITEM_Code = @ITEM_Code";
+                        
+                        cmd.Parameters.AddWithValue("@VOD_GoodEA", item.VOD_GoodEA);
+                        cmd.Parameters.AddWithValue("@ITEM_Code", item.ITEM_Code);
+
+
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+
+
+                    cmd.Connection.Close();
+                    return true;
+                }
+                catch (Exception err)
+                {
+                    System.Diagnostics.Debug.WriteLine(err.Message);
+                    cmd.Connection.Close();
+                    return false;
+                }
+            }
+        }
+
+        //입고취소
+        public bool MaterialCancel(List<DeleteOrder> lists, List<MaterialsPlusVO> lists2)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                cmd.CommandType = CommandType.Text;
+                try
+                {
+                    foreach (var item in lists)
+                    {
+                        cmd.CommandText = @"UPDATE VendorOrder SET MATERIAL_ORDER_STATE = '입고대기' WHERE VO_ID = @VO_ID";
+
+                        cmd.Parameters.AddWithValue("@VO_ID", item.VO_ID);
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+
+                    foreach (var item in lists2)
+                    {
+                        cmd.CommandText = @"UPDATE FactoryDetail  SET FACD_Qty = FACD_Qty - @VOD_GoodEA
+FROM ITEM i join FactoryDetail f on i.ITEM_Code = f.ITEM_Code
+WHERE FACT_Name = '자재창고_01' and f.ITEM_Code = @ITEM_Code";
+
+                        cmd.Parameters.AddWithValue("@VOD_GoodEA", item.VOD_GoodEA);
+                        cmd.Parameters.AddWithValue("@ITEM_Code", item.ITEM_Code);
+
+
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+
+
+                    cmd.Connection.Close();
+                    return true;
+                }
+                catch (Exception err)
+                {
+                    System.Diagnostics.Debug.WriteLine(err.Message);
+                    cmd.Connection.Close();
+                    return false;
+                }
             }
         }
     }

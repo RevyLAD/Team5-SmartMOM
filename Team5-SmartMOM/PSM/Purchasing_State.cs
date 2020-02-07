@@ -26,6 +26,8 @@ namespace Team5_SmartMOM.PSM
         #region 데이터그리드뷰 체크박스 및 데이터그리드뷰 컬럼띄우기
         private void Purchasing_State_Load(object sender, EventArgs e)
         {
+            dtpDateStart.Value = DateTime.Now;
+            dtpDateEnd.Value = DateTime.Now.AddMonths(1);
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -37,7 +39,7 @@ namespace Team5_SmartMOM.PSM
             dataGridView1.Columns.Add(chk);
 
             Point headerLocation = dataGridView1.GetCellDisplayRectangle(0, -1, true).Location;
-            headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2);
+            headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 6);
             headerCheckBox.BackColor = Color.White;
             headerCheckBox.Size = new Size(18, 18);
             headerCheckBox.Click += new EventHandler(HeaderCheckBox_Click);
@@ -65,8 +67,19 @@ namespace Team5_SmartMOM.PSM
         //콤보 바인딩 및 데이터 조회
         public void DataLoad()
         {
+            PurchaseSearchVO ps = new PurchaseSearchVO();
+            ps.startDate = dtpDateStart.Value.ToShortDateString();
+            ps.endDate = dtpDateEnd.Value.ToShortDateString();
+            ps.Company = cbocompany.Text.Trim();
+            ps.State = cbostate.Text.Trim();
+            ps.Item = txtProduct.Text;
+            if(txtVoID.Text.Length>0)
+            {
+                ps.VO_ID = Convert.ToInt32(txtVoID.Text);
+            }
+
             PSM_Service service = new PSM_Service();
-            list = service.GetAllPurChasingState();
+            list = service.GetAllPurChasingState(ps);
             dataGridView1.DataSource = list;
 
             List<CompanyCodeVO> company = service.GetAllCompanyCode();
@@ -109,34 +122,34 @@ namespace Team5_SmartMOM.PSM
         //업체정보 콤보박스 검색
         private void cbocompany_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                if (cbocompany.Text != "")
-                {
-                    string query = cbocompany.Text;
+            //try
+            //{
+            //    if (cbocompany.Text != "")
+            //    {
+            //        string query = cbocompany.Text;
 
-                    if (query == "전체")
-                    {
-                        dataGridView1.DataSource = list;
-                    }
-                    else
-                    {
-                        List<PurchasingStateVO> searchlist = null;
-                        searchlist = (from team5 in list
-                                      where team5.COM_Name.ToString().Contains(query)
-                                      select team5).ToList();
-                        dataGridView1.DataSource = searchlist;
-                    }
-                }
-                else
-                {
-                    DataLoad();
-                }
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+            //        if (query == "전체")
+            //        {
+            //            dataGridView1.DataSource = list;
+            //        }
+            //        else
+            //        {
+            //            List<PurchasingStateVO> searchlist = null;
+            //            searchlist = (from team5 in list
+            //                          where team5.COM_Name.ToString().Contains(query)
+            //                          select team5).ToList();
+            //            dataGridView1.DataSource = searchlist;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        DataLoad();
+            //    }
+            //}
+            //catch (Exception err)
+            //{
+            //    MessageBox.Show(err.Message);
+            //}
         }
     
         //발주상태 콤보박스 검색
@@ -175,38 +188,19 @@ namespace Team5_SmartMOM.PSM
         //조회버튼 클릭시 검색조건 기준으로 검색 후 텍스트박스 초기화
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (txtProduct.Text.Length < 1 && txtVoID.Text.Length < 1)
+            PurchaseSearchVO ps = new PurchaseSearchVO();
+            ps.startDate = dtpDateStart.Value.ToShortDateString();
+            ps.endDate = dtpDateEnd.Value.ToShortDateString();
+            ps.Company = cbocompany.Text.Trim();
+            ps.State = cbostate.Text.Trim();
+            ps.Item = txtProduct.Text;
+            if (txtVoID.Text.Length > 0)
             {
-                MessageBox.Show("검색할 항목을 입력해주십시오.");
-                return;
+                ps.VO_ID = Convert.ToInt32(txtVoID.Text);
             }
-            else if (txtProduct.Text.Trim().Length > 0)
-            {
-                string query = txtProduct.Text.Trim();
-                List<PurchasingStateVO> searchlist = null;
-                searchlist = (from team5 in list
-                              where team5.ITEM_Name.Contains(query)
-                              select team5).ToList();
-
-                dataGridView1.DataSource = searchlist;
-            }
-            else if (txtVoID.Text.Trim().Length > 0)
-            {
-                string query = txtVoID.Text.Trim();
-                List<PurchasingStateVO> searchlist = null;
-                searchlist = (from team5 in list
-                              where team5.VO_ID.ToString().Contains(query)
-                              select team5).ToList();
-
-                dataGridView1.DataSource = searchlist;
-            }
-
-            else
-            {
-                DataLoad();
-            }
-            txtProduct.Text = "";
-            txtVoID.Text = "";
+            PSM_Service service = new PSM_Service();
+            list = service.GetAllPurChasingState(ps);
+            dataGridView1.DataSource = list;
         }
 
         //체크된 항목만 납기일자 변경

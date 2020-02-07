@@ -28,6 +28,8 @@ namespace Team5_SmartMOM.PSM
 
         private void Material_Ledger_Load(object sender, EventArgs e)
         {
+            dtpDateStart.Value = DateTime.Now;
+            dtpDateEnd.Value = DateTime.Now.AddMonths(1);
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -39,7 +41,7 @@ namespace Team5_SmartMOM.PSM
             dataGridView1.Columns.Add(chk);
 
             Point headerLocation = dataGridView1.GetCellDisplayRectangle(0, -1, true).Location;
-            headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2);
+            headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 6);
             headerCheckBox.BackColor = Color.White;
             headerCheckBox.Size = new Size(18, 18);
             headerCheckBox.Click += new EventHandler(HeaderCheckBox_Click);
@@ -69,7 +71,7 @@ namespace Team5_SmartMOM.PSM
             dataGridView2.Columns.Add(chk2);
 
             Point headerLocation2 = dataGridView2.GetCellDisplayRectangle(0, -1, true).Location;
-            headerCheckBox2.Location = new Point(headerLocation2.X + 8, headerLocation2.Y + 2);
+            headerCheckBox2.Location = new Point(headerLocation2.X + 8, headerLocation2.Y + 6);
             headerCheckBox2.BackColor = Color.White;
             headerCheckBox2.Size = new Size(18, 18);
             headerCheckBox2.Click += new EventHandler(HeaderCheckBox_Click2);
@@ -90,6 +92,22 @@ namespace Team5_SmartMOM.PSM
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             DataLoad();
+            Datagridview();
+        }
+
+        public void Datagridview()
+        {
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(55, 113, 138);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.ColumnHeadersHeight = 30;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+
+            dataGridView2.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(55, 113, 138);
+            dataGridView2.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView2.ColumnHeadersHeight = 30;
+            dataGridView2.EnableHeadersVisualStyles = false;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
         }
 
         public void DataLoad()
@@ -250,6 +268,32 @@ namespace Team5_SmartMOM.PSM
             }
             PSM_Service service = new PSM_Service();
             service.MaterialsPutCancel(lists);
+
+            DataLoad();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<DeleteOrder> lists = new List<DeleteOrder>();
+            List<MaterialsPlusVO> lists2 = new List<MaterialsPlusVO>();
+            foreach (DataGridViewRow row in dataGridView2.Rows)
+            {
+                bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
+
+                if (isCellChecked)
+                {
+                    DeleteOrder list = new DeleteOrder();
+                    list.VO_ID = Convert.ToInt32(row.Cells[1].Value);
+                    lists.Add(list);
+
+                    MaterialsPlusVO list2 = new MaterialsPlusVO();
+                    list2.VOD_GoodEA = Convert.ToInt32(row.Cells[9].Value);
+                    list2.ITEM_Code = row.Cells[2].Value.ToString();
+                    lists2.Add(list2);
+                }
+            }
+            PSM_Service service = new PSM_Service();
+            service.MaterialProcess(lists, lists2);
 
             DataLoad();
         }

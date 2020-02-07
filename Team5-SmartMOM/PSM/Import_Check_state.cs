@@ -23,6 +23,8 @@ namespace Team5_SmartMOM.PSM
 
         private void Import_Check_state_Load(object sender, EventArgs e)
         {
+            dtpDateStart.Value = DateTime.Now;
+            dtpDateEnd.Value = DateTime.Now.AddMonths(1);
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             chk.HeaderText = "";
             chk.Name = "Check";
@@ -30,7 +32,7 @@ namespace Team5_SmartMOM.PSM
             dataGridView1.Columns.Add(chk);
 
             Point headerLocation = dataGridView1.GetCellDisplayRectangle(0, -1, true).Location;
-            headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2);
+            headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 6);
             headerCheckBox.BackColor = Color.White;
             headerCheckBox.Size = new Size(18, 18);
             headerCheckBox.Click += new EventHandler(HeaderCheckBox_Click);
@@ -55,9 +57,19 @@ namespace Team5_SmartMOM.PSM
             cboResult.Items.Add("합격");
             cboResult.Items.Add("불합격");
             DataLoad();
+            Datagridview();
         }
 
-        public void DataLoad()
+        public void Datagridview()
+        {
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(55, 113, 138);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.ColumnHeadersHeight = 30;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+        }
+
+            public void DataLoad()
         {
             PSM_Service service = new PSM_Service();
             list = service.ImportCheck();
