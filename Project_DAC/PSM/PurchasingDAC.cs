@@ -217,6 +217,67 @@ VO_StartDate,  VO_InDate) VALUES (@COM_Code, @MATERIAL_ORDER_STATE, @ITEM_Code, 
             }
         }
 
+        //입고처리
+        public bool MaterialsPut(List<DeleteOrder> lists)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                cmd.CommandType = CommandType.Text;
+                try
+                {
+                    foreach (var item in lists)
+                    {
+                        cmd.CommandText = @"UPDATE VendorOrder SET MATERIAL_ORDER_STATE = '입고처리대기' WHERE VO_ID = @VO_ID";
+                        
+                        cmd.Parameters.AddWithValue("@VO_ID", item.VO_ID);
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+                    cmd.Connection.Close();
+                    return true;
+                }
+                catch (Exception err)
+                {
+                    System.Diagnostics.Debug.WriteLine(err.Message);
+                    cmd.Connection.Close();
+                    return false;
+                }
+            }
+        }
+        //입고처리대기 취소
+        public bool MaterialsPutCancel(List<DeleteOrder> lists)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                cmd.CommandType = CommandType.Text;
+                try
+                {
+                    foreach (var item in lists)
+                    {
+                        cmd.CommandText = @"UPDATE VendorOrder SET MATERIAL_ORDER_STATE = '입고대기' WHERE VO_ID = @VO_ID";
+
+                        cmd.Parameters.AddWithValue("@VO_ID", item.VO_ID);
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+                    cmd.Connection.Close();
+                    return true;
+                }
+                catch (Exception err)
+                {
+                    System.Diagnostics.Debug.WriteLine(err.Message);
+                    cmd.Connection.Close();
+                    return false;
+                }
+            }
+        }
+
         public bool OrderCancel(List<DeleteOrder> lists)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -336,7 +397,7 @@ VO_StartDate,  VO_InDate) VALUES (@COM_Code, @MATERIAL_ORDER_STATE, @ITEM_Code, 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = @"select DISTINCT v.VO_ID, COM_Name, v.ITEM_Code, ITEM_Name, ITEM_Size, ITEM_Unit, VOD_GoodEA, FACD_Qty, VO_EndDate, VOD_Result, MATERIAL_ORDER_STATE, VOD_ResultDay
   from VendorOrder v inner join VendorOrderDetail d on v.VO_ID = d.VO_ID inner join ITEM i on v.ITEM_Code = i.ITEM_Code inner join FactoryDetail f on v.ITEM_Code = f.ITEM_Code
-  WHERE VOD_Result = '합격'
+  WHERE VOD_Result = '합격' and MATERIAL_ORDER_STATE = '입고대기'
   order by VO_ID";
 
                 cmd.Connection.Open();
@@ -361,6 +422,25 @@ Order by VO_ID";
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<SupplierStateVO> list = Helper.DataReaderMapToList<SupplierStateVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public List<Receiving_processingVO> Receiving_processing()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = @"select v.VO_ID, v.ITEM_Code, ITEM_Name, ITEM_Size, ITEM_Type, ITEM_Unit, FACT_Name, VO_InDate, VOD_GoodEA, ITEM_Price
+from VendorOrder v inner join ITEM i on v.ITEM_Code = i.ITEM_Code inner join VendorOrderDetail d on v.VO_ID = d.VO_ID left outer join FactoryDetail f on v.ITEM_Code = f.ITEM_Code
+where MATERIAL_ORDER_STATE = '입고처리대기' and FACT_Name = '자재창고_01'
+order by VO_ID";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<Receiving_processingVO> list = Helper.DataReaderMapToList<Receiving_processingVO>(reader);
                 cmd.Connection.Close();
 
                 return list;

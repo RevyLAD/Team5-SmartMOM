@@ -38,10 +38,11 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnexcel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panelZ1 = new PanelZ.PanelZ();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -59,7 +60,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -149,6 +150,7 @@
             this.button2.Text = "취소";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
@@ -174,7 +176,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button5);
+            this.panel3.Controls.Add(this.btnexcel);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 87);
@@ -196,21 +198,23 @@
             this.button3.Text = "선택";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button5
+            // btnexcel
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.button5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button5.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.Image = global::Team5_SmartMOM.Properties.Resources.microsoft_excel;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(1165, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(57, 29);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "엑셀";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnexcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.btnexcel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnexcel.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnexcel.Image = global::Team5_SmartMOM.Properties.Resources.microsoft_excel;
+            this.btnexcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnexcel.Location = new System.Drawing.Point(1165, 0);
+            this.btnexcel.Name = "btnexcel";
+            this.btnexcel.Size = new System.Drawing.Size(57, 29);
+            this.btnexcel.TabIndex = 11;
+            this.btnexcel.Text = "엑셀";
+            this.btnexcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnexcel.UseVisualStyleBackColor = false;
+            this.btnexcel.Click += new System.EventHandler(this.btnexcel_Click);
             // 
             // label1
             // 
@@ -253,6 +257,14 @@
             this.panelZ1.TabIndex = 1;
             this.panelZ1.Transparent1 = 150;
             this.panelZ1.Transparent2 = 150;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(765, 33);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(191, 20);
+            this.comboBox2.TabIndex = 75;
             // 
             // btnSearch
             // 
@@ -446,14 +458,6 @@
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Visible = false;
             // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(765, 33);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(191, 20);
-            this.comboBox2.TabIndex = 75;
-            // 
             // Material_Ledger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -496,7 +500,7 @@
         protected System.Windows.Forms.Button button1;
         protected System.Windows.Forms.Button button2;
         protected System.Windows.Forms.Button button3;
-        protected System.Windows.Forms.Button button5;
+        protected System.Windows.Forms.Button btnexcel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
@@ -516,5 +520,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

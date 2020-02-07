@@ -146,4 +146,18 @@ namespace Project_VO
         public string MATERIAL_ORDER_STATE { get; set; }
         public DateTime VOD_ResultDay { get; set; }        
     }
+
+    public class Receiving_processingVO
+    {
+        public int VO_ID { get; set; }        
+        public string ITEM_Code { get; set; }
+        public string ITEM_Name { get; set; }
+        public string ITEM_Size { get; set; }
+        public string ITEM_Type { get; set; }
+        public string ITEM_Unit { get; set; }
+        public string FACT_Name { get; set; }
+        public DateTime VO_InDate { get; set; }
+        public int ITEM_Price { get; set; }
+        public int VOD_GoodEA { get; set; }
+    }       
 }

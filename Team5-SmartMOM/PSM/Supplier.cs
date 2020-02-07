@@ -151,7 +151,6 @@ namespace Team5_SmartMOM.PSM
                 headerCheckBox.Checked = isChecked;
             }
         }
-
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == 0)

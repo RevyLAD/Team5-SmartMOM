@@ -60,7 +60,7 @@
     <Compile Include="LBJ\ImportVO.cs" />
     <Compile Include="LBJ\ShiftVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PurchasingVO.cs" />
+    <Compile Include="PSM\PurchasingVO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Team5_DEV.xml" />

@@ -92,6 +92,18 @@ namespace Team5_SmartMOM.Service
             return dac.WarehousingWait(lists, lists2); 
         }
 
+        public bool MaterialsPut(List<DeleteOrder> lists)
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.MaterialsPut(lists); 
+        }
+
+        public bool MaterialsPutCancel(List<DeleteOrder> lists)
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.MaterialsPutCancel(lists); 
+        }
+
 
         public List<SupplierVO> Supplier()
         {
@@ -115,6 +127,12 @@ namespace Team5_SmartMOM.Service
         {
             PurchasingDAC dac = new PurchasingDAC();
             return dac.Material_Ledger();
+        }
+
+        public List<Receiving_processingVO> Receiving_processing()
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.Receiving_processing();
         }
 
         public bool Result(List<DeleteOrder> lists)
