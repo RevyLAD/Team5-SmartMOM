@@ -338,12 +338,6 @@
     <Compile Include="KIS\Sales_Price_Management_detail.Designer.cs">
       <DependentUpon>Sales_Price_Management_detail.cs</DependentUpon>
     </Compile>
-    <Compile Include="LBJ\Import_Check.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LBJ\Import_Check.Designer.cs">
-      <DependentUpon>Import_Check.cs</DependentUpon>
-    </Compile>
     <Compile Include="LBJ\office_hours.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -372,6 +366,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PSM\CircularButton.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PSM\Import_Check_state.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Import_Check_state.Designer.cs">
+      <DependentUpon>Import_Check_state.cs</DependentUpon>
     </Compile>
     <Compile Include="PSM\Material_Ledger.cs">
       <SubType>Form</SubType>
@@ -629,9 +629,6 @@
     <EmbeddedResource Include="KIS\Sales_Price_Management_detail.resx">
       <DependentUpon>Sales_Price_Management_detail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LBJ\Import_Check.resx">
-      <DependentUpon>Import_Check.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LBJ\office_hours.resx">
       <DependentUpon>office_hours.cs</DependentUpon>
     </EmbeddedResource>
@@ -655,6 +652,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="PSM\Import_Check_state.resx">
+      <DependentUpon>Import_Check_state.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PSM\Material_Ledger.resx">
       <DependentUpon>Material_Ledger.cs</DependentUpon>
     </EmbeddedResource>
