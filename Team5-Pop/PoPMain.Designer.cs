@@ -144,11 +144,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
             this.label2.Location = new System.Drawing.Point(443, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(233, 24);
+            this.label2.Size = new System.Drawing.Size(204, 29);
             this.label2.TabIndex = 0;
             this.label2.Text = "생산실적관리 [POP]";
             // 
@@ -233,7 +233,7 @@
             this.groupBox3.Controls.Add(this.textBox10);
             this.groupBox3.Controls.Add(this.textBox8);
             this.groupBox3.Controls.Add(this.textBox6);
-            this.groupBox3.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox3.Location = new System.Drawing.Point(407, 17);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(414, 146);
@@ -255,7 +255,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(6, 57);
+            this.label5.Location = new System.Drawing.Point(6, 67);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 15);
             this.label5.TabIndex = 3;
@@ -287,7 +287,7 @@
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox2.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.Location = new System.Drawing.Point(71, 54);
+            this.textBox2.Location = new System.Drawing.Point(71, 64);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(127, 22);
@@ -319,7 +319,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label12.Location = new System.Drawing.Point(210, 57);
+            this.label12.Location = new System.Drawing.Point(210, 67);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(59, 15);
             this.label12.TabIndex = 17;
@@ -351,7 +351,7 @@
             // 
             this.textBox8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox8.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox8.Location = new System.Drawing.Point(275, 54);
+            this.textBox8.Location = new System.Drawing.Point(275, 64);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(127, 22);
@@ -381,10 +381,10 @@
             this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Controls.Add(this.dateTimePicker2);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox2.Location = new System.Drawing.Point(7, 17);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(389, 124);
+            this.groupBox2.Size = new System.Drawing.Size(389, 146);
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "검색 조건";
@@ -394,7 +394,7 @@
             this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox2.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(71, 89);
+            this.comboBox2.Location = new System.Drawing.Point(71, 109);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(164, 22);
             this.comboBox2.TabIndex = 39;
@@ -405,7 +405,7 @@
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBox1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(71, 59);
+            this.comboBox1.Location = new System.Drawing.Point(71, 71);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(164, 22);
             this.comboBox1.TabIndex = 38;
@@ -416,8 +416,8 @@
             // 
             this.button10.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button10.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button10.Location = new System.Drawing.Point(300, 88);
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button10.Location = new System.Drawing.Point(300, 108);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(83, 22);
             this.button10.TabIndex = 37;
@@ -451,7 +451,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(6, 61);
+            this.label3.Location = new System.Drawing.Point(6, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 15);
             this.label3.TabIndex = 1;
@@ -461,7 +461,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(6, 90);
+            this.label6.Location = new System.Drawing.Point(6, 110);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 15);
             this.label6.TabIndex = 4;
@@ -500,62 +500,62 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label18.Location = new System.Drawing.Point(832, 163);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(63, 13);
+            this.label18.Size = new System.Drawing.Size(56, 16);
             this.label18.TabIndex = 35;
             this.label18.Text = "불량 수량";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label17.Location = new System.Drawing.Point(832, 128);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(63, 13);
+            this.label17.Size = new System.Drawing.Size(56, 16);
             this.label17.TabIndex = 34;
             this.label17.Text = "양품 수량";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label16.Location = new System.Drawing.Point(832, 94);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(63, 13);
+            this.label16.Size = new System.Drawing.Size(56, 16);
             this.label16.TabIndex = 33;
             this.label16.Text = "생산 잔량";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label15.Location = new System.Drawing.Point(832, 59);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(63, 13);
+            this.label15.Size = new System.Drawing.Size(56, 16);
             this.label15.TabIndex = 32;
             this.label15.Text = "실적 합계";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label14.Location = new System.Drawing.Point(832, 24);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(63, 13);
+            this.label14.Size = new System.Drawing.Size(56, 16);
             this.label14.TabIndex = 31;
             this.label14.Text = "지시 수량";
             // 
             // txtBadNum
             // 
             this.txtBadNum.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtBadNum.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBadNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBadNum.ForeColor = System.Drawing.Color.Crimson;
             this.txtBadNum.Location = new System.Drawing.Point(898, 154);
             this.txtBadNum.Name = "txtBadNum";
             this.txtBadNum.ReadOnly = true;
-            this.txtBadNum.Size = new System.Drawing.Size(190, 30);
+            this.txtBadNum.Size = new System.Drawing.Size(190, 31);
             this.txtBadNum.TabIndex = 30;
             this.txtBadNum.Text = "0";
             this.txtBadNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -563,12 +563,12 @@
             // txtGoodNum
             // 
             this.txtGoodNum.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtGoodNum.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGoodNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGoodNum.ForeColor = System.Drawing.Color.PaleGreen;
             this.txtGoodNum.Location = new System.Drawing.Point(898, 119);
             this.txtGoodNum.Name = "txtGoodNum";
             this.txtGoodNum.ReadOnly = true;
-            this.txtGoodNum.Size = new System.Drawing.Size(190, 30);
+            this.txtGoodNum.Size = new System.Drawing.Size(190, 31);
             this.txtGoodNum.TabIndex = 29;
             this.txtGoodNum.Text = "0";
             this.txtGoodNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -576,12 +576,12 @@
             // txtProductNum
             // 
             this.txtProductNum.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtProductNum.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProductNum.ForeColor = System.Drawing.Color.DarkOrange;
             this.txtProductNum.Location = new System.Drawing.Point(898, 84);
             this.txtProductNum.Name = "txtProductNum";
             this.txtProductNum.ReadOnly = true;
-            this.txtProductNum.Size = new System.Drawing.Size(190, 30);
+            this.txtProductNum.Size = new System.Drawing.Size(190, 31);
             this.txtProductNum.TabIndex = 28;
             this.txtProductNum.Text = "0";
             this.txtProductNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -589,12 +589,12 @@
             // txtSNum
             // 
             this.txtSNum.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtSNum.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSNum.ForeColor = System.Drawing.Color.DarkOrange;
             this.txtSNum.Location = new System.Drawing.Point(898, 49);
             this.txtSNum.Name = "txtSNum";
             this.txtSNum.ReadOnly = true;
-            this.txtSNum.Size = new System.Drawing.Size(190, 30);
+            this.txtSNum.Size = new System.Drawing.Size(190, 31);
             this.txtSNum.TabIndex = 27;
             this.txtSNum.Text = "0";
             this.txtSNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -602,12 +602,12 @@
             // txtOrderNum
             // 
             this.txtOrderNum.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtOrderNum.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtOrderNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtOrderNum.ForeColor = System.Drawing.SystemColors.Window;
             this.txtOrderNum.Location = new System.Drawing.Point(898, 14);
             this.txtOrderNum.Name = "txtOrderNum";
             this.txtOrderNum.ReadOnly = true;
-            this.txtOrderNum.Size = new System.Drawing.Size(190, 30);
+            this.txtOrderNum.Size = new System.Drawing.Size(190, 31);
             this.txtOrderNum.TabIndex = 26;
             this.txtOrderNum.Text = "0";
             this.txtOrderNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;

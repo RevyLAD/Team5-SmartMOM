@@ -25,14 +25,8 @@ namespace Project_VO.LBJ
     {
         public int SHIFT_ID { get; set; }
         public string FAC_Name { get; set; }
-        public int SHIFT_StartTime { get; set; }
-        public int SHIFT_EndTime { get; set; }
-        public string SHIFT_InputPeople { get; set; }
-
-    }
-    public class ShiftListVO
-    {
-        public string SHIFT_ID { get; set; }
         public string SHIFT { get; set; }
+        public DateTime SHIFT_StartDate { get; set; }
+        public DateTime SHIFT_EndDate { get; set; }
     }
 }

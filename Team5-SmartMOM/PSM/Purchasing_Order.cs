@@ -14,14 +14,16 @@ namespace Team5_SmartMOM.PSM
 {
     public partial class Purchasing_Order : Form
     {
-        CheckBox headerCheckBox = new CheckBox();
-        CheckBox headerCheckBox2 = new CheckBox();
+        CheckBox headerCheckBox = new CheckBox();        
         List<ComPanyListVO> list;
         List<CompanyCodeVO> cbobind;
         List<CompanyCodeDetailVO> detail;
-        public Purchasing_Order()
+        List<GetOrderVO> list2;
+        public Purchasing_Order(PlanIDVO listPlanID)
         {
             InitializeComponent();
+
+            lblPlanID.Text = listPlanID.Plan_ID.ToString();
         }
         #region 데이터그리드뷰 체크박스 및 데이터그리드뷰 컬럼띄우기
         private void Purchasing_Order_Load(object sender, EventArgs e)
@@ -58,27 +60,14 @@ namespace Team5_SmartMOM.PSM
             dataGridView2.AllowUserToAddRows = false;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            DataGridViewCheckBoxColumn chk2 = new DataGridViewCheckBoxColumn();
-            chk2.HeaderText = "";
-            chk2.Name = "Check";
-            chk2.Width = 30;
-            dataGridView2.Columns.Add(chk2);
-
-            Point headerLocation2 = dataGridView2.GetCellDisplayRectangle(0, -1, true).Location;
-            headerCheckBox2.Location = new Point(headerLocation2.X + 8, headerLocation2.Y + 2);
-            headerCheckBox2.BackColor = Color.White;
-            headerCheckBox2.Size = new Size(18, 18);
-            headerCheckBox2.Click += new EventHandler(HeaderCheckBox_Click2);
-            dataGridView2.Controls.Add(headerCheckBox2);
-
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "업체이름", "COM_Name", true, 100);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "업체타입", "COM_Type", true, 100);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품목명", "ITEM_Code", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "업체코드", "COM_Code", true, 100);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품목명", "ITEM_Name", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품목타입", "ITEM_Type", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품목사이즈", "ITEM_Size", true, 100);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "대표자명", "COM_Owner", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "전화번호", "COM_Phone", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "업체정보", "COM_Information", true, 120);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "납기일자", "SALES_Duedate", true, 120);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "개수", "SumQty", true, 100);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "발주상태", "Order_State", true, 120);
 
             DataLoad();
             CheckBoxTrue();
@@ -92,8 +81,12 @@ namespace Team5_SmartMOM.PSM
             list = service.GetAllPurChasing();
             dataGridView1.DataSource = list;
 
+
+            string plan_id = lblPlanID.Text;
             PSM_Service service2 = new PSM_Service();
-            cbobind = service2.GetAllCompanyCode();
+            list2 = service2.GetOrder(plan_id);
+            dataGridView2.DataSource = list2;
+
 
             List<CompanyCodeVO> company = service.GetAllCompanyCode();
             CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "전체");
@@ -108,17 +101,6 @@ namespace Team5_SmartMOM.PSM
             {
                 DataGridViewCheckBoxCell chkBox = row.Cells["Check"] as DataGridViewCheckBoxCell;
                 chkBox.Value = headerCheckBox.Checked;
-            }
-        }
-
-        //데이터그리드뷰 헤더체크박스 
-        private void HeaderCheckBox_Click2(object sender, EventArgs e)
-        {
-            dataGridView2.EndEdit();
-            foreach (DataGridViewRow row in dataGridView2.Rows)
-            {
-                DataGridViewCheckBoxCell chkBox = row.Cells["Check"] as DataGridViewCheckBoxCell;
-                chkBox.Value = headerCheckBox2.Checked;
             }
         }
 
@@ -257,41 +239,28 @@ namespace Team5_SmartMOM.PSM
             CheckBoxTrue2();
         }
 
-        #region 마스터디테일 그리드뷰에서 체크된 항목만 발주신청
+
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            bool bFlag = false;
+            string Plan_ID = lblPlanID.Text;
+            List<VendorOrderVO> codelist = new List<VendorOrderVO>();
             for (int i = 0; i < dataGridView2.RowCount; i++)
             {
-                if ((bool)dataGridView2.Rows[i].Cells[0].Value)
-                {
-                    bFlag = true;
-                    break;
-                }
-            }
-            if(bFlag == false)
-            {
-                MessageBox.Show("발주하실 항목을 체크하세요");
-                return;
-            }
-            List<CodeVO> codelist = new List<CodeVO>();
-            for (int i = 0; i < dataGridView2.RowCount; i++)
-            {
-                if ((bool)dataGridView2.Rows[i].Cells[0].Value)
-                {
-                    CodeVO code = new CodeVO();
-                    code.COM_Code = dataGridView2.Rows[i].Cells[2].Value.ToString();
-                    codelist.Add(code);
-                }
+                VendorOrderVO code = new VendorOrderVO();
+                
+                code.COM_Code = dataGridView2.Rows[i].Cells[2].Value.ToString();
+                code.VO_EndDate = (DateTime)dataGridView2.Rows[i].Cells[5].Value;
+                code.VO_Quantity = Convert.ToInt32(dataGridView2.Rows[i].Cells[6].Value);
+                codelist.Add(code);
             }
             PSM_Service service = new PSM_Service();
-            service.VendorOrder(codelist);
+            service.VendorOrder(codelist, Plan_ID);
 
             MessageBox.Show("발주처리가 완료 되었습니다.");
             dataGridView2.DataSource = null;
 
         }
-        #endregion
+
     }
 }
 

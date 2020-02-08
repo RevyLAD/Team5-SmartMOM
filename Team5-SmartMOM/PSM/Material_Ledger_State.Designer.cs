@@ -73,7 +73,7 @@
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1202, 173);
+            this.panel2.Size = new System.Drawing.Size(1202, 133);
             // 
             // panelTop
             // 
@@ -97,7 +97,7 @@
             this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.label8);
             this.panelTop.Controls.Add(this.label9);
-            this.panelTop.Size = new System.Drawing.Size(1202, 153);
+            this.panelTop.Size = new System.Drawing.Size(1202, 113);
             // 
             // splitContainer2
             // 
@@ -287,7 +287,7 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1109, 71);
+            this.btnSearch.Location = new System.Drawing.Point(1114, 42);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(81, 30);
             this.btnSearch.TabIndex = 79;

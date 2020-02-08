@@ -52,10 +52,8 @@ namespace Project_DAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "SELECT VO_ID, MATERIAL_ORDER_STATE, VO_Quantity, a.ITEM_Code, VO_EndDate, VO_StartDate, " +
-                    "VO_InDate, ITEM_Name, ITEM_Size, ITEM_Unit, c.COM_Code, COM_Type, COM_Name, COM_No " +
-                    "FROM VendorOrder a inner join ITEM b on a.ITEM_Code = b.ITEM_Code " +
-                    "inner join Company c on a.COM_Code = c.COM_Code Order by VO_ID";
+                cmd.CommandText = @"SELECT VO_ID, c.COM_Name, COM_Type, c.COM_Code, ITEM_Name, MATERIAL_ORDER_STATE, VO_Quantity, ITEM_Unit, ITEM_Size, a.ITEM_Code, VO_EndDate, VO_StartDate, VO_InDate
+FROM VendorOrder a inner join ITEM b on a.ITEM_Code = b.ITEM_Code inner join Company c on a.COM_Code = c.COM_Code Order by VO_ID";
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -81,7 +79,7 @@ namespace Project_DAC
             }
         }
 
-        public bool VendorOrder(List<CodeVO> codelist)
+        public bool VendorOrder(List<VendorOrderVO> codelist, string Plan_ID)
         {
 
             using (SqlCommand cmd = new SqlCommand())
@@ -92,16 +90,21 @@ namespace Project_DAC
 
                 try
                 {
+                    cmd.CommandText = @"UPDATE SalesMaster SET Order_State = '발주완료' WHERE Plan_ID = @Plan_ID";                    
+                    cmd.Parameters.AddWithValue("@Plan_ID", Plan_ID);
+
+                    cmd.ExecuteNonQuery();
+
                     foreach (var item in codelist)
                     {
                         cmd.CommandText = @"INSERT INTO VendorOrder (COM_Code, MATERIAL_ORDER_STATE, ITEM_Code, VO_EndDate, VO_Quantity, 
 VO_StartDate,  VO_InDate) VALUES (@COM_Code, @MATERIAL_ORDER_STATE, @ITEM_Code, @VO_EndDate, @VO_Quantity, @VO_StartDate, @VO_InDate)";
-
+                        
                         cmd.Parameters.AddWithValue("@COM_Code", item.COM_Code);
                         cmd.Parameters.AddWithValue("@MATERIAL_ORDER_STATE", "발주대기");
                         cmd.Parameters.AddWithValue("@ITEM_Code", item.COM_Code);
-                        cmd.Parameters.AddWithValue("@VO_EndDate", DateTime.Now.ToShortDateString());
-                        cmd.Parameters.AddWithValue("@VO_Quantity", 30);
+                        cmd.Parameters.AddWithValue("@VO_EndDate", item.VO_EndDate);
+                        cmd.Parameters.AddWithValue("@VO_Quantity", item.VO_Quantity);
                         cmd.Parameters.AddWithValue("@VO_StartDate", DateTime.Now.ToShortDateString());
                         cmd.Parameters.AddWithValue("@VO_InDate", DateTime.Now.ToShortDateString());
 
@@ -120,7 +123,7 @@ VO_StartDate,  VO_InDate) VALUES (@COM_Code, @MATERIAL_ORDER_STATE, @ITEM_Code, 
 
             }
         }
-
+        //납기일자변경
         public bool EndDateChange(List<EndDateChange> datelist)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -152,7 +155,7 @@ VO_StartDate,  VO_InDate) VALUES (@COM_Code, @MATERIAL_ORDER_STATE, @ITEM_Code, 
 
             }
         }
-
+        //발주취소
         public bool OrderDelete(List<DeleteOrder> deletelist)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -183,21 +186,215 @@ VO_StartDate,  VO_InDate) VALUES (@COM_Code, @MATERIAL_ORDER_STATE, @ITEM_Code, 
 
             }
         }
+
+        public bool OrderChange(List<DeleteOrder> lists)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                cmd.CommandType = CommandType.Text;
+                try
+                {
+                    foreach (var item in lists)
+                    {
+                        cmd.CommandText = @"UPDATE VendorOrder SET MATERIAL_ORDER_STATE = '발주처리' WHERE VO_ID = @VO_ID";
+                        
+                        cmd.Parameters.AddWithValue("@VO_ID", item.VO_ID);
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+                    cmd.Connection.Close();
+                    return true;
+                }
+                catch (Exception err)
+                {
+                    System.Diagnostics.Debug.WriteLine(err.Message);
+                    cmd.Connection.Close();
+                    return false;
+                }
+            }
+        }
+
+        public bool OrderCancel(List<DeleteOrder> lists)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                cmd.CommandType = CommandType.Text;
+                try
+                {
+                    foreach (var item in lists)
+                    {
+                        cmd.CommandText = @"UPDATE VendorOrder SET MATERIAL_ORDER_STATE = '발주대기' WHERE VO_ID = @VO_ID";
+
+                        cmd.Parameters.AddWithValue("@VO_ID", item.VO_ID);
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+                    cmd.Connection.Close();
+                    return true;
+                }
+                catch (Exception err)
+                {
+                    System.Diagnostics.Debug.WriteLine(err.Message);
+                    cmd.Connection.Close();
+                    return false;
+                }
+            }
+        }
+        //입고대기
+        public bool WarehousingWait(List<DeleteOrder> lists, List<VenderorderDetailVO> lists2)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                cmd.CommandType = CommandType.Text;
+                try
+                {
+                    foreach (var item in lists)
+                    {
+                        cmd.CommandText = @"UPDATE VendorOrder SET MATERIAL_ORDER_STATE = '입고대기' WHERE VO_ID = @VO_ID";
+
+                        cmd.Parameters.AddWithValue("@VO_ID", item.VO_ID);
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+
+                    foreach (var item in lists2)
+                    {
+                        cmd.CommandText = @"INSERT INTO VendorOrderDetail(VO_ID, VOD_GoodEA, VOD_BadEA, VOD_ResultDay, VOD_Result) VALUES(@VO_ID, @VOD_GoodEA, @VOD_BadEA, @VOD_ResultDay, @VOD_Result)";
+                        cmd.Parameters.AddWithValue("@VO_ID", item.VO_ID);
+                        cmd.Parameters.AddWithValue("@VOD_GoodEA", item.VOD_GoodEA);
+                        cmd.Parameters.AddWithValue("@VOD_BadEA", 0);
+                        cmd.Parameters.AddWithValue("@VOD_ResultDay", item.VO_StartDate);
+                        cmd.Parameters.AddWithValue("@VOD_Result", "불합격");
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+
+
+                    cmd.Connection.Close();
+                    return true;
+                }
+                catch (Exception err)
+                {
+                    System.Diagnostics.Debug.WriteLine(err.Message);
+                    cmd.Connection.Close();
+                    return false;
+                }
+            }
+        }
+
         public List<SupplierVO> Supplier()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "SELECT VO_ID, VO_StartDate, ITEM_OrderComp, v.COM_Code, COM_Name, v.ITEM_Code, ITEM_Name, ITEM_Size, ITEM_Unit, " +
-                    "ITEM_ImportIns, VO_Quantity, VO_EndDate, ITEM_OrderMethod FROM VendorOrder v " +
-                    "inner join ITEM i on v.ITEM_Code = i.ITEM_Code inner join Company c on v.COM_Code = c.COM_Code";
-
+                cmd.CommandText = @"SELECT DISTINCT VO_ID, VO_StartDate, ITEM_OrderComp, v.COM_Code, c.COM_Name, v.ITEM_Code, ITEM_Name, ITEM_Size, ITEM_Unit, 
+                    ITEM_ImportIns, VO_Quantity, VO_EndDate, MATERIAL_ORDER_STATE, ITEM_OrderMethod FROM VendorOrder v 
+                    inner join ITEM i on v.ITEM_Code = i.ITEM_Code inner join Company c on v.COM_Code = c.COM_Code
+                    WHERE MATERIAL_ORDER_STATE = '발주대기' Order by VO_ID";
+                
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<SupplierVO> list = Helper.DataReaderMapToList<SupplierVO>(reader);
                 cmd.Connection.Close();
 
                 return list;
+            }
+        }
+
+        public List<ImportCheckVO> ImportCheck()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = @"select v.VO_ID, COM_Name, v.ITEM_Code, ITEM_Name, ITEM_Size, VOD_Result, VOD_GoodEA, VOD_BadEA, VOD_ResultDay
+  from VendorOrder v inner join VendorOrderDetail d on v.VO_ID = d.VO_ID inner join ITEM i on v.ITEM_Code = i.ITEM_Code
+  order by VO_ID";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ImportCheckVO> list = Helper.DataReaderMapToList<ImportCheckVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public List<Material_LedgerVO> Material_Ledger()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = @"select DISTINCT v.VO_ID, COM_Name, v.ITEM_Code, ITEM_Name, ITEM_Size, ITEM_Unit, VOD_GoodEA, FACD_Qty, VO_EndDate, VOD_Result, MATERIAL_ORDER_STATE, VOD_ResultDay
+  from VendorOrder v inner join VendorOrderDetail d on v.VO_ID = d.VO_ID inner join ITEM i on v.ITEM_Code = i.ITEM_Code inner join FactoryDetail f on v.ITEM_Code = f.ITEM_Code
+  WHERE VOD_Result = '합격'
+  order by VO_ID";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<Material_LedgerVO> list = Helper.DataReaderMapToList<Material_LedgerVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public List<SupplierStateVO> SupplierState()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = @"SELECT distinct VO_ID, c.COM_Name, COM_Type, c.COM_Code, ITEM_Name, MATERIAL_ORDER_STATE, VO_Quantity, FACD_Qty, FACT_Name, ITEM_Unit, ITEM_Size, a.ITEM_Code, VO_EndDate, VO_StartDate, VO_InDate
+FROM VendorOrder a inner join ITEM b on a.ITEM_Code = b.ITEM_Code inner join Company c on a.COM_Code = c.COM_Code inner join FactoryDetail f on a.ITEM_Code = f.ITEM_Code
+WHERE FACT_Code = 'R_01' and MATERIAL_ORDER_STATE = '발주처리'
+Order by VO_ID";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<SupplierStateVO> list = Helper.DataReaderMapToList<SupplierStateVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public bool Result(List<DeleteOrder> lists)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                cmd.CommandType = CommandType.Text;
+                try
+                {
+                    foreach (var item in lists)
+                    {
+                        cmd.CommandText = @"UPDATE VendorOrderDetail SET VOD_Result = '합격' WHERE VO_ID = @VO_ID";
+
+                        cmd.Parameters.AddWithValue("@VO_ID", item.VO_ID);
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+                    cmd.Connection.Close();
+                    return true;
+                }
+                catch (Exception err)
+                {
+                    System.Diagnostics.Debug.WriteLine(err.Message);
+                    cmd.Connection.Close();
+                    return false;
+                }
+
             }
         }
     }

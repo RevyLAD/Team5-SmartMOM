@@ -94,7 +94,7 @@ namespace Team5_SmartMOM.LBJ
             if(txtStartTime.Text.Length < 1)
             {
                 MessageBox.Show("시작시간을 입력해주세요.");
-                this.txtStartTime.Focus();
+                this.txtStartTime.Focus(); 
             }
             ShiftVO svo = new ShiftVO();
             LBJ_Service service = new LBJ_Service();
@@ -103,16 +103,16 @@ namespace Team5_SmartMOM.LBJ
             svo.FAC_Code = cboCode.Text.Trim();
             svo.SHIFT_StartTime = Convert.ToInt32(txtStartTime.Text.Trim());
             svo.SHIFT_EndTime = Convert.ToInt32(txtCompleteTime.Text.Trim());
-            svo.SHIFT_StartDate = dateTimePicker1.Value;
-            svo.SHIFT_EndDate = dateTimePicker2.Value;
-            svo.SHIFT_InputPeople = Convert.ToInt32(txtPeople.Text.Trim());
+            svo.SHIFT_StartDate = Convert.ToDateTime(dateTimePicker1.Value.ToShortDateString());
+            svo.SHIFT_EndDate = Convert.ToDateTime(dateTimePicker2.Value.ToShortDateString());
+            svo.SHIFT_InputPeople = int.Parse(txtPeople.Text);
             svo.SHIFT_UserOrNot = cboUse.Text.Trim();
             svo.SHIFT_Modifier = txtReviceDay.Text.Trim();
             svo.SHIFT_ModifierDate = txtRevicePeople.Text.Trim();
             svo.SHIFT_Others = txtNote.Text.Trim();
 
-            service.ShiftInsert(svo);
-            MessageBox.Show("등록 완료");
+                service.ShiftInsert(svo);
+                MessageBox.Show("등록 완료", "완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void txtStartTime_KeyPress(object sender, KeyPressEventArgs e)
