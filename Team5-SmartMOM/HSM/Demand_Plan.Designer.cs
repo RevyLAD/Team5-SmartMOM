@@ -70,7 +70,7 @@
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1202, 116);
+            this.panel2.Size = new System.Drawing.Size(1202, 110);
             // 
             // panelTop
             // 
@@ -86,7 +86,7 @@
             this.panelTop.Controls.Add(this.label11);
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Size = new System.Drawing.Size(1202, 96);
+            this.panelTop.Size = new System.Drawing.Size(1202, 90);
             // 
             // splitContainer2
             // 
@@ -100,7 +100,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(26, 62);
+            this.label11.Location = new System.Drawing.Point(26, 57);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(45, 19);
             this.label11.TabIndex = 5;
@@ -108,12 +108,11 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(374, 20);
+            this.label2.Location = new System.Drawing.Point(372, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 19);
+            this.label2.Size = new System.Drawing.Size(79, 19);
             this.label2.TabIndex = 6;
             this.label2.Text = "ㆍDate";
             // 
@@ -122,7 +121,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(374, 61);
+            this.label3.Location = new System.Drawing.Point(374, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 19);
             this.label3.TabIndex = 6;
@@ -131,15 +130,16 @@
             // cboPlanID
             // 
             this.cboPlanID.FormattingEnabled = true;
-            this.cboPlanID.Location = new System.Drawing.Point(118, 22);
+            this.cboPlanID.Location = new System.Drawing.Point(118, 17);
             this.cboPlanID.Name = "cboPlanID";
             this.cboPlanID.Size = new System.Drawing.Size(121, 20);
             this.cboPlanID.TabIndex = 7;
+            this.cboPlanID.SelectedIndexChanged += new System.EventHandler(this.cboPlanID_SelectedIndexChanged);
             // 
             // cboCompany
             // 
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(117, 61);
+            this.cboCompany.Location = new System.Drawing.Point(117, 56);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(121, 20);
             this.cboCompany.TabIndex = 7;
@@ -148,7 +148,7 @@
             // 
             this.dtpDateStart.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dtpDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateStart.Location = new System.Drawing.Point(446, 20);
+            this.dtpDateStart.Location = new System.Drawing.Point(446, 15);
             this.dtpDateStart.Name = "dtpDateStart";
             this.dtpDateStart.Size = new System.Drawing.Size(99, 21);
             this.dtpDateStart.TabIndex = 8;
@@ -156,7 +156,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(552, 25);
+            this.label4.Location = new System.Drawing.Point(552, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(14, 12);
             this.label4.TabIndex = 9;
@@ -165,7 +165,7 @@
             // dtpDateEnd
             // 
             this.dtpDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateEnd.Location = new System.Drawing.Point(572, 20);
+            this.dtpDateEnd.Location = new System.Drawing.Point(572, 15);
             this.dtpDateEnd.Name = "dtpDateEnd";
             this.dtpDateEnd.Size = new System.Drawing.Size(99, 21);
             this.dtpDateEnd.TabIndex = 8;
@@ -173,12 +173,11 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(26, 22);
+            this.label5.Location = new System.Drawing.Point(26, 17);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 19);
+            this.label5.Size = new System.Drawing.Size(86, 19);
             this.label5.TabIndex = 5;
             this.label5.Text = "ㆍPlanID";
             // 
@@ -188,9 +187,9 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1082, 25);
+            this.btnSearch.Location = new System.Drawing.Point(1082, 29);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(93, 39);
+            this.btnSearch.Size = new System.Drawing.Size(93, 36);
             this.btnSearch.TabIndex = 76;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -199,7 +198,7 @@
             // cboProduct
             // 
             this.cboProduct.FormattingEnabled = true;
-            this.cboProduct.Location = new System.Drawing.Point(446, 60);
+            this.cboProduct.Location = new System.Drawing.Point(446, 55);
             this.cboProduct.Name = "cboProduct";
             this.cboProduct.Size = new System.Drawing.Size(225, 20);
             this.cboProduct.TabIndex = 7;

@@ -21,14 +21,15 @@ namespace Team5_SmartMOM.HSM
         private void Sales_Master_Upload_Load(object sender, EventArgs e)
         {
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "planDate", "planDate", true, 160);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "WORK_ORDER_ID", "WORK_ORDER_ID", true, 140);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "WORK_ORDER_ID", "WORK_ORDER_ID", true, 180);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체CODE", "업체CODE", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주구분", "발주구분", true, 90);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "ITEM CODE", "ITEM CODE ", true, 90);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "계획수량합계", "계획수량합계", true, 90);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "납기일", true, 90);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납품처", "납품처", true, 90);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "ITEM CODE", "ITEM CODE", true, 120);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "계획수량합계", "계획수량합계", true, 120);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "납기일", true, 200);
 
-
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(200, 210, 250);
         }
 
         private void button3_Click(object sender, EventArgs e) //영업마스터 업로드
@@ -54,13 +55,13 @@ namespace Team5_SmartMOM.HSM
                 for (int i = 0; i < dataGridView1.RowCount; i++)
                 {
                     SalesMasterVO sale = new SalesMasterVO();
-                    sale.SALES_OrderDate = dataGridView1.Rows[i].Cells["planDate"].Value.ToString();
-                    sale.SO_WorkOrderID = dataGridView1.Rows[i].Cells["WORK_ORDER_ID"].Value.ToString();
-                    sale.COM_Code = dataGridView1.Rows[i].Cells["업체CODE"].Value.ToString();
-                    sale.PO_Type = dataGridView1.Rows[i].Cells["발주구분"].Value.ToString();
-                    sale.ITEM_Code = dataGridView1.Rows[i].Cells["ITEM CODE"].Value.ToString();
-                    sale.SALES_OrderQty = Convert.ToInt32(dataGridView1.Rows[i].Cells["계획수량합계"].Value);
-                    sale.SALES_Duedate = dataGridView1.Rows[i].Cells["납기일"].Value.ToString();
+                    sale.SALES_OrderDate = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                    sale.SO_WorkOrderID = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                    sale.COM_Code = dataGridView1.Rows[i].Cells[2].Value.ToString();
+                    sale.PO_Type = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                    sale.ITEM_Code = dataGridView1.Rows[i].Cells[5].Value.ToString();
+                    sale.SALES_OrderQty = Convert.ToInt32(dataGridView1.Rows[i].Cells[6].Value);
+                    sale.SALES_Duedate = dataGridView1.Rows[i].Cells[7].Value.ToString();
 
                     sales.Add(sale);
                 }
