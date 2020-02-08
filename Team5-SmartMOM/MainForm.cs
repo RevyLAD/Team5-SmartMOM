@@ -344,5 +344,15 @@ namespace Team5_SmartMOM
         {
             CreateTabPages("작업지시현황", new WorkOrderList());
         }
+
+        private void 영업단가관리ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("영업단가관리", new Sales_Price_Management());
+        }
+
+        private void 자재단가관리ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("자재단가관리", new Material_Cost_Management());
+        }
     }
 }

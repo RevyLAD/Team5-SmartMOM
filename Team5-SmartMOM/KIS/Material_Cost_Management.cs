@@ -12,6 +12,7 @@ namespace Team5_SmartMOM
 {
     public partial class Material_Cost_Management : Team5_SmartMOM.BaseGridForm
     {
+        KIS_Service service = new KIS_Service();
         public Material_Cost_Management()
         {
             InitializeComponent();
@@ -20,19 +21,23 @@ namespace Team5_SmartMOM
         private void Btn_newitem_Click(object sender, EventArgs e)
         {
             Material_Cost_Management_detail frm = new Material_Cost_Management_detail();
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                DataLoad();
+            }
+            
         }
 
         private void Material_Cost_Management_Load(object sender, EventArgs e)
         {
-            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn(false);
             chk.Width = 40;
             chk.HeaderText = "선택";
             dataGridView1.Columns.Add(chk);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "No", "Material_No", false, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체", "COM_Code", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체명", "COM_Name", true, 140);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 70);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "규격", "ITEM_SIze", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "단위", "ITEM_Unit", true, 100);
@@ -54,6 +59,50 @@ namespace Team5_SmartMOM
             list = service.ShowMaterial();
 
             dataGridView1.DataSource = list;
+        }
+
+        private void Btn_Search_Click(object sender, EventArgs e)
+        {
+            List<Material_VO_VIew> list = new List<Material_VO_VIew>();
+            string date = dtp_ExistingDate.Text.Replace("-", "").Replace(" ", "");
+            string name = txt_item.Text;
+            list = service.SearchMaterial(date, name);
+            dataGridView1.DataSource = list;
+        }
+
+        private void Btn_delete_Click(object sender, EventArgs e)
+        {
+            KIS_Service service = new KIS_Service();
+            List<string> list = new List<string>();
+            bool check = true;
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (Convert.ToBoolean(dataGridView1.Rows[i].Cells[0].Value) == true)
+                {
+                    list.Add(dataGridView1.Rows[i].Cells[1].Value.ToString());
+                }
+            }
+            if (list.Count == 0)
+            {
+                MessageBox.Show("삭제할 품목을 선택해 주시기 바랍니다.");
+                check = false;
+
+            }
+            else if (check)
+            {
+                string.Join(",", list.ToArray());
+                bool bResult = service.DeleteMaterial(string.Join(",", list));
+
+                if (bResult)
+                {
+                    MessageBox.Show("성공적으로 삭제되었습니다");
+                    DataLoad();
+                }
+                else
+                {
+                    MessageBox.Show("등록중 오류가 발생하였습니다 다시 시도해주세요");
+                }
+            }
         }
     }
 }

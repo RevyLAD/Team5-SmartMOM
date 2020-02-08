@@ -37,6 +37,7 @@ namespace Team5_SmartMOM
                                              select item).ToList();   // 품목 유형
 
             List<EnterpriseVO> OrderGubunList3 = (from item in listGubunCode3
+                                                  where item.COM_Type != "고객사"
                                                   select item).ToList();   // 품목 유형
 
             CommonUtil.ComboBinding(cbo_UseorNot, OrderGubunList1, "Common_Key", "Common_Value");
@@ -47,7 +48,7 @@ namespace Team5_SmartMOM
         private void Material_Cost_Management_detail_Load(object sender, EventArgs e)
         {
             Init_Combo();
-            txt_end_date.Text = "2099-12-29";
+            txt_end_date.Text = "2099-12-30";
             txt_edit_date.Text = DateTime.Now.ToString("yyyy-MM-dd");
         }
 
@@ -56,8 +57,6 @@ namespace Team5_SmartMOM
             bool check = true;
             try
             {
-
-
 
                 if (cbo_Item.Text == null || cbo_Item.Text == "4자리 이상 입력")
                 {
@@ -83,7 +82,7 @@ namespace Team5_SmartMOM
                     KIS_Service service = new KIS_Service();
                     bool bResult = service.InsertIMaterial(list);
 
-                    if (bResult)
+                    if (!bResult)
                     {
                         MessageBox.Show("성공적으로 등록되었습니다");
 

@@ -205,6 +205,9 @@
   <data name="file" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\file.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="please-wait-gif-8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\please-wait-gif-8.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="process" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\process.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -234,6 +237,9 @@
   </data>
   <data name="truck" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\truck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="e438e1b7a4f6bb5a48cd5971f538571a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\e438e1b7a4f6bb5a48cd5971f538571a.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="x-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\x-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,7 +280,7 @@
   <data name="edit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="please-wait-gif-8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\please-wait-gif-8.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="e438e1b7a4f6bb5a48cd5971f538571a1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\e438e1b7a4f6bb5a48cd5971f538571a1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
