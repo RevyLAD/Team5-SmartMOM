@@ -50,6 +50,7 @@
             this.Btn_Copy = new System.Windows.Forms.Button();
             this.Btn_Delete = new System.Windows.Forms.Button();
             this.Btn_newitem = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -81,7 +82,7 @@
             this.button3.Location = new System.Drawing.Point(935, 0);
             this.button3.Size = new System.Drawing.Size(62, 24);
             this.button3.Text = "엑셀";
-            this.button3.Visible = false;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button2
             // 
@@ -404,5 +405,6 @@
         protected System.Windows.Forms.Button Btn_Copy;
         protected System.Windows.Forms.Button Btn_newitem;
         protected System.Windows.Forms.Button Btn_Delete;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

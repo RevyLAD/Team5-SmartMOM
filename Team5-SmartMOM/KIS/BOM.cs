@@ -6,6 +6,7 @@ using System.Threading;
 using System.Windows.Forms;
 using Team5_SmartMOM.BaseForm;
 using Team5_SmartMOM.Service;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Team5_SmartMOM
 {
@@ -61,7 +62,7 @@ namespace Team5_SmartMOM
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn(false);
-            
+
             checkBoxColumn.Name = "check";
 
             dataGridView1.Columns.Add(checkBoxColumn);
@@ -87,7 +88,7 @@ namespace Team5_SmartMOM
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn(false);
-        
+
             checkBoxColumn.Name = "check";
 
             dataGridView1.Columns.Add(checkBoxColumn);
@@ -191,9 +192,9 @@ namespace Team5_SmartMOM
         {
             using (Loading_Form frm = new Loading_Form(SearchBOM))
             {
-                
+
                 frm.ShowDialog(this);
-              
+
             }
         }
 
@@ -325,7 +326,7 @@ namespace Team5_SmartMOM
                     dataGridView1.DataSource = list;
 
                 }
-                
+
             }
             return list;
         }
@@ -338,6 +339,128 @@ namespace Team5_SmartMOM
 
         }
 
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Columns.Count == 13)
+            {
+                Excel.Application xlApp;
+                Excel.Workbook xlWorkBook;
+                Excel.Worksheet xlWorkSheet;
 
+                int i, j;
+
+                saveFileDialog1.Filter = "Excel Files (*.xls)|*.xls";
+                saveFileDialog1.InitialDirectory = "C:";
+                saveFileDialog1.Title = "Save";
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    xlApp = new Excel.Application();
+                    xlWorkBook = xlApp.Workbooks.Add();
+                    xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+                    int row = 2;
+                    xlWorkSheet.Cells[1, 1] = "상위품목";
+                    xlWorkSheet.Cells[1, 2] = "품목";
+                    xlWorkSheet.Cells[1, 3] = "소요량";
+                    xlWorkSheet.Cells[1, 4] = "시작일";
+                    xlWorkSheet.Cells[1, 5] = "종료일";
+                    xlWorkSheet.Cells[1, 6] = "사용유무";
+                    xlWorkSheet.Cells[1, 7] = "자동차감";
+                    xlWorkSheet.Cells[1, 8] = "소요계획";
+                    xlWorkSheet.Cells[1, 9] = "비고";
+
+
+
+                    foreach (DataGridViewRow temp in dataGridView1.Rows)
+                    {
+                        xlWorkSheet.Cells[row, 1] = temp.Cells[2].Value.ToString();
+                        xlWorkSheet.Cells[row, 2] = temp.Cells[3].Value.ToString();
+                        xlWorkSheet.Cells[row, 3] = temp.Cells[4].Value.ToString();
+                        xlWorkSheet.Cells[row, 4] = temp.Cells[5].Value.ToString();
+                        xlWorkSheet.Cells[row, 5] = temp.Cells[6].Value.ToString();
+                        xlWorkSheet.Cells[row, 6] = temp.Cells[7].Value.ToString();
+                        xlWorkSheet.Cells[row, 7] = temp.Cells[10].Value.ToString();
+                        xlWorkSheet.Cells[row, 8] = temp.Cells[11].Value.ToString();
+                        row++;
+                    }
+
+                    xlWorkBook.SaveAs(saveFileDialog1.FileName, Excel.XlFileFormat.xlWorkbookNormal);
+                    xlWorkBook.Close(true);
+                    xlApp.Quit();
+
+                    releaseObject(xlWorkSheet);
+                    releaseObject(xlWorkBook);
+                    releaseObject(xlApp);
+                }
+            }
+            else if (dataGridView1.Columns.Count == 15)
+            {
+                Excel.Application xlApp;
+                Excel.Workbook xlWorkBook;
+                Excel.Worksheet xlWorkSheet;
+
+                int i, j;
+
+                saveFileDialog1.Filter = "Excel Files (*.xls)|*.xls";
+                saveFileDialog1.InitialDirectory = "C:";
+                saveFileDialog1.Title = "Save";
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    xlApp = new Excel.Application();
+                    xlWorkBook = xlApp.Workbooks.Add();
+                    xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+                    int row = 2;
+                    xlWorkSheet.Cells[1, 1] = "상위품목";
+                    xlWorkSheet.Cells[1, 2] = "품목";
+                    xlWorkSheet.Cells[1, 3] = "소요량";
+                    xlWorkSheet.Cells[1, 4] = "시작일";
+                    xlWorkSheet.Cells[1, 5] = "종료일";
+                    xlWorkSheet.Cells[1, 6] = "사용유무";
+                    xlWorkSheet.Cells[1, 7] = "자동차감";
+                    xlWorkSheet.Cells[1, 8] = "소요계획";
+                    xlWorkSheet.Cells[1, 9] = "비고";
+
+
+
+                    foreach (DataGridViewRow temp in dataGridView1.Rows)
+                    {
+                        xlWorkSheet.Cells[row, 1] = temp.Cells[1].Value.ToString();
+                        xlWorkSheet.Cells[row, 2] = temp.Cells[2].Value.ToString();
+                        xlWorkSheet.Cells[row, 3] = temp.Cells[6].Value.ToString();
+                        xlWorkSheet.Cells[row, 4] = temp.Cells[7].Value.ToString();
+                        xlWorkSheet.Cells[row, 5] = temp.Cells[8].Value.ToString();
+                        xlWorkSheet.Cells[row, 6] = temp.Cells[9].Value.ToString();
+                        xlWorkSheet.Cells[row, 7] = temp.Cells[12].Value.ToString();
+                        xlWorkSheet.Cells[row, 8] = temp.Cells[13].Value.ToString();
+                        //xlWorkSheet.Cells[row, 9] = temp.Cells[14].Value.ToString();
+                        row++;
+                    }
+
+                    xlWorkBook.SaveAs(saveFileDialog1.FileName, Excel.XlFileFormat.xlWorkbookNormal);
+                    xlWorkBook.Close(true);
+                    xlApp.Quit();
+
+                    releaseObject(xlWorkSheet);
+                    releaseObject(xlWorkBook);
+                    releaseObject(xlApp);
+                }
+            }
+        }
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
     }
 }

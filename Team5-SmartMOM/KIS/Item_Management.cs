@@ -15,7 +15,7 @@ namespace Team5_SmartMOM
         public Item_Management()
         {
             InitializeComponent();
-           
+
         }
 
         private void Btn_newitem_Click(object sender, EventArgs e)
@@ -43,12 +43,12 @@ namespace Team5_SmartMOM
             chk.HeaderText = "선택";
 
             dataGridView1.CellClick += new DataGridViewCellEventHandler(DataGridView1_CellClick);
-           
+
 
             DataGridViewButtonColumn but = new DataGridViewButtonColumn();
             but.Width = 40;
             but.HeaderText = "수정";
-            
+
 
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목번호", "ITEM_No", true, 40);
             dataGridView1.Columns.Add(chk);
@@ -92,9 +92,9 @@ namespace Team5_SmartMOM
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
-                return; 
-           
-            if(dataGridView1.CurrentCell.ColumnIndex == 2&& checklist == false)
+                return;
+
+            if (dataGridView1.CurrentCell.ColumnIndex == 2 && checklist == false)
             {
                 MessageBox.Show("수정모드가 작동합니다. \n 셀을 클릭하여 타입에 알맞게 수정하시고 수정후 버튼을 클릭해주세요.");
                 checklist = true;
@@ -105,9 +105,9 @@ namespace Team5_SmartMOM
                 }
                 dataGridView1.Rows[e.RowIndex].Cells[2].ReadOnly = true;
                 //row.DefaultCellStyle.BackColor = Color.Tomato;
-               
+
             }
-            else if (dataGridView1.CurrentCell.ColumnIndex == 2&& checklist == true)
+            else if (dataGridView1.CurrentCell.ColumnIndex == 2 && checklist == true)
             {
                 MessageBox.Show("수정모드가 종료되었습니다.");
                 KIS_Service service = new KIS_Service();
@@ -131,7 +131,7 @@ namespace Team5_SmartMOM
                 item.ITEM_OrderComp = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
                 item.ITEM_InWarehouse = dataGridView1.Rows[e.RowIndex].Cells[12].Value.ToString();
                 item.ITEM_OutWarehouse = dataGridView1.Rows[e.RowIndex].Cells[13].Value.ToString();
-                item.ITEM_MinOrderQuantity = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[14].Value.ToString()); 
+                item.ITEM_MinOrderQuantity = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[14].Value.ToString());
                 item.ITEM_SafeQuantity = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[15].Value.ToString());
                 item.ITEM_Grade = dataGridView1.Rows[e.RowIndex].Cells[16].Value.ToString();
                 item.ITEM_Manager = dataGridView1.Rows[e.RowIndex].Cells[17].Value.ToString();
@@ -189,6 +189,8 @@ namespace Team5_SmartMOM
             }
         }
 
-       
+        private void Button3_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
