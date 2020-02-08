@@ -112,7 +112,9 @@ namespace Team5_SmartMOM.HSM
             if(!(cboPlanID.Text.ToString() == "전체"))
             {
                 string[] arrDate = cboPlanID.Text.Split('_');
-                DateTime.ParseExact(arrDate[0], "yyyyMMdd", null).ToString("yyyy-MM-dd");
+               
+
+
             }
         }
     }
