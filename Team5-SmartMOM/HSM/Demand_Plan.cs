@@ -24,7 +24,6 @@ namespace Team5_SmartMOM.HSM
         {
             dtpDateEnd.Value = DateTime.Now.AddMonths(1);
             InitCombo();
-            btnSearch.PerformClick();
 
         }
 
@@ -32,7 +31,7 @@ namespace Team5_SmartMOM.HSM
         {
             CommonCodeService service = new CommonCodeService();
 
-            List<PlanIDVO> listPlanID = service.GetAllPlanID();
+            List<PlanIDVO> listPlanID = service.GetPlanIDByDemandPlan();
             List<CompanyCodeVO> listCompanyCode = service.GetAllCompanyCode();
             List<ItemCodeVO> listItemCode = service.GetAllItemCode();
 
@@ -46,7 +45,7 @@ namespace Team5_SmartMOM.HSM
 
         private void btnSearch_Click(object sender, EventArgs e) //조회버튼
         {
-
+            dataGridView1.DataSource = null;
             PlanningVO plan = new PlanningVO();
             HSM_Service service = new HSM_Service();
 
@@ -58,19 +57,43 @@ namespace Team5_SmartMOM.HSM
 
             if(cboPlanID.Text == "전체")
             {
-
                 DataSet ds = service.GetAllDemandPlan(plan);
                 dataGridView1.DataSource = ds.Tables[0];
+                
             }
             else
             {
-
                 DataSet ds = service.GetAllDemandPlanByPlanID(plan);
                 dataGridView1.DataSource = ds.Tables[0];
             }
+            dgvSettings();
+            dgvYellow();
 
         }
 
+        private void dgvSettings()
+        {
+
+            dataGridView1.Columns[0].Width = 180;
+            dataGridView1.Columns[3].Width = 180;
+            dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        private void dgvYellow()
+        {
+
+            for (int i = 5; i < dataGridView1.ColumnCount; i++)
+            {
+                dataGridView1.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                for (int j = 0; j < dataGridView1.RowCount; j++)
+                {
+                    if (dataGridView1[i, j].Value.ToString() != "")
+                    {
+                        dataGridView1[i, j].Style.BackColor = Color.LightYellow;
+                    }
+                }
+            }
+        }
         private void dtpDateEnd_ValueChanged(object sender, EventArgs e)
         {
             if (dtpDateStart.Value > dtpDateEnd.Value.AddDays(1))
@@ -87,19 +110,23 @@ namespace Team5_SmartMOM.HSM
             
             if(dataGridView1.Rows.Count>0)
             {
-                foreach (DataGridViewRow row in dataGridView1.Rows)
+                if(MessageBox.Show($"{dataGridView1.Rows.Count}개의 주문에 대해 생산계획을 생성하시겠습니까?","확인",MessageBoxButtons.OKCancel)==DialogResult.OK)
                 {
-                    string workId = row.Cells[0].Value.ToString();
-                    service.UpdatePlanID(workId);
-
-                    if(!service.UpdatePlanID(workId))
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
-                        MessageBox.Show("저장실패");
-                        return;
+                        string workId = row.Cells[0].Value.ToString();
+                        service.UpdatePlanID(workId);
+
+                        if (!service.UpdatePlanID(workId))
+                        {
+                            MessageBox.Show("저장실패");
+                            return;
+                        }
                     }
+                    MessageBox.Show("생산계획 생성 완료");
+                    dataGridView1.DataSource = null;
+                    InitCombo();
                 }
-                MessageBox.Show("생산계획 생성 완료");
-                btnSearch.PerformClick();
             }
             else
             {
@@ -109,13 +136,22 @@ namespace Team5_SmartMOM.HSM
 
         private void cboPlanID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(!(cboPlanID.Text.ToString() == "전체"))
+
+            string[] arrDate = cboPlanID.Text.Split('_');
+            if(arrDate[0] == "전체" )
             {
-                string[] arrDate = cboPlanID.Text.Split('_');
-               
-
-
+                return;
             }
+            if (arrDate[0] == "Project")
+            {
+                return;
+            }
+            arrDate[0]=  arrDate[0].Insert(4, "-");
+            arrDate[0] = arrDate[0].Insert(7, "-");
+            //20200101
+            dtpDateStart.Value = DateTime.Parse(arrDate[0]);
+            dtpDateEnd.Value = DateTime.Parse(arrDate[0]).AddMonths(1);
+
         }
     }
 }
