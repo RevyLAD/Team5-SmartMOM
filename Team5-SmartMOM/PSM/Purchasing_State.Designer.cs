@@ -199,7 +199,6 @@
             this.cbostate.Name = "cbostate";
             this.cbostate.Size = new System.Drawing.Size(191, 20);
             this.cbostate.TabIndex = 30;
-            this.cbostate.SelectedIndexChanged += new System.EventHandler(this.cbostate_SelectedIndexChanged);
             // 
             // cbocompany
             // 
@@ -208,7 +207,6 @@
             this.cbocompany.Name = "cbocompany";
             this.cbocompany.Size = new System.Drawing.Size(161, 20);
             this.cbocompany.TabIndex = 31;
-            this.cbocompany.SelectedIndexChanged += new System.EventHandler(this.cbocompany_SelectedIndexChanged);
             // 
             // txtVoID
             // 
@@ -254,6 +252,7 @@
             this.button5.Text = "발주서 출력";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Purchasing_State
             // 

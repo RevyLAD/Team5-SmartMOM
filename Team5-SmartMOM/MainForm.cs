@@ -12,11 +12,16 @@ using Team5_SmartMOM.LBJ;
 using Team5_SmartMOM.HSC;
 using Team5_SmartMOM.PSM;
 using Team5_SmartMOM.HSM;
+using Team5_SmartMOM.KIS;
+using System.Reflection;
+using Team5_SmartMOM.Properties;
 
 namespace Team5_SmartMOM
 {
     public partial class MainForm : Form
     {
+
+        bool check = false;
         private Point _imageLocation = new Point(13, 5);
         private Point _imgHitArea = new Point(13, 2);
 
@@ -152,10 +157,34 @@ namespace Team5_SmartMOM
             else
                 panelSubMenu8.Visible = true;
         }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void toolStripButton_Click(object sender, EventArgs e)
         {
             panelSideMenu.Visible = !panelSideMenu.Visible;
+        }
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+                ToolStripButton button = (ToolStripButton)sender;
+                char sp = '.';
+                char sp2 = ',';
+                string[] start;
+                string[] end;
+                string sub = button.Tag.ToString();
+                start = button.Tag.ToString().Split(sp);
+                end = start[2].Split(sp2);
+
+
+                string form = sub.Substring(0, 18);
+                string namespaced = end[0];
+                Assembly cuasm = Assembly.GetExecutingAssembly();
+                Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", form, namespaced));
+                check = true;
+                CreateTabPages(button.Name, frm);
+
+                start = null;
+                end = null;
+            
+          
         }
 
         #endregion
@@ -163,6 +192,7 @@ namespace Team5_SmartMOM
 
         private void CreateTabPages(string text, Form OpenForm)
         {
+            string first;
             foreach (TabPage childForm in this.tabControl1.TabPages)
             {
                 if (childForm.Text == text)
@@ -171,10 +201,14 @@ namespace Team5_SmartMOM
                     return;
                 }
             }
-
             TabPage myTabPage = new TabPage();
+            myTabPage = new TabPage();
             myTabPage.Text = text;
-            myTabPage.ImageIndex = 1;
+            myTabPage.ImageIndex = 0;
+            
+            first = OpenForm.ToString();
+            myTabPage.Tag = first.ToString();
+            
             tabControl1.Controls.Add(myTabPage);
 
 
@@ -195,11 +229,13 @@ namespace Team5_SmartMOM
 
         private void btnMatList_Click(object sender, EventArgs e)
         {
+          
             BaseGridForm frm = new BaseGridForm();
             CreateTabPages(btnMatList.Text, frm);
 
         }
 
+        #region 탭페이지 생성
         private void 공장관리ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateTabPages("공장관리", new FactoryManager());
@@ -354,5 +390,37 @@ namespace Team5_SmartMOM
         {
             CreateTabPages("자재단가관리", new Material_Cost_Management());
         }
+        #endregion
+        private void ToolStripButton4_Click(object sender, EventArgs e)
+        {
+            bool truefalse = true;
+            ToolStripButton button = new ToolStripButton();
+            
+           
+            for (int i=0; i<toolStrip1.Items.Count; i++)
+            {
+                if(tabControl1.SelectedTab.Text == toolStrip1.Items[i].Text)
+                {
+                    MessageBox.Show("즐겨찾기 중 중복된 태그가 있습니다. ");
+                    truefalse = false;
+                }
+            }
+            if (truefalse)
+            {
+                
+                Random rnd = new Random();
+                MessageBox.Show("즐겨찾기에 새로운 목록을 생성했습니다.", "확인");
+                button.Name = tabControl1.SelectedTab.Text;
+                button.Tag = tabControl1.SelectedTab.Tag;
+                button.Text = tabControl1.SelectedTab.Text;
+                button.Click += new System.EventHandler(this.toolStripButton1_Click);
+                button.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText;
+                button.Image =imageList1.Images[rnd.Next(0, 52)];
+               
+                toolStrip1.Items.Add(button);
+            }
+        }
+
+   
     }
 }

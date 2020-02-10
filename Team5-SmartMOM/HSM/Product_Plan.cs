@@ -32,7 +32,8 @@ namespace Team5_SmartMOM.HSM
         {
             CommonCodeService service = new CommonCodeService();
 
-            List<PlanIDVO> listPlanID = service.GetAllPlanID();
+            //작업대기 planID
+            List<PlanIDVO> listPlanID = service.GetPlanIDByProduction();
             List<ItemCodeVO> listItemCode = service.GetAllItemCode();
 
 

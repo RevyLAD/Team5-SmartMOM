@@ -33,7 +33,7 @@ namespace Team5_SmartMOM.PSM
         public void InitCombo()
         {
             CommonCodeService service = new CommonCodeService();
-            listPlanID = service.GetAllPlanID();
+            listPlanID = service.GetAllPlanID2();
 
             //콤보박스 콤보바인딩
             CommonUtil.ComboBinding(cboPlanID, listPlanID, "Plan_ID", "Plan_ID");

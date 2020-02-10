@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Team5_SmartMOM.Service;
 
-namespace Team5_SmartMOM
+namespace Team5_SmartMOM.KIS
 {
    
     public partial class Sales_Price_Management : Team5_SmartMOM.BaseGridForm

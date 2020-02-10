@@ -2,13 +2,16 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Team5_SmartMOM.Service;
+using WinReport1;
 
 namespace Team5_SmartMOM.PSM
 {
@@ -85,17 +88,10 @@ namespace Team5_SmartMOM.PSM
             List<CompanyCodeVO> company = service.GetAllCompanyCode();
             List<MATERIAL_ORDER_STATEVO> ORDER_STATEVO = service.GetAllOrderState();
 
-            CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "전체");
-            CommonUtil.ComboBinding(cbostate, ORDER_STATEVO, "MATERIAL_ORDER_STATE", "MATERIAL_ORDER_STATE", "전체");
+            CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "");
+            CommonUtil.ComboBinding(cbostate, ORDER_STATEVO, "MATERIAL_ORDER_STATE", "MATERIAL_ORDER_STATE", "");
             
-            CheckBoxTrue();
-
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                dataGridView1.Rows[i].Cells[11].ReadOnly = false;
-            }
-
-
+            CheckBoxTrue();   
 
         }
         //데이터그리드뷰 헤더체크박스 
@@ -117,73 +113,7 @@ namespace Team5_SmartMOM.PSM
                 dtpDateEnd.Value = dtpDateStart.Value.AddMonths(1);
                 return;
             }
-        }
-
-        //업체정보 콤보박스 검색
-        private void cbocompany_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //try
-            //{
-            //    if (cbocompany.Text != "")
-            //    {
-            //        string query = cbocompany.Text;
-
-            //        if (query == "전체")
-            //        {
-            //            dataGridView1.DataSource = list;
-            //        }
-            //        else
-            //        {
-            //            List<PurchasingStateVO> searchlist = null;
-            //            searchlist = (from team5 in list
-            //                          where team5.COM_Name.ToString().Contains(query)
-            //                          select team5).ToList();
-            //            dataGridView1.DataSource = searchlist;
-            //        }
-            //    }
-            //    else
-            //    {
-            //        DataLoad();
-            //    }
-            //}
-            //catch (Exception err)
-            //{
-            //    MessageBox.Show(err.Message);
-            //}
-        }
-    
-        //발주상태 콤보박스 검색
-        private void cbostate_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (cbocompany.Text != "")
-                {
-                    string query = cbocompany.Text;
-
-                    if (query == "전체")
-                    {
-                        dataGridView1.DataSource = list;
-                    }
-                    else
-                    {
-                        List<PurchasingStateVO> searchlist = null;
-                        searchlist = (from team5 in list
-                                      where team5.MATERIAL_ORDER_STATE.ToString().Contains(query)
-                                      select team5).ToList();
-                        dataGridView1.DataSource = searchlist;
-                    }
-                }
-                else
-                {
-                    DataLoad();
-                }
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
-        }
+        }       
 
         //조회버튼 클릭시 검색조건 기준으로 검색 후 텍스트박스 초기화
         private void btnSearch_Click(object sender, EventArgs e)
@@ -201,6 +131,13 @@ namespace Team5_SmartMOM.PSM
             PSM_Service service = new PSM_Service();
             list = service.GetAllPurChasingState(ps);
             dataGridView1.DataSource = list;
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                dataGridView1.Rows[i].Cells[10].ReadOnly = false;
+            }           
+
+        
         }
 
         //체크된 항목만 납기일자 변경
@@ -272,7 +209,7 @@ namespace Team5_SmartMOM.PSM
             PSM_Service service = new PSM_Service();
             service.OrderDelete(deletelist);
 
-            MessageBox.Show("발주삭제가 완료 되었습니다.");
+            MessageBox.Show("발주가 취소 되었습니다.");
 
             DataLoad();
         }
@@ -321,6 +258,35 @@ namespace Team5_SmartMOM.PSM
             {
                 btnSearch_Click(null, new EventArgs());
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string dtStart = dtpDateStart.Value.ToString("yyyyMMdd");
+            string dtEnd = dtpDateEnd.Value.ToString("yyyyMMdd");
+
+            string strConn = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
+
+            DataSet ds = new DataSet();
+            using (SqlConnection conn = new SqlConnection(strConn))
+            {
+                conn.Open();
+                string strSql = @"SELECT VO_ID, COM_Name, ITEM_Name, ITEM_Size, VO_Quantity, Convert(varchar(10),VO_StartDate,23) VO_StartDate
+                                    FROM VendorOrder v inner join ITEM i on v.COM_Code = i.ITEM_Code
+                                    WHERE VO_EndDate between '" + dtStart + "'  and '" + dtEnd + "'ORDER BY VO_ID";
+                SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
+
+                da.Fill(ds, "VendorOrder");
+                conn.Close();
+            }
+
+            XtraReport1 rpt = new XtraReport1();
+            rpt.DataSource = ds.Tables["VendorOrder"];
+            //ReportPreview frm = new ReportPreview(rpt);
+
+            Form2 frm = new Form2();
+            frm.documentViewer1.DocumentSource = rpt;
+            frm.ShowDialog();
         }
     }    
 }

@@ -9,7 +9,7 @@ using Team5_SmartMOM.BaseForm;
 using Team5_SmartMOM.Service;
 using Excel = Microsoft.Office.Interop.Excel;
 
-namespace Team5_SmartMOM
+namespace Team5_SmartMOM.KIS
 {
     public partial class BOM : Team5_SmartMOM.BaseGridForm
     {
@@ -55,7 +55,7 @@ namespace Team5_SmartMOM
             List<CommonCodeVO> OrderGubunList1 = (from item in listGubunCode1
                                                   where item.Common_Type == "USE_FLAG"
                                                   select item).ToList();
-            CommonUtil.ComboBinding(cbo_UseorNot, OrderGubunList1, "Common_Key", "Common_Value");
+         //   CommonUtil.ComboBinding(cbo_UseorNot, OrderGubunList1, "Common_Key", "Common_Value");
         }
 
         private void ShowGridView()
@@ -67,7 +67,8 @@ namespace Team5_SmartMOM
 
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn(false);
 
-            checkBoxColumn.Name = "check";
+            checkBoxColumn.Name = "";
+            checkBoxColumn.Width = 30;
 
             dataGridView1.Columns.Add(checkBoxColumn);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "NO", "BOM_No", true, 50);
@@ -92,10 +93,9 @@ namespace Team5_SmartMOM
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn(false);
-
+            checkBoxColumn.Width = 30;
 
             dataGridView1.Columns.Add(checkBoxColumn);
-
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상위품목", "BOM_Code", true, 160);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 160);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 170);
@@ -220,6 +220,7 @@ namespace Team5_SmartMOM
                 List<BOM_Serch_VO> list = new List<BOM_Serch_VO>();
                 KIS_Service service = new KIS_Service();
                 list = BomSearch(list, service);
+              
 
             }
             else if (cbo_Deployement.Text == "역전개")
@@ -288,7 +289,14 @@ namespace Team5_SmartMOM
                         }
                     }
                     ShowGridView2();
-                    dataGridView1.DataSource = list2;
+                    if (list.Count != 0)
+                    {
+                        dataGridView1.DataSource = list2;
+                    }
+                    else
+                    {
+                        MessageBox.Show("결과 없음.");
+                    }
                 }
                 else if (type == 2)
                 {
@@ -326,7 +334,14 @@ namespace Team5_SmartMOM
                     //    }
                     //}
                     ShowGridView2();
-                    dataGridView1.DataSource = list;
+                    if (list.Count != 0)
+                    {
+                        dataGridView1.DataSource = list;
+                    }
+                   else
+                    {
+                        MessageBox.Show("결과 없음.");
+                    }
 
                 }
 

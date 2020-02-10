@@ -1,4 +1,4 @@
-﻿namespace Team5_SmartMOM
+﻿namespace Team5_SmartMOM.KIS
 {
     partial class Sales_Price_Management
     {
@@ -30,9 +30,7 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.btn_Search = new System.Windows.Forms.Button();
-            this.cbo_Company = new System.Windows.Forms.ComboBox();
             this.txt_item = new System.Windows.Forms.TextBox();
             this.btn_Copy = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
@@ -94,10 +92,8 @@
             // panelTop
             // 
             this.panelTop.Controls.Add(this.txt_date);
-            this.panelTop.Controls.Add(this.cbo_Company);
             this.panelTop.Controls.Add(this.btn_Search);
             this.panelTop.Controls.Add(this.txt_item);
-            this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label2);
             this.panelTop.Size = new System.Drawing.Size(1202, 64);
@@ -143,17 +139,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "ㆍ품목";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(714, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 12);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "ㆍ업체";
-            // 
             // btn_Search
             // 
             this.btn_Search.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -167,14 +152,6 @@
             this.btn_Search.UseVisualStyleBackColor = false;
             this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
-            // cbo_Company
-            // 
-            this.cbo_Company.FormattingEnabled = true;
-            this.cbo_Company.Location = new System.Drawing.Point(783, 11);
-            this.cbo_Company.Name = "cbo_Company";
-            this.cbo_Company.Size = new System.Drawing.Size(207, 20);
-            this.cbo_Company.TabIndex = 12;
-            // 
             // txt_item
             // 
             this.txt_item.Location = new System.Drawing.Point(430, 11);
@@ -184,7 +161,7 @@
             // 
             // btn_Copy
             // 
-            this.btn_Copy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.btn_Copy.BackColor = System.Drawing.Color.Snow;
             this.btn_Copy.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_Copy.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Copy.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
@@ -199,7 +176,7 @@
             // 
             // btn_Delete
             // 
-            this.btn_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.btn_Delete.BackColor = System.Drawing.Color.Snow;
             this.btn_Delete.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_Delete.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Delete.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
@@ -215,7 +192,7 @@
             // 
             // Btn_newitem
             // 
-            this.Btn_newitem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.Btn_newitem.BackColor = System.Drawing.Color.Snow;
             this.Btn_newitem.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_newitem.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Btn_newitem.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
@@ -261,10 +238,8 @@
         #endregion
 
         private System.Windows.Forms.Button btn_Search;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbo_Company;
         private System.Windows.Forms.TextBox txt_item;
         protected System.Windows.Forms.Button Btn_newitem;
         protected System.Windows.Forms.Button btn_Delete;

@@ -105,10 +105,10 @@ namespace Team5_SmartMOM.Service
         }
 
 
-        public List<SupplierVO> Supplier()
+        public List<SupplierVO> Supplier(SupplierSearchVO sp)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.Supplier();
+            return dac.Supplier(sp);
         }
 
         public List<SupplierStateVO> SupplierState()
@@ -117,16 +117,16 @@ namespace Team5_SmartMOM.Service
             return dac.SupplierState();
         }
 
-        public List<ImportCheckVO> ImportCheck()
+        public List<ImportCheckVO> ImportCheck(ImportCheckSearchVO ics)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.ImportCheck();
+            return dac.ImportCheck(ics);
         }
 
-        public List<Material_LedgerVO> Material_Ledger()
+        public List<Material_LedgerVO> Material_Ledger(Material_LedgerSearchVO mls)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.Material_Ledger();
+            return dac.Material_Ledger(mls);
         }
 
         public List<Receiving_processingVO> Receiving_processing()
@@ -141,10 +141,10 @@ namespace Team5_SmartMOM.Service
             return dac.Result(lists);
         }
 
-        public List<MaterialsStateVO> MaterialsState()
+        public List<MaterialsStateVO> MaterialsState(SupplierSearchVO sp)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.MaterialsState();
+            return dac.MaterialsState(sp);
         }
 
         public bool MaterialProcess(List<DeleteOrder> lists, List<MaterialsPlusVO> lists2)
@@ -157,6 +157,12 @@ namespace Team5_SmartMOM.Service
         {
             PurchasingDAC dac = new PurchasingDAC();
             return dac.MaterialCancel(lists, lists2);
+        }
+
+        public List<Stock_StateVO> Stock_State()
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.Stock_State();
         }
 
     }
