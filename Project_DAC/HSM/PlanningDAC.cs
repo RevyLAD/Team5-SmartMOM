@@ -117,5 +117,25 @@ namespace Project_DAC.HSM
             }
         }
 
+
+        //public DataSet GetDueDate(string planID)
+        //{
+        //    using (SqlCommand cmd = new SqlCommand())
+        //    {
+        //        cmd.Connection = new SqlConnection(this.ConnectionString);
+        //        cmd.Connection.Open();
+
+        //        cmd.CommandText = "select ";
+        //        cmd.Parameters.AddWithValue("@Plan_ID", planID);
+
+        //        SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+        //        adpt.Fill(ds, "GetProductPlan");
+
+        //        cmd.Connection.Close();
+        //        return ds;
+
+        //    }
+        //}
+
     }
 }

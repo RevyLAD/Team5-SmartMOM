@@ -14,6 +14,7 @@ namespace Team5_SmartMOM.HSM
 {
     public partial class Meterial_Plan : Team5_SmartMOM.BaseGridForm
     {
+        int cnt = 0; 
         public Meterial_Plan()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace Team5_SmartMOM.HSM
         private void Meterial_Plan_Load(object sender, EventArgs e)
         {
             dtpDateEnd.Value = DateTime.Now.AddMonths(1);
+           
             InitCombo();
 
         }
@@ -29,7 +31,7 @@ namespace Team5_SmartMOM.HSM
         {
             CommonCodeService service = new CommonCodeService();
 
-            List<PlanIDVO> listPlanID = service.GetAllPlanID();
+            List<PlanIDVO> listPlanID = service.GetPlanIDByDemandPlan();
 
 
 
@@ -38,6 +40,9 @@ namespace Team5_SmartMOM.HSM
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
+            
+
             PlanningVO plan = new PlanningVO();
             HSM_Service service = new HSM_Service();
 
@@ -48,9 +53,47 @@ namespace Team5_SmartMOM.HSM
     
             DataSet ds = service.GetMRP(plan);
             dataGridView1.DataSource = ds.Tables[0];
+ 
+            dgvSettings();
+            dgvYellow();
+
 
         }
+        private void dgvSettings()
+        {
 
+            dataGridView1.Columns[1].Width = 180;
+            dataGridView1.Columns[0].Width = 180;
+
+            dataGridView1.Columns[0].HeaderText = "상품코드";
+            dataGridView1.Columns[1].HeaderText = "상품명";
+            dataGridView1.Columns[2].HeaderText = "카테고리";
+
+            dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+
+        }
+        private void dgvYellow()
+        {
+
+            for (int i = 3; i < dataGridView1.ColumnCount; i++)
+            {
+                dataGridView1.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                for (int j = 0; j < dataGridView1.RowCount; j++)
+                {
+                    if (dataGridView1[i, j].Value.ToString() != "0")
+                    {
+                        dataGridView1[i, j].Style.BackColor = Color.LightYellow;
+                    }
+                }
+            }
+        }
         private void dtpDateEnd_ValueChanged(object sender, EventArgs e)
         {
             if (dtpDateStart.Value > dtpDateEnd.Value.AddDays(1))
@@ -69,6 +112,25 @@ namespace Team5_SmartMOM.HSM
                 dtpDateStart.Value = dtpDateEnd.Value.AddMonths(-1);
                 return;
             }
+        }
+
+        private void cboPlanID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] arrDate = cboPlanID.Text.Split('_');
+            if (arrDate[0] == "전체")
+            {
+                return;
+            }
+            if (arrDate[0] == "Project")
+            {
+                return;
+            }
+            arrDate[0] = arrDate[0].Insert(4, "-");
+            arrDate[0] = arrDate[0].Insert(7, "-");
+            //20200101
+            dtpDateStart.Value = DateTime.Parse(arrDate[0]);
+            dtpDateEnd.Value = DateTime.Parse(arrDate[0]).AddMonths(1);
+
         }
     }
 }
