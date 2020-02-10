@@ -248,6 +248,7 @@ namespace Team5_SmartMOM.PSM
             {
                 VendorOrderVO code = new VendorOrderVO();
                 
+                code.COM_Name = dataGridView2.Rows[i].Cells[0].Value.ToString();
                 code.COM_Code = dataGridView2.Rows[i].Cells[2].Value.ToString();
                 code.VO_EndDate = (DateTime)dataGridView2.Rows[i].Cells[5].Value;
                 code.VO_Quantity = Convert.ToInt32(dataGridView2.Rows[i].Cells[6].Value);

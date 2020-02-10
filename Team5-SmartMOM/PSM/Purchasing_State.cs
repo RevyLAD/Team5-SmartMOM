@@ -209,7 +209,7 @@ namespace Team5_SmartMOM.PSM
             PSM_Service service = new PSM_Service();
             service.OrderDelete(deletelist);
 
-            MessageBox.Show("발주삭제가 완료 되었습니다.");
+            MessageBox.Show("발주가 취소 되었습니다.");
 
             DataLoad();
         }

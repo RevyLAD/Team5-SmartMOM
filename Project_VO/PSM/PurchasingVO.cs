@@ -48,6 +48,7 @@ namespace Project_VO
     {
         public string Plan_ID { get; set; }
         public string COM_Code { get; set; }
+        public string COM_Name { get; set; }
         public string MATERIAL_ORDER_STATE { get; set; }
         public string ITEM_Code { get; set; }
         public int VO_Quantity { get; set; }

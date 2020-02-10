@@ -136,9 +136,10 @@ namespace Project_DAC
 
                     foreach (var item in codelist)
                     {
-                        cmd.CommandText = @"INSERT INTO VendorOrder (COM_Code, MATERIAL_ORDER_STATE, ITEM_Code, VO_EndDate, VO_Quantity, 
-VO_StartDate,  VO_InDate) VALUES (@COM_Code, @MATERIAL_ORDER_STATE, @ITEM_Code, @VO_EndDate, @VO_Quantity, @VO_StartDate, @VO_InDate)";
+                        cmd.CommandText = @"INSERT INTO VendorOrder (COM_Name, COM_Code, MATERIAL_ORDER_STATE, ITEM_Code, VO_EndDate, VO_Quantity, 
+VO_StartDate,  VO_InDate) VALUES (@COM_Name, @COM_Code, @MATERIAL_ORDER_STATE, @ITEM_Code, @VO_EndDate, @VO_Quantity, @VO_StartDate, @VO_InDate)";
 
+                        cmd.Parameters.AddWithValue("@COM_Name", item.COM_Name);
                         cmd.Parameters.AddWithValue("@COM_Code", item.COM_Code);
                         cmd.Parameters.AddWithValue("@MATERIAL_ORDER_STATE", "발주대기");
                         cmd.Parameters.AddWithValue("@ITEM_Code", item.COM_Code);
