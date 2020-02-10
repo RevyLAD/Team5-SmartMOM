@@ -6,12 +6,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Team5_SmartMOM.BaseForm;
 using Team5_SmartMOM.Service;
 
 namespace Team5_SmartMOM.PSM
 {
     public partial class Material_Ledger_State : Team5_SmartMOM.BaseGridForm
     {
+        List<CompanyCodeVO> company;
         CheckBox headerCheckBox = new CheckBox();
         DataGridViewCheckBoxColumn chk;
         List<MaterialsStateVO> list = new List<MaterialsStateVO>();
@@ -59,9 +61,23 @@ namespace Team5_SmartMOM.PSM
 
         public void DataLoad()
         {
+            SupplierSearchVO sp = new SupplierSearchVO();
+            sp.startDate = dtpDateStart.Value.ToShortDateString();
+            sp.endDate = dtpDateEnd.Value.ToShortDateString();
+            sp.Company = cbocompany.Text.Trim();
+            sp.Item = txtProduct.Text.Trim();
+            if (txtOrderNum.Text.Length > 0)
+            {
+                sp.VO_ID = Convert.ToInt32(txtOrderNum.Text);
+            }
+
             PSM_Service service = new PSM_Service();
-            list = service.MaterialsState();
+            list = service.MaterialsState(sp);
             dataGridView1.DataSource = list;
+
+            CommonCodeService common = new CommonCodeService();
+            company = common.GetAllCompanyCode();
+            CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "");
         }
 
         private void HeaderCheckBox_Click(object sender, EventArgs e)
@@ -98,6 +114,23 @@ namespace Team5_SmartMOM.PSM
             service.MaterialCancel(lists, lists2);
 
             DataLoad();
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            SupplierSearchVO sp = new SupplierSearchVO();
+            sp.startDate = dtpDateStart.Value.ToShortDateString();
+            sp.endDate = dtpDateEnd.Value.ToShortDateString();
+            sp.Company = cbocompany.Text.Trim();
+            sp.Item = txtProduct.Text.Trim();
+            if (txtOrderNum.Text.Length > 0)
+            {
+                sp.VO_ID = Convert.ToInt32(txtOrderNum.Text);
+            }
+
+            PSM_Service service = new PSM_Service();
+            list = service.MaterialsState(sp);
+            dataGridView1.DataSource = list;
         }
     }
 }

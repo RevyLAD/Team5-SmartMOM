@@ -1,4 +1,4 @@
-﻿namespace Team5_SmartMOM
+﻿namespace Team5_SmartMOM.KIS
 {
     partial class Item_Management
     {
@@ -315,7 +315,7 @@
             // 
             // Btn_Copy
             // 
-            this.Btn_Copy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.Btn_Copy.BackColor = System.Drawing.Color.Snow;
             this.Btn_Copy.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_Copy.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Btn_Copy.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
@@ -330,7 +330,7 @@
             // 
             // Btn_Delete
             // 
-            this.Btn_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.Btn_Delete.BackColor = System.Drawing.Color.Snow;
             this.Btn_Delete.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_Delete.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Btn_Delete.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
@@ -346,7 +346,7 @@
             // 
             // Btn_newitem
             // 
-            this.Btn_newitem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.Btn_newitem.BackColor = System.Drawing.Color.Snow;
             this.Btn_newitem.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_newitem.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Btn_newitem.Image = global::Team5_SmartMOM.Properties.Resources.pencil;

@@ -112,8 +112,14 @@ namespace Team5_SmartMOM.PSM
 
         public void DataLoad()
         {
+            Material_LedgerSearchVO mls = new Material_LedgerSearchVO();
+            mls.startDate = dtpDateStart.Value.ToShortDateString();
+            mls.endDate = dtpDateEnd.Value.ToShortDateString();
+            mls.Company = cbocompany.Text.Trim();
+            mls.Item = txtitem.Text.Trim();
+
             PSM_Service service = new PSM_Service();
-            list = service.Material_Ledger();
+            list = service.Material_Ledger(mls);
             dataGridView1.DataSource = list;
 
             PSM_Service service2 = new PSM_Service();
@@ -296,6 +302,19 @@ namespace Team5_SmartMOM.PSM
             service.MaterialProcess(lists, lists2);
 
             DataLoad();
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            Material_LedgerSearchVO mls = new Material_LedgerSearchVO();
+            mls.startDate = dtpDateStart.Value.ToShortDateString();
+            mls.endDate = dtpDateEnd.Value.ToShortDateString();
+            mls.Company = cbocompany.Text.Trim();
+            mls.Item = txtitem.Text.Trim();
+
+            PSM_Service service = new PSM_Service();
+            list = service.Material_Ledger(mls);
+            dataGridView1.DataSource = list;
         }
     }
 }
