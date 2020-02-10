@@ -69,18 +69,6 @@
       <DependentUpon>MainPoPForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PopDAC.cs" />
-    <Compile Include="PoPFAC.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PoPFAC.Designer.cs">
-      <DependentUpon>PoPFAC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PoPFACG.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PoPFACG.Designer.cs">
-      <DependentUpon>PoPFACG.cs</DependentUpon>
-    </Compile>
     <Compile Include="POPGaDong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,12 +93,6 @@
     <Compile Include="UtilityClass.cs" />
     <EmbeddedResource Include="MainPoPForm.resx">
       <DependentUpon>MainPoPForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PoPFAC.resx">
-      <DependentUpon>PoPFAC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PoPFACG.resx">
-      <DependentUpon>PoPFACG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POPGaDong.resx">
       <DependentUpon>POPGaDong.cs</DependentUpon>
