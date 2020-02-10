@@ -14,13 +14,13 @@ using System.IO;
 using System.Configuration;
 using System.Net;
 using System.Data.SqlClient;
+using System.Threading;
 
 namespace Team5_Pop
 {
     public partial class POPGaDong : Form
     {
 
-        static System.Timers.Timer timer1;
         static int machineID = 1;
         static string writeFolder = AppDomain.CurrentDomain.BaseDirectory + "\\Production";
         static int iCnt = 0;
@@ -40,14 +40,18 @@ namespace Team5_Pop
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
             machineID = rnd.Next(1, 10);
 
-            SetTimer();
-
             textBox23.Text = DateTime.Now.ToLongTimeString();
-            timer2.Start();
+            new Thread(TcpListenerStart).Start();
 
-            AsyncEchoServer();
+            timer2.Start();
         }
 
+        private void TcpListenerStart()
+        {
+            AsyncEchoServer().Wait();
+        }
+
+        NetworkStream stream;
         private void DataLoad()
         {
             PopService service = new PopService();
@@ -89,33 +93,38 @@ namespace Team5_Pop
         private async Task AsyncTcpProcess(object o)
         {
             TcpClient tc = (TcpClient)o;
-            NetworkStream stream = tc.GetStream();
+            stream = tc.GetStream();
 
-            string msg =  thisvo.ITEM_Code;
+            // 여기 씨발창
+            string msg =  thisvo.ITEM_Code+'/'+ txtDirectQty.Text;
             byte[] buff = Encoding.ASCII.GetBytes(msg);
 
             stream.Write(buff, 0, buff.Length);
 
-            byte[] buff2 = new byte[1024];
-            var readTask = stream.ReadAsync(buff2, 0, buff2.Length);
-            int nbytes = readTask.Result;
-            if (nbytes > 0)
-            {
-                //20200204 12:01:20 Machine7/65/4/0
-                string[] arrData = Encoding.ASCII.GetString(buff2, 0, nbytes).Split('/');
 
 
-                //MessageBox.Show(Encoding.ASCII.GetString(buff2, 0, nbytes));
-                listBox1.Items.Insert(0,Encoding.ASCII.GetString(buff2, 0, nbytes));
-                //Console.WriteLine(Encoding.ASCII.GetString(buff, 0, nbytes));
-                Program.Log.WriteInfo(Encoding.ASCII.GetString(buff2, 0, nbytes));
 
-                await stream.WriteAsync(buff2, 0, nbytes).ConfigureAwait(false);
-            }
+            //byte[] buff2 = new byte[1024];
+            //var readTask = stream.ReadAsync(buff2, 0, buff2.Length);
+            //int nbytes = readTask.Result;
+            //if (nbytes > 0)
+            //{
+            //    //20200204 12:01:20 Machine7/65/4/0
+            //    string[] arrData = Encoding.ASCII.GetString(buff2, 0, nbytes).Split('/');
 
-            stream.Close();
-            tc.Close();
+
+            //    //MessageBox.Show(Encoding.ASCII.GetString(buff2, 0, nbytes));
+            //   
+            //    //Console.WriteLine(Encoding.ASCII.GetString(buff, 0, nbytes));
+
+
+            //    await stream.WriteAsync(buff2, 0, nbytes).ConfigureAwait(false);
+            //}
+
+          //  stream.Close();
+          //  tc.Close();
         }
+
         private string TimeSub(string time)
         {
             try
@@ -137,16 +146,26 @@ namespace Team5_Pop
             }
         }
 
-        private static void SetTimer()
+
+
+        private void POPGaDong_FormClosed(object sender, FormClosedEventArgs e)
         {
-            timer1 = new System.Timers.Timer(3000);
-            timer1.Enabled = true;
-            timer1.Elapsed += timer1_Elapsed;
-            timer1.AutoReset = true;
+            timer2.Stop();
+            timer2.Dispose();
         }
 
-        private static void timer1_Elapsed(object sender, ElapsedEventArgs e)
+        private void timer2_Tick(object sender, EventArgs e)
         {
+            GaDongTimeChange();
+
+            string msg1 = thisvo.ITEM_Code + '/' + txtDirectQty.Text;
+            byte[] buff = Encoding.ASCII.GetBytes(msg1);
+
+
+
+            if (stream != null)
+                stream.Write(buff, 0, buff.Length);
+
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
             StreamWriter sw = null;
             try
@@ -154,6 +173,9 @@ namespace Team5_Pop
                 sw = new StreamWriter($"{writeFolder}\\WorkerLogMachine_{machineID}_{iCnt}.log", false);
 
                 string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")} Machine/{machineID}/{rnd.Next(1, 77)}/{rnd.Next(100, 130)}/{rnd.Next(0, 5)}";
+                listBox1.Items.Add(msg);
+                Program.Log.WriteInfo(msg);
+
                 sw.WriteLine(msg);
                 sw.Flush();
                 sw.Close();
@@ -167,19 +189,6 @@ namespace Team5_Pop
             {
                 iCnt++;
             }
-        }
-
-        private void POPGaDong_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
-            timer1.Stop();
-            timer1.Dispose();
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-
-            GaDongTimeChange();
         }
 
         private void GaDongTimeChange()
@@ -223,11 +232,21 @@ namespace Team5_Pop
         {
             if (button6.Text == "일시 정지")
             {
+                string msg = "pause";
+                byte[] buff = Encoding.ASCII.GetBytes(msg);
+                //stream.Write(buff, 0, buff.Length);
+                stream.WriteAsync(buff, 0, buff.Length);
+
                 timer2.Stop();
                 button6.Text = "계속하기";
             }
             else if(button6.Text == "계속하기")
             {
+                string msg = "continue";
+                byte[] buff = Encoding.ASCII.GetBytes(msg);
+                //stream.Write(buff, 0, buff.Length);
+                stream.WriteAsync(buff, 0, buff.Length);
+
                 timer2.Start();
                 button6.Text = "일시 정지";
             }

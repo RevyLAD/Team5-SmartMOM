@@ -43,6 +43,21 @@ namespace Project_DAC
                 return list;
             }
         }
+        public List<CompanyCodeVO> GetCustomerCompanyCode()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select distinct COM_Code, COM_Name from Company WHERE COM_Type ='고객사' ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<CompanyCodeVO> list = Helper.DataReaderMapToList<CompanyCodeVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
 
         public List<GetOrderVO> GetOrder(string plan_id)
         {

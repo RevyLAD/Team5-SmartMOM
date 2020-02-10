@@ -31,6 +31,7 @@ namespace Project_VO.HSM
         public int SALES_CancelQty { get; set; }
         public string SALES_Duedate { get; set; }
         public string SALES_OrderDate { get; set; }
+        public string SALES_ORDER_STATE { get; set; }
         public string SALES_Remark { get; set; }
     }
 

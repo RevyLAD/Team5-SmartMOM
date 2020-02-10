@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -57,6 +58,7 @@
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Size = new System.Drawing.Size(115, 24);
             this.button2.Text = "양식다운로드";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -110,5 +112,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
