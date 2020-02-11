@@ -35,9 +35,7 @@
             this.dtpDateEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
             this.cboPlanID = new System.Windows.Forms.ComboBox();
-            this.cboEquipment = new System.Windows.Forms.ComboBox();
-            this.cboProduct = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.cboWorkState = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -67,7 +65,7 @@
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1202, 111);
+            this.panel2.Size = new System.Drawing.Size(1202, 78);
             // 
             // panelTop
             // 
@@ -78,11 +76,9 @@
             this.panelTop.Controls.Add(this.dtpDateEnd);
             this.panelTop.Controls.Add(this.dtpDateStart);
             this.panelTop.Controls.Add(this.label3);
-            this.panelTop.Controls.Add(this.label11);
-            this.panelTop.Controls.Add(this.cboProduct);
-            this.panelTop.Controls.Add(this.cboEquipment);
+            this.panelTop.Controls.Add(this.cboWorkState);
             this.panelTop.Controls.Add(this.cboPlanID);
-            this.panelTop.Size = new System.Drawing.Size(1202, 91);
+            this.panelTop.Size = new System.Drawing.Size(1202, 58);
             // 
             // splitContainer2
             // 
@@ -98,7 +94,7 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1084, 25);
+            this.btnSearch.Location = new System.Drawing.Point(1084, 8);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(93, 39);
             this.btnSearch.TabIndex = 87;
@@ -111,7 +107,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(17, 11);
+            this.label10.Location = new System.Drawing.Point(17, 15);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(75, 19);
             this.label10.TabIndex = 80;
@@ -121,7 +117,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(544, 15);
+            this.label5.Location = new System.Drawing.Point(472, 21);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(14, 12);
             this.label5.TabIndex = 86;
@@ -132,7 +128,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(365, 9);
+            this.label2.Location = new System.Drawing.Point(293, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 19);
             this.label2.TabIndex = 79;
@@ -141,7 +137,7 @@
             // dtpDateEnd
             // 
             this.dtpDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateEnd.Location = new System.Drawing.Point(564, 10);
+            this.dtpDateEnd.Location = new System.Drawing.Point(492, 16);
             this.dtpDateEnd.Name = "dtpDateEnd";
             this.dtpDateEnd.Size = new System.Drawing.Size(99, 21);
             this.dtpDateEnd.TabIndex = 84;
@@ -149,7 +145,7 @@
             // dtpDateStart
             // 
             this.dtpDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateStart.Location = new System.Drawing.Point(438, 10);
+            this.dtpDateStart.Location = new System.Drawing.Point(366, 16);
             this.dtpDateStart.Name = "dtpDateStart";
             this.dtpDateStart.Size = new System.Drawing.Size(99, 21);
             this.dtpDateStart.TabIndex = 85;
@@ -157,48 +153,30 @@
             // cboPlanID
             // 
             this.cboPlanID.FormattingEnabled = true;
-            this.cboPlanID.Location = new System.Drawing.Point(109, 10);
+            this.cboPlanID.Location = new System.Drawing.Point(109, 14);
             this.cboPlanID.Name = "cboPlanID";
-            this.cboPlanID.Size = new System.Drawing.Size(121, 20);
+            this.cboPlanID.Size = new System.Drawing.Size(133, 20);
             this.cboPlanID.TabIndex = 83;
+            this.cboPlanID.SelectedIndexChanged += new System.EventHandler(this.cboPlanID_SelectedIndexChanged);
             // 
-            // cboEquipment
+            // cboWorkState
             // 
-            this.cboEquipment.FormattingEnabled = true;
-            this.cboEquipment.Location = new System.Drawing.Point(109, 52);
-            this.cboEquipment.Name = "cboEquipment";
-            this.cboEquipment.Size = new System.Drawing.Size(121, 20);
-            this.cboEquipment.TabIndex = 82;
-            // 
-            // cboProduct
-            // 
-            this.cboProduct.FormattingEnabled = true;
-            this.cboProduct.Location = new System.Drawing.Point(437, 52);
-            this.cboProduct.Name = "cboProduct";
-            this.cboProduct.Size = new System.Drawing.Size(226, 20);
-            this.cboProduct.TabIndex = 81;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(17, 50);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(45, 19);
-            this.label11.TabIndex = 77;
-            this.label11.Text = "ㆍ설비";
+            this.cboWorkState.FormattingEnabled = true;
+            this.cboWorkState.Location = new System.Drawing.Point(708, 16);
+            this.cboWorkState.Name = "cboWorkState";
+            this.cboWorkState.Size = new System.Drawing.Size(100, 20);
+            this.cboWorkState.TabIndex = 81;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(375, 52);
+            this.label3.Location = new System.Drawing.Point(646, 17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 19);
             this.label3.TabIndex = 78;
-            this.label3.Text = "ㆍ품목";
+            this.label3.Text = "ㆍ상태";
             // 
             // WorkOrder
             // 
@@ -230,8 +208,6 @@
         private System.Windows.Forms.DateTimePicker dtpDateStart;
         private System.Windows.Forms.ComboBox cboPlanID;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox cboProduct;
-        private System.Windows.Forms.ComboBox cboEquipment;
+        private System.Windows.Forms.ComboBox cboWorkState;
     }
 }

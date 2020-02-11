@@ -47,6 +47,14 @@
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // button3
+            // 
+            this.button3.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.Visible = false;
+            // 
             // panel2
             // 
             this.panel2.Size = new System.Drawing.Size(1202, 86);
@@ -85,12 +93,11 @@
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(17, 25);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 19);
+            this.label10.Size = new System.Drawing.Size(95, 19);
             this.label10.TabIndex = 91;
             this.label10.Text = "ㆍPlanID";
             // 
@@ -134,7 +141,7 @@
             // cboPlanID
             // 
             this.cboPlanID.FormattingEnabled = true;
-            this.cboPlanID.Location = new System.Drawing.Point(109, 24);
+            this.cboPlanID.Location = new System.Drawing.Point(118, 24);
             this.cboPlanID.Name = "cboPlanID";
             this.cboPlanID.Size = new System.Drawing.Size(121, 20);
             this.cboPlanID.TabIndex = 94;

@@ -1,5 +1,6 @@
 ﻿using Project_DAC;
 using Project_VO;
+using Project_VO.HSM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -120,6 +121,12 @@ namespace Team5_SmartMOM.BaseForm
         {
             CommonCodeDAC dac = new CommonCodeDAC();
             return dac.GetPlanIDByProduction();
+        }
+
+        public List<WorkOrderStateVO> GetWorkOrderState()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.GetWorkOrderState();
         }
 
 

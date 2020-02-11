@@ -23,10 +23,10 @@ namespace Team5_SmartMOM.Service
             return dac.UploadPassiveSalesMaster(sales);
         }
 
-        public List<WorkOrderVO> GetWorkOrderByPlanId(string planId)
+        public List<WorkOrderVO> GetWorkOrderByPlanId(SearchWorkOrderVO wo)
         {
             WorkOrderDAC dac = new WorkOrderDAC();
-            return dac.GetWorkOrderByPlanId(planId);
+            return dac.GetWorkOrderByPlanId(wo);
         }
 
         public List<WorkOrderVO> GetWorkOrderByPlan()

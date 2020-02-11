@@ -36,6 +36,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panelTop = new PanelZ.PanelZ();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -45,7 +46,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panelTop = new PanelZ.PanelZ();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -113,6 +113,7 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1202, 401);
             this.dataGridView1.TabIndex = 35;
+            
             // 
             // panel4
             // 
@@ -131,6 +132,21 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.panel2.Size = new System.Drawing.Size(1202, 160);
             this.panel2.TabIndex = 33;
+            // 
+            // panelTop
+            // 
+            this.panelTop.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTop.EndColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.panelTop.GradientAngle = 90;
+            this.panelTop.Location = new System.Drawing.Point(0, 10);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.panelTop.Size = new System.Drawing.Size(1202, 140);
+            this.panelTop.StartColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(210)))), ((int)(((byte)(220)))));
+            this.panelTop.TabIndex = 27;
+            this.panelTop.Transparent1 = 150;
+            this.panelTop.Transparent2 = 150;
             // 
             // splitContainer2
             // 
@@ -243,21 +259,6 @@
             this.button1.Text = "엑셀";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // panelTop
-            // 
-            this.panelTop.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTop.EndColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
-            this.panelTop.GradientAngle = 90;
-            this.panelTop.Location = new System.Drawing.Point(0, 10);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panelTop.Size = new System.Drawing.Size(1202, 140);
-            this.panelTop.StartColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(210)))), ((int)(((byte)(220)))));
-            this.panelTop.TabIndex = 27;
-            this.panelTop.Transparent1 = 150;
-            this.panelTop.Transparent2 = 150;
             // 
             // BaseGridForm
             // 
