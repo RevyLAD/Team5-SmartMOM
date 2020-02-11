@@ -238,6 +238,7 @@ namespace Team5_Pop
             else
             {
                 progressBar1.Value = (int)((Convert.ToDouble(txtCount.Text) / Convert.ToDouble(txtDirectQty.Text)) * 100);
+                lblprogres.Text = string.Format(progressBar1.Value +" %");
             }
         }
 
@@ -249,6 +250,7 @@ namespace Team5_Pop
                 timer2.Stop();
                 timer1.Stop();
                 timer3.Start();
+                progressBar1.ForeColor = Color.LightYellow;
                 button6.Text = "계속하기";
 
                 string msg = "pause";
@@ -264,6 +266,7 @@ namespace Team5_Pop
                 timer2.Start();
                 timer1.Start();
                 timer3.Stop();
+                progressBar1.ForeColor = Color.Aquamarine;
                 button6.Text = "일시 정지";
 
                 string msg = "continue";
@@ -309,6 +312,11 @@ namespace Team5_Pop
         private void timer3_Tick(object sender, EventArgs e)
         {
             textBox22.Text = Convert.ToString(++resttime / 60);
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
