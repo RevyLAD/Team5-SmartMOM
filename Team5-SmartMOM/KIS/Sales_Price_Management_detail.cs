@@ -69,6 +69,8 @@ namespace Team5_SmartMOM
         private void Sales_Price_Management_detail_Load(object sender, EventArgs e)
         {
             Init_Combo();
+            txt_end_date.Text = "2099-12-30";
+            txt_edit_date.Text = DateTime.Now.ToString("yyyy-MM-dd");
         }
         private void Init_Combo()
         {
