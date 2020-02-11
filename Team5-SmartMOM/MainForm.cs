@@ -395,6 +395,7 @@ namespace Team5_SmartMOM
         {
             bool truefalse = true;
             ToolStripButton button = new ToolStripButton();
+            ToolStripSeparator separator = new ToolStripSeparator();
             if (tabControl1.TabPages.Count == 0)
             {
                 MessageBox.Show("현재 출력되어있는 화면이 없어 즐겨찾기를 등록할수 없습니다!","경고");
@@ -424,6 +425,7 @@ namespace Team5_SmartMOM
                     button.Image = imageList1.Images[rnd.Next(0, 52)];
 
                     toolStrip1.Items.Add(button);
+                    toolStrip1.Items.Add(separator);
                 }
             }
         }

@@ -766,6 +766,11 @@
     <Content Include="bin\Debug\Team5-SmartMOM.pdb" />
     <Content Include="bin\Debug\Team5_DEV.xml" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\gmail.png" />
+    <None Include="Resources\chat.png" />
+    <None Include="Resources\calculator1.png" />
+    <None Include="Resources\memo.png" />
+    <None Include="Resources\calculator.png" />
     <None Include="Resources\e438e1b7a4f6bb5a48cd5971f538571a1.gif" />
     <None Include="Resources\e438e1b7a4f6bb5a48cd5971f538571a.gif" />
     <None Include="Resources\please-wait-gif-8.gif" />
