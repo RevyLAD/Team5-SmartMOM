@@ -49,6 +49,7 @@ namespace Project_VO
         public string FACG_Code { get; set; }
     }
 
+
     public class CompanyCodeDetailVO
     {
         public string COM_Code { get; set; }

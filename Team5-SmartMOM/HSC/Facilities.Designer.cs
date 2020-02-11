@@ -33,6 +33,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -61,15 +62,17 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Location = new System.Drawing.Point(200, 0);
+            this.button3.Location = new System.Drawing.Point(257, 0);
             this.button3.Size = new System.Drawing.Size(57, 31);
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.None;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Location = new System.Drawing.Point(257, 0);
-            this.button2.Size = new System.Drawing.Size(57, 31);
+            this.button2.Location = new System.Drawing.Point(138, 6);
+            this.button2.Size = new System.Drawing.Size(64, 24);
+            this.button2.Visible = false;
             // 
             // button1
             // 
@@ -77,6 +80,7 @@
             this.button1.Location = new System.Drawing.Point(314, 0);
             this.button1.Size = new System.Drawing.Size(57, 31);
             this.button1.Text = "삭제";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -85,6 +89,7 @@
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.button4);
             this.panelTop.Controls.Add(this.textBox1);
             this.panelTop.Controls.Add(this.label2);
             this.panelTop.Controls.Add(this.btnSearch);
@@ -138,7 +143,7 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(287, 23);
+            this.btnSearch.Location = new System.Drawing.Point(287, 8);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(81, 30);
             this.btnSearch.TabIndex = 23;
@@ -165,6 +170,20 @@
             this.label2.Size = new System.Drawing.Size(90, 19);
             this.label2.TabIndex = 27;
             this.label2.Text = "ㆍ 설비군번호";
+            // 
+            // button4
+            // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.button4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(287, 35);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(81, 30);
+            this.button4.TabIndex = 29;
+            this.button4.Text = "전체 보기";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Facilities
             // 
@@ -195,5 +214,6 @@
         protected System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
+        protected System.Windows.Forms.Button button4;
     }
 }

@@ -99,10 +99,40 @@ namespace Team5_SmartMOM.Service
             return dac.FindFacDetail(Code);
         }
 
-        public void DeleteBOR(string Code)
+        public void DeleteBOR(int Code)
         {
             BORDAC dac = new BORDAC();
             dac.DeleteBOR(Code);
+        }
+
+        public void DeleteFacT(int id)
+        {
+            FacilitieDAC dac = new FacilitieDAC();
+            dac.DeleteFacT(id);
+        }
+
+        public void DeleteFacDetail(int id)
+        {
+            FacilitieDAC dac = new FacilitieDAC();
+            dac.DeleteFacDetail(id);
+        }
+
+        public void DeleteEnt(string id)
+        {
+            EnterpriseDAC dac = new EnterpriseDAC();
+            dac.DeleteEnt(id);
+        }
+
+        public void UpdateEnterprise(EnterpriseVO vo)
+        {
+            EnterpriseDAC dac = new EnterpriseDAC();
+            dac.UpdateEnterprise(vo);
+        }
+
+        public void UpdateBOR(BORVO bvo)
+        {
+            BORDAC dac = new BORDAC();
+            dac.UpdateBOR(bvo);
         }
     }
 }

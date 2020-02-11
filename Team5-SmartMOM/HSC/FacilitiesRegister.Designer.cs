@@ -42,14 +42,14 @@
             this.cboOutWareHouse = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.FACG_Code = new System.Windows.Forms.TextBox();
             this.FAC_Code = new System.Windows.Forms.TextBox();
             this.cboInWareHouse = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtModifiyDate = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtOthers = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.cboFACTCode = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panelFull.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelBottom.SuspendLayout();
@@ -73,14 +73,14 @@
             // 
             // panelDock
             // 
+            this.panelDock.Controls.Add(this.dateTimePicker1);
+            this.panelDock.Controls.Add(this.cboFACTCode);
             this.panelDock.Controls.Add(this.txtOthers);
             this.panelDock.Controls.Add(this.label8);
-            this.panelDock.Controls.Add(this.txtModifiyDate);
             this.panelDock.Controls.Add(this.label3);
             this.panelDock.Controls.Add(this.cboInWareHouse);
             this.panelDock.Controls.Add(this.label4);
             this.panelDock.Controls.Add(this.FAC_Code);
-            this.panelDock.Controls.Add(this.FACG_Code);
             this.panelDock.Controls.Add(this.txtRemark);
             this.panelDock.Controls.Add(this.label16);
             this.panelDock.Controls.Add(this.cboUse);
@@ -115,17 +115,17 @@
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(391, 10);
+            this.button2.Location = new System.Drawing.Point(401, 10);
             // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(315, 10);
+            this.button1.Location = new System.Drawing.Point(325, 10);
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(1282, 10);
+            this.tileSave.Location = new System.Drawing.Point(1456, 10);
             this.tileSave.Click += new System.EventHandler(this.tileSave_Click);
             // 
             // txtRemark
@@ -265,14 +265,6 @@
             this.label2.TabIndex = 30;
             this.label2.Text = "ㆍ설비군코드";
             // 
-            // FACG_Code
-            // 
-            this.FACG_Code.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.FACG_Code.Location = new System.Drawing.Point(106, 12);
-            this.FACG_Code.Name = "FACG_Code";
-            this.FACG_Code.Size = new System.Drawing.Size(124, 21);
-            this.FACG_Code.TabIndex = 60;
-            // 
             // FAC_Code
             // 
             this.FAC_Code.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -300,14 +292,6 @@
             this.label4.Size = new System.Drawing.Size(67, 14);
             this.label4.TabIndex = 62;
             this.label4.Text = "ㆍ양품창고";
-            // 
-            // txtModifiyDate
-            // 
-            this.txtModifiyDate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtModifiyDate.Location = new System.Drawing.Point(546, 76);
-            this.txtModifiyDate.Name = "txtModifiyDate";
-            this.txtModifiyDate.Size = new System.Drawing.Size(124, 21);
-            this.txtModifiyDate.TabIndex = 65;
             // 
             // label3
             // 
@@ -337,6 +321,22 @@
             this.label8.Size = new System.Drawing.Size(43, 14);
             this.label8.TabIndex = 66;
             this.label8.Text = "ㆍ비고";
+            // 
+            // cboFACTCode
+            // 
+            this.cboFACTCode.FormattingEnabled = true;
+            this.cboFACTCode.Location = new System.Drawing.Point(106, 12);
+            this.cboFACTCode.Name = "cboFACTCode";
+            this.cboFACTCode.Size = new System.Drawing.Size(124, 20);
+            this.cboFACTCode.TabIndex = 68;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(546, 75);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(124, 21);
+            this.dateTimePicker1.TabIndex = 69;
             // 
             // FacilitiesRegister
             // 
@@ -374,11 +374,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtOthers;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtModifiyDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboInWareHouse;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox FAC_Code;
-        private System.Windows.Forms.TextBox FACG_Code;
+        private System.Windows.Forms.ComboBox cboFACTCode;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

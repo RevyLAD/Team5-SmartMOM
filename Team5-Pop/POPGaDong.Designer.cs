@@ -89,6 +89,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.lblprogres = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -786,6 +787,7 @@
             // groupBox11
             // 
             this.groupBox11.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox11.Controls.Add(this.lblprogres);
             this.groupBox11.Controls.Add(this.progressBar1);
             this.groupBox11.Controls.Add(this.textBox34);
             this.groupBox11.Location = new System.Drawing.Point(453, 378);
@@ -803,6 +805,7 @@
             this.progressBar1.Size = new System.Drawing.Size(304, 34);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 14;
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // textBox34
             // 
@@ -880,6 +883,16 @@
             // 
             this.timer3.Interval = 1000;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // lblprogres
+            // 
+            this.lblprogres.AutoSize = true;
+            this.lblprogres.BackColor = System.Drawing.Color.Transparent;
+            this.lblprogres.Location = new System.Drawing.Point(262, 19);
+            this.lblprogres.Name = "lblprogres";
+            this.lblprogres.Size = new System.Drawing.Size(21, 12);
+            this.lblprogres.TabIndex = 15;
+            this.lblprogres.Text = "0%";
             // 
             // POPGaDong
             // 
@@ -987,5 +1000,6 @@
         private System.Windows.Forms.TextBox txtBadQty;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtGoodQty;
+        private System.Windows.Forms.Label lblprogres;
     }
 }

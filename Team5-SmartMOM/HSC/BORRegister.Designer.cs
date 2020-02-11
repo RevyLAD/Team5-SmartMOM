@@ -102,7 +102,7 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(310, 10);
+            this.button2.Location = new System.Drawing.Point(318, 10);
             // 
             // button1
             // 
@@ -110,7 +110,7 @@
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(674, 10);
+            this.tileSave.Location = new System.Drawing.Point(682, 10);
             this.tileSave.Click += new System.EventHandler(this.tileSave_Click);
             // 
             // txtExplain
@@ -248,6 +248,7 @@
             this.txtYeild.Name = "txtYeild";
             this.txtYeild.Size = new System.Drawing.Size(172, 21);
             this.txtYeild.TabIndex = 60;
+            this.txtYeild.Text = "0";
             // 
             // label3
             // 
