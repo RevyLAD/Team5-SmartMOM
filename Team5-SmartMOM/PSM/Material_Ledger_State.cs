@@ -6,12 +6,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Team5_SmartMOM.BaseForm;
 using Team5_SmartMOM.Service;
 
 namespace Team5_SmartMOM.PSM
 {
     public partial class Material_Ledger_State : Team5_SmartMOM.BaseGridForm
     {
+        List<CompanyCodeVO> company;
         CheckBox headerCheckBox = new CheckBox();
         DataGridViewCheckBoxColumn chk;
         List<MaterialsStateVO> list = new List<MaterialsStateVO>();
@@ -36,21 +38,22 @@ namespace Team5_SmartMOM.PSM
 
             Point headerLocation = dataGridView1.GetCellDisplayRectangle(0, -1, true).Location;
             headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 6);
-            headerCheckBox.BackColor = Color.White;
+            headerCheckBox.BackColor = Color.FromArgb(55, 113, 138);
             headerCheckBox.Size = new Size(18, 18);
             headerCheckBox.Click += new EventHandler(HeaderCheckBox_Click);
             dataGridView1.Controls.Add(headerCheckBox);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "No", "VO_ID", true, 70);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "입고일", "VO_InDate", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "No", "VO_ID", true, 70, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "입고일", "VO_InDate", true, 150, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "예외입고유형", "", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "입고창고", "FACT_Name", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "규격", "ITEM_Size", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "단위", "ITEM_Unit", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "입고량", "VOD_GoodEA", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "잔량", "FACD_Qty", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "단위", "ITEM_Unit", true, 80, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "입고량", "VOD_GoodEA", true, 120, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "잔량", "FACD_Qty", true, 150, DataGridViewContentAlignment.MiddleRight);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체", "COM_Name", true, 100);
             
 
@@ -59,9 +62,20 @@ namespace Team5_SmartMOM.PSM
 
         public void DataLoad()
         {
+            SupplierSearchVO sp = new SupplierSearchVO();
+            sp.startDate = dtpDateStart.Value.ToShortDateString();
+            sp.endDate = dtpDateEnd.Value.ToShortDateString();
+            sp.Company = cbocompany.Text.Trim();
+            sp.Item = txtProduct.Text.Trim();
+           
+
             PSM_Service service = new PSM_Service();
-            list = service.MaterialsState();
+            list = service.MaterialsState(sp);
             dataGridView1.DataSource = list;
+
+            CommonCodeService common = new CommonCodeService();
+            company = common.GetAllCompanyCode();
+            CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "");
         }
 
         private void HeaderCheckBox_Click(object sender, EventArgs e)
@@ -98,6 +112,19 @@ namespace Team5_SmartMOM.PSM
             service.MaterialCancel(lists, lists2);
 
             DataLoad();
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            SupplierSearchVO sp = new SupplierSearchVO();
+            sp.startDate = dtpDateStart.Value.ToShortDateString();
+            sp.endDate = dtpDateEnd.Value.ToShortDateString();
+            sp.Company = cbocompany.Text.Trim();
+            sp.Item = txtProduct.Text.Trim();            
+
+            PSM_Service service = new PSM_Service();
+            list = service.MaterialsState(sp);
+            dataGridView1.DataSource = list;
         }
     }
 }

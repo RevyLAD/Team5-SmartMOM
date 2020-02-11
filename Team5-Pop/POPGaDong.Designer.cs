@@ -54,6 +54,7 @@
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnStart = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -66,6 +67,10 @@
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtBadQty = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtGoodQty = new System.Windows.Forms.TextBox();
             this.textBox28 = new System.Windows.Forms.TextBox();
             this.txtCount = new System.Windows.Forms.TextBox();
             this.textBox26 = new System.Windows.Forms.TextBox();
@@ -74,12 +79,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.textBox34 = new System.Windows.Forms.TextBox();
@@ -88,6 +87,9 @@
             this.textBox37 = new System.Windows.Forms.TextBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.lblprogres = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -96,8 +98,6 @@
             this.groupBox6.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.SuspendLayout();
@@ -438,15 +438,28 @@
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.btnStart);
             this.groupBox5.Controls.Add(this.button5);
             this.groupBox5.Controls.Add(this.button4);
             this.groupBox5.Controls.Add(this.button3);
             this.groupBox5.Controls.Add(this.button2);
             this.groupBox5.Location = new System.Drawing.Point(14, 492);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1150, 94);
+            this.groupBox5.Size = new System.Drawing.Size(1159, 94);
             this.groupBox5.TabIndex = 5;
             this.groupBox5.TabStop = false;
+            // 
+            // btnStart
+            // 
+            this.btnStart.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnStart.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnStart.Location = new System.Drawing.Point(35, 16);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(109, 68);
+            this.btnStart.TabIndex = 4;
+            this.btnStart.Text = "작업시작";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // button5
             // 
@@ -475,7 +488,7 @@
             // 
             this.button3.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button3.ForeColor = System.Drawing.Color.DarkOrange;
-            this.button3.Location = new System.Drawing.Point(224, 16);
+            this.button3.Location = new System.Drawing.Point(294, 16);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(109, 68);
             this.button3.TabIndex = 1;
@@ -486,7 +499,7 @@
             // 
             this.button2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button2.ForeColor = System.Drawing.Color.DarkOrange;
-            this.button2.Location = new System.Drawing.Point(87, 16);
+            this.button2.Location = new System.Drawing.Point(165, 16);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(109, 68);
             this.button2.TabIndex = 0;
@@ -593,15 +606,75 @@
             // groupBox8
             // 
             this.groupBox8.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox8.Controls.Add(this.textBox5);
+            this.groupBox8.Controls.Add(this.txtBadQty);
+            this.groupBox8.Controls.Add(this.textBox1);
+            this.groupBox8.Controls.Add(this.txtGoodQty);
             this.groupBox8.Controls.Add(this.textBox28);
             this.groupBox8.Controls.Add(this.txtCount);
             this.groupBox8.Controls.Add(this.textBox26);
             this.groupBox8.Controls.Add(this.txtNoCount);
             this.groupBox8.Location = new System.Drawing.Point(14, 274);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(428, 97);
+            this.groupBox8.Size = new System.Drawing.Size(428, 213);
             this.groupBox8.TabIndex = 11;
             this.groupBox8.TabStop = false;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox5.ForeColor = System.Drawing.Color.Aqua;
+            this.textBox5.Location = new System.Drawing.Point(224, 117);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(193, 29);
+            this.textBox5.TabIndex = 19;
+            this.textBox5.Text = "불량 수량";
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtBadQty
+            // 
+            this.txtBadQty.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtBadQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
+            this.txtBadQty.ForeColor = System.Drawing.Color.OrangeRed;
+            this.txtBadQty.Location = new System.Drawing.Point(224, 150);
+            this.txtBadQty.Multiline = true;
+            this.txtBadQty.Name = "txtBadQty";
+            this.txtBadQty.ReadOnly = true;
+            this.txtBadQty.Size = new System.Drawing.Size(193, 48);
+            this.txtBadQty.TabIndex = 18;
+            this.txtBadQty.Text = "0000";
+            this.txtBadQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox1.ForeColor = System.Drawing.Color.Aqua;
+            this.textBox1.Location = new System.Drawing.Point(7, 117);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(193, 29);
+            this.textBox1.TabIndex = 17;
+            this.textBox1.Text = "양품 수량";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtGoodQty
+            // 
+            this.txtGoodQty.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtGoodQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
+            this.txtGoodQty.ForeColor = System.Drawing.Color.Chartreuse;
+            this.txtGoodQty.Location = new System.Drawing.Point(7, 150);
+            this.txtGoodQty.Multiline = true;
+            this.txtGoodQty.Name = "txtGoodQty";
+            this.txtGoodQty.ReadOnly = true;
+            this.txtGoodQty.Size = new System.Drawing.Size(193, 48);
+            this.txtGoodQty.TabIndex = 16;
+            this.txtGoodQty.Text = "0000";
+            this.txtGoodQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox28
             // 
@@ -614,14 +687,14 @@
             this.textBox28.ReadOnly = true;
             this.textBox28.Size = new System.Drawing.Size(193, 29);
             this.textBox28.TabIndex = 15;
-            this.textBox28.Text = "작업량(COUNT)";
+            this.textBox28.Text = "총 작업량(COUNT)";
             this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtCount
             // 
             this.txtCount.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.txtCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
-            this.txtCount.ForeColor = System.Drawing.Color.Red;
+            this.txtCount.ForeColor = System.Drawing.Color.Black;
             this.txtCount.Location = new System.Drawing.Point(224, 39);
             this.txtCount.Multiline = true;
             this.txtCount.Name = "txtCount";
@@ -649,7 +722,7 @@
             // 
             this.txtNoCount.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.txtNoCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtNoCount.ForeColor = System.Drawing.Color.Red;
+            this.txtNoCount.ForeColor = System.Drawing.Color.Yellow;
             this.txtNoCount.Location = new System.Drawing.Point(7, 39);
             this.txtNoCount.Multiline = true;
             this.txtNoCount.Name = "txtNoCount";
@@ -711,92 +784,15 @@
             this.textBox22.Text = "00 분";
             this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // groupBox9
-            // 
-            this.groupBox9.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox9.Controls.Add(this.textBox30);
-            this.groupBox9.Controls.Add(this.textBox31);
-            this.groupBox9.Location = new System.Drawing.Point(14, 377);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(428, 52);
-            this.groupBox9.TabIndex = 16;
-            this.groupBox9.TabStop = false;
-            // 
-            // textBox30
-            // 
-            this.textBox30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox30.ForeColor = System.Drawing.Color.Azure;
-            this.textBox30.Location = new System.Drawing.Point(7, 9);
-            this.textBox30.Multiline = true;
-            this.textBox30.Name = "textBox30";
-            this.textBox30.ReadOnly = true;
-            this.textBox30.Size = new System.Drawing.Size(137, 37);
-            this.textBox30.TabIndex = 15;
-            this.textBox30.Text = "앞공정 실적";
-            this.textBox30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox31
-            // 
-            this.textBox31.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox31.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox31.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox31.Location = new System.Drawing.Point(144, 9);
-            this.textBox31.Multiline = true;
-            this.textBox31.Name = "textBox31";
-            this.textBox31.ReadOnly = true;
-            this.textBox31.Size = new System.Drawing.Size(204, 37);
-            this.textBox31.TabIndex = 14;
-            this.textBox31.Text = "00";
-            this.textBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox10.Controls.Add(this.textBox32);
-            this.groupBox10.Controls.Add(this.textBox33);
-            this.groupBox10.Location = new System.Drawing.Point(14, 435);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(428, 52);
-            this.groupBox10.TabIndex = 17;
-            this.groupBox10.TabStop = false;
-            // 
-            // textBox32
-            // 
-            this.textBox32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox32.ForeColor = System.Drawing.Color.Azure;
-            this.textBox32.Location = new System.Drawing.Point(7, 9);
-            this.textBox32.Multiline = true;
-            this.textBox32.Name = "textBox32";
-            this.textBox32.ReadOnly = true;
-            this.textBox32.Size = new System.Drawing.Size(137, 37);
-            this.textBox32.TabIndex = 15;
-            this.textBox32.Text = "불량 수량";
-            this.textBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox33
-            // 
-            this.textBox33.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox33.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox33.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox33.Location = new System.Drawing.Point(144, 9);
-            this.textBox33.Multiline = true;
-            this.textBox33.Name = "textBox33";
-            this.textBox33.ReadOnly = true;
-            this.textBox33.Size = new System.Drawing.Size(204, 37);
-            this.textBox33.TabIndex = 14;
-            this.textBox33.Text = "00";
-            this.textBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // groupBox11
             // 
             this.groupBox11.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox11.Controls.Add(this.lblprogres);
             this.groupBox11.Controls.Add(this.progressBar1);
             this.groupBox11.Controls.Add(this.textBox34);
             this.groupBox11.Location = new System.Drawing.Point(453, 378);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(428, 52);
+            this.groupBox11.Size = new System.Drawing.Size(424, 52);
             this.groupBox11.TabIndex = 17;
             this.groupBox11.TabStop = false;
             // 
@@ -809,6 +805,7 @@
             this.progressBar1.Size = new System.Drawing.Size(304, 34);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 14;
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // textBox34
             // 
@@ -831,7 +828,7 @@
             this.groupBox12.Controls.Add(this.textBox37);
             this.groupBox12.Location = new System.Drawing.Point(453, 435);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(428, 52);
+            this.groupBox12.Size = new System.Drawing.Size(424, 52);
             this.groupBox12.TabIndex = 18;
             this.groupBox12.TabStop = false;
             // 
@@ -865,7 +862,7 @@
             // 
             // timer2
             // 
-            this.timer2.Interval = 1000;
+            this.timer2.Interval = 3000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // listBox1
@@ -874,8 +871,28 @@
             this.listBox1.ItemHeight = 12;
             this.listBox1.Location = new System.Drawing.Point(886, 15);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(281, 472);
+            this.listBox1.Size = new System.Drawing.Size(287, 472);
             this.listBox1.TabIndex = 19;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer3
+            // 
+            this.timer3.Interval = 1000;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // lblprogres
+            // 
+            this.lblprogres.AutoSize = true;
+            this.lblprogres.BackColor = System.Drawing.Color.Transparent;
+            this.lblprogres.Location = new System.Drawing.Point(262, 19);
+            this.lblprogres.Name = "lblprogres";
+            this.lblprogres.Size = new System.Drawing.Size(21, 12);
+            this.lblprogres.TabIndex = 15;
+            this.lblprogres.Text = "0%";
             // 
             // POPGaDong
             // 
@@ -886,8 +903,6 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.groupBox12);
             this.Controls.Add(this.groupBox11);
-            this.Controls.Add(this.groupBox10);
-            this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox6);
@@ -915,10 +930,6 @@
             this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
             this.groupBox12.ResumeLayout(false);
@@ -969,12 +980,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.TextBox textBox30;
-        private System.Windows.Forms.TextBox textBox31;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.TextBox textBox32;
-        private System.Windows.Forms.TextBox textBox33;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.TextBox textBox34;
@@ -988,5 +993,13 @@
         private System.Windows.Forms.TextBox txtSec;
         private System.Windows.Forms.TextBox txtMin;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtBadQty;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtGoodQty;
+        private System.Windows.Forms.Label lblprogres;
     }
 }

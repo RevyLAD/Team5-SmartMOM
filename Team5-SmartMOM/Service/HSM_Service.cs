@@ -23,10 +23,10 @@ namespace Team5_SmartMOM.Service
             return dac.UploadPassiveSalesMaster(sales);
         }
 
-        public List<WorkOrderVO> GetWorkOrderByPlanId(string planId)
+        public List<WorkOrderVO> GetWorkOrderByPlanId(SearchWorkOrderVO wo)
         {
             WorkOrderDAC dac = new WorkOrderDAC();
-            return dac.GetWorkOrderByPlanId(planId);
+            return dac.GetWorkOrderByPlanId(wo);
         }
 
         public List<WorkOrderVO> GetWorkOrderByPlan()
@@ -82,7 +82,11 @@ namespace Team5_SmartMOM.Service
             PlanningDAC dac = new PlanningDAC();
             return dac.GetProductPlan(plan);
         }
-
+        //public string GetDueDate(string planID) //주문의 납기일 받아오기
+        //{
+        //    PlanningDAC dac = new PlanningDAC();
+        //    return dac.GetDueDate(planID);
+        //}
 
         public bool UpdatePlanID(List<UpdatePlanIDVO> plan)
         {
@@ -95,5 +99,7 @@ namespace Team5_SmartMOM.Service
             SalesMasterDAC dac = new SalesMasterDAC();
             return dac.UpdatePlanID(workId);
         }
+
+
     }
 }

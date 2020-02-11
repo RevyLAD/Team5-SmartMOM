@@ -17,10 +17,9 @@ namespace Project_DAC.HSM
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = "select SO_WorkOrderID,sm.COM_Code,c.COM_Name,sm.ITEM_Code,i.ITEM_Name, " +
                     "PO_Type,SALES_OrderQty,ISNULL(SALES_ShipQty, 0) SALES_ShipQty,ISNULL(SALES_CancelQty, 0) SALES_CancelQty,  " +
-                    "Convert(nvarchar(10), SALES_Duedate, 23) SALES_Duedate,Convert(nvarchar(10), SALES_OrderDate, 23) SALES_OrderDate,SALES_ORDER_STATE, SALES_Remark " +
+                    "Convert(nvarchar(10), SALES_Duedate, 23) SALES_Duedate,Convert(nvarchar(10), SALES_OrderDate, 23) SALES_OrderDate,SALES_ORDER_STATE,sm.SALES_ORDER_STATE, SALES_Remark " +
                     "FROM SalesMaster sm, Company c, ITEM i " +
-                    "WHERE sm.SALES_ORDER_STATE = '주문대기' " +
-                    "AND sm.COM_Code = c.COM_Code " +
+                    "WHERE sm.COM_Code = c.COM_Code " +
                     "AND sm.ITEM_Code = i.ITEM_Code";
 
                 cmd.Connection.Open();
@@ -214,7 +213,7 @@ namespace Project_DAC.HSM
 
                     cmd.Connection = new SqlConnection(this.ConnectionString);
                     cmd.Connection.Open();
-                    cmd.CommandText = "UPDATE SalesMaster SET Sales_Order_State = '작업대기' WHERE SO_WorkOrderID = @SO_WorkOrderID";
+                    cmd.CommandText = "UPDATE SalesMaster SET Sales_Order_State = '작업대기', Order_State = '발주대기' WHERE SO_WorkOrderID = @SO_WorkOrderID";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@SO_WorkOrderID", workID);
 

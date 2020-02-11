@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Team5_SmartMOM.Service;
 
-namespace Team5_SmartMOM
+namespace Team5_SmartMOM.KIS
 {
     public partial class Material_Cost_Management : Team5_SmartMOM.BaseGridForm
     {
@@ -35,6 +35,7 @@ namespace Team5_SmartMOM
             chk.HeaderText = "선택";
             dataGridView1.Columns.Add(chk);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "No", "Material_No", false, 140);
+            dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체", "COM_Code", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체명", "COM_Name", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 140);
@@ -42,12 +43,17 @@ namespace Team5_SmartMOM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "규격", "ITEM_SIze", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "단위", "ITEM_Unit", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "현재단가", "Material_Price_Now", true, 100);
+            dataGridView1.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "이전단가", "Material_Price_Previous", true, 100);
+            dataGridView1.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "시작일", "Material_StartDate", true, 140);
+            dataGridView1.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "종료일", "Material_EndDate", true, 140);
+            dataGridView1.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "Material_UseOrNot", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정자", "Material_Editer", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정일", "Material_EditDate", true, 140);
+            dataGridView1.Columns[14].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "Material_Others", true, 140);
             DataLoad();
         }

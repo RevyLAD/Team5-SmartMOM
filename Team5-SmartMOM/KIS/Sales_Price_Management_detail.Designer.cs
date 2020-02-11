@@ -107,6 +107,7 @@
             // 
             // txt_edit_date
             // 
+            this.txt_edit_date.Enabled = false;
             this.txt_edit_date.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txt_edit_date.Location = new System.Drawing.Point(413, 174);
             this.txt_edit_date.Name = "txt_edit_date";
@@ -182,6 +183,7 @@
             // 
             // txt_end_date
             // 
+            this.txt_end_date.Enabled = false;
             this.txt_end_date.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txt_end_date.Location = new System.Drawing.Point(413, 91);
             this.txt_end_date.Name = "txt_end_date";

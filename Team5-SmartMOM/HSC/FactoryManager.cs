@@ -29,7 +29,7 @@ namespace Team5_SmartMOM.HSC
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "코드", "FACT_Code", true, 120);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "공장명", "FACT_Name", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상위시설", "FACT_Parent", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "자재차감", "FACT_MATDeduction", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "자재차감", "FACT_MATDeducation", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "FACT_UseOrNot", true, 120);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정자", "FACT_Modifier", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정일", "FACT_ModifyDate", true, 150);
@@ -60,22 +60,7 @@ namespace Team5_SmartMOM.HSC
 
         private void btnInquiry_Click(object sender, EventArgs e)
         {
-            List<FactoryVO> newlist = new List<FactoryVO>();
 
-            if ((textBox1.Text.Trim() == "") && (textBox2.Text.Trim() == ""))
-            {
-                MessageBox.Show("검색어를 입력해주세요");
-            }
-            else
-            {
-                foreach (var li in list)
-                {
-                    if (Convert.ToString(li.FACT_Name).Trim().Contains(textBox1.Text.Trim()) &&
-                        li.FACT_Code.Trim().Contains(textBox2.Text.Trim()))
-                        newlist.Add(li);
-                }
-                dataGridView1.DataSource = newlist;
-            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -86,18 +71,20 @@ namespace Team5_SmartMOM.HSC
             }
             else
             {
-                select_vo.FACT_No = Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[0].Value.ToString());
+                select_vo = new FactoryVO();
+
+                select_vo.FACT_No = Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[0].Value);
                 select_vo.FACT_Group = dataGridView1.Rows[temp.RowIndex].Cells[1].Value.ToString();
                 select_vo.FACT_Class = dataGridView1.Rows[temp.RowIndex].Cells[2].Value.ToString();
                 select_vo.FACT_Type = dataGridView1.Rows[temp.RowIndex].Cells[3].Value.ToString();
                 select_vo.FACT_Code = dataGridView1.Rows[temp.RowIndex].Cells[4].Value.ToString();
                 select_vo.FACT_Name = dataGridView1.Rows[temp.RowIndex].Cells[5].Value.ToString();
-                select_vo.FACT_Parent = dataGridView1.Rows[temp.RowIndex].Cells[6].Value.ToString();
-                select_vo.FACT_MATDeducation = dataGridView1.Rows[temp.RowIndex].Cells[7].Value.ToString();
+                select_vo.FACT_Parent = Convert.ToString(dataGridView1.Rows[temp.RowIndex].Cells[6].Value) ??"";
+                select_vo.FACT_MATDeducation =Convert.ToString(dataGridView1.Rows[temp.RowIndex].Cells[7].Value);
                 select_vo.FACT_UseOrNot = dataGridView1.Rows[temp.RowIndex].Cells[8].Value.ToString();
                 select_vo.FACT_Modifier = dataGridView1.Rows[temp.RowIndex].Cells[9].Value.ToString();
                 //select_vo.FACT_ModifyDate = dataGridView1.Rows[temp.RowIndex].Cells[10].Value.ToString();
-                select_vo.FACT_Information = dataGridView1.Rows[temp.RowIndex].Cells[11].Value.ToString();
+                select_vo.FACT_Information =  Convert.ToString(dataGridView1.Rows[temp.RowIndex].Cells[11].Value);
 
                 FactoryRegister frm = new FactoryRegister(select_vo);
                 frm.StartPosition = FormStartPosition.CenterParent;
@@ -120,6 +107,36 @@ namespace Team5_SmartMOM.HSC
             {
                 btnInquiry_Click(this, new EventArgs());
             }
+        }
+
+        private void panelTop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            List<FactoryVO> newlist = new List<FactoryVO>();
+
+            if ((textBox1.Text.Trim() == "") && (textBox2.Text.Trim() == ""))
+            {
+                MessageBox.Show("검색어를 입력해주세요");
+            }
+            else
+            {
+                foreach (var li in list)
+                {
+                    if (Convert.ToString(li.FACT_Name).Trim().Contains(textBox1.Text.Trim()) &&
+                        li.FACT_Code.Trim().Contains(textBox2.Text.Trim()))
+                        newlist.Add(li);
+                }
+                dataGridView1.DataSource = newlist;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Factory_DataLoad();
         }
     }
 }

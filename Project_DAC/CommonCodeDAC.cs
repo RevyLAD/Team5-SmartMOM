@@ -1,4 +1,5 @@
 ﻿using Project_VO;
+using Project_VO.HSM;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -34,6 +35,37 @@ namespace Project_DAC
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = "select distinct COM_Code, COM_Name from Company ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<CompanyCodeVO> list = Helper.DataReaderMapToList<CompanyCodeVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public List<PlanIDVO> PlanID()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select distinct Plan_ID from VendorOrder ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<PlanIDVO> list = Helper.DataReaderMapToList<PlanIDVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+        public List<CompanyCodeVO> GetCustomerCompanyCode()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select distinct COM_Code, COM_Name from Company WHERE COM_Type ='고객사' ";
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -121,6 +153,22 @@ namespace Project_DAC
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = "  select distinct Plan_ID from salesmaster where Plan_ID is not null ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<PlanIDVO> list = Helper.DataReaderMapToList<PlanIDVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public List<PlanIDVO> GetAllPlanID2()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "  select distinct Plan_ID from SalesMaster where Plan_ID is not null and Order_State = '발주대기'  ";
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -319,6 +367,53 @@ namespace Project_DAC
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<CommonCodeVO> list = Helper.DataReaderMapToList<CommonCodeVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public List<PlanIDVO> GetPlanIDByDemandPlan()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "  select distinct Plan_ID from salesmaster where Plan_ID is not null and SALES_ORDER_STATE = '생산대기' ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<PlanIDVO> list = Helper.DataReaderMapToList<PlanIDVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public List<PlanIDVO> GetPlanIDByProduction()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "  select distinct Plan_ID from salesmaster where Plan_ID is not null and SALES_ORDER_STATE = '작업대기' ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<PlanIDVO> list = Helper.DataReaderMapToList<PlanIDVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+        public List<WorkOrderStateVO> GetWorkOrderState()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "  select distinct WO_State from WorkOrder  ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkOrderStateVO> list = Helper.DataReaderMapToList<WorkOrderStateVO>(reader);
                 cmd.Connection.Close();
 
                 return list;

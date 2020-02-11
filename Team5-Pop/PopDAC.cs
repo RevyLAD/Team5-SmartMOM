@@ -59,6 +59,22 @@ namespace Team5_Pop
             }
         }
 
+        //public List<FacVOpp> GetFACName2()
+        //{
+        //    using (SqlCommand cmd = new SqlCommand())
+        //    {
+        //        cmd.Connection = new SqlConnection(this.ConnectionString);
+        //        cmd.CommandText = "SELECT FAC_Name, FAC_Code from Facility";
+
+        //        cmd.Connection.Open();
+        //        SqlDataReader reader = cmd.ExecuteReader();
+        //        List<FacVOpp> list = Helper.DataReaderMapToList<FacVOpp>(reader);
+        //        cmd.Connection.Close();
+
+        //        return list;
+        //    }
+        //}
+
         public void UpdateFacState(string name, string id)
         {
             {

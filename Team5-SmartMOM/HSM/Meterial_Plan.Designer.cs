@@ -90,7 +90,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(412, 20);
+            this.label2.Location = new System.Drawing.Point(404, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 19);
             this.label2.TabIndex = 9;
@@ -102,7 +102,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(34, 21);
+            this.label10.Location = new System.Drawing.Point(26, 20);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(75, 19);
             this.label10.TabIndex = 10;
@@ -112,16 +112,17 @@
             // 
             this.cboPlanID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cboPlanID.FormattingEnabled = true;
-            this.cboPlanID.Location = new System.Drawing.Point(126, 20);
+            this.cboPlanID.Location = new System.Drawing.Point(118, 19);
             this.cboPlanID.Name = "cboPlanID";
             this.cboPlanID.Size = new System.Drawing.Size(121, 20);
             this.cboPlanID.TabIndex = 13;
+            this.cboPlanID.SelectedIndexChanged += new System.EventHandler(this.cboPlanID_SelectedIndexChanged);
             // 
             // dtpDateStart
             // 
             this.dtpDateStart.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateStart.Location = new System.Drawing.Point(533, 21);
+            this.dtpDateStart.Location = new System.Drawing.Point(525, 20);
             this.dtpDateStart.Name = "dtpDateStart";
             this.dtpDateStart.Size = new System.Drawing.Size(99, 21);
             this.dtpDateStart.TabIndex = 14;
@@ -132,7 +133,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(639, 26);
+            this.label5.Location = new System.Drawing.Point(631, 24);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(14, 12);
             this.label5.TabIndex = 15;
@@ -142,7 +143,7 @@
             // 
             this.dtpDateEnd.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateEnd.Location = new System.Drawing.Point(659, 21);
+            this.dtpDateEnd.Location = new System.Drawing.Point(651, 20);
             this.dtpDateEnd.Name = "dtpDateEnd";
             this.dtpDateEnd.Size = new System.Drawing.Size(99, 21);
             this.dtpDateEnd.TabIndex = 14;
@@ -154,10 +155,10 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1084, 10);
+            this.btnSearch.Location = new System.Drawing.Point(1084, 11);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(93, 39);
-            this.btnSearch.TabIndex = 76;
+            this.btnSearch.Size = new System.Drawing.Size(93, 36);
+            this.btnSearch.TabIndex = 77;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);

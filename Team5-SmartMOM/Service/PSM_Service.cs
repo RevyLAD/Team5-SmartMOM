@@ -34,6 +34,12 @@ namespace Team5_SmartMOM.Service
             return dac.GetAllCompanyCode();
         }
 
+        public List<PlanIDVO> PlanID()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.PlanID();
+        }
+
         public List<GetOrderVO> GetOrder(string plan_id)
         {
             CommonCodeDAC dac = new CommonCodeDAC();
@@ -51,10 +57,10 @@ namespace Team5_SmartMOM.Service
             return dac.GetAllOrderState();
         }
 
-        public bool VendorOrder(List<VendorOrderVO> codelist, string Plan_ID)
+        public bool VendorOrder(List<VendorOrderVO> codelist)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.VendorOrder(codelist, Plan_ID);
+            return dac.VendorOrder(codelist);
         }
 
         //납기일자변경
@@ -105,10 +111,10 @@ namespace Team5_SmartMOM.Service
         }
 
 
-        public List<SupplierVO> Supplier()
+        public List<SupplierVO> Supplier(SupplierSearchVO sp)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.Supplier();
+            return dac.Supplier(sp);
         }
 
         public List<SupplierStateVO> SupplierState()
@@ -117,16 +123,16 @@ namespace Team5_SmartMOM.Service
             return dac.SupplierState();
         }
 
-        public List<ImportCheckVO> ImportCheck()
+        public List<ImportCheckVO> ImportCheck(ImportCheckSearchVO ics)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.ImportCheck();
+            return dac.ImportCheck(ics);
         }
 
-        public List<Material_LedgerVO> Material_Ledger()
+        public List<Material_LedgerVO> Material_Ledger(Material_LedgerSearchVO mls)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.Material_Ledger();
+            return dac.Material_Ledger(mls);
         }
 
         public List<Receiving_processingVO> Receiving_processing()
@@ -141,13 +147,13 @@ namespace Team5_SmartMOM.Service
             return dac.Result(lists);
         }
 
-        public List<MaterialsStateVO> MaterialsState()
+        public List<MaterialsStateVO> MaterialsState(SupplierSearchVO sp)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.MaterialsState();
+            return dac.MaterialsState(sp);
         }
 
-        public bool MaterialProcess(List<DeleteOrder> lists, List<MaterialsPlusVO> lists2)
+        public bool MaterialProcess(List<MaterialInDateVO> lists, List<MaterialsPlusVO> lists2)
         {
             PurchasingDAC dac = new PurchasingDAC();
             return dac.MaterialProcess(lists, lists2);
@@ -157,6 +163,12 @@ namespace Team5_SmartMOM.Service
         {
             PurchasingDAC dac = new PurchasingDAC();
             return dac.MaterialCancel(lists, lists2);
+        }
+
+        public List<Stock_StateVO> Stock_State()
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.Stock_State();
         }
 
     }

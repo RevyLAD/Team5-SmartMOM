@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Team5_SmartMOM.BaseForm;
 using Team5_SmartMOM.Service;
 
 namespace Team5_SmartMOM
@@ -33,6 +34,9 @@ namespace Team5_SmartMOM
         private void Enterprise_Load(object sender, EventArgs e)
         {
             DataLoad();
+
+            CommonCodeService cmservice = new CommonCodeService();
+            CommonUtil.ComboBinding(cboFacCrow, cmservice.GetFacilityType(), "Common_Key", "Common_Value");
         }
         List<EnterpriseVO> list;
 
@@ -54,8 +58,16 @@ namespace Team5_SmartMOM
 
             HSC_Service service = new HSC_Service();
             dataGridView1.DataSource = list = service.GetAllEnterprise();
-        }
 
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+
+        }
+        DataGridViewCellEventArgs temp;
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            temp = e;
+        }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -95,10 +107,49 @@ namespace Team5_SmartMOM
 
         private void button2_Click(object sender, EventArgs e)
         {
-            EnterpriseRegister frm = new EnterpriseRegister();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.ShowDialog();
+            if (temp != null)
+            {
+                EnterpriseVO vo = null;
+                foreach(EnterpriseVO item in list)
+                {
+                    if (item.COM_No.Trim() == Convert.ToString(dataGridView1.Rows[temp.RowIndex].Cells[0].Value))
+                    {
+                        vo = item;
+                        break;
+                    }
+                }
+
+                EnterpriseRegister frm = new EnterpriseRegister(vo);
+                frm.StartPosition = FormStartPosition.CenterParent;
+                frm.ShowDialog();
+                DataLoad();
+            }
+            else
+            {
+                MessageBox.Show("수정할 업체를 선택해주세요");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
             DataLoad();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (temp != null)
+            {
+                if (MessageBox.Show("정말 삭제하시겠습니까?", "삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    HSC_Service service = new HSC_Service();
+                    service.DeleteEnt(Convert.ToString(dataGridView1.Rows[temp.RowIndex].Cells[0].Value));
+                    DataLoad();
+                }
+            }
+            else
+            {
+                MessageBox.Show("삭제한 업체를 선택해주세요");
+            }
         }
     }
 }

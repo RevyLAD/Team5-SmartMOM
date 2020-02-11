@@ -27,6 +27,8 @@ namespace Team5_SmartMOM
 
         private void FacilitiesDetail_Load(object sender, EventArgs e)
         {
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+
             DataLoad();
         }
 
@@ -48,7 +50,11 @@ namespace Team5_SmartMOM
             HSC_Service service = new HSC_Service();
             dataGridView1.DataSource = list = service.GetAllFacilitiesDetail();
         }
-
+        DataGridViewCellEventArgs temp;
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            temp = e;
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             FacilitiesRegister frm = new FacilitiesRegister();
@@ -88,6 +94,27 @@ namespace Team5_SmartMOM
             {
                 btnSearch_Click(this, new EventArgs());
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (temp != null)
+            {
+                if (MessageBox.Show("정말 삭제하시겠습니까?", "삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    HSC_Service service = new HSC_Service();
+                    service.DeleteFacDetail(Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[0].Value));
+                }
+            }
+            else
+            {
+                MessageBox.Show("삭제할 설비를 선택해주세요");
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            DataLoad();
         }
     }
 }

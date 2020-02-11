@@ -110,5 +110,33 @@ namespace Project_DAC
                 return list;
             }
         }
+
+        public void DeleteFacT(int id)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "delete from [FacilityGroup] where FACG_No=@FACG_No";
+                cmd.Parameters.AddWithValue("@FACG_No", id);
+
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+        }
+
+        public void DeleteFacDetail(int id)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "delete from [Facility] where FAC_No=@FAC_No";
+                cmd.Parameters.AddWithValue("@FAC_No", id);
+
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+        }
     }
 }

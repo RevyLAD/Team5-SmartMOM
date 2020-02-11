@@ -30,102 +30,118 @@ namespace Team5_SmartMOM.PSM
         {
             dtpDateStart.Value = DateTime.Now;
             dtpDateEnd.Value = DateTime.Now.AddMonths(1);
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView2.AutoGenerateColumns = false;
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             chk = new DataGridViewCheckBoxColumn();
             chk.HeaderText = "";
             chk.Name = "Check";
             chk.Width = 30;
-            dataGridView1.Columns.Add(chk);
+            dataGridView2.Columns.Add(chk);
 
-            Point headerLocation = dataGridView1.GetCellDisplayRectangle(0, -1, true).Location;
+            Point headerLocation = dataGridView2.GetCellDisplayRectangle(0, -1, true).Location;
             headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 6);
-            headerCheckBox.BackColor = Color.White;
+            headerCheckBox.BackColor = Color.FromArgb(55, 113, 138);
             headerCheckBox.Size = new Size(18, 18);
             headerCheckBox.Click += new EventHandler(HeaderCheckBox_Click);
-            dataGridView1.Controls.Add(headerCheckBox);
+            dataGridView2.Controls.Add(headerCheckBox);
+            dataGridView2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "No", "VO_ID", true, 70);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체이름", "COM_Name", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 170);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "규격", "ITEM_Size", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "단위", "ITEM_Unit", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주수량", "VOD_GoodEA", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "잔량", "FACD_Qty", true, 120);                        
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "VO_EndDate", true, 100);            
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "출발상태", "VOD_Result", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "주문상태", "MATERIAL_ORDER_STATE", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "생성일", "VOD_ResultDay", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "No", "VO_ID", true, 70, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "업체이름", "COM_Name", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품목", "ITEM_Code", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품명", "ITEM_Name", true, 170);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "규격", "ITEM_Size", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "단위", "ITEM_Unit", true, 80, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "발주수량", "VOD_GoodEA", true, 150, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "잔량", "FACD_Qty", true, 100, DataGridViewContentAlignment.MiddleRight);                        
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "납기일", "VO_EndDate", true, 100, DataGridViewContentAlignment.MiddleCenter);            
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "출발상태", "VOD_Result", true, 150, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "주문상태", "MATERIAL_ORDER_STATE", true, 150, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "생성일", "VOD_ResultDay", true, 150, DataGridViewContentAlignment.MiddleCenter);
 
-            dataGridView2.AutoGenerateColumns = false;
-            dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView3.AutoGenerateColumns = false;
+            dataGridView3.AllowUserToAddRows = false;
+            dataGridView3.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             chk2 = new DataGridViewCheckBoxColumn();
             chk2.HeaderText = "";
             chk2.Name = "Check";
             chk2.Width = 30;
-            dataGridView2.Columns.Add(chk2);
+            dataGridView3.Columns.Add(chk2);
 
-            Point headerLocation2 = dataGridView2.GetCellDisplayRectangle(0, -1, true).Location;
+            Point headerLocation2 = dataGridView3.GetCellDisplayRectangle(0, -1, true).Location;
             headerCheckBox2.Location = new Point(headerLocation2.X + 8, headerLocation2.Y + 6);
-            headerCheckBox2.BackColor = Color.White;
+            headerCheckBox2.BackColor = Color.FromArgb(55, 113, 138);
             headerCheckBox2.Size = new Size(18, 18);
             headerCheckBox2.Click += new EventHandler(HeaderCheckBox_Click2);
-            dataGridView2.Controls.Add(headerCheckBox2);
+            dataGridView3.Controls.Add(headerCheckBox2);
+            dataGridView3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "No", "VO_ID", true, 70);            
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품목", "ITEM_Code", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품명", "ITEM_Name", true, 170);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "규격", "ITEM_Size", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품목유형", "ITEM_Type", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "단위", "ITEM_Unit", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "입고창고", "FACT_Name", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "업체이름", "VO_InDate", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "입고량", "VOD_GoodEA", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "단가", "ITEM_Price", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "비고", "", true, 120);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView3, "No", "VO_ID", true, 70, DataGridViewContentAlignment.MiddleRight);            
+            UtilityClass.AddNewColumnToDataGridView(dataGridView3, "품목", "ITEM_Code", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView3, "품명", "ITEM_Name", true, 170);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView3, "규격", "ITEM_Size", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView3, "품목유형", "ITEM_Type", true, 150, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView3, "단위", "ITEM_Unit", true, 120);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView3, "입고창고", "FACT_Name", true, 120, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView3, "업체이름", "VO_InDate", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView3, "입고량", "VOD_GoodEA", true, 120, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView3, "단가", "ITEM_Price", true, 120, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView3, "비고", "", true, 120);
 
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             DataLoad();
-            Datagridview();
+            Datagridview();            
+            BtnSearch_Click(null, new EventArgs());
         }
 
         public void Datagridview()
         {
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(55, 113, 138);
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dataGridView1.ColumnHeadersHeight = 30;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-
             dataGridView2.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(55, 113, 138);
             dataGridView2.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView2.ColumnHeadersHeight = 30;
             dataGridView2.EnableHeadersVisualStyles = false;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+
+            dataGridView3.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(55, 113, 138);
+            dataGridView3.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView3.ColumnHeadersHeight = 30;
+            dataGridView3.EnableHeadersVisualStyles = false;
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
         }
 
         public void DataLoad()
         {
+            Material_LedgerSearchVO mls = new Material_LedgerSearchVO();
+            mls.startDate = dtpDateStart.Value.ToShortDateString();
+            mls.endDate = dtpDateEnd.Value.ToShortDateString();
+            mls.Company = cbocompany.Text.Trim();
+            mls.Item = txtitem.Text.Trim();
+            mls.Plan_ID = cboplanid.Text.Trim();
+            
+
             PSM_Service service = new PSM_Service();
-            list = service.Material_Ledger();
-            dataGridView1.DataSource = list;
+            list = service.Material_Ledger(mls);
+            dataGridView2.DataSource = list;
 
             PSM_Service service2 = new PSM_Service();
             list2 = service.Receiving_processing();
-            dataGridView2.DataSource = list2;
+            dataGridView3.DataSource = list2;
+
+            List<CompanyCodeVO> company = service.GetAllCompanyCode();
+            CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "");
+            List<PlanIDVO> planid = service.PlanID();
+            CommonUtil.ComboBinding(cboplanid, planid, "Plan_ID", "Plan_ID");
 
         }
         #region 체크박스
         private void HeaderCheckBox_Click(object sender, EventArgs e)
         {
-            dataGridView1.EndEdit();
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            dataGridView2.EndEdit();
+            foreach (DataGridViewRow row in dataGridView2.Rows)
             {
                 DataGridViewCheckBoxCell chkBox = row.Cells["Check"] as DataGridViewCheckBoxCell;
                 chkBox.Value = headerCheckBox.Checked;
@@ -134,20 +150,20 @@ namespace Team5_SmartMOM.PSM
 
         private void HeaderCheckBox_Click2(object sender, EventArgs e)
         {
-            dataGridView2.EndEdit();
-            foreach (DataGridViewRow row in dataGridView2.Rows)
+            dataGridView3.EndEdit();
+            foreach (DataGridViewRow row in dataGridView3.Rows)
             {
                 DataGridViewCheckBoxCell chkBox = row.Cells["Check"] as DataGridViewCheckBoxCell;
                 chkBox.Value = headerCheckBox2.Checked;
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == 0)
             {
                 bool isChecked = true;
-                foreach (DataGridViewRow row in dataGridView1.Rows)
+                foreach (DataGridViewRow row in dataGridView2.Rows)
                 {
                     if (Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue) == false)
                     {
@@ -159,12 +175,12 @@ namespace Team5_SmartMOM.PSM
             }
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == 0)
             {
                 bool isChecked = true;
-                foreach (DataGridViewRow row in dataGridView1.Rows)
+                foreach (DataGridViewRow row in dataGridView2.Rows)
                 {
                     if (Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue) == false)
                     {
@@ -196,11 +212,11 @@ namespace Team5_SmartMOM.PSM
                 xlWorkBook = xlApp.Workbooks.Add();
                 xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
-                for (i = 0; i <= dataGridView1.RowCount - 2; i++)
+                for (i = 0; i <= dataGridView2.RowCount - 2; i++)
                 {
-                    for (j = 0; j <= dataGridView1.ColumnCount - 1; j++)
+                    for (j = 0; j <= dataGridView2.ColumnCount - 1; j++)
                     {
-                        xlWorkSheet.Cells[i + 1, j + 1] = dataGridView1[j, i].Value.ToString();
+                        xlWorkSheet.Cells[i + 1, j + 1] = dataGridView2[j, i].Value.ToString();
                     }
                 }
 
@@ -235,7 +251,7 @@ namespace Team5_SmartMOM.PSM
         private void button3_Click(object sender, EventArgs e)
         {
             List<DeleteOrder> lists = new List<DeleteOrder>();
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            foreach (DataGridViewRow row in dataGridView2.Rows)
             {
                 bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
 
@@ -255,7 +271,7 @@ namespace Team5_SmartMOM.PSM
         private void button2_Click(object sender, EventArgs e)
         {
             List<DeleteOrder> lists = new List<DeleteOrder>();
-            foreach (DataGridViewRow row in dataGridView2.Rows)
+            foreach (DataGridViewRow row in dataGridView3.Rows)
             {
                 bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
 
@@ -274,15 +290,15 @@ namespace Team5_SmartMOM.PSM
 
         private void button1_Click(object sender, EventArgs e)
         {
-            List<DeleteOrder> lists = new List<DeleteOrder>();
+            List<MaterialInDateVO> lists = new List<MaterialInDateVO>();
             List<MaterialsPlusVO> lists2 = new List<MaterialsPlusVO>();
-            foreach (DataGridViewRow row in dataGridView2.Rows)
+            foreach (DataGridViewRow row in dataGridView3.Rows)
             {
                 bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
 
                 if (isCellChecked)
                 {
-                    DeleteOrder list = new DeleteOrder();
+                    MaterialInDateVO list = new MaterialInDateVO();
                     list.VO_ID = Convert.ToInt32(row.Cells[1].Value);
                     lists.Add(list);
 
@@ -296,6 +312,28 @@ namespace Team5_SmartMOM.PSM
             service.MaterialProcess(lists, lists2);
 
             DataLoad();
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            Material_LedgerSearchVO mls = new Material_LedgerSearchVO();
+            mls.startDate = dtpDateStart.Value.ToShortDateString();
+            mls.endDate = dtpDateEnd.Value.ToShortDateString();
+            mls.Company = cbocompany.Text.Trim();
+            mls.Item = txtitem.Text.Trim();
+            mls.Plan_ID = cboplanid.Text.Trim();
+
+            PSM_Service service = new PSM_Service();
+            list = service.Material_Ledger(mls);
+            dataGridView2.DataSource = list;
+        }
+
+        private void txtitem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar == 13))
+            {
+                BtnSearch_Click(null, new EventArgs());
+            }
         }
     }
 }

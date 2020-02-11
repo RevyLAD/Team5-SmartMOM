@@ -9,10 +9,12 @@ using Team5_SmartMOM.BaseForm;
 using Team5_SmartMOM.Service;
 using Excel = Microsoft.Office.Interop.Excel;
 
-namespace Team5_SmartMOM
+namespace Team5_SmartMOM.KIS
 {
     public partial class BOM : Team5_SmartMOM.BaseGridForm
     {
+        CheckBox headerCheckBox = new CheckBox();
+      
         int type;
         public BOM()
         {
@@ -55,61 +57,93 @@ namespace Team5_SmartMOM
             List<CommonCodeVO> OrderGubunList1 = (from item in listGubunCode1
                                                   where item.Common_Type == "USE_FLAG"
                                                   select item).ToList();
-            CommonUtil.ComboBinding(cbo_UseorNot, OrderGubunList1, "Common_Key", "Common_Value");
+         //   CommonUtil.ComboBinding(cbo_UseorNot, OrderGubunList1, "Common_Key", "Common_Value");
         }
-
+        private void HeaderCheckBox_Click(object sender, EventArgs e)
+        {
+            dataGridView1.EndEdit();
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                DataGridViewCheckBoxCell chkBox = row.Cells[""] as DataGridViewCheckBoxCell;
+                chkBox.Value = headerCheckBox.Checked;
+            }
+        }
         private void ShowGridView()
         {
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
           
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
+           
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn(false);
 
-            checkBoxColumn.Name = "check";
-
+            checkBoxColumn.Name = "";
+            checkBoxColumn.Width = 30;
+            
             dataGridView1.Columns.Add(checkBoxColumn);
+
+            Point headerLocation = dataGridView1.GetCellDisplayRectangle(0, -1, true).Location;
+            headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 6);
+            headerCheckBox.BackColor = Color.White;
+            headerCheckBox.Size = new Size(18, 18);
+            headerCheckBox.Click += new EventHandler(HeaderCheckBox_Click);
+            dataGridView1.Controls.Add(headerCheckBox);
+
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "NO", "BOM_No", true, 50);
+            dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상위품목", "BOM_Code", true, 120);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 130);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "소요량", "BOM_Require", true, 90);
+            dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "시작일", "BOM_StartDate", true, 120);
+            dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "종료일", "BOM_EndDate", true, 120);
+            dataGridView1.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "BOM_UseOrNot", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정자", "BOM_Modifier", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정시간", "BOM_ModifiyDate", true, 120);
+            dataGridView1.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "자동차감", "BOM_AutoDeduction", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "소요계획", "BOM_RequirePlan", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "BOM_Others", true, 140);
             dataGridView1.AllowUserToAddRows = false;
+      
+
         }
         private void ShowGridView2()
         {
-
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+           
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn(false);
-
+            checkBoxColumn.Width = 30;
 
             dataGridView1.Columns.Add(checkBoxColumn);
 
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상위품목", "BOM_Code", true, 160);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 160);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상위품목", "BOM_Code", true, 140);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 200);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 170);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "유형", "ITEM_Type", true, 70);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "유형", "ITEM_Type", true, 70);  
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "타입", "Levels", true, 70);
+            dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "소요량", "BOM_Require", true, 80);
+            dataGridView1.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "시작일", "BOM_StartDate", true, 120);
+            dataGridView1.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "종료일", "BOM_EndDate", true, 120);
+            dataGridView1.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "BOM_UseOrNot", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정자", "BOM_Modifier", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정시간", "BOM_ModifiyDate", true, 120);
+            dataGridView1.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "자동차감", "BOM_AutoDeduction", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "소요계획", "BOM_RequirePlan", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "BOM_Others", true, 140);
+         
             dataGridView1.AllowUserToAddRows = false;
         }
         private void CheckBox()
@@ -193,12 +227,8 @@ namespace Team5_SmartMOM
         /// </summary>
         private void Btn_Search_Click(object sender, EventArgs e)
         {
-            using (Loading_Form frm = new Loading_Form(SearchBOM))
-            {
-
-                frm.ShowDialog(this);
-
-            }
+         
+            SearchBOM();
         }
 
         private void SearchBOM()
@@ -220,6 +250,7 @@ namespace Team5_SmartMOM
                 List<BOM_Serch_VO> list = new List<BOM_Serch_VO>();
                 KIS_Service service = new KIS_Service();
                 list = BomSearch(list, service);
+              
 
             }
             else if (cbo_Deployement.Text == "역전개")
@@ -246,7 +277,7 @@ namespace Team5_SmartMOM
             else
             {
                 List<BOM_Serch_VO> list2 = new List<BOM_Serch_VO>();
-                list = service.SearchBOM(txt_Item.Text, type);
+                list = service.SearchBOM(txt_Item.Text, type , dtp_ExistingDate.Value.ToString("yyyy-MM-dd"));
 
 
                 //List<BOM_Serch_VO> BOM_List = (from item in list where item)
@@ -288,7 +319,14 @@ namespace Team5_SmartMOM
                         }
                     }
                     ShowGridView2();
-                    dataGridView1.DataSource = list2;
+                    if (list.Count != 0)
+                    {
+                        dataGridView1.DataSource = list2;
+                    }
+                    else
+                    {
+                        MessageBox.Show("결과 없음.");
+                    }
                 }
                 else if (type == 2)
                 {
@@ -326,7 +364,14 @@ namespace Team5_SmartMOM
                     //    }
                     //}
                     ShowGridView2();
-                    dataGridView1.DataSource = list;
+                    if (list.Count != 0)
+                    {
+                        dataGridView1.DataSource = list;
+                    }
+                   else
+                    {
+                        MessageBox.Show("결과 없음.");
+                    }
 
                 }
 

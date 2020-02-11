@@ -1,5 +1,6 @@
 ﻿using Project_DAC;
 using Project_VO;
+using Project_VO.HSM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,12 @@ namespace Team5_SmartMOM.BaseForm
             return dac.GetAllCompanyCode();
         }
 
+        public List<CompanyCodeVO> GetCustomerCompanyCode()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.GetCustomerCompanyCode();
+        }
+
         public List<ItemCodeVO> GetAllItemCode()
         {
             CommonCodeDAC dac = new CommonCodeDAC();
@@ -32,6 +39,12 @@ namespace Team5_SmartMOM.BaseForm
         {
             CommonCodeDAC dac = new CommonCodeDAC();
             return dac.GetAllPlanID();
+        }
+
+        public List<PlanIDVO> GetAllPlanID2()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.GetAllPlanID2();
         }
 
         public List<PlanIDVO> GetPlanIDByWorkOrder()
@@ -98,6 +111,24 @@ namespace Team5_SmartMOM.BaseForm
             return dac.GetAllItemType();
         }
 
-        
+        public List<PlanIDVO> GetPlanIDByDemandPlan()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.GetPlanIDByDemandPlan();
+        }
+
+        public List<PlanIDVO> GetPlanIDByProduction()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.GetPlanIDByProduction();
+        }
+
+        public List<WorkOrderStateVO> GetWorkOrderState()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.GetWorkOrderState();
+        }
+
+
     }
 }

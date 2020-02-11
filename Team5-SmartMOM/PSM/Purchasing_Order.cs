@@ -40,10 +40,11 @@ namespace Team5_SmartMOM.PSM
 
             Point headerLocation = dataGridView1.GetCellDisplayRectangle(0, -1, true).Location;
             headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2);
-            headerCheckBox.BackColor = Color.White;
+            headerCheckBox.BackColor = Color.FromArgb(55, 113, 138);
             headerCheckBox.Size = new Size(18, 18);
             headerCheckBox.Click += new EventHandler(HeaderCheckBox_Click);
             dataGridView1.Controls.Add(headerCheckBox);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체번호", "COM_No", true, 90);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체이름", "COM_Name", true, 100);
@@ -59,15 +60,16 @@ namespace Team5_SmartMOM.PSM
             dataGridView2.AutoGenerateColumns = false;
             dataGridView2.AllowUserToAddRows = false;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "업체이름", "COM_Name", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "업체타입", "COM_Type", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품목명", "ITEM_Code", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "업체코드", "COM_Code", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품목사이즈", "ITEM_Size", true, 100);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "납기일자", "SALES_Duedate", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "개수", "SumQty", true, 100);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "발주상태", "Order_State", true, 120);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "납기일자", "SALES_Duedate", true, 120, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "개수", "SumQty", true, 100, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "발주상태", "Order_State", true, 120, DataGridViewContentAlignment.MiddleCenter);
 
             DataLoad();
             CheckBoxTrue();
@@ -241,20 +243,21 @@ namespace Team5_SmartMOM.PSM
 
 
         private void btnOrder_Click(object sender, EventArgs e)
-        {
-            string Plan_ID = lblPlanID.Text;
+        {            
             List<VendorOrderVO> codelist = new List<VendorOrderVO>();
             for (int i = 0; i < dataGridView2.RowCount; i++)
             {
                 VendorOrderVO code = new VendorOrderVO();
                 
+                code.COM_Name = dataGridView2.Rows[i].Cells[0].Value.ToString();
                 code.COM_Code = dataGridView2.Rows[i].Cells[2].Value.ToString();
                 code.VO_EndDate = (DateTime)dataGridView2.Rows[i].Cells[5].Value;
                 code.VO_Quantity = Convert.ToInt32(dataGridView2.Rows[i].Cells[6].Value);
+                code.Plan_ID = lblPlanID.Text;
                 codelist.Add(code);
             }
             PSM_Service service = new PSM_Service();
-            service.VendorOrder(codelist, Plan_ID);
+            service.VendorOrder(codelist);
 
             MessageBox.Show("발주처리가 완료 되었습니다.");
             dataGridView2.DataSource = null;

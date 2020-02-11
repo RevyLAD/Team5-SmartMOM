@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txtProduct = new System.Windows.Forms.TextBox();
+            this.cbocompany = new System.Windows.Forms.ComboBox();
             this.dtpDateEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtOrderNum = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.panelFull.SuspendLayout();
@@ -71,9 +71,9 @@
             // 
             this.panelTop.Controls.Add(this.label9);
             this.panelTop.Controls.Add(this.btnSearch);
-            this.panelTop.Controls.Add(this.textBox4);
-            this.panelTop.Controls.Add(this.textBox2);
-            this.panelTop.Controls.Add(this.comboBox2);
+            this.panelTop.Controls.Add(this.txtOrderNum);
+            this.panelTop.Controls.Add(this.txtProduct);
+            this.panelTop.Controls.Add(this.cbocompany);
             this.panelTop.Controls.Add(this.dtpDateEnd);
             this.panelTop.Controls.Add(this.dtpDateStart);
             this.panelTop.Controls.Add(this.label10);
@@ -90,20 +90,20 @@
             this.label1.Size = new System.Drawing.Size(136, 24);
             this.label1.Text = "자재입고현황";
             // 
-            // textBox2
+            // txtProduct
             // 
-            this.textBox2.Location = new System.Drawing.Point(781, 26);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(191, 21);
-            this.textBox2.TabIndex = 70;
+            this.txtProduct.Location = new System.Drawing.Point(781, 26);
+            this.txtProduct.Name = "txtProduct";
+            this.txtProduct.Size = new System.Drawing.Size(191, 21);
+            this.txtProduct.TabIndex = 70;
             // 
-            // comboBox2
+            // cbocompany
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(463, 25);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(161, 20);
-            this.comboBox2.TabIndex = 68;
+            this.cbocompany.FormattingEnabled = true;
+            this.cbocompany.Location = new System.Drawing.Point(463, 25);
+            this.cbocompany.Name = "cbocompany";
+            this.cbocompany.Size = new System.Drawing.Size(161, 20);
+            this.cbocompany.TabIndex = 68;
             // 
             // dtpDateEnd
             // 
@@ -164,12 +164,12 @@
             this.label8.TabIndex = 59;
             this.label8.Text = "* 업체";
             // 
-            // textBox4
+            // txtOrderNum
             // 
-            this.textBox4.Location = new System.Drawing.Point(119, 63);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(191, 21);
-            this.textBox4.TabIndex = 73;
+            this.txtOrderNum.Location = new System.Drawing.Point(119, 63);
+            this.txtOrderNum.Name = "txtOrderNum";
+            this.txtOrderNum.Size = new System.Drawing.Size(191, 21);
+            this.txtOrderNum.TabIndex = 73;
             // 
             // btnSearch
             // 
@@ -183,6 +183,7 @@
             this.btnSearch.TabIndex = 79;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // label9
             // 
@@ -216,9 +217,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox txtOrderNum;
+        private System.Windows.Forms.TextBox txtProduct;
+        private System.Windows.Forms.ComboBox cbocompany;
         private System.Windows.Forms.DateTimePicker dtpDateEnd;
         private System.Windows.Forms.DateTimePicker dtpDateStart;
         private System.Windows.Forms.Label label10;

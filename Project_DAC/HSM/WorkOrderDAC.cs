@@ -31,20 +31,27 @@ namespace Project_DAC.HSM
                 return list;
             }
         }
-        public List<WorkOrderVO> GetWorkOrderByPlanId(string planId)
+        public List<WorkOrderVO> GetWorkOrderByPlanId(SearchWorkOrderVO wo)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = @"select WO_ID,w.Item_code,Item_Name, Fac_Name, CONVERT(nvarchar(10),WO_Startdate,23) WO_Startdate , CONVERT(nvarchar(10),WO_EndDate,23) WO_EndDate,
+                string sql = @"select WO_ID,w.Item_code,Item_Name, Fac_Name, CONVERT(nvarchar(10),WO_Startdate,23) WO_Startdate , CONVERT(nvarchar(10),WO_EndDate,23) WO_EndDate,
                                     planQty, directQty, Wo_state, plan_ID, WO_Priority, WO_Time
                                     from WorkOrder w , Item i
                                     where Plan_Id = @Plan_Id
-                                    and WO_State = '작업생성'
-                                    and w.Item_code = i.ITEM_Code ";
+                                    and w.Item_code = i.ITEM_Code
+                                     ";
 
+                if (wo.WO_State != "")
+                    sql = sql + " and WO_State = @WO_State ";
+
+                cmd.CommandText = sql;
                 cmd.Connection.Open();
-                cmd.Parameters.AddWithValue("@Plan_Id", planId);
+                cmd.Parameters.AddWithValue("@Plan_Id", wo.Plan_ID);
+                cmd.Parameters.AddWithValue("@WO_StartDate", wo.WO_StartDate);
+                cmd.Parameters.AddWithValue("@WO_EndDate", wo.WO_EndDate);
+                cmd.Parameters.AddWithValue("@WO_State", wo.WO_State);
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<WorkOrderVO> list = Helper.DataReaderMapToList<WorkOrderVO>(reader);

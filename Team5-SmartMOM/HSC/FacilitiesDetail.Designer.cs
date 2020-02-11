@@ -36,6 +36,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -73,19 +74,23 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(587, 0);
+            this.button3.Location = new System.Drawing.Point(644, 0);
             this.button3.Size = new System.Drawing.Size(57, 32);
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(644, 0);
+            this.button2.Location = new System.Drawing.Point(701, 0);
             this.button2.Size = new System.Drawing.Size(57, 32);
+            this.button2.Text = "삭제";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(701, 0);
-            this.button1.Size = new System.Drawing.Size(57, 32);
+            this.button1.Dock = System.Windows.Forms.DockStyle.None;
+            this.button1.Location = new System.Drawing.Point(212, 3);
+            this.button1.Size = new System.Drawing.Size(65, 24);
+            this.button1.Visible = false;
             // 
             // panel2
             // 
@@ -94,6 +99,7 @@
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.button7);
             this.panelTop.Controls.Add(this.textBox1);
             this.panelTop.Controls.Add(this.label2);
             this.panelTop.Controls.Add(this.btnSearch);
@@ -213,6 +219,20 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "ㆍ 설비번호";
             // 
+            // button7
+            // 
+            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.button7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(587, 21);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(81, 30);
+            this.button7.TabIndex = 27;
+            this.button7.Text = "전체 조회";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // FacilitiesDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -244,5 +264,6 @@
         protected System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
+        protected System.Windows.Forms.Button button7;
     }
 }

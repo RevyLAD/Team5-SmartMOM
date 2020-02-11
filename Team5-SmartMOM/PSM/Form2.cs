@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Team5_Pop
+namespace WinReport1
 {
-    public partial class PoPFAC : Form
+    public partial class Form2 : Form
     {
-        public PoPFAC()
+        public Form2()
         {
             InitializeComponent();
         }

@@ -47,13 +47,13 @@ namespace Team5_SmartMOM
 
             list.RemoveAt(5);
             CommonUtil.ComboBinding(cboInWareHouse, list, "Common_Key", "Common_Value");
-
             CommonUtil.ComboBinding(cboUse, cmservice.GetUse(), "Common_Key", "Common_Value");
+            CommonUtil.ComboBinding(cboFACTCode, service.GetAllFacilitesCode(), "FACG_Code", "FACG_Name");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (FACG_Code.Text.Trim() != "" &&
+            if (cboFACTCode.Text.Trim() != "" &&
                 FAC_Code.Text.Trim() != "" &&
                 txtFac_Name.Text.Trim() != "" &&
                 cboOutWareHouse.Text.Trim() != "" &&
@@ -62,11 +62,11 @@ namespace Team5_SmartMOM
                 FacilitieDetailVO vo = new FacilitieDetailVO();
                 HSC_Service service = new HSC_Service();
 
-                vo.FACG_Code = FACG_Code.Text.Trim();
+                vo.FACG_Code = cboFACTCode.Text.Trim();
                 vo.FAC_BadWareHouse = cboBadWareHouse.Text.Trim();
                 vo.FAC_InWareHouse = cboInWareHouse.Text.Trim();
                 vo.FAC_Modifier = txtModifier.Text.Trim();
-                vo.FAC_ModifiyDate = Convert.ToDateTime(txtModifiyDate.Text.Trim());
+                vo.FAC_ModifiyDate = dateTimePicker1.Value;
                 vo.FAC_Code = FAC_Code.Text.Trim();
                 vo.FAC_Name = txtFac_Name.Text.Trim();
                 vo.FAC_Others = txtOthers.Text;

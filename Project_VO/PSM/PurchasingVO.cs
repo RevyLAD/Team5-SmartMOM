@@ -40,23 +40,15 @@ namespace Project_VO
         public string ITEM_Unit { get; set; }
         public string COM_Code { get; set; }
         public string COM_Type { get; set; }
-        public string COM_Name { get; set; }
+        public string COM_Name { get; set; }        
     }
-
-    public class PurchaseSearchVO
-    {
-        public string startDate { get; set; }
-        public string endDate { get; set; }
-        public string Company { get; set; }
-        public string Item { get; set; }
-        public string State { get; set; }
-        public int VO_ID { get; set; }
-    }
+    
 
     public class VendorOrderVO
     {
         public string Plan_ID { get; set; }
         public string COM_Code { get; set; }
+        public string COM_Name { get; set; }
         public string MATERIAL_ORDER_STATE { get; set; }
         public string ITEM_Code { get; set; }
         public int VO_Quantity { get; set; }
@@ -190,5 +182,63 @@ namespace Project_VO
         public int VOD_GoodEA { get; set; }
         public string ITEM_Code { get; set; }
     }
+
+    public class Stock_StateVO
+    {
+        public string FACT_Code { get; set; }
+        public string FACT_Name { get; set; }
+        public string ITEM_Code { get; set; }
+        public string ITEM_Name { get; set; }
+        public string ITEM_Type { get; set; }
+        public string ITEM_Size { get; set; }
+        public int FACD_Qty { get; set; }
+        public string ITEM_Unit { get; set; }
+    }
+
+    public class PurchaseSearchVO
+    {
+        public string startDate { get; set; }
+        public string endDate { get; set; }
+        public string Company { get; set; }
+        public string Item { get; set; }
+        public string State { get; set; }
+        public int VO_ID { get; set; }
+        public string Plan_ID { get; set; }
+    }
+
+    public class SupplierSearchVO
+    {
+        public string startDate { get; set; }
+        public string endDate { get; set; }
+        public string Company { get; set; }
+        public string Item { get; set; }        
+        public string Plan_ID { get; set; }
+    }
+
+    public class ImportCheckSearchVO
+    {
+        public string startDate { get; set; }
+        public string endDate { get; set; }
+        public string Company { get; set; }
+        public string Item { get; set; }
+        public string Result { get; set; }
+        public string Plan_ID { get; set; }
+    }
+
+    public class Material_LedgerSearchVO
+    {
+        public string startDate { get; set; }
+        public string endDate { get; set; }
+        public string Company { get; set; }
+        public string Item { get; set; }      
+        public string Plan_ID { get; set; }
+    }
+
+    public class MaterialInDateVO
+    {
+        public int VO_ID { get; set; }
+        public DateTime VO_InDate { get; set; }
+    }
+
 
 }

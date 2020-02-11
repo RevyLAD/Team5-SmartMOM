@@ -14,13 +14,13 @@ using System.IO;
 using System.Configuration;
 using System.Net;
 using System.Data.SqlClient;
+using System.Threading;
 
 namespace Team5_Pop
 {
     public partial class POPGaDong : Form
     {
 
-        static System.Timers.Timer timer1;
         static int machineID = 1;
         static string writeFolder = AppDomain.CurrentDomain.BaseDirectory + "\\Production";
         static int iCnt = 0;
@@ -40,14 +40,15 @@ namespace Team5_Pop
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
             machineID = rnd.Next(1, 10);
 
-            SetTimer();
-
             textBox23.Text = DateTime.Now.ToLongTimeString();
-            timer2.Start();
-
-            AsyncEchoServer();
         }
 
+        private void TcpListenerStart()
+        {
+            AsyncEchoServer().Wait();
+        }
+
+        NetworkStream stream;
         private void DataLoad()
         {
             PopService service = new PopService();
@@ -85,37 +86,39 @@ namespace Team5_Pop
                 await Task.Factory.StartNew(AsyncTcpProcess, tc);
             }
         }
-
+        int goodqtt;
+        int badqtt;
         private async Task AsyncTcpProcess(object o)
         {
             TcpClient tc = (TcpClient)o;
-            NetworkStream stream = tc.GetStream();
+            stream = tc.GetStream();
 
-            string msg =  thisvo.ITEM_Code;
+            string msg =  thisvo.ITEM_Code+'/'+ txtDirectQty.Text;
             byte[] buff = Encoding.ASCII.GetBytes(msg);
 
             stream.Write(buff, 0, buff.Length);
 
-            byte[] buff2 = new byte[1024];
-            var readTask = stream.ReadAsync(buff2, 0, buff2.Length);
-            int nbytes = readTask.Result;
-            if (nbytes > 0)
-            {
-                //20200204 12:01:20 Machine7/65/4/0
-                string[] arrData = Encoding.ASCII.GetString(buff2, 0, nbytes).Split('/');
+
+            //var readTask = stream.Read(buff2, 0, buff2.Length);
+            //int nbytes = readTask.Result;
+            //if (nbytes > 0)
+            //{
+            //    //20200204 12:01:20 Machine7/65/4/0
+            //    string[] arrData = Encoding.ASCII.GetString(buff2, 0, nbytes).Split('/');
 
 
-                //MessageBox.Show(Encoding.ASCII.GetString(buff2, 0, nbytes));
-                listBox1.Items.Insert(0,Encoding.ASCII.GetString(buff2, 0, nbytes));
-                //Console.WriteLine(Encoding.ASCII.GetString(buff, 0, nbytes));
-                Program.Log.WriteInfo(Encoding.ASCII.GetString(buff2, 0, nbytes));
+            //    //MessageBox.Show(Encoding.ASCII.GetString(buff2, 0, nbytes));
+            //   
+            //    //Console.WriteLine(Encoding.ASCII.GetString(buff, 0, nbytes));
 
-                await stream.WriteAsync(buff2, 0, nbytes).ConfigureAwait(false);
-            }
 
-            stream.Close();
-            tc.Close();
+            //    await stream.WriteAsync(buff2, 0, nbytes).ConfigureAwait(false);
+            //}
+
+          //  stream.Close();
+          //  tc.Close();
         }
+
         private string TimeSub(string time)
         {
             try
@@ -137,58 +140,160 @@ namespace Team5_Pop
             }
         }
 
-        private static void SetTimer()
-        {
-            timer1 = new System.Timers.Timer(3000);
-            timer1.Enabled = true;
-            timer1.Elapsed += timer1_Elapsed;
-            timer1.AutoReset = true;
-        }
 
-        private static void timer1_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            Random rnd = new Random((int)DateTime.UtcNow.Ticks);
-            StreamWriter sw = null;
-            try
-            {
-                sw = new StreamWriter($"{writeFolder}\\WorkerLogMachine_{machineID}_{iCnt}.log", false);
-
-                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")} Machine/{machineID}/{rnd.Next(1, 77)}/{rnd.Next(100, 130)}/{rnd.Next(0, 5)}";
-                sw.WriteLine(msg);
-                sw.Flush();
-                sw.Close();
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine(err.Message);
-            }
-
-            finally
-            {
-                iCnt++;
-            }
-        }
 
         private void POPGaDong_FormClosed(object sender, FormClosedEventArgs e)
         {
-
-            timer1.Stop();
-            timer1.Dispose();
+            timer2.Stop();
+            timer2.Dispose();
         }
 
-        private void timer2_Tick(object sender, EventArgs e)
+        string connected = "ㆍㆍㆍ 연결 대기중 ㆍㆍㆍ";
+        private async void timer2_Tick(object sender, EventArgs e)
         {
+            try
+            {
+                //string msg1 = thisvo.ITEM_Code + '/' + txtDirectQty.Text;
+                //byte[] buff = Encoding.ASCII.GetBytes(msg1);
 
-            GaDongTimeChange();
+                byte[] buff2 = new byte[1024];
+                await stream.ReadAsync(buff2, 0, buff2.Length);
+                string readmsg = Encoding.ASCII.GetString(buff2);
+
+                timer1.Start();
+                connected = "ㆍㆍㆍ 연결 대기중 ㆍㆍㆍ";
+
+                if (readmsg != null)
+                {
+                    goodqtt = Convert.ToInt32(readmsg.Substring(32, 1));
+                    badqtt = Convert.ToInt32(readmsg.Substring(48, 1));
+                }
+
+                listBox1.Items.Add(readmsg);
+
+                txtCount.Text = Convert.ToString((Convert.ToInt64(txtCount.Text) + (goodqtt+badqtt)).ToString("0000"));
+                txtGoodQty.Text = Convert.ToString((Convert.ToInt64(txtGoodQty.Text) + goodqtt).ToString("0000"));
+                txtBadQty.Text = Convert.ToString((Convert.ToInt64(txtBadQty.Text) + (badqtt)).ToString("0000"));
+                GaDongTimeChange();
+
+                //if (stream != null)
+                //    stream.Write(buff, 0, buff.Length);
+
+                Random rnd = new Random((int)DateTime.UtcNow.Ticks);
+                StreamWriter sw = null;
+                try
+                {
+                    sw = new StreamWriter($"{writeFolder}\\WorkerLogMachine_{machineID}_{iCnt}.log", false);
+
+                    string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")} Machine/{machineID}/{rnd.Next(1, 77)}/{rnd.Next(100, 130)}/{rnd.Next(0, 5)}";
+                    listBox1.Items.Add(msg);
+                    Program.Log.WriteInfo(msg);
+
+                    sw.WriteLine(msg);
+                    sw.Flush();
+                    sw.Close();
+                }
+                catch (Exception err)
+                {
+                    Console.WriteLine(err.Message);
+                }
+
+                finally
+                {
+                    iCnt++;
+                }
+            }
+            catch
+            {
+                if(connected.Equals("ㆍㆍㆍ 연결 대기중 ㆍㆍㆍ"))
+                    listBox1.Items.Add(connected);
+                connected = string.Empty;
+            }
+        }
+        private void GaDongTimeChange()
+        {
+            txtNoCount.Text = Convert.ToString((Convert.ToInt64(txtDirectQty.Text) - Convert.ToInt64(txtGoodQty.Text)).ToString("0000"));
+
+            if (Convert.ToInt64(txtGoodQty.Text) > Convert.ToInt64(txtDirectQty.Text))
+            {
+                txtGoodQty.Text = txtDirectQty.Text;
+                txtNoCount.Text = "0";
+            }
+
+            if (txtDirectQty.Text.Trim() == txtGoodQty.Text.Trim())
+            {
+                timer2.Stop();
+                timer1.Stop();
+                progressBar1.Value = 100;
+                button6.Enabled = false;
+                button3.Enabled = false;
+
+                string msg = "theend";
+                byte[] buff = Encoding.ASCII.GetBytes(msg);
+                //stream.Write(buff, 0, buff.Length);
+                stream.WriteAsync(buff, 0, buff.Length);
+
+                listBox1.Items.Add("ㆍㆍㆍ 생산 종료 ㆍㆍㆍ");
+            }
+            else
+            {
+                progressBar1.Value = (int)((Convert.ToDouble(txtCount.Text) / Convert.ToDouble(txtDirectQty.Text)) * 100);
+                lblprogres.Text = string.Format(progressBar1.Value +" %");
+            }
         }
 
-        private void GaDongTimeChange()
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (button6.Text == "일시 정지")
+            {
+                listBox1.Items.Add("ㆍㆍㆍ 일시 정지 ㆍㆍㆍ");
+                timer2.Stop();
+                timer1.Stop();
+                timer3.Start();
+                progressBar1.ForeColor = Color.LightYellow;
+                button6.Text = "계속하기";
+
+                string msg = "pause";
+                byte[] buff = Encoding.ASCII.GetBytes(msg);
+                //stream.Write(buff, 0, buff.Length);
+                stream.WriteAsync(buff, 0, buff.Length);
+                
+            }
+            else if(button6.Text == "계속하기")
+            {
+
+                listBox1.Items.Add("ㆍㆍㆍ 일시 정지 해제 ㆍㆍㆍ");
+                timer2.Start();
+                timer1.Start();
+                timer3.Stop();
+                progressBar1.ForeColor = Color.Aquamarine;
+                button6.Text = "일시 정지";
+
+                string msg = "continue";
+                byte[] buff = Encoding.ASCII.GetBytes(msg);
+                //stream.Write(buff, 0, buff.Length);
+                stream.WriteAsync(buff, 0, buff.Length);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            new Thread(TcpListenerStart).Start();
+            timer2.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
             int hour = Convert.ToInt32(txtHour.Text);
             int min = Convert.ToInt32(txtMin.Text);
             int sec = Convert.ToInt32(txtSec.Text);
 
-            if (++sec==60)
+            if (++sec == 60)
             {
                 sec = 0;
                 if (++min == 60)
@@ -202,40 +307,16 @@ namespace Team5_Pop
             txtMin.Text = Convert.ToString(min.ToString("00"));
             txtSec.Text = Convert.ToString(sec.ToString("00"));
             textBox22.Text = txtMin.Text + " 분";
-
-            txtCount.Text = Convert.ToString((Convert.ToInt64(txtCount.Text)+1).ToString("0000"));
-            txtNoCount.Text = Convert.ToString((Convert.ToInt64(txtDirectQty.Text) - Convert.ToInt64(txtCount.Text)).ToString("0000"));
-
-            if (txtCount.Text.Trim() == txtDirectQty.Text.Trim())
-            {
-                timer2.Stop();
-                progressBar1.Value = 100;
-                button6.Enabled = false;
-                button3.Enabled = false;
-            }
-            else
-            {
-                progressBar1.Value = (int)((Convert.ToDouble(txtCount.Text) / Convert.ToDouble(txtDirectQty.Text)) * 100);
-            }
+        }
+        int resttime = 0;
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            textBox22.Text = Convert.ToString(++resttime / 60);
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void progressBar1_Click(object sender, EventArgs e)
         {
-            if (button6.Text == "일시 정지")
-            {
-                timer2.Stop();
-                button6.Text = "계속하기";
-            }
-            else if(button6.Text == "계속하기")
-            {
-                timer2.Start();
-                button6.Text = "일시 정지";
-            }
-        }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }
