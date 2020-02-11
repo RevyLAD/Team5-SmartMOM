@@ -44,7 +44,21 @@ namespace Project_DAC.LBJ
 
                 return list;
             }
+        }
+        public List<MateriaExportVO> MateriaExportVO()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = @"SELECT WO_ID,WO_StartDate,b.ITEM_Code,FAC_Name,C.ITEM_Size,ITEM_Type,D.FACT_Name, " +
+                    "CASE WHEN ITEM_Type = '원자재' THEN '자재창고_01' ELSE  '자재창고_01' END AS 'FACT_Name1' ,planQty,directQty FROM WorkOrder a, BOM b ,ITEM c,  FactoryDetail d where B.BOM_Code = A.ITEM_Code and C.ITEM_Code = b.ITEM_Code and a.ITEM_Code = d.ITEM_Code and a.FAC_Name != '최종조립반' and   C.ITEM_Type = '원자재' and D.FACT_Name != '자재창고_01' and a.Plan_ID = '20200129_P' Order by WO_ID";
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<MateriaExportVO> list = Helper.DataReaderMapToList<MateriaExportVO>(reader);
+                cmd.Connection.Close();
 
+                return list;                    
+            }
         }
     }
 }

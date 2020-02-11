@@ -9,6 +9,7 @@ namespace Project_VO.LBJ
     public class ShiftVO
     {
         public int SHIFT_ID { get; set; }
+        public string FAC_Name { get; set; }
         public string FAC_Code { get; set; }
         public string SHIFT { get; set; }
         public int SHIFT_StartTime { get; set; }

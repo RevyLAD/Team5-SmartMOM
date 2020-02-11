@@ -393,10 +393,10 @@
     <Compile Include="PSM\Material_Ledger.Designer.cs">
       <DependentUpon>Material_Ledger.cs</DependentUpon>
     </Compile>
-    <Compile Include="PSM\Material_Ledger_Export.cs">
+    <Compile Include="LBJ\Material_Ledger_Export.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PSM\Material_Ledger_Export.Designer.cs">
+    <Compile Include="LBJ\Material_Ledger_Export.Designer.cs">
       <DependentUpon>Material_Ledger_Export.cs</DependentUpon>
     </Compile>
     <Compile Include="PSM\Material_Ledger_State.cs">
@@ -405,10 +405,10 @@
     <Compile Include="PSM\Material_Ledger_State.Designer.cs">
       <DependentUpon>Material_Ledger_State.cs</DependentUpon>
     </Compile>
-    <Compile Include="PSM\Materia_Request.cs">
+    <Compile Include="LBJ\Materia_Request.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PSM\Materia_Request.Designer.cs">
+    <Compile Include="LBJ\Materia_Request.Designer.cs">
       <DependentUpon>Materia_Request.cs</DependentUpon>
     </Compile>
     <Compile Include="PSM\Purchasing.cs">
@@ -678,13 +678,13 @@
     <EmbeddedResource Include="PSM\Material_Ledger.resx">
       <DependentUpon>Material_Ledger.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PSM\Material_Ledger_Export.resx">
+    <EmbeddedResource Include="LBJ\Material_Ledger_Export.resx">
       <DependentUpon>Material_Ledger_Export.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PSM\Material_Ledger_State.resx">
       <DependentUpon>Material_Ledger_State.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PSM\Materia_Request.resx">
+    <EmbeddedResource Include="LBJ\Materia_Request.resx">
       <DependentUpon>Materia_Request.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PSM\Purchasing.resx">

@@ -35,6 +35,19 @@ namespace Project_VO.LBJ
         public DateTime WO_StartDate { get; set; }
         public int planQty { get; set; }
     }
+    public class MateriaExportVO
+    {
+        public string WO_ID { get; set; }
+        public DateTime WO_StartDate { get; set; }
+        public string ITEM_Code { get; set; }
+        public string FAC_Name { get; set; }
+        public string ITEM_Size { get; set; }
+        public string ITEM_Type { get; set; }
+        public string FACT_Name { get; set; }
+        public string FACT_Name1 { get; set; }
+        public int planQty { get; set; }
+        public int directQty { get; set; }
+    }
 }
 
 

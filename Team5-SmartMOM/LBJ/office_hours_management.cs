@@ -29,13 +29,7 @@ namespace Team5_SmartMOM.LBJ
             dateTimePicker1.Value = dtp.Value = DateTime.Now.AddDays(-7);
 
             //UtilityClass.InitSettingDridView(dataGridView1);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "No", "SHIFT_ID", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "설비명", "FAC_Name", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "SHIFT", "SHIFT", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "구분", "Category", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "시작", "SHIFT_StartDate", false, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "종료", "SHIFT_EndDate", false, 150);
-            
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             DataLoad();
             DataLoad2();
         }
@@ -44,7 +38,7 @@ namespace Team5_SmartMOM.LBJ
             LBJ_Service service = new LBJ_Service();
             //List<ShiftManagementVO> Shiftlist = service.GetShiftManagement()
             //List<ShiftManagementVO> Shiftlist = service.ShiftManage();
-            dataGridView1.DataSource = service.ShiftManage();
+            //dataGridView1.DataSource = service.ShiftManage();
 
             List<CommonCodeVO> list = new List<CommonCodeVO>();
 
@@ -56,7 +50,7 @@ namespace Team5_SmartMOM.LBJ
                                                  where item.Common_Type == "SHIFT"
                                                  select item).ToList();
 
-            CommonUtil.ComboBinding(cboShift, OrderShiftList, "Common_Key", "Common_Value");
+            CommonUtil.ComboBinding(cboShift, OrderShiftList, "Common_Key", "Common_Value", "전체");
         }
         public void DataLoad2()
         {
@@ -90,7 +84,7 @@ namespace Team5_SmartMOM.LBJ
                         continue;
                 }
             }
-            CommonUtil.ComboBinding(cboSystem, FacList, "FAC_No", "FAC_Name");
+            CommonUtil.ComboBinding(cboSystem, FacList, "FAC_No", "FAC_Name", "전체");
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -113,7 +107,7 @@ namespace Team5_SmartMOM.LBJ
             {
                 DataSet ds = service.GetShiftManagement(Shiftmanage);
                 dataGridView1.DataSource = ds.Tables[0];
-            }      
+            }
         }
         private List<ShiftManagementVO> ShiftSearch()
         {

@@ -17,7 +17,7 @@ namespace Project_DAC.LBJ
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "SELECT SHIFT_ID, FAC_Code ,SHIFT_StartTime, SHIFT_EndTime, SHIFT_StartDate, SHIFT_EndDate, SHIFT_InputPeople, SHIFT_UserOrNot,   SHIFT_Modifier, SHIFT_ModifierDate, SHIFT_Others, SHIFT FROM Shift";
+                cmd.CommandText = "SELECT SHIFT_ID,FAC_Name, B.FAC_Code ,SHIFT_StartTime, SHIFT_EndTime, SHIFT_StartDate, SHIFT_EndDate, SHIFT_InputPeople, SHIFT_UserOrNot,   SHIFT_Modifier, SHIFT_ModifierDate, SHIFT_Others, SHIFT FROM Shift A inner join Facility B on A.FAC_Code = B.FAC_Code";
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<ShiftVO> list = Helper.DataReaderMapToList<ShiftVO>(reader);
