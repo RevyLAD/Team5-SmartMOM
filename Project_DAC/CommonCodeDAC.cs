@@ -44,6 +44,22 @@ namespace Project_DAC
                 return list;
             }
         }
+
+        public List<PlanIDVO> PlanID()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select distinct Plan_ID from VendorOrder ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<PlanIDVO> list = Helper.DataReaderMapToList<PlanIDVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
         public List<CompanyCodeVO> GetCustomerCompanyCode()
         {
             using (SqlCommand cmd = new SqlCommand())

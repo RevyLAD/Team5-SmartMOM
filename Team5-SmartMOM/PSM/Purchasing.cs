@@ -87,5 +87,23 @@ namespace Team5_SmartMOM.PSM
                 }
             }
         }
+
+        private void cboPlanID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] arrDate = cboPlanID.Text.Split('_');
+            if (arrDate[0] == "전체")
+            {
+                return;
+            }
+            if (arrDate[0] == "Project")
+            {
+                return;
+            }
+            arrDate[0] = arrDate[0].Insert(4, "-");
+            arrDate[0] = arrDate[0].Insert(7, "-");
+            //20200101
+            dtpDateStart.Value = DateTime.Parse(arrDate[0]);
+            dtpDateEnd.Value = DateTime.Parse(arrDate[0]).AddMonths(1);
+        }
     }
 }

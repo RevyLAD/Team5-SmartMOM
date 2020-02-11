@@ -34,6 +34,12 @@ namespace Team5_SmartMOM.Service
             return dac.GetAllCompanyCode();
         }
 
+        public List<PlanIDVO> PlanID()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.PlanID();
+        }
+
         public List<GetOrderVO> GetOrder(string plan_id)
         {
             CommonCodeDAC dac = new CommonCodeDAC();
@@ -51,10 +57,10 @@ namespace Team5_SmartMOM.Service
             return dac.GetAllOrderState();
         }
 
-        public bool VendorOrder(List<VendorOrderVO> codelist, string Plan_ID)
+        public bool VendorOrder(List<VendorOrderVO> codelist)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.VendorOrder(codelist, Plan_ID);
+            return dac.VendorOrder(codelist);
         }
 
         //납기일자변경
@@ -147,7 +153,7 @@ namespace Team5_SmartMOM.Service
             return dac.MaterialsState(sp);
         }
 
-        public bool MaterialProcess(List<DeleteOrder> lists, List<MaterialsPlusVO> lists2)
+        public bool MaterialProcess(List<MaterialInDateVO> lists, List<MaterialsPlusVO> lists2)
         {
             PurchasingDAC dac = new PurchasingDAC();
             return dac.MaterialProcess(lists, lists2);

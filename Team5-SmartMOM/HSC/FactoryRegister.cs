@@ -97,7 +97,18 @@ namespace Team5_SmartMOM
             if (mode == 1)
                 txtModifyTime.Text = DateTime.Now.ToString();
             else if (mode == 2)
+            {
+                txtFacCode.Text= update_vo.FACT_Class;
+                txtFacName.Text = update_vo.FACT_Name;
+                txtModifier.Text = update_vo.FACT_Modifier;
+                txtExplain.Text = update_vo.FACT_Information;
+                cboFacCrow.Text = update_vo.FACT_Group;
+                cboHighFac.Text = update_vo.FACT_Parent;
+                cboMaterials.Text = update_vo.FACT_MATDeducation;
+                cboFacCate.Text = update_vo.FACT_Type;
+                cboUse.Text = update_vo.FACT_UseOrNot;
                 txtModifyTime.Text = service.GetModiTime(txtFacCode.Text.Trim());
+            }
 
         }
 
@@ -105,9 +116,9 @@ namespace Team5_SmartMOM
         {
             HSC_Service service = new HSC_Service();
             CommonCodeService cmservice = new CommonCodeService();
-
-            CommonUtil.ComboBinding(cboFacCrow, cmservice.GetFacilityClass(), "Common_Key", "Common_Value");
             CommonUtil.ComboBinding(cboFacCate, cmservice.GetFacilityType(), "Common_Key", "Common_Value");
+            CommonUtil.ComboBinding(cboFacCrow, cmservice.GetFacilityClass(), "Common_Key", "Common_Value");
+
             CommonUtil.ComboBinding(cboSuse, cmservice.GetUse(), "Common_Key", "Common_Value");
             CommonUtil.ComboBinding(cboGuse, cmservice.GetUse(), "Common_Key", "Common_Value");
             CommonUtil.ComboBinding(cboUse, cmservice.GetUse(), "Common_Key", "Common_Value");

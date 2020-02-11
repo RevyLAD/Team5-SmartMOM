@@ -19,7 +19,7 @@ namespace Project_VO
         public string COM_Phone { get; set; }
         public string COM_UseOrNot { get; set; }
         public string COM_Modifier { get; set; }
-        public DateTime COM_ModifiyDate { get; set; }
+        public string COM_ModifiyDate { get; set; }
         public string COM_Information { get; set; }
     }
 

@@ -15,7 +15,7 @@ namespace Project_VO
         public string FACT_Code{ get; set; }
         public string FACT_Name{ get; set; }
         public string FACT_Parent{ get; set; }
-        public string FACT_MATDeducation{ get; set; }
+        public string FACT_MATDeducation { get; set; }
         public string FACT_UseOrNot{ get; set; }
         public string FACT_Modifier { get; set; }
         public DateTime FACT_ModifyDate { get; set; }

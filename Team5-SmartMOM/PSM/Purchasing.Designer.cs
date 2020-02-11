@@ -132,6 +132,7 @@
             this.cboPlanID.Name = "cboPlanID";
             this.cboPlanID.Size = new System.Drawing.Size(193, 20);
             this.cboPlanID.TabIndex = 11;
+            this.cboPlanID.SelectedIndexChanged += new System.EventHandler(this.cboPlanID_SelectedIndexChanged);
             // 
             // label10
             // 
