@@ -395,29 +395,38 @@ namespace Team5_SmartMOM
         {
             bool truefalse = true;
             ToolStripButton button = new ToolStripButton();
-            
-           
-            for (int i=0; i<toolStrip1.Items.Count; i++)
+            ToolStripSeparator separator = new ToolStripSeparator();
+            if (tabControl1.TabPages.Count == 0)
             {
-                if(tabControl1.SelectedTab.Text == toolStrip1.Items[i].Text)
-                {
-                    MessageBox.Show("즐겨찾기 중 중복된 태그가 있습니다. ");
-                    truefalse = false;
-                }
+                MessageBox.Show("현재 출력되어있는 화면이 없어 즐겨찾기를 등록할수 없습니다!","경고");
+                truefalse = false;
             }
-            if (truefalse)
+
+            else
             {
-                
-                Random rnd = new Random();
-                MessageBox.Show("즐겨찾기에 새로운 목록을 생성했습니다.", "확인");
-                button.Name = tabControl1.SelectedTab.Text;
-                button.Tag = tabControl1.SelectedTab.Tag;
-                button.Text = tabControl1.SelectedTab.Text;
-                button.Click += new System.EventHandler(this.toolStripButton1_Click);
-                button.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText;
-                button.Image =imageList1.Images[rnd.Next(0, 52)];
-               
-                toolStrip1.Items.Add(button);
+                for (int i = 0; i < toolStrip1.Items.Count; i++)
+                {
+                    if (tabControl1.SelectedTab.Text == toolStrip1.Items[i].Text)
+                    {
+                        MessageBox.Show("즐겨찾기 중 중복된 태그가 있습니다. ");
+                        truefalse = false;
+                    }
+                }
+                if (truefalse)
+                {
+
+                    Random rnd = new Random();
+                    MessageBox.Show("즐겨찾기에 새로운 목록을 생성했습니다.", "확인");
+                    button.Name = tabControl1.SelectedTab.Text;
+                    button.Tag = tabControl1.SelectedTab.Tag;
+                    button.Text = tabControl1.SelectedTab.Text;
+                    button.Click += new System.EventHandler(this.toolStripButton1_Click);
+                    button.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText;
+                    button.Image = imageList1.Images[rnd.Next(0, 52)];
+
+                    toolStrip1.Items.Add(button);
+                    toolStrip1.Items.Add(separator);
+                }
             }
         }
 

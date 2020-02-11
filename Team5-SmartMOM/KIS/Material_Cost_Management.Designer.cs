@@ -110,7 +110,7 @@
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(100, 28);
+            this.label1.Size = new System.Drawing.Size(142, 28);
             this.label1.Text = "자재단가관리";
             // 
             // lblArrow

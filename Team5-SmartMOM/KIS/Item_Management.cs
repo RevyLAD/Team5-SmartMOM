@@ -40,19 +40,16 @@ namespace Team5_SmartMOM.KIS
 
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             chk.Width = 40;
-            chk.HeaderText = "선택";
+            chk.HeaderText = "";
 
-            dataGridView1.CellClick += new DataGridViewCellEventHandler(DataGridView1_CellClick);
-
-
-            DataGridViewButtonColumn but = new DataGridViewButtonColumn();
-            but.Width = 40;
-            but.HeaderText = "수정";
+            //dataGridView1.CellClick += new DataGridViewCellEventHandler(DataGridView1_CellClick);
 
 
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "번호", "ITEM_No", true, 40);
+
+
             dataGridView1.Columns.Add(chk);
-            dataGridView1.Columns.Add(but);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "번호", "ITEM_No", true, 40);
+            dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "규격", "ITEM_Size", true, 150);
@@ -65,11 +62,15 @@ namespace Team5_SmartMOM.KIS
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "입고창고", "ITEM_InWarehouse", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "출고창고", "ITEM_OutWarehouse", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "최소발주수량", "ITEM_MinOrderQuantity", true, 120);
+            dataGridView1.Columns[13].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "안전재고수량", "ITEM_SafeQuantity", true, 120);
+            dataGridView1.Columns[14].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "관리등급", "ITEM_Grade", true, 80);
+            dataGridView1.Columns[15].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "담당자", "ITEM_Manager", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정자", "ITEM_Modifier", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정시간", "ITEM_ModifiyDate", true, 100);
+            dataGridView1.Columns[18].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "ITEM_UserOrNot", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주방식", "ITEM_OrderMethod", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "ITEM_Others", true, 140);
@@ -82,77 +83,76 @@ namespace Team5_SmartMOM.KIS
             dataGridView1.DataSource = service.ShowITEM();
             //dataGridView1.ReadOnly = true;
         }
-        bool checklist = false;
-
+       
         /// <summary>
         /// datagridview에 있는 수정 버튼을 클릭할 경우 
         /// 선택된 열의 행을 확인하여 선택된 행의 readonly를 true로 하여 수정모드가 작동했다는것을 알려주며 
         /// 이후 버튼을 한번 더 클릭하면 수정모드가 종료되며 수정된 행의 값이 update가 된다. 
         /// </summary>       
-        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0)
-                return;
+        //private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (e.RowIndex < 0)
+        //        return;
 
-            if (dataGridView1.CurrentCell.ColumnIndex == 2 && checklist == false)
-            {
-                MessageBox.Show("수정모드가 작동합니다. \n 셀을 클릭하여 타입에 알맞게 수정하시고 수정후 버튼을 클릭해주세요.");
-                checklist = true;
-                for (int i = 0; i < dataGridView1.ColumnCount; i++)
-                {
-                    dataGridView1.Rows[e.RowIndex].Cells[i].ReadOnly = false;
-                    dataGridView1.Rows[e.RowIndex].Cells[i].Style.BackColor = Color.LightCyan;
-                }
-                dataGridView1.Rows[e.RowIndex].Cells[2].ReadOnly = true;
-                //row.DefaultCellStyle.BackColor = Color.Tomato;
+        //    //if (dataGridView1.CurrentCell.ColumnIndex == 2 && checklist == false)
+        //    //{
+        //    //    MessageBox.Show("수정모드가 작동합니다. \n 셀을 클릭하여 타입에 알맞게 수정하시고 수정후 버튼을 클릭해주세요.");
+        //    //    checklist = true;
+        //    //    for (int i = 0; i < dataGridView1.ColumnCount; i++)
+        //    //    {
+        //    //        dataGridView1.Rows[e.RowIndex].Cells[i].ReadOnly = false;
+        //    //        dataGridView1.Rows[e.RowIndex].Cells[i].Style.BackColor = Color.LightCyan;
+        //    //    }
+        //    //    dataGridView1.Rows[e.RowIndex].Cells[2].ReadOnly = true;
+        //    //    //row.DefaultCellStyle.BackColor = Color.Tomato;
 
-            }
-            else if (dataGridView1.CurrentCell.ColumnIndex == 2 && checklist == true)
-            {
-                MessageBox.Show("수정모드가 종료되었습니다.");
-                KIS_Service service = new KIS_Service();
-                checklist = false;
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                {
-                    dataGridView1.Rows[e.RowIndex].Cells[i].ReadOnly = true;
+        //    //}
+        //    //else if (dataGridView1.CurrentCell.ColumnIndex == 2 && checklist == true)
+        //    //{
+        //    //    MessageBox.Show("수정모드가 종료되었습니다.");
+        //    //    KIS_Service service = new KIS_Service();
+        //    //    checklist = false;
+        //    //    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+        //    //    {
+        //    //        dataGridView1.Rows[e.RowIndex].Cells[i].ReadOnly = true;
 
-                }
+        //    //    }
 
-                ITEM_VO item = new ITEM_VO();
-                item.ITEM_No = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-                item.ITEM_Name = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                item.ITEM_Code = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                item.ITEM_Size = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-                item.ITEM_Unit = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
-                item.ITEM_Type = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
-                item.ITEM_ImportIns = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
-                item.ITEM_ProcessIns = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
-                item.ITEM_ShipmentIns = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
-                item.ITEM_OrderComp = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
-                item.ITEM_InWarehouse = dataGridView1.Rows[e.RowIndex].Cells[12].Value.ToString();
-                item.ITEM_OutWarehouse = dataGridView1.Rows[e.RowIndex].Cells[13].Value.ToString();
-                item.ITEM_MinOrderQuantity = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[14].Value.ToString());
-                item.ITEM_SafeQuantity = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[15].Value.ToString());
-                item.ITEM_Grade = dataGridView1.Rows[e.RowIndex].Cells[16].Value.ToString();
-                item.ITEM_Manager = dataGridView1.Rows[e.RowIndex].Cells[17].Value.ToString();
-                item.ITEM_Modifier = dataGridView1.Rows[e.RowIndex].Cells[18].Value.ToString();
-                item.ITEM_ModifiyDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[19].Value.ToString());
-                item.ITEM_UserOrNot = dataGridView1.Rows[e.RowIndex].Cells[20].Value.ToString();
-                item.ITEM_OrderMethod = dataGridView1.Rows[e.RowIndex].Cells[21].Value.ToString();
-                item.ITEM_Others = dataGridView1.Rows[e.RowIndex].Cells[22].Value.ToString();
+        //    //    ITEM_VO item = new ITEM_VO();
+        //    //    item.ITEM_No = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+        //    //    item.ITEM_Name = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+        //    //    item.ITEM_Code = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+        //    //    item.ITEM_Size = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+        //    //    item.ITEM_Unit = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+        //    //    item.ITEM_Type = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+        //    //    item.ITEM_ImportIns = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+        //    //    item.ITEM_ProcessIns = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
+        //    //    item.ITEM_ShipmentIns = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
+        //    //    item.ITEM_OrderComp = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
+        //    //    item.ITEM_InWarehouse = dataGridView1.Rows[e.RowIndex].Cells[12].Value.ToString();
+        //    //    item.ITEM_OutWarehouse = dataGridView1.Rows[e.RowIndex].Cells[13].Value.ToString();
+        //    //    item.ITEM_MinOrderQuantity = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[14].Value.ToString());
+        //    //    item.ITEM_SafeQuantity = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[15].Value.ToString());
+        //    //    item.ITEM_Grade = dataGridView1.Rows[e.RowIndex].Cells[16].Value.ToString();
+        //    //    item.ITEM_Manager = dataGridView1.Rows[e.RowIndex].Cells[17].Value.ToString();
+        //    //    item.ITEM_Modifier = dataGridView1.Rows[e.RowIndex].Cells[18].Value.ToString();
+        //    //    item.ITEM_ModifiyDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[19].Value.ToString());
+        //    //    item.ITEM_UserOrNot = dataGridView1.Rows[e.RowIndex].Cells[20].Value.ToString();
+        //    //    item.ITEM_OrderMethod = dataGridView1.Rows[e.RowIndex].Cells[21].Value.ToString();
+        //    //    item.ITEM_Others = dataGridView1.Rows[e.RowIndex].Cells[22].Value.ToString();
 
-                bool bResult = service.UpdateItem(item);
-                if (bResult)
-                {
-                    MessageBox.Show("성공적으로 수정되었습니다");
-                    DataLoad();
-                }
-                else
-                {
-                    MessageBox.Show("수정중 오류가 발생하였습니다 다시 시도해주세요");
-                }
-            }
-        }
+        //    //    bool bResult = service.UpdateItem(item);
+        //    //    if (bResult)
+        //    //    {
+        //    //        MessageBox.Show("성공적으로 수정되었습니다");
+        //    //        DataLoad();
+        //    //    }
+        //    //    else
+        //    //    {
+        //    //        MessageBox.Show("수정중 오류가 발생하였습니다 다시 시도해주세요");
+        //    //    }
+        //    //}
+        //}
 
         private void Btn_Delete_Click(object sender, EventArgs e)
         {
@@ -191,6 +191,11 @@ namespace Team5_SmartMOM.KIS
 
         private void Button3_Click(object sender, EventArgs e)
         {
+        }
+
+        private void Btn_Search_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
