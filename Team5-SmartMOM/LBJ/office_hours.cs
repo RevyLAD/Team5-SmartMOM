@@ -67,7 +67,7 @@ namespace Team5_SmartMOM.LBJ
             dataGridView1.DataSource = null;
             LBJ_Service service = new LBJ_Service();
             List<ShiftVO> Shiftlist = service.Shift();
-            dataGridView1.DataSource = list = Shiftlist;
+            dataGridView1.DataSource = Shiftlist;
 
             List<CommonCodeVO> list1 = new List<CommonCodeVO>();
 
@@ -126,17 +126,28 @@ namespace Team5_SmartMOM.LBJ
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (cbosystem.Text.Trim() == "전체")
+            List<ShiftVO> list = new List<ShiftVO>();
+
+            if (cboShift.Text.Trim() == "" && cbosystem.Text.Trim() == "")
             {
-                DataLoad();
+                
             }
-            else
+            else 
             {
-                List<ShiftVO> svo = (from item in list
-                                     where item.FAC_Code == cbosystem.Text
-                                     select item).ToList();
-                dataGridView1.DataSource = svo;                
+                dataGridView1.DataSource = ShiftSearch();
             }
+            //if (cbosystem.Text.Trim() == "전체")
+            //{
+            //    string system = cbosystem.Text.Trim();
+            //    list = null;
+            //    list = (from item in list
+            //            where item.FAC_Code.Contains(system)
+            //            select item).ToList();
+            //    dataGridView1.DataSource = list;
+            //}
+            //else
+            //    DataLoad();
+                
         }
         private List<ShiftVO> ShiftSearch()
         {
@@ -180,6 +191,39 @@ namespace Team5_SmartMOM.LBJ
                     DataLoad();
                 }
                 else { }                         
+            }
+        }
+
+        private void cbosystem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbosystem.Text != "")
+                {
+                    string FacCode = cbosystem.Text;
+
+                    if (FacCode == "전체")
+                    {
+                        dataGridView1.DataSource = list;
+                    }
+                    else
+                    {
+                        List<ShiftVO> searchlist = null;
+                        searchlist = (from item in list
+                                      where item.FAC_Code.ToString().Contains(FacCode)
+                                      select item).ToList();
+
+                        dataGridView1.DataSource = searchlist;
+                    }
+                }
+                else
+                {
+                    DataLoad();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
             }
         }
     }

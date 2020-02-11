@@ -29,14 +29,22 @@
         private void InitializeComponent()
         {
             this.btnSearch = new System.Windows.Forms.Button();
-            this.cbosystem = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.cboFacCode = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -59,20 +67,28 @@
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1202, 93);
+            this.panel2.Size = new System.Drawing.Size(1202, 127);
             // 
             // panelTop
             // 
-            this.panelTop.Controls.Add(this.cboFacCode);
+            this.panelTop.Controls.Add(this.textBox1);
+            this.panelTop.Controls.Add(this.comboBox7);
+            this.panelTop.Controls.Add(this.label11);
+            this.panelTop.Controls.Add(this.comboBox6);
+            this.panelTop.Controls.Add(this.comboBox3);
             this.panelTop.Controls.Add(this.btnSearch);
-            this.panelTop.Controls.Add(this.cbosystem);
+            this.panelTop.Controls.Add(this.comboBox1);
             this.panelTop.Controls.Add(this.label2);
+            this.panelTop.Controls.Add(this.textBox2);
             this.panelTop.Controls.Add(this.dateTimePicker2);
             this.panelTop.Controls.Add(this.dateTimePicker1);
             this.panelTop.Controls.Add(this.label10);
             this.panelTop.Controls.Add(this.label3);
+            this.panelTop.Controls.Add(this.label7);
+            this.panelTop.Controls.Add(this.label5);
+            this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.label9);
-            this.panelTop.Size = new System.Drawing.Size(1202, 73);
+            this.panelTop.Size = new System.Drawing.Size(1202, 107);
             // 
             // splitContainer2
             // 
@@ -88,21 +104,20 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1114, 36);
+            this.btnSearch.Location = new System.Drawing.Point(1105, 44);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(81, 30);
             this.btnSearch.TabIndex = 99;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // cbosystem
+            // comboBox1
             // 
-            this.cbosystem.FormattingEnabled = true;
-            this.cbosystem.Location = new System.Drawing.Point(453, 15);
-            this.cbosystem.Name = "cbosystem";
-            this.cbosystem.Size = new System.Drawing.Size(161, 20);
-            this.cbosystem.TabIndex = 95;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(453, 15);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(161, 20);
+            this.comboBox1.TabIndex = 95;
             // 
             // label2
             // 
@@ -113,6 +128,13 @@
             this.label2.Size = new System.Drawing.Size(51, 19);
             this.label2.TabIndex = 94;
             this.label2.Text = "* 설비";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(121, 41);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(191, 21);
+            this.textBox2.TabIndex = 91;
             // 
             // dateTimePicker2
             // 
@@ -146,11 +168,41 @@
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(658, 16);
+            this.label3.Location = new System.Drawing.Point(357, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 19);
             this.label3.TabIndex = 85;
             this.label3.Text = "* 품목";
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(11, 41);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(99, 19);
+            this.label7.TabIndex = 84;
+            this.label7.Text = "* 작업지시번호";
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(357, 45);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 19);
+            this.label5.TabIndex = 83;
+            this.label5.Text = "* 재고량";
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 71);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 19);
+            this.label4.TabIndex = 82;
+            this.label4.Text = "* 상태";
             // 
             // label9
             // 
@@ -162,13 +214,46 @@
             this.label9.TabIndex = 80;
             this.label9.Text = "* 요청일";
             // 
-            // cboFacCode
+            // comboBox3
             // 
-            this.cboFacCode.FormattingEnabled = true;
-            this.cboFacCode.Location = new System.Drawing.Point(733, 18);
-            this.cboFacCode.Name = "cboFacCode";
-            this.cboFacCode.Size = new System.Drawing.Size(163, 20);
-            this.cboFacCode.TabIndex = 100;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(121, 71);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(191, 20);
+            this.comboBox3.TabIndex = 100;
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(453, 44);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(161, 20);
+            this.comboBox6.TabIndex = 101;
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(675, 18);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(51, 19);
+            this.label11.TabIndex = 102;
+            this.label11.Text = "* 재고";
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(765, 18);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(161, 20);
+            this.comboBox7.TabIndex = 103;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(453, 71);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(161, 21);
+            this.textBox1.TabIndex = 104;
             // 
             // Material_Ledger_Export
             // 
@@ -194,13 +279,21 @@
         #endregion
 
         protected System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.ComboBox cbosystem;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cboFacCode;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }
