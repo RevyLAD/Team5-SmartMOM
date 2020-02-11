@@ -27,11 +27,12 @@ namespace Team5_SmartMOM
         {
             CommonCodeService cmservice = new CommonCodeService();
             CommonUtil.ComboBinding(cboUMU, cmservice.GetUse(), "Common_Key", "Common_Value");
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtFacName.Text.Trim() != null && txtCode.Text.Trim() != null)
+            if (txtNo.Text.Trim()!=""&& txtFacName.Text.Trim() != "" && txtCode.Text.Trim() != "")
             {
                 HSC_Service service = new HSC_Service();
                 FacilitieVO vo = new FacilitieVO();
@@ -40,7 +41,7 @@ namespace Team5_SmartMOM
                 vo.FACG_Code = txtCode.Text.Trim();
                 vo.FACG_Information = txtExplain.Text.Trim();
                 vo.FACG_Modifier = txtModi.Text.Trim();
-                vo.FACG_ModifyDate = Convert.ToDateTime(txtModiTime.Text.Trim());
+                vo.FACG_ModifyDate = dateTimePicker1.Value ;
                 vo.FACG_Name = txtFacName.Text.Trim();
                 vo.FACG_UseOrNot = cboUMU.Text.Trim();
 
@@ -52,6 +53,11 @@ namespace Team5_SmartMOM
             {
                 MessageBox.Show("필수정보를 입력해주세요");
             }
+        }
+
+        private void panelFull_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

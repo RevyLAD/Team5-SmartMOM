@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace Project_VO
 {
     public class BORVO
-    {
+    { 
+        public int BOR_No { get; set; }
         public string ITEM_Code { get; set; }
         public string FACG_Code { get; set; }
         public string FAC_Code { get; set; }

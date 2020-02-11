@@ -10,6 +10,8 @@ using System.Text;
 using System.Windows.Forms;
 using Team5_SmartMOM.Service;
 using Microsoft.Office.Interop.Excel;
+using Team5_SmartMOM.BaseForm;
+using Team5_Pop;
 
 namespace Team5_SmartMOM
 {
@@ -23,7 +25,7 @@ namespace Team5_SmartMOM
         List<BORVO> list;
         private void button3_Click(object sender, EventArgs e)
         {
-            BORRegister frm = new BORRegister(1);
+            BORRegister frm = new BORRegister();
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
             DataLoad();
@@ -31,6 +33,7 @@ namespace Team5_SmartMOM
 
         private void DataLoad()
         {
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "번호", "BOR_No", true, 50);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "설비군코드", "FACG_Code", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "설비코드", "FAC_Code", true, 170);
@@ -47,6 +50,9 @@ namespace Team5_SmartMOM
         private void BOR_Load(object sender, EventArgs e)
         {
             DataLoad();
+
+            PopService service = new PopService();
+            CommonUtil.ComboBinding(cboFacCrow, service.GetFACName(), "FAC_Code", "FAC_Name");
 
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
         }
@@ -106,20 +112,28 @@ namespace Team5_SmartMOM
 
         private void button2_Click(object sender, EventArgs e)
         {
-            BORVO vo = new BORVO();
-            vo.ITEM_Code = dataGridView1.Rows[temp.RowIndex].Cells[0].Value.ToString();
-            vo.FACG_Code = dataGridView1.Rows[temp.RowIndex].Cells[1].Value.ToString();
-            vo.FAC_Code = dataGridView1.Rows[temp.RowIndex].Cells[2].Value.ToString();
-            vo.BOR_TactTime = Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[3].Value.ToString());
-            vo.BOR_Priority = Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[4].Value.ToString());
-            vo.BOR_UseOrNot = dataGridView1.Rows[temp.RowIndex].Cells[6].Value.ToString();
-            vo.BOR_yeild = Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[5].Value.ToString());
-            vo.BOR_Ohters = dataGridView1.Rows[temp.RowIndex].Cells[7].Value?.ToString() ?? null;
+            if (temp != null)
+            {
+                BORVO vo = new BORVO();
+                vo.ITEM_Code = dataGridView1.Rows[temp.RowIndex].Cells[1].Value.ToString();
+                vo.FACG_Code = dataGridView1.Rows[temp.RowIndex].Cells[2].Value.ToString();
+                vo.FAC_Code = dataGridView1.Rows[temp.RowIndex].Cells[3].Value.ToString();
+                vo.BOR_TactTime = Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[4].Value.ToString());
+                vo.BOR_Priority = Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[5].Value.ToString());
+                vo.BOR_UseOrNot = dataGridView1.Rows[temp.RowIndex].Cells[6].Value.ToString();
+                vo.BOR_yeild = Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[7].Value);
+                vo.BOR_No = Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[0].Value);
+                vo.BOR_Ohters = dataGridView1.Rows[temp.RowIndex].Cells[8].Value?.ToString() ?? null;
 
-            BORRegister frm = new BORRegister(2, vo);
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.ShowDialog();
-            DataLoad();
+                BORRegister frm = new BORRegister(vo);
+                frm.StartPosition = FormStartPosition.CenterParent;
+                frm.ShowDialog();
+                DataLoad();
+            }
+            else
+            {
+                MessageBox.Show("수정할 BOR을 선택해주세요");
+            }
         }
         DataGridViewCellEventArgs temp;
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -191,6 +205,28 @@ namespace Team5_SmartMOM
         private void metroButton4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (temp != null)
+            {
+                if (MessageBox.Show("정말 삭제하시겠습니까?", "삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    HSC_Service service = new HSC_Service();
+                    service.DeleteBOR(Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[0].Value));
+                    DataLoad();
+                }
+            }
+            else
+            {
+                MessageBox.Show("삭제할 BOR을 선택해주세요");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DataLoad();
         }
     }
 }

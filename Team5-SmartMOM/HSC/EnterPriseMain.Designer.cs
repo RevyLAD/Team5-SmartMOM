@@ -35,6 +35,7 @@
             this.cboFacCrow = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -53,7 +54,13 @@
             // 
             // button2
             // 
+            this.button2.Text = "수정";
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Text = "삭제";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -61,6 +68,7 @@
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.button4);
             this.panelTop.Controls.Add(this.btnSearch);
             this.panelTop.Controls.Add(this.textBox2);
             this.panelTop.Controls.Add(this.label6);
@@ -143,13 +151,27 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1104, 27);
+            this.btnSearch.Location = new System.Drawing.Point(1105, 14);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(81, 30);
             this.btnSearch.TabIndex = 22;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // button4
+            // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.button4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(1105, 46);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(81, 30);
+            this.button4.TabIndex = 23;
+            this.button4.Text = "전체 조회";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // EnterPriseMain
             // 
@@ -180,5 +202,6 @@
         private System.Windows.Forms.ComboBox cboFacCrow;
         private System.Windows.Forms.Label label3;
         protected System.Windows.Forms.Button btnSearch;
+        protected System.Windows.Forms.Button button4;
     }
 }
