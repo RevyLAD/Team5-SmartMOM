@@ -24,6 +24,7 @@ namespace Team5_SmartMOM.PSM
 
         private void Purchasing_Load(object sender, EventArgs e)
         {
+            dtpDateStart.Value = DateTime.Now;
             dtpDateEnd.Value = DateTime.Now.AddMonths(1);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);            
             InitCombo();

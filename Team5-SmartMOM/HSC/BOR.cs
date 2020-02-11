@@ -1,12 +1,15 @@
-﻿using Project_VO;
+﻿using DevExpress.Utils.CommonDialogs;
+using Project_VO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Team5_SmartMOM.Service;
+using Microsoft.Office.Interop.Excel;
 
 namespace Team5_SmartMOM
 {
@@ -65,9 +68,9 @@ namespace Team5_SmartMOM
         {
             List<BORVO> newlist = new List<BORVO>();
 
-            if (textBox1.Text.Trim()==""&& 
-                textBox2.Text.Trim()==""&&
-                cboFacCrow.Text.Trim()=="")
+            if (textBox1.Text.Trim() == "" &&
+                textBox2.Text.Trim() == "" &&
+                cboFacCrow.Text.Trim() == "")
             {
                 MessageBox.Show("검색어를 입력해주세요");
             }
@@ -76,9 +79,9 @@ namespace Team5_SmartMOM
                 foreach (var li in list)
                 {
                     if (Convert.ToString(li.ITEM_Code).Trim().Contains(textBox1.Text.Trim()) &&
-                        li.FACG_Code.Trim().Contains(cboFacCrow.Text.Trim())&&
+                        li.FACG_Code.Trim().Contains(cboFacCrow.Text.Trim()) &&
                         li.FAC_Code.Trim().Contains(textBox2.Text.Trim()))
-                            newlist.Add(li);
+                        newlist.Add(li);
                 }
                 dataGridView1.DataSource = newlist;
                 dataGridView1.DataSource = SearchBOR();
@@ -91,8 +94,8 @@ namespace Team5_SmartMOM
 
             foreach (var li in list)
             {
-                if (Convert.ToString(li.ITEM_Code).Trim().Contains(textBox1.Text.Trim())&&
-                        li.FAC_Code.Trim().Contains(textBox2.Text.Trim())&&
+                if (Convert.ToString(li.ITEM_Code).Trim().Contains(textBox1.Text.Trim()) &&
+                        li.FAC_Code.Trim().Contains(textBox2.Text.Trim()) &&
                         li.FACG_Code.Trim().Contains(cboFacCrow.Text.Trim()))
                     newlist.Add(li);
             }
@@ -100,7 +103,7 @@ namespace Team5_SmartMOM
             return newlist;
         }
 
-        
+
         private void button2_Click(object sender, EventArgs e)
         {
             BORVO vo = new BORVO();
@@ -111,7 +114,7 @@ namespace Team5_SmartMOM
             vo.BOR_Priority = Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[4].Value.ToString());
             vo.BOR_UseOrNot = dataGridView1.Rows[temp.RowIndex].Cells[6].Value.ToString();
             vo.BOR_yeild = Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[5].Value.ToString());
-            vo.BOR_Ohters = dataGridView1.Rows[temp.RowIndex].Cells[7].Value?.ToString()??null;
+            vo.BOR_Ohters = dataGridView1.Rows[temp.RowIndex].Cells[7].Value?.ToString() ?? null;
 
             BORRegister frm = new BORRegister(2, vo);
             frm.StartPosition = FormStartPosition.CenterParent;
@@ -124,5 +127,70 @@ namespace Team5_SmartMOM
             temp = e;
         }
 
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application xlApp;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            int i, j;
+
+            saveFileDialog1.Filter = "Excel Files (*.xls)|*.xls";
+            saveFileDialog1.InitialDirectory = "C:";
+            saveFileDialog1.Title = "Save";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlWorkBook = xlApp.Workbooks.Add();
+                xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                xlWorkSheet.Cells[1, 1] = "품목";
+                xlWorkSheet.Cells[1, 2] = "설비군 코드";
+                xlWorkSheet.Cells[1, 3] = "설비 코드";
+                xlWorkSheet.Cells[1, 4] = "우선 순위";
+                xlWorkSheet.Cells[1, 5] = "사용 유무";
+                xlWorkSheet.Cells[1, 6] = "수율";
+                xlWorkSheet.Cells[1, 7] = "비고";
+
+                for (i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    for (j = 0; j < dataGridView1.ColumnCount - 1; j++)
+                    {
+                        if(dataGridView1[j, i].Value != null)
+                            xlWorkSheet.Cells[i + 2, j + 1] = dataGridView1[j, i].Value.ToString();
+                    }
+                }
+
+                xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                xlWorkBook.Close(true);
+                xlApp.Quit();
+
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlApp);
+            }
+        }
+
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+
+        private void metroButton4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -45,6 +45,7 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cboFacilities = new System.Windows.Forms.ComboBox();
+            this.btnAllSearch = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtITEM_Code = new System.Windows.Forms.TextBox();
             this.txtWO_ID = new System.Windows.Forms.TextBox();
@@ -123,7 +124,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button3.BackColor = System.Drawing.Color.Snow;
             this.button3.Dock = System.Windows.Forms.DockStyle.Right;
             this.button3.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button3.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
@@ -138,7 +139,7 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button5.BackColor = System.Drawing.Color.Snow;
             this.button5.Dock = System.Windows.Forms.DockStyle.Right;
             this.button5.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button5.Image = global::Team5_SmartMOM.Properties.Resources.note;
@@ -153,7 +154,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button1.BackColor = System.Drawing.Color.Snow;
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.Image = global::Team5_SmartMOM.Properties.Resources.note;
@@ -199,7 +200,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button2.BackColor = System.Drawing.Color.Snow;
             this.button2.Dock = System.Windows.Forms.DockStyle.Right;
             this.button2.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button2.Image = global::Team5_SmartMOM.Properties.Resources.microsoft_excel;
@@ -237,6 +238,7 @@
             this.panelZ1.Controls.Add(this.dateTimePicker2);
             this.panelZ1.Controls.Add(this.dateTimePicker1);
             this.panelZ1.Controls.Add(this.cboFacilities);
+            this.panelZ1.Controls.Add(this.btnAllSearch);
             this.panelZ1.Controls.Add(this.btnSearch);
             this.panelZ1.Controls.Add(this.txtITEM_Code);
             this.panelZ1.Controls.Add(this.txtWO_ID);
@@ -280,13 +282,27 @@
             this.cboFacilities.Size = new System.Drawing.Size(191, 20);
             this.cboFacilities.TabIndex = 63;
             // 
+            // btnAllSearch
+            // 
+            this.btnAllSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAllSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.btnAllSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAllSearch.ForeColor = System.Drawing.Color.White;
+            this.btnAllSearch.Location = new System.Drawing.Point(1051, 45);
+            this.btnAllSearch.Name = "btnAllSearch";
+            this.btnAllSearch.Size = new System.Drawing.Size(81, 30);
+            this.btnAllSearch.TabIndex = 62;
+            this.btnAllSearch.Text = "되돌리기";
+            this.btnAllSearch.UseVisualStyleBackColor = false;
+            this.btnAllSearch.Click += new System.EventHandler(this.btnAllSearch_Click);
+            // 
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1130, 47);
+            this.btnSearch.Location = new System.Drawing.Point(1138, 45);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(81, 30);
             this.btnSearch.TabIndex = 62;
@@ -415,7 +431,7 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button4.BackColor = System.Drawing.Color.Snow;
             this.button4.Dock = System.Windows.Forms.DockStyle.Right;
             this.button4.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button4.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
@@ -431,7 +447,7 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button6.BackColor = System.Drawing.Color.Snow;
             this.button6.Dock = System.Windows.Forms.DockStyle.Right;
             this.button6.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button6.Image = global::Team5_SmartMOM.Properties.Resources.note;
@@ -447,7 +463,7 @@
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button7.BackColor = System.Drawing.Color.Snow;
             this.button7.Dock = System.Windows.Forms.DockStyle.Right;
             this.button7.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button7.Image = global::Team5_SmartMOM.Properties.Resources.microsoft_excel;
@@ -523,5 +539,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        protected System.Windows.Forms.Button btnAllSearch;
     }
 }

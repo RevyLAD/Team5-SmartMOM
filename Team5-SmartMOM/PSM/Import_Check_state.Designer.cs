@@ -348,10 +348,10 @@
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 403);
+            this.dataGridView2.Location = new System.Drawing.Point(0, 407);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1219, 199);
+            this.dataGridView2.Size = new System.Drawing.Size(1219, 195);
             this.dataGridView2.TabIndex = 7;
             // 
             // panel6
@@ -359,21 +359,21 @@
             this.panel6.Controls.Add(this.button1);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 373);
+            this.panel6.Location = new System.Drawing.Point(0, 375);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1219, 30);
+            this.panel6.Size = new System.Drawing.Size(1219, 32);
             this.panel6.TabIndex = 6;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button1.BackColor = System.Drawing.Color.Snow;
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.Image = global::Team5_SmartMOM.Properties.Resources.note;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(1162, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 30);
+            this.button1.Size = new System.Drawing.Size(57, 32);
             this.button1.TabIndex = 10;
             this.button1.Text = "취소";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -394,7 +394,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 113);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 115);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1219, 260);
@@ -408,19 +408,19 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 87);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1219, 26);
+            this.panel3.Size = new System.Drawing.Size(1219, 28);
             this.panel3.TabIndex = 1;
             // 
             // btnCheck_OK
             // 
-            this.btnCheck_OK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.btnCheck_OK.BackColor = System.Drawing.Color.Snow;
             this.btnCheck_OK.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCheck_OK.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCheck_OK.Image = global::Team5_SmartMOM.Properties.Resources.note;
             this.btnCheck_OK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCheck_OK.Location = new System.Drawing.Point(1046, 0);
             this.btnCheck_OK.Name = "btnCheck_OK";
-            this.btnCheck_OK.Size = new System.Drawing.Size(116, 26);
+            this.btnCheck_OK.Size = new System.Drawing.Size(116, 28);
             this.btnCheck_OK.TabIndex = 13;
             this.btnCheck_OK.Text = "검사확인완료";
             this.btnCheck_OK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -429,14 +429,14 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button2.BackColor = System.Drawing.Color.Snow;
             this.button2.Dock = System.Windows.Forms.DockStyle.Right;
             this.button2.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button2.Image = global::Team5_SmartMOM.Properties.Resources.microsoft_excel;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(1162, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(57, 26);
+            this.button2.Size = new System.Drawing.Size(57, 28);
             this.button2.TabIndex = 9;
             this.button2.Text = "엑셀";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

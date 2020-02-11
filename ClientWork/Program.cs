@@ -27,44 +27,29 @@ namespace ClientWork
             machineID = rnd.Next(1, 10);
 
             Console.WriteLine("생산량 전송 프로그램 시작");
-            //SetTimer();
-            //TcpStart();
             TcpConnection();
             SetTimer();
+            
             Console.ReadLine();
-            timer1.Stop();
+            
             timer1.Dispose();
             Console.WriteLine("생산량 전송 프로그램 종료");
         }
+
+        static TcpClient tc;
+        static NetworkStream stream;
         private static void TcpConnection()
         {
-            TcpClient tc = new TcpClient("127.0.0.1", 7000);
-            NetworkStream stream = tc.GetStream();
+            tc = new TcpClient("127.0.0.1", 7000);
+            stream = tc.GetStream();
 
             byte[] outbuff = new byte[1024];
             int nbytes = stream.Read(outbuff, 0, outbuff.Length);
             string outMsg = Encoding.ASCII.GetString(outbuff, 0, nbytes);
 
-            stream.Close();
-            tc.Close();
 
-            Console.WriteLine($"{nbytes} bytes : {outMsg}");
+            Console.WriteLine($"product : {outMsg}");
             Log.WriteInfo($"{nbytes} bytes : {outMsg}");
-        }
-        private static void TcpStart()
-        {
-            TcpClient tc = new TcpClient("127.0.0.1", 7000);
-            NetworkStream stream = tc.GetStream();
-
-            string msg = "생산시작";
-            byte[] buff = Encoding.ASCII.GetBytes(msg);
-
-            stream.Write(buff, 0, buff.Length);
-
-
-            stream.Close();
-            tc.Close();
-
         }
 
         private static void SetTimer()
@@ -77,25 +62,45 @@ namespace ClientWork
 
         private static void timer1_Elapsed(object sender, ElapsedEventArgs e)
         {
-            Random rnd = new Random((int)DateTime.UtcNow.Ticks);
 
-            TcpClient tc = new TcpClient("127.0.0.1", 7000);
-            NetworkStream stream = tc.GetStream();
 
-            string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")} Machine/{machineID}/{rnd.Next(1, 77)}/{rnd.Next(1, 5)}/{rnd.Next(0, 2)}";
-            byte[] buff = Encoding.ASCII.GetBytes(msg);
+            //TcpClient tc = new TcpClient("127.0.0.1", 7000);
+            //NetworkStream stream = tc.GetStream();
 
-            stream.Write(buff, 0, buff.Length);
+
+            string temp = "continue";
 
             byte[] outbuff = new byte[1024];
             int nbytes = stream.Read(outbuff, 0, outbuff.Length);
             string outMsg = Encoding.ASCII.GetString(outbuff, 0, nbytes);
+            Console.WriteLine(outMsg);
+            
+            if (outMsg.Equals("pause") || outMsg.Equals("continue"))
+            {
+                temp = outMsg;
+                if (outMsg.Equals("puase"))
+               {
+                    Console.WriteLine(temp);
+                    Log.WriteInfo($"[puase] : {DateTime.Now.ToString()}");
+                }
+                else if (outMsg.Equals("continue"))
+                {
+                    Console.WriteLine(temp);
+                    Log.WriteInfo($"[continue] : {DateTime.Now.ToString()}");
+                    temp = string.Empty;
+                }
+            }
 
-            stream.Close();
-            tc.Close();
+            if (temp.Equals("continue"))
+            {
+                Random rnd = new Random((int)DateTime.UtcNow.Ticks);
+                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")} Machine/{machineID}/{rnd.Next(1, 77)}/{rnd.Next(1, 5)}/{rnd.Next(0, 2)}";
+                byte[] buff = Encoding.ASCII.GetBytes(msg);
+                stream.Write(buff, 0, buff.Length);
 
-            Console.WriteLine($"{nbytes} bytes : {msg}");
-            Log.WriteInfo($"{nbytes} bytes : {msg}");
+                Console.WriteLine($"bytes : {msg}");
+                Log.WriteInfo($"bytes : {msg}");
+            }
         }
     }
 }

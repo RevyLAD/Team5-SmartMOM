@@ -25,7 +25,7 @@ namespace Team5_SmartMOM.HSM
         private void Sales_Master_Load(object sender, EventArgs e)
         {
 
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "고객WO", "SO_WorkOrderID", true, 160);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "고객WO", "SO_WorkOrderID", true, 180);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "고객사", "COM_Code", true, 80);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "고객사명", "COM_Name", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 100);
@@ -36,8 +36,10 @@ namespace Team5_SmartMOM.HSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "취소수량", "SALES_CancelQty", true, 90);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "SALES_Duedate", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "주문일", "SALES_OrderDate", true, 100);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "SALES_Remark", true, 380);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상태", "SALES_ORDER_STATE", true, 100);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "SALES_Remark", true, 260);
 
+            button2.PerformClick();
             InitCombo();
 
         }
@@ -47,19 +49,17 @@ namespace Team5_SmartMOM.HSM
             CommonCodeService service = new CommonCodeService();
 
             List<CommonCodeVO> listGubunCode = service.GetAllCommonCode();
-            List<CompanyCodeVO> listCompanyCode = service.GetAllCompanyCode();
-            List<ItemCodeVO> listItemCode = service.GetAllItemCode();
+            List<CompanyCodeVO> listCompanyCode = service.GetCustomerCompanyCode();
 
 
             //공통코드링큐
             List<CommonCodeVO> OrderGubunList = (from item in listGubunCode
-                                                 where item.Common_Type == "ORDER_GUBUN"
+                                                 where item.Common_Type == "SALES_ORDER_STATE"
                                                  select item).ToList();
 
 
             CommonUtil.ComboBinding(cboState, OrderGubunList, "Common_Key", "Common_Value");
             CommonUtil.ComboBinding(cboCustomer, listCompanyCode, "COM_Code", "COM_Name");
-            CommonUtil.ComboBinding(cboProduct, listItemCode, "ITEM_Code", "ITEM_Name");
 
         }
         private void button2_Click(object sender, EventArgs e) //영업마스터 생성
@@ -73,6 +73,12 @@ namespace Team5_SmartMOM.HSM
             if (list.Count != 0)
             {
                 dataGridView1.DataSource = list;
+
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    if(dataGridView1[11, i].Value.ToString() == "주문대기")
+                        dataGridView1[11, i].Style.BackColor = Color.LightYellow;
+                }
             }
             else
                 MessageBox.Show("생성할 영업마스터 정보가 없습니다.\n영업마스터를 업로드 해주시길 바랍니다.", "확인");
@@ -100,17 +106,27 @@ namespace Team5_SmartMOM.HSM
             {
                 if (dataGridView1.Rows[i].Cells[0].Value==null)
                     break;
-                UpdatePlanIDVO plan = new UpdatePlanIDVO();
-                plan.SO_WorkOrderID = dataGridView1.Rows[i].Cells[0].Value.ToString();
-                //Plan_ID : 20200101_P 형식
-                plan.Plan_ID = dataGridView1.Rows[i].Cells[10].Value.ToString().Replace("-","")+ "_" +
-                    dataGridView1.Rows[i].Cells[5].Value.ToString().Substring(0,1);
 
-                plans.Add(plan);
+                if(dataGridView1.Rows[i].Cells[11].Value.ToString() == "주문대기")
+                {
+
+                    UpdatePlanIDVO plan = new UpdatePlanIDVO();
+                    plan.SO_WorkOrderID = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                    //Plan_ID : 20200101_P 형식
+                    plan.Plan_ID = dataGridView1.Rows[i].Cells[10].Value.ToString().Replace("-", "") + "_" +
+                        dataGridView1.Rows[i].Cells[5].Value.ToString().Substring(0, 1);
+
+                    plans.Add(plan);
+                }
             }
 
             HSM_Service service = new HSM_Service();
-           
+
+            if(plans.Count==0)
+            {
+                MessageBox.Show("생성할 수요계획 대상이 없습니다.");
+                return;
+            }
 
             if (service.UpdatePlanID(plans))
             {
