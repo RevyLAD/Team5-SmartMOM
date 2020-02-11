@@ -29,44 +29,46 @@ namespace Team5_SmartMOM.PSM
             chk.HeaderText = "";
             chk.Name = "Check";
             chk.Width = 30;
-            dataGridView1.Columns.Add(chk);
+            dataGridView2.Columns.Add(chk);
 
-            Point headerLocation = dataGridView1.GetCellDisplayRectangle(0, -1, true).Location;
+            Point headerLocation = dataGridView2.GetCellDisplayRectangle(0, -1, true).Location;
             headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 6);
-            headerCheckBox.BackColor = Color.White;
+            headerCheckBox.BackColor = Color.FromArgb(55, 113, 138);
             headerCheckBox.Size = new Size(18, 18);
             headerCheckBox.Click += new EventHandler(HeaderCheckBox_Click);
-            dataGridView1.Controls.Add(headerCheckBox);
+            dataGridView2.Controls.Add(headerCheckBox);
+            dataGridView2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView2.AutoGenerateColumns = false;
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "출발번호", "VO_ID", true, 100);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "검사일", "VOD_ResultDay", true, 90);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체명", "COM_Name", true, 100);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 200);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 200);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "규격", "ITEM_Size", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "최종결과", "VOD_Result", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납품수량", "VOD_GoodEA", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "불량수량", "VOD_BadEA", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "No", "VO_ID", true, 70, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "검사일", "VOD_ResultDay", true, 120, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "업체명", "COM_Name", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품목", "ITEM_Code", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품명", "ITEM_Name", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "규격", "ITEM_Size", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "최종결과", "VOD_Result", true, 150, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "납품수량", "VOD_GoodEA", true, 100, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "불량수량", "VOD_BadEA", true, 100, DataGridViewContentAlignment.MiddleRight);
 
             cboResult.Items.Add("");
             cboResult.Items.Add("합격");
             cboResult.Items.Add("불합격");
             DataLoad();
             Datagridview();
+            btnSearch_Click(null, new EventArgs());
         }
 
         public void Datagridview()
         {
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(55, 113, 138);
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dataGridView1.ColumnHeadersHeight = 30;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridView2.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(55, 113, 138);
+            dataGridView2.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView2.ColumnHeadersHeight = 30;
+            dataGridView2.EnableHeadersVisualStyles = false;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
         }
 
             public void DataLoad()
@@ -76,35 +78,39 @@ namespace Team5_SmartMOM.PSM
             ics.endDate = dtpDateEnd.Value.ToShortDateString();
             ics.Company = cbocompany.Text.Trim();
             ics.Item = txtitem.Text.Trim();
-            ics.Result = cboResult.Text.Trim();            
+            ics.Result = cboResult.Text.Trim();
+            ics.Plan_ID = cboplanid.Text.Trim();
 
             PSM_Service service = new PSM_Service();
             list = service.ImportCheck(ics);
-            dataGridView1.DataSource = list;
+            dataGridView2.DataSource = list;
             
             List<CompanyCodeVO> company = service.GetAllCompanyCode();
             CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "");
 
-            
-            
+            List<PlanIDVO> planid = service.PlanID();           
+            CommonUtil.ComboBinding(cboplanid, planid, "Plan_ID", "Plan_ID");
+
+
+
         }
 
         private void HeaderCheckBox_Click(object sender, EventArgs e)
         {
-            dataGridView1.EndEdit();
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            dataGridView2.EndEdit();
+            foreach (DataGridViewRow row in dataGridView2.Rows)
             {
                 DataGridViewCheckBoxCell chkBox = row.Cells["Check"] as DataGridViewCheckBoxCell;
                 chkBox.Value = headerCheckBox.Checked;
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == 0)
             {
                 bool isChecked = true;
-                foreach (DataGridViewRow row in dataGridView1.Rows)
+                foreach (DataGridViewRow row in dataGridView2.Rows)
                 {
                     if (Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue) == false)
                     {
@@ -119,7 +125,7 @@ namespace Team5_SmartMOM.PSM
         private void btnCheck_OK_Click(object sender, EventArgs e)
         {
             List<DeleteOrder> lists = new List<DeleteOrder>();
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            foreach (DataGridViewRow row in dataGridView2.Rows)
             {
                 bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
 
@@ -148,35 +154,7 @@ namespace Team5_SmartMOM.PSM
 
         private void cbocompany_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                if (cbocompany.Text != "")
-                {
-                    string query = cbocompany.Text;
-
-                    if (query == "전체")
-                    {
-                        dataGridView1.DataSource = list;
-                    }
-                    else
-                    {
-                        List<ImportCheckVO> searchlist = null;
-                        searchlist = (from team5 in list
-                                      where team5.COM_Name.ToString().Contains(query)
-                                      select team5).ToList();
-
-                        dataGridView1.DataSource = searchlist;
-                    }
-                }
-                else
-                {
-                    DataLoad();
-                }
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+            
         }
 
         private void cboResult_SelectedIndexChanged(object sender, EventArgs e)
@@ -192,10 +170,11 @@ namespace Team5_SmartMOM.PSM
             ics.Company = cbocompany.Text.Trim();
             ics.Item = txtitem.Text.Trim();
             ics.Result = cboResult.Text.Trim();
+            ics.Plan_ID = cboplanid.Text.Trim();
 
             PSM_Service service = new PSM_Service();
             list = service.ImportCheck(ics);
-            dataGridView1.DataSource = list;
+            dataGridView2.DataSource = list;
         }
 
         private void txtitem_KeyPress(object sender, KeyPressEventArgs e)

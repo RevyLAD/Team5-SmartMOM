@@ -52,9 +52,9 @@ namespace Project_DAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                string sql = @"SELECT VO_ID, c.COM_Name, COM_Type, c.COM_Code, ITEM_Name, MATERIAL_ORDER_STATE, VO_Quantity, ITEM_Unit, ITEM_Size, a.ITEM_Code, VO_EndDate, VO_StartDate, VO_InDate
+                string sql = @"SELECT VO_ID, c.COM_Name, COM_Type, c.COM_Code, ITEM_Name, MATERIAL_ORDER_STATE, VO_Quantity, ITEM_Unit, ITEM_Size, a.ITEM_Code, VO_EndDate, VO_StartDate, VO_InDate, Plan_ID
                                         FROM VendorOrder a inner join ITEM b on a.ITEM_Code = b.ITEM_Code inner join Company c on a.COM_Code = c.COM_Code
-                                        WHERE VO_EndDate Between @startDate and @endDate ";
+                                        WHERE Plan_ID = @Plan_ID ";
 
                 if (ps.Item != "")
                 {
@@ -87,8 +87,7 @@ namespace Project_DAC
 
                 cmd.CommandText = sql;
 
-                cmd.Parameters.AddWithValue("@startDate", ps.startDate);
-                cmd.Parameters.AddWithValue("@endDate", ps.endDate);
+                cmd.Parameters.AddWithValue("@Plan_ID", ps.Plan_ID);
                 cmd.Parameters.AddWithValue("@ITEM_Name", ps.Item);
                 cmd.Parameters.AddWithValue("@COM_Name", ps.Company);
                 cmd.Parameters.AddWithValue("@MATERIAL_ORDER_STATE", ps.State);
@@ -118,7 +117,7 @@ namespace Project_DAC
             }
         }
 
-        public bool VendorOrder(List<VendorOrderVO> codelist, string Plan_ID)
+        public bool VendorOrder(List<VendorOrderVO> codelist)
         {
 
             using (SqlCommand cmd = new SqlCommand())
@@ -129,15 +128,18 @@ namespace Project_DAC
 
                 try
                 {
-                    cmd.CommandText = @"UPDATE SalesMaster SET Order_State = '발주완료' WHERE Plan_ID = @Plan_ID";
-                    cmd.Parameters.AddWithValue("@Plan_ID", Plan_ID);
+                    foreach (var item in codelist)
+                    {
+                        cmd.CommandText = @"UPDATE SalesMaster SET Order_State = '발주완료' WHERE Plan_ID = @Plan_ID";
+                        cmd.Parameters.AddWithValue("@Plan_ID", item.Plan_ID);
 
-                    cmd.ExecuteNonQuery();
-
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
                     foreach (var item in codelist)
                     {
                         cmd.CommandText = @"INSERT INTO VendorOrder (COM_Name, COM_Code, MATERIAL_ORDER_STATE, ITEM_Code, VO_EndDate, VO_Quantity, 
-VO_StartDate,  VO_InDate) VALUES (@COM_Name, @COM_Code, @MATERIAL_ORDER_STATE, @ITEM_Code, @VO_EndDate, @VO_Quantity, @VO_StartDate, @VO_InDate)";
+VO_StartDate,  VO_InDate, Plan_ID) VALUES (@COM_Name, @COM_Code, @MATERIAL_ORDER_STATE, @ITEM_Code, @VO_EndDate, @VO_Quantity, @VO_StartDate, @VO_InDate, @Plan_ID)";
 
                         cmd.Parameters.AddWithValue("@COM_Name", item.COM_Name);
                         cmd.Parameters.AddWithValue("@COM_Code", item.COM_Code);
@@ -146,7 +148,8 @@ VO_StartDate,  VO_InDate) VALUES (@COM_Name, @COM_Code, @MATERIAL_ORDER_STATE, @
                         cmd.Parameters.AddWithValue("@VO_EndDate", item.VO_EndDate);
                         cmd.Parameters.AddWithValue("@VO_Quantity", item.VO_Quantity);
                         cmd.Parameters.AddWithValue("@VO_StartDate", DateTime.Now.ToShortDateString());
-                        cmd.Parameters.AddWithValue("@VO_InDate", DateTime.Now.ToShortDateString());
+                        cmd.Parameters.AddWithValue("@VO_InDate", "");
+                        cmd.Parameters.AddWithValue("@Plan_ID", item.Plan_ID);
 
                         cmd.ExecuteNonQuery();
                         cmd.Parameters.Clear();
@@ -401,44 +404,28 @@ VO_StartDate,  VO_InDate) VALUES (@COM_Name, @COM_Code, @MATERIAL_ORDER_STATE, @
                 string sql = @"SELECT DISTINCT VO_ID, VO_StartDate, ITEM_OrderComp, v.COM_Code, c.COM_Name, v.ITEM_Code, ITEM_Name, ITEM_Size, ITEM_Unit, 
                     ITEM_ImportIns, VO_Quantity, VO_EndDate, MATERIAL_ORDER_STATE, ITEM_OrderMethod FROM VendorOrder v 
                     inner join ITEM i on v.ITEM_Code = i.ITEM_Code inner join Company c on v.COM_Code = c.COM_Code
-                    WHERE MATERIAL_ORDER_STATE = '발주대기' and VO_EndDate Between @startDate and @endDate ";
+                    WHERE MATERIAL_ORDER_STATE = '발주대기' and Plan_ID = @Plan_ID ";
 
-                if(sp.Item != "")
+                if (sp.Item != "")
                 {
                     sql = sql + " and ITEM_Name LIKE  '%' + @ITEM_Name +'%'";
                     if (sp.Company != "")
                     {
                         sql = sql + " and c.COM_Name = @COM_Name";
-                        if (sp.VO_ID != 0)
-                        {
-                            sql = sql + " and VO_ID = @VO_ID";
-                        }
-                    }
-                    else if (sp.VO_ID != 0)
-                    {
-                        sql = sql + " and VO_ID = @VO_ID";
                     }
                 }
                 else if (sp.Company != "")
                 {
-                    sql = sql + " and c.COM_Name = @COM_Name";
-                    if (sp.VO_ID != 0)
-                    {
-                        sql = sql + " and VO_ID = @VO_ID";
-                    }
-                }
-                else if (sp.VO_ID != 0)
-                {
-                    sql = sql + " and VO_ID = @VO_ID";
-                }
+                    sql = sql + " and c.COM_Name = @COM_Name";                }
+                    
 
                 cmd.CommandText = sql;
 
                 cmd.Parameters.AddWithValue("@startDate", sp.startDate);
                 cmd.Parameters.AddWithValue("@endDate", sp.endDate);
                 cmd.Parameters.AddWithValue("@ITEM_Name", sp.Item);
-                cmd.Parameters.AddWithValue("@COM_Name", sp.Company);
-                cmd.Parameters.AddWithValue("@VO_ID", sp.VO_ID);
+                cmd.Parameters.AddWithValue("@COM_Name", sp.Company);                
+                cmd.Parameters.AddWithValue("@Plan_ID", sp.Plan_ID); 
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -456,14 +443,14 @@ VO_StartDate,  VO_InDate) VALUES (@COM_Name, @COM_Code, @MATERIAL_ORDER_STATE, @
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 string sql = @"select v.VO_ID, COM_Name, v.ITEM_Code, ITEM_Name, ITEM_Size, VOD_Result, VOD_GoodEA, VOD_BadEA, VOD_ResultDay
   from VendorOrder v inner join VendorOrderDetail d on v.VO_ID = d.VO_ID inner join ITEM i on v.ITEM_Code = i.ITEM_Code 
-WHERE VO_EndDate Between @startDate and @endDate ";
+WHERE Plan_ID = @Plan_ID ";
 
                 if (ics.Item != "")
                 {
                     sql = sql + " and ITEM_Name LIKE  '%' + @ITEM_Name +'%'";
                     if (ics.Company != "")
                     {
-                        sql = sql + " and c.COM_Name = @COM_Name";
+                        sql = sql + " and COM_Name = @COM_Name";
                         if (ics.Result != "")
                         {
                             sql = sql + " and VOD_Result = @VOD_Result";
@@ -476,7 +463,7 @@ WHERE VO_EndDate Between @startDate and @endDate ";
                 }
                 else if (ics.Company != "")
                 {
-                    sql = sql + " and c.COM_Name = @COM_Name";
+                    sql = sql + " and COM_Name = @COM_Name";
                     if (ics.Result != "")
                     {
                         sql = sql + " and VOD_Result = @VOD_Result";
@@ -494,6 +481,7 @@ WHERE VO_EndDate Between @startDate and @endDate ";
                 cmd.Parameters.AddWithValue("@ITEM_Name", ics.Item);
                 cmd.Parameters.AddWithValue("@COM_Name", ics.Company);
                 cmd.Parameters.AddWithValue("@VOD_Result", ics.Result);
+                cmd.Parameters.AddWithValue("@Plan_ID", ics.Plan_ID);
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<ImportCheckVO> list = Helper.DataReaderMapToList<ImportCheckVO>(reader);
@@ -510,20 +498,20 @@ WHERE VO_EndDate Between @startDate and @endDate ";
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 string sql = @"select DISTINCT v.VO_ID, COM_Name, v.ITEM_Code, ITEM_Name, ITEM_Size, ITEM_Unit, VOD_GoodEA, FACD_Qty, VO_EndDate, VOD_Result, MATERIAL_ORDER_STATE, VOD_ResultDay
   from VendorOrder v inner join VendorOrderDetail d on v.VO_ID = d.VO_ID inner join ITEM i on v.ITEM_Code = i.ITEM_Code inner join FactoryDetail f on v.ITEM_Code = f.ITEM_Code
-  WHERE VOD_Result = '합격' and MATERIAL_ORDER_STATE = '입고대기' and VO_EndDate Between @startDate and @endDate ";
+  WHERE VOD_Result = '합격' and MATERIAL_ORDER_STATE = '입고대기' and v.Plan_ID = @Plan_ID ";
 
                 if (mls.Item != "")
                 {
                     sql = sql + " and ITEM_Name LIKE  '%' + @ITEM_Name +'%'";
                     if (mls.Company != "")
                     {
-                        sql = sql + " and c.COM_Name = @COM_Name";
+                        sql = sql + " and COM_Name = @COM_Name";
                     }
                     
                 }
                 else if (mls.Company != "")
                 {
-                    sql = sql + " and c.COM_Name = @COM_Name";                    
+                    sql = sql + " and COM_Name = @COM_Name";                    
                 }
                 
 
@@ -533,7 +521,8 @@ WHERE VO_EndDate Between @startDate and @endDate ";
                 cmd.Parameters.AddWithValue("@endDate", mls.endDate);
                 cmd.Parameters.AddWithValue("@ITEM_Name", mls.Item);
                 cmd.Parameters.AddWithValue("@COM_Name", mls.Company);
-                
+                cmd.Parameters.AddWithValue("@Plan_ID", mls.Plan_ID);
+
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<Material_LedgerVO> list = Helper.DataReaderMapToList<Material_LedgerVO>(reader);
@@ -626,29 +615,15 @@ where MATERIAL_ORDER_STATE = '입고완료' and FACT_Name = '자재창고_01' an
                     sql = sql + " and ITEM_Name LIKE  '%' + @ITEM_Name +'%'";
                     if (sp.Company != "")
                     {
-                        sql = sql + " and c.COM_Name = @COM_Name";
-                        if (sp.VO_ID != 0)
-                        {
-                            sql = sql + " and VO_ID = @VO_ID";
-                        }
-                    }
-                    else if (sp.VO_ID != 0)
-                    {
-                        sql = sql + " and VO_ID = @VO_ID";
-                    }
+                        sql = sql + " and c.COM_Name = @COM_Name";                        
+                    }                    
                 }
                 else if (sp.Company != "")
                 {
                     sql = sql + " and c.COM_Name = @COM_Name";
-                    if (sp.VO_ID != 0)
-                    {
-                        sql = sql + " and VO_ID = @VO_ID";
-                    }
+                    
                 }
-                else if (sp.VO_ID != 0)
-                {
-                    sql = sql + " and VO_ID = @VO_ID";
-                }
+                
                 #endregion
                 cmd.CommandText = sql;
 
@@ -656,7 +631,7 @@ where MATERIAL_ORDER_STATE = '입고완료' and FACT_Name = '자재창고_01' an
                 cmd.Parameters.AddWithValue("@endDate", sp.endDate);
                 cmd.Parameters.AddWithValue("@ITEM_Name", sp.Item);
                 cmd.Parameters.AddWithValue("@COM_Name", sp.Company);
-                cmd.Parameters.AddWithValue("@VO_ID", sp.VO_ID);
+                
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -667,7 +642,7 @@ where MATERIAL_ORDER_STATE = '입고완료' and FACT_Name = '자재창고_01' an
             }
         }
 
-        public bool MaterialProcess(List<DeleteOrder> lists, List<MaterialsPlusVO> lists2)
+        public bool MaterialProcess(List<MaterialInDateVO> lists, List<MaterialsPlusVO> lists2)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -678,9 +653,10 @@ where MATERIAL_ORDER_STATE = '입고완료' and FACT_Name = '자재창고_01' an
                 {
                     foreach (var item in lists)
                     {
-                        cmd.CommandText = @"UPDATE VendorOrder SET MATERIAL_ORDER_STATE = '입고완료' WHERE VO_ID = @VO_ID";
+                        cmd.CommandText = @"UPDATE VendorOrder SET MATERIAL_ORDER_STATE = '입고완료', VO_InDate = @VO_InDate WHERE VO_ID = @VO_ID";
 
                         cmd.Parameters.AddWithValue("@VO_ID", item.VO_ID);
+                        cmd.Parameters.AddWithValue("@VO_InDate", DateTime.Now.ToString("yyyy-MM-dd"));
 
                         cmd.ExecuteNonQuery();
                         cmd.Parameters.Clear();
