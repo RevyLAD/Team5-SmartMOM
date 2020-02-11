@@ -19,7 +19,7 @@ namespace Project_DAC.LBJ
                                     from WorkOrder A inner
                                     join ITEM B on A.ITEM_Code = B.ITEM_Code inner
                                     join Facility C on A.FAC_Name = C.FAC_Name
-                                    where WO_StartDate between '2020-02-01' and '2020-02-07'";
+                                    where WO_StartDate between '2020-02-01' and '2020-02-07'and WO_State = '작업지시'";
 
 
                 cmd.Connection.Open();

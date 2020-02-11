@@ -44,8 +44,11 @@ namespace Team5_SmartMOM.PSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "요청수량", "directQty", true, 120, DataGridViewContentAlignment.MiddleRight);
 
             LBJ_Service service = new LBJ_Service();
-            dataGridView1.DataSource = service.MateriaExport();
+            dataGridView1.DataSource = list = service.MateriaExport();
             DataLoad();
+
+            List<MateriaExportVO> Materialist = list;
+            CommonUtil.ComboBinding(cboFacCode, Materialist, "WO_ID", "ITEM_Code", "전체");
         }
         private void DataLoad()
         {
@@ -53,10 +56,24 @@ namespace Team5_SmartMOM.PSM
             HSC_Service hscservice = new HSC_Service();
             List<MateriaExportVO> Materialist = service.MateriaExport();
             List<FacilitieDetailVO> Facvo = hscservice.GetAllFacilitiesDetail();
-            dataGridView1.DataSource = Materialist;           
+            dataGridView1.DataSource = Materialist; 
+            CommonUtil.ComboBinding(cbosystem, Facvo, "FAC_No", "FAC_Name", "전체");
+            
+        }
 
-            CommonUtil.ComboBinding(comboBox1, Facvo, "FAC_No", "FAC_Name", "전체");
-
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (cboFacCode.Text.Trim() == "전체")
+            {
+                DataLoad();
+            }
+            else
+            {
+                List <MateriaExportVO> mevo = (from item in list
+                                     where item.ITEM_Code == cboFacCode.Text
+                                     select item).ToList();
+                dataGridView1.DataSource = mevo;
+            }
         }
     }
 }
