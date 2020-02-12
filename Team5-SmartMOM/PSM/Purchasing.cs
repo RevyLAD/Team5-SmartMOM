@@ -105,5 +105,13 @@ namespace Team5_SmartMOM.PSM
             dtpDateStart.Value = DateTime.Parse(arrDate[0]);
             dtpDateEnd.Value = DateTime.Parse(arrDate[0]).AddMonths(1);
         }
+
+        private void cboPlanID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar == 13))
+            {
+                btnSearch_Click(null, new EventArgs());
+            }
+        }
     }
 }

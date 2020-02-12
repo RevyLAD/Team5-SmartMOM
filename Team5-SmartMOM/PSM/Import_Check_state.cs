@@ -47,12 +47,13 @@ namespace Team5_SmartMOM.PSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "No", "VO_ID", true, 70, DataGridViewContentAlignment.MiddleRight);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "검사일", "VOD_ResultDay", true, 120, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "업체명", "COM_Name", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품목", "ITEM_Code", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품명", "ITEM_Name", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품목", "ITEM_Code", true, 170);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품명", "ITEM_Name", true, 200);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "규격", "ITEM_Size", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "최종결과", "VOD_Result", true, 150, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "납품수량", "VOD_GoodEA", true, 100, DataGridViewContentAlignment.MiddleRight);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "불량수량", "VOD_BadEA", true, 100, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "비고", "", true, 150, DataGridViewContentAlignment.MiddleRight);
 
             cboResult.Items.Add("");
             cboResult.Items.Add("합격");
@@ -150,17 +151,7 @@ namespace Team5_SmartMOM.PSM
                 dtpDateEnd.Value = dtpDateStart.Value.AddMonths(1);
                 return;
             }
-        }
-
-        private void cbocompany_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void cboResult_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+        }               
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -184,6 +175,28 @@ namespace Team5_SmartMOM.PSM
                 btnSearch_Click(null, new EventArgs());
             }
         }
-    }
-    
+
+        private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            for (int j = 0; j < dataGridView2.RowCount; j++)
+            {
+                if (dataGridView2[7, j].Value.ToString() == "불합격")
+                {
+                    dataGridView2[7, j].Style.BackColor = Color.IndianRed;
+                }
+                else
+                {
+                    dataGridView2[7, j].Style.BackColor = Color.SkyBlue;
+                }
+            }
+        }
+
+        private void dgvYellow()
+        {
+
+            
+          
+        }
+
+    }    
 }

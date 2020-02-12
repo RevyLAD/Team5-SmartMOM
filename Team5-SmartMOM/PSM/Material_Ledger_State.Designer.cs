@@ -96,6 +96,7 @@
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(191, 21);
             this.txtProduct.TabIndex = 70;
+            this.txtProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
             // 
             // cbocompany
             // 
@@ -104,6 +105,7 @@
             this.cbocompany.Name = "cbocompany";
             this.cbocompany.Size = new System.Drawing.Size(161, 20);
             this.cbocompany.TabIndex = 68;
+            this.cbocompany.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
             // 
             // dtpDateEnd
             // 
@@ -170,6 +172,7 @@
             this.txtOrderNum.Name = "txtOrderNum";
             this.txtOrderNum.Size = new System.Drawing.Size(191, 21);
             this.txtOrderNum.TabIndex = 73;
+            this.txtOrderNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
             // 
             // btnSearch
             // 
