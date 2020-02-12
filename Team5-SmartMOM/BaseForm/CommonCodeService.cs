@@ -40,6 +40,12 @@ namespace Team5_SmartMOM.BaseForm
             return dac.GetAllPlanID();
         }
 
+        public List<PlanIDVO> GetAllPlanID2()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.GetAllPlanID2();
+        }
+
         public List<PlanIDVO> GetPlanIDByWorkOrder()
         {
             CommonCodeDAC dac = new CommonCodeDAC();
@@ -104,6 +110,18 @@ namespace Team5_SmartMOM.BaseForm
             return dac.GetAllItemType();
         }
 
-        
+        public List<PlanIDVO> GetPlanIDByDemandPlan()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.GetPlanIDByDemandPlan();
+        }
+
+        public List<PlanIDVO> GetPlanIDByProduction()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.GetPlanIDByProduction();
+        }
+
+
     }
 }

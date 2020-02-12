@@ -119,8 +119,19 @@ namespace Team5_SmartMOM.PSM
 
         public void DataLoad()
         {
+            SupplierSearchVO sp = new SupplierSearchVO();
+            sp.startDate = dtpDateStart.Value.ToShortDateString();
+            sp.endDate = dtpDateEnd.Value.ToShortDateString();
+            sp.Company = cbocompany.Text.Trim();
+            sp.Item = txtProduct.Text.Trim();
+            if (txtOrderNum.Text.Length > 0)
+            {
+                sp.VO_ID = Convert.ToInt32(txtOrderNum.Text);
+            }
+                
+
             PSM_Service service = new PSM_Service();
-            list = service.Supplier();
+            list = service.Supplier(sp);
             dataGridView1.DataSource = list;
 
             PSM_Service service2 = new PSM_Service();
@@ -129,7 +140,7 @@ namespace Team5_SmartMOM.PSM
 
             CommonCodeService common = new CommonCodeService();
             company = common.GetAllCompanyCode();
-            CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "전체");
+            CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "");
             
         }
         //데이터그리드뷰1 헤더체크박스
@@ -201,73 +212,25 @@ namespace Team5_SmartMOM.PSM
         //조회버튼시 검색
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (txtProduct.Text.Length < 1 && txtOrderNum.Text.Length < 1)
+            SupplierSearchVO sp = new SupplierSearchVO();
+            sp.startDate = dtpDateStart.Value.ToShortDateString();
+            sp.endDate = dtpDateEnd.Value.ToShortDateString();
+            sp.Company = cbocompany.Text.Trim();
+            sp.Item = txtProduct.Text.Trim();
+            if (txtOrderNum.Text.Length > 0)
             {
-                MessageBox.Show("검색할 항목을 입력해주십시오.");
-                return;
+                sp.VO_ID = Convert.ToInt32(txtOrderNum.Text);
             }
-            else if (txtProduct.Text.Trim().Length > 0)
-            {
-                string query = txtProduct.Text.Trim();
-                List<SupplierVO> searchlist = null;
-                searchlist = (from team5 in list
-                              where team5.ITEM_Name.Contains(query)
-                              select team5).ToList();
-
-                dataGridView1.DataSource = searchlist;
-            }
-            else if (txtOrderNum.Text.Trim().Length > 0)
-            {
-                string query = txtOrderNum.Text.Trim();
-                List<SupplierVO> searchlist = null;
-                searchlist = (from team5 in list
-                              where team5.VO_ID.ToString().Contains(query)
-                              select team5).ToList();
-
-                dataGridView1.DataSource = searchlist;
-            }
-
-            else
-            {
-                DataLoad();
-            }
-            txtOrderNum.Text = "";
-            txtProduct.Text = "";
+            
+            PSM_Service service = new PSM_Service();
+            list = service.Supplier(sp);
+            dataGridView1.DataSource = list;
         }
 
         //업체콤보박스 검색시 조회
         private void cbocompany_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                if (cbocompany.Text != "")
-                {
-                    string query = cbocompany.Text;
-
-                    if (query == "전체")
-                    {
-                        dataGridView1.DataSource = list;
-                    }
-                    else
-                    {
-                        List<SupplierVO> searchlist = null;
-                        searchlist = (from team5 in list
-                                      where team5.COM_Name.ToString().Contains(query)
-                                      select team5).ToList();
-
-
-                        dataGridView1.DataSource = searchlist;
-                    }
-                }
-                else
-                {
-                    DataLoad();
-                }
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+            
         }
         //검색후 엔터로 조회버튼
         private void txtProduct_KeyPress(object sender, KeyPressEventArgs e)

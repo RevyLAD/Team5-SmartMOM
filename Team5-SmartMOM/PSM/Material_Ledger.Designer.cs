@@ -42,9 +42,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panelZ1 = new PanelZ.PanelZ();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbocompany = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtitem = new System.Windows.Forms.TextBox();
             this.dtpDateEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
@@ -159,7 +159,7 @@
             this.label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 6);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 22);
+            this.label2.Size = new System.Drawing.Size(94, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "자재입고";
             // 
@@ -223,7 +223,7 @@
             this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 22);
+            this.label1.Size = new System.Drawing.Size(157, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "입고대기리스트";
             // 
@@ -239,9 +239,9 @@
             // 
             // panelZ1
             // 
-            this.panelZ1.Controls.Add(this.comboBox2);
+            this.panelZ1.Controls.Add(this.cbocompany);
             this.panelZ1.Controls.Add(this.btnSearch);
-            this.panelZ1.Controls.Add(this.textBox2);
+            this.panelZ1.Controls.Add(this.txtitem);
             this.panelZ1.Controls.Add(this.dtpDateEnd);
             this.panelZ1.Controls.Add(this.dtpDateStart);
             this.panelZ1.Controls.Add(this.label10);
@@ -259,13 +259,13 @@
             this.panelZ1.Transparent1 = 150;
             this.panelZ1.Transparent2 = 150;
             // 
-            // comboBox2
+            // cbocompany
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(765, 33);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(191, 20);
-            this.comboBox2.TabIndex = 75;
+            this.cbocompany.FormattingEnabled = true;
+            this.cbocompany.Location = new System.Drawing.Point(765, 33);
+            this.cbocompany.Name = "cbocompany";
+            this.cbocompany.Size = new System.Drawing.Size(191, 20);
+            this.cbocompany.TabIndex = 75;
             // 
             // btnSearch
             // 
@@ -279,13 +279,14 @@
             this.btnSearch.TabIndex = 73;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
-            // textBox2
+            // txtitem
             // 
-            this.textBox2.Location = new System.Drawing.Point(434, 32);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 21);
-            this.textBox2.TabIndex = 72;
+            this.txtitem.Location = new System.Drawing.Point(434, 32);
+            this.txtitem.Name = "txtitem";
+            this.txtitem.Size = new System.Drawing.Size(160, 21);
+            this.txtitem.TabIndex = 72;
             // 
             // dtpDateEnd
             // 
@@ -513,14 +514,14 @@
         protected System.Windows.Forms.Button button7;
         private PanelZ.PanelZ panelZ1;
         protected System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtitem;
         private System.Windows.Forms.DateTimePicker dtpDateEnd;
         private System.Windows.Forms.DateTimePicker dtpDateStart;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbocompany;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

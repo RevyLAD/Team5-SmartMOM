@@ -53,7 +53,7 @@ namespace Team5_SmartMOM.PSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납품수량", "VOD_GoodEA", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "불량수량", "VOD_BadEA", true, 150);
 
-            cboResult.Items.Add("전체");
+            cboResult.Items.Add("");
             cboResult.Items.Add("합격");
             cboResult.Items.Add("불합격");
             DataLoad();
@@ -71,12 +71,19 @@ namespace Team5_SmartMOM.PSM
 
             public void DataLoad()
         {
+            ImportCheckSearchVO ics = new ImportCheckSearchVO();
+            ics.startDate = dtpDateStart.Value.ToShortDateString();
+            ics.endDate = dtpDateEnd.Value.ToShortDateString();
+            ics.Company = cbocompany.Text.Trim();
+            ics.Item = txtitem.Text.Trim();
+            ics.Result = cboResult.Text.Trim();            
+
             PSM_Service service = new PSM_Service();
-            list = service.ImportCheck();
+            list = service.ImportCheck(ics);
             dataGridView1.DataSource = list;
             
             List<CompanyCodeVO> company = service.GetAllCompanyCode();
-            CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "전체");
+            CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "");
 
             
             
@@ -174,59 +181,21 @@ namespace Team5_SmartMOM.PSM
 
         private void cboResult_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                if (cboResult.Text != "")
-                {
-                    string query = cboResult.Text;
-
-                    if (query == "전체")
-                    {
-                        dataGridView1.DataSource = list;
-                    }
-                    else
-                    {
-                        List<ImportCheckVO> searchlist = null;
-                        searchlist = (from team5 in list
-                                      where team5.VOD_Result.ToString().Contains(query)
-                                      select team5).ToList();
-
-                        dataGridView1.DataSource = searchlist;
-                    }
-                }
-                else
-                {
-                    DataLoad();
-                }
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+            
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (txtitem.Text.Length < 1)
-            {
-                MessageBox.Show("검색할 항목을 입력해주십시오.");
-                DataLoad();
-                return;
-            }
-            if (txtitem.Text.Trim().Length > 0)
-            {
-                string query = txtitem.Text.Trim();
-                List<ImportCheckVO> searchlist = null;
-                searchlist = (from team5 in list
-                              where team5.ITEM_Name.Contains(query)
-                              select team5).ToList();
+            ImportCheckSearchVO ics = new ImportCheckSearchVO();
+            ics.startDate = dtpDateStart.Value.ToShortDateString();
+            ics.endDate = dtpDateEnd.Value.ToShortDateString();
+            ics.Company = cbocompany.Text.Trim();
+            ics.Item = txtitem.Text.Trim();
+            ics.Result = cboResult.Text.Trim();
 
-                dataGridView1.DataSource = searchlist;
-            }
-            else
-            {
-                DataLoad();
-            }
+            PSM_Service service = new PSM_Service();
+            list = service.ImportCheck(ics);
+            dataGridView1.DataSource = list;
         }
 
         private void txtitem_KeyPress(object sender, KeyPressEventArgs e)

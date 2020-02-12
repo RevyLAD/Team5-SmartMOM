@@ -213,7 +213,7 @@ namespace Project_DAC.HSM
 
                     cmd.Connection = new SqlConnection(this.ConnectionString);
                     cmd.Connection.Open();
-                    cmd.CommandText = "UPDATE SalesMaster SET Sales_Order_State = '작업대기' WHERE SO_WorkOrderID = @SO_WorkOrderID";
+                    cmd.CommandText = "UPDATE SalesMaster SET Sales_Order_State = '작업대기', Order_State = '발주대기' WHERE SO_WorkOrderID = @SO_WorkOrderID";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@SO_WorkOrderID", workID);
 

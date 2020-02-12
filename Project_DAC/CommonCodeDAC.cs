@@ -145,6 +145,22 @@ namespace Project_DAC
                 return list;
             }
         }
+
+        public List<PlanIDVO> GetAllPlanID2()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "  select distinct Plan_ID from SalesMaster where Plan_ID is not null and Order_State = '발주대기'  ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<PlanIDVO> list = Helper.DataReaderMapToList<PlanIDVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
         public List<PlanIDVO> GetPlanIDByWorkOrder()
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -340,5 +356,36 @@ namespace Project_DAC
             }
         }
 
+        public List<PlanIDVO> GetPlanIDByDemandPlan()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "  select distinct Plan_ID from salesmaster where Plan_ID is not null and SALES_ORDER_STATE = '생산대기' ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<PlanIDVO> list = Helper.DataReaderMapToList<PlanIDVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public List<PlanIDVO> GetPlanIDByProduction()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "  select distinct Plan_ID from salesmaster where Plan_ID is not null and SALES_ORDER_STATE = '생산대기' or SALES_ORDER_STATE = '작업대기' ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<PlanIDVO> list = Helper.DataReaderMapToList<PlanIDVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
     }
 }
