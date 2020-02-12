@@ -159,10 +159,10 @@ namespace Team5_SmartMOM.Service
             return dac.MaterialsState(sp);
         }
 
-        public bool MaterialProcess(List<MaterialInDateVO> lists, List<MaterialsPlusVO> lists2)
+        public bool MaterialProcess(List<MaterialInDateVO> lists, List<MaterialsPlusVO> lists2, List<InOutListVO> lists3)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.MaterialProcess(lists, lists2);
+            return dac.MaterialProcess(lists, lists2, lists3);
         }
 
         public bool MaterialCancel(List<DeleteOrder> lists, List<MaterialsPlusVO> lists2)

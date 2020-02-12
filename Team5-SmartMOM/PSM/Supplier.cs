@@ -140,7 +140,7 @@ namespace Team5_SmartMOM.PSM
 
             CommonCodeService common = new CommonCodeService();
             List<PlanIDVO> planid = service.PlanID();
-
+            
             company = common.GetAllCompanyCode();
             CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "");            
             CommonUtil.ComboBinding(cboplanid, planid, "Plan_ID", "Plan_ID");

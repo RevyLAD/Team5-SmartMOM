@@ -24,8 +24,7 @@ namespace Team5_SmartMOM.PSM
 
         private void Material_Ledger_State_Load(object sender, EventArgs e)
         {
-            dtpDateStart.Value = DateTime.Now;
-            dtpDateEnd.Value = DateTime.Now.AddMonths(1);
+            
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -56,18 +55,17 @@ namespace Team5_SmartMOM.PSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "잔량", "FACD_Qty", true, 150, DataGridViewContentAlignment.MiddleRight);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체", "COM_Name", true, 100);
             
-
+            
             DataLoad();
+            BtnSearch_Click(null, new EventArgs());
         }
 
         public void DataLoad()
         {
-            SupplierSearchVO sp = new SupplierSearchVO();
-            sp.startDate = dtpDateStart.Value.ToShortDateString();
-            sp.endDate = dtpDateEnd.Value.ToShortDateString();
+            SupplierSearchVO sp = new SupplierSearchVO();            
             sp.Company = cbocompany.Text.Trim();
             sp.Item = txtProduct.Text.Trim();
-           
+            sp.Plan_ID = cboPlanID.Text.Trim();
 
             PSM_Service service = new PSM_Service();
             list = service.MaterialsState(sp);
@@ -76,6 +74,9 @@ namespace Team5_SmartMOM.PSM
             CommonCodeService common = new CommonCodeService();
             company = common.GetAllCompanyCode();
             CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "");
+
+            List<PlanIDVO> planid = service.PlanID();
+            CommonUtil.ComboBinding(cboPlanID, planid, "Plan_ID", "Plan_ID");
         }
 
         private void HeaderCheckBox_Click(object sender, EventArgs e)
@@ -133,11 +134,10 @@ namespace Team5_SmartMOM.PSM
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            SupplierSearchVO sp = new SupplierSearchVO();
-            sp.startDate = dtpDateStart.Value.ToShortDateString();
-            sp.endDate = dtpDateEnd.Value.ToShortDateString();
+            SupplierSearchVO sp = new SupplierSearchVO();            
             sp.Company = cbocompany.Text.Trim();
-            sp.Item = txtProduct.Text.Trim();            
+            sp.Item = txtProduct.Text.Trim();
+            sp.Plan_ID = cboPlanID.Text.Trim();
 
             PSM_Service service = new PSM_Service();
             list = service.MaterialsState(sp);

@@ -126,8 +126,7 @@ namespace Team5_SmartMOM.PSM
             PSM_Service service = new PSM_Service();
             list = service.Material_Ledger(mls);
             dataGridView2.DataSource = list;
-
-            PSM_Service service2 = new PSM_Service();
+            
             list2 = service.Receiving_processing();
             dataGridView3.DataSource = list2;
 
@@ -266,6 +265,7 @@ namespace Team5_SmartMOM.PSM
             }
             List<MaterialInDateVO> lists = new List<MaterialInDateVO>();
             List<MaterialsPlusVO> lists2 = new List<MaterialsPlusVO>();
+            List<InOutListVO> lists3 = new List<InOutListVO>();
             foreach (DataGridViewRow row in dataGridView3.Rows)
             {
                 bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
@@ -280,10 +280,19 @@ namespace Team5_SmartMOM.PSM
                     list2.VOD_GoodEA = Convert.ToInt32(row.Cells[9].Value);
                     list2.ITEM_Code = row.Cells[2].Value.ToString();
                     lists2.Add(list2);
+
+                    InOutListVO list3 = new InOutListVO();
+                    list3.InOut_Date = (DateTime)row.Cells[8].Value;
+                    list3.In_WareHouse = row.Cells[7].Value.ToString();
+                    list3.ITEM_Code = row.Cells[2].Value.ToString();
+                    list3.InOut_Qty = Convert.ToInt32(row.Cells[9].Value);
+                    lists3.Add(list3);
+
+                    
                 }
             }
             PSM_Service service = new PSM_Service();
-            service.MaterialProcess(lists, lists2);
+            service.MaterialProcess(lists, lists2, lists3);
             MessageBox.Show("선택하신 항목들을 입고처리 하였습니다.");
             DataLoad();
         }
