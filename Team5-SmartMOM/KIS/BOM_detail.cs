@@ -114,7 +114,7 @@ namespace Team5_SmartMOM
             List<CommonCodeVO> listGubunCode2 = service.GetAllCommonCode();
             List<CommonCodeVO> listGubunCode3 = service.GetAllCommonCode();
             List<ITEM_VO> listGubunitem = service2.GetAllCommonItem();
-            List<BOM_VO1> listGubunbom = service2.GetAllCommonBOM();
+            List<BOM_VO> listGubunbom = service2.GetAllCommonBOM();
             //공통코드링큐
             List<CommonCodeVO> OrderGubunList1 = (from item in listGubunCode1
                                                  where item.Common_Type == "USE_FLAG"
@@ -127,14 +127,14 @@ namespace Team5_SmartMOM
                                                   select item).ToList();
             List<ITEM_VO> OrderGubunListitem = (from item in listGubunitem
                                                   select item).ToList();   // 품목 유형
-            List<BOM_VO1> OrderGubunListbom = (from item in listGubunbom
+            List<BOM_VO> OrderGubunListbom = (from item in listGubunbom
                                              select item).ToList();   // 품목 유형
             
             CommonUtil.ComboBinding(cbo_UseorNot, OrderGubunList1, "Common_Key", "Common_Value");
             CommonUtil.ComboBinding(cbo_AutoDeduction, OrderGubunList2, "Common_Key", "Common_Value");
             CommonUtil.ComboBinding(cbo_Required_plan, OrderGubunList3, "Common_Key", "Common_Value");
-            CommonUtil.ComboBinding(cbo_Item, OrderGubunListitem, "ITEM_Type", "ITEM_Name","4자리 이상 입력");
-            CommonUtil.ComboBinding(cbo_differenceItem, OrderGubunListbom, "ITEM_Type", "BOM_Code", "4자리 이상 입력");
+            CommonUtil.ComboBinding(cbo_Item, OrderGubunListitem, "ITEM_Code", "ITEM_Name","4자리 이상 입력");
+            CommonUtil.ComboBinding(cbo_differenceItem, OrderGubunListbom, "BOM_Code", "ITEM_Code", "-");
         }
 
         private void Button1_Click_1(object sender, EventArgs e)
@@ -202,7 +202,7 @@ namespace Team5_SmartMOM
 
                     BOM_VO list = new BOM_VO();
                     list.BOM_Code = cbo_differenceItem.Text;
-                    list.ITEM_Code = cbo_Item.Text; 
+                    list.ITEM_Code = cbo_Item.SelectedValue.ToString();
                     list.BOM_Require = Convert.ToInt32(txt_Quantity.Text);
                     list.BOM_StartDate = Convert.ToDateTime(dtp_Startdate.Text);
                     list.BOM_EndDate = Convert.ToDateTime(dtp_Enddate.Text);

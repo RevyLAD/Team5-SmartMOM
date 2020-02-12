@@ -4,14 +4,18 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Team5_SmartMOM.Service;
+using System.Linq.Dynamic;
+using Team5_SmartMOM.BaseForm;
 
 namespace Team5_SmartMOM.KIS
 {
     public partial class Item_Management : Team5_SmartMOM.BaseGridForm
     {
+        List<ITEM_VO> list;
         public Item_Management()
         {
             InitializeComponent();
@@ -30,20 +34,43 @@ namespace Team5_SmartMOM.KIS
         private void Item_Management_Load(object sender, EventArgs e)
         {
             LoadPage();
+            init_Combo();
         }
+        private void init_Combo()
+        {
+            CommonCodeService service = new CommonCodeService();
+            KIS_Service service1 = new KIS_Service();
 
+            List<CommonCodeVO> listGubunCode1 = service.GetAllCommonCode();
+           
+            List<CommonCodeVO> listGubunCode10 = service.GetAllCommonCode();
+            
+          
+
+            List<CommonCodeVO> OrderGubunList1 = (from item in listGubunCode1
+                                                  where item.Common_Type == "ITEM_TYPE"
+                                                  select item).ToList();   // 품목 유형
+           
+            List<CommonCodeVO> OrderGubunList10 = (from item in listGubunCode10
+                                                   where item.Common_Type == "USE_FLAG"
+                                                   select item).ToList();  //사용유무 
+   
+
+            CommonUtil.ComboBinding(cbo_itemtype, OrderGubunList1, "Common_Key", "Common_Value");
+            CommonUtil.ComboBinding(cbo_UseorNot, OrderGubunList10, "Common_Key", "Common_Value");
+          
+        }
         private void LoadPage()
         {
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.Columns.Clear();
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn(false);
             chk.Width = 40;
             chk.HeaderText = "";
-
-            //dataGridView1.CellClick += new DataGridViewCellEventHandler(DataGridView1_CellClick);
-
 
 
 
@@ -80,10 +107,11 @@ namespace Team5_SmartMOM.KIS
         public void DataLoad()
         {
             KIS_Service service = new KIS_Service();
-            dataGridView1.DataSource = service.ShowITEM();
+            list = service.ShowITEM();
+            dataGridView1.DataSource = list;
             //dataGridView1.ReadOnly = true;
         }
-       
+        #region
         /// <summary>
         /// datagridview에 있는 수정 버튼을 클릭할 경우 
         /// 선택된 열의 행을 확인하여 선택된 행의 readonly를 true로 하여 수정모드가 작동했다는것을 알려주며 
@@ -153,7 +181,20 @@ namespace Team5_SmartMOM.KIS
         //    //    }
         //    //}
         //}
-
+        #endregion
+        /// <summary>
+        /// datagridview에 대한 체크박스 이벤트 
+        /// 컬럼을 선택할때마다 for문을 돌려 선택된 열의 value값을 true로 만든다. 
+        /// </summary>
+        private void DataGridView1_CheckBoxValue(object sender, DataGridViewRowEventArgs e)
+        {
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                dataGridView1.Rows[i].Cells[1].Value = true;
+                //DataGridViewCheckBoxCell cell = (DataGridViewCheckBoxCell)dataGridView1.Rows[i].Cells[1];
+                //cell.Value = true;
+            }
+        }
         private void Btn_Delete_Click(object sender, EventArgs e)
         {
             KIS_Service service = new KIS_Service();
@@ -161,11 +202,12 @@ namespace Team5_SmartMOM.KIS
             bool check = true;
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                if (Convert.ToBoolean(dataGridView1.Rows[i].Cells[1].Value) == true)
+                if (Convert.ToBoolean(dataGridView1.Rows[i].Cells[0].Value) == true)
                 {
-                    list.Add(dataGridView1.Rows[i].Cells[0].Value.ToString());
+                    list.Add(dataGridView1.Rows[i].Cells[1].Value.ToString());
                 }
             }
+
             if (list.Count == 0)
             {
                 MessageBox.Show("삭제할 품목을 선택해 주시기 바랍니다.");
@@ -195,7 +237,44 @@ namespace Team5_SmartMOM.KIS
 
         private void Btn_Search_Click(object sender, EventArgs e)
         {
+            StringBuilder sb = new StringBuilder();
+            if (txt_item.Text.Length > 0)
+            {
+                sb.Append($"ITEM_Code Like '%{txt_item.Text}%' AND ");
+            }
+            if (cbo_manager.Text.Length > 0)
+            {
+                sb.Append($"ITEM_Manager Like '%{cbo_manager.Text}%' AND ");
+            }   
+            if (txt_standard.Text.Length > 0)
+            {
+                sb.Append($"ITEM_Size Like '%{txt_standard.Text}%' AND ");
+            }
+            if (cbo_itemtype.Text.Length > 0)
+            {
+                sb.Append($"ITEM_Type Like '{cbo_itemtype.Text}' AND ");
+            }
+            if (cbo_UseorNot.Text.Length > 0)
+            {
+                sb.Append($"ITEM_UserOrNot Like '{cbo_UseorNot.Text}' AND ");
+            }
+            sb.Remove(Convert.ToInt32(sb.Length - 4) ,4);
+            string result = sb.ToString();
+            List<ITEM_VO> list2 = new List<ITEM_VO>();
+            KIS_Service service = new KIS_Service();
+            list2 = service.SearchITEM(result);
+            dataGridView1.DataSource = list2;
+
+
+
 
         }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = list;
+        }
     }
+
+
 }

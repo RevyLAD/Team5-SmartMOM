@@ -144,6 +144,7 @@
             // dtp_start_date
             // 
             this.dtp_start_date.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtp_start_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_start_date.Location = new System.Drawing.Point(108, 97);
             this.dtp_start_date.Name = "dtp_start_date";
             this.dtp_start_date.Size = new System.Drawing.Size(175, 21);

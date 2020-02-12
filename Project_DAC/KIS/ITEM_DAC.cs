@@ -28,6 +28,23 @@ namespace Project_DAC
                 return list;
             }
         }
+        public List<ITEM_VO> SearchITEM(string sb)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string cmds = $"select * from ITEM where {sb}";
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = cmds;
+                
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ITEM_VO> list = Helper.DataReaderMapToList<ITEM_VO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
         public bool InsertItem(ITEM_VO list)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -137,7 +154,21 @@ namespace Project_DAC
                 return rowsAffected > 0;
             }
         }
+        public List<FactoryVO> GetAllFactoryCode()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select * from Factory";
 
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<FactoryVO> list = Helper.DataReaderMapToList<FactoryVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
 
     }
 }

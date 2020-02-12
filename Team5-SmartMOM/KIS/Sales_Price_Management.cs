@@ -31,7 +31,7 @@ namespace Team5_SmartMOM.KIS
 
         private void Sales_Price_Management_Load(object sender, EventArgs e)
         {
-            
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn(false);
             chk.Width = 40;
             chk.HeaderText = "선택";
@@ -41,7 +41,7 @@ namespace Team5_SmartMOM.KIS
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체", "COM_Code", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체명", "COM_Name", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true,140);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 140);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 180);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "규격", "ITEM_SIze", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "단위", "ITEM_Unit", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "현재단가", "Sales_Price_Now", true, 100);

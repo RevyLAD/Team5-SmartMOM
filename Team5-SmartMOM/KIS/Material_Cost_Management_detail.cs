@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -42,7 +43,7 @@ namespace Team5_SmartMOM
 
             CommonUtil.ComboBinding(cbo_UseorNot, OrderGubunList1, "Common_Key", "Common_Value");
             CommonUtil.ComboBinding(cbo_Item, OrderGubunList4, "ITEM_Code", "ITEM_Code");
-            CommonUtil.ComboBinding(cbo_Company, OrderGubunList3, "COM_Code", "COM_Code");
+            CommonUtil.ComboBinding(cbo_Company, OrderGubunList3, "COM_Code", "COM_Name");
         }
 
         private void Material_Cost_Management_detail_Load(object sender, EventArgs e)
@@ -64,10 +65,29 @@ namespace Team5_SmartMOM
                     check = false;
                     this.DialogResult = DialogResult.None;
                 }
+              
+                else if (cbo_Company.Text == "" || cbo_Company.Text == "4자리 이상 입력")
+                {
+                    MessageBox.Show("등록할 업체을 작성해주시기 바랍니다.");
+                    check = false;
+                    this.DialogResult = DialogResult.None;
+                }
+                else if (txt_now_Price.Text == "")
+                {
+                    MessageBox.Show("현재 단가를 작성해주시기 바랍니다.");
+                    check = false;
+                    this.DialogResult = DialogResult.None;
+                }
+                else if (txt_Forgotten_price.Text == "")
+                {
+                    MessageBox.Show("이전 단가를 작성해주시기 바랍니다.");
+                    check = false;
+                    this.DialogResult = DialogResult.None;
+                }
                 else if (check)
                 {
                     Material_VO list = new Material_VO();
-                    list.COM_Code = cbo_Company.Text;
+                    list.COM_Code = cbo_Company.SelectedValue.ToString();
                     list.ITEM_Code = cbo_Item.Text;
                     list.Material_Price_Now= Convert.ToInt32(txt_now_Price.Text);
                     list.Material_Price_Previous = Convert.ToInt32(txt_Forgotten_price.Text);
@@ -80,16 +100,22 @@ namespace Team5_SmartMOM
                   
 
                     KIS_Service service = new KIS_Service();
-                    bool bResult = service.InsertIMaterial(list);
+                    SqlParameter bResult = service.InsertIMaterial(list);
 
-                    if (!bResult)
+                    if (bResult.Value.ToString() == "1")
                     {
-                        MessageBox.Show("성공적으로 등록되었습니다");
+                        MessageBox.Show($"{list.COM_Code}업체의 {list.ITEM_Code}의 단가가 성공적으로 등록되었습니다 \n 현재 날짜를 기준으로 화면이 재구성됩니다.", "확인", MessageBoxButtons.OK);
 
+                    }
+                    else if(bResult.Value.ToString() == "0")
+                    {
+                        MessageBox.Show("시작일에 등록된 월중 등록된 품목의 중복값이 확인되었습니다. \n 중복된 월에는 등록하실수 없습니다!" ,"경고");
+                        this.DialogResult = DialogResult.None;
                     }
                     else
                     {
-                        MessageBox.Show("등록중 오류가 발생하였습니다 다시 시도해주세요");
+                        MessageBox.Show("등록중 문제가 발생하여 등록을 하지 못하였습니다. 다시 등록해주시기 바랍니다. ");
+                        this.DialogResult = DialogResult.None;
                     }
                 }
             }

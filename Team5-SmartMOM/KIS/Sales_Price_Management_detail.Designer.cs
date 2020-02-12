@@ -109,7 +109,7 @@
             // 
             this.txt_edit_date.Enabled = false;
             this.txt_edit_date.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_edit_date.Location = new System.Drawing.Point(413, 174);
+            this.txt_edit_date.Location = new System.Drawing.Point(415, 131);
             this.txt_edit_date.Name = "txt_edit_date";
             this.txt_edit_date.Size = new System.Drawing.Size(175, 21);
             this.txt_edit_date.TabIndex = 117;
@@ -155,7 +155,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(322, 177);
+            this.label6.Location = new System.Drawing.Point(324, 134);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 12);
             this.label6.TabIndex = 111;
