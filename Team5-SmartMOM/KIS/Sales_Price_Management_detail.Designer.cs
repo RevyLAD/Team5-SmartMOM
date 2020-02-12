@@ -99,20 +99,22 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button2.TabIndex = 11;
             // 
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.button1.TabIndex = 10;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // txt_edit_date
             // 
             this.txt_edit_date.Enabled = false;
             this.txt_edit_date.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_edit_date.Location = new System.Drawing.Point(413, 174);
+            this.txt_edit_date.Location = new System.Drawing.Point(415, 131);
             this.txt_edit_date.Name = "txt_edit_date";
             this.txt_edit_date.Size = new System.Drawing.Size(175, 21);
-            this.txt_edit_date.TabIndex = 117;
+            this.txt_edit_date.TabIndex = 7;
             // 
             // txt_edit_user
             // 
@@ -120,7 +122,7 @@
             this.txt_edit_user.Location = new System.Drawing.Point(113, 174);
             this.txt_edit_user.Name = "txt_edit_user";
             this.txt_edit_user.Size = new System.Drawing.Size(177, 21);
-            this.txt_edit_user.TabIndex = 116;
+            this.txt_edit_user.TabIndex = 8;
             // 
             // txt_Forgotten_price
             // 
@@ -128,7 +130,7 @@
             this.txt_Forgotten_price.Location = new System.Drawing.Point(413, 49);
             this.txt_Forgotten_price.Name = "txt_Forgotten_price";
             this.txt_Forgotten_price.Size = new System.Drawing.Size(177, 21);
-            this.txt_Forgotten_price.TabIndex = 115;
+            this.txt_Forgotten_price.TabIndex = 3;
             // 
             // txt_Remarks
             // 
@@ -137,7 +139,7 @@
             this.txt_Remarks.Multiline = true;
             this.txt_Remarks.Name = "txt_Remarks";
             this.txt_Remarks.Size = new System.Drawing.Size(477, 104);
-            this.txt_Remarks.TabIndex = 113;
+            this.txt_Remarks.TabIndex = 9;
             // 
             // label13
             // 
@@ -155,7 +157,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(322, 177);
+            this.label6.Location = new System.Drawing.Point(324, 134);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 12);
             this.label6.TabIndex = 111;
@@ -168,7 +170,7 @@
             this.cbo_Company.Location = new System.Drawing.Point(113, 14);
             this.cbo_Company.Name = "cbo_Company";
             this.cbo_Company.Size = new System.Drawing.Size(175, 20);
-            this.cbo_Company.TabIndex = 104;
+            this.cbo_Company.TabIndex = 0;
             // 
             // label2
             // 
@@ -188,7 +190,7 @@
             this.txt_end_date.Location = new System.Drawing.Point(413, 91);
             this.txt_end_date.Name = "txt_end_date";
             this.txt_end_date.Size = new System.Drawing.Size(177, 21);
-            this.txt_end_date.TabIndex = 109;
+            this.txt_end_date.TabIndex = 5;
             // 
             // label5
             // 
@@ -208,7 +210,7 @@
             this.cbo_item.Location = new System.Drawing.Point(413, 14);
             this.cbo_item.Name = "cbo_item";
             this.cbo_item.Size = new System.Drawing.Size(177, 20);
-            this.cbo_item.TabIndex = 108;
+            this.cbo_item.TabIndex = 1;
             // 
             // label4
             // 
@@ -228,7 +230,7 @@
             this.cbo_UseorNot.Location = new System.Drawing.Point(113, 130);
             this.cbo_UseorNot.Name = "cbo_UseorNot";
             this.cbo_UseorNot.Size = new System.Drawing.Size(175, 20);
-            this.cbo_UseorNot.TabIndex = 107;
+            this.cbo_UseorNot.TabIndex = 6;
             // 
             // label7
             // 
@@ -247,7 +249,7 @@
             this.txt_now_Price.Location = new System.Drawing.Point(113, 50);
             this.txt_now_Price.Name = "txt_now_Price";
             this.txt_now_Price.Size = new System.Drawing.Size(175, 21);
-            this.txt_now_Price.TabIndex = 106;
+            this.txt_now_Price.TabIndex = 2;
             // 
             // label12
             // 
@@ -266,7 +268,7 @@
             this.dtp_start_date.Location = new System.Drawing.Point(113, 91);
             this.dtp_start_date.Name = "dtp_start_date";
             this.dtp_start_date.Size = new System.Drawing.Size(175, 21);
-            this.dtp_start_date.TabIndex = 105;
+            this.dtp_start_date.TabIndex = 4;
             // 
             // label10
             // 

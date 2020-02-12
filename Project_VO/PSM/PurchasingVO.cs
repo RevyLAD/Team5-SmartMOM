@@ -240,5 +240,22 @@ namespace Project_VO
         public DateTime VO_InDate { get; set; }
     }
 
+    public class MaterialStateVO
+    {
+        public string FACT_Name { get; set; }
+        public string ITEM_Name { get; set; }
+    }
+
+    public class InOutListVO
+    {        
+        public DateTime InOut_Date { get; set; }
+        public string InOut_Gubun { get; set; }
+        public string InOut_Category { get; set; }
+        public string From_WareHouse { get; set; }
+        public string In_WareHouse { get; set; }
+        public string ITEM_Code { get; set; }
+        public int InOut_Qty { get; set; }
+    }
+
 
 }

@@ -30,15 +30,11 @@
         {
             this.txtProduct = new System.Windows.Forms.TextBox();
             this.cbocompany = new System.Windows.Forms.ComboBox();
-            this.dtpDateEnd = new System.Windows.Forms.DateTimePicker();
-            this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtOrderNum = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.cboPlanID = new System.Windows.Forms.ComboBox();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -69,16 +65,12 @@
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.cboPlanID);
             this.panelTop.Controls.Add(this.label9);
             this.panelTop.Controls.Add(this.btnSearch);
-            this.panelTop.Controls.Add(this.txtOrderNum);
             this.panelTop.Controls.Add(this.txtProduct);
             this.panelTop.Controls.Add(this.cbocompany);
-            this.panelTop.Controls.Add(this.dtpDateEnd);
-            this.panelTop.Controls.Add(this.dtpDateStart);
-            this.panelTop.Controls.Add(this.label10);
             this.panelTop.Controls.Add(this.label7);
-            this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.label8);
             this.panelTop.Size = new System.Drawing.Size(1202, 113);
             // 
@@ -96,6 +88,7 @@
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(191, 21);
             this.txtProduct.TabIndex = 70;
+            this.txtProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
             // 
             // cbocompany
             // 
@@ -104,35 +97,7 @@
             this.cbocompany.Name = "cbocompany";
             this.cbocompany.Size = new System.Drawing.Size(161, 20);
             this.cbocompany.TabIndex = 68;
-            // 
-            // dtpDateEnd
-            // 
-            this.dtpDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateEnd.Location = new System.Drawing.Point(227, 23);
-            this.dtpDateEnd.Name = "dtpDateEnd";
-            this.dtpDateEnd.Size = new System.Drawing.Size(83, 21);
-            this.dtpDateEnd.TabIndex = 66;
-            this.dtpDateEnd.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
-            // 
-            // dtpDateStart
-            // 
-            this.dtpDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateStart.Location = new System.Drawing.Point(119, 23);
-            this.dtpDateStart.Name = "dtpDateStart";
-            this.dtpDateStart.Size = new System.Drawing.Size(83, 21);
-            this.dtpDateStart.TabIndex = 65;
-            this.dtpDateStart.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(196, 23);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(36, 19);
-            this.label10.TabIndex = 64;
-            this.label10.Text = " - ";
+            this.cbocompany.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
             // 
             // label7
             // 
@@ -144,16 +109,6 @@
             this.label7.TabIndex = 62;
             this.label7.Text = "* 품목";
             // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 62);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 19);
-            this.label4.TabIndex = 60;
-            this.label4.Text = "* 입고번호";
-            // 
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.Transparent;
@@ -163,13 +118,6 @@
             this.label8.Size = new System.Drawing.Size(51, 19);
             this.label8.TabIndex = 59;
             this.label8.Text = "* 업체";
-            // 
-            // txtOrderNum
-            // 
-            this.txtOrderNum.Location = new System.Drawing.Point(119, 63);
-            this.txtOrderNum.Name = "txtOrderNum";
-            this.txtOrderNum.Size = new System.Drawing.Size(191, 21);
-            this.txtOrderNum.TabIndex = 73;
             // 
             // btnSearch
             // 
@@ -191,9 +139,18 @@
             this.label9.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(17, 23);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(51, 19);
+            this.label9.Size = new System.Drawing.Size(99, 19);
             this.label9.TabIndex = 80;
-            this.label9.Text = "* 입고일";
+            this.label9.Text = "* Plan_ID";
+            // 
+            // cboPlanID
+            // 
+            this.cboPlanID.FormattingEnabled = true;
+            this.cboPlanID.Location = new System.Drawing.Point(132, 26);
+            this.cboPlanID.Name = "cboPlanID";
+            this.cboPlanID.Size = new System.Drawing.Size(161, 20);
+            this.cboPlanID.TabIndex = 81;
+            this.cboPlanID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
             // 
             // Material_Ledger_State
             // 
@@ -217,16 +174,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtOrderNum;
         private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.ComboBox cbocompany;
-        private System.Windows.Forms.DateTimePicker dtpDateEnd;
-        private System.Windows.Forms.DateTimePicker dtpDateStart;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
         protected System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cboPlanID;
     }
 }

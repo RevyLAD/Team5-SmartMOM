@@ -56,6 +56,7 @@
             this.button3.Location = new System.Drawing.Point(1048, 0);
             this.button3.Size = new System.Drawing.Size(50, 23);
             this.button3.Text = "MRP";
+            this.button3.Visible = false;
             // 
             // button2
             // 
@@ -131,8 +132,9 @@
             this.cboPlanID.Location = new System.Drawing.Point(108, 29);
             this.cboPlanID.Name = "cboPlanID";
             this.cboPlanID.Size = new System.Drawing.Size(193, 20);
-            this.cboPlanID.TabIndex = 11;
+            this.cboPlanID.TabIndex = 0;
             this.cboPlanID.SelectedIndexChanged += new System.EventHandler(this.cboPlanID_SelectedIndexChanged);
+            this.cboPlanID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboPlanID_KeyPress);
             // 
             // label10
             // 
@@ -173,7 +175,7 @@
             this.btnSearch.Location = new System.Drawing.Point(1116, 22);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(81, 30);
-            this.btnSearch.TabIndex = 26;
+            this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);

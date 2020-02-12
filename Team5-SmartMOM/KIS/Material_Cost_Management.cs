@@ -12,6 +12,7 @@ namespace Team5_SmartMOM.KIS
 {
     public partial class Material_Cost_Management : Team5_SmartMOM.BaseGridForm
     {
+        List<Material_VO_VIew> list;
         KIS_Service service = new KIS_Service();
         public Material_Cost_Management()
         {
@@ -30,6 +31,7 @@ namespace Team5_SmartMOM.KIS
 
         private void Material_Cost_Management_Load(object sender, EventArgs e)
         {
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn(false);
             chk.Width = 40;
             chk.HeaderText = "선택";
@@ -61,7 +63,6 @@ namespace Team5_SmartMOM.KIS
         public void DataLoad()
         {
             KIS_Service service = new KIS_Service();
-            List<Material_VO_VIew> list = new List<Material_VO_VIew>();
             list = service.ShowMaterial();
 
             dataGridView1.DataSource = list;

@@ -45,6 +45,7 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cboFacilities = new System.Windows.Forms.ComboBox();
+            this.btnAllSearch = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtITEM_Code = new System.Windows.Forms.TextBox();
             this.txtWO_ID = new System.Windows.Forms.TextBox();
@@ -237,6 +238,7 @@
             this.panelZ1.Controls.Add(this.dateTimePicker2);
             this.panelZ1.Controls.Add(this.dateTimePicker1);
             this.panelZ1.Controls.Add(this.cboFacilities);
+            this.panelZ1.Controls.Add(this.btnAllSearch);
             this.panelZ1.Controls.Add(this.btnSearch);
             this.panelZ1.Controls.Add(this.txtITEM_Code);
             this.panelZ1.Controls.Add(this.txtWO_ID);
@@ -279,6 +281,20 @@
             this.cboFacilities.Name = "cboFacilities";
             this.cboFacilities.Size = new System.Drawing.Size(191, 20);
             this.cboFacilities.TabIndex = 63;
+            // 
+            // btnAllSearch
+            // 
+            this.btnAllSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAllSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.btnAllSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAllSearch.ForeColor = System.Drawing.Color.White;
+            this.btnAllSearch.Location = new System.Drawing.Point(1051, 45);
+            this.btnAllSearch.Name = "btnAllSearch";
+            this.btnAllSearch.Size = new System.Drawing.Size(81, 30);
+            this.btnAllSearch.TabIndex = 62;
+            this.btnAllSearch.Text = "되돌리기";
+            this.btnAllSearch.UseVisualStyleBackColor = false;
+            this.btnAllSearch.Click += new System.EventHandler(this.btnAllSearch_Click);
             // 
             // btnSearch
             // 
@@ -523,5 +539,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        protected System.Windows.Forms.Button btnAllSearch;
     }
 }

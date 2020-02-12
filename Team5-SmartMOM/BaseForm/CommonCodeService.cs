@@ -129,6 +129,12 @@ namespace Team5_SmartMOM.BaseForm
             return dac.GetWorkOrderState();
         }
 
+        public List<PlanIDVO> GetWorkOrderPlanID()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.GetWorkOrderPlanID();
+        }
+        
 
     }
 }

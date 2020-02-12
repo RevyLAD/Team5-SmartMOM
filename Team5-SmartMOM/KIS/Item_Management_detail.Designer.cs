@@ -44,7 +44,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
@@ -54,20 +53,21 @@
             this.cbo_unit = new System.Windows.Forms.ComboBox();
             this.cbo_import_check = new System.Windows.Forms.ComboBox();
             this.cbo_Warehouse = new System.Windows.Forms.ComboBox();
-            this.cbo_MinOrder_count = new System.Windows.Forms.ComboBox();
             this.cbo_Management_ranking = new System.Windows.Forms.ComboBox();
             this.cbo_process_check = new System.Windows.Forms.ComboBox();
             this.cbo_releasehouse = new System.Windows.Forms.ComboBox();
-            this.cbo_manager = new System.Windows.Forms.ComboBox();
             this.cbo_UseorNot = new System.Windows.Forms.ComboBox();
             this.cbo_orderType = new System.Windows.Forms.ComboBox();
             this.cbo_itemtype = new System.Windows.Forms.ComboBox();
             this.cbo_shipment_Check = new System.Windows.Forms.ComboBox();
-            this.cbo_Client = new System.Windows.Forms.ComboBox();
             this.txt_Safety_Count = new System.Windows.Forms.TextBox();
             this.txt_edituser = new System.Windows.Forms.TextBox();
             this.txt_edit_date = new System.Windows.Forms.TextBox();
             this.txt_Remarks = new System.Windows.Forms.TextBox();
+            this.cbo_manager = new System.Windows.Forms.TextBox();
+            this.cbo_MinOrder_count = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.cbo_Client = new System.Windows.Forms.ComboBox();
             this.panelFull.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelBottom.SuspendLayout();
@@ -78,19 +78,21 @@
             // 
             // panelFull
             // 
-            this.panelFull.Size = new System.Drawing.Size(782, 456);
+            this.panelFull.Size = new System.Drawing.Size(766, 478);
             // 
             // panelMain
             // 
-            this.panelMain.Size = new System.Drawing.Size(760, 434);
+            this.panelMain.Size = new System.Drawing.Size(744, 456);
             // 
             // panelBottom
             // 
-            this.panelBottom.Location = new System.Drawing.Point(0, 386);
-            this.panelBottom.Size = new System.Drawing.Size(760, 48);
+            this.panelBottom.Location = new System.Drawing.Point(0, 408);
+            this.panelBottom.Size = new System.Drawing.Size(744, 48);
             // 
             // panelDock
             // 
+            this.panelDock.Controls.Add(this.cbo_MinOrder_count);
+            this.panelDock.Controls.Add(this.cbo_manager);
             this.panelDock.Controls.Add(this.txt_Remarks);
             this.panelDock.Controls.Add(this.txt_edit_date);
             this.panelDock.Controls.Add(this.txt_edituser);
@@ -100,11 +102,9 @@
             this.panelDock.Controls.Add(this.cbo_itemtype);
             this.panelDock.Controls.Add(this.cbo_orderType);
             this.panelDock.Controls.Add(this.cbo_UseorNot);
-            this.panelDock.Controls.Add(this.cbo_manager);
             this.panelDock.Controls.Add(this.cbo_releasehouse);
             this.panelDock.Controls.Add(this.cbo_process_check);
             this.panelDock.Controls.Add(this.cbo_Management_ranking);
-            this.panelDock.Controls.Add(this.cbo_MinOrder_count);
             this.panelDock.Controls.Add(this.cbo_Warehouse);
             this.panelDock.Controls.Add(this.cbo_import_check);
             this.panelDock.Controls.Add(this.cbo_unit);
@@ -131,15 +131,15 @@
             this.panelDock.Controls.Add(this.label4);
             this.panelDock.Controls.Add(this.label3);
             this.panelDock.Controls.Add(this.label2);
-            this.panelDock.Size = new System.Drawing.Size(760, 386);
+            this.panelDock.Size = new System.Drawing.Size(744, 408);
             // 
             // panelTop
             // 
-            this.panelTop.Size = new System.Drawing.Size(760, 48);
+            this.panelTop.Size = new System.Drawing.Size(744, 48);
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(760, 38);
+            this.panel1.Size = new System.Drawing.Size(744, 38);
             // 
             // label1
             // 
@@ -149,17 +149,19 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(396, 10);
+            this.button2.Location = new System.Drawing.Point(382, 15);
+            this.button2.TabIndex = 21;
             // 
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(305, 10);
+            this.button1.Location = new System.Drawing.Point(277, 15);
+            this.button1.TabIndex = 20;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(1778, 10);
+            this.tileSave.Location = new System.Drawing.Point(2436, 10);
             // 
             // label2
             // 
@@ -188,7 +190,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(504, 52);
+            this.label4.Location = new System.Drawing.Point(508, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 12);
             this.label4.TabIndex = 2;
@@ -228,7 +230,8 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.Location = new System.Drawing.Point(504, 121);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label11.Location = new System.Drawing.Point(508, 121);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(96, 12);
             this.label11.TabIndex = 5;
@@ -238,7 +241,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label12.Location = new System.Drawing.Point(264, 232);
+            this.label12.Location = new System.Drawing.Point(20, 266);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(44, 12);
             this.label12.TabIndex = 10;
@@ -248,7 +251,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label13.Location = new System.Drawing.Point(17, 233);
+            this.label13.Location = new System.Drawing.Point(20, 233);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(70, 12);
             this.label13.TabIndex = 20;
@@ -259,7 +262,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label14.Location = new System.Drawing.Point(505, 195);
+            this.label14.Location = new System.Drawing.Point(508, 195);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(70, 12);
             this.label14.TabIndex = 19;
@@ -269,7 +272,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label16.Location = new System.Drawing.Point(505, 156);
+            this.label16.Location = new System.Drawing.Point(508, 156);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(57, 12);
             this.label16.TabIndex = 17;
@@ -321,21 +324,12 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label27.Location = new System.Drawing.Point(20, 156);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(96, 12);
             this.label27.TabIndex = 26;
             this.label27.Text = "ㆍ안전재고수량";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label29.Location = new System.Drawing.Point(508, 86);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(70, 12);
-            this.label29.TabIndex = 24;
-            this.label29.Text = "ㆍ발주업체";
             // 
             // label30
             // 
@@ -374,21 +368,21 @@
             this.txt_item.Location = new System.Drawing.Point(124, 15);
             this.txt_item.Name = "txt_item";
             this.txt_item.Size = new System.Drawing.Size(116, 21);
-            this.txt_item.TabIndex = 30;
+            this.txt_item.TabIndex = 0;
             // 
             // txt_itemname
             // 
             this.txt_itemname.Location = new System.Drawing.Point(368, 15);
             this.txt_itemname.Name = "txt_itemname";
             this.txt_itemname.Size = new System.Drawing.Size(116, 21);
-            this.txt_itemname.TabIndex = 32;
+            this.txt_itemname.TabIndex = 1;
             // 
             // txt_size
             // 
             this.txt_size.Location = new System.Drawing.Point(612, 15);
             this.txt_size.Name = "txt_size";
             this.txt_size.Size = new System.Drawing.Size(116, 21);
-            this.txt_size.TabIndex = 33;
+            this.txt_size.TabIndex = 2;
             // 
             // cbo_unit
             // 
@@ -396,7 +390,7 @@
             this.cbo_unit.Location = new System.Drawing.Point(124, 49);
             this.cbo_unit.Name = "cbo_unit";
             this.cbo_unit.Size = new System.Drawing.Size(116, 20);
-            this.cbo_unit.TabIndex = 34;
+            this.cbo_unit.TabIndex = 3;
             // 
             // cbo_import_check
             // 
@@ -404,7 +398,7 @@
             this.cbo_import_check.Location = new System.Drawing.Point(612, 49);
             this.cbo_import_check.Name = "cbo_import_check";
             this.cbo_import_check.Size = new System.Drawing.Size(116, 20);
-            this.cbo_import_check.TabIndex = 35;
+            this.cbo_import_check.TabIndex = 5;
             // 
             // cbo_Warehouse
             // 
@@ -412,15 +406,7 @@
             this.cbo_Warehouse.Location = new System.Drawing.Point(124, 117);
             this.cbo_Warehouse.Name = "cbo_Warehouse";
             this.cbo_Warehouse.Size = new System.Drawing.Size(116, 20);
-            this.cbo_Warehouse.TabIndex = 37;
-            // 
-            // cbo_MinOrder_count
-            // 
-            this.cbo_MinOrder_count.FormattingEnabled = true;
-            this.cbo_MinOrder_count.Location = new System.Drawing.Point(612, 117);
-            this.cbo_MinOrder_count.Name = "cbo_MinOrder_count";
-            this.cbo_MinOrder_count.Size = new System.Drawing.Size(116, 20);
-            this.cbo_MinOrder_count.TabIndex = 38;
+            this.cbo_Warehouse.TabIndex = 9;
             // 
             // cbo_Management_ranking
             // 
@@ -428,7 +414,7 @@
             this.cbo_Management_ranking.Location = new System.Drawing.Point(368, 152);
             this.cbo_Management_ranking.Name = "cbo_Management_ranking";
             this.cbo_Management_ranking.Size = new System.Drawing.Size(116, 20);
-            this.cbo_Management_ranking.TabIndex = 39;
+            this.cbo_Management_ranking.TabIndex = 13;
             // 
             // cbo_process_check
             // 
@@ -436,7 +422,7 @@
             this.cbo_process_check.Location = new System.Drawing.Point(124, 82);
             this.cbo_process_check.Name = "cbo_process_check";
             this.cbo_process_check.Size = new System.Drawing.Size(116, 20);
-            this.cbo_process_check.TabIndex = 41;
+            this.cbo_process_check.TabIndex = 6;
             // 
             // cbo_releasehouse
             // 
@@ -444,15 +430,7 @@
             this.cbo_releasehouse.Location = new System.Drawing.Point(368, 117);
             this.cbo_releasehouse.Name = "cbo_releasehouse";
             this.cbo_releasehouse.Size = new System.Drawing.Size(116, 20);
-            this.cbo_releasehouse.TabIndex = 45;
-            // 
-            // cbo_manager
-            // 
-            this.cbo_manager.FormattingEnabled = true;
-            this.cbo_manager.Location = new System.Drawing.Point(612, 152);
-            this.cbo_manager.Name = "cbo_manager";
-            this.cbo_manager.Size = new System.Drawing.Size(116, 20);
-            this.cbo_manager.TabIndex = 46;
+            this.cbo_releasehouse.TabIndex = 10;
             // 
             // cbo_UseorNot
             // 
@@ -460,7 +438,7 @@
             this.cbo_UseorNot.Location = new System.Drawing.Point(612, 191);
             this.cbo_UseorNot.Name = "cbo_UseorNot";
             this.cbo_UseorNot.Size = new System.Drawing.Size(116, 20);
-            this.cbo_UseorNot.TabIndex = 48;
+            this.cbo_UseorNot.TabIndex = 17;
             // 
             // cbo_orderType
             // 
@@ -468,7 +446,7 @@
             this.cbo_orderType.Location = new System.Drawing.Point(124, 229);
             this.cbo_orderType.Name = "cbo_orderType";
             this.cbo_orderType.Size = new System.Drawing.Size(116, 20);
-            this.cbo_orderType.TabIndex = 49;
+            this.cbo_orderType.TabIndex = 18;
             // 
             // cbo_itemtype
             // 
@@ -476,7 +454,7 @@
             this.cbo_itemtype.Location = new System.Drawing.Point(368, 49);
             this.cbo_itemtype.Name = "cbo_itemtype";
             this.cbo_itemtype.Size = new System.Drawing.Size(116, 20);
-            this.cbo_itemtype.TabIndex = 50;
+            this.cbo_itemtype.TabIndex = 4;
             // 
             // cbo_shipment_Check
             // 
@@ -484,7 +462,60 @@
             this.cbo_shipment_Check.Location = new System.Drawing.Point(368, 82);
             this.cbo_shipment_Check.Name = "cbo_shipment_Check";
             this.cbo_shipment_Check.Size = new System.Drawing.Size(116, 20);
-            this.cbo_shipment_Check.TabIndex = 51;
+            this.cbo_shipment_Check.TabIndex = 7;
+            // 
+            // txt_Safety_Count
+            // 
+            this.txt_Safety_Count.Location = new System.Drawing.Point(124, 152);
+            this.txt_Safety_Count.Name = "txt_Safety_Count";
+            this.txt_Safety_Count.Size = new System.Drawing.Size(116, 21);
+            this.txt_Safety_Count.TabIndex = 12;
+            // 
+            // txt_edituser
+            // 
+            this.txt_edituser.Location = new System.Drawing.Point(124, 190);
+            this.txt_edituser.Name = "txt_edituser";
+            this.txt_edituser.Size = new System.Drawing.Size(116, 21);
+            this.txt_edituser.TabIndex = 15;
+            // 
+            // txt_edit_date
+            // 
+            this.txt_edit_date.Location = new System.Drawing.Point(368, 191);
+            this.txt_edit_date.Name = "txt_edit_date";
+            this.txt_edit_date.Size = new System.Drawing.Size(116, 21);
+            this.txt_edit_date.TabIndex = 16;
+            // 
+            // txt_Remarks
+            // 
+            this.txt_Remarks.Location = new System.Drawing.Point(124, 266);
+            this.txt_Remarks.Multiline = true;
+            this.txt_Remarks.Name = "txt_Remarks";
+            this.txt_Remarks.Size = new System.Drawing.Size(604, 66);
+            this.txt_Remarks.TabIndex = 19;
+            // 
+            // cbo_manager
+            // 
+            this.cbo_manager.Location = new System.Drawing.Point(612, 153);
+            this.cbo_manager.Name = "cbo_manager";
+            this.cbo_manager.Size = new System.Drawing.Size(116, 21);
+            this.cbo_manager.TabIndex = 14;
+            // 
+            // cbo_MinOrder_count
+            // 
+            this.cbo_MinOrder_count.Location = new System.Drawing.Point(612, 118);
+            this.cbo_MinOrder_count.Name = "cbo_MinOrder_count";
+            this.cbo_MinOrder_count.Size = new System.Drawing.Size(116, 21);
+            this.cbo_MinOrder_count.TabIndex = 11;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label29.Location = new System.Drawing.Point(508, 86);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(70, 12);
+            this.label29.TabIndex = 24;
+            this.label29.Text = "ㆍ발주업체";
             // 
             // cbo_Client
             // 
@@ -492,41 +523,12 @@
             this.cbo_Client.Location = new System.Drawing.Point(612, 82);
             this.cbo_Client.Name = "cbo_Client";
             this.cbo_Client.Size = new System.Drawing.Size(116, 20);
-            this.cbo_Client.TabIndex = 52;
-            // 
-            // txt_Safety_Count
-            // 
-            this.txt_Safety_Count.Location = new System.Drawing.Point(124, 152);
-            this.txt_Safety_Count.Name = "txt_Safety_Count";
-            this.txt_Safety_Count.Size = new System.Drawing.Size(116, 21);
-            this.txt_Safety_Count.TabIndex = 54;
-            // 
-            // txt_edituser
-            // 
-            this.txt_edituser.Location = new System.Drawing.Point(124, 190);
-            this.txt_edituser.Name = "txt_edituser";
-            this.txt_edituser.Size = new System.Drawing.Size(116, 21);
-            this.txt_edituser.TabIndex = 57;
-            // 
-            // txt_edit_date
-            // 
-            this.txt_edit_date.Location = new System.Drawing.Point(368, 191);
-            this.txt_edit_date.Name = "txt_edit_date";
-            this.txt_edit_date.Size = new System.Drawing.Size(116, 21);
-            this.txt_edit_date.TabIndex = 58;
-            // 
-            // txt_Remarks
-            // 
-            this.txt_Remarks.Location = new System.Drawing.Point(368, 229);
-            this.txt_Remarks.Multiline = true;
-            this.txt_Remarks.Name = "txt_Remarks";
-            this.txt_Remarks.Size = new System.Drawing.Size(360, 85);
-            this.txt_Remarks.TabIndex = 59;
+            this.cbo_Client.TabIndex = 8;
             // 
             // Item_Management_detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(782, 456);
+            this.ClientSize = new System.Drawing.Size(766, 478);
             this.Name = "Item_Management_detail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.Item_Management_detail_Load);
@@ -549,7 +551,6 @@
         private System.Windows.Forms.TextBox txt_item;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
@@ -570,19 +571,20 @@
         private System.Windows.Forms.TextBox txt_edit_date;
         private System.Windows.Forms.TextBox txt_edituser;
         private System.Windows.Forms.TextBox txt_Safety_Count;
-        private System.Windows.Forms.ComboBox cbo_Client;
         private System.Windows.Forms.ComboBox cbo_shipment_Check;
         private System.Windows.Forms.ComboBox cbo_itemtype;
         private System.Windows.Forms.ComboBox cbo_orderType;
         private System.Windows.Forms.ComboBox cbo_UseorNot;
-        private System.Windows.Forms.ComboBox cbo_manager;
         private System.Windows.Forms.ComboBox cbo_releasehouse;
         private System.Windows.Forms.ComboBox cbo_process_check;
         private System.Windows.Forms.ComboBox cbo_Management_ranking;
-        private System.Windows.Forms.ComboBox cbo_MinOrder_count;
         private System.Windows.Forms.ComboBox cbo_Warehouse;
         private System.Windows.Forms.ComboBox cbo_import_check;
         private System.Windows.Forms.ComboBox cbo_unit;
         private System.Windows.Forms.TextBox txt_Remarks;
+        private System.Windows.Forms.TextBox cbo_manager;
+        private System.Windows.Forms.TextBox cbo_MinOrder_count;
+        private System.Windows.Forms.ComboBox cbo_Client;
+        private System.Windows.Forms.Label label29;
     }
 }

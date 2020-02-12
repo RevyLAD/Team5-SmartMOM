@@ -55,6 +55,7 @@
     <Compile Include="HSM\WorkOrderVO.cs" />
     <Compile Include="KIS\BOM_Serch_VO.cs" />
     <Compile Include="KIS\BOM_VO.cs" />
+    <Compile Include="KIS\DynamicLibrary.cs" />
     <Compile Include="KIS\ITEM_VO.cs" />
     <Compile Include="KIS\Material_VO.cs" />
     <Compile Include="KIS\Sales_VO.cs" />

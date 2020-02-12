@@ -23,6 +23,14 @@ namespace Project_VO.HSM
 
     }
 
+    public class WorkOrderListVO
+    {
+        public string WO_StartDate { get; set; }
+        public string WO_EndDate { get; set; }
+        public string Plan_ID { get; set; }
+        public string WO_State { get; set; }
+    }
+
     public class WorkOrderStateVO
     {
         public string WO_State { get; set; }

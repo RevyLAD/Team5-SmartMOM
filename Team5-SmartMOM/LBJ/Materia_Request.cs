@@ -15,7 +15,6 @@ namespace Team5_SmartMOM.PSM
 {
     public partial class Materia_Request : Form
     {
-        
         List<MateriaVO> mvo;
         List<MateriaRequestVO> list;
         public Materia_Request()
@@ -84,17 +83,19 @@ namespace Team5_SmartMOM.PSM
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (cboFacilities.Text.Trim() == "전체")
+            List<MateriaVO> mvo = new List<MateriaVO>();
+
+            if (cboFacilities.Text.Trim() != "" && txtITEM_Code.Text != "" && txtWO_ID.Text != "")
             {
-                DataLoad();
+                //string a = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+                //string b = dateTimePicker2.Value.ToString("yyyy-MM-dd");
+                dataGridView1.DataSource = MateriaSearch();
             }
             else
             {
-                List<MateriaVO> Materia = (from item in mvo
-                       where item.FAC_Name == cboFacilities.Text
-                       select item).ToList();
-                dataGridView1.DataSource = Materia;
-            }           
+
+            }
+               
         }
         private List<MateriaVO> MateriaSearch()
         {
@@ -109,6 +110,11 @@ namespace Team5_SmartMOM.PSM
                     
             }
             return mvo2;
+        }
+
+        private void btnAllSearch_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = mvo;
         }
     }
 }

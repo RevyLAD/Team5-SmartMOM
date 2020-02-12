@@ -16,7 +16,7 @@ namespace Team5_SmartMOM.LBJ
 {
     public partial class office_hours_management : Team5_SmartMOM.BaseGridForm
     {
-        List<ShiftManagementVO> list1;
+        List<ShiftManagementVO> list;
         public office_hours_management()
         {
             InitializeComponent();
@@ -50,7 +50,7 @@ namespace Team5_SmartMOM.LBJ
                                                  where item.Common_Type == "SHIFT"
                                                  select item).ToList();
 
-            CommonUtil.ComboBinding(cboShift, OrderShiftList, "Common_Key", "Common_Value");
+            CommonUtil.ComboBinding(cboShift, OrderShiftList, "Common_Key", "Common_Value", "전체");
         }
         public void DataLoad2()
         {
@@ -89,7 +89,6 @@ namespace Team5_SmartMOM.LBJ
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = null;
             ShiftManagementVO Shiftmanage = new ShiftManagementVO();
             LBJ_Service service = new LBJ_Service();
 
@@ -99,18 +98,26 @@ namespace Team5_SmartMOM.LBJ
             Shiftmanage.SHIFT_StartDate = Convert.ToDateTime(dateTimePicker1.Value.ToShortDateString());
             Shiftmanage.SHIFT_EndDate = Convert.ToDateTime(dateTimePicker2.Value.ToShortDateString());
 
-            DataSet ds = service.GetShiftManagement(Shiftmanage);
-            dataGridView1.DataSource = ds.Tables[0];
+            if (cboShift.Text == "주간")
+            {
+                DataSet ds = service.GetShiftManagement(Shiftmanage);
+                dataGridView1.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                DataSet ds = service.GetShiftManagement(Shiftmanage);
+                dataGridView1.DataSource = ds.Tables[0];
+            }
         }
         private List<ShiftManagementVO> ShiftSearch()
         {
             List<ShiftManagementVO> mvo = new List<ShiftManagementVO>();
-
-            foreach (var item in list1)
+        
+            foreach (var item in list)
             {
-                if (cboShift.Text.Trim() == item.SHIFT && cboSystem.Text.Trim() == item.FAC_Name)
+                if (cboShift.Text.Trim() == item.SHIFT && cboSystem.Text.Trim() == item.FAC_Name) 
                 {
-                    list1.Add(item);
+                    list.Add(item);
                 }
             }
             return mvo;

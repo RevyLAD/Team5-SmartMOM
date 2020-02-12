@@ -164,6 +164,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Orange;
             this.label8.Location = new System.Drawing.Point(291, 15);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 22);
@@ -259,6 +260,8 @@
             // cboOrderDivision
             // 
             this.cboOrderDivision.FormattingEnabled = true;
+            this.cboOrderDivision.Items.AddRange(new object[] {
+            "P/O"});
             this.cboOrderDivision.Location = new System.Drawing.Point(412, 19);
             this.cboOrderDivision.Name = "cboOrderDivision";
             this.cboOrderDivision.Size = new System.Drawing.Size(140, 20);

@@ -100,10 +100,12 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button2.TabIndex = 11;
             // 
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.button1.TabIndex = 10;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // txt_end_date
@@ -113,7 +115,7 @@
             this.txt_end_date.Location = new System.Drawing.Point(408, 97);
             this.txt_end_date.Name = "txt_end_date";
             this.txt_end_date.Size = new System.Drawing.Size(177, 21);
-            this.txt_end_date.TabIndex = 82;
+            this.txt_end_date.TabIndex = 5;
             // 
             // cbo_Item
             // 
@@ -122,7 +124,7 @@
             this.cbo_Item.Location = new System.Drawing.Point(408, 15);
             this.cbo_Item.Name = "cbo_Item";
             this.cbo_Item.Size = new System.Drawing.Size(177, 20);
-            this.cbo_Item.TabIndex = 81;
+            this.cbo_Item.TabIndex = 1;
             // 
             // cbo_UseorNot
             // 
@@ -131,7 +133,7 @@
             this.cbo_UseorNot.Location = new System.Drawing.Point(108, 136);
             this.cbo_UseorNot.Name = "cbo_UseorNot";
             this.cbo_UseorNot.Size = new System.Drawing.Size(175, 20);
-            this.cbo_UseorNot.TabIndex = 80;
+            this.cbo_UseorNot.TabIndex = 6;
             // 
             // txt_now_Price
             // 
@@ -139,15 +141,16 @@
             this.txt_now_Price.Location = new System.Drawing.Point(108, 56);
             this.txt_now_Price.Name = "txt_now_Price";
             this.txt_now_Price.Size = new System.Drawing.Size(175, 21);
-            this.txt_now_Price.TabIndex = 79;
+            this.txt_now_Price.TabIndex = 2;
             // 
             // dtp_start_date
             // 
             this.dtp_start_date.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtp_start_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_start_date.Location = new System.Drawing.Point(108, 97);
             this.dtp_start_date.Name = "dtp_start_date";
             this.dtp_start_date.Size = new System.Drawing.Size(175, 21);
-            this.dtp_start_date.TabIndex = 78;
+            this.dtp_start_date.TabIndex = 4;
             // 
             // cbo_Company
             // 
@@ -156,7 +159,7 @@
             this.cbo_Company.Location = new System.Drawing.Point(108, 15);
             this.cbo_Company.Name = "cbo_Company";
             this.cbo_Company.Size = new System.Drawing.Size(175, 20);
-            this.cbo_Company.TabIndex = 76;
+            this.cbo_Company.TabIndex = 0;
             // 
             // label9
             // 
@@ -252,7 +255,7 @@
             this.txt_Remarks.Multiline = true;
             this.txt_Remarks.Name = "txt_Remarks";
             this.txt_Remarks.Size = new System.Drawing.Size(477, 104);
-            this.txt_Remarks.TabIndex = 89;
+            this.txt_Remarks.TabIndex = 9;
             // 
             // txt_Forgotten_price
             // 
@@ -260,7 +263,7 @@
             this.txt_Forgotten_price.Location = new System.Drawing.Point(408, 56);
             this.txt_Forgotten_price.Name = "txt_Forgotten_price";
             this.txt_Forgotten_price.Size = new System.Drawing.Size(177, 21);
-            this.txt_Forgotten_price.TabIndex = 91;
+            this.txt_Forgotten_price.TabIndex = 3;
             // 
             // txt_edit_date
             // 
@@ -269,7 +272,7 @@
             this.txt_edit_date.Location = new System.Drawing.Point(408, 177);
             this.txt_edit_date.Name = "txt_edit_date";
             this.txt_edit_date.Size = new System.Drawing.Size(175, 21);
-            this.txt_edit_date.TabIndex = 97;
+            this.txt_edit_date.TabIndex = 8;
             // 
             // label6
             // 
@@ -288,7 +291,7 @@
             this.txt_edit_user.Location = new System.Drawing.Point(108, 177);
             this.txt_edit_user.Name = "txt_edit_user";
             this.txt_edit_user.Size = new System.Drawing.Size(177, 21);
-            this.txt_edit_user.TabIndex = 101;
+            this.txt_edit_user.TabIndex = 7;
             // 
             // label8
             // 

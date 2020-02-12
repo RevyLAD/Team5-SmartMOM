@@ -37,27 +37,36 @@ namespace Team5_SmartMOM.PSM
             headerCheckBox.Size = new Size(18, 18);
             headerCheckBox.Click += new EventHandler(HeaderCheckBox_Click);
             dataGridView1.Controls.Add(headerCheckBox);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "창고코드", "FACT_Code", true, 90);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "창고", "FACT_Name", true, 90);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 100);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목타입", "ITEM_Type", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 200);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 200);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목타입", "ITEM_Type", true, 150, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "규격", "ITEM_Size", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "재고량", "FACD_Qty", true, 150);            
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "단위", "ITEM_Unit", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "재고량", "FACD_Qty", true, 150, DataGridViewContentAlignment.MiddleRight);            
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "단위", "ITEM_Unit", true, 100, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "관리등급", "", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "", true, 150);
-
-
+            
+            btnSearch_Click(null, new EventArgs());
             DataLoad();
         }
 
         public void DataLoad()
         {
+            MaterialStateVO ms = new MaterialStateVO();
+            ms.FACT_Name = cbofactory.Text.Trim();
+            ms.ITEM_Name = txtitem.Text.Trim();
+
             PSM_Service service = new PSM_Service();
-            list = service.Stock_State();
+            list = service.Stock_State(ms);
             dataGridView1.DataSource = list;
+
+            
+            List<FacVO> planid = service.GetFactoryList();
+            CommonUtil.ComboBinding(cbofactory, planid, "FACT_Code", "FACT_Name", "");
         }
 
             private void HeaderCheckBox_Click(object sender, EventArgs e)
@@ -67,6 +76,25 @@ namespace Team5_SmartMOM.PSM
             {
                 DataGridViewCheckBoxCell chkBox = row.Cells["Check"] as DataGridViewCheckBoxCell;
                 chkBox.Value = headerCheckBox.Checked;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            MaterialStateVO ms = new MaterialStateVO();
+            ms.FACT_Name = cbofactory.Text.Trim();
+            ms.ITEM_Name = txtitem.Text.Trim();
+
+            PSM_Service service = new PSM_Service();
+            list = service.Stock_State(ms);
+            dataGridView1.DataSource = list;
+        }
+
+        private void txtitem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar == 13))
+            {
+                btnSearch_Click(null, new EventArgs());
             }
         }
     }

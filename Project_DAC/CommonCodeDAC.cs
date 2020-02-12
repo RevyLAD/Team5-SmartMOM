@@ -420,5 +420,21 @@ namespace Project_DAC
             }
         }
 
+        public List<PlanIDVO> GetWorkOrderPlanID()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "  select distinct Plan_Id from WorkOrder  ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<PlanIDVO> list = Helper.DataReaderMapToList<PlanIDVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
     }
 }

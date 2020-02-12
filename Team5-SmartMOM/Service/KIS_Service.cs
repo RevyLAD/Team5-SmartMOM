@@ -2,6 +2,7 @@
 using Project_VO;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,11 @@ namespace Team5_SmartMOM.Service
         {
             ITEM_DAC cmd = new ITEM_DAC();
             return cmd.ShowAllITEM();
+        }
+        public List<ITEM_VO> SearchITEM(string sb)
+        {
+            ITEM_DAC cmd = new ITEM_DAC();
+            return cmd.SearchITEM(sb);
         }
         public bool InsertItem(ITEM_VO list)
         {
@@ -57,12 +63,12 @@ namespace Team5_SmartMOM.Service
             BOM_DAC dac = new BOM_DAC();
             return dac.GetAllCommonItem();
         }
-        public List<BOM_VO1> GetAllCommonBOM()
+        public List<BOM_VO> GetAllCommonBOM()
         {
             BOM_DAC dac = new BOM_DAC();
             return dac.GetAllCommonBOM();
         }
-        public List<EnterpriseVO> GetAllCommonCode3()
+        public List<EnterpriseVO_Sales> GetAllCommonCode3()
         {
             BOM_DAC dac = new BOM_DAC();
             return dac.GetAllCommonCode4();
@@ -74,12 +80,12 @@ namespace Team5_SmartMOM.Service
             return cmd.ShowMaterial();
         }
 
-        public bool InsertIMaterial(Material_VO list)
+        public SqlParameter InsertIMaterial(Material_VO list)
         {
             Matarial_DAC cmd = new Matarial_DAC();
             return cmd.InsertIMaterial(list);
         }
-        public bool InsertISales(Sales_VO list)
+        public SqlParameter InsertISales(Sales_VO list)
         {
             Sales_DAC cmd = new Sales_DAC();
             return cmd.InsertISales(list);
@@ -112,6 +118,11 @@ namespace Team5_SmartMOM.Service
         {
             Matarial_DAC cmd = new Matarial_DAC();
             return cmd.DeleteMaterial(list);
+        }
+        public List<FactoryVO> GetAllFactoryCode()
+        {
+            ITEM_DAC dac = new ITEM_DAC();
+            return dac.GetAllFactoryCode();
         }
     }
 }
