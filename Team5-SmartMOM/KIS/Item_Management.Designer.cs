@@ -74,6 +74,7 @@
             // 
             this.button3.Location = new System.Drawing.Point(935, 0);
             this.button3.Size = new System.Drawing.Size(62, 24);
+            this.button3.TabIndex = 11;
             this.button3.Text = "엑셀";
             this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
@@ -182,7 +183,7 @@
             this.btn_Search.Location = new System.Drawing.Point(1102, 57);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(93, 39);
-            this.btn_Search.TabIndex = 9;
+            this.btn_Search.TabIndex = 6;
             this.btn_Search.Text = "조회";
             this.btn_Search.UseVisualStyleBackColor = false;
             this.btn_Search.Click += new System.EventHandler(this.Btn_Search_Click);
@@ -192,14 +193,14 @@
             this.txt_item.Location = new System.Drawing.Point(110, 19);
             this.txt_item.Name = "txt_item";
             this.txt_item.Size = new System.Drawing.Size(217, 21);
-            this.txt_item.TabIndex = 10;
+            this.txt_item.TabIndex = 1;
             // 
             // txt_standard
             // 
             this.txt_standard.Location = new System.Drawing.Point(454, 19);
             this.txt_standard.Name = "txt_standard";
             this.txt_standard.Size = new System.Drawing.Size(217, 21);
-            this.txt_standard.TabIndex = 11;
+            this.txt_standard.TabIndex = 2;
             // 
             // cbo_itemtype
             // 
@@ -207,7 +208,7 @@
             this.cbo_itemtype.Location = new System.Drawing.Point(454, 57);
             this.cbo_itemtype.Name = "cbo_itemtype";
             this.cbo_itemtype.Size = new System.Drawing.Size(217, 20);
-            this.cbo_itemtype.TabIndex = 15;
+            this.cbo_itemtype.TabIndex = 5;
             // 
             // cbo_UseorNot
             // 
@@ -215,7 +216,7 @@
             this.cbo_UseorNot.Location = new System.Drawing.Point(780, 20);
             this.cbo_UseorNot.Name = "cbo_UseorNot";
             this.cbo_UseorNot.Size = new System.Drawing.Size(217, 20);
-            this.cbo_UseorNot.TabIndex = 18;
+            this.cbo_UseorNot.TabIndex = 3;
             // 
             // Btn_Copy
             // 
@@ -227,7 +228,7 @@
             this.Btn_Copy.Location = new System.Drawing.Point(873, 0);
             this.Btn_Copy.Name = "Btn_Copy";
             this.Btn_Copy.Size = new System.Drawing.Size(62, 24);
-            this.Btn_Copy.TabIndex = 17;
+            this.Btn_Copy.TabIndex = 10;
             this.Btn_Copy.Text = "복사";
             this.Btn_Copy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_Copy.UseVisualStyleBackColor = false;
@@ -242,7 +243,7 @@
             this.Btn_Delete.Location = new System.Drawing.Point(811, 0);
             this.Btn_Delete.Name = "Btn_Delete";
             this.Btn_Delete.Size = new System.Drawing.Size(62, 24);
-            this.Btn_Delete.TabIndex = 19;
+            this.Btn_Delete.TabIndex = 9;
             this.Btn_Delete.Text = "삭제";
             this.Btn_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_Delete.UseVisualStyleBackColor = false;
@@ -258,7 +259,7 @@
             this.Btn_newitem.Location = new System.Drawing.Point(749, 0);
             this.Btn_newitem.Name = "Btn_newitem";
             this.Btn_newitem.Size = new System.Drawing.Size(62, 24);
-            this.Btn_newitem.TabIndex = 20;
+            this.Btn_newitem.TabIndex = 8;
             this.Btn_newitem.Text = "등록";
             this.Btn_newitem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_newitem.UseVisualStyleBackColor = false;
@@ -272,7 +273,7 @@
             this.button4.Location = new System.Drawing.Point(1003, 57);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(93, 39);
-            this.button4.TabIndex = 19;
+            this.button4.TabIndex = 7;
             this.button4.Text = "다시 불러오기";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
@@ -282,7 +283,7 @@
             this.cbo_manager.Location = new System.Drawing.Point(110, 56);
             this.cbo_manager.Name = "cbo_manager";
             this.cbo_manager.Size = new System.Drawing.Size(217, 21);
-            this.cbo_manager.TabIndex = 20;
+            this.cbo_manager.TabIndex = 4;
             // 
             // Item_Management
             // 

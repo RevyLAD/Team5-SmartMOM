@@ -68,7 +68,7 @@ namespace Team5_SmartMOM.Service
             BOM_DAC dac = new BOM_DAC();
             return dac.GetAllCommonBOM();
         }
-        public List<EnterpriseVO> GetAllCommonCode3()
+        public List<EnterpriseVO_Sales> GetAllCommonCode3()
         {
             BOM_DAC dac = new BOM_DAC();
             return dac.GetAllCommonCode4();

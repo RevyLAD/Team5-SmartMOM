@@ -240,5 +240,11 @@ namespace Project_VO
         public DateTime VO_InDate { get; set; }
     }
 
+    public class MaterialStateVO
+    {
+        public string FACT_Name { get; set; }
+        public string ITEM_Name { get; set; }
+    }
+
 
 }

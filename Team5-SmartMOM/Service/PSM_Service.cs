@@ -40,6 +40,12 @@ namespace Team5_SmartMOM.Service
             return dac.PlanID();
         }
 
+        public List<FacVO> GetFactoryList()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.GetFactoryList();
+        }
+
         public List<GetOrderVO> GetOrder(string plan_id)
         {
             CommonCodeDAC dac = new CommonCodeDAC();
@@ -88,26 +94,26 @@ namespace Team5_SmartMOM.Service
         public bool OrderCancel(List<DeleteOrder> lists)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.OrderCancel(lists); 
+            return dac.OrderCancel(lists);
         }
 
         //입고대기
         public bool WarehousingWait(List<DeleteOrder> lists, List<VenderorderDetailVO> lists2)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.WarehousingWait(lists, lists2); 
+            return dac.WarehousingWait(lists, lists2);
         }
 
         public bool MaterialsPut(List<DeleteOrder> lists)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.MaterialsPut(lists); 
+            return dac.MaterialsPut(lists);
         }
 
         public bool MaterialsPutCancel(List<DeleteOrder> lists)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.MaterialsPutCancel(lists); 
+            return dac.MaterialsPutCancel(lists);
         }
 
 
@@ -165,10 +171,10 @@ namespace Team5_SmartMOM.Service
             return dac.MaterialCancel(lists, lists2);
         }
 
-        public List<Stock_StateVO> Stock_State()
+        public List<Stock_StateVO> Stock_State(MaterialStateVO ms)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.Stock_State();
+            return dac.Stock_State(ms);
         }
 
     }

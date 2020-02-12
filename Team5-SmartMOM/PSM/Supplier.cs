@@ -142,7 +142,7 @@ namespace Team5_SmartMOM.PSM
             List<PlanIDVO> planid = service.PlanID();
 
             company = common.GetAllCompanyCode();
-            CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "");
+            CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "");            
             CommonUtil.ComboBinding(cboplanid, planid, "Plan_ID", "Plan_ID");
 
         }
@@ -166,7 +166,6 @@ namespace Team5_SmartMOM.PSM
                 chkBox.Value = headerCheckBox2.Checked;
             }
         }
-
         
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -227,12 +226,7 @@ namespace Team5_SmartMOM.PSM
             list = service.Supplier(sp);
             dataGridView2.DataSource = list;
         }
-
-        //업체콤보박스 검색시 조회
-        private void cbocompany_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+      
         //검색후 엔터로 조회버튼
         private void txtProduct_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -254,7 +248,22 @@ namespace Team5_SmartMOM.PSM
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {                     
+        {
+            bool bFlag = false;
+            for (int i = 0; i < dataGridView2.RowCount; i++)
+            {
+                if ((bool)dataGridView2.Rows[i].Cells["Check"].EditedFormattedValue)
+                {
+                    bFlag = true;
+                    break;
+                }
+            }
+            if (bFlag == false)
+            {
+                MessageBox.Show("입고대기 항목을 체크하세요");
+                return;
+            }
+
             List<DeleteOrder> lists = new List<DeleteOrder>();
             foreach (DataGridViewRow row in dataGridView2.Rows)
             {
@@ -276,28 +285,60 @@ namespace Team5_SmartMOM.PSM
         //
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            List<DeleteOrder> lists = new List<DeleteOrder>();
-
-            foreach (DataGridViewRow row in dataGridView3.Rows)
+            bool bFlag = false;
+            for (int i = 0; i < dataGridView3.RowCount; i++)
             {
-                bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
-
-                if (isCellChecked)
+                if ((bool)dataGridView3.Rows[i].Cells["Check"].EditedFormattedValue)
                 {
-                    DeleteOrder list = new DeleteOrder();
-                    list.VO_ID = Convert.ToInt32(row.Cells[1].Value);
-                    lists.Add(list);
+                    bFlag = true;
+                    break;
                 }
             }
-            PSM_Service service = new PSM_Service();
-            service.OrderCancel(lists);
+            if (bFlag == false)
+            {
+                MessageBox.Show("취소하실 항목을 선택해주세요.");
+                return;
+            }
 
-            DataLoad();
+            if (MessageBox.Show("선택하신 항목을 취소하시겠습니까?", "취소", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                List<DeleteOrder> lists = new List<DeleteOrder>();
+
+                foreach (DataGridViewRow row in dataGridView3.Rows)
+                {
+                    bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
+
+                    if (isCellChecked)
+                    {
+                        DeleteOrder list = new DeleteOrder();
+                        list.VO_ID = Convert.ToInt32(row.Cells[1].Value);
+                        lists.Add(list);
+                    }
+                }
+                PSM_Service service = new PSM_Service();
+                service.OrderCancel(lists);
+
+                DataLoad();
+            }
         }
 
         //입고대기버튼
         private void btnWait_Click(object sender, EventArgs e)
         {
+            bool bFlag = false;
+            for (int i = 0; i < dataGridView3.RowCount; i++)
+            {
+                if ((bool)dataGridView3.Rows[i].Cells["Check"].EditedFormattedValue)
+                {
+                    bFlag = true;
+                    break;
+                }
+            }
+            if (bFlag == false)
+            {
+                MessageBox.Show("입고대기처리 항목을 체크하세요");
+                return;
+            }
             List<DeleteOrder> lists = new List<DeleteOrder>();
             List<VenderorderDetailVO> lists2 = new List<VenderorderDetailVO>();
 
@@ -320,6 +361,7 @@ namespace Team5_SmartMOM.PSM
             }
             PSM_Service service = new PSM_Service();
             service.WarehousingWait(lists, lists2);
+            MessageBox.Show("선택하신 항목들을 입고대기처리 하였습니다.");
 
             DataLoad();
         }

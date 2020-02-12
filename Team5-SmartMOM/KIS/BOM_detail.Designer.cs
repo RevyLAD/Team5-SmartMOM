@@ -105,11 +105,13 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button2.TabIndex = 13;
             // 
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.TabIndex = 12;
             this.button1.Click += new System.EventHandler(this.Button1_Click_1);
             // 
             // label2
@@ -237,28 +239,28 @@
             this.cbo_differenceItem.Location = new System.Drawing.Point(118, 17);
             this.cbo_differenceItem.Name = "cbo_differenceItem";
             this.cbo_differenceItem.Size = new System.Drawing.Size(175, 20);
-            this.cbo_differenceItem.TabIndex = 11;
+            this.cbo_differenceItem.TabIndex = 1;
             // 
             // txt_Quantity
             // 
             this.txt_Quantity.Location = new System.Drawing.Point(118, 60);
             this.txt_Quantity.Name = "txt_Quantity";
             this.txt_Quantity.Size = new System.Drawing.Size(175, 21);
-            this.txt_Quantity.TabIndex = 12;
+            this.txt_Quantity.TabIndex = 3;
             // 
             // dtp_Enddate
             // 
             this.dtp_Enddate.Location = new System.Drawing.Point(118, 104);
             this.dtp_Enddate.Name = "dtp_Enddate";
             this.dtp_Enddate.Size = new System.Drawing.Size(175, 21);
-            this.dtp_Enddate.TabIndex = 13;
+            this.dtp_Enddate.TabIndex = 5;
             // 
             // txt_Reviser
             // 
             this.txt_Reviser.Location = new System.Drawing.Point(118, 145);
             this.txt_Reviser.Name = "txt_Reviser";
             this.txt_Reviser.Size = new System.Drawing.Size(175, 21);
-            this.txt_Reviser.TabIndex = 14;
+            this.txt_Reviser.TabIndex = 7;
             // 
             // cbo_AutoDeduction
             // 
@@ -266,7 +268,7 @@
             this.cbo_AutoDeduction.Location = new System.Drawing.Point(118, 194);
             this.cbo_AutoDeduction.Name = "cbo_AutoDeduction";
             this.cbo_AutoDeduction.Size = new System.Drawing.Size(175, 20);
-            this.cbo_AutoDeduction.TabIndex = 15;
+            this.cbo_AutoDeduction.TabIndex = 9;
             // 
             // txt_Remarks
             // 
@@ -274,7 +276,7 @@
             this.txt_Remarks.Multiline = true;
             this.txt_Remarks.Name = "txt_Remarks";
             this.txt_Remarks.Size = new System.Drawing.Size(473, 85);
-            this.txt_Remarks.TabIndex = 60;
+            this.txt_Remarks.TabIndex = 11;
             // 
             // cbo_Item
             // 
@@ -282,7 +284,7 @@
             this.cbo_Item.Location = new System.Drawing.Point(414, 17);
             this.cbo_Item.Name = "cbo_Item";
             this.cbo_Item.Size = new System.Drawing.Size(177, 20);
-            this.cbo_Item.TabIndex = 61;
+            this.cbo_Item.TabIndex = 2;
             this.cbo_Item.SelectedIndexChanged += new System.EventHandler(this.Cbo_Item_SelectedIndexChanged);
             // 
             // txt_Revise_day
@@ -290,7 +292,7 @@
             this.txt_Revise_day.Location = new System.Drawing.Point(414, 145);
             this.txt_Revise_day.Name = "txt_Revise_day";
             this.txt_Revise_day.Size = new System.Drawing.Size(177, 21);
-            this.txt_Revise_day.TabIndex = 62;
+            this.txt_Revise_day.TabIndex = 8;
             // 
             // cbo_UseorNot
             // 
@@ -298,7 +300,7 @@
             this.cbo_UseorNot.Location = new System.Drawing.Point(414, 105);
             this.cbo_UseorNot.Name = "cbo_UseorNot";
             this.cbo_UseorNot.Size = new System.Drawing.Size(177, 20);
-            this.cbo_UseorNot.TabIndex = 63;
+            this.cbo_UseorNot.TabIndex = 6;
             // 
             // cbo_Required_plan
             // 
@@ -306,14 +308,14 @@
             this.cbo_Required_plan.Location = new System.Drawing.Point(414, 194);
             this.cbo_Required_plan.Name = "cbo_Required_plan";
             this.cbo_Required_plan.Size = new System.Drawing.Size(177, 20);
-            this.cbo_Required_plan.TabIndex = 64;
+            this.cbo_Required_plan.TabIndex = 10;
             // 
             // dtp_Startdate
             // 
             this.dtp_Startdate.Location = new System.Drawing.Point(414, 57);
             this.dtp_Startdate.Name = "dtp_Startdate";
             this.dtp_Startdate.Size = new System.Drawing.Size(177, 21);
-            this.dtp_Startdate.TabIndex = 65;
+            this.dtp_Startdate.TabIndex = 4;
             // 
             // BOM_detail
             // 

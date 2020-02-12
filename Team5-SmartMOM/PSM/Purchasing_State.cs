@@ -36,7 +36,7 @@ namespace Team5_SmartMOM.PSM
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            chk = new DataGridViewCheckBoxColumn();
+            chk = new DataGridViewCheckBoxColumn(false);
             chk.HeaderText = "";
             chk.Name = "Check";
             chk.Width = 30;
@@ -63,8 +63,9 @@ namespace Team5_SmartMOM.PSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주일", "VO_StartDate", true, 150, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "입고일", "VO_InDate", true, 150, DataGridViewContentAlignment.MiddleCenter);
 
-            DataLoad();            
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);            
+                      
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            DataLoad();
         }
         #endregion
 
@@ -141,12 +142,11 @@ namespace Team5_SmartMOM.PSM
 
         //체크된 항목만 납기일자 변경
         private void button3_Click(object sender, EventArgs e)
-        {
-            
+        {            
             bool bFlag = false;
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                if ((bool)dataGridView1.Rows[i].Cells[0].Value)
+                if (Convert.ToBoolean(dataGridView1.Rows[i].Cells["Check"].EditedFormattedValue))
                 {
                     bFlag = true;
                     break;
@@ -161,7 +161,7 @@ namespace Team5_SmartMOM.PSM
             List<EndDateChange> datelist = new List<EndDateChange>();
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                if ((bool)dataGridView1.Rows[i].Cells[0].Value)
+                if ((bool)dataGridView1.Rows[i].Cells["Check"].EditedFormattedValue)
                 {
                     EndDateChange date = new EndDateChange();
                     date.VO_ID = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value);
@@ -180,11 +180,11 @@ namespace Team5_SmartMOM.PSM
         
         //체크된 항목만 발주 취소기능
         private void button2_Click(object sender, EventArgs e)
-        {
+        {            
             bool bFlag = false;
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                if ((bool)dataGridView1.Rows[i].Cells[0].Value)
+                if ((bool)dataGridView1.Rows[i].Cells["Check"].EditedFormattedValue)
                 {
                     bFlag = true;
                     break;
@@ -195,26 +195,30 @@ namespace Team5_SmartMOM.PSM
                 MessageBox.Show("삭제하실 항목을 체크하세요");
                 return;
             }
-            List<DeleteOrder> deletelist = new List<DeleteOrder>();
-            for (int i = 0; i < dataGridView1.RowCount; i++)
-            {
-                if ((bool)dataGridView1.Rows[i].Cells[0].Value)
-                {
-                    DeleteOrder delete = new DeleteOrder();
-                    delete.VO_ID = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value);
-                    deletelist.Add(delete);
-                }
-            }
-            PSM_Service service = new PSM_Service();
-            service.OrderDelete(deletelist);
 
-            MessageBox.Show("발주가 취소 되었습니다.");
+            if (MessageBox.Show("선택하신 발주를 취소하시겠습니까?", "발주취소", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                List<DeleteOrder> deletelist = new List<DeleteOrder>();
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    if ((bool)dataGridView1.Rows[i].Cells["Check"].EditedFormattedValue)
+                    {
+                        DeleteOrder delete = new DeleteOrder();
+                        delete.VO_ID = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value);
+                        deletelist.Add(delete);
+                    }
+                }
+                PSM_Service service = new PSM_Service();
+                service.OrderDelete(deletelist);
+
+                MessageBox.Show("발주가 취소 되었습니다.");
+            }
 
             DataLoad();
         }
 
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == 0)
             {

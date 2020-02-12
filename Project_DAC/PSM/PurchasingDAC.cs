@@ -416,16 +416,17 @@ VO_StartDate,  VO_InDate, Plan_ID) VALUES (@COM_Name, @COM_Code, @MATERIAL_ORDER
                 }
                 else if (sp.Company != "")
                 {
-                    sql = sql + " and c.COM_Name = @COM_Name";                }
-                    
+                    sql = sql + " and c.COM_Name = @COM_Name";
+                }
+
 
                 cmd.CommandText = sql;
 
                 cmd.Parameters.AddWithValue("@startDate", sp.startDate);
                 cmd.Parameters.AddWithValue("@endDate", sp.endDate);
                 cmd.Parameters.AddWithValue("@ITEM_Name", sp.Item);
-                cmd.Parameters.AddWithValue("@COM_Name", sp.Company);                
-                cmd.Parameters.AddWithValue("@Plan_ID", sp.Plan_ID); 
+                cmd.Parameters.AddWithValue("@COM_Name", sp.Company);
+                cmd.Parameters.AddWithValue("@Plan_ID", sp.Plan_ID);
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -507,13 +508,13 @@ WHERE Plan_ID = @Plan_ID ";
                     {
                         sql = sql + " and COM_Name = @COM_Name";
                     }
-                    
+
                 }
                 else if (mls.Company != "")
                 {
-                    sql = sql + " and COM_Name = @COM_Name";                    
+                    sql = sql + " and COM_Name = @COM_Name";
                 }
-                
+
 
                 cmd.CommandText = sql;
 
@@ -615,15 +616,15 @@ where MATERIAL_ORDER_STATE = '입고완료' and FACT_Name = '자재창고_01' an
                     sql = sql + " and ITEM_Name LIKE  '%' + @ITEM_Name +'%'";
                     if (sp.Company != "")
                     {
-                        sql = sql + " and c.COM_Name = @COM_Name";                        
-                    }                    
+                        sql = sql + " and c.COM_Name = @COM_Name";
+                    }
                 }
                 else if (sp.Company != "")
                 {
                     sql = sql + " and c.COM_Name = @COM_Name";
-                    
+
                 }
-                
+
                 #endregion
                 cmd.CommandText = sql;
 
@@ -631,7 +632,7 @@ where MATERIAL_ORDER_STATE = '입고완료' and FACT_Name = '자재창고_01' an
                 cmd.Parameters.AddWithValue("@endDate", sp.endDate);
                 cmd.Parameters.AddWithValue("@ITEM_Name", sp.Item);
                 cmd.Parameters.AddWithValue("@COM_Name", sp.Company);
-                
+
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -738,7 +739,7 @@ WHERE FACT_Name = '자재창고_01' and f.ITEM_Code = @ITEM_Code";
             }
         }
 
-        public List<Stock_StateVO> Stock_State()
+        public List<Stock_StateVO> Stock_State(MaterialStateVO ms)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -747,49 +748,31 @@ WHERE FACT_Name = '자재창고_01' and f.ITEM_Code = @ITEM_Code";
                                 from FactoryDetail f inner join ITEM i on f.ITEM_Code = i.ITEM_Code
                                 where ITEM_Type = '원자재' ";
 
-                //if (sp.Item != "")
-                //{
-                //    sql = sql + " and ITEM_Name LIKE  '%' + @ITEM_Name +'%'";
-                //    if (sp.Company != "")
-                //    {
-                //        sql = sql + " and c.COM_Name = @COM_Name";
-                //        if (sp.VO_ID != 0)
-                //        {
-                //            sql = sql + " and VO_ID = @VO_ID";
-                //        }
-                //    }
-                //    else if (sp.VO_ID != 0)
-                //    {
-                //        sql = sql + " and VO_ID = @VO_ID";
-                //    }
-                //}
-                //else if (sp.Company != "")
-                //{
-                //    sql = sql + " and c.COM_Name = @COM_Name";
-                //    if (sp.VO_ID != 0)
-                //    {
-                //        sql = sql + " and VO_ID = @VO_ID";
-                //    }
-                //}
-                //else if (sp.VO_ID != 0)
-                //{
-                //    sql = sql + " and VO_ID = @VO_ID";
-                //}
+                if (ms.FACT_Name != "")
+                {
+                    sql = sql + " and FACT_Name = @FACT_Name";
+                    if (ms.ITEM_Name != "")
+                    {
+                        sql = sql + " and ITEM_Name LIKE  '%' + @ITEM_Name +'%'";
+                    }
+                    else if (ms.ITEM_Name != "")
+                    {
+                        sql = sql + " and ITEM_Name LIKE  '%' + @ITEM_Name +'%'";
+                    }
+                }
 
-                cmd.CommandText = sql;
+                    cmd.CommandText = sql;
 
-                //cmd.Parameters.AddWithValue("@startDate", sp.startDate);
-                //cmd.Parameters.AddWithValue("@endDate", sp.endDate);
-                //cmd.Parameters.AddWithValue("@ITEM_Name", sp.Item);
-                //cmd.Parameters.AddWithValue("@COM_Name", sp.Company);
-                //cmd.Parameters.AddWithValue("@VO_ID", sp.VO_ID);
+                    cmd.Parameters.AddWithValue("@FACT_Name", ms.FACT_Name);
+                    cmd.Parameters.AddWithValue("@ITEM_Name", ms.ITEM_Name);
 
-                cmd.Connection.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                List<Stock_StateVO> list = Helper.DataReaderMapToList<Stock_StateVO>(reader);
-                cmd.Connection.Close();
+                    cmd.Connection.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    List<Stock_StateVO> list = Helper.DataReaderMapToList<Stock_StateVO>(reader);
+                    cmd.Connection.Close();
 
-                return list;
+                    return list;
+                
             }
         }
     }

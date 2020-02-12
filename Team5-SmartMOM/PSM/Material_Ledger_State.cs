@@ -90,28 +90,45 @@ namespace Team5_SmartMOM.PSM
 
         private void button2_Click(object sender, EventArgs e)
         {
-            List<DeleteOrder> lists = new List<DeleteOrder>();
-            List<MaterialsPlusVO> lists2 = new List<MaterialsPlusVO>();
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            bool bFlag = false;
+            for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
-
-                if (isCellChecked)
+                if ((bool)dataGridView1.Rows[i].Cells["Check"].EditedFormattedValue)
                 {
-                    DeleteOrder list = new DeleteOrder();
-                    list.VO_ID = Convert.ToInt32(row.Cells[1].Value);
-                    lists.Add(list);
-
-                    MaterialsPlusVO list2 = new MaterialsPlusVO();
-                    list2.VOD_GoodEA = Convert.ToInt32(row.Cells[9].Value);
-                    list2.ITEM_Code = row.Cells[5].Value.ToString();
-                    lists2.Add(list2);
+                    bFlag = true;
+                    break;
                 }
             }
-            PSM_Service service = new PSM_Service();
-            service.MaterialCancel(lists, lists2);
+            if (bFlag == false)
+            {
+                MessageBox.Show("취소하실 항목을 선택해주세요.");
+                return;
+            }
+            if (MessageBox.Show("선택하신 항목의 입고를 취소하시겠습니까?", "입고취소", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                List<DeleteOrder> lists = new List<DeleteOrder>();
+                List<MaterialsPlusVO> lists2 = new List<MaterialsPlusVO>();
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
 
-            DataLoad();
+                    if (isCellChecked)
+                    {
+                        DeleteOrder list = new DeleteOrder();
+                        list.VO_ID = Convert.ToInt32(row.Cells[1].Value);
+                        lists.Add(list);
+
+                        MaterialsPlusVO list2 = new MaterialsPlusVO();
+                        list2.VOD_GoodEA = Convert.ToInt32(row.Cells[9].Value);
+                        list2.ITEM_Code = row.Cells[5].Value.ToString();
+                        lists2.Add(list2);
+                    }
+                }
+                PSM_Service service = new PSM_Service();
+                service.MaterialCancel(lists, lists2);
+
+                DataLoad();
+            }
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
@@ -125,6 +142,14 @@ namespace Team5_SmartMOM.PSM
             PSM_Service service = new PSM_Service();
             list = service.MaterialsState(sp);
             dataGridView1.DataSource = list;
+        }
+
+        private void txtProduct_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar == 13))
+            {
+                BtnSearch_Click(null, new EventArgs());
+            }
         }
     }
 }
