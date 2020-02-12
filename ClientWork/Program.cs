@@ -28,9 +28,7 @@ namespace ClientWork
             machineID = rnd.Next(1, 10);
 
             
-            
-            SetTimer();
-            timer1.Stop();
+
 
 
             while (true)
@@ -50,8 +48,10 @@ namespace ClientWork
                     Console.ReadLine();
                 }
             }
+
+            SetTimer();
+            timer1.Stop();
             SetTimer2();
-            
 
             Console.WriteLine("\n\n생산량 전송 프로그램 시작");
             
@@ -68,6 +68,7 @@ namespace ClientWork
         static TcpClient tc;
         static NetworkStream stream;
         static string product;
+        static int TickTime;
         private static bool TcpConnection()
         {
             try
@@ -79,8 +80,15 @@ namespace ClientWork
                 int nbytes = stream.Read(outbuff, 0, outbuff.Length);
                 string outMsg = Encoding.ASCII.GetString(outbuff, 0, nbytes);
 
+                string[] data;
+
                 product = outMsg;
-                Console.WriteLine($"product : {product}");
+                data = product.Split('/');
+                Console.WriteLine($"생산 제품\t:\t{data[0]}");
+                Console.WriteLine($"생산 계획 수량\t:\t{data[1]}");
+                Console.WriteLine($"계획 잔여 수량\t:\t{data[2]}");
+                TickTime = Convert.ToInt32(data[3]);
+
                 Log.WriteInfo($"product : {product}");
 
                 return true;
@@ -93,7 +101,7 @@ namespace ClientWork
         
         private static void SetTimer()
         {
-            timer1 = new Timer(3000);
+            timer1 = new Timer(TickTime);
             timer1.Enabled = true;
             timer1.Elapsed += timer1_Elapsed;
             timer1.AutoReset = true;

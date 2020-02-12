@@ -80,16 +80,15 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.lblprogres = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.textBox34 = new System.Windows.Forms.TextBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.textBox36 = new System.Windows.Forms.TextBox();
             this.textBox37 = new System.Windows.Forms.TextBox();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.lblprogres = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -796,6 +795,16 @@
             this.groupBox11.TabIndex = 17;
             this.groupBox11.TabStop = false;
             // 
+            // lblprogres
+            // 
+            this.lblprogres.AutoSize = true;
+            this.lblprogres.BackColor = System.Drawing.Color.Transparent;
+            this.lblprogres.Location = new System.Drawing.Point(262, 19);
+            this.lblprogres.Name = "lblprogres";
+            this.lblprogres.Size = new System.Drawing.Size(21, 12);
+            this.lblprogres.TabIndex = 15;
+            this.lblprogres.Text = "0%";
+            // 
             // progressBar1
             // 
             this.progressBar1.BackColor = System.Drawing.Color.Gray;
@@ -860,11 +869,6 @@
             this.textBox37.Text = "00 분";
             this.textBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // timer2
-            // 
-            this.timer2.Interval = 3000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
@@ -883,16 +887,6 @@
             // 
             this.timer3.Interval = 1000;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
-            // 
-            // lblprogres
-            // 
-            this.lblprogres.AutoSize = true;
-            this.lblprogres.BackColor = System.Drawing.Color.Transparent;
-            this.lblprogres.Location = new System.Drawing.Point(262, 19);
-            this.lblprogres.Name = "lblprogres";
-            this.lblprogres.Size = new System.Drawing.Size(21, 12);
-            this.lblprogres.TabIndex = 15;
-            this.lblprogres.Text = "0%";
             // 
             // POPGaDong
             // 
@@ -989,7 +983,6 @@
         private System.Windows.Forms.TextBox txtPlanTE;
         private System.Windows.Forms.TextBox txtPlanTS;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.TextBox txtSec;
         private System.Windows.Forms.TextBox txtMin;
         private System.Windows.Forms.ListBox listBox1;
