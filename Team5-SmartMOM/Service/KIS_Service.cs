@@ -47,10 +47,10 @@ namespace Team5_SmartMOM.Service
             return cmd.DeleteBOM(list);
         }
 
-        public List<BOM_Serch_VO> SearchBOM(string name , int type)
+        public List<BOM_Serch_VO> SearchBOM(string name , int type ,string date)
         {
             BOM_DAC cmd = new BOM_DAC();
-            return cmd.BOM_SearchData(name , type);
+            return cmd.BOM_SearchData(name , type , date);
         }
         public List<ITEM_VO> GetAllCommonItem()
         {

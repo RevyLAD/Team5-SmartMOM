@@ -84,7 +84,7 @@ namespace Project_DAC
         /// </summary>
 
 
-        public List<BOM_Serch_VO> BOM_SearchData(string name , int type)
+        public List<BOM_Serch_VO> BOM_SearchData(string name , int type ,String date)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -93,6 +93,7 @@ namespace Project_DAC
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@BOM_Name ", name);
                 cmd.Parameters.AddWithValue("@type ", type);
+                cmd.Parameters.AddWithValue("@date ", date);
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<BOM_Serch_VO> list = Helper.DataReaderMapToList<BOM_Serch_VO>(reader);
