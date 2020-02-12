@@ -69,10 +69,14 @@ namespace Team5_SmartMOM.HSM
 
                 HSM_Service service = new HSM_Service();
 
-                if(service.InsertWorkOrder(planID))
+                if(MessageBox.Show($"{cboPlanID.Text} 작업생성을 하시겠습니까?","확인",MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    this.DialogResult = DialogResult.OK;
+                    if (service.InsertWorkOrder(planID))
+                    {
+                        this.DialogResult = DialogResult.OK;
+                    }
                 }
+
 
             }
         }

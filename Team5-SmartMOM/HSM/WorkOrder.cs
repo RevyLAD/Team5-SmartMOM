@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Team5_SmartMOM.BaseForm;
@@ -48,6 +49,8 @@ namespace Team5_SmartMOM.HSM
 
         private void DataLoad()
         {
+            dtpDateEnd.Value = DateTime.Now.AddMonths(1);
+            dtpDateStart.Value = DateTime.Now.AddMonths(-2);
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "작업지시번호", "WO_ID", true, 170, DataGridViewContentAlignment.MiddleCenter);
@@ -55,7 +58,7 @@ namespace Team5_SmartMOM.HSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Name", true, 200);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "설비명", "FAC_Name", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "계획시작일", "WO_StartDate", true, 120, DataGridViewContentAlignment.MiddleCenter);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "WO_EndDate", true, 120);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "WO_EndDate", true, 120, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "계획수량", "planQty", true, 100, DataGridViewContentAlignment.MiddleRight);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "지시수량", "directQty", true, 100, DataGridViewContentAlignment.MiddleRight);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상태", "WO_State", true, 120, DataGridViewContentAlignment.MiddleCenter);
@@ -86,10 +89,16 @@ namespace Team5_SmartMOM.HSM
             CommonCodeService service = new CommonCodeService();
 
             List<PlanIDVO> listPlanID = service.GetPlanIDByWorkOrder2();
-            List<WorkOrderStateVO> listWo = service.GetWorkOrderState();
+            List<CommonCodeVO> listWOstate = service.GetAllCommonCode();
+
+            List<CommonCodeVO> WostateList = (from item in listWOstate
+                                              where item.Common_Type == "CREATE_WORK_ORDER"
+                                              select item).ToList();
+
 
             CommonUtil.ComboBinding(cboPlanID, listPlanID, "Plan_ID", "Plan_ID");
-            CommonUtil.ComboBinding(cboWorkState, listWo, "WO_State", "WO_State", "전체");
+            CommonUtil.ComboBinding(cboWorkState, WostateList, "Common_Key", "Common_Value");
+
 
         }
         /// <summary>
@@ -118,10 +127,7 @@ namespace Team5_SmartMOM.HSM
                 wo.Plan_ID = cboPlanID.Text;
                 wo.WO_StartDate = dtpDateStart.Value.ToShortDateString();
                 wo.WO_EndDate = dtpDateEnd.Value.ToShortDateString();
-                if (cboWorkState.Text != "전체")
-                    wo.WO_State = cboWorkState.Text;
-                else
-                    wo.WO_State = "";
+                wo.WO_State = cboWorkState.Text;
 
 
 
@@ -136,8 +142,6 @@ namespace Team5_SmartMOM.HSM
                     dataGridView1.DataSource = list;
 
                 }
-                else
-                    MessageBox.Show("조회결과없음", "확인");
 
             }
 

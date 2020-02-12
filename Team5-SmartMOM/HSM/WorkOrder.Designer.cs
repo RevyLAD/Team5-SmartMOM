@@ -117,7 +117,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(472, 21);
+            this.label5.Location = new System.Drawing.Point(472, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(14, 12);
             this.label5.TabIndex = 86;
@@ -137,7 +137,7 @@
             // dtpDateEnd
             // 
             this.dtpDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateEnd.Location = new System.Drawing.Point(492, 16);
+            this.dtpDateEnd.Location = new System.Drawing.Point(492, 14);
             this.dtpDateEnd.Name = "dtpDateEnd";
             this.dtpDateEnd.Size = new System.Drawing.Size(99, 21);
             this.dtpDateEnd.TabIndex = 84;
@@ -145,7 +145,7 @@
             // dtpDateStart
             // 
             this.dtpDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateStart.Location = new System.Drawing.Point(366, 16);
+            this.dtpDateStart.Location = new System.Drawing.Point(366, 14);
             this.dtpDateStart.Name = "dtpDateStart";
             this.dtpDateStart.Size = new System.Drawing.Size(99, 21);
             this.dtpDateStart.TabIndex = 85;
@@ -162,7 +162,7 @@
             // cboWorkState
             // 
             this.cboWorkState.FormattingEnabled = true;
-            this.cboWorkState.Location = new System.Drawing.Point(708, 16);
+            this.cboWorkState.Location = new System.Drawing.Point(708, 14);
             this.cboWorkState.Name = "cboWorkState";
             this.cboWorkState.Size = new System.Drawing.Size(100, 20);
             this.cboWorkState.TabIndex = 81;
@@ -172,7 +172,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(646, 17);
+            this.label3.Location = new System.Drawing.Point(646, 15);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 19);
             this.label3.TabIndex = 78;

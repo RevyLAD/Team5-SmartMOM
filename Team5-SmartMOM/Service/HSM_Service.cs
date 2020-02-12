@@ -29,10 +29,10 @@ namespace Team5_SmartMOM.Service
             return dac.GetWorkOrderByPlanId(wo);
         }
 
-        public List<WorkOrderVO> GetWorkOrderByPlan()
+        public List<WorkOrderVO> GetWorkOrderByPlan(WorkOrderListVO wo)
         {
             WorkOrderDAC dac = new WorkOrderDAC();
-            return dac.GetWorkOrderByPlan();
+            return dac.GetWorkOrderByPlan(wo);
         }
 
         public bool InsertWorkOrder(string planId)
