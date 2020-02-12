@@ -132,6 +132,9 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(611, 38);
             this.panel1.TabIndex = 0;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.form1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.form1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.form1_MousUp);
             // 
             // tileUpdate
             // 
@@ -170,6 +173,9 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "여기다가제목";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.form1_MouseDown);
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.form1_MouseMove);
+            this.label1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.form1_MousUp);
             // 
             // BasePopUpDialog
             // 
