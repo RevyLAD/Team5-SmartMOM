@@ -87,7 +87,7 @@
             // panel2
             // 
             this.panel2.Location = new System.Drawing.Point(0, 31);
-            this.panel2.Size = new System.Drawing.Size(1202, 84);
+            this.panel2.Size = new System.Drawing.Size(1202, 63);
             // 
             // panelTop
             // 
@@ -96,7 +96,7 @@
             this.panelTop.Controls.Add(this.txt_item);
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Size = new System.Drawing.Size(1202, 64);
+            this.panelTop.Size = new System.Drawing.Size(1202, 43);
             // 
             // splitContainer2
             // 
@@ -144,10 +144,10 @@
             this.btn_Search.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btn_Search.ForeColor = System.Drawing.Color.White;
-            this.btn_Search.Location = new System.Drawing.Point(1102, 11);
+            this.btn_Search.Location = new System.Drawing.Point(1102, 0);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(93, 39);
-            this.btn_Search.TabIndex = 3;
+            this.btn_Search.TabIndex = 2;
             this.btn_Search.Text = "조회";
             this.btn_Search.UseVisualStyleBackColor = false;
             this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
@@ -157,7 +157,7 @@
             this.txt_item.Location = new System.Drawing.Point(430, 11);
             this.txt_item.Name = "txt_item";
             this.txt_item.Size = new System.Drawing.Size(208, 21);
-            this.txt_item.TabIndex = 11;
+            this.txt_item.TabIndex = 1;
             // 
             // btn_Copy
             // 
@@ -169,7 +169,7 @@
             this.btn_Copy.Location = new System.Drawing.Point(876, 0);
             this.btn_Copy.Name = "btn_Copy";
             this.btn_Copy.Size = new System.Drawing.Size(57, 27);
-            this.btn_Copy.TabIndex = 19;
+            this.btn_Copy.TabIndex = 5;
             this.btn_Copy.Text = "복사";
             this.btn_Copy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Copy.UseVisualStyleBackColor = false;
@@ -184,7 +184,7 @@
             this.btn_Delete.Location = new System.Drawing.Point(819, 0);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(57, 27);
-            this.btn_Delete.TabIndex = 20;
+            this.btn_Delete.TabIndex = 4;
             this.btn_Delete.Text = "삭제";
             this.btn_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Delete.UseVisualStyleBackColor = false;
@@ -200,7 +200,7 @@
             this.Btn_newitem.Location = new System.Drawing.Point(762, 0);
             this.Btn_newitem.Name = "Btn_newitem";
             this.Btn_newitem.Size = new System.Drawing.Size(57, 27);
-            this.Btn_newitem.TabIndex = 21;
+            this.Btn_newitem.TabIndex = 3;
             this.Btn_newitem.Text = "등록";
             this.Btn_newitem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_newitem.UseVisualStyleBackColor = false;
@@ -212,7 +212,7 @@
             this.txt_date.Location = new System.Drawing.Point(116, 11);
             this.txt_date.Name = "txt_date";
             this.txt_date.Size = new System.Drawing.Size(193, 23);
-            this.txt_date.TabIndex = 13;
+            this.txt_date.TabIndex = 0;
             // 
             // Sales_Price_Management
             // 

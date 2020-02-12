@@ -56,6 +56,7 @@
             this.button3.Location = new System.Drawing.Point(1048, 0);
             this.button3.Size = new System.Drawing.Size(50, 23);
             this.button3.Text = "MRP";
+            this.button3.Visible = false;
             // 
             // button2
             // 

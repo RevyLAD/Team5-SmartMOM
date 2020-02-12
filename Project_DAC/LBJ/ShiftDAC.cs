@@ -80,6 +80,7 @@ namespace Project_DAC.LBJ
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@StartDateTime", mvo.SHIFT_StartDate);
                 cmd.Parameters.AddWithValue("@EndDateTime", mvo.SHIFT_EndDate);
+                cmd.Parameters.AddWithValue("@SHIFT", mvo.SHIFT);
 
                 SqlDataAdapter adpt = new SqlDataAdapter(cmd);
                 adpt.Fill(ds, "ShiftManagement");

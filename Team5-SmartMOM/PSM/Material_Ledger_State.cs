@@ -24,8 +24,7 @@ namespace Team5_SmartMOM.PSM
 
         private void Material_Ledger_State_Load(object sender, EventArgs e)
         {
-            dtpDateStart.Value = DateTime.Now;
-            dtpDateEnd.Value = DateTime.Now.AddMonths(1);
+            
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -56,18 +55,17 @@ namespace Team5_SmartMOM.PSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "잔량", "FACD_Qty", true, 150, DataGridViewContentAlignment.MiddleRight);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체", "COM_Name", true, 100);
             
-
+            
             DataLoad();
+            BtnSearch_Click(null, new EventArgs());
         }
 
         public void DataLoad()
         {
-            SupplierSearchVO sp = new SupplierSearchVO();
-            sp.startDate = dtpDateStart.Value.ToShortDateString();
-            sp.endDate = dtpDateEnd.Value.ToShortDateString();
+            SupplierSearchVO sp = new SupplierSearchVO();            
             sp.Company = cbocompany.Text.Trim();
             sp.Item = txtProduct.Text.Trim();
-           
+            sp.Plan_ID = cboPlanID.Text.Trim();
 
             PSM_Service service = new PSM_Service();
             list = service.MaterialsState(sp);
@@ -76,6 +74,9 @@ namespace Team5_SmartMOM.PSM
             CommonCodeService common = new CommonCodeService();
             company = common.GetAllCompanyCode();
             CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "");
+
+            List<PlanIDVO> planid = service.PlanID();
+            CommonUtil.ComboBinding(cboPlanID, planid, "Plan_ID", "Plan_ID");
         }
 
         private void HeaderCheckBox_Click(object sender, EventArgs e)
@@ -90,37 +91,53 @@ namespace Team5_SmartMOM.PSM
 
         private void button2_Click(object sender, EventArgs e)
         {
-            List<DeleteOrder> lists = new List<DeleteOrder>();
-            List<MaterialsPlusVO> lists2 = new List<MaterialsPlusVO>();
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            bool bFlag = false;
+            for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
-
-                if (isCellChecked)
+                if ((bool)dataGridView1.Rows[i].Cells["Check"].EditedFormattedValue)
                 {
-                    DeleteOrder list = new DeleteOrder();
-                    list.VO_ID = Convert.ToInt32(row.Cells[1].Value);
-                    lists.Add(list);
-
-                    MaterialsPlusVO list2 = new MaterialsPlusVO();
-                    list2.VOD_GoodEA = Convert.ToInt32(row.Cells[9].Value);
-                    list2.ITEM_Code = row.Cells[5].Value.ToString();
-                    lists2.Add(list2);
+                    bFlag = true;
+                    break;
                 }
             }
-            PSM_Service service = new PSM_Service();
-            service.MaterialCancel(lists, lists2);
+            if (bFlag == false)
+            {
+                MessageBox.Show("취소하실 항목을 선택해주세요.");
+                return;
+            }
+            if (MessageBox.Show("선택하신 항목의 입고를 취소하시겠습니까?", "입고취소", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                List<DeleteOrder> lists = new List<DeleteOrder>();
+                List<MaterialsPlusVO> lists2 = new List<MaterialsPlusVO>();
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
 
-            DataLoad();
+                    if (isCellChecked)
+                    {
+                        DeleteOrder list = new DeleteOrder();
+                        list.VO_ID = Convert.ToInt32(row.Cells[1].Value);
+                        lists.Add(list);
+
+                        MaterialsPlusVO list2 = new MaterialsPlusVO();
+                        list2.VOD_GoodEA = Convert.ToInt32(row.Cells[9].Value);
+                        list2.ITEM_Code = row.Cells[5].Value.ToString();
+                        lists2.Add(list2);
+                    }
+                }
+                PSM_Service service = new PSM_Service();
+                service.MaterialCancel(lists, lists2);
+
+                DataLoad();
+            }
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            SupplierSearchVO sp = new SupplierSearchVO();
-            sp.startDate = dtpDateStart.Value.ToShortDateString();
-            sp.endDate = dtpDateEnd.Value.ToShortDateString();
+            SupplierSearchVO sp = new SupplierSearchVO();            
             sp.Company = cbocompany.Text.Trim();
-            sp.Item = txtProduct.Text.Trim();            
+            sp.Item = txtProduct.Text.Trim();
+            sp.Plan_ID = cboPlanID.Text.Trim();
 
             PSM_Service service = new PSM_Service();
             list = service.MaterialsState(sp);

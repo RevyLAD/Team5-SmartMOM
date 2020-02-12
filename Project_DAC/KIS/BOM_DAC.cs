@@ -133,7 +133,7 @@ namespace Project_DAC
                 return list;
             }
         }
-        public List<EnterpriseVO> GetAllCommonCode4()
+        public List<EnterpriseVO_Sales> GetAllCommonCode4()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -142,7 +142,7 @@ namespace Project_DAC
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<EnterpriseVO> list = Helper.DataReaderMapToList<EnterpriseVO>(reader);
+                List<EnterpriseVO_Sales> list = Helper.DataReaderMapToList<EnterpriseVO_Sales>(reader);
                 cmd.Connection.Close();
 
                 return list;
