@@ -14,7 +14,10 @@ namespace Team5_SmartMOM.PSM
 {
     public partial class Material_Ledger_Export : Team5_SmartMOM.BaseGridForm
     {
+        List<MateriaExportVO> mevo;
+        List<InoutList> iol;
         List<MateriaExportVO> list;
+        DataGridViewCheckBoxColumn chk;
         public Material_Ledger_Export()
         {
             InitializeComponent();
@@ -40,6 +43,7 @@ namespace Team5_SmartMOM.PSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목유형", "ITEM_Type", true, 120, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "요청창고", "FACT_Name", true, 120, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "불출창고", "FACT_Name1", true, 120, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "현재고", "FACD_Qty", true, 120, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "계획수량", "planQty", true, 120, DataGridViewContentAlignment.MiddleRight);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "요청수량", "directQty", true, 120, DataGridViewContentAlignment.MiddleRight);
 
@@ -74,6 +78,40 @@ namespace Team5_SmartMOM.PSM
                                      select item).ToList();
                 dataGridView1.DataSource = mevo;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            LBJ_Service service = new LBJ_Service();
+            List<string> list = new List<string>();
+            bool check = true;
+
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (Convert.ToBoolean(dataGridView1.Rows[i].Cells[0].Value) == true)
+                {
+                    list.Add(dataGridView1.Rows[i].Cells[0].Value.ToString());
+                }
+            }
+            if (list.Count == 0)
+            {
+                MessageBox.Show("출고할 품목을 선택하세요.", "출고 실패", MessageBoxButtons.OK);
+            }
+            else if (check)
+            {
+                bool bResult = service.MateriaTran(mevo, iol);
+
+                if (MessageBox.Show("해당 품목을 출고 하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+
+                    MessageBox.Show("출고 성공", "성공", MessageBoxButtons.OK);
+                    DataLoad();
+                }
+                else { }
+            }
+
+
         }
     }
 }

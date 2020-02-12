@@ -174,12 +174,12 @@ namespace Team5_SmartMOM.LBJ
 
                 bool bResult = service.DeleteShift(string.Join(",", list));
 
-                if (MessageBox.Show("삭제하시겠습니까?","YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("삭제하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     MessageBox.Show("삭제 성공", "성공", MessageBoxButtons.OK);
                     DataLoad();
                 }
-                else { }                         
+                else { }
             }
         }
     }

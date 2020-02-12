@@ -50,7 +50,7 @@ namespace Team5_SmartMOM.LBJ
                                                  where item.Common_Type == "SHIFT"
                                                  select item).ToList();
 
-            CommonUtil.ComboBinding(cboShift, OrderShiftList, "Common_Key", "Common_Value", "전체");
+            CommonUtil.ComboBinding(cboShift, OrderShiftList, "Common_Key", "Common_Value");
         }
         public void DataLoad2()
         {
@@ -99,24 +99,16 @@ namespace Team5_SmartMOM.LBJ
             Shiftmanage.SHIFT_StartDate = Convert.ToDateTime(dateTimePicker1.Value.ToShortDateString());
             Shiftmanage.SHIFT_EndDate = Convert.ToDateTime(dateTimePicker2.Value.ToShortDateString());
 
-            if (cboSystem.Text == "전체")
-            {
-                DataSet ds = service.GetShiftManagement(Shiftmanage);
-                dataGridView1.DataSource = ds.Tables[0];
-            }
-            else
-            {
-                DataSet ds = service.GetShiftManagement(Shiftmanage);
-                dataGridView1.DataSource = ds.Tables[0];
-            }
+            DataSet ds = service.GetShiftManagement(Shiftmanage);
+            dataGridView1.DataSource = ds.Tables[0];
         }
         private List<ShiftManagementVO> ShiftSearch()
         {
             List<ShiftManagementVO> mvo = new List<ShiftManagementVO>();
-        
+
             foreach (var item in list1)
             {
-                if (cboShift.Text.Trim() == item.SHIFT && cboSystem.Text.Trim() == item.FAC_Name) 
+                if (cboShift.Text.Trim() == item.SHIFT && cboSystem.Text.Trim() == item.FAC_Name)
                 {
                     list1.Add(item);
                 }
