@@ -148,16 +148,16 @@ namespace Project_DAC
                 return list;
             }
         }
-        public List<BOM_VO1> GetAllCommonBOM()
+        public List<BOM_VO> GetAllCommonBOM()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "select BOM_No, BOM_Code, A.ITEM_Code, BOM_Require, BOM_StartDate, BOM_EndDate, BOM_UseOrNot, BOM_Modifier, BOM_ModifiyDate, BOM_AutoDeduction, BOM_RequirePlan, BOM_Others,B.ITEM_Type from BOM A inner join ITEM B on A.ITEM_Code = B.ITEM_Code";
+                cmd.CommandText = "select * from BOM";
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<BOM_VO1> list = Helper.DataReaderMapToList<BOM_VO1>(reader);
+                List<BOM_VO> list = Helper.DataReaderMapToList<BOM_VO>(reader);
                 cmd.Connection.Close();
 
                 return list;

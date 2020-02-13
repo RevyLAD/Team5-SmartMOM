@@ -32,19 +32,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btn_Search = new System.Windows.Forms.Button();
             this.txt_item = new System.Windows.Forms.TextBox();
             this.txt_standard = new System.Windows.Forms.TextBox();
-            this.cbo_manager = new System.Windows.Forms.ComboBox();
             this.cbo_itemtype = new System.Windows.Forms.ComboBox();
-            this.cbo_Company = new System.Windows.Forms.ComboBox();
             this.cbo_UseorNot = new System.Windows.Forms.ComboBox();
             this.Btn_Copy = new System.Windows.Forms.Button();
             this.Btn_Delete = new System.Windows.Forms.Button();
             this.Btn_newitem = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.button4 = new System.Windows.Forms.Button();
+            this.cbo_manager = new System.Windows.Forms.TextBox();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -76,6 +75,7 @@
             this.button3.Location = new System.Drawing.Point(935, 0);
             this.button3.Size = new System.Drawing.Size(62, 24);
             this.button3.Text = "엑셀";
+            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button2
@@ -98,15 +98,14 @@
             // 
             // panelTop
             // 
-            this.panelTop.Controls.Add(this.cbo_UseorNot);
-            this.panelTop.Controls.Add(this.cbo_Company);
-            this.panelTop.Controls.Add(this.cbo_itemtype);
             this.panelTop.Controls.Add(this.cbo_manager);
+            this.panelTop.Controls.Add(this.button4);
+            this.panelTop.Controls.Add(this.cbo_UseorNot);
+            this.panelTop.Controls.Add(this.cbo_itemtype);
             this.panelTop.Controls.Add(this.txt_standard);
             this.panelTop.Controls.Add(this.txt_item);
             this.panelTop.Controls.Add(this.btn_Search);
             this.panelTop.Controls.Add(this.label10);
-            this.panelTop.Controls.Add(this.label8);
             this.panelTop.Controls.Add(this.label7);
             this.panelTop.Controls.Add(this.label5);
             this.panelTop.Controls.Add(this.label4);
@@ -164,23 +163,12 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "ㆍ품목유형";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(736, 22);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 12);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "ㆍ업체";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.Location = new System.Drawing.Point(736, 61);
+            this.label10.Location = new System.Drawing.Point(697, 24);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(70, 12);
             this.label10.TabIndex = 8;
@@ -213,14 +201,6 @@
             this.txt_standard.Size = new System.Drawing.Size(217, 21);
             this.txt_standard.TabIndex = 11;
             // 
-            // cbo_manager
-            // 
-            this.cbo_manager.FormattingEnabled = true;
-            this.cbo_manager.Location = new System.Drawing.Point(110, 57);
-            this.cbo_manager.Name = "cbo_manager";
-            this.cbo_manager.Size = new System.Drawing.Size(217, 20);
-            this.cbo_manager.TabIndex = 13;
-            // 
             // cbo_itemtype
             // 
             this.cbo_itemtype.FormattingEnabled = true;
@@ -229,18 +209,10 @@
             this.cbo_itemtype.Size = new System.Drawing.Size(217, 20);
             this.cbo_itemtype.TabIndex = 15;
             // 
-            // cbo_Company
-            // 
-            this.cbo_Company.FormattingEnabled = true;
-            this.cbo_Company.Location = new System.Drawing.Point(819, 19);
-            this.cbo_Company.Name = "cbo_Company";
-            this.cbo_Company.Size = new System.Drawing.Size(217, 20);
-            this.cbo_Company.TabIndex = 16;
-            // 
             // cbo_UseorNot
             // 
             this.cbo_UseorNot.FormattingEnabled = true;
-            this.cbo_UseorNot.Location = new System.Drawing.Point(819, 57);
+            this.cbo_UseorNot.Location = new System.Drawing.Point(780, 20);
             this.cbo_UseorNot.Name = "cbo_UseorNot";
             this.cbo_UseorNot.Size = new System.Drawing.Size(217, 20);
             this.cbo_UseorNot.TabIndex = 18;
@@ -252,9 +224,9 @@
             this.Btn_Copy.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Btn_Copy.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
             this.Btn_Copy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_Copy.Location = new System.Drawing.Point(878, 0);
+            this.Btn_Copy.Location = new System.Drawing.Point(873, 0);
             this.Btn_Copy.Name = "Btn_Copy";
-            this.Btn_Copy.Size = new System.Drawing.Size(57, 24);
+            this.Btn_Copy.Size = new System.Drawing.Size(62, 24);
             this.Btn_Copy.TabIndex = 17;
             this.Btn_Copy.Text = "복사";
             this.Btn_Copy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -267,9 +239,9 @@
             this.Btn_Delete.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Btn_Delete.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
             this.Btn_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_Delete.Location = new System.Drawing.Point(821, 0);
+            this.Btn_Delete.Location = new System.Drawing.Point(811, 0);
             this.Btn_Delete.Name = "Btn_Delete";
-            this.Btn_Delete.Size = new System.Drawing.Size(57, 24);
+            this.Btn_Delete.Size = new System.Drawing.Size(62, 24);
             this.Btn_Delete.TabIndex = 19;
             this.Btn_Delete.Text = "삭제";
             this.Btn_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -283,14 +255,34 @@
             this.Btn_newitem.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Btn_newitem.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
             this.Btn_newitem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_newitem.Location = new System.Drawing.Point(764, 0);
+            this.Btn_newitem.Location = new System.Drawing.Point(749, 0);
             this.Btn_newitem.Name = "Btn_newitem";
-            this.Btn_newitem.Size = new System.Drawing.Size(57, 24);
+            this.Btn_newitem.Size = new System.Drawing.Size(62, 24);
             this.Btn_newitem.TabIndex = 20;
             this.Btn_newitem.Text = "등록";
             this.Btn_newitem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_newitem.UseVisualStyleBackColor = false;
             this.Btn_newitem.Click += new System.EventHandler(this.Btn_newitem_Click);
+            // 
+            // button4
+            // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(1003, 57);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(93, 39);
+            this.button4.TabIndex = 19;
+            this.button4.Text = "다시 불러오기";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            // 
+            // cbo_manager
+            // 
+            this.cbo_manager.Location = new System.Drawing.Point(110, 56);
+            this.cbo_manager.Name = "cbo_manager";
+            this.cbo_manager.Size = new System.Drawing.Size(217, 21);
+            this.cbo_manager.TabIndex = 20;
             // 
             // Item_Management
             // 
@@ -320,17 +312,16 @@
         private System.Windows.Forms.TextBox txt_item;
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbo_UseorNot;
-        private System.Windows.Forms.ComboBox cbo_Company;
         private System.Windows.Forms.ComboBox cbo_itemtype;
-        private System.Windows.Forms.ComboBox cbo_manager;
         protected System.Windows.Forms.Button Btn_Copy;
         protected System.Windows.Forms.Button Btn_newitem;
         protected System.Windows.Forms.Button Btn_Delete;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox cbo_manager;
     }
 }

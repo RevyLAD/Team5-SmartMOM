@@ -422,8 +422,8 @@ namespace Team5_SmartMOM
                     button.Text = tabControl1.SelectedTab.Text;
                     button.Click += new System.EventHandler(this.toolStripButton1_Click);
                     button.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText;
-                    button.Image = imageList1.Images[rnd.Next(0, 52)];
-
+                    button.Image = imageList1.Images[rnd.Next(0, 47)];
+                    
                     toolStrip1.Items.Add(button);
                     toolStrip1.Items.Add(separator);
                 }

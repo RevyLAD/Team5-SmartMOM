@@ -26,7 +26,7 @@ namespace Project_DAC
                 return list;
             }
         }
-        public bool InsertIMaterial(Material_VO list)
+        public SqlParameter InsertIMaterial(Material_VO list)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -43,13 +43,14 @@ namespace Project_DAC
                 cmd.Parameters.AddWithValue("@Material_Editer ", list.Material_Editer);
                 cmd.Parameters.AddWithValue("@Material_EditDate ", list.Material_EditDate);
                 cmd.Parameters.AddWithValue("@Material_Others ", list.Material_Others);
-        
-
+                SqlParameter reparm = new SqlParameter();
+                reparm.Direction = ParameterDirection.ReturnValue;
+                cmd.Parameters.Add(reparm);
 
                 cmd.Connection.Open();
-                var rowsAffected = cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
                 cmd.Connection.Close();
-                return rowsAffected > 0;
+                return reparm;
             }
         }
 

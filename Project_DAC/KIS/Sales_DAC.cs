@@ -26,7 +26,7 @@ namespace Project_DAC
             }
         }
 
-        public bool InsertISales(Sales_VO list)
+        public SqlParameter InsertISales(Sales_VO list)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -43,13 +43,14 @@ namespace Project_DAC
                 cmd.Parameters.AddWithValue("@Sales_Editer ", list.Sales_Editer);
                 cmd.Parameters.AddWithValue("@Sales_EditDate ", list.Sales_EditDate);
                 cmd.Parameters.AddWithValue("@Sales_Others ", list.Sales_Others);
-
-
+                SqlParameter reparm = new SqlParameter();
+                reparm.Direction = ParameterDirection.ReturnValue;
+                cmd.Parameters.Add(reparm);
 
                 cmd.Connection.Open();
-                var rowsAffected = cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
                 cmd.Connection.Close();
-                return rowsAffected > 0;
+                return reparm;
             }
         }
         public List<Sales_VO_VIew> SearchSales(string date , string name)

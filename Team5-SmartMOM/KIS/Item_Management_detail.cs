@@ -28,6 +28,7 @@ namespace Team5_SmartMOM
         private void init_Combo()
         {
             CommonCodeService service = new CommonCodeService();
+            KIS_Service service1 = new KIS_Service();
 
             List<CommonCodeVO> listGubunCode1 = service.GetAllCommonCode();
             List<CommonCodeVO> listGubunCode2 = service.GetAllCommonCode();   
@@ -39,7 +40,8 @@ namespace Team5_SmartMOM
             List<CommonCodeVO> listGubunCode9 = service.GetAllCommonCode();
             List<CommonCodeVO> listGubunCode10 = service.GetAllCommonCode();
             List<CommonCodeVO> listGubunCode11 = service.GetAllCommonCode();
-
+            List<FactoryVO> listGubunCode12 = service1.GetAllFactoryCode();
+            List<FactoryVO> listGubunCode13 = service1.GetAllFactoryCode();
 
             List<CommonCodeVO> OrderGubunList1 = (from item in listGubunCode1
                                                   where item.Common_Type == "ITEM_TYPE"
@@ -60,7 +62,7 @@ namespace Team5_SmartMOM
                                                   where item.Common_Type == "FACILITY_TYPE"
                                                   select item).ToList();  //입고 창고  
             List<CommonCodeVO> OrderGubunList8 = (from item in listGubunCode8
-                                                  where item.Common_Type == "FACILITY_TYPE"
+                                                  where item.Common_Type == "FACILITY_TYPE" 
                                                   select item).ToList();  //출고 창고 
             List<CommonCodeVO> OrderGubunList9 = (from item in listGubunCode9
                                                   where item.Common_Type == "ORDER_METHOD"
@@ -71,6 +73,10 @@ namespace Team5_SmartMOM
             List<CommonCodeVO> OrderGubunList11 = (from item in listGubunCode11
                                                    where item.Common_Type == "MATERIAL_ORDER_STATE"
                                                    select item).ToList();  //발주방식 
+            List<FactoryVO> OrderGubunList12 = (from item in listGubunCode12
+                                                   select item).ToList();  //발주방식 
+            List<FactoryVO> OrderGubunList13 = (from item in listGubunCode13
+                                                select item).ToList();  //발주방식 
 
             CommonUtil.ComboBinding(cbo_itemtype, OrderGubunList1, "Common_Key", "Common_Value");
             CommonUtil.ComboBinding(cbo_unit, OrderGubunList2, "Common_Key", "Common_Value");
@@ -81,7 +87,9 @@ namespace Team5_SmartMOM
             CommonUtil.ComboBinding(cbo_releasehouse, OrderGubunList8, "Common_Key", "Common_Value");
             CommonUtil.ComboBinding(cbo_Management_ranking, OrderGubunList9, "Common_Key", "Common_Value");
             CommonUtil.ComboBinding(cbo_UseorNot, OrderGubunList10, "Common_Key", "Common_Value");
-            CommonUtil.ComboBinding(cbo_orderType, OrderGubunList10, "Common_Key", "Common_Value");
+            CommonUtil.ComboBinding(cbo_orderType, OrderGubunList11, "Common_Key", "Common_Value");
+            CommonUtil.ComboBinding(cbo_Warehouse, OrderGubunList12, "FACT_Name", "FACT_Name");
+            CommonUtil.ComboBinding(cbo_releasehouse, OrderGubunList13, "FACT_Name", "FACT_Name");
         }
 
 
@@ -93,49 +101,55 @@ namespace Team5_SmartMOM
             {
                 if (txt_item.Text == "")
                 {
-                    MessageBox.Show("품목을 작성해주시기 바랍니다.");
+                    MessageBox.Show("품목을 작성해주시기 바랍니다.", "경고");
                     check = false;
                     this.DialogResult = DialogResult.None;
                 }
                 else if (txt_itemname.Text == null)
                 {
-                    MessageBox.Show("등록할 품명을 작성해주시기 바랍니다.");
+                    MessageBox.Show("등록할 품명을 작성해주시기 바랍니다.", "경고");
                     check = false;
                     this.DialogResult = DialogResult.None;
                 }
                 else if (cbo_unit.Text == null)
                 {
-                    MessageBox.Show("단위를 작성해 주시기 바랍니다.");
+                    MessageBox.Show("단위를 작성해 주시기 바랍니다.", "경고");
                     check = false;
                     this.DialogResult = DialogResult.None;
                 }
                 else if (cbo_itemtype.Text == null)
                 {
-                    MessageBox.Show("품목 유형을 선택해 주시기 바랍니다..");
+                    MessageBox.Show("품목 유형을 선택해 주시기 바랍니다..", "경고");
                     check = false;
                     this.DialogResult = DialogResult.None;
                 }
                 else if (cbo_import_check.Text == null)
                 {
-                    MessageBox.Show("수입검사여부를 설정해 주시기 바랍니다.");
+                    MessageBox.Show("수입검사여부를 설정해 주시기 바랍니다.", "경고");
                     check = false;
                     this.DialogResult = DialogResult.None;
                 }
                 else if (cbo_process_check.Text == null)
                 {
-                    MessageBox.Show("공장검사여부를 설정해 주시기 바랍니다.");
+                    MessageBox.Show("공장검사여부를 설정해 주시기 바랍니다.", "경고");
                     check = false;
                     this.DialogResult = DialogResult.None;
                 }
                 else if (cbo_shipment_Check.Text == null)
                 {
-                    MessageBox.Show("출하검사여부를 설정해 주시기 바랍니다.");
+                    MessageBox.Show("출하검사여부를 설정해 주시기 바랍니다.", "경고");
                     check = false;
                     this.DialogResult = DialogResult.None;
                 }
                 else if (cbo_UseorNot.Text == null)
                 {
-                    MessageBox.Show("사용유무를 설정해 주시기 바랍니다.");
+                    MessageBox.Show("사용유무를 설정해 주시기 바랍니다.", "경고");
+                    check = false;
+                    this.DialogResult = DialogResult.None;
+                }
+                else if (txt_Safety_Count.Text == null || cbo_MinOrder_count.Text == null)
+                {
+                    MessageBox.Show("최소발주수량 혹은 안전재고수량을 작성해주시기바랍니다 \n 수량이 0인경우 0으로 작성해주시기바랍니다.","경고");
                     check = false;
                     this.DialogResult = DialogResult.None;
                 }

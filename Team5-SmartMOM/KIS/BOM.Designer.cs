@@ -193,9 +193,9 @@
             this.Btn_Delete.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Btn_Delete.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
             this.Btn_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_Delete.Location = new System.Drawing.Point(847, 0);
+            this.Btn_Delete.Location = new System.Drawing.Point(834, 0);
             this.Btn_Delete.Name = "Btn_Delete";
-            this.Btn_Delete.Size = new System.Drawing.Size(57, 24);
+            this.Btn_Delete.Size = new System.Drawing.Size(70, 24);
             this.Btn_Delete.TabIndex = 15;
             this.Btn_Delete.Text = "삭제";
             this.Btn_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -209,9 +209,9 @@
             this.Btn_newitem.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Btn_newitem.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
             this.Btn_newitem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_newitem.Location = new System.Drawing.Point(733, 0);
+            this.Btn_newitem.Location = new System.Drawing.Point(694, 0);
             this.Btn_newitem.Name = "Btn_newitem";
-            this.Btn_newitem.Size = new System.Drawing.Size(57, 24);
+            this.Btn_newitem.Size = new System.Drawing.Size(70, 24);
             this.Btn_newitem.TabIndex = 17;
             this.Btn_newitem.Text = "등록";
             this.Btn_newitem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -225,9 +225,9 @@
             this.Btn_Copy.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Btn_Copy.Image = global::Team5_SmartMOM.Properties.Resources.pencil;
             this.Btn_Copy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_Copy.Location = new System.Drawing.Point(790, 0);
+            this.Btn_Copy.Location = new System.Drawing.Point(764, 0);
             this.Btn_Copy.Name = "Btn_Copy";
-            this.Btn_Copy.Size = new System.Drawing.Size(57, 24);
+            this.Btn_Copy.Size = new System.Drawing.Size(70, 24);
             this.Btn_Copy.TabIndex = 16;
             this.Btn_Copy.Text = "복사";
             this.Btn_Copy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
