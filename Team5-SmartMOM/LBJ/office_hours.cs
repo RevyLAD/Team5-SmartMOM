@@ -42,20 +42,20 @@ namespace Team5_SmartMOM.LBJ
             chk.Width = 40;
             chk.HeaderText = "선택";
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "No", "SHIFT_ID", true, 100, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "No", "SHIFT_ID", true, 50, DataGridViewContentAlignment.MiddleRight);
             dataGridView1.Columns.Add(chk);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "설비명", "FAC_Name", true, 160);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "설비코드", "FAC_Code", true, 160);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "설비명", "FAC_Name", true, 120);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "설비코드", "FAC_Code", true, 120);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "Shift", "SHIFT", true, 50, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "시작시간", "SHIFT_StartTime", true, 110,DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "완료시간", "SHIFT_EndTime", true, 110, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "적용시작일자", "SHIFT_StartDate", true, 160, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "적용완료일자", "SHIFT_EndDate", true, 160, DataGridViewContentAlignment.MiddleCenter);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "투입인원", "SHIFT_INPUTPeople", true, 140, DataGridViewContentAlignment.MiddleRight);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "SHIFT_UserOrNot", true, 100);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "투입인원", "SHIFT_INPUTPeople", true, 80, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "SHIFT_UserOrNot", true, 80);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정자", "SHIFT_ModifierDate", true, 130);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정시간", "SHIFT_Modifier", true, 170, DataGridViewContentAlignment.MiddleCenter);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "SHIFT_Others", true, 235);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "SHIFT_Others", true, 245);
 
             LBJ_Service service = new LBJ_Service();
             dataGridView1.DataSource = list = service.Shift();
@@ -135,19 +135,7 @@ namespace Team5_SmartMOM.LBJ
             else 
             {
                 dataGridView1.DataSource = ShiftSearch();
-            }
-            //if (cbosystem.Text.Trim() == "전체")
-            //{
-            //    string system = cbosystem.Text.Trim();
-            //    list = null;
-            //    list = (from item in list
-            //            where item.FAC_Code.Contains(system)
-            //            select item).ToList();
-            //    dataGridView1.DataSource = list;
-            //}
-            //else
-            //    DataLoad();
-                
+            }         
         }
         private List<ShiftVO> ShiftSearch()
         {

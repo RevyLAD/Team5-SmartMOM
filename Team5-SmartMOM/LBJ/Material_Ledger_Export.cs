@@ -8,12 +8,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Team5_SmartMOM.BaseForm;
 using Team5_SmartMOM.Service;
 
 namespace Team5_SmartMOM.PSM
 {
     public partial class Material_Ledger_Export : Team5_SmartMOM.BaseGridForm
     {
+        List<MateriaExportVO> Materialist;
+        DateTimePicker dtp;
         CheckBox headerCheckBox = new CheckBox();
         List<InOutListVO> iol;
         List<MateriaExportVO> list;
@@ -25,6 +28,8 @@ namespace Team5_SmartMOM.PSM
 
         private void Material_Ledger_Export_Load(object sender, EventArgs e)
         {
+            DateTimePicker dtp = new DateTimePicker();
+            dateTimePicker2.Value = dtp.Value = DateTime.Now.AddMonths(3);
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.Columns.Clear();
@@ -54,6 +59,7 @@ namespace Team5_SmartMOM.PSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "현재고", "FACD_Qty", true, 120, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "계획수량", "planQty", true, 120, DataGridViewContentAlignment.MiddleRight);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "요청수량", "directQty", true, 120, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "출고상태", "WO_OutState", true, 120, DataGridViewContentAlignment.MiddleCenter);
 
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
 
@@ -90,59 +96,118 @@ namespace Team5_SmartMOM.PSM
         {
             LBJ_Service service = new LBJ_Service();
             HSC_Service hscservice = new HSC_Service();
-            List<MateriaExportVO> Materialist = service.MateriaExport();
+            Materialist = service.MateriaExport();
             List<FacilitieDetailVO> Facvo = hscservice.GetAllFacilitiesDetail();
-            dataGridView1.DataSource = list = Materialist;           
+            List<CommonCodeVO> Comlist = new List<CommonCodeVO>();
 
-            CommonUtil.ComboBinding(comboBox1, Facvo, "FAC_No", "FAC_Name", "전체");
+            List<MateriaExportVO> MateriaEVO= (from item in Materialist
+                                where 
+                               item.WO_OutState == "출고대기"
+                               select item).ToList();
 
+
+            dataGridView1.DataSource = list = MateriaEVO;
+
+            CommonCodeService service1 = new CommonCodeService();
+            Comlist = service1.GetAllCommonCode();
+
+            List<CommonCodeVO> CommonState= (from item in Comlist
+                                             where item.Common_Type == "OUT_STATE"
+                                                 select item).ToList();
+
+            CommonUtil.ComboBinding(comboBox3, CommonState, "Common_Key", "Common_Value");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             
             LBJ_Service service = new LBJ_Service();
-            List<string> list = new List<string>();
 
             bool bFlag = false;
+            bool bFlag2 = true;
+
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
                 if ((bool)dataGridView1.Rows[i].Cells["Check"].EditedFormattedValue)
                 {
+                    if (dataGridView1.Rows[i].Cells[12].Value.ToString() == "출고완료")
+                    {
+                        bFlag2 = false;
+                    }
                     bFlag = true;
                     break;
                 }
             }
+
             if (bFlag == false)
             {
                 MessageBox.Show("출고하실 항목을 선택해주세요.", "출고 실패", MessageBoxButtons.OK);
                 return;
             }
-            List<MateriaExportVO> mevo = new List<MateriaExportVO>();
-            List<InOutListVO> iol = new List<InOutListVO>();
+            if (bFlag2 == false)
+            {
+                MessageBox.Show("출고완료된 제품이 있습니다.");
+                return;
+            }
+            
+
+            List<MateriaExportOkVO> mevo = new List<MateriaExportOkVO>();
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 bool CellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
 
                 if (CellChecked)
                 {
-                    InOutListVO iollist = new InOutListVO();
+                    MateriaExportOkVO iollist = new MateriaExportOkVO();
+                    iollist.WO_ID = row.Cells[1].Value.ToString();
+                    iollist.directQty = Convert.ToInt32(row.Cells[11].Value);
+                    iollist.In_WareHouse = row.Cells[8].Value.ToString();
                     iollist.InOut_Date = (DateTime)row.Cells[2].Value;
                     iollist.From_WareHouse = row.Cells[7].Value.ToString();
                     iollist.ITEM_Code = row.Cells[3].Value.ToString();
                     iollist.InOut_Qty = Convert.ToInt32(row.Cells[10].Value);
-                    iol.Add(iollist);
+                    mevo.Add(iollist);
 
                 }
             }
             LBJ_Service lbjservice = new LBJ_Service();
-            lbjservice.MateriaTran(mevo, iol);
+            
+
             if (MessageBox.Show("출고하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show("출고 성공", "성공", MessageBoxButtons.OK);
-                DataLoad();
+                if (lbjservice.MateriaTran(mevo))
+                {
+                    MessageBox.Show("출고 성공", "성공", MessageBoxButtons.OK);
+                    DataLoad();
+                }
+                else
+                {
+                    MessageBox.Show("출고 실패", "성공", MessageBoxButtons.OK);
+                    DataLoad();
+                }
             }
-            else { }                
+            
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            var CommonState = (from item in Materialist
+                               where item.WO_StartDate> dateTimePicker1.Value &&
+                                              item.WO_StartDate <= dateTimePicker2.Value &&
+                                              item.WO_OutState ==comboBox3.Text
+                                                select item).ToList();
+            dataGridView1.DataSource = CommonState;
+
+
+        }
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            if (dateTimePicker1.Value > dateTimePicker2.Value)
+            {
+                MessageBox.Show("시작일보다 빠를 수 없습니다.");
+                dateTimePicker2.Value = dtp.Value.AddMonths(6) ;
+                return;
+            }
+        }      
     }
 }

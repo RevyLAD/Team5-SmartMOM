@@ -50,7 +50,7 @@ namespace Team5_SmartMOM.LBJ
                                                  where item.Common_Type == "SHIFT"
                                                  select item).ToList();
 
-            CommonUtil.ComboBinding(cboShift, OrderShiftList, "Common_Key", "Common_Value", "전체");
+            CommonUtil.ComboBinding(cboShift, OrderShiftList, "Common_Key", "Common_Value");
         }
         public void DataLoad2()
         {
@@ -103,11 +103,11 @@ namespace Team5_SmartMOM.LBJ
                 DataSet ds = service.GetShiftManagement(Shiftmanage);
                 dataGridView1.DataSource = ds.Tables[0];
             }
-            else
+            else if (cboShift.Text == "야간")
             {
                 DataSet ds = service.GetShiftManagement(Shiftmanage);
                 dataGridView1.DataSource = ds.Tables[0];
-            }
+            }           
         }
         private List<ShiftManagementVO> ShiftSearch()
         {
