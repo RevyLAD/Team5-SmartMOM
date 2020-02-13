@@ -144,7 +144,7 @@
             this.txt_item.Location = new System.Drawing.Point(441, 13);
             this.txt_item.Name = "txt_item";
             this.txt_item.Size = new System.Drawing.Size(208, 21);
-            this.txt_item.TabIndex = 4;
+            this.txt_item.TabIndex = 1;
             // 
             // btn_Search
             // 
@@ -154,7 +154,7 @@
             this.btn_Search.Location = new System.Drawing.Point(1100, 12);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(93, 39);
-            this.btn_Search.TabIndex = 6;
+            this.btn_Search.TabIndex = 2;
             this.btn_Search.Text = "조회";
             this.btn_Search.UseVisualStyleBackColor = false;
             this.btn_Search.Click += new System.EventHandler(this.Btn_Search_Click);
@@ -169,7 +169,7 @@
             this.btn_NewItem.Location = new System.Drawing.Point(763, 0);
             this.btn_NewItem.Name = "btn_NewItem";
             this.btn_NewItem.Size = new System.Drawing.Size(57, 28);
-            this.btn_NewItem.TabIndex = 21;
+            this.btn_NewItem.TabIndex = 3;
             this.btn_NewItem.Text = "등록";
             this.btn_NewItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_NewItem.UseVisualStyleBackColor = false;
@@ -185,7 +185,7 @@
             this.btn_delete.Location = new System.Drawing.Point(820, 0);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(57, 28);
-            this.btn_delete.TabIndex = 20;
+            this.btn_delete.TabIndex = 4;
             this.btn_delete.Text = "삭제";
             this.btn_delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_delete.UseVisualStyleBackColor = false;
@@ -201,7 +201,7 @@
             this.btn_copy.Location = new System.Drawing.Point(877, 0);
             this.btn_copy.Name = "btn_copy";
             this.btn_copy.Size = new System.Drawing.Size(57, 28);
-            this.btn_copy.TabIndex = 19;
+            this.btn_copy.TabIndex = 5;
             this.btn_copy.Text = "복사";
             this.btn_copy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_copy.UseVisualStyleBackColor = false;
@@ -212,7 +212,7 @@
             this.dtp_ExistingDate.Location = new System.Drawing.Point(112, 13);
             this.dtp_ExistingDate.Name = "dtp_ExistingDate";
             this.dtp_ExistingDate.Size = new System.Drawing.Size(193, 23);
-            this.dtp_ExistingDate.TabIndex = 14;
+            this.dtp_ExistingDate.TabIndex = 0;
             // 
             // Material_Cost_Management
             // 

@@ -27,7 +27,7 @@ namespace Team5_SmartMOM
             KIS_Service service2 = new KIS_Service();
             List<CommonCodeVO> listGubunCode1 = service.GetAllCommonCode();
             List<ITEM_VO> listGubunCode4 = service2.GetAllCommonItem();
-            List<EnterpriseVO> listGubunCode3 = service2.GetAllCommonCode3();
+            List<EnterpriseVO_Sales> listGubunCode3 = service2.GetAllCommonCode3();
 
             //공통코드링큐
             List<CommonCodeVO> OrderGubunList1 = (from item in listGubunCode1
@@ -37,7 +37,7 @@ namespace Team5_SmartMOM
             List<ITEM_VO> OrderGubunList4 = (from item in listGubunCode4
                                              select item).ToList();   // 품목 유형
 
-            List<EnterpriseVO> OrderGubunList3 = (from item in listGubunCode3
+            List<EnterpriseVO_Sales> OrderGubunList3 = (from item in listGubunCode3
                                                   where item.COM_Type != "고객사"
                                                   select item).ToList();   // 품목 유형
 

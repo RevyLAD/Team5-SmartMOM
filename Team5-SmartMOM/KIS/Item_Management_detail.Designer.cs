@@ -149,17 +149,19 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(385, 15);
+            this.button2.Location = new System.Drawing.Point(382, 15);
+            this.button2.TabIndex = 21;
             // 
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Location = new System.Drawing.Point(277, 15);
+            this.button1.TabIndex = 20;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(2303, 10);
+            this.tileSave.Location = new System.Drawing.Point(2436, 10);
             // 
             // label2
             // 
@@ -366,21 +368,21 @@
             this.txt_item.Location = new System.Drawing.Point(124, 15);
             this.txt_item.Name = "txt_item";
             this.txt_item.Size = new System.Drawing.Size(116, 21);
-            this.txt_item.TabIndex = 30;
+            this.txt_item.TabIndex = 0;
             // 
             // txt_itemname
             // 
             this.txt_itemname.Location = new System.Drawing.Point(368, 15);
             this.txt_itemname.Name = "txt_itemname";
             this.txt_itemname.Size = new System.Drawing.Size(116, 21);
-            this.txt_itemname.TabIndex = 32;
+            this.txt_itemname.TabIndex = 1;
             // 
             // txt_size
             // 
             this.txt_size.Location = new System.Drawing.Point(612, 15);
             this.txt_size.Name = "txt_size";
             this.txt_size.Size = new System.Drawing.Size(116, 21);
-            this.txt_size.TabIndex = 33;
+            this.txt_size.TabIndex = 2;
             // 
             // cbo_unit
             // 
@@ -388,7 +390,7 @@
             this.cbo_unit.Location = new System.Drawing.Point(124, 49);
             this.cbo_unit.Name = "cbo_unit";
             this.cbo_unit.Size = new System.Drawing.Size(116, 20);
-            this.cbo_unit.TabIndex = 34;
+            this.cbo_unit.TabIndex = 3;
             // 
             // cbo_import_check
             // 
@@ -396,7 +398,7 @@
             this.cbo_import_check.Location = new System.Drawing.Point(612, 49);
             this.cbo_import_check.Name = "cbo_import_check";
             this.cbo_import_check.Size = new System.Drawing.Size(116, 20);
-            this.cbo_import_check.TabIndex = 35;
+            this.cbo_import_check.TabIndex = 5;
             // 
             // cbo_Warehouse
             // 
@@ -404,7 +406,7 @@
             this.cbo_Warehouse.Location = new System.Drawing.Point(124, 117);
             this.cbo_Warehouse.Name = "cbo_Warehouse";
             this.cbo_Warehouse.Size = new System.Drawing.Size(116, 20);
-            this.cbo_Warehouse.TabIndex = 37;
+            this.cbo_Warehouse.TabIndex = 9;
             // 
             // cbo_Management_ranking
             // 
@@ -412,7 +414,7 @@
             this.cbo_Management_ranking.Location = new System.Drawing.Point(368, 152);
             this.cbo_Management_ranking.Name = "cbo_Management_ranking";
             this.cbo_Management_ranking.Size = new System.Drawing.Size(116, 20);
-            this.cbo_Management_ranking.TabIndex = 39;
+            this.cbo_Management_ranking.TabIndex = 13;
             // 
             // cbo_process_check
             // 
@@ -420,7 +422,7 @@
             this.cbo_process_check.Location = new System.Drawing.Point(124, 82);
             this.cbo_process_check.Name = "cbo_process_check";
             this.cbo_process_check.Size = new System.Drawing.Size(116, 20);
-            this.cbo_process_check.TabIndex = 41;
+            this.cbo_process_check.TabIndex = 6;
             // 
             // cbo_releasehouse
             // 
@@ -428,7 +430,7 @@
             this.cbo_releasehouse.Location = new System.Drawing.Point(368, 117);
             this.cbo_releasehouse.Name = "cbo_releasehouse";
             this.cbo_releasehouse.Size = new System.Drawing.Size(116, 20);
-            this.cbo_releasehouse.TabIndex = 45;
+            this.cbo_releasehouse.TabIndex = 10;
             // 
             // cbo_UseorNot
             // 
@@ -436,7 +438,7 @@
             this.cbo_UseorNot.Location = new System.Drawing.Point(612, 191);
             this.cbo_UseorNot.Name = "cbo_UseorNot";
             this.cbo_UseorNot.Size = new System.Drawing.Size(116, 20);
-            this.cbo_UseorNot.TabIndex = 48;
+            this.cbo_UseorNot.TabIndex = 17;
             // 
             // cbo_orderType
             // 
@@ -444,7 +446,7 @@
             this.cbo_orderType.Location = new System.Drawing.Point(124, 229);
             this.cbo_orderType.Name = "cbo_orderType";
             this.cbo_orderType.Size = new System.Drawing.Size(116, 20);
-            this.cbo_orderType.TabIndex = 49;
+            this.cbo_orderType.TabIndex = 18;
             // 
             // cbo_itemtype
             // 
@@ -452,7 +454,7 @@
             this.cbo_itemtype.Location = new System.Drawing.Point(368, 49);
             this.cbo_itemtype.Name = "cbo_itemtype";
             this.cbo_itemtype.Size = new System.Drawing.Size(116, 20);
-            this.cbo_itemtype.TabIndex = 50;
+            this.cbo_itemtype.TabIndex = 4;
             // 
             // cbo_shipment_Check
             // 
@@ -460,28 +462,28 @@
             this.cbo_shipment_Check.Location = new System.Drawing.Point(368, 82);
             this.cbo_shipment_Check.Name = "cbo_shipment_Check";
             this.cbo_shipment_Check.Size = new System.Drawing.Size(116, 20);
-            this.cbo_shipment_Check.TabIndex = 51;
+            this.cbo_shipment_Check.TabIndex = 7;
             // 
             // txt_Safety_Count
             // 
             this.txt_Safety_Count.Location = new System.Drawing.Point(124, 152);
             this.txt_Safety_Count.Name = "txt_Safety_Count";
             this.txt_Safety_Count.Size = new System.Drawing.Size(116, 21);
-            this.txt_Safety_Count.TabIndex = 54;
+            this.txt_Safety_Count.TabIndex = 12;
             // 
             // txt_edituser
             // 
             this.txt_edituser.Location = new System.Drawing.Point(124, 190);
             this.txt_edituser.Name = "txt_edituser";
             this.txt_edituser.Size = new System.Drawing.Size(116, 21);
-            this.txt_edituser.TabIndex = 57;
+            this.txt_edituser.TabIndex = 15;
             // 
             // txt_edit_date
             // 
             this.txt_edit_date.Location = new System.Drawing.Point(368, 191);
             this.txt_edit_date.Name = "txt_edit_date";
             this.txt_edit_date.Size = new System.Drawing.Size(116, 21);
-            this.txt_edit_date.TabIndex = 58;
+            this.txt_edit_date.TabIndex = 16;
             // 
             // txt_Remarks
             // 
@@ -489,21 +491,21 @@
             this.txt_Remarks.Multiline = true;
             this.txt_Remarks.Name = "txt_Remarks";
             this.txt_Remarks.Size = new System.Drawing.Size(604, 66);
-            this.txt_Remarks.TabIndex = 59;
+            this.txt_Remarks.TabIndex = 19;
             // 
             // cbo_manager
             // 
             this.cbo_manager.Location = new System.Drawing.Point(612, 153);
             this.cbo_manager.Name = "cbo_manager";
             this.cbo_manager.Size = new System.Drawing.Size(116, 21);
-            this.cbo_manager.TabIndex = 60;
+            this.cbo_manager.TabIndex = 14;
             // 
             // cbo_MinOrder_count
             // 
             this.cbo_MinOrder_count.Location = new System.Drawing.Point(612, 118);
             this.cbo_MinOrder_count.Name = "cbo_MinOrder_count";
             this.cbo_MinOrder_count.Size = new System.Drawing.Size(116, 21);
-            this.cbo_MinOrder_count.TabIndex = 61;
+            this.cbo_MinOrder_count.TabIndex = 11;
             // 
             // label29
             // 
@@ -521,7 +523,7 @@
             this.cbo_Client.Location = new System.Drawing.Point(612, 82);
             this.cbo_Client.Name = "cbo_Client";
             this.cbo_Client.Size = new System.Drawing.Size(116, 20);
-            this.cbo_Client.TabIndex = 52;
+            this.cbo_Client.TabIndex = 8;
             // 
             // Item_Management_detail
             // 
