@@ -67,7 +67,9 @@ namespace Team5_SmartMOM.Service
         public bool MateriaTran(List<MateriaExportVO> mevo, List<InoutList> iol)
         {
             MateriaDAC dac = new MateriaDAC();
-            return dac.MateriaTran(mevo, iol);
+
+            //return dac.MateriaTran(mevo, iol);
+            return true;
         }
     }
 }

@@ -5,11 +5,13 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Team5_SmartMOM;
@@ -362,12 +364,13 @@ namespace Team5_Pop
                     PopService service = new PopService();
                     
                     POPGaDong newgadong = new POPGaDong(gadong_vo, service.GetPortNum(gadong_vo.WO_ID));
+                    //POPGaDong newgadong = new POPGaDong(gadong_vo, 9900);
 
-                        service.UpdateFacState(gadong_vo.FAC_Name, gadong_vo.WO_ID);
+                    service.UpdateFacState(gadong_vo.FAC_Name, gadong_vo.WO_ID);
                         mainform.CreateTabPages(gadong_vo.FAC_Name, newgadong);
 
 
-                    newgadong.DataSendEvent += new DataGetEventHandler(this.DataGet);
+                    newgadong.DataGethering += new DataGetEventHandler(this.DataGet);
 
                     //newgadong.Mtimer.Elapsed += new System.Timers.ElapsedEventHandler(DataUpdate(null, nullargs, gadong_vo));
 
@@ -382,15 +385,17 @@ namespace Team5_Pop
             }
         }
 
-        private void DataGet(string total, string good, string bad, string woid)
+        private void DataGet(object sender, PopEventAgrs e)
         {
+            //POPGaDong pop = (POPGaDong)sender;
+            //Debug.WriteLine(pop.checkid);
             foreach (var item in inglist)
             {
-                if (item.woid.Equals(woid))
+                if (item.woid.Equals(e.newid))
                 {
-                    item.totalqty = Convert.ToInt32(total.Trim());
-                    item.goodqty = Convert.ToInt32(good.Trim());
-                    item.badqty = Convert.ToInt32(bad.Trim());
+                    item.totalqty = Convert.ToInt32(e.total.Trim());
+                    item.goodqty = Convert.ToInt32(e.good.Trim());
+                    item.badqty = Convert.ToInt32(e.bad.Trim());
 
                     break;
                 }

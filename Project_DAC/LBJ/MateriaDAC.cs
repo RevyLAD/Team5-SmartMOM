@@ -89,7 +89,7 @@ FROM WorkOrder a, BOM b ,ITEM c,  FactoryDetail d where B.BOM_Code = A.ITEM_Code
                         cmd.Parameters.Clear();
                     }
 
-                    foreach (var item in )
+                    foreach (var item in mevo)
                     {
                         cmd.CommandText = @"";
                     
