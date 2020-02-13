@@ -61,7 +61,7 @@ FROM WorkOrder a, BOM b ,ITEM c,  FactoryDetail d where B.BOM_Code = A.ITEM_Code
                 return list;
             }
         }
-        public bool MateriaTran(List<MateriaExportVO> mevo, List<InoutList> iol)
+        public bool MateriaTran(List<MateriaExportVO> mevo)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -89,18 +89,10 @@ FROM WorkOrder a, BOM b ,ITEM c,  FactoryDetail d where B.BOM_Code = A.ITEM_Code
                         cmd.Parameters.Clear();
                     }
 
-                    foreach (var item in iol)
+                    foreach (var item in )
                     {
-                        cmd.CommandText = @"INSERT INTO InOutList(InOut_Date, InOut_Gubun, InOut_Category, In_WareHouse, ITEM_Code, ITEM_Name, ITEM_Size, ITEM_Type, InOut_Qty) select A.InOut_Date, InOUT_Gubun, InOut_Category, In_WareHouse, B.ITEM_Code, ITEM_Name, ITEM_Size, ITEM_Type, A.InOut_Qty from InOutList A, ITEM B where ITEM_No = @ITEM_No and A.ITEM_Code = B.ITEM_Code";
-                        cmd.Parameters.AddWithValue("@InOut_Date", item.InOut_Date);
-                        cmd.Parameters.AddWithValue("@InOut_Gubun", item.InOut_Gubun);
-                        cmd.Parameters.AddWithValue("@InOut_Category", item.InOut_Category);
-                        cmd.Parameters.AddWithValue("@In_WareHouse", item.In_WareHouse);
-                        cmd.Parameters.AddWithValue("@ITEM_Code", item.ITEM_Code);
-                        cmd.Parameters.AddWithValue("@ITEM_Name", item.ITEM_Name);
-                        cmd.Parameters.AddWithValue("@ITEM_Size", item.ITEM_Size);
-                        cmd.Parameters.AddWithValue("@ITEM_Type", item.ITEM_Type);
-                        cmd.Parameters.AddWithValue("@InOut_Qty", item.InOut_Qty);
+                        cmd.CommandText = @"";
+                    
                     }
                     cmd.Connection.Close();
                     return true;                    
