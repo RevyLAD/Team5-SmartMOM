@@ -667,8 +667,8 @@ where MATERIAL_ORDER_STATE = '입고완료' and FACT_Name = '자재창고_01' an
                     foreach (var item in lists2)
                     {
                         cmd.CommandText = @"UPDATE FactoryDetail  SET FACD_Qty = FACD_Qty + @VOD_GoodEA
-FROM ITEM i join FactoryDetail f on i.ITEM_Code = f.ITEM_Code
-WHERE FACT_Name = '자재창고_01' and f.ITEM_Code = @ITEM_Code";
+                                            FROM ITEM i join FactoryDetail f on i.ITEM_Code = f.ITEM_Code
+                                            WHERE FACT_Name = '자재창고_01' and f.ITEM_Code = @ITEM_Code";
 
                         cmd.Parameters.AddWithValue("@VOD_GoodEA", item.VOD_GoodEA);
                         cmd.Parameters.AddWithValue("@ITEM_Code", item.ITEM_Code);

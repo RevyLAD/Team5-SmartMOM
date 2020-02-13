@@ -54,6 +54,7 @@
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -437,6 +438,7 @@
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.button7);
             this.groupBox5.Controls.Add(this.btnStart);
             this.groupBox5.Controls.Add(this.button5);
             this.groupBox5.Controls.Add(this.button4);
@@ -447,6 +449,17 @@
             this.groupBox5.Size = new System.Drawing.Size(1159, 94);
             this.groupBox5.TabIndex = 5;
             this.groupBox5.TabStop = false;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(1131, 61);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(22, 23);
+            this.button7.TabIndex = 5;
+            this.button7.Text = "ㅁ";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Visible = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // btnStart
             // 
@@ -994,5 +1007,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtGoodQty;
         private System.Windows.Forms.Label lblprogres;
+        public System.Windows.Forms.Button button7;
     }
 }

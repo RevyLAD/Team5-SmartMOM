@@ -18,26 +18,29 @@ using System.Threading;
 
 namespace Team5_Pop
 {
+    public delegate void DataGetEventHandler(string total, string good, string bad, string newid);
     public partial class POPGaDong : Form
     {
-
         static int machineID = 1;
         static string writeFolder = AppDomain.CurrentDomain.BaseDirectory + "\\Production";
         static int iCnt = 0;
         string strConn = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
 
+        public DataGetEventHandler DataSendEvent;
+
         PopVO thisvo;
-        public POPGaDong(PopVO vo)
+        int thisport;
+        public POPGaDong(PopVO vo, int newport)
         {
             InitializeComponent();
 
             this.thisvo = vo;
+            this.thisport = newport;
             TickTime = Convert.ToString(((thisvo.WO_Time / thisvo.directQty) * 1000));
         }
         private void POPGaDong_Load(object sender, EventArgs e)
         {
             CheckForIllegalCrossThreadCalls = false;
-
             DataLoad();
             SetMTimer();
 
@@ -60,7 +63,7 @@ namespace Team5_Pop
             Mtimer.AutoReset = true;
         }
 
-        private async void Mtimer_Elapsed(object sender, ElapsedEventArgs e)
+        public async void Mtimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             try
             {
@@ -82,17 +85,18 @@ namespace Team5_Pop
 
                 listBox1.Items.Add(readmsg);
 
-                txtCount.Text = Convert.ToString((Convert.ToInt64(txtCount.Text) + (goodqtt + badqtt)).ToString("0000"));
-                txtGoodQty.Text = Convert.ToString((Convert.ToInt64(txtGoodQty.Text) + goodqtt).ToString("0000"));
-                txtBadQty.Text = Convert.ToString((Convert.ToInt64(txtBadQty.Text) + (badqtt)).ToString("0000"));
+                
+                txtGoodQty.Text = (Convert.ToInt64(txtGoodQty.Text) + goodqtt).ToString("0000");
+                txtBadQty.Text = (Convert.ToInt64(txtBadQty.Text) + badqtt).ToString("0000");
+                txtCount.Text = (Convert.ToInt64(txtGoodQty.Text) + Convert.ToInt64(txtBadQty.Text)).ToString("0000");
                 GaDongTimeChange();
+
+                DataSendEvent(txtCount.Text, txtGoodQty.Text, txtBadQty.Text, thisvo.WO_ID);
 
                 //if (stream != null)
                 //    stream.Write(buff, 0, buff.Length);
 
                 Random rnd = new Random((int)DateTime.UtcNow.Ticks);
-                StreamWriter sw = null;
-                
             }
             catch
             {
@@ -132,7 +136,7 @@ namespace Team5_Pop
         }
         async Task AsyncEchoServer()
         {
-            TcpListener listener = new TcpListener(IPAddress.Any, 7000);
+            TcpListener listener = new TcpListener(IPAddress.Any, thisport);
             listener.Start();
             while (true)
             {
@@ -143,7 +147,7 @@ namespace Team5_Pop
         int goodqtt;
         int badqtt;
         string TickTime;
-        System.Timers.Timer Mtimer;
+        public System.Timers.Timer Mtimer;
         private async Task AsyncTcpProcess(object o)
         {
             TcpClient tc = (TcpClient)o;
@@ -220,6 +224,10 @@ namespace Team5_Pop
                 Mtimer.Stop();
                 timer1.Stop();
                 progressBar1.Value = 100;
+                lblprogres.Text = string.Format(progressBar1.Value + " %");
+
+                txtCount.Text = Convert.ToString(Convert.ToInt64(txtGoodQty.Text) + Convert.ToInt64(txtBadQty.Text));
+
                 button6.Enabled = false;
                 button3.Enabled = false;
 
@@ -312,6 +320,11 @@ namespace Team5_Pop
         private void progressBar1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
