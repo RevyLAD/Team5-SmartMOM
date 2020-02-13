@@ -1,4 +1,5 @@
-﻿using Project_VO.LBJ;
+﻿using Project_VO;
+using Project_VO.LBJ;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -61,7 +62,7 @@ FROM WorkOrder a, BOM b ,ITEM c,  FactoryDetail d where B.BOM_Code = A.ITEM_Code
                 return list;
             }
         }
-        public bool MateriaTran(List<MateriaExportVO> mevo)
+        public bool MateriaTran(List<MateriaExportVO> mevo, List<InOutListVO> iol)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -89,10 +90,18 @@ FROM WorkOrder a, BOM b ,ITEM c,  FactoryDetail d where B.BOM_Code = A.ITEM_Code
                         cmd.Parameters.Clear();
                     }
 
-                    foreach (var item in mevo)
+                    foreach (var item in iol)
                     {
-                        cmd.CommandText = @"";
-                    
+                        cmd.CommandText = @"INSERT INTO InOutList (InOut_Date ,InOut_Gubun ,InOut_Category ,From_WareHouse ,In_WareHouse, ITEM_Code ,InOut_Qty) VALUES (@InOut_Date, @InOut_Gubun, @InOut_Category, @From_WareHouse, @In_WareHouse, @ITEM_Code, @InOut_Qty)";
+                        cmd.Parameters.AddWithValue("@InOut_Date", DateTime.Now.ToString("yyyy-MM-dd"));
+                        cmd.Parameters.AddWithValue("@InOut_Gubun", "출고");
+                        cmd.Parameters.AddWithValue("@InOut_Category", "자재차감");
+                        cmd.Parameters.AddWithValue("@From_WareHouse", item.From_WareHouse);
+                        cmd.Parameters.AddWithValue("@In_WareHouse", "");
+                        cmd.Parameters.AddWithValue("@ITEM_Code", item.ITEM_Code);
+                        cmd.Parameters.AddWithValue("@InOut_Qty", item.InOut_Qty);
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
                     }
                     cmd.Connection.Close();
                     return true;                    
@@ -104,114 +113,7 @@ FROM WorkOrder a, BOM b ,ITEM c,  FactoryDetail d where B.BOM_Code = A.ITEM_Code
                     return false;
                 }
             }
-        }
-        //public bool MateriaTran(MateriaExportVO mevo, //List<MateriaExportVO> MateriaTran()
-        //{
-        //    using (SqlCommand cmd = new SqlCommand())
-        //    {
-        //        cmd.Connection = new SqlConnection(this.ConnectionString);
-        //        cmd.CommandText = "select A.InOut_Date, InOut_Gubun, InOut_Category, In_WareHouse, A.ITEM_Code, B.ITEM_Name, ITEM_Size, ITEM_Type, A.InOut_Qty from InOutList A inner join ITEM B on A.ITEM_Code = B.ITEM_Code";
-        //        cmd.Connection.Open();
-        //        SqlTransaction tran = cmd.Connection.BeginTransaction();
-        //        try
-        //        {
-        //            cmd.Transaction = tran;
-        //            cmd.CommandType = CommandType.Text;
-        //            cmd.CommandText = "INSERT INTO InOutList(InOut_Date, InOut_Gubun, InOut_Category, In_WareHouse, ITEM_Code, ITEM_Name, ITEM_Size, ITEM_Type, InOut_Qty) value(@InOut_Date, @InOut_Gubun, @InOut_Category, @In_WareHouse, @ITEM_Code, @Fac_Name, @ITEM_Size, @ITEM_Type, @InOut_Qty)";
-        //            cmd.Parameters.AddWithValue("@InOut_Date", mevo.WO_StartDate);
-        //            cmd.Parameters.AddWithValue("@In_WareHouse", mevo.FACT_Name1);
-        //            cmd.Parameters.AddWithValue("@ITEM_Code", mevo.ITEM_Code);
-        //            cmd.Parameters.AddWithValue("@Fac_Name", mevo.FACT_Name);
-        //            cmd.Parameters.AddWithValue("@ITEM_Size", mevo.ITEM_Size);
-        //            cmd.Parameters.AddWithValue("@ITEM_Type", mevo.ITEM_Type);
-        //            cmd.Parameters.AddWithValue("@InOut_Qty", mevo.planQty);
-
-        //            int mevoID = cmd.ExecuteNonQuery();
-
-        //            foreach ()
-        //        }
-        //    }
-        //}
-        //public string MateriaTran(MateriaExportVO mvo)
-        //{
-        //    using (SqlConnection conn = new SqlConnection())
-        //    {
-        //        conn.Open();
-        //        SqlTransaction tran = conn.BeginTransaction();
-
-        //        try
-        //        {
-        //            string sql = "INSERT INTO InOutList(InOut_Date, InOut_Gubun, InOut_Category, In_WareHouse, ITEM_Code, ITEM_Name, ITEM_Size, ITEM_Type, InOut_Qty) value(@InOut_Date, @InOut_Gubun, @InOut_Category, @In_WareHouse, @ITEM_Code, @ITEM_Name, @ITEM_Size, @ITEM_Type, @InOut_Qty)";
-        //            using (SqlCommand scm = new SqlCommand(sql, conn))
-        //            {
-        //                scm.Transaction = tran;
-
-        //                scm.Parameters.AddWithValue("@InOut_Date", mvo.WO_StartDate);
-        //                scm.Parameters.AddWithValue("@InOut_Gubun", mvo.)
-        //            }
-        //        }
-        //    }
-        //}
-
-
-        //public string InsertNop_History(NopHistoryVO nop)
-        //{
-
-        //    using (SqlConnection conn = new SqlConnection(Connstr))
-        //    {
-        //        conn.Open();
-        //        SqlTransaction tran = conn.BeginTransaction();
-
-        //        try
-        //        {
-        //            string chksql = "INSERT INTO Nop_History(Wc_Code, Nop_Mi_Code, Nop_Type, Nop_Time, Remark, Ins_Emp) values(@Wc_Code, @Nop_Mi_Code, @Nop_Type, @Nop_Time, @Remark, @Ins_Emp)";
-        //            using (SqlCommand cmdchk = new SqlCommand(chksql, conn))
-        //            {
-        //                cmdchk.Transaction = tran;
-
-        //                cmdchk.Parameters.AddWithValue("@Wc_Code", nop.Wc_Code);
-        //                cmdchk.Parameters.AddWithValue("@Nop_Mi_Code", nop.Nop_Mi_Code);
-        //                cmdchk.Parameters.AddWithValue("@Nop_Type", nop.Nop_Type);
-        //                cmdchk.Parameters.AddWithValue("@Nop_Time", nop.Nop_Time);
-        //                cmdchk.Parameters.AddWithValue("@Remark", nop.Remark);
-        //                cmdchk.Parameters.AddWithValue("@Ins_Emp", nop.Ins_Emp);
-        //                int iResult = Convert.ToInt32(cmdchk.ExecuteScalar());
-        //                if (iResult > 0)
-        //                    throw new Exception("비가동 등록 중 오류가 발생했습니다.");
-
-        //                cmdchk.Parameters.Clear();
-
-        //            }
-        //            //------------------------------------------------------------- 
-        //            string Stsql = @"UPDATE WorkCenter_Master SET Use_YN = 'N' Where Wc_Code=@Wc_Code";
-        //            using (SqlCommand cmd = new SqlCommand(Stsql, conn))
-        //            {
-        //                cmd.Transaction = tran;
-
-        //                cmd.Parameters.AddWithValue("@Wc_Code", nop.Wc_Code);
-
-        //                int iResult = cmd.ExecuteNonQuery();
-        //                if (iResult < 1)
-        //                    throw new Exception("비가동 등록 중 오류가 발생했습니다.");
-
-        //                cmd.Parameters.Clear();
-
-
-        //                tran.Commit();
-        //                return "OK";
-        //            }
-        //        }
-        //        catch (Exception err)
-        //        {
-        //            tran.Rollback();
-        //            return err.Message;
-        //        }
-        //        finally
-        //        {
-        //            conn.Close();
-        //        }
-        //    }
-        //}
+        }       
     }
 }
 

@@ -45,12 +45,44 @@ namespace Project_DAC
             }
         }
 
+        public List<CompanyCodeVO> GetAllCompanyCode2()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select distinct COM_Code, COM_Name from Company WHERE COM_Type = '고객사' ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<CompanyCodeVO> list = Helper.DataReaderMapToList<CompanyCodeVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
         public List<PlanIDVO> PlanID()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = "select distinct Plan_ID from VendorOrder ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<PlanIDVO> list = Helper.DataReaderMapToList<PlanIDVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public List<PlanIDVO> PlanID2()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select distinct Plan_ID from SalesMaster WHERE SALES_ORDER_STATE = '작업완료' ";
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Team5_SmartMOM.Service
 {
-    public class LBJ_Service:ConnectionAccess
+    public class LBJ_Service : ConnectionAccess
     {
         public List<ShiftVO> Shift()
         {
@@ -64,12 +64,17 @@ namespace Team5_SmartMOM.Service
             MateriaDAC dac = new MateriaDAC();
             return dac.MateriaExportVO();
         }
-        public bool MateriaTran(List<MateriaExportVO> mevo, List<InoutList> iol)
+        public bool MateriaTran(List<MateriaExportVO> mevo, List<InOutListVO> iol)
         {
             MateriaDAC dac = new MateriaDAC();
 
             //return dac.MateriaTran(mevo, iol);
             return true;
+        }
+        public List<StockStateVO> StockState()
+        {
+            StockStateDAC dac = new StockStateDAC();
+            return dac.StockState();
         }
     }
 }

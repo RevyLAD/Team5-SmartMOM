@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -41,7 +40,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -67,13 +65,12 @@
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1202, 138);
+            this.panel2.Size = new System.Drawing.Size(1202, 90);
             // 
             // panelTop
             // 
             this.panelTop.Controls.Add(this.comboBox5);
             this.panelTop.Controls.Add(this.textBox1);
-            this.panelTop.Controls.Add(this.comboBox3);
             this.panelTop.Controls.Add(this.btnSearch);
             this.panelTop.Controls.Add(this.comboBox4);
             this.panelTop.Controls.Add(this.label6);
@@ -85,11 +82,10 @@
             this.panelTop.Controls.Add(this.label10);
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label7);
-            this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.label8);
             this.panelTop.Controls.Add(this.label9);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Size = new System.Drawing.Size(1202, 125);
+            this.panelTop.Size = new System.Drawing.Size(1202, 90);
             // 
             // splitContainer2
             // 
@@ -106,21 +102,13 @@
             this.textBox1.Size = new System.Drawing.Size(161, 21);
             this.textBox1.TabIndex = 125;
             // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(120, 70);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(191, 20);
-            this.comboBox3.TabIndex = 121;
-            // 
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1105, 89);
+            this.btnSearch.Location = new System.Drawing.Point(1114, 32);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(81, 30);
             this.btnSearch.TabIndex = 120;
@@ -219,16 +207,6 @@
             this.label7.TabIndex = 109;
             this.label7.Text = "* 입출고유형";
             // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(4, 71);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 19);
-            this.label4.TabIndex = 107;
-            this.label4.Text = "* 관리등급";
-            // 
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.Transparent;
@@ -282,7 +260,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
         protected System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label6;
@@ -294,7 +271,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox5;

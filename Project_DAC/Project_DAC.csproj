@@ -60,6 +60,7 @@
     <Compile Include="LBJ\MateriaDAC.cs" />
     <Compile Include="LBJ\ShiftDAC.cs" />
     <Compile Include="HSC\OrderDAC.cs" />
+    <Compile Include="LBJ\StockStateDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PSM\PurchasingDAC.cs" />
   </ItemGroup>

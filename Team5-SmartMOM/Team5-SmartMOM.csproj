@@ -451,11 +451,17 @@
     <Compile Include="PSM\Purchasing_State.Designer.cs">
       <DependentUpon>Purchasing_State.cs</DependentUpon>
     </Compile>
-    <Compile Include="PSM\Stock_RF_State.cs">
+    <Compile Include="LBJ\Stock_RF_State.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PSM\Stock_RF_State.Designer.cs">
+    <Compile Include="LBJ\Stock_RF_State.Designer.cs">
       <DependentUpon>Stock_RF_State.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\ShipmentOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\ShipmentOrder.Designer.cs">
+      <DependentUpon>ShipmentOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="PSM\Stock_State.cs">
       <SubType>Form</SubType>
@@ -728,8 +734,11 @@
     <EmbeddedResource Include="PSM\Purchasing_State.resx">
       <DependentUpon>Purchasing_State.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PSM\Stock_RF_State.resx">
+    <EmbeddedResource Include="LBJ\Stock_RF_State.resx">
       <DependentUpon>Stock_RF_State.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\ShipmentOrder.resx">
+      <DependentUpon>ShipmentOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PSM\Stock_State.resx">
       <DependentUpon>Stock_State.cs</DependentUpon>
