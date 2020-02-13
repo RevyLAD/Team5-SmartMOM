@@ -390,6 +390,11 @@ namespace Team5_SmartMOM
         {
             CreateTabPages("자재단가관리", new Material_Cost_Management());
         }
+        private void 출하및매출마감ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("출하및매출마감", new ShipmentOrder());
+        }
+
         #endregion
         private void ToolStripButton4_Click(object sender, EventArgs e)
         {
@@ -444,5 +449,7 @@ namespace Team5_SmartMOM
         {
 
         }
+
+       
     }
 }

@@ -38,12 +38,15 @@ namespace Team5_SmartMOM
             this.설비관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.업체관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.생산관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.자재현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.자재등록ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.품목관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.품목관리ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.bOMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.단가관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.자재단가관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.영업단가관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.근무시간관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shift기준정보ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shift스케줄관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.생산관리ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.영업마스터ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,36 +66,24 @@ namespace Team5_SmartMOM
             this.자재불출요청ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.원자재불출ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.입출고현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.단가관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.자재단가관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.영업단가관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.품질관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.수입검사ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.생산관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.자재현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.자재등록ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.공정관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.작업지시생성ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.작업지시현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.공정재고현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.출하관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.제품출하ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.출하현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.근무시간관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shift기준정보ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shift스케줄관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
             this.ts = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsBtnCal = new System.Windows.Forms.ToolStripButton();
-            this.tsBtnNote = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -103,6 +94,14 @@ namespace Team5_SmartMOM
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.SidePanel1 = new System.Windows.Forms.Panel();
             this.panelSubMenu8 = new System.Windows.Forms.Panel();
+            this.panelSubMenu7 = new System.Windows.Forms.Panel();
+            this.panelSubMenu6 = new System.Windows.Forms.Panel();
+            this.panelSubMenu5 = new System.Windows.Forms.Panel();
+            this.panelSubMenu4 = new System.Windows.Forms.Panel();
+            this.panelSubMenu3 = new System.Windows.Forms.Panel();
+            this.panelSubMenu2 = new System.Windows.Forms.Panel();
+            this.SubPanel1 = new System.Windows.Forms.Panel();
+            this.button22 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnAS = new System.Windows.Forms.Button();
@@ -110,32 +109,25 @@ namespace Team5_SmartMOM
             this.button23 = new System.Windows.Forms.Button();
             this.button235 = new System.Windows.Forms.Button();
             this.btnSubMenu8 = new System.Windows.Forms.Button();
-            this.panelSubMenu7 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.btnSubMenu7 = new System.Windows.Forms.Button();
-            this.panelSubMenu6 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.btnSubMenu6 = new System.Windows.Forms.Button();
-            this.panelSubMenu5 = new System.Windows.Forms.Panel();
             this.button19 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.btnSubMenu5 = new System.Windows.Forms.Button();
-            this.panelSubMenu4 = new System.Windows.Forms.Panel();
             this.btnSaleManage = new System.Windows.Forms.Button();
             this.btnSellReiceve = new System.Windows.Forms.Button();
             this.btnSellingList = new System.Windows.Forms.Button();
             this.btnSubMenu4 = new System.Windows.Forms.Button();
-            this.panelSubMenu3 = new System.Windows.Forms.Panel();
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.btnSubMenu3 = new System.Windows.Forms.Button();
-            this.panelSubMenu2 = new System.Windows.Forms.Panel();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.btnSubMenu2 = new System.Windows.Forms.Button();
-            this.SubPanel1 = new System.Windows.Forms.Panel();
             this.button24 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
@@ -145,7 +137,15 @@ namespace Team5_SmartMOM
             this.button30 = new System.Windows.Forms.Button();
             this.btnMatList = new System.Windows.Forms.Button();
             this.btnSubMenu1 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnCal = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnNote = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.출하및매출마감ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.ts.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -204,51 +204,30 @@ namespace Team5_SmartMOM
             // 공장관리ToolStripMenuItem
             // 
             this.공장관리ToolStripMenuItem.Name = "공장관리ToolStripMenuItem";
-            this.공장관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.공장관리ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.공장관리ToolStripMenuItem.Text = "공장관리";
             this.공장관리ToolStripMenuItem.Click += new System.EventHandler(this.공장관리ToolStripMenuItem_Click);
             // 
             // 설비관리ToolStripMenuItem
             // 
             this.설비관리ToolStripMenuItem.Name = "설비관리ToolStripMenuItem";
-            this.설비관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.설비관리ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.설비관리ToolStripMenuItem.Text = "설비관리";
             this.설비관리ToolStripMenuItem.Click += new System.EventHandler(this.설비관리ToolStripMenuItem_Click);
             // 
             // 업체관리ToolStripMenuItem
             // 
             this.업체관리ToolStripMenuItem.Name = "업체관리ToolStripMenuItem";
-            this.업체관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.업체관리ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.업체관리ToolStripMenuItem.Text = "업체관리";
             this.업체관리ToolStripMenuItem.Click += new System.EventHandler(this.업체관리ToolStripMenuItem_Click);
             // 
             // bORToolStripMenuItem
             // 
             this.bORToolStripMenuItem.Name = "bORToolStripMenuItem";
-            this.bORToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bORToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.bORToolStripMenuItem.Text = "BOR";
             this.bORToolStripMenuItem.Click += new System.EventHandler(this.bORToolStripMenuItem_Click);
-            // 
-            // 생산관리ToolStripMenuItem
-            // 
-            this.생산관리ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.자재현황ToolStripMenuItem,
-            this.자재등록ToolStripMenuItem});
-            this.생산관리ToolStripMenuItem.Name = "생산관리ToolStripMenuItem";
-            this.생산관리ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.생산관리ToolStripMenuItem.Text = "자재관리";
-            // 
-            // 자재현황ToolStripMenuItem
-            // 
-            this.자재현황ToolStripMenuItem.Name = "자재현황ToolStripMenuItem";
-            this.자재현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.자재현황ToolStripMenuItem.Text = "자재현황";
-            // 
-            // 자재등록ToolStripMenuItem
-            // 
-            this.자재등록ToolStripMenuItem.Name = "자재등록ToolStripMenuItem";
-            this.자재등록ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.자재등록ToolStripMenuItem.Text = "자재등록";
             // 
             // 품목관리ToolStripMenuItem
             // 
@@ -262,16 +241,62 @@ namespace Team5_SmartMOM
             // 품목관리ToolStripMenuItem1
             // 
             this.품목관리ToolStripMenuItem1.Name = "품목관리ToolStripMenuItem1";
-            this.품목관리ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.품목관리ToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.품목관리ToolStripMenuItem1.Text = "품목관리";
             this.품목관리ToolStripMenuItem1.Click += new System.EventHandler(this.품목관리ToolStripMenuItem1_Click);
             // 
             // bOMToolStripMenuItem
             // 
             this.bOMToolStripMenuItem.Name = "bOMToolStripMenuItem";
-            this.bOMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bOMToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.bOMToolStripMenuItem.Text = "BOM";
             this.bOMToolStripMenuItem.Click += new System.EventHandler(this.BOMToolStripMenuItem_Click);
+            // 
+            // 단가관리ToolStripMenuItem
+            // 
+            this.단가관리ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.자재단가관리ToolStripMenuItem,
+            this.영업단가관리ToolStripMenuItem});
+            this.단가관리ToolStripMenuItem.Name = "단가관리ToolStripMenuItem";
+            this.단가관리ToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.단가관리ToolStripMenuItem.Text = "단가 관리";
+            // 
+            // 자재단가관리ToolStripMenuItem
+            // 
+            this.자재단가관리ToolStripMenuItem.Name = "자재단가관리ToolStripMenuItem";
+            this.자재단가관리ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.자재단가관리ToolStripMenuItem.Text = "자재단가관리";
+            this.자재단가관리ToolStripMenuItem.Click += new System.EventHandler(this.자재단가관리ToolStripMenuItem_Click);
+            // 
+            // 영업단가관리ToolStripMenuItem
+            // 
+            this.영업단가관리ToolStripMenuItem.Name = "영업단가관리ToolStripMenuItem";
+            this.영업단가관리ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.영업단가관리ToolStripMenuItem.Text = "영업단가관리";
+            this.영업단가관리ToolStripMenuItem.Click += new System.EventHandler(this.영업단가관리ToolStripMenuItem_Click);
+            // 
+            // 근무시간관리ToolStripMenuItem
+            // 
+            this.근무시간관리ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.shift기준정보ToolStripMenuItem,
+            this.shift스케줄관리ToolStripMenuItem});
+            this.근무시간관리ToolStripMenuItem.Name = "근무시간관리ToolStripMenuItem";
+            this.근무시간관리ToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
+            this.근무시간관리ToolStripMenuItem.Text = "근무시간관리";
+            // 
+            // shift기준정보ToolStripMenuItem
+            // 
+            this.shift기준정보ToolStripMenuItem.Name = "shift기준정보ToolStripMenuItem";
+            this.shift기준정보ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.shift기준정보ToolStripMenuItem.Text = "Shift 기준정보";
+            this.shift기준정보ToolStripMenuItem.Click += new System.EventHandler(this.shift기준정보ToolStripMenuItem_Click);
+            // 
+            // shift스케줄관리ToolStripMenuItem
+            // 
+            this.shift스케줄관리ToolStripMenuItem.Name = "shift스케줄관리ToolStripMenuItem";
+            this.shift스케줄관리ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.shift스케줄관리ToolStripMenuItem.Text = "Shift 스케줄관리";
+            this.shift스케줄관리ToolStripMenuItem.Click += new System.EventHandler(this.shift스케줄관리ToolStripMenuItem_Click);
             // 
             // 생산관리ToolStripMenuItem1
             // 
@@ -291,56 +316,56 @@ namespace Team5_SmartMOM
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(173, 22);
             this.toolStripMenuItem1.Text = "영업마스터 업로드";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // 영업마스터ToolStripMenuItem
             // 
             this.영업마스터ToolStripMenuItem.Name = "영업마스터ToolStripMenuItem";
-            this.영업마스터ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.영업마스터ToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.영업마스터ToolStripMenuItem.Text = "영업마스터";
             this.영업마스터ToolStripMenuItem.Click += new System.EventHandler(this.영업마스터ToolStripMenuItem_Click);
             // 
             // 수요계획ToolStripMenuItem
             // 
             this.수요계획ToolStripMenuItem.Name = "수요계획ToolStripMenuItem";
-            this.수요계획ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.수요계획ToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.수요계획ToolStripMenuItem.Text = "수요계획";
             this.수요계획ToolStripMenuItem.Click += new System.EventHandler(this.수요계획ToolStripMenuItem_Click);
             // 
             // 자재소요계호기ToolStripMenuItem
             // 
             this.자재소요계호기ToolStripMenuItem.Name = "자재소요계호기ToolStripMenuItem";
-            this.자재소요계호기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.자재소요계호기ToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.자재소요계호기ToolStripMenuItem.Text = "자재소요계획";
             this.자재소요계호기ToolStripMenuItem.Click += new System.EventHandler(this.자재소요계호기ToolStripMenuItem_Click);
             // 
             // 생산계획ToolStripMenuItem
             // 
             this.생산계획ToolStripMenuItem.Name = "생산계획ToolStripMenuItem";
-            this.생산계획ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.생산계획ToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.생산계획ToolStripMenuItem.Text = "생산계획";
             this.생산계획ToolStripMenuItem.Click += new System.EventHandler(this.생산계획ToolStripMenuItem_Click);
             // 
             // 외주계획ToolStripMenuItem
             // 
             this.외주계획ToolStripMenuItem.Name = "외주계획ToolStripMenuItem";
-            this.외주계획ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.외주계획ToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.외주계획ToolStripMenuItem.Text = "외주계획";
             this.외주계획ToolStripMenuItem.Click += new System.EventHandler(this.외주계획ToolStripMenuItem_Click);
             // 
             // 작업지시생성ToolStripMenuItem1
             // 
             this.작업지시생성ToolStripMenuItem1.Name = "작업지시생성ToolStripMenuItem1";
-            this.작업지시생성ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.작업지시생성ToolStripMenuItem1.Size = new System.Drawing.Size(173, 22);
             this.작업지시생성ToolStripMenuItem1.Text = "작업지시생성";
             this.작업지시생성ToolStripMenuItem1.Click += new System.EventHandler(this.작업지시생성ToolStripMenuItem1_Click);
             // 
             // 작업지시현황ToolStripMenuItem1
             // 
             this.작업지시현황ToolStripMenuItem1.Name = "작업지시현황ToolStripMenuItem1";
-            this.작업지시현황ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.작업지시현황ToolStripMenuItem1.Size = new System.Drawing.Size(173, 22);
             this.작업지시현황ToolStripMenuItem1.Text = "작업지시현황";
             this.작업지시현황ToolStripMenuItem1.Click += new System.EventHandler(this.작업지시현황ToolStripMenuItem1_Click);
             // 
@@ -363,88 +388,65 @@ namespace Team5_SmartMOM
             // 정규발주ToolStripMenuItem
             // 
             this.정규발주ToolStripMenuItem.Name = "정규발주ToolStripMenuItem";
-            this.정규발주ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.정규발주ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.정규발주ToolStripMenuItem.Text = "정규발주";
             this.정규발주ToolStripMenuItem.Click += new System.EventHandler(this.정규발주ToolStripMenuItem_Click);
             // 
             // 발주현황ToolStripMenuItem
             // 
             this.발주현황ToolStripMenuItem.Name = "발주현황ToolStripMenuItem";
-            this.발주현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.발주현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.발주현황ToolStripMenuItem.Text = "발주현황";
             this.발주현황ToolStripMenuItem.Click += new System.EventHandler(this.발주현황ToolStripMenuItem_Click);
             // 
             // 입고대기ToolStripMenuItem
             // 
             this.입고대기ToolStripMenuItem.Name = "입고대기ToolStripMenuItem";
-            this.입고대기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.입고대기ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.입고대기ToolStripMenuItem.Text = "입고대기";
             this.입고대기ToolStripMenuItem.Click += new System.EventHandler(this.입고대기ToolStripMenuItem_Click);
             // 
             // 자재입고ToolStripMenuItem
             // 
             this.자재입고ToolStripMenuItem.Name = "자재입고ToolStripMenuItem";
-            this.자재입고ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.자재입고ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.자재입고ToolStripMenuItem.Text = "자재입고";
             this.자재입고ToolStripMenuItem.Click += new System.EventHandler(this.자재입고ToolStripMenuItem_Click);
             // 
             // 자재입고현황ToolStripMenuItem
             // 
             this.자재입고현황ToolStripMenuItem.Name = "자재입고현황ToolStripMenuItem";
-            this.자재입고현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.자재입고현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.자재입고현황ToolStripMenuItem.Text = "자재입고현황";
             this.자재입고현황ToolStripMenuItem.Click += new System.EventHandler(this.자재입고현황ToolStripMenuItem_Click);
             // 
             // 자재재고현황ToolStripMenuItem
             // 
             this.자재재고현황ToolStripMenuItem.Name = "자재재고현황ToolStripMenuItem";
-            this.자재재고현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.자재재고현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.자재재고현황ToolStripMenuItem.Text = "자재재고현황";
             this.자재재고현황ToolStripMenuItem.Click += new System.EventHandler(this.자재재고현황ToolStripMenuItem_Click);
             // 
             // 자재불출요청ToolStripMenuItem
             // 
             this.자재불출요청ToolStripMenuItem.Name = "자재불출요청ToolStripMenuItem";
-            this.자재불출요청ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.자재불출요청ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.자재불출요청ToolStripMenuItem.Text = "자재불출요청";
             this.자재불출요청ToolStripMenuItem.Click += new System.EventHandler(this.자재불출요청ToolStripMenuItem_Click);
             // 
             // 원자재불출ToolStripMenuItem
             // 
             this.원자재불출ToolStripMenuItem.Name = "원자재불출ToolStripMenuItem";
-            this.원자재불출ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.원자재불출ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.원자재불출ToolStripMenuItem.Text = "원자재불출";
             this.원자재불출ToolStripMenuItem.Click += new System.EventHandler(this.원자재불출ToolStripMenuItem_Click);
             // 
             // 입출고현황ToolStripMenuItem
             // 
             this.입출고현황ToolStripMenuItem.Name = "입출고현황ToolStripMenuItem";
-            this.입출고현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.입출고현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.입출고현황ToolStripMenuItem.Text = "입출고현황";
             this.입출고현황ToolStripMenuItem.Click += new System.EventHandler(this.입출고현황ToolStripMenuItem_Click);
-            // 
-            // 단가관리ToolStripMenuItem
-            // 
-            this.단가관리ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.자재단가관리ToolStripMenuItem,
-            this.영업단가관리ToolStripMenuItem});
-            this.단가관리ToolStripMenuItem.Name = "단가관리ToolStripMenuItem";
-            this.단가관리ToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.단가관리ToolStripMenuItem.Text = "단가 관리";
-            // 
-            // 자재단가관리ToolStripMenuItem
-            // 
-            this.자재단가관리ToolStripMenuItem.Name = "자재단가관리ToolStripMenuItem";
-            this.자재단가관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.자재단가관리ToolStripMenuItem.Text = "자재단가관리";
-            this.자재단가관리ToolStripMenuItem.Click += new System.EventHandler(this.자재단가관리ToolStripMenuItem_Click);
-            // 
-            // 영업단가관리ToolStripMenuItem
-            // 
-            this.영업단가관리ToolStripMenuItem.Name = "영업단가관리ToolStripMenuItem";
-            this.영업단가관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.영업단가관리ToolStripMenuItem.Text = "영업단가관리";
-            this.영업단가관리ToolStripMenuItem.Click += new System.EventHandler(this.영업단가관리ToolStripMenuItem_Click);
             // 
             // 품질관리ToolStripMenuItem
             // 
@@ -457,9 +459,30 @@ namespace Team5_SmartMOM
             // 수입검사ToolStripMenuItem
             // 
             this.수입검사ToolStripMenuItem.Name = "수입검사ToolStripMenuItem";
-            this.수입검사ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.수입검사ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.수입검사ToolStripMenuItem.Text = "수입검사";
             this.수입검사ToolStripMenuItem.Click += new System.EventHandler(this.수입검사ToolStripMenuItem_Click);
+            // 
+            // 생산관리ToolStripMenuItem
+            // 
+            this.생산관리ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.자재현황ToolStripMenuItem,
+            this.자재등록ToolStripMenuItem});
+            this.생산관리ToolStripMenuItem.Name = "생산관리ToolStripMenuItem";
+            this.생산관리ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.생산관리ToolStripMenuItem.Text = "자재관리";
+            // 
+            // 자재현황ToolStripMenuItem
+            // 
+            this.자재현황ToolStripMenuItem.Name = "자재현황ToolStripMenuItem";
+            this.자재현황ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.자재현황ToolStripMenuItem.Text = "자재현황";
+            // 
+            // 자재등록ToolStripMenuItem
+            // 
+            this.자재등록ToolStripMenuItem.Name = "자재등록ToolStripMenuItem";
+            this.자재등록ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.자재등록ToolStripMenuItem.Text = "자재등록";
             // 
             // 공정관리ToolStripMenuItem
             // 
@@ -474,66 +497,36 @@ namespace Team5_SmartMOM
             // 작업지시생성ToolStripMenuItem
             // 
             this.작업지시생성ToolStripMenuItem.Name = "작업지시생성ToolStripMenuItem";
-            this.작업지시생성ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.작업지시생성ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.작업지시생성ToolStripMenuItem.Text = "작업지시생성";
             // 
             // 작업지시현황ToolStripMenuItem
             // 
             this.작업지시현황ToolStripMenuItem.Name = "작업지시현황ToolStripMenuItem";
-            this.작업지시현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.작업지시현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.작업지시현황ToolStripMenuItem.Text = "작업지시현황";
             // 
             // 공정재고현황ToolStripMenuItem
             // 
             this.공정재고현황ToolStripMenuItem.Name = "공정재고현황ToolStripMenuItem";
-            this.공정재고현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.공정재고현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.공정재고현황ToolStripMenuItem.Text = "공정재고현황";
             // 
             // 출하관리ToolStripMenuItem
             // 
             this.출하관리ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.제품출하ToolStripMenuItem,
-            this.출하현황ToolStripMenuItem});
+            this.출하현황ToolStripMenuItem,
+            this.출하및매출마감ToolStripMenuItem});
             this.출하관리ToolStripMenuItem.Name = "출하관리ToolStripMenuItem";
             this.출하관리ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.출하관리ToolStripMenuItem.Text = "출하관리";
             // 
-            // 제품출하ToolStripMenuItem
-            // 
-            this.제품출하ToolStripMenuItem.Name = "제품출하ToolStripMenuItem";
-            this.제품출하ToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.제품출하ToolStripMenuItem.Text = "고객주문별재고현황";
-            this.제품출하ToolStripMenuItem.Click += new System.EventHandler(this.제품출하ToolStripMenuItem_Click);
-            // 
             // 출하현황ToolStripMenuItem
             // 
             this.출하현황ToolStripMenuItem.Name = "출하현황ToolStripMenuItem";
-            this.출하현황ToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.출하현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.출하현황ToolStripMenuItem.Text = "출하현황";
             this.출하현황ToolStripMenuItem.Click += new System.EventHandler(this.출하현황ToolStripMenuItem_Click);
-            // 
-            // 근무시간관리ToolStripMenuItem
-            // 
-            this.근무시간관리ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shift기준정보ToolStripMenuItem,
-            this.shift스케줄관리ToolStripMenuItem});
-            this.근무시간관리ToolStripMenuItem.Name = "근무시간관리ToolStripMenuItem";
-            this.근무시간관리ToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
-            this.근무시간관리ToolStripMenuItem.Text = "근무시간관리";
-            // 
-            // shift기준정보ToolStripMenuItem
-            // 
-            this.shift기준정보ToolStripMenuItem.Name = "shift기준정보ToolStripMenuItem";
-            this.shift기준정보ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.shift기준정보ToolStripMenuItem.Text = "Shift 기준정보";
-            this.shift기준정보ToolStripMenuItem.Click += new System.EventHandler(this.shift기준정보ToolStripMenuItem_Click);
-            // 
-            // shift스케줄관리ToolStripMenuItem
-            // 
-            this.shift스케줄관리ToolStripMenuItem.Name = "shift스케줄관리ToolStripMenuItem";
-            this.shift스케줄관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.shift스케줄관리ToolStripMenuItem.Text = "Shift 스케줄관리";
-            this.shift스케줄관리ToolStripMenuItem.Click += new System.EventHandler(this.shift스케줄관리ToolStripMenuItem_Click);
             // 
             // BottomToolStripPanel
             // 
@@ -592,91 +585,10 @@ namespace Team5_SmartMOM
             this.ts.TabIndex = 4;
             this.ts.Text = "계산기";
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.AutoSize = false;
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::Team5_SmartMOM.Properties.Resources.menu;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(30, 50);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::Team5_SmartMOM.Properties.Resources.home;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 30);
-            this.toolStripButton2.Text = "toolStripButton2";
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = global::Team5_SmartMOM.Properties.Resources.plus_sign__1_;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 30);
-            this.toolStripButton3.Text = "toolStripButton3";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = global::Team5_SmartMOM.Properties.Resources.star;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 30);
-            this.toolStripButton4.Text = "toolStripButton4";
-            this.toolStripButton4.Click += new System.EventHandler(this.ToolStripButton4_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 33);
-            // 
-            // tsBtnCal
-            // 
-            this.tsBtnCal.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnCal.Image = global::Team5_SmartMOM.Properties.Resources.calculator;
-            this.tsBtnCal.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtnCal.Name = "tsBtnCal";
-            this.tsBtnCal.Size = new System.Drawing.Size(23, 30);
-            this.tsBtnCal.Text = "계산기";
-            this.tsBtnCal.Click += new System.EventHandler(this.tsBtnCal_Click);
-            // 
-            // tsBtnNote
-            // 
-            this.tsBtnNote.AutoSize = false;
-            this.tsBtnNote.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnNote.Image = global::Team5_SmartMOM.Properties.Resources.memo;
-            this.tsBtnNote.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtnNote.Name = "tsBtnNote";
-            this.tsBtnNote.Size = new System.Drawing.Size(30, 30);
-            this.tsBtnNote.Text = "메모장";
-            this.tsBtnNote.Click += new System.EventHandler(this.tsBtnNote_Click);
-            // 
-            // toolStripButton7
-            // 
-            this.toolStripButton7.AutoSize = false;
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = global::Team5_SmartMOM.Properties.Resources.chat;
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(25, 30);
-            this.toolStripButton7.Text = "toolStripButton7";
-            // 
-            // toolStripButton8
-            // 
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Image = global::Team5_SmartMOM.Properties.Resources.gmail;
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(23, 30);
-            this.toolStripButton8.Text = "toolStripButton8";
-            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
             // 
             // toolStripSeparator2
             // 
@@ -856,6 +768,107 @@ namespace Team5_SmartMOM
             this.panelSubMenu8.TabIndex = 32;
             this.panelSubMenu8.Visible = false;
             // 
+            // panelSubMenu7
+            // 
+            this.panelSubMenu7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(32)))));
+            this.panelSubMenu7.Controls.Add(this.button7);
+            this.panelSubMenu7.Controls.Add(this.button8);
+            this.panelSubMenu7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenu7.Location = new System.Drawing.Point(0, 706);
+            this.panelSubMenu7.Name = "panelSubMenu7";
+            this.panelSubMenu7.Size = new System.Drawing.Size(200, 53);
+            this.panelSubMenu7.TabIndex = 29;
+            // 
+            // panelSubMenu6
+            // 
+            this.panelSubMenu6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(32)))));
+            this.panelSubMenu6.Controls.Add(this.button6);
+            this.panelSubMenu6.Controls.Add(this.button10);
+            this.panelSubMenu6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenu6.Location = new System.Drawing.Point(0, 623);
+            this.panelSubMenu6.Name = "panelSubMenu6";
+            this.panelSubMenu6.Size = new System.Drawing.Size(200, 53);
+            this.panelSubMenu6.TabIndex = 26;
+            // 
+            // panelSubMenu5
+            // 
+            this.panelSubMenu5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(32)))));
+            this.panelSubMenu5.Controls.Add(this.button19);
+            this.panelSubMenu5.Controls.Add(this.button20);
+            this.panelSubMenu5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenu5.Location = new System.Drawing.Point(0, 540);
+            this.panelSubMenu5.Name = "panelSubMenu5";
+            this.panelSubMenu5.Size = new System.Drawing.Size(200, 53);
+            this.panelSubMenu5.TabIndex = 23;
+            // 
+            // panelSubMenu4
+            // 
+            this.panelSubMenu4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(32)))));
+            this.panelSubMenu4.Controls.Add(this.btnSaleManage);
+            this.panelSubMenu4.Controls.Add(this.btnSellReiceve);
+            this.panelSubMenu4.Controls.Add(this.btnSellingList);
+            this.panelSubMenu4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenu4.Location = new System.Drawing.Point(0, 432);
+            this.panelSubMenu4.Name = "panelSubMenu4";
+            this.panelSubMenu4.Size = new System.Drawing.Size(200, 78);
+            this.panelSubMenu4.TabIndex = 20;
+            // 
+            // panelSubMenu3
+            // 
+            this.panelSubMenu3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(32)))));
+            this.panelSubMenu3.Controls.Add(this.button17);
+            this.panelSubMenu3.Controls.Add(this.button18);
+            this.panelSubMenu3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenu3.Location = new System.Drawing.Point(0, 345);
+            this.panelSubMenu3.Name = "panelSubMenu3";
+            this.panelSubMenu3.Size = new System.Drawing.Size(200, 57);
+            this.panelSubMenu3.TabIndex = 17;
+            // 
+            // panelSubMenu2
+            // 
+            this.panelSubMenu2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(32)))));
+            this.panelSubMenu2.Controls.Add(this.button14);
+            this.panelSubMenu2.Controls.Add(this.button15);
+            this.panelSubMenu2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenu2.Location = new System.Drawing.Point(0, 262);
+            this.panelSubMenu2.Name = "panelSubMenu2";
+            this.panelSubMenu2.Size = new System.Drawing.Size(200, 53);
+            this.panelSubMenu2.TabIndex = 14;
+            // 
+            // SubPanel1
+            // 
+            this.SubPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(32)))));
+            this.SubPanel1.Controls.Add(this.button24);
+            this.SubPanel1.Controls.Add(this.button25);
+            this.SubPanel1.Controls.Add(this.button26);
+            this.SubPanel1.Controls.Add(this.button27);
+            this.SubPanel1.Controls.Add(this.button28);
+            this.SubPanel1.Controls.Add(this.button29);
+            this.SubPanel1.Controls.Add(this.button30);
+            this.SubPanel1.Controls.Add(this.btnMatList);
+            this.SubPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SubPanel1.Location = new System.Drawing.Point(0, 30);
+            this.SubPanel1.Name = "SubPanel1";
+            this.SubPanel1.Size = new System.Drawing.Size(200, 202);
+            this.SubPanel1.TabIndex = 2;
+            // 
+            // button22
+            // 
+            this.button22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(251)))));
+            this.button22.FlatAppearance.BorderSize = 0;
+            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button22.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button22.ForeColor = System.Drawing.Color.Blue;
+            this.button22.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button22.Location = new System.Drawing.Point(3, 1);
+            this.button22.Name = "button22";
+            this.button22.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button22.Size = new System.Drawing.Size(180, 30);
+            this.button22.TabIndex = 1;
+            this.button22.Text = "현황보기";
+            this.button22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button22.UseVisualStyleBackColor = false;
+            // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Ivory;
@@ -983,17 +996,6 @@ namespace Team5_SmartMOM
             this.btnSubMenu8.UseVisualStyleBackColor = false;
             this.btnSubMenu8.Click += new System.EventHandler(this.btnOpenList8_Click);
             // 
-            // panelSubMenu7
-            // 
-            this.panelSubMenu7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(32)))));
-            this.panelSubMenu7.Controls.Add(this.button7);
-            this.panelSubMenu7.Controls.Add(this.button8);
-            this.panelSubMenu7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenu7.Location = new System.Drawing.Point(0, 706);
-            this.panelSubMenu7.Name = "panelSubMenu7";
-            this.panelSubMenu7.Size = new System.Drawing.Size(200, 53);
-            this.panelSubMenu7.TabIndex = 29;
-            // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.Ivory;
@@ -1048,17 +1050,6 @@ namespace Team5_SmartMOM
             this.btnSubMenu7.Text = "품질관리";
             this.btnSubMenu7.UseVisualStyleBackColor = false;
             this.btnSubMenu7.Click += new System.EventHandler(this.btnOpenList7_Click);
-            // 
-            // panelSubMenu6
-            // 
-            this.panelSubMenu6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(32)))));
-            this.panelSubMenu6.Controls.Add(this.button6);
-            this.panelSubMenu6.Controls.Add(this.button10);
-            this.panelSubMenu6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenu6.Location = new System.Drawing.Point(0, 623);
-            this.panelSubMenu6.Name = "panelSubMenu6";
-            this.panelSubMenu6.Size = new System.Drawing.Size(200, 53);
-            this.panelSubMenu6.TabIndex = 26;
             // 
             // button6
             // 
@@ -1115,17 +1106,6 @@ namespace Team5_SmartMOM
             this.btnSubMenu6.UseVisualStyleBackColor = false;
             this.btnSubMenu6.Click += new System.EventHandler(this.btnOpenList6_Click);
             // 
-            // panelSubMenu5
-            // 
-            this.panelSubMenu5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(32)))));
-            this.panelSubMenu5.Controls.Add(this.button19);
-            this.panelSubMenu5.Controls.Add(this.button20);
-            this.panelSubMenu5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenu5.Location = new System.Drawing.Point(0, 540);
-            this.panelSubMenu5.Name = "panelSubMenu5";
-            this.panelSubMenu5.Size = new System.Drawing.Size(200, 53);
-            this.panelSubMenu5.TabIndex = 23;
-            // 
             // button19
             // 
             this.button19.BackColor = System.Drawing.Color.Ivory;
@@ -1180,18 +1160,6 @@ namespace Team5_SmartMOM
             this.btnSubMenu5.Text = "출하관리";
             this.btnSubMenu5.UseVisualStyleBackColor = false;
             this.btnSubMenu5.Click += new System.EventHandler(this.btnOpenList5_Click);
-            // 
-            // panelSubMenu4
-            // 
-            this.panelSubMenu4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(32)))));
-            this.panelSubMenu4.Controls.Add(this.btnSaleManage);
-            this.panelSubMenu4.Controls.Add(this.btnSellReiceve);
-            this.panelSubMenu4.Controls.Add(this.btnSellingList);
-            this.panelSubMenu4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenu4.Location = new System.Drawing.Point(0, 432);
-            this.panelSubMenu4.Name = "panelSubMenu4";
-            this.panelSubMenu4.Size = new System.Drawing.Size(200, 78);
-            this.panelSubMenu4.TabIndex = 20;
             // 
             // btnSaleManage
             // 
@@ -1266,17 +1234,6 @@ namespace Team5_SmartMOM
             this.btnSubMenu4.UseVisualStyleBackColor = false;
             this.btnSubMenu4.Click += new System.EventHandler(this.btnOpenList4_Click);
             // 
-            // panelSubMenu3
-            // 
-            this.panelSubMenu3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(32)))));
-            this.panelSubMenu3.Controls.Add(this.button17);
-            this.panelSubMenu3.Controls.Add(this.button18);
-            this.panelSubMenu3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenu3.Location = new System.Drawing.Point(0, 345);
-            this.panelSubMenu3.Name = "panelSubMenu3";
-            this.panelSubMenu3.Size = new System.Drawing.Size(200, 57);
-            this.panelSubMenu3.TabIndex = 17;
-            // 
             // button17
             // 
             this.button17.BackColor = System.Drawing.Color.Ivory;
@@ -1332,17 +1289,6 @@ namespace Team5_SmartMOM
             this.btnSubMenu3.UseVisualStyleBackColor = false;
             this.btnSubMenu3.Click += new System.EventHandler(this.btnOpenList3_Click);
             // 
-            // panelSubMenu2
-            // 
-            this.panelSubMenu2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(32)))));
-            this.panelSubMenu2.Controls.Add(this.button14);
-            this.panelSubMenu2.Controls.Add(this.button15);
-            this.panelSubMenu2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenu2.Location = new System.Drawing.Point(0, 262);
-            this.panelSubMenu2.Name = "panelSubMenu2";
-            this.panelSubMenu2.Size = new System.Drawing.Size(200, 53);
-            this.panelSubMenu2.TabIndex = 14;
-            // 
             // button14
             // 
             this.button14.BackColor = System.Drawing.Color.Ivory;
@@ -1397,23 +1343,6 @@ namespace Team5_SmartMOM
             this.btnSubMenu2.Text = "자재관리";
             this.btnSubMenu2.UseVisualStyleBackColor = false;
             this.btnSubMenu2.Click += new System.EventHandler(this.btnOpenList2_Click);
-            // 
-            // SubPanel1
-            // 
-            this.SubPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(32)))));
-            this.SubPanel1.Controls.Add(this.button24);
-            this.SubPanel1.Controls.Add(this.button25);
-            this.SubPanel1.Controls.Add(this.button26);
-            this.SubPanel1.Controls.Add(this.button27);
-            this.SubPanel1.Controls.Add(this.button28);
-            this.SubPanel1.Controls.Add(this.button29);
-            this.SubPanel1.Controls.Add(this.button30);
-            this.SubPanel1.Controls.Add(this.btnMatList);
-            this.SubPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubPanel1.Location = new System.Drawing.Point(0, 30);
-            this.SubPanel1.Name = "SubPanel1";
-            this.SubPanel1.Size = new System.Drawing.Size(200, 202);
-            this.SubPanel1.TabIndex = 2;
             // 
             // button24
             // 
@@ -1579,22 +1508,93 @@ namespace Team5_SmartMOM
             this.btnSubMenu1.UseVisualStyleBackColor = false;
             this.btnSubMenu1.Click += new System.EventHandler(this.btnOpenList1_Click);
             // 
-            // button22
+            // toolStripButton1
             // 
-            this.button22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(251)))));
-            this.button22.FlatAppearance.BorderSize = 0;
-            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button22.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button22.ForeColor = System.Drawing.Color.Blue;
-            this.button22.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button22.Location = new System.Drawing.Point(3, 1);
-            this.button22.Name = "button22";
-            this.button22.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button22.Size = new System.Drawing.Size(180, 30);
-            this.button22.TabIndex = 1;
-            this.button22.Text = "현황보기";
-            this.button22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button22.UseVisualStyleBackColor = false;
+            this.toolStripButton1.AutoSize = false;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::Team5_SmartMOM.Properties.Resources.menu;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(30, 50);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = global::Team5_SmartMOM.Properties.Resources.home;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 30);
+            this.toolStripButton2.Text = "toolStripButton2";
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = global::Team5_SmartMOM.Properties.Resources.plus_sign__1_;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 30);
+            this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = global::Team5_SmartMOM.Properties.Resources.star;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(23, 30);
+            this.toolStripButton4.Text = "toolStripButton4";
+            this.toolStripButton4.Click += new System.EventHandler(this.ToolStripButton4_Click);
+            // 
+            // tsBtnCal
+            // 
+            this.tsBtnCal.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnCal.Image = global::Team5_SmartMOM.Properties.Resources.calculator;
+            this.tsBtnCal.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnCal.Name = "tsBtnCal";
+            this.tsBtnCal.Size = new System.Drawing.Size(23, 30);
+            this.tsBtnCal.Text = "계산기";
+            this.tsBtnCal.Click += new System.EventHandler(this.tsBtnCal_Click);
+            // 
+            // tsBtnNote
+            // 
+            this.tsBtnNote.AutoSize = false;
+            this.tsBtnNote.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnNote.Image = global::Team5_SmartMOM.Properties.Resources.memo;
+            this.tsBtnNote.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnNote.Name = "tsBtnNote";
+            this.tsBtnNote.Size = new System.Drawing.Size(30, 30);
+            this.tsBtnNote.Text = "메모장";
+            this.tsBtnNote.Click += new System.EventHandler(this.tsBtnNote_Click);
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.AutoSize = false;
+            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton7.Image = global::Team5_SmartMOM.Properties.Resources.chat;
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(25, 30);
+            this.toolStripButton7.Text = "toolStripButton7";
+            // 
+            // toolStripButton8
+            // 
+            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton8.Image = global::Team5_SmartMOM.Properties.Resources.gmail;
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(23, 30);
+            this.toolStripButton8.Text = "toolStripButton8";
+            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
+            // 
+            // 출하및매출마감ToolStripMenuItem
+            // 
+            this.출하및매출마감ToolStripMenuItem.Name = "출하및매출마감ToolStripMenuItem";
+            this.출하및매출마감ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.출하및매출마감ToolStripMenuItem.Text = "출하 및 매출마감";
+            this.출하및매출마감ToolStripMenuItem.Click += new System.EventHandler(this.출하및매출마감ToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -1673,7 +1673,6 @@ namespace Team5_SmartMOM
         private System.Windows.Forms.ToolStripMenuItem 작업지시생성ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 작업지시현황ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 출하관리ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 제품출하ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 출하현황ToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
@@ -1748,6 +1747,7 @@ namespace Team5_SmartMOM
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripButton toolStripButton8;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem 출하및매출마감ToolStripMenuItem;
     }
 }
 
