@@ -14,8 +14,8 @@ namespace Team5_SmartMOM.PSM
 {
     public partial class Material_Ledger_Export : Team5_SmartMOM.BaseGridForm
     {
-        List<MateriaExportVO> mevo;
-        List<InoutList> iol;
+        CheckBox headerCheckBox = new CheckBox();
+        List<InOutListVO> iol;
         List<MateriaExportVO> list;
         DataGridViewCheckBoxColumn chk;
         public Material_Ledger_Export()
@@ -29,10 +29,18 @@ namespace Team5_SmartMOM.PSM
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.Columns.Clear();
 
-            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
-            chk.Width = 40;
-            chk.HeaderText = "선택";
+            chk = new DataGridViewCheckBoxColumn();
+            chk.HeaderText = "";
+            chk.Name = "Check";
+            chk.Width = 30;
             dataGridView1.Columns.Add(chk);
+
+            Point headerLocation = dataGridView1.GetCellDisplayRectangle(0, -1, true).Location;
+            headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 6);
+            headerCheckBox.BackColor = Color.FromArgb(55, 113, 138);
+            headerCheckBox.Size = new Size(18, 18);
+            headerCheckBox.Click += new EventHandler(HeaderCheckBox_Click);
+            dataGridView1.Controls.Add(headerCheckBox);
 
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "작업지시서", "WO_ID", true, 120,DataGridViewContentAlignment.MiddleCenter);
@@ -47,9 +55,36 @@ namespace Team5_SmartMOM.PSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "계획수량", "planQty", true, 120, DataGridViewContentAlignment.MiddleRight);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "요청수량", "directQty", true, 120, DataGridViewContentAlignment.MiddleRight);
 
-            LBJ_Service service = new LBJ_Service();
-            dataGridView1.DataSource = service.MateriaExport();
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+
+            //LBJ_Service service = new LBJ_Service();
+            //dataGridView1.DataSource = service.MateriaExport();
             DataLoad();
+        }
+        private void HeaderCheckBox_Click(object sender, EventArgs e)
+        {
+            dataGridView1.EndEdit();
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                DataGridViewCheckBoxCell chkBox = row.Cells["Check"] as DataGridViewCheckBoxCell;
+                chkBox.Value = headerCheckBox.Checked;
+            }
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == 0)
+            {
+                bool isChecked = true;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue) == false)
+                    {
+                        isChecked = false;
+                        break;
+                    }
+                }
+                headerCheckBox.Checked = isChecked;
+            }
         }
         private void DataLoad()
         {
@@ -57,7 +92,7 @@ namespace Team5_SmartMOM.PSM
             HSC_Service hscservice = new HSC_Service();
             List<MateriaExportVO> Materialist = service.MateriaExport();
             List<FacilitieDetailVO> Facvo = hscservice.GetAllFacilitiesDetail();
-            dataGridView1.DataSource = Materialist;           
+            dataGridView1.DataSource = list = Materialist;           
 
             CommonUtil.ComboBinding(comboBox1, Facvo, "FAC_No", "FAC_Name", "전체");
 
@@ -68,33 +103,46 @@ namespace Team5_SmartMOM.PSM
             
             LBJ_Service service = new LBJ_Service();
             List<string> list = new List<string>();
-            bool check = true;
 
+            bool bFlag = false;
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                if (Convert.ToBoolean(dataGridView1.Rows[i].Cells[0].Value) == true)
+                if ((bool)dataGridView1.Rows[i].Cells["Check"].EditedFormattedValue)
                 {
-                    list.Add(dataGridView1.Rows[i].Cells[0].Value.ToString());
+                    bFlag = true;
+                    break;
                 }
             }
-            if (list.Count == 0)
+            if (bFlag == false)
             {
-                MessageBox.Show("출고할 품목을 선택하세요.", "출고 실패", MessageBoxButtons.OK);
+                MessageBox.Show("출고하실 항목을 선택해주세요.", "출고 실패", MessageBoxButtons.OK);
+                return;
             }
-            else if (check)
+            List<MateriaExportVO> mevo = new List<MateriaExportVO>();
+            List<InOutListVO> iol = new List<InOutListVO>();
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                bool bResult = service.MateriaTran(mevo, iol);
+                bool CellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
 
-                if (MessageBox.Show("해당 품목을 출고 하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (CellChecked)
                 {
+                    InOutListVO iollist = new InOutListVO();
+                    iollist.InOut_Date = (DateTime)row.Cells[2].Value;
+                    iollist.From_WareHouse = row.Cells[7].Value.ToString();
+                    iollist.ITEM_Code = row.Cells[3].Value.ToString();
+                    iollist.InOut_Qty = Convert.ToInt32(row.Cells[10].Value);
+                    iol.Add(iollist);
 
-                    MessageBox.Show("출고 성공", "성공", MessageBoxButtons.OK);
-                    DataLoad();
                 }
-                else { }
             }
-
-
+            LBJ_Service lbjservice = new LBJ_Service();
+            lbjservice.MateriaTran(mevo, iol);
+            if (MessageBox.Show("출고하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                MessageBox.Show("출고 성공", "성공", MessageBoxButtons.OK);
+                DataLoad();
+            }
+            else { }                
         }
     }
 }
