@@ -48,6 +48,18 @@ namespace Project_VO.LBJ
         public int planQty { get; set; }
         public int directQty { get; set; }
     }
+    public class InoutList
+    {
+        public DateTime InOut_Date { get; set; }
+        public string InOut_Gubun { get; set; }
+        public string InOut_Category { get; set; }
+        public string In_WareHouse { get; set; }
+        public string ITEM_Code { get; set; }
+        public string ITEM_Name { get; set; }
+        public string ITEM_Size { get; set; }
+        public string ITEM_Type { get; set; }
+        public int InOut_Qty { get; set; }
+    }
 }
 
 

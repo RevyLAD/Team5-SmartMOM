@@ -18,6 +18,15 @@ namespace Team5_SmartMOM.LBJ
         public office_hours_Insert()
         {
             InitializeComponent();
+            txtStartTime.ForeColor = SystemColors.GrayText;
+            txtStartTime.Text = "숫자만 입력 가능";
+            this.txtStartTime.Enter += new System.EventHandler(this.txtStartTime_Enter);
+            this.txtStartTime.Leave += new System.EventHandler(this.txtStartTime_Leave);
+
+            txtCompleteTime.ForeColor = SystemColors.GrayText;
+            txtCompleteTime.Text = "숫자만 입력 가능";
+            this.txtCompleteTime.Enter += new System.EventHandler(this.txtCompleteTime_Enter);
+            this.txtCompleteTime.Leave += new System.EventHandler(this.txtCompleteTime_Leave);
         }
 
         private void office_hours_Insert_Load(object sender, EventArgs e)
@@ -26,6 +35,7 @@ namespace Team5_SmartMOM.LBJ
             DataLoad();
             DataLoad2();
             DataLoad3();
+            
         }
         public void DataLoad()
         {
@@ -115,6 +125,7 @@ namespace Team5_SmartMOM.LBJ
 
                 service.ShiftInsert(svo);
                 MessageBox.Show("등록 완료", "완료", MessageBoxButtons.OK);
+                this.DialogResult = DialogResult.OK;
             }
             else
                 MessageBox.Show("필수 항목을 입력해주세요.", "등록실패", MessageBoxButtons.OK);
@@ -133,6 +144,44 @@ namespace Team5_SmartMOM.LBJ
             if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
             {
                 e.Handled = true;
+            }
+        }
+
+       
+
+        private void txtStartTime_Enter(object sender, EventArgs e)
+        {
+            if (txtStartTime.Text == "숫자만 입력 가능")
+            {
+                txtStartTime.Text = "";
+                txtStartTime.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void txtStartTime_Leave(object sender, EventArgs e)
+        {
+            if (txtStartTime.Text.Length == 0)
+            {
+                txtStartTime.Text = "숫자만 입력 가능";
+                txtStartTime.ForeColor = SystemColors.GrayText;
+            }
+        }
+
+        private void txtCompleteTime_Enter(object sender, EventArgs e)
+        {
+            if (txtCompleteTime.Text == "숫자만 입력 가능")
+            {
+                txtCompleteTime.Text = "";
+                txtCompleteTime.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void txtCompleteTime_Leave(object sender, EventArgs e)
+        {
+            if (txtCompleteTime.Text.Length == 0)
+            {
+                txtCompleteTime.Text = "숫자만 입력 가능";
+                txtCompleteTime.ForeColor = SystemColors.GrayText;
             }
         }
     }

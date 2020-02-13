@@ -21,23 +21,45 @@ namespace ClientWork
         static Timer timer2;
         static int machineID = 1;
         string strConn = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
-
+        static string choice;
+        static int port = Convert.ToInt32(ConfigurationManager.AppSettings["PortNum"]);
+        static string ipAddress = ConfigurationManager.AppSettings["MachineIP"];
         static void Main(string[] args)
         {
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
             machineID = rnd.Next(1, 10);
 
-            
-            
-            SetTimer();
-            timer1.Stop();
-
-
             while (true)
             {
-                Console.WriteLine("If you want to start system, Press Any Key");
-                Console.ReadLine();
+                //Console.WriteLine("===설비를 선택하세요===");
+                //Console.WriteLine("[1] : Leg_조립반");
+                //Console.WriteLine("[2] : SEAT_가공반");
+                //Console.WriteLine("[3] : LEGS_가공반");
+                //Console.WriteLine("[4] : 최종_조립반");
+                //Console.WriteLine("[5] : 외주_작업장");
 
+                //Console.Write("입력 : ");
+                //choice = Console.ReadLine();
+
+                //switch (Convert.ToInt32(choice))
+                //{
+                //    case 1:
+                //        port = 1000;
+                //        break;
+                //    case 2:
+                //        port = 2000;
+                //        break;
+                //    case 3:
+                //        port = 3000;
+                //        break;
+                //    case 4:
+                //        port = 4000;
+                //        break;
+                //    case 5:
+                //        port = 5000;
+                //        break;
+                //}
+                Console.ReadLine();
                 if (TcpConnection())
                 {
                     Console.WriteLine("연결 확인");
@@ -50,8 +72,10 @@ namespace ClientWork
                     Console.ReadLine();
                 }
             }
+
+            SetTimer();
+            timer1.Stop();
             SetTimer2();
-            
 
             Console.WriteLine("\n\n생산량 전송 프로그램 시작");
             
@@ -68,19 +92,27 @@ namespace ClientWork
         static TcpClient tc;
         static NetworkStream stream;
         static string product;
+        static int TickTime;
         private static bool TcpConnection()
         {
             try
             {
-                tc = new TcpClient("127.0.0.1", 7000);
+                tc = new TcpClient(ipAddress, port);
                 stream = tc.GetStream();
 
                 byte[] outbuff = new byte[1024];
                 int nbytes = stream.Read(outbuff, 0, outbuff.Length);
                 string outMsg = Encoding.ASCII.GetString(outbuff, 0, nbytes);
 
+                string[] data;
+
                 product = outMsg;
-                Console.WriteLine($"product : {product}");
+                data = product.Split('/');
+                Console.WriteLine($"생산 제품\t:\t{data[0]}");
+                Console.WriteLine($"생산 계획 수량\t:\t{data[1]}");
+                Console.WriteLine($"계획 잔여 수량\t:\t{data[2]}");
+                TickTime = Convert.ToInt32(data[3]);
+
                 Log.WriteInfo($"product : {product}");
 
                 return true;
@@ -93,7 +125,7 @@ namespace ClientWork
         
         private static void SetTimer()
         {
-            timer1 = new Timer(3000);
+            timer1 = new Timer(TickTime);
             timer1.Enabled = true;
             timer1.Elapsed += timer1_Elapsed;
             timer1.AutoReset = true;

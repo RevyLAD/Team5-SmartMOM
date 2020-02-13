@@ -54,6 +54,7 @@
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -80,16 +81,15 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.lblprogres = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.textBox34 = new System.Windows.Forms.TextBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.textBox36 = new System.Windows.Forms.TextBox();
             this.textBox37 = new System.Windows.Forms.TextBox();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.lblprogres = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -438,6 +438,7 @@
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.button7);
             this.groupBox5.Controls.Add(this.btnStart);
             this.groupBox5.Controls.Add(this.button5);
             this.groupBox5.Controls.Add(this.button4);
@@ -448,6 +449,17 @@
             this.groupBox5.Size = new System.Drawing.Size(1159, 94);
             this.groupBox5.TabIndex = 5;
             this.groupBox5.TabStop = false;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(1131, 61);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(22, 23);
+            this.button7.TabIndex = 5;
+            this.button7.Text = "ㅁ";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Visible = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // btnStart
             // 
@@ -796,6 +808,16 @@
             this.groupBox11.TabIndex = 17;
             this.groupBox11.TabStop = false;
             // 
+            // lblprogres
+            // 
+            this.lblprogres.AutoSize = true;
+            this.lblprogres.BackColor = System.Drawing.Color.Transparent;
+            this.lblprogres.Location = new System.Drawing.Point(262, 19);
+            this.lblprogres.Name = "lblprogres";
+            this.lblprogres.Size = new System.Drawing.Size(21, 12);
+            this.lblprogres.TabIndex = 15;
+            this.lblprogres.Text = "0%";
+            // 
             // progressBar1
             // 
             this.progressBar1.BackColor = System.Drawing.Color.Gray;
@@ -860,11 +882,6 @@
             this.textBox37.Text = "00 분";
             this.textBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // timer2
-            // 
-            this.timer2.Interval = 3000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
@@ -883,16 +900,6 @@
             // 
             this.timer3.Interval = 1000;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
-            // 
-            // lblprogres
-            // 
-            this.lblprogres.AutoSize = true;
-            this.lblprogres.BackColor = System.Drawing.Color.Transparent;
-            this.lblprogres.Location = new System.Drawing.Point(262, 19);
-            this.lblprogres.Name = "lblprogres";
-            this.lblprogres.Size = new System.Drawing.Size(21, 12);
-            this.lblprogres.TabIndex = 15;
-            this.lblprogres.Text = "0%";
             // 
             // POPGaDong
             // 
@@ -989,7 +996,6 @@
         private System.Windows.Forms.TextBox txtPlanTE;
         private System.Windows.Forms.TextBox txtPlanTS;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.TextBox txtSec;
         private System.Windows.Forms.TextBox txtMin;
         private System.Windows.Forms.ListBox listBox1;
@@ -1001,5 +1007,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtGoodQty;
         private System.Windows.Forms.Label lblprogres;
+        public System.Windows.Forms.Button button7;
     }
 }

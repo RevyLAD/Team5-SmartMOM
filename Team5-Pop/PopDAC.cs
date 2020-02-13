@@ -169,6 +169,40 @@ namespace Team5_Pop
             return name;
         }
 
+        public int GetPortNum(string id)
+        {
+            int portnum = 0;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "SELECT FAC_Name from WorkOrder where WO_ID = @WO_ID";
+                cmd.Parameters.AddWithValue("@WO_ID", id);
 
+                cmd.Connection.Open();
+                string temp = Convert.ToString(cmd.ExecuteScalar()).Trim();
+                switch (temp)
+                {
+                    case "Leg_조립반":
+                        portnum = 1000;
+                        break;
+                    case "SEAT 가공반":
+                        portnum = 2000;
+                        break;
+                    case "LEGS 가공반":
+                        portnum = 3000;
+                        break;
+                    case "최종조립반":
+                        portnum = 4000;
+                        break;
+                    case "외주작업장":
+                        portnum = 5000;
+                        break;
+                }
+                
+                cmd.Connection.Close();
+            }
+            return portnum;
+
+        }
     }
 }

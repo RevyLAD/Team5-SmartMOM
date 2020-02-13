@@ -64,6 +64,7 @@
             // button2
             // 
             this.button2.Text = "출고";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel2
             // 

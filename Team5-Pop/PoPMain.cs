@@ -36,6 +36,7 @@ namespace Team5_Pop
         {
             InitializeComponent();
             mainform = frm;
+
         }
         private void PoPMain_Load(object sender, EventArgs e)
         {
@@ -45,11 +46,10 @@ namespace Team5_Pop
             lblNowTime.Text = DateTime.Now.ToLongTimeString();
             timer1.Start();
 
+            port = 7000;
+
             DataLoad();
             ComboLoad();
-            
-
-
         }
 
         //비동기 서버 시작
@@ -116,13 +116,14 @@ namespace Team5_Pop
             fac_cbolist = service.GetFACName();
             CommonUtil.ComboBinding(comboBox2, fac_cbolist, "FAC_Code", "FAC_Name", "전체");
         }
+        List<ingdata> inglist;
 
         private void DataLoad()
         {
             dataGridView1.Columns.Clear();
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.RowTemplate.Height = 48;
-
+            
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "번호", "WO_ID", true, 296);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목 코드", "ITEM_Code", true, 250);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "설비명", "FAC_Name", false, 100);
@@ -146,12 +147,19 @@ namespace Team5_Pop
             gadong_vo = new PopVO();
             PopService service = new PopService();
             volist = service.PopGetData();
+
+            inglist = new List<ingdata>();
+
+            foreach (var item in volist)
+            {
+                inglist.Add(new ingdata(item.WO_ID));
+            }
             CurrentPage = 1;
             nowlist = PagePaging(volist);
 
             dataGridView1_CellClick(new object(), new DataGridViewCellEventArgs(0, 0));
         }
-
+        
         #region 페이징
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
@@ -193,6 +201,23 @@ namespace Team5_Pop
         {
             lblNowDate.Text = DateTime.Now.ToLongDateString();
             lblNowTime.Text = DateTime.Now.ToLongTimeString();
+
+            if(inglist != null)
+            {
+                 foreach(var item in inglist)
+                {
+                    if (item.woid != "")
+                    {
+                        if (item.woid.Equals(textBox3.Text))
+                        {
+                            txtSNum.Text = Convert.ToString(item.totalqty);
+                            txtGoodNum.Text = Convert.ToString(item.goodqty);
+                            txtBadNum.Text = Convert.ToString(item.badqty);
+                            txtProductNum.Text = Convert.ToString(Convert.ToInt32(txtOrderNum.Text) - item.goodqty);
+                        }
+                    }
+                }
+            }
         }
         PopVO gadong_vo;
         DataGridViewCellEventArgs e_temp;
@@ -206,7 +231,6 @@ namespace Team5_Pop
                 textBox8.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
 
                 txtOrderNum.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
-                txtProductNum.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
 
                 this.e_temp = e;
             }
@@ -316,7 +340,7 @@ namespace Team5_Pop
                 CommonUtil.ComboBinding(comboBox2, fac_cbolist, "FAC_Code", "FAC_Name");
             }
         }
-
+        int port;
         private void btnStart_Click(object sender, EventArgs e)
         {
             try
@@ -333,22 +357,20 @@ namespace Team5_Pop
                     gadong_vo.WO_State = dataGridView1.Rows[e_temp.RowIndex].Cells[7].Value.ToString();
                     gadong_vo.Plan_ID = dataGridView1.Rows[e_temp.RowIndex].Cells[8].Value.ToString();
                     gadong_vo.WO_Priority = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[9].Value.ToString());
-                    gadong_vo.WO_Time = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[9].Value.ToString());
+                    gadong_vo.WO_Time = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[10].Value.ToString());
 
-                    //if (service.GetFacState(gadong_vo.FAC_Name) == "비가동")
-                    //{
-                        //mainform.CreateTabPages("공정1", new POPGaDong(gadong_vo));
+                    PopService service = new PopService();
+                    
+                    POPGaDong newgadong = new POPGaDong(gadong_vo, service.GetPortNum(gadong_vo.WO_ID));
+
                         service.UpdateFacState(gadong_vo.FAC_Name, gadong_vo.WO_ID);
-                        mainform.CreateTabPages(gadong_vo.FAC_Name, new POPGaDong(gadong_vo));
+                        mainform.CreateTabPages(gadong_vo.FAC_Name, newgadong);
 
-                       
-                    //    DataLoad();
 
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("이미 공정이 실행중입니다.");
-                    //}
+                    newgadong.DataSendEvent += new DataGetEventHandler(this.DataGet);
+
+                    //newgadong.Mtimer.Elapsed += new System.Timers.ElapsedEventHandler(DataUpdate(null, nullargs, gadong_vo));
+
                 }
                 else
                 {
@@ -358,7 +380,37 @@ namespace Team5_Pop
             {
                 MessageBox.Show(err.Message);
             }
-            
+        }
+
+        private void DataGet(string total, string good, string bad, string woid)
+        {
+            foreach (var item in inglist)
+            {
+                if (item.woid.Equals(woid))
+                {
+                    item.totalqty = Convert.ToInt32(total.Trim());
+                    item.goodqty = Convert.ToInt32(good.Trim());
+                    item.badqty = Convert.ToInt32(bad.Trim());
+
+                    break;
+                }
+            }
+        }
+
+        public class ingdata
+        {
+            public string woid;
+            public int goodqty;
+            public int badqty;
+            public int totalqty;
+
+            public ingdata(string newWOid)
+            {
+                woid = newWOid;
+                goodqty = 0;
+                badqty = 0;
+                totalqty = 0;
+            }
         }
     }
 }

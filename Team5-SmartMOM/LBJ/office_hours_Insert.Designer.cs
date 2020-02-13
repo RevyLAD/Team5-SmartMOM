@@ -132,7 +132,6 @@
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Location = new System.Drawing.Point(191, 10);
             this.button1.Size = new System.Drawing.Size(110, 30);
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -283,7 +282,9 @@
             this.txtStartTime.Name = "txtStartTime";
             this.txtStartTime.Size = new System.Drawing.Size(177, 26);
             this.txtStartTime.TabIndex = 3;
+            this.txtStartTime.Enter += new System.EventHandler(this.txtStartTime_Enter);
             this.txtStartTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStartTime_KeyPress);
+            this.txtStartTime.Leave += new System.EventHandler(this.txtStartTime_Leave);
             // 
             // txtPeople
             // 
@@ -315,7 +316,9 @@
             this.txtCompleteTime.Name = "txtCompleteTime";
             this.txtCompleteTime.Size = new System.Drawing.Size(150, 26);
             this.txtCompleteTime.TabIndex = 4;
+            this.txtCompleteTime.Enter += new System.EventHandler(this.txtCompleteTime_Enter);
             this.txtCompleteTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCompleteTime_KeyPress);
+            this.txtCompleteTime.Leave += new System.EventHandler(this.txtCompleteTime_Leave);
             // 
             // txtReviceDay
             // 
