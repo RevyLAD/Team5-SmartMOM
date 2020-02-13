@@ -189,6 +189,7 @@
             this.cbostate.Name = "cbostate";
             this.cbostate.Size = new System.Drawing.Size(191, 20);
             this.cbostate.TabIndex = 30;
+            this.cbostate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
             // 
             // cbocompany
             // 
@@ -197,6 +198,7 @@
             this.cbocompany.Name = "cbocompany";
             this.cbocompany.Size = new System.Drawing.Size(161, 20);
             this.cbocompany.TabIndex = 31;
+            this.cbocompany.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
             // 
             // txtProduct
             // 
@@ -243,6 +245,7 @@
             this.cboplanid.Name = "cboplanid";
             this.cboplanid.Size = new System.Drawing.Size(191, 20);
             this.cboplanid.TabIndex = 37;
+            this.cboplanid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
             // 
             // label5
             // 

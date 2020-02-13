@@ -250,20 +250,26 @@ namespace Team5_SmartMOM.PSM
 
         private void button3_Click(object sender, EventArgs e)
         {
-            List<DeleteOrder> lists = new List<DeleteOrder>();
+            List<MaterialInDateVO> lists = new List<MaterialInDateVO>();
+            List<MaterialsPlusVO> lists2 = new List<MaterialsPlusVO>();
             foreach (DataGridViewRow row in dataGridView2.Rows)
             {
                 bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
 
                 if (isCellChecked)
                 {
-                    DeleteOrder list = new DeleteOrder();
+                    MaterialInDateVO list = new MaterialInDateVO();
                     list.VO_ID = Convert.ToInt32(row.Cells[1].Value);
                     lists.Add(list);
+
+                    MaterialsPlusVO list2 = new MaterialsPlusVO();
+                    list2.VOD_GoodEA = Convert.ToInt32(row.Cells[9].Value);
+                    list2.ITEM_Code = row.Cells[2].Value.ToString();
+                    lists2.Add(list2);
                 }
             }
             PSM_Service service = new PSM_Service();
-            service.MaterialsPut(lists);
+            service.MaterialProcess(lists, lists2);
 
             DataLoad();
         }
@@ -290,26 +296,20 @@ namespace Team5_SmartMOM.PSM
 
         private void button1_Click(object sender, EventArgs e)
         {
-            List<MaterialInDateVO> lists = new List<MaterialInDateVO>();
-            List<MaterialsPlusVO> lists2 = new List<MaterialsPlusVO>();
-            foreach (DataGridViewRow row in dataGridView3.Rows)
+            List<DeleteOrder> lists = new List<DeleteOrder>();
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
 
                 if (isCellChecked)
                 {
-                    MaterialInDateVO list = new MaterialInDateVO();
+                    DeleteOrder list = new DeleteOrder();
                     list.VO_ID = Convert.ToInt32(row.Cells[1].Value);
                     lists.Add(list);
-
-                    MaterialsPlusVO list2 = new MaterialsPlusVO();
-                    list2.VOD_GoodEA = Convert.ToInt32(row.Cells[9].Value);
-                    list2.ITEM_Code = row.Cells[2].Value.ToString();
-                    lists2.Add(list2);
                 }
             }
             PSM_Service service = new PSM_Service();
-            service.MaterialProcess(lists, lists2);
+            service.MaterialsPut(lists);
 
             DataLoad();
         }

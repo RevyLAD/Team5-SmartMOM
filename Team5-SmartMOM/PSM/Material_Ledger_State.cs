@@ -126,5 +126,13 @@ namespace Team5_SmartMOM.PSM
             list = service.MaterialsState(sp);
             dataGridView1.DataSource = list;
         }
+
+        private void txtProduct_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar == 13))
+            {
+                BtnSearch_Click(null, new EventArgs());
+            }
+        }
     }
 }

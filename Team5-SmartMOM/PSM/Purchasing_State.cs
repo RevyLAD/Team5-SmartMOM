@@ -180,7 +180,7 @@ namespace Team5_SmartMOM.PSM
         
         //체크된 항목만 발주 취소기능
         private void button2_Click(object sender, EventArgs e)
-        {
+        {            
             bool bFlag = false;
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {

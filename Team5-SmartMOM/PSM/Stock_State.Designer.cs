@@ -28,19 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.cbofactory = new System.Windows.Forms.ComboBox();
+            this.txtitem = new System.Windows.Forms.TextBox();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -66,25 +58,17 @@
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1202, 114);
+            this.panel2.Size = new System.Drawing.Size(1202, 102);
             // 
             // panelTop
             // 
-            this.panelTop.Controls.Add(this.comboBox4);
-            this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Controls.Add(this.comboBox3);
-            this.panelTop.Controls.Add(this.comboBox1);
+            this.panelTop.Controls.Add(this.txtitem);
+            this.panelTop.Controls.Add(this.cbofactory);
             this.panelTop.Controls.Add(this.btnSearch);
-            this.panelTop.Controls.Add(this.textBox1);
-            this.panelTop.Controls.Add(this.comboBox2);
-            this.panelTop.Controls.Add(this.dateTimePicker1);
-            this.panelTop.Controls.Add(this.label7);
-            this.panelTop.Controls.Add(this.label5);
             this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.label3);
-            this.panelTop.Controls.Add(this.label8);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Size = new System.Drawing.Size(1202, 107);
+            this.panelTop.Size = new System.Drawing.Size(1202, 81);
             // 
             // splitContainer2
             // 
@@ -94,55 +78,11 @@
             this.label1.Size = new System.Drawing.Size(142, 24);
             this.label1.Text = "자재재고현황";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(446, 60);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 21);
-            this.textBox1.TabIndex = 60;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(446, 24);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(161, 20);
-            this.comboBox2.TabIndex = 59;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(110, 23);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(128, 21);
-            this.dateTimePicker1.TabIndex = 57;
-            this.dateTimePicker1.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(719, 26);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 19);
-            this.label7.TabIndex = 55;
-            this.label7.Text = "* 품목유형";
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(363, 60);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 19);
-            this.label5.TabIndex = 54;
-            this.label5.Text = "* 재고량";
-            // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(363, 26);
+            this.label4.Location = new System.Drawing.Point(365, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 19);
             this.label4.TabIndex = 53;
@@ -152,21 +92,11 @@
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(14, 59);
+            this.label3.Location = new System.Drawing.Point(17, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 19);
             this.label3.TabIndex = 52;
             this.label3.Text = "* 창고";
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(14, 25);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 19);
-            this.label8.TabIndex = 51;
-            this.label8.Text = "* 입출고일";
             // 
             // btnSearch
             // 
@@ -174,46 +104,30 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1111, 70);
+            this.btnSearch.Location = new System.Drawing.Point(1114, 44);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(81, 30);
             this.btnSearch.TabIndex = 63;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // comboBox1
+            // cbofactory
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(809, 24);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(161, 20);
-            this.comboBox1.TabIndex = 64;
+            this.cbofactory.FormattingEnabled = true;
+            this.cbofactory.Location = new System.Drawing.Point(107, 25);
+            this.cbofactory.Name = "cbofactory";
+            this.cbofactory.Size = new System.Drawing.Size(161, 20);
+            this.cbofactory.TabIndex = 64;
+            this.cbofactory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtitem_KeyPress);
             // 
-            // comboBox3
+            // txtitem
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(110, 60);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(128, 20);
-            this.comboBox3.TabIndex = 65;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(809, 59);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(161, 20);
-            this.comboBox4.TabIndex = 67;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(719, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 19);
-            this.label2.TabIndex = 66;
-            this.label2.Text = "* 관리등급";
+            this.txtitem.Location = new System.Drawing.Point(453, 23);
+            this.txtitem.Name = "txtitem";
+            this.txtitem.Size = new System.Drawing.Size(164, 21);
+            this.txtitem.TabIndex = 65;
+            this.txtitem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtitem_KeyPress);
             // 
             // Stock_State
             // 
@@ -237,18 +151,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label8;
         protected System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbofactory;
+        private System.Windows.Forms.TextBox txtitem;
     }
 }
