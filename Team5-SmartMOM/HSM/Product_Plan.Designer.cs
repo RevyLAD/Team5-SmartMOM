@@ -56,6 +56,11 @@
             this.button3.Location = new System.Drawing.Point(1019, 0);
             this.button3.Size = new System.Drawing.Size(65, 24);
             this.button3.Text = "엑셀";
+            this.button3.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.Visible = false;
             // 
             // panel2
             // 
@@ -126,6 +131,7 @@
             this.cboPlanID.Name = "cboPlanID";
             this.cboPlanID.Size = new System.Drawing.Size(121, 20);
             this.cboPlanID.TabIndex = 25;
+            this.cboPlanID.SelectedIndexChanged += new System.EventHandler(this.cboPlanID_SelectedIndexChanged);
             // 
             // label11
             // 

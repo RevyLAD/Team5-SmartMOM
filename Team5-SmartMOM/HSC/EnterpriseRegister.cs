@@ -19,6 +19,14 @@ namespace Team5_SmartMOM
             InitializeComponent();
         }
 
+        EnterpriseVO thisvo;
+        public EnterpriseRegister(EnterpriseVO vo)
+        {
+            InitializeComponent();
+
+            this.thisvo = vo;
+        }
+
         private void panelDock_Paint(object sender, PaintEventArgs e)
         {
 
@@ -37,7 +45,7 @@ namespace Team5_SmartMOM
                 vo.COM_Information = txtInformation.Text;
                 vo.COM_Manager = txtCOM_Manager.Text.Trim();
                 vo.COM_Modifier = txtModifier.Text.Trim();
-                vo.COM_ModifiyDate =Convert.ToDateTime(txtModifiyDate.Text.Trim());
+                vo.COM_ModifiyDate = txtModifiyDate.Text.Trim();
                 vo.COM_Name = txtCOM_Name.Text.Trim();
                 vo.COM_Owner = txtCOM_Owner.Text.Trim();
                 vo.COM_Phone = txtCOM_Phone.Text.Trim();
@@ -46,8 +54,16 @@ namespace Team5_SmartMOM
                 vo.COM_UseOrNot = cbo_UseOrNot.Text.Trim();
 
                 HSC_Service service = new HSC_Service();
-                service.InsertEnterprise(vo);
-                MessageBox.Show("성공적으로 등록되었습니다");
+                if (thisvo != null)
+                {
+                    service.UpdateEnterprise(vo);
+                    MessageBox.Show("성공적으로 수정되었습니다");
+                }
+                else
+                {
+                    service.InsertEnterprise(vo);
+                    MessageBox.Show("성공적으로 등록되었습니다");
+                }
                 this.Close();
             }
             else
@@ -64,9 +80,25 @@ namespace Team5_SmartMOM
         private void EnterpriseRegister_Load(object sender, EventArgs e)
         {
             CommonCodeService codeService = new CommonCodeService();
-
             CommonUtil.ComboBinding(cbo_UseOrNot, codeService.GetUse(), "Common_Key", "Common_Value");
             CommonUtil.ComboBinding(cboCOM_Type, codeService.GetVENDOR(), "Common_Key", "Common_Value");
+
+            if(this.thisvo != null)
+            {
+                txtComNo.Text = thisvo.COM_No;
+                txtCOM_Code.Text = thisvo.COM_Code;
+                txtCOM_Email.Text = thisvo.COM_Email;
+                txtInformation.Text = thisvo.COM_Information;
+                txtCOM_Manager.Text = thisvo.COM_Manager;
+                txtModifier.Text = thisvo.COM_Modifier;
+                txtModifiyDate.Text = thisvo.COM_ModifiyDate;
+                txtCOM_Name.Text = thisvo.COM_Name;
+                txtCOM_Owner.Text = thisvo.COM_Owner;
+                txtCOM_Phone.Text = thisvo.COM_Phone;
+                txtCOM_Sector.Text = thisvo.COM_Sector;
+                cboCOM_Type.Text = thisvo.COM_Type;
+                cbo_UseOrNot.Text = thisvo.COM_UseOrNot;
+            }
 
         }
     }

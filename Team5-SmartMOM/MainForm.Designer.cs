@@ -83,14 +83,14 @@ namespace Team5_SmartMOM
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.ts = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnCal = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnNote = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -147,7 +147,7 @@ namespace Team5_SmartMOM
             this.button22 = new System.Windows.Forms.Button();
             this.tabControl1 = new TabControlZ.TabControlZ();
             this.menuStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.ts.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
@@ -363,63 +363,63 @@ namespace Team5_SmartMOM
             // 정규발주ToolStripMenuItem
             // 
             this.정규발주ToolStripMenuItem.Name = "정규발주ToolStripMenuItem";
-            this.정규발주ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.정규발주ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.정규발주ToolStripMenuItem.Text = "정규발주";
             this.정규발주ToolStripMenuItem.Click += new System.EventHandler(this.정규발주ToolStripMenuItem_Click);
             // 
             // 발주현황ToolStripMenuItem
             // 
             this.발주현황ToolStripMenuItem.Name = "발주현황ToolStripMenuItem";
-            this.발주현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.발주현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.발주현황ToolStripMenuItem.Text = "발주현황";
             this.발주현황ToolStripMenuItem.Click += new System.EventHandler(this.발주현황ToolStripMenuItem_Click);
             // 
             // 입고대기ToolStripMenuItem
             // 
             this.입고대기ToolStripMenuItem.Name = "입고대기ToolStripMenuItem";
-            this.입고대기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.입고대기ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.입고대기ToolStripMenuItem.Text = "입고대기";
             this.입고대기ToolStripMenuItem.Click += new System.EventHandler(this.입고대기ToolStripMenuItem_Click);
             // 
             // 자재입고ToolStripMenuItem
             // 
             this.자재입고ToolStripMenuItem.Name = "자재입고ToolStripMenuItem";
-            this.자재입고ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.자재입고ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.자재입고ToolStripMenuItem.Text = "자재입고";
             this.자재입고ToolStripMenuItem.Click += new System.EventHandler(this.자재입고ToolStripMenuItem_Click);
             // 
             // 자재입고현황ToolStripMenuItem
             // 
             this.자재입고현황ToolStripMenuItem.Name = "자재입고현황ToolStripMenuItem";
-            this.자재입고현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.자재입고현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.자재입고현황ToolStripMenuItem.Text = "자재입고현황";
             this.자재입고현황ToolStripMenuItem.Click += new System.EventHandler(this.자재입고현황ToolStripMenuItem_Click);
             // 
             // 자재재고현황ToolStripMenuItem
             // 
             this.자재재고현황ToolStripMenuItem.Name = "자재재고현황ToolStripMenuItem";
-            this.자재재고현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.자재재고현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.자재재고현황ToolStripMenuItem.Text = "자재재고현황";
             this.자재재고현황ToolStripMenuItem.Click += new System.EventHandler(this.자재재고현황ToolStripMenuItem_Click);
             // 
             // 자재불출요청ToolStripMenuItem
             // 
             this.자재불출요청ToolStripMenuItem.Name = "자재불출요청ToolStripMenuItem";
-            this.자재불출요청ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.자재불출요청ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.자재불출요청ToolStripMenuItem.Text = "자재불출요청";
             this.자재불출요청ToolStripMenuItem.Click += new System.EventHandler(this.자재불출요청ToolStripMenuItem_Click);
             // 
             // 원자재불출ToolStripMenuItem
             // 
             this.원자재불출ToolStripMenuItem.Name = "원자재불출ToolStripMenuItem";
-            this.원자재불출ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.원자재불출ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.원자재불출ToolStripMenuItem.Text = "원자재불출";
             this.원자재불출ToolStripMenuItem.Click += new System.EventHandler(this.원자재불출ToolStripMenuItem_Click);
             // 
             // 입출고현황ToolStripMenuItem
             // 
             this.입출고현황ToolStripMenuItem.Name = "입출고현황ToolStripMenuItem";
-            this.입출고현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.입출고현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.입출고현황ToolStripMenuItem.Text = "입출고현황";
             this.입출고현황ToolStripMenuItem.Click += new System.EventHandler(this.입출고현황ToolStripMenuItem_Click);
             // 
@@ -571,26 +571,26 @@ namespace Team5_SmartMOM
             // 
             this.ContentPanel.Size = new System.Drawing.Size(1261, 572);
             // 
-            // toolStrip1
+            // ts
             // 
-            this.toolStrip1.AutoSize = false;
-            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(223)))));
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ts.AutoSize = false;
+            this.ts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(223)))));
+            this.ts.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton2,
             this.toolStripButton3,
             this.toolStripButton4,
             this.toolStripSeparator1,
-            this.toolStripButton5,
-            this.toolStripButton6,
+            this.tsBtnCal,
+            this.tsBtnNote,
             this.toolStripButton7,
             this.toolStripButton8,
             this.toolStripSeparator2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1286, 33);
-            this.toolStrip1.TabIndex = 4;
-            this.toolStrip1.Text = "toolStrip1";
+            this.ts.Location = new System.Drawing.Point(0, 24);
+            this.ts.Name = "ts";
+            this.ts.Size = new System.Drawing.Size(1286, 33);
+            this.ts.TabIndex = 4;
+            this.ts.Text = "계산기";
             // 
             // toolStripButton1
             // 
@@ -637,24 +637,26 @@ namespace Team5_SmartMOM
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 33);
             // 
-            // toolStripButton5
+            // tsBtnCal
             // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = global::Team5_SmartMOM.Properties.Resources.calculator;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(23, 30);
-            this.toolStripButton5.Text = "toolStripButton5";
+            this.tsBtnCal.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnCal.Image = global::Team5_SmartMOM.Properties.Resources.calculator;
+            this.tsBtnCal.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnCal.Name = "tsBtnCal";
+            this.tsBtnCal.Size = new System.Drawing.Size(23, 30);
+            this.tsBtnCal.Text = "계산기";
+            this.tsBtnCal.Click += new System.EventHandler(this.tsBtnCal_Click);
             // 
-            // toolStripButton6
+            // tsBtnNote
             // 
-            this.toolStripButton6.AutoSize = false;
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = global::Team5_SmartMOM.Properties.Resources.memo;
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(30, 30);
-            this.toolStripButton6.Text = "toolStripButton6";
+            this.tsBtnNote.AutoSize = false;
+            this.tsBtnNote.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnNote.Image = global::Team5_SmartMOM.Properties.Resources.memo;
+            this.tsBtnNote.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnNote.Name = "tsBtnNote";
+            this.tsBtnNote.Size = new System.Drawing.Size(30, 30);
+            this.tsBtnNote.Text = "메모장";
+            this.tsBtnNote.Click += new System.EventHandler(this.tsBtnNote_Click);
             // 
             // toolStripButton7
             // 
@@ -718,38 +720,44 @@ namespace Team5_SmartMOM
             this.imageList1.Images.SetKeyName(11, "deliveryman.png");
             this.imageList1.Images.SetKeyName(12, "delivery-truck.png");
             this.imageList1.Images.SetKeyName(13, "document.png");
-            this.imageList1.Images.SetKeyName(14, "edit.png");
-            this.imageList1.Images.SetKeyName(15, "employee.png");
-            this.imageList1.Images.SetKeyName(16, "file.png");
-            this.imageList1.Images.SetKeyName(17, "file1.png");
-            this.imageList1.Images.SetKeyName(18, "handshake.png");
-            this.imageList1.Images.SetKeyName(19, "happy (1).png");
-            this.imageList1.Images.SetKeyName(20, "happy.png");
-            this.imageList1.Images.SetKeyName(21, "home.png");
-            this.imageList1.Images.SetKeyName(22, "logistics (1).png");
-            this.imageList1.Images.SetKeyName(23, "material (1).png");
-            this.imageList1.Images.SetKeyName(24, "material.png");
-            this.imageList1.Images.SetKeyName(25, "menu.png");
-            this.imageList1.Images.SetKeyName(26, "microsoft-excel.png");
-            this.imageList1.Images.SetKeyName(27, "note.png");
-            this.imageList1.Images.SetKeyName(28, "oos.png");
-            this.imageList1.Images.SetKeyName(29, "pencil.png");
-            this.imageList1.Images.SetKeyName(30, "please-wait-gif-8.gif");
-            this.imageList1.Images.SetKeyName(31, "plus-sign (1).png");
-            this.imageList1.Images.SetKeyName(32, "process (1).png");
-            this.imageList1.Images.SetKeyName(33, "process.png");
-            this.imageList1.Images.SetKeyName(34, "profile.png");
-            this.imageList1.Images.SetKeyName(35, "purchase (1).png");
-            this.imageList1.Images.SetKeyName(36, "search.png");
-            this.imageList1.Images.SetKeyName(37, "shopping-bag.png");
-            this.imageList1.Images.SetKeyName(38, "star.png");
-            this.imageList1.Images.SetKeyName(39, "trophy.png");
-            this.imageList1.Images.SetKeyName(40, "truck.png");
-            this.imageList1.Images.SetKeyName(41, "user.png");
-            this.imageList1.Images.SetKeyName(42, "video-conference.png");
-            this.imageList1.Images.SetKeyName(43, "waiting.png");
-            this.imageList1.Images.SetKeyName(44, "warehouse.png");
-            this.imageList1.Images.SetKeyName(45, "warehouse1.png");
+            this.imageList1.Images.SetKeyName(14, "e438e1b7a4f6bb5a48cd5971f538571a.gif");
+            this.imageList1.Images.SetKeyName(15, "e438e1b7a4f6bb5a48cd5971f538571a1.gif");
+            this.imageList1.Images.SetKeyName(16, "edit.jpg");
+            this.imageList1.Images.SetKeyName(17, "edit.png");
+            this.imageList1.Images.SetKeyName(18, "employee.png");
+            this.imageList1.Images.SetKeyName(19, "file.png");
+            this.imageList1.Images.SetKeyName(20, "file1.png");
+            this.imageList1.Images.SetKeyName(21, "handshake.png");
+            this.imageList1.Images.SetKeyName(22, "happy (1).png");
+            this.imageList1.Images.SetKeyName(23, "happy.png");
+            this.imageList1.Images.SetKeyName(24, "home.png");
+            this.imageList1.Images.SetKeyName(25, "logistics (1).png");
+            this.imageList1.Images.SetKeyName(26, "material (1).png");
+            this.imageList1.Images.SetKeyName(27, "material.png");
+            this.imageList1.Images.SetKeyName(28, "menu.png");
+            this.imageList1.Images.SetKeyName(29, "microsoft-excel.png");
+            this.imageList1.Images.SetKeyName(30, "note.png");
+            this.imageList1.Images.SetKeyName(31, "oos.png");
+            this.imageList1.Images.SetKeyName(32, "pencil.png");
+            this.imageList1.Images.SetKeyName(33, "please-wait-gif-8.gif");
+            this.imageList1.Images.SetKeyName(34, "plus-sign (1).png");
+            this.imageList1.Images.SetKeyName(35, "process (1).png");
+            this.imageList1.Images.SetKeyName(36, "process.png");
+            this.imageList1.Images.SetKeyName(37, "profile.png");
+            this.imageList1.Images.SetKeyName(38, "purchase (1).png");
+            this.imageList1.Images.SetKeyName(39, "search.png");
+            this.imageList1.Images.SetKeyName(40, "shopping-bag.png");
+            this.imageList1.Images.SetKeyName(41, "star.png");
+            this.imageList1.Images.SetKeyName(42, "trophy.png");
+            this.imageList1.Images.SetKeyName(43, "truck.png");
+            this.imageList1.Images.SetKeyName(44, "user.png");
+            this.imageList1.Images.SetKeyName(45, "video-conference.png");
+            this.imageList1.Images.SetKeyName(46, "waiting.png");
+            this.imageList1.Images.SetKeyName(47, "warehouse.png");
+            this.imageList1.Images.SetKeyName(48, "warehouse1.png");
+            this.imageList1.Images.SetKeyName(49, "x-button.png");
+            this.imageList1.Images.SetKeyName(50, "x-button1.png");
+            this.imageList1.Images.SetKeyName(51, "x-button2.png");
             // 
             // panel2
             // 
@@ -1594,7 +1602,7 @@ namespace Team5_SmartMOM
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1286, 1061);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.ts);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("맑은 고딕", 9F);
             this.MainMenuStrip = this.menuStrip1;
@@ -1604,8 +1612,8 @@ namespace Team5_SmartMOM
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.ts.ResumeLayout(false);
+            this.ts.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelSideMenu.ResumeLayout(false);
@@ -1631,7 +1639,7 @@ namespace Team5_SmartMOM
         private System.Windows.Forms.ToolStripPanel RightToolStripPanel;
         private System.Windows.Forms.ToolStripPanel LeftToolStripPanel;
         private System.Windows.Forms.ToolStripContentPanel ContentPanel;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip ts;
         private System.Windows.Forms.ToolStripMenuItem 자원관리ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 공장관리ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 설비관리ToolStripMenuItem;
@@ -1734,8 +1742,8 @@ namespace Team5_SmartMOM
         private System.Windows.Forms.ToolStripMenuItem 수요계획ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 작업지시생성ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 작업지시현황ToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripButton tsBtnCal;
+        private System.Windows.Forms.ToolStripButton tsBtnNote;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripButton toolStripButton8;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;

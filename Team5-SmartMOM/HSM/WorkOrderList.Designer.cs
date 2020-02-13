@@ -35,6 +35,8 @@
             this.dtpDateEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
             this.cboPlanID = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboWorkState = new System.Windows.Forms.ComboBox();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -47,12 +49,22 @@
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // button3
+            // 
+            this.button3.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.Visible = false;
+            // 
             // panel2
             // 
             this.panel2.Size = new System.Drawing.Size(1202, 86);
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.label3);
+            this.panelTop.Controls.Add(this.cboWorkState);
             this.panelTop.Controls.Add(this.btnSearch);
             this.panelTop.Controls.Add(this.label10);
             this.panelTop.Controls.Add(this.label5);
@@ -72,7 +84,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
@@ -82,15 +94,15 @@
             this.btnSearch.TabIndex = 98;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(17, 25);
+            this.label10.Location = new System.Drawing.Point(607, 23);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 19);
+            this.label10.Size = new System.Drawing.Size(95, 19);
             this.label10.TabIndex = 91;
             this.label10.Text = "ㆍPlanID";
             // 
@@ -98,7 +110,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(544, 29);
+            this.label5.Location = new System.Drawing.Point(196, 30);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(14, 12);
             this.label5.TabIndex = 97;
@@ -109,7 +121,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(365, 23);
+            this.label2.Location = new System.Drawing.Point(17, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 19);
             this.label2.TabIndex = 90;
@@ -118,7 +130,7 @@
             // dtpDateEnd
             // 
             this.dtpDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateEnd.Location = new System.Drawing.Point(564, 24);
+            this.dtpDateEnd.Location = new System.Drawing.Point(216, 25);
             this.dtpDateEnd.Name = "dtpDateEnd";
             this.dtpDateEnd.Size = new System.Drawing.Size(99, 21);
             this.dtpDateEnd.TabIndex = 95;
@@ -126,7 +138,7 @@
             // dtpDateStart
             // 
             this.dtpDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateStart.Location = new System.Drawing.Point(438, 24);
+            this.dtpDateStart.Location = new System.Drawing.Point(90, 25);
             this.dtpDateStart.Name = "dtpDateStart";
             this.dtpDateStart.Size = new System.Drawing.Size(99, 21);
             this.dtpDateStart.TabIndex = 96;
@@ -134,10 +146,29 @@
             // cboPlanID
             // 
             this.cboPlanID.FormattingEnabled = true;
-            this.cboPlanID.Location = new System.Drawing.Point(109, 24);
+            this.cboPlanID.Location = new System.Drawing.Point(708, 24);
             this.cboPlanID.Name = "cboPlanID";
             this.cboPlanID.Size = new System.Drawing.Size(121, 20);
             this.cboPlanID.TabIndex = 94;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(377, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 19);
+            this.label3.TabIndex = 99;
+            this.label3.Text = "ㆍ상태";
+            // 
+            // cboWorkState
+            // 
+            this.cboWorkState.FormattingEnabled = true;
+            this.cboWorkState.Location = new System.Drawing.Point(439, 25);
+            this.cboWorkState.Name = "cboWorkState";
+            this.cboWorkState.Size = new System.Drawing.Size(100, 20);
+            this.cboWorkState.TabIndex = 100;
             // 
             // WorkOrderList
             // 
@@ -169,5 +200,7 @@
         private System.Windows.Forms.DateTimePicker dtpDateEnd;
         private System.Windows.Forms.DateTimePicker dtpDateStart;
         private System.Windows.Forms.ComboBox cboPlanID;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboWorkState;
     }
 }

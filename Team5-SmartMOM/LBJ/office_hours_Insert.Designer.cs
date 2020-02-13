@@ -50,6 +50,8 @@
             this.txtRevicePeople = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.cboFacName = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panelFull.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelBottom.SuspendLayout();
@@ -62,19 +64,21 @@
             // 
             this.panelFull.Dock = System.Windows.Forms.DockStyle.None;
             this.panelFull.Location = new System.Drawing.Point(0, 2);
-            this.panelFull.Size = new System.Drawing.Size(612, 431);
+            this.panelFull.Size = new System.Drawing.Size(650, 481);
             // 
             // panelMain
             // 
-            this.panelMain.Size = new System.Drawing.Size(590, 409);
+            this.panelMain.Size = new System.Drawing.Size(628, 459);
             // 
             // panelBottom
             // 
-            this.panelBottom.Location = new System.Drawing.Point(0, 361);
-            this.panelBottom.Size = new System.Drawing.Size(590, 48);
+            this.panelBottom.Location = new System.Drawing.Point(0, 411);
+            this.panelBottom.Size = new System.Drawing.Size(628, 48);
             // 
             // panelDock
             // 
+            this.panelDock.Controls.Add(this.cboFacName);
+            this.panelDock.Controls.Add(this.label6);
             this.panelDock.Controls.Add(this.dateTimePicker2);
             this.panelDock.Controls.Add(this.dateTimePicker1);
             this.panelDock.Controls.Add(this.txtRevicePeople);
@@ -99,15 +103,15 @@
             this.panelDock.Controls.Add(this.label2);
             this.panelDock.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelDock.ForeColor = System.Drawing.Color.Orange;
-            this.panelDock.Size = new System.Drawing.Size(590, 361);
+            this.panelDock.Size = new System.Drawing.Size(628, 411);
             // 
             // panelTop
             // 
-            this.panelTop.Size = new System.Drawing.Size(590, 48);
+            this.panelTop.Size = new System.Drawing.Size(628, 48);
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(590, 38);
+            this.panel1.Size = new System.Drawing.Size(628, 38);
             // 
             // label1
             // 
@@ -121,7 +125,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Location = new System.Drawing.Point(287, 10);
-            this.button2.Size = new System.Drawing.Size(72, 30);
+            this.button2.Size = new System.Drawing.Size(110, 30);
             // 
             // button1
             // 
@@ -130,12 +134,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Location = new System.Drawing.Point(191, 10);
-            this.button1.Size = new System.Drawing.Size(72, 30);
+            this.button1.Size = new System.Drawing.Size(110, 30);
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(523, 10);
+            this.tileSave.Location = new System.Drawing.Point(561, 10);
             // 
             // label2
             // 
@@ -153,7 +157,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Orange;
-            this.label3.Location = new System.Drawing.Point(19, 46);
+            this.label3.Location = new System.Drawing.Point(20, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 19);
             this.label3.TabIndex = 0;
@@ -164,7 +168,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Orange;
-            this.label4.Location = new System.Drawing.Point(19, 83);
+            this.label4.Location = new System.Drawing.Point(20, 133);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 19);
             this.label4.TabIndex = 0;
@@ -174,8 +178,8 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(19, 120);
+            this.label5.ForeColor = System.Drawing.Color.Orange;
+            this.label5.Location = new System.Drawing.Point(20, 170);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 19);
             this.label5.TabIndex = 0;
@@ -186,7 +190,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Orange;
-            this.label11.Location = new System.Drawing.Point(322, 123);
+            this.label11.Location = new System.Drawing.Point(322, 52);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 19);
             this.label11.TabIndex = 0;
@@ -197,7 +201,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(20, 159);
+            this.label12.Location = new System.Drawing.Point(20, 217);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(57, 19);
             this.label12.TabIndex = 0;
@@ -208,7 +212,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(20, 204);
+            this.label13.Location = new System.Drawing.Point(20, 261);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(45, 19);
             this.label13.TabIndex = 0;
@@ -229,7 +233,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Orange;
-            this.label15.Location = new System.Drawing.Point(321, 49);
+            this.label15.Location = new System.Drawing.Point(322, 93);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(69, 19);
             this.label15.TabIndex = 1;
@@ -240,7 +244,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Orange;
-            this.label16.Location = new System.Drawing.Point(321, 86);
+            this.label16.Location = new System.Drawing.Point(322, 136);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(93, 19);
             this.label16.TabIndex = 1;
@@ -251,7 +255,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(322, 160);
+            this.label23.Location = new System.Drawing.Point(323, 173);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(57, 19);
             this.label23.TabIndex = 1;
@@ -259,7 +263,7 @@
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(140, 200);
+            this.txtNote.Location = new System.Drawing.Point(140, 257);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(446, 94);
@@ -275,7 +279,7 @@
             // 
             // txtStartTime
             // 
-            this.txtStartTime.Location = new System.Drawing.Point(139, 42);
+            this.txtStartTime.Location = new System.Drawing.Point(140, 90);
             this.txtStartTime.Name = "txtStartTime";
             this.txtStartTime.Size = new System.Drawing.Size(177, 26);
             this.txtStartTime.TabIndex = 3;
@@ -283,7 +287,7 @@
             // 
             // txtPeople
             // 
-            this.txtPeople.Location = new System.Drawing.Point(139, 116);
+            this.txtPeople.Location = new System.Drawing.Point(140, 166);
             this.txtPeople.Name = "txtPeople";
             this.txtPeople.Size = new System.Drawing.Size(177, 26);
             this.txtPeople.TabIndex = 7;
@@ -292,7 +296,7 @@
             // 
             this.cboUse.FormattingEnabled = true;
             this.cboUse.ItemHeight = 19;
-            this.cboUse.Location = new System.Drawing.Point(435, 118);
+            this.cboUse.Location = new System.Drawing.Point(435, 47);
             this.cboUse.Name = "cboUse";
             this.cboUse.Size = new System.Drawing.Size(150, 27);
             this.cboUse.TabIndex = 12;
@@ -307,7 +311,7 @@
             // 
             // txtCompleteTime
             // 
-            this.txtCompleteTime.Location = new System.Drawing.Point(435, 44);
+            this.txtCompleteTime.Location = new System.Drawing.Point(436, 90);
             this.txtCompleteTime.Name = "txtCompleteTime";
             this.txtCompleteTime.Size = new System.Drawing.Size(150, 26);
             this.txtCompleteTime.TabIndex = 4;
@@ -316,14 +320,14 @@
             // txtReviceDay
             // 
             this.txtReviceDay.Enabled = false;
-            this.txtReviceDay.Location = new System.Drawing.Point(140, 156);
+            this.txtReviceDay.Location = new System.Drawing.Point(140, 214);
             this.txtReviceDay.Name = "txtReviceDay";
             this.txtReviceDay.Size = new System.Drawing.Size(176, 26);
             this.txtReviceDay.TabIndex = 4;
             // 
             // txtRevicePeople
             // 
-            this.txtRevicePeople.Location = new System.Drawing.Point(435, 157);
+            this.txtRevicePeople.Location = new System.Drawing.Point(436, 170);
             this.txtRevicePeople.Name = "txtRevicePeople";
             this.txtRevicePeople.Size = new System.Drawing.Size(150, 26);
             this.txtRevicePeople.TabIndex = 9;
@@ -331,7 +335,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(139, 80);
+            this.dateTimePicker1.Location = new System.Drawing.Point(140, 130);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(178, 26);
             this.dateTimePicker1.TabIndex = 5;
@@ -339,15 +343,34 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(435, 82);
+            this.dateTimePicker2.Location = new System.Drawing.Point(436, 132);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(151, 26);
             this.dateTimePicker2.TabIndex = 6;
             // 
+            // cboFacName
+            // 
+            this.cboFacName.FormattingEnabled = true;
+            this.cboFacName.Location = new System.Drawing.Point(139, 49);
+            this.cboFacName.Name = "cboFacName";
+            this.cboFacName.Size = new System.Drawing.Size(176, 27);
+            this.cboFacName.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Orange;
+            this.label6.Location = new System.Drawing.Point(20, 49);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 19);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "ㆍ설비명";
+            // 
             // office_hours_Insert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(615, 439);
+            this.ClientSize = new System.Drawing.Size(662, 495);
             this.Name = "office_hours_Insert";
             this.Load += new System.EventHandler(this.office_hours_Insert_Load);
             this.panelFull.ResumeLayout(false);
@@ -385,5 +408,7 @@
         private System.Windows.Forms.TextBox txtReviceDay;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox cboFacName;
+        private System.Windows.Forms.Label label6;
     }
 }

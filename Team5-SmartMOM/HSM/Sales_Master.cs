@@ -58,7 +58,7 @@ namespace Team5_SmartMOM.HSM
                                                  select item).ToList();
 
 
-            CommonUtil.ComboBinding(cboState, OrderGubunList, "Common_Key", "Common_Value");
+            CommonUtil.ComboBinding(cboState, OrderGubunList, "Common_Key", "Common_Value", "전체");
             CommonUtil.ComboBinding(cboCustomer, listCompanyCode, "COM_Code", "COM_Name");
 
         }

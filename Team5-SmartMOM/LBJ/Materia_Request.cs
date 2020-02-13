@@ -40,22 +40,24 @@ namespace Team5_SmartMOM.PSM
             dtp = new DateTimePicker();
             dateTimePicker1.Value = dtp.Value = DateTime.Now.AddDays(-7);
 
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "계획시작일자", "WO_StartDate", true, 160);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "작업지시ID", "WO_ID", true, 160);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "설비명", "FAC_Name", true, 160);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "소진창고", "FAC_OutWareHouse", true, 160);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 160);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 160);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "지시수량", "PlanQty", true, 160);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "단위", "ITEM_Unit", true, 160);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "작업지시", "WO_State", true, 160);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "계획시작일자", "WO_StartDate", true, 160, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "작업지시ID", "WO_ID", true, 160, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "설비명", "FAC_Name", true, 160, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "소진창고", "FAC_OutWareHouse", true, 160, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 160, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 160, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "지시수량", "PlanQty", true, 160, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "단위", "ITEM_Unit", true, 160, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "작업지시", "WO_State", true, 160, DataGridViewContentAlignment.MiddleCenter);
 
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품목", "ITEM_Code", true, 200);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품명", "ITEM_Name", true, 200);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "규격", "ITEM_Size", true, 160);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "요청창고", "FAC_OutWareHouse", true, 160);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "요청일", "WO_StartDate", true, 160);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "계획요청수량", "planQty", true, 160);
+            dataGridView2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품목", "ITEM_Code", true, 200, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "품명", "ITEM_Name", true, 200, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "규격", "ITEM_Size", true, 160, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "요청창고", "FAC_OutWareHouse", true, 160, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "요청일", "WO_StartDate", true, 160, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "계획요청수량", "planQty", true, 160, DataGridViewContentAlignment.MiddleRight);
 
             LBJ_Service service = new LBJ_Service();
             dataGridView1.DataSource = mvo = service.MateriaRequest();

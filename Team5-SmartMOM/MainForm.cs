@@ -404,9 +404,9 @@ namespace Team5_SmartMOM
 
             else
             {
-                for (int i = 0; i < toolStrip1.Items.Count; i++)
+                for (int i = 0; i < ts.Items.Count; i++)
                 {
-                    if (tabControl1.SelectedTab.Text == toolStrip1.Items[i].Text)
+                    if (tabControl1.SelectedTab.Text == ts.Items[i].Text)
                     {
                         MessageBox.Show("즐겨찾기 중 중복된 태그가 있습니다. ");
                         truefalse = false;
@@ -422,14 +422,22 @@ namespace Team5_SmartMOM
                     button.Text = tabControl1.SelectedTab.Text;
                     button.Click += new System.EventHandler(this.toolStripButton1_Click);
                     button.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText;
-                    button.Image = imageList1.Images[rnd.Next(0, 47)];
-                    
-                    toolStrip1.Items.Add(button);
-                    toolStrip1.Items.Add(separator);
+                    button.Image = imageList1.Images[rnd.Next(0, 52)];
+
+                    ts.Items.Add(button);
+                    ts.Items.Add(separator);
                 }
             }
         }
 
-   
+        private void tsBtnCal_Click(object sender, EventArgs e) // 계산기 실행
+        {
+            System.Diagnostics.Process.Start("calc");
+        }
+
+        private void tsBtnNote_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("notepad");
+        }
     }
 }

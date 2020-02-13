@@ -34,6 +34,7 @@ namespace Team5_SmartMOM.PSM
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             chk = new DataGridViewCheckBoxColumn();
             chk.HeaderText = "";
@@ -43,24 +44,24 @@ namespace Team5_SmartMOM.PSM
 
             Point headerLocation = dataGridView1.GetCellDisplayRectangle(0, -1, true).Location;
             headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 6);
-            headerCheckBox.BackColor = Color.White;
+            headerCheckBox.BackColor = Color.FromArgb(55, 113, 138);
             headerCheckBox.Size = new Size(18, 18);
             headerCheckBox.Click += new EventHandler(HeaderCheckBox_Click);
             dataGridView1.Controls.Add(headerCheckBox);
 
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주번호", "VO_ID", true, 120);            
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "No", "VO_ID", true, 70, DataGridViewContentAlignment.MiddleRight);            
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체이름", "COM_Name", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체코드", "COM_Code", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체타입", "COM_Type", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "업체타입", "COM_Type", true, 150, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Name", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주상태", "MATERIAL_ORDER_STATE", true, 120);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주상태", "MATERIAL_ORDER_STATE", true, 120, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "규격", "ITEM_Size", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "단위", "ITEM_Unit", true, 120);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "VO_EndDate", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주량", "VO_Quantity", true, 100);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주일", "VO_StartDate", true, 150);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "입고일", "VO_InDate", true, 150);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "단위", "ITEM_Unit", true, 80, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "VO_EndDate", true, 150, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주량", "VO_Quantity", true, 100, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "발주일", "VO_StartDate", true, 150, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "입고일", "VO_InDate", true, 150, DataGridViewContentAlignment.MiddleCenter);
 
             DataLoad();            
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);            
@@ -76,21 +77,21 @@ namespace Team5_SmartMOM.PSM
             ps.Company = cbocompany.Text.Trim();
             ps.State = cbostate.Text.Trim();
             ps.Item = txtProduct.Text;
-            if(txtVoID.Text.Length>0)
-            {
-                ps.VO_ID = Convert.ToInt32(txtVoID.Text);
-            }
+            ps.Plan_ID = cboplanid.Text.Trim();
 
             PSM_Service service = new PSM_Service();
             list = service.GetAllPurChasingState(ps);
             dataGridView1.DataSource = list;
+                        
 
             List<CompanyCodeVO> company = service.GetAllCompanyCode();
             List<MATERIAL_ORDER_STATEVO> ORDER_STATEVO = service.GetAllOrderState();
+            List<PlanIDVO> planid = service.PlanID();
 
             CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "");
             CommonUtil.ComboBinding(cbostate, ORDER_STATEVO, "MATERIAL_ORDER_STATE", "MATERIAL_ORDER_STATE", "");
-            
+            CommonUtil.ComboBinding(cboplanid, planid, "Plan_ID", "Plan_ID");
+            btnSearch_Click(null, new EventArgs());
             CheckBoxTrue();   
 
         }
@@ -124,10 +125,8 @@ namespace Team5_SmartMOM.PSM
             ps.Company = cbocompany.Text.Trim();
             ps.State = cbostate.Text.Trim();
             ps.Item = txtProduct.Text;
-            if (txtVoID.Text.Length > 0)
-            {
-                ps.VO_ID = Convert.ToInt32(txtVoID.Text);
-            }
+            ps.Plan_ID = cboplanid.Text.Trim();
+            
             PSM_Service service = new PSM_Service();
             list = service.GetAllPurChasingState(ps);
             dataGridView1.DataSource = list;

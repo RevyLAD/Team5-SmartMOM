@@ -32,7 +32,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnInquiry = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -51,6 +52,7 @@
             // 
             // button2
             // 
+            this.button2.Text = "수정";
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel2
@@ -59,12 +61,14 @@
             // 
             // panelTop
             // 
-            this.panelTop.Controls.Add(this.btnInquiry);
+            this.panelTop.Controls.Add(this.button4);
+            this.panelTop.Controls.Add(this.btnSearch);
             this.panelTop.Controls.Add(this.textBox1);
             this.panelTop.Controls.Add(this.textBox2);
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label4);
             this.panelTop.Size = new System.Drawing.Size(1202, 56);
+            this.panelTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTop_Paint);
             // 
             // splitContainer2
             // 
@@ -114,19 +118,33 @@
             this.textBox1.TabIndex = 12;
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
-            // btnInquiry
+            // btnSearch
             // 
-            this.btnInquiry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInquiry.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnInquiry.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnInquiry.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInquiry.Location = new System.Drawing.Point(1103, 11);
-            this.btnInquiry.Name = "btnInquiry";
-            this.btnInquiry.Size = new System.Drawing.Size(92, 32);
-            this.btnInquiry.TabIndex = 16;
-            this.btnInquiry.Text = "조회";
-            this.btnInquiry.UseVisualStyleBackColor = false;
-            this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(1114, 11);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(81, 30);
+            this.btnSearch.TabIndex = 24;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // button4
+            // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.button4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(1027, 11);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(81, 30);
+            this.button4.TabIndex = 25;
+            this.button4.Text = "전체 보기";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // FactoryManager
             // 
@@ -155,6 +173,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnInquiry;
+        protected System.Windows.Forms.Button btnSearch;
+        protected System.Windows.Forms.Button button4;
     }
 }

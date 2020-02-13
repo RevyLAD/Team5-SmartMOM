@@ -59,5 +59,10 @@ namespace Team5_SmartMOM.Service
             MateriaDAC dac = new MateriaDAC();
             return dac.Materiaen();
         }
+        public List<MateriaExportVO> MateriaExport()
+        {
+            MateriaDAC dac = new MateriaDAC();
+            return dac.MateriaExportVO();
+        }
     }
 }

@@ -29,15 +29,18 @@ namespace Team5_SmartMOM.LBJ
         }
         public void DataLoad()
         {
+            HSC_Service hscservice = new HSC_Service();
+            List<FacilitieDetailVO> facvo = hscservice.GetAllFacilitiesDetail();
             List<CommonCodeVO> list = new List<CommonCodeVO>();
             CommonCodeService service = new CommonCodeService();
             list = service.GetAllCommonCode();
             //공통코드링큐
             List<CommonCodeVO> OrderUseList = (from item in list
-                                                 where item.Common_Type == "USE_FLAG"
-                                                 select item).ToList();
+                                               where item.Common_Type == "USE_FLAG"
+                                               select item).ToList();
 
-            CommonUtil.ComboBinding(cboUse, OrderUseList, "Common_Key", "Common_Value");
+            CommonUtil.ComboBinding(cboUse, OrderUseList, "Common_Key", "Common_Value");            
+            CommonUtil.ComboBinding(cboFacName, facvo, "FAC_No", "FAC_Name");
         }
         public void DataLoad2()
         {
@@ -90,31 +93,33 @@ namespace Team5_SmartMOM.LBJ
             CommonUtil.ComboBinding(cboCode, FacList, "FAC_No", "FAC_Code");
         }
         private void button1_Click(object sender, EventArgs e)
-        {
-            if(txtStartTime.Text.Length < 1)
+        {          
+            if (cboShift.Text.Trim() != "" && cboCode.Text.Trim() != "" && txtStartTime.Text.Trim() != "" &&
+                txtCompleteTime.Text.Trim() != "" && txtPeople.Text.Trim() != "" && cboUse.Text.Trim() != "")
             {
-                MessageBox.Show("시작시간을 입력해주세요.");
-                this.txtStartTime.Focus(); 
-            }
-            ShiftVO svo = new ShiftVO();
-            LBJ_Service service = new LBJ_Service();
+                ShiftVO svo = new ShiftVO();
+                LBJ_Service service = new LBJ_Service();
 
-            svo.SHIFT = cboShift.Text.Trim();
-            svo.FAC_Code = cboCode.Text.Trim();
-            svo.SHIFT_StartTime = Convert.ToInt32(txtStartTime.Text.Trim());
-            svo.SHIFT_EndTime = Convert.ToInt32(txtCompleteTime.Text.Trim());
-            svo.SHIFT_StartDate = Convert.ToDateTime(dateTimePicker1.Value.ToShortDateString());
-            svo.SHIFT_EndDate = Convert.ToDateTime(dateTimePicker2.Value.ToShortDateString());
-            svo.SHIFT_InputPeople = int.Parse(txtPeople.Text);
-            svo.SHIFT_UserOrNot = cboUse.Text.Trim();
-            svo.SHIFT_Modifier = txtReviceDay.Text.Trim();
-            svo.SHIFT_ModifierDate = txtRevicePeople.Text.Trim();
-            svo.SHIFT_Others = txtNote.Text.Trim();
+                svo.SHIFT = cboShift.Text.Trim();
+                svo.FAC_Name = cboFacName.Text.Trim();
+                svo.FAC_Code = cboCode.Text.Trim();
+                svo.SHIFT_StartTime = Convert.ToInt32(txtStartTime.Text.Trim());
+                svo.SHIFT_EndTime = Convert.ToInt32(txtCompleteTime.Text.Trim());
+                svo.SHIFT_StartDate = Convert.ToDateTime(dateTimePicker1.Value.ToShortDateString());
+                svo.SHIFT_EndDate = Convert.ToDateTime(dateTimePicker2.Value.ToShortDateString());
+                svo.SHIFT_InputPeople = int.Parse(txtPeople.Text);
+                svo.SHIFT_UserOrNot = cboUse.Text.Trim();
+                svo.SHIFT_Modifier = txtReviceDay.Text.Trim();
+                svo.SHIFT_ModifierDate = txtRevicePeople.Text.Trim();
+                svo.SHIFT_Others = txtNote.Text.Trim();
 
                 service.ShiftInsert(svo);
-                MessageBox.Show("등록 완료", "완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+                MessageBox.Show("등록 완료", "완료", MessageBoxButtons.OK);
+            }
+            else
+                MessageBox.Show("필수 항목을 입력해주세요.", "등록실패", MessageBoxButtons.OK);
 
+        }
         private void txtStartTime_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
@@ -130,7 +135,5 @@ namespace Team5_SmartMOM.LBJ
                 e.Handled = true;
             }
         }
-
-      
     }
 }

@@ -51,9 +51,15 @@ namespace Team5_SmartMOM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수정일", "FACG_ModifyDate", true, 75);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "설명", "FACG_Information", true, 63);
 
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             DataLoad();
         }
 
+        DataGridViewCellEventArgs temp;
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            temp = e;
+        }
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if ((textBox1.Text.Trim() == "") && (textBox2.Text.Trim() == ""))
@@ -84,6 +90,28 @@ namespace Team5_SmartMOM
             if (e.KeyCode == Keys.Enter)
             {
                 btnSearch_Click(this, new EventArgs());
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DataLoad();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(temp != null)
+            {
+                if(MessageBox.Show("정말로 삭제하시겠습니까?","삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    HSC_Service service = new HSC_Service();
+                    service.DeleteFacT(Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[0].Value));
+                    DataLoad();
+                }
+            }
+            else
+            {
+                MessageBox.Show("삭제할 설비군을 선택해주세요");
             }
         }
     }

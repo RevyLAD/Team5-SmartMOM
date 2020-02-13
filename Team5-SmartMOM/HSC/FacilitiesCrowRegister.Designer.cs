@@ -33,15 +33,15 @@
             this.txtFacName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtModi = new System.Windows.Forms.TextBox();
-            this.txtModiTime = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtExplain = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtNo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtCode = new System.Windows.Forms.TextBox();
             this.panelFull.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelBottom.SuspendLayout();
@@ -53,6 +53,7 @@
             // panelFull
             // 
             this.panelFull.Size = new System.Drawing.Size(424, 504);
+            this.panelFull.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFull_Paint);
             // 
             // panelMain
             // 
@@ -65,15 +66,15 @@
             // 
             // panelDock
             // 
+            this.panelDock.Controls.Add(this.dateTimePicker1);
+            this.panelDock.Controls.Add(this.txtCode);
             this.panelDock.Controls.Add(this.txtNo);
             this.panelDock.Controls.Add(this.label5);
             this.panelDock.Controls.Add(this.txtExplain);
             this.panelDock.Controls.Add(this.label16);
-            this.panelDock.Controls.Add(this.txtModiTime);
             this.panelDock.Controls.Add(this.label4);
             this.panelDock.Controls.Add(this.txtModi);
             this.panelDock.Controls.Add(this.label2);
-            this.panelDock.Controls.Add(this.txtCode);
             this.panelDock.Controls.Add(this.cboUMU);
             this.panelDock.Controls.Add(this.label7);
             this.panelDock.Controls.Add(this.txtFacName);
@@ -103,14 +104,13 @@
             // 
             // button1
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Location = new System.Drawing.Point(120, 9);
             this.button1.Size = new System.Drawing.Size(71, 30);
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(-1080, 9);
+            this.tileSave.Location = new System.Drawing.Point(-1916, 9);
             this.tileSave.Click += new System.EventHandler(this.tileSave_Click);
             // 
             // cboUMU
@@ -162,14 +162,6 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "ㆍ사용유무";
             // 
-            // txtCode
-            // 
-            this.txtCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtCode.Location = new System.Drawing.Point(155, 43);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(225, 22);
-            this.txtCode.TabIndex = 18;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -187,14 +179,6 @@
             this.txtModi.Name = "txtModi";
             this.txtModi.Size = new System.Drawing.Size(225, 22);
             this.txtModi.TabIndex = 20;
-            // 
-            // txtModiTime
-            // 
-            this.txtModiTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtModiTime.Location = new System.Drawing.Point(155, 175);
-            this.txtModiTime.Name = "txtModiTime";
-            this.txtModiTime.Size = new System.Drawing.Size(225, 22);
-            this.txtModiTime.TabIndex = 22;
             // 
             // label4
             // 
@@ -244,6 +228,21 @@
             this.label5.TabIndex = 32;
             this.label5.Text = "ㆍ설비군 번호";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(155, 173);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(161, 21);
+            this.dateTimePicker1.TabIndex = 34;
+            // 
+            // txtCode
+            // 
+            this.txtCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtCode.Location = new System.Drawing.Point(155, 43);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(225, 22);
+            this.txtCode.TabIndex = 33;
+            // 
             // FacilitiesCrowRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -263,12 +262,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtModiTime;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtModi;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.ComboBox cboUMU;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtFacName;
@@ -278,5 +274,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtNo;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtCode;
     }
 }

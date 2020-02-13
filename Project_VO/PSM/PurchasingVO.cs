@@ -40,7 +40,7 @@ namespace Project_VO
         public string ITEM_Unit { get; set; }
         public string COM_Code { get; set; }
         public string COM_Type { get; set; }
-        public string COM_Name { get; set; }
+        public string COM_Name { get; set; }        
     }
     
 
@@ -203,6 +203,7 @@ namespace Project_VO
         public string Item { get; set; }
         public string State { get; set; }
         public int VO_ID { get; set; }
+        public string Plan_ID { get; set; }
     }
 
     public class SupplierSearchVO
@@ -210,8 +211,8 @@ namespace Project_VO
         public string startDate { get; set; }
         public string endDate { get; set; }
         public string Company { get; set; }
-        public string Item { get; set; }
-        public int VO_ID { get; set; }
+        public string Item { get; set; }        
+        public string Plan_ID { get; set; }
     }
 
     public class ImportCheckSearchVO
@@ -221,6 +222,7 @@ namespace Project_VO
         public string Company { get; set; }
         public string Item { get; set; }
         public string Result { get; set; }
+        public string Plan_ID { get; set; }
     }
 
     public class Material_LedgerSearchVO
@@ -228,7 +230,14 @@ namespace Project_VO
         public string startDate { get; set; }
         public string endDate { get; set; }
         public string Company { get; set; }
-        public string Item { get; set; }        
+        public string Item { get; set; }      
+        public string Plan_ID { get; set; }
+    }
+
+    public class MaterialInDateVO
+    {
+        public int VO_ID { get; set; }
+        public DateTime VO_InDate { get; set; }
     }
 
 
