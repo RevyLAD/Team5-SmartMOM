@@ -33,11 +33,21 @@ namespace Team5_SmartMOM.Service
             CommonCodeDAC dac = new CommonCodeDAC();
             return dac.GetAllCompanyCode();
         }
+        public List<CompanyCodeVO> GetAllCompanyCode2()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.GetAllCompanyCode2();
+        }
 
         public List<PlanIDVO> PlanID()
         {
             CommonCodeDAC dac = new CommonCodeDAC();
             return dac.PlanID();
+        }
+        public List<PlanIDVO> PlanID2()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.PlanID2();
         }
 
         public List<FacVO> GetFactoryList()
@@ -175,6 +185,29 @@ namespace Team5_SmartMOM.Service
         {
             PurchasingDAC dac = new PurchasingDAC();
             return dac.Stock_State(ms);
+        }
+
+        public List<ShipmentOrderVO> ShipmentOrder(ShipmentOrderSearchVO so)
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.ShipmentOrder(so);
+        }
+
+        public bool Shipment(List<ShipmentVO> lists)
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.Shipment(lists);
+        }
+        public List<DeadLineVO> DeadLine()
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.DeadLine();
+        }
+
+        public bool DeaLinePut(List<DeadLinePutVO> lists)
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.DeaLinePut(lists);
         }
 
     }
