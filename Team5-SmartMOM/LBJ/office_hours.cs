@@ -126,28 +126,29 @@ namespace Team5_SmartMOM.LBJ
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            List<ShiftVO> list = new List<ShiftVO>();
+            ShiftVO svo = new ShiftVO();
+            svo.SHIFT = cboShift.Text.Trim();
+            svo.FAC_Code = cbosystem.Text.Trim();
 
-            if (cboShift.Text.Trim() == "" && cbosystem.Text.Trim() == "")
+            if (cboShift.Text.Trim() == "전체")
             {
-                
+                dataGridView1.DataSource = list;
             }
-            else 
+            else
             {
                 dataGridView1.DataSource = ShiftSearch();
-            }         
+            }
         }
         private List<ShiftVO> ShiftSearch()
         {
-            list = new List<ShiftVO>();
-
+            List<ShiftVO> svo = new List<ShiftVO>();
+            
             foreach (var item in list)
             {
-                if (item.SHIFT.Trim().Contains(cboShift.Text.Trim()) &&
-                        item.FAC_Code.Trim().Contains(cbosystem.Text.Trim()))
-                    list.Add(item);
+                if (item.SHIFT.Trim().Contains(cboShift.Text.Trim()))
+                    svo.Add(item);
             }
-            return list;
+            return svo;
         }
 
         private void button2_Click(object sender, EventArgs e)
