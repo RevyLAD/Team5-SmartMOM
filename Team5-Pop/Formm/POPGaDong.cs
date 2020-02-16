@@ -108,10 +108,8 @@ namespace Team5_Pop
                     DataGethering(this, args);
                 }
 
-                //if (stream != null)
-                //    stream.Write(buff, 0, buff.Length);
+                
 
-                Random rnd = new Random((int)DateTime.UtcNow.Ticks);
             }
             catch
             {
