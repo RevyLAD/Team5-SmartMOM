@@ -29,16 +29,13 @@
         private void InitializeComponent()
         {
             this.btnSearch = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -60,24 +57,24 @@
             this.button2.Text = "출고";
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button1
+            // 
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1202, 102);
+            this.panel2.Size = new System.Drawing.Size(1202, 68);
             // 
             // panelTop
             // 
-            this.panelTop.Controls.Add(this.comboBox6);
             this.panelTop.Controls.Add(this.comboBox3);
             this.panelTop.Controls.Add(this.btnSearch);
-            this.panelTop.Controls.Add(this.textBox2);
             this.panelTop.Controls.Add(this.dateTimePicker2);
             this.panelTop.Controls.Add(this.dateTimePicker1);
             this.panelTop.Controls.Add(this.label10);
-            this.panelTop.Controls.Add(this.label7);
-            this.panelTop.Controls.Add(this.label5);
             this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.label9);
-            this.panelTop.Size = new System.Drawing.Size(1202, 82);
+            this.panelTop.Size = new System.Drawing.Size(1202, 48);
             // 
             // splitContainer2
             // 
@@ -93,20 +90,13 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1103, 30);
+            this.btnSearch.Location = new System.Drawing.Point(1103, 6);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(81, 30);
             this.btnSearch.TabIndex = 99;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(121, 41);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(170, 21);
-            this.textBox2.TabIndex = 91;
             // 
             // dateTimePicker2
             // 
@@ -137,26 +127,6 @@
             this.label10.TabIndex = 86;
             this.label10.Text = " - ";
             // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(11, 41);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 19);
-            this.label7.TabIndex = 84;
-            this.label7.Text = "* 작업지시번호";
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(357, 45);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 19);
-            this.label5.TabIndex = 83;
-            this.label5.Text = "* 재고량";
-            // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
@@ -185,14 +155,6 @@
             this.comboBox3.Size = new System.Drawing.Size(171, 20);
             this.comboBox3.TabIndex = 100;
             // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(453, 44);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(191, 20);
-            this.comboBox6.TabIndex = 101;
-            // 
             // Material_Ledger_Export
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -217,15 +179,12 @@
         #endregion
 
         protected System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

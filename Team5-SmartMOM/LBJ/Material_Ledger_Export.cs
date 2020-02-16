@@ -48,7 +48,7 @@ namespace Team5_SmartMOM.PSM
             dataGridView1.Controls.Add(headerCheckBox);
 
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "작업지시서", "WO_ID", true, 120,DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "작업지시서", "WO_ID", true, 120, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "요청일", "WO_StartDate", true, 120, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 120, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "FAC_Name", true, 120, DataGridViewContentAlignment.MiddleCenter);
@@ -100,10 +100,10 @@ namespace Team5_SmartMOM.PSM
             List<FacilitieDetailVO> Facvo = hscservice.GetAllFacilitiesDetail();
             List<CommonCodeVO> Comlist = new List<CommonCodeVO>();
 
-            List<MateriaExportVO> MateriaEVO= (from item in Materialist
-                                where 
-                               item.WO_OutState == "출고대기"
-                               select item).ToList();
+            List<MateriaExportVO> MateriaEVO = (from item in Materialist
+                                                where
+                                               item.WO_OutState == "출고대기"
+                                                select item).ToList();
 
 
             dataGridView1.DataSource = list = MateriaEVO;
@@ -111,16 +111,16 @@ namespace Team5_SmartMOM.PSM
             CommonCodeService service1 = new CommonCodeService();
             Comlist = service1.GetAllCommonCode();
 
-            List<CommonCodeVO> CommonState= (from item in Comlist
-                                             where item.Common_Type == "OUT_STATE"
-                                                 select item).ToList();
+            List<CommonCodeVO> CommonState = (from item in Comlist
+                                              where item.Common_Type == "OUT_STATE"
+                                              select item).ToList();
 
             CommonUtil.ComboBinding(comboBox3, CommonState, "Common_Key", "Common_Value");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
             LBJ_Service service = new LBJ_Service();
 
             bool bFlag = false;
@@ -149,7 +149,7 @@ namespace Team5_SmartMOM.PSM
                 MessageBox.Show("출고완료된 제품이 있습니다.");
                 return;
             }
-            
+
 
             List<MateriaExportOkVO> mevo = new List<MateriaExportOkVO>();
             foreach (DataGridViewRow row in dataGridView1.Rows)
@@ -171,7 +171,7 @@ namespace Team5_SmartMOM.PSM
                 }
             }
             LBJ_Service lbjservice = new LBJ_Service();
-            
+
 
             if (MessageBox.Show("출고하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -186,28 +186,93 @@ namespace Team5_SmartMOM.PSM
                     DataLoad();
                 }
             }
-            
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var CommonState = (from item in Materialist
-                               where item.WO_StartDate> dateTimePicker1.Value &&
-                                              item.WO_StartDate <= dateTimePicker2.Value &&
-                                              item.WO_OutState ==comboBox3.Text
-                                                select item).ToList();
-            dataGridView1.DataSource = CommonState;
+            var MaExport = (from item in Materialist
+                            where item.WO_StartDate > dateTimePicker1.Value &&
+                                           item.WO_StartDate <= dateTimePicker2.Value &&
+                                           item.WO_OutState == comboBox3.Text
+                            select item).ToList();
+            dataGridView1.DataSource = MaExport;
 
 
         }
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-            if (dateTimePicker1.Value > dateTimePicker2.Value)
+            if (dateTimePicker1.Value >= dateTimePicker2.Value)
             {
                 MessageBox.Show("시작일보다 빠를 수 없습니다.");
-                dateTimePicker2.Value = dtp.Value.AddMonths(6) ;
+                dateTimePicker2.Value = dateTimePicker1.Value.AddDays(1);
                 return;
             }
-        }      
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application xlApp;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+
+            int i, j;
+            saveFileDialog1.Filter = "Excel Files (*.xls)|*.xls";
+            saveFileDialog1.InitialDirectory = "C:";
+            saveFileDialog1.Title = "Save";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlWorkBook = xlApp.Workbooks.Add();
+                xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                xlWorkSheet.Cells[1, 2] = "작업지시서";
+                xlWorkSheet.Cells[1, 3] = "요청일";
+                xlWorkSheet.Cells[1, 4] = "품목";
+                xlWorkSheet.Cells[1, 5] = "품명";
+                xlWorkSheet.Cells[1, 6] = "규격";
+                xlWorkSheet.Cells[1, 7] = "품목유형";
+                xlWorkSheet.Cells[1, 8] = "요청창고";
+                xlWorkSheet.Cells[1, 9] = "불출창고";
+                xlWorkSheet.Cells[1, 10] = "현재고";
+                xlWorkSheet.Cells[1, 11] = "계획수량";
+                xlWorkSheet.Cells[1, 12] = "요청수량";
+                xlWorkSheet.Cells[1, 13] = "출고상태";
+
+                for (i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    for (j = 0; j < dataGridView1.ColumnCount - 1; j++)
+                    {
+                        if (dataGridView1[j, i].Value != null)
+                            xlWorkSheet.Cells[i + 2, j + 1] = dataGridView1[j, i].Value.ToString();
+                    }
+                }
+
+                xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                xlWorkBook.Close(true);
+                xlApp.Quit();
+
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlApp);
+            }
+        }
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
     }
 }
