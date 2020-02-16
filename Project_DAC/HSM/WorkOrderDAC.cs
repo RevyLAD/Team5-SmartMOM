@@ -19,7 +19,7 @@ namespace Project_DAC.HSM
                 if (wo.Plan_ID == "전체")
                 {
                     sql = @"select WO_ID,w.Item_code,Item_Name, Fac_Name, CONVERT(nvarchar(10),WO_Startdate,23) WO_Startdate , CONVERT(nvarchar(10),WO_EndDate,23) WO_EndDate,
-                                    planQty, directQty, Wo_state, plan_ID, WO_Priority, WO_Time
+                                    planQty, directQty, Wo_state, plan_ID, WO_Priority, WO_Time, WO_GoodQty, WO_BadQty, WO_WorkEndTime
                                     from WorkOrder w , Item i
                                     where WO_State = @WO_State
                                     and WO_StartDate >= @WO_Startdate
@@ -30,7 +30,7 @@ namespace Project_DAC.HSM
                 else
                 {
                     sql = @"select WO_ID,w.Item_code,Item_Name, Fac_Name, CONVERT(nvarchar(10),WO_Startdate,23) WO_Startdate , CONVERT(nvarchar(10),WO_EndDate,23) WO_EndDate,
-                                    planQty, directQty, Wo_state, plan_ID, WO_Priority, WO_Time
+                                    planQty, directQty, Wo_state, plan_ID, WO_Priority, WO_Time, WO_GoodQty, WO_BadQty, WO_WorkEndTime
                                     from WorkOrder w , Item i
                                     where WO_State = @WO_State
                                     and Plan_ID = @Plan_ID
