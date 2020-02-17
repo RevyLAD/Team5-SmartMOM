@@ -40,6 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblPlanID = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtPartNo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tileUpdate = new MetroFramework.Controls.MetroTile();
-            this.lblPlanID = new System.Windows.Forms.Label();
             this.Mainpanel.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -107,6 +107,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.lblPlanID);
             this.panel5.Controls.Add(this.btnOrder);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.dataGridView2);
@@ -180,7 +181,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.lblPlanID);
             this.panel3.Controls.Add(this.btnSearch);
             this.panel3.Controls.Add(this.txtPartNo);
             this.panel3.Controls.Add(this.label3);
@@ -190,6 +190,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1027, 52);
             this.panel3.TabIndex = 1;
+            // 
+            // lblPlanID
+            // 
+            this.lblPlanID.AutoSize = true;
+            this.lblPlanID.Location = new System.Drawing.Point(85, 12);
+            this.lblPlanID.Name = "lblPlanID";
+            this.lblPlanID.Size = new System.Drawing.Size(38, 12);
+            this.lblPlanID.TabIndex = 28;
+            this.lblPlanID.Text = "label6";
+            this.lblPlanID.Visible = false;
             // 
             // btnSearch
             // 
@@ -274,16 +284,6 @@
             this.tileUpdate.TileImage = global::Team5_SmartMOM.Properties.Resources.edit1;
             this.tileUpdate.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.tileUpdate.UseTileImage = true;
-            // 
-            // lblPlanID
-            // 
-            this.lblPlanID.AutoSize = true;
-            this.lblPlanID.Location = new System.Drawing.Point(294, 23);
-            this.lblPlanID.Name = "lblPlanID";
-            this.lblPlanID.Size = new System.Drawing.Size(38, 12);
-            this.lblPlanID.TabIndex = 28;
-            this.lblPlanID.Text = "label6";
-            this.lblPlanID.Visible = false;
             // 
             // Purchasing_Order
             // 

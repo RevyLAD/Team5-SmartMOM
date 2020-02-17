@@ -29,15 +29,14 @@
         private void InitializeComponent()
         {
             this.btnSearch = new System.Windows.Forms.Button();
+            this.cboCategory = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cboInOut = new System.Windows.Forms.ComboBox();
-            this.txtProduct = new System.Windows.Forms.TextBox();
-            this.btnAllSearch = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -60,22 +59,21 @@
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1202, 90);
+            this.panel2.Size = new System.Drawing.Size(1202, 68);
             // 
             // panelTop
             // 
-            this.panelTop.Controls.Add(this.txtProduct);
             this.panelTop.Controls.Add(this.cboInOut);
-            this.panelTop.Controls.Add(this.btnAllSearch);
             this.panelTop.Controls.Add(this.btnSearch);
+            this.panelTop.Controls.Add(this.cboCategory);
+            this.panelTop.Controls.Add(this.label2);
             this.panelTop.Controls.Add(this.dateTimePicker2);
             this.panelTop.Controls.Add(this.dateTimePicker1);
             this.panelTop.Controls.Add(this.label10);
-            this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label7);
             this.panelTop.Controls.Add(this.label9);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Size = new System.Drawing.Size(1202, 67);
+            this.panelTop.Size = new System.Drawing.Size(1202, 51);
             // 
             // splitContainer2
             // 
@@ -91,13 +89,31 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1012, 12);
+            this.btnSearch.Location = new System.Drawing.Point(1114, 8);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(81, 30);
             this.btnSearch.TabIndex = 120;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // cboCategory
+            // 
+            this.cboCategory.FormattingEnabled = true;
+            this.cboCategory.Location = new System.Drawing.Point(798, 14);
+            this.cboCategory.Name = "cboCategory";
+            this.cboCategory.Size = new System.Drawing.Size(161, 20);
+            this.cboCategory.TabIndex = 117;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(693, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 19);
+            this.label2.TabIndex = 116;
+            this.label2.Text = "* 카테고리";
             // 
             // dateTimePicker2
             // 
@@ -127,21 +143,11 @@
             this.label10.TabIndex = 111;
             this.label10.Text = " - ";
             // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(727, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 19);
-            this.label3.TabIndex = 110;
-            this.label3.Text = "* 품목";
-            // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(369, 12);
+            this.label7.Location = new System.Drawing.Point(347, 14);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 19);
             this.label7.TabIndex = 109;
@@ -161,31 +167,10 @@
             // cboInOut
             // 
             this.cboInOut.FormattingEnabled = true;
-            this.cboInOut.Location = new System.Drawing.Point(486, 12);
+            this.cboInOut.Location = new System.Drawing.Point(464, 14);
             this.cboInOut.Name = "cboInOut";
             this.cboInOut.Size = new System.Drawing.Size(191, 20);
             this.cboInOut.TabIndex = 126;
-            // 
-            // txtProduct
-            // 
-            this.txtProduct.Location = new System.Drawing.Point(800, 13);
-            this.txtProduct.Name = "txtProduct";
-            this.txtProduct.Size = new System.Drawing.Size(175, 21);
-            this.txtProduct.TabIndex = 127;
-            // 
-            // btnAllSearch
-            // 
-            this.btnAllSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAllSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
-            this.btnAllSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAllSearch.ForeColor = System.Drawing.Color.White;
-            this.btnAllSearch.Location = new System.Drawing.Point(1114, 12);
-            this.btnAllSearch.Name = "btnAllSearch";
-            this.btnAllSearch.Size = new System.Drawing.Size(81, 30);
-            this.btnAllSearch.TabIndex = 120;
-            this.btnAllSearch.Text = "전체 목록";
-            this.btnAllSearch.UseVisualStyleBackColor = false;
-            this.btnAllSearch.Click += new System.EventHandler(this.btnAllSearch_Click);
             // 
             // Stock_RF_State
             // 
@@ -210,14 +195,13 @@
 
         #endregion
         protected System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ComboBox cboCategory;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cboInOut;
-        private System.Windows.Forms.TextBox txtProduct;
-        protected System.Windows.Forms.Button btnAllSearch;
     }
 }

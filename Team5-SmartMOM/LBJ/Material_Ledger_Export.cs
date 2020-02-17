@@ -9,7 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Team5_SmartMOM.BaseForm;
-using Team5_SmartMOM.Service;
+using Team5_SmartMOM.Service; 
+
 
 namespace Team5_SmartMOM.PSM
 {
@@ -29,9 +30,11 @@ namespace Team5_SmartMOM.PSM
         private void Material_Ledger_Export_Load(object sender, EventArgs e)
         {
             DateTimePicker dtp = new DateTimePicker();
-            dateTimePicker2.Value = dtp.Value = DateTime.Now.AddMonths(3);
+            dateTimePicker1.Value = dtp.Value;
+            dateTimePicker2.Value = dateTimePicker1.Value.AddDays(7);
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Columns.Clear();
 
             chk = new DataGridViewCheckBoxColumn();
@@ -63,8 +66,6 @@ namespace Team5_SmartMOM.PSM
 
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
 
-            //LBJ_Service service = new LBJ_Service();
-            //dataGridView1.DataSource = service.MateriaExport();
             DataLoad();
         }
         private void HeaderCheckBox_Click(object sender, EventArgs e)
@@ -173,7 +174,7 @@ namespace Team5_SmartMOM.PSM
             LBJ_Service lbjservice = new LBJ_Service();
 
 
-            if (MessageBox.Show("출고하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("출고하시겠습니까?", "삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (lbjservice.MateriaTran(mevo))
                 {
@@ -191,21 +192,21 @@ namespace Team5_SmartMOM.PSM
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var MaExport = (from item in Materialist
-                            where item.WO_StartDate > dateTimePicker1.Value &&
-                                           item.WO_StartDate <= dateTimePicker2.Value &&
-                                           item.WO_OutState == comboBox3.Text
-                            select item).ToList();
-            dataGridView1.DataSource = MaExport;
+            List<MateriaExportVO> Exportlist = (from item in Materialist
+                               where item.WO_StartDate > dateTimePicker1.Value &&
+                                              item.WO_StartDate <= dateTimePicker2.Value &&
+                                              item.WO_OutState == comboBox3.Text
+                               select item).ToList();
+            dataGridView1.DataSource = Exportlist;
 
 
         }
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-            if (dateTimePicker1.Value >= dateTimePicker2.Value)
+            if (dateTimePicker1.Value > dateTimePicker2.Value)
             {
                 MessageBox.Show("시작일보다 빠를 수 없습니다.");
-                dateTimePicker2.Value = dateTimePicker1.Value.AddDays(1);
+                dateTimePicker2.Value = dtp.Value.AddMonths(6);
                 return;
             }
         }
@@ -215,8 +216,8 @@ namespace Team5_SmartMOM.PSM
             Microsoft.Office.Interop.Excel.Application xlApp;
             Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
             Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
-
             int i, j;
+
             saveFileDialog1.Filter = "Excel Files (*.xls)|*.xls";
             saveFileDialog1.InitialDirectory = "C:";
             saveFileDialog1.Title = "Save";

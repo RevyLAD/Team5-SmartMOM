@@ -92,6 +92,37 @@ namespace Project_DAC
                 return list;
             }
         }
+
+        public List<PlanIDVO> PlanID3()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = @"select distinct Plan_ID from SalesMaster WHERE Shipment_State = '출하완료'";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<PlanIDVO> list = Helper.DataReaderMapToList<PlanIDVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+        public List<PlanIDVO> PlanID4()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = @"select distinct Plan_ID from SalesMaster WHERE DeadLine_State = '마감완료'";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<PlanIDVO> list = Helper.DataReaderMapToList<PlanIDVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
         public List<CompanyCodeVO> GetCustomerCompanyCode()
         {
             using (SqlCommand cmd = new SqlCommand())

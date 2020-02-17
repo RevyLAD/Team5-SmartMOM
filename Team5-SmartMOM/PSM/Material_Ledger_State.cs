@@ -141,7 +141,14 @@ namespace Team5_SmartMOM.PSM
 
             PSM_Service service = new PSM_Service();
             list = service.MaterialsState(sp);
-            dataGridView1.DataSource = list;
+            if (!(list.Count < 1))
+            {
+                dataGridView1.DataSource = list;
+            }
+            else
+            {
+                MessageBox.Show("검색 결과가 없습니다");
+            }
         }
 
         private void txtProduct_KeyPress(object sender, KeyPressEventArgs e)
@@ -149,6 +156,81 @@ namespace Team5_SmartMOM.PSM
             if ((e.KeyChar == 13))
             {
                 BtnSearch_Click(null, new EventArgs());
+            }
+        }
+
+        private void cboPlanID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+            if ((e.KeyChar == 13))
+            {
+                BtnSearch_Click(null, new EventArgs());
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application xlApp;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            int i, j;
+
+            saveFileDialog1.Filter = "Excel Files (*.xls)|*.xls";
+            saveFileDialog1.InitialDirectory = "C:";
+            saveFileDialog1.Title = "Save";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlWorkBook = xlApp.Workbooks.Add();
+                xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+                                               
+                xlWorkSheet.Cells[1, 1] = "No";
+                xlWorkSheet.Cells[1, 2] = "입고일";
+                xlWorkSheet.Cells[1, 3] = "예외입고유형";
+                xlWorkSheet.Cells[1, 4] = "입고창고";
+                xlWorkSheet.Cells[1, 5] = "품목";
+                xlWorkSheet.Cells[1, 6] = "품명";
+                xlWorkSheet.Cells[1, 7] = "규격";
+                xlWorkSheet.Cells[1, 8] = "단위";
+                xlWorkSheet.Cells[1, 9] = "불량수량";
+                xlWorkSheet.Cells[1, 10] = "입고량";
+                xlWorkSheet.Cells[1, 11] = "잔량";
+                xlWorkSheet.Cells[1, 12] = "업체";
+
+
+                for (i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    for (j = 0; j < dataGridView1.ColumnCount - 1; j++)
+                    {
+                        if (dataGridView1[j, i].Value != null)
+                            xlWorkSheet.Cells[i + 2, j + 1] = dataGridView1[j, i].Value.ToString();
+                    }
+                }
+
+                xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                xlWorkBook.Close(true);
+                xlApp.Quit();
+
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlApp);
+            }
+        }
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
             }
         }
     }

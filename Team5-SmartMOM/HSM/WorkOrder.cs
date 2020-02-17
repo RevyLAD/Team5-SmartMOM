@@ -137,11 +137,9 @@ namespace Team5_SmartMOM.HSM
                 List<WorkOrderVO> list = new List<WorkOrderVO>();
                 list = service.GetWorkOrderByPlanId(wo);
 
-                if (list.Count != 0)
-                {
-                    dataGridView1.DataSource = list;
 
-                }
+                dataGridView1.DataSource = list;
+
 
             }
 
@@ -237,6 +235,11 @@ namespace Team5_SmartMOM.HSM
             //20200101
             dtpDateStart.Value = DateTime.Parse(arrDate[0]);
             dtpDateEnd.Value = DateTime.Parse(arrDate[0]).AddMonths(1);
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
 
         }
     }

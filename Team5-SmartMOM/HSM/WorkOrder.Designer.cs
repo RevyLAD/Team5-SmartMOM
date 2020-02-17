@@ -63,9 +63,13 @@
             this.button2.Text = "작업지시확정";
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button1
+            // 
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1202, 78);
+            this.panel2.Size = new System.Drawing.Size(1202, 72);
             // 
             // panelTop
             // 
@@ -78,7 +82,7 @@
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.cboWorkState);
             this.panelTop.Controls.Add(this.cboPlanID);
-            this.panelTop.Size = new System.Drawing.Size(1202, 58);
+            this.panelTop.Size = new System.Drawing.Size(1202, 52);
             // 
             // splitContainer2
             // 

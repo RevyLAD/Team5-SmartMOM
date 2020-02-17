@@ -38,7 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnExcel = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -62,7 +62,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -191,7 +190,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btnExcel);
+            this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 87);
@@ -199,21 +198,20 @@
             this.panel3.Size = new System.Drawing.Size(1222, 26);
             this.panel3.TabIndex = 1;
             // 
-            // btnExcel
+            // button2
             // 
-            this.btnExcel.BackColor = System.Drawing.Color.Snow;
-            this.btnExcel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExcel.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnExcel.Image = global::Team5_SmartMOM.Properties.Resources.microsoft_excel;
-            this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(1165, 0);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(57, 26);
-            this.btnExcel.TabIndex = 9;
-            this.btnExcel.Text = "엑셀";
-            this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExcel.UseVisualStyleBackColor = false;
-            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            this.button2.BackColor = System.Drawing.Color.Snow;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button2.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button2.Image = global::Team5_SmartMOM.Properties.Resources.microsoft_excel;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(1165, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(57, 26);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "엑셀";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -338,6 +336,7 @@
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Visible = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // panelZ1
             // 
@@ -520,7 +519,7 @@
         protected System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         protected System.Windows.Forms.Button button3;
-        protected System.Windows.Forms.Button btnExcel;
+        protected System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel9;
         protected System.Windows.Forms.Panel panelMid;
         protected System.Windows.Forms.Label label4;
@@ -542,6 +541,5 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         protected System.Windows.Forms.Button btnAllSearch;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

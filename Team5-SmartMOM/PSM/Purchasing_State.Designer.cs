@@ -42,6 +42,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.cboplanid = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -82,6 +83,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(1150, 0);
             this.button1.Size = new System.Drawing.Size(48, 24);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -189,7 +191,7 @@
             this.cbostate.Name = "cbostate";
             this.cbostate.Size = new System.Drawing.Size(191, 20);
             this.cbostate.TabIndex = 30;
-            this.cbostate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
+            this.cbostate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVoID_KeyPress);
             // 
             // cbocompany
             // 
@@ -198,7 +200,7 @@
             this.cbocompany.Name = "cbocompany";
             this.cbocompany.Size = new System.Drawing.Size(161, 20);
             this.cbocompany.TabIndex = 31;
-            this.cbocompany.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
+            this.cbocompany.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVoID_KeyPress);
             // 
             // txtProduct
             // 
@@ -245,7 +247,7 @@
             this.cboplanid.Name = "cboplanid";
             this.cboplanid.Size = new System.Drawing.Size(191, 20);
             this.cboplanid.TabIndex = 37;
-            this.cboplanid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
+            this.cboplanid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVoID_KeyPress);
             // 
             // label5
             // 
@@ -295,5 +297,6 @@
         protected System.Windows.Forms.Button button5;
         private System.Windows.Forms.ComboBox cboplanid;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
