@@ -81,12 +81,12 @@ namespace Team5_Pop
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = new SqlConnection(this.ConnectionString);
-                    cmd.CommandText = "update Facility Set FAC_Others='가동' where FAC_Name=@FAC_Name";
+                    cmd.CommandText = "update Facility Set FAC_Others='가동', WO_ID=@id where FAC_Name=@FAC_Name";
                     cmd.Parameters.AddWithValue("@FAC_Name", name);
+                    cmd.Parameters.AddWithValue("@id", id);
                     cmd.Connection.Open();
                     cmd.ExecuteNonQuery();
                     cmd.CommandText = "update [WorkOrder] Set [WO_State]='작업시작' where [WO_ID]=@id";
-                    cmd.Parameters.AddWithValue("@id", id);
                     cmd.ExecuteNonQuery();
                     cmd.Connection.Close();
                 }
@@ -225,17 +225,129 @@ namespace Team5_Pop
             }
         }
 
-        public void WritePoPLog(List<string> list)
+        public void WritePoPLog(PoPLogVO logvo)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "insert into values() where WO_ID = @WO_ID";
+                cmd.CommandText = "insert into ProductionLog(WO_ID, FAC_Name, ITEM_Code, ProductTime, Qty) values(@WO_ID, @FAC_Name, @ITEM_Code, @ProductTime, @Qty)";
 
-                cmd.Parameters.AddWithValue("@WO_ID", list[0]);
-                cmd.Parameters.AddWithValue("@WO_ID", list[1]);
-                cmd.Parameters.AddWithValue("@WO_ID", list[2]);
-                cmd.Parameters.AddWithValue("@WO_ID", list[3]);
+                cmd.Parameters.AddWithValue("@WO_ID", logvo.WO_ID);
+                cmd.Parameters.AddWithValue("@FAC_Name", logvo.FAC_Name);
+                cmd.Parameters.AddWithValue("@ITEM_Code", logvo.ITEM_Code);
+                cmd.Parameters.AddWithValue("@ProductTime", logvo.ProductTime);
+                cmd.Parameters.AddWithValue("@Qty", logvo.Qty);
+
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+        }
+
+        public List<ControlVO> GetInfoForControl(string id, string name)
+        {
+            List<ControlVO> volist;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                
+                cmd.CommandText = "select WO_ID, FAC_Name, ITEM_Code, " +
+                    "(select directQty from WorkOrder where WO_ID = @WO_ID) as 'directQty'," +
+                    "(select Count(Qty) from ProductionLog where WO_ID = @WO_ID and Qty='G' and FAC_Name = @FAC_Name) as 'GoodQty', " +
+                    "(select Count(Qty) from ProductionLog where WO_ID = @WO_ID and Qty='B' and FAC_Name = @FAC_Name) as 'BadQty' " +
+                    "from ProductionLog where WO_ID = @WO_ID and FAC_Name = @FAC_Name group by FAC_Name, ITEM_Code, WO_ID";
+
+                cmd.Parameters.AddWithValue("@WO_ID", id);
+                cmd.Parameters.AddWithValue("@FAC_Name", name);
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                volist = Helper.DataReaderMapToList<ControlVO>(reader);
+                cmd.Connection.Close();
+            }
+
+            return volist;
+        }
+
+        public string GetFACSignal(string FacName)
+        {
+            string signal;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select FAC_Others from Facility where FAC_Name = @FAC_Name";
+                cmd.Parameters.AddWithValue("@FAC_Name", FacName);
+
+                cmd.Connection.Open();
+                signal = Convert.ToString(cmd.ExecuteScalar());
+                cmd.Connection.Close();
+            }
+            return signal;
+        }
+
+        public List<NewControlVO> GetNewControl()
+        {
+            List<NewControlVO> templist = new List<NewControlVO>();
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select WO_ID, FAC_Name from Facility ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                templist = Helper.DataReaderMapToList<NewControlVO>(reader);
+                cmd.Connection.Close();
+            }
+            return templist;
+        }
+
+        public string GetWO_ID(string FacName)
+        {
+            string wo_id;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select WO_ID from Facility where FAC_Name = @FAC_Name";
+                cmd.Parameters.AddWithValue("@FAC_Name", FacName);
+
+                cmd.Connection.Open();
+                wo_id = Convert.ToString(cmd.ExecuteScalar());
+                cmd.Connection.Close();
+            }
+            return wo_id;
+        }
+
+        public void UpdateFacStateEnd(string FacName)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "update Facility Set FAC_Others='비가동', WO_ID=null where FAC_Name=@FAC_Name";
+                cmd.Parameters.AddWithValue("@FAC_Name", FacName);
+
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+        }
+
+        public void UpdateFacStatePause(string FacName, int choice)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+
+                switch (choice)
+                {
+                    case 1:
+                        cmd.CommandText = "update Facility Set FAC_Others='일시정지' where FAC_Name=@FAC_Name";
+                        break;
+                    case 2:
+                        cmd.CommandText = "update Facility Set FAC_Others='가동' where FAC_Name=@FAC_Name";
+                        break;
+                }
+                
+                cmd.Parameters.AddWithValue("@FAC_Name", FacName);
 
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
