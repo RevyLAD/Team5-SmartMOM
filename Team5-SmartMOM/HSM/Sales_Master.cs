@@ -24,6 +24,9 @@ namespace Team5_SmartMOM.HSM
 
         private void Sales_Master_Load(object sender, EventArgs e)
         {
+            dtpDueDateStart.Value = DateTime.Now.AddMonths(-1);
+            dtpDueDateEnd.Value = DateTime.Now.AddMonths(2);
+
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "고객WO", "SO_WorkOrderID", true, 180);
@@ -142,6 +145,33 @@ namespace Team5_SmartMOM.HSM
 
         private void btnSearch_Click(object sender, EventArgs e) //조회
         {
+            dataGridView1.DataSource = null;
+            HSM_Service service = new HSM_Service();
+
+            SalesMasterAllVO saleVo = new SalesMasterAllVO();
+            saleVo.SALES_ORDER_STATE = cboState.Text;
+            saleVo.COM_Name = cboCustomer.Text;
+            saleVo.SALES_OrderDate = dtpDueDateStart.Value.ToShortDateString();
+            saleVo.SALES_Duedate = dtpDueDateEnd.Value.ToShortDateString();
+            saleVo.SO_WorkOrderID = txtOrderNum.Text;
+
+            List<SalesMasterAllVO> list = new List<SalesMasterAllVO>();
+            list = service.GetSalesMasterByVO(saleVo);
+
+            
+
+            if (list.Count != 0)
+            {
+                dataGridView1.DataSource = list;
+
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    if (dataGridView1[11, i].Value.ToString() == "주문대기")
+                        dataGridView1[11, i].Style.BackColor = Color.LightYellow;
+                }
+            }
+            else
+                MessageBox.Show("조회결과가 없습니다.", "확인");
 
         }
     }

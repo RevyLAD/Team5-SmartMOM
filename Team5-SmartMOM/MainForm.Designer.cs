@@ -76,7 +76,6 @@ namespace Team5_SmartMOM
             this.작업지시현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.공정재고현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.출하관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.출하현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.출하및매출마감ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -146,6 +145,7 @@ namespace Team5_SmartMOM
             this.btnMatList = new System.Windows.Forms.Button();
             this.btnSubMenu1 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
+            this.출하현황및매출현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.ts.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -475,13 +475,13 @@ namespace Team5_SmartMOM
             // 자재현황ToolStripMenuItem
             // 
             this.자재현황ToolStripMenuItem.Name = "자재현황ToolStripMenuItem";
-            this.자재현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.자재현황ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.자재현황ToolStripMenuItem.Text = "자재현황";
             // 
             // 자재등록ToolStripMenuItem
             // 
             this.자재등록ToolStripMenuItem.Name = "자재등록ToolStripMenuItem";
-            this.자재등록ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.자재등록ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.자재등록ToolStripMenuItem.Text = "자재등록";
             // 
             // 공정관리ToolStripMenuItem
@@ -497,42 +497,34 @@ namespace Team5_SmartMOM
             // 작업지시생성ToolStripMenuItem
             // 
             this.작업지시생성ToolStripMenuItem.Name = "작업지시생성ToolStripMenuItem";
-            this.작업지시생성ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.작업지시생성ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.작업지시생성ToolStripMenuItem.Text = "작업지시생성";
             // 
             // 작업지시현황ToolStripMenuItem
             // 
             this.작업지시현황ToolStripMenuItem.Name = "작업지시현황ToolStripMenuItem";
-            this.작업지시현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.작업지시현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.작업지시현황ToolStripMenuItem.Text = "작업지시현황";
             // 
             // 공정재고현황ToolStripMenuItem
             // 
             this.공정재고현황ToolStripMenuItem.Name = "공정재고현황ToolStripMenuItem";
-            this.공정재고현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.공정재고현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.공정재고현황ToolStripMenuItem.Text = "공정재고현황";
-            this.공정재고현황ToolStripMenuItem.Click += new System.EventHandler(this.공정재고현황ToolStripMenuItem_Click);
             // 
             // 출하관리ToolStripMenuItem
             // 
             this.출하관리ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.출하현황ToolStripMenuItem,
-            this.출하및매출마감ToolStripMenuItem});
+            this.출하및매출마감ToolStripMenuItem,
+            this.출하현황및매출현황ToolStripMenuItem});
             this.출하관리ToolStripMenuItem.Name = "출하관리ToolStripMenuItem";
             this.출하관리ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.출하관리ToolStripMenuItem.Text = "출하관리";
             // 
-            // 출하현황ToolStripMenuItem
-            // 
-            this.출하현황ToolStripMenuItem.Name = "출하현황ToolStripMenuItem";
-            this.출하현황ToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.출하현황ToolStripMenuItem.Text = "출하현황";
-            this.출하현황ToolStripMenuItem.Click += new System.EventHandler(this.출하현황ToolStripMenuItem_Click);
-            // 
             // 출하및매출마감ToolStripMenuItem
             // 
             this.출하및매출마감ToolStripMenuItem.Name = "출하및매출마감ToolStripMenuItem";
-            this.출하및매출마감ToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.출하및매출마감ToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.출하및매출마감ToolStripMenuItem.Text = "출하 및 매출마감";
             this.출하및매출마감ToolStripMenuItem.Click += new System.EventHandler(this.출하및매출마감ToolStripMenuItem_Click);
             // 
@@ -1597,6 +1589,13 @@ namespace Team5_SmartMOM
             this.button22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button22.UseVisualStyleBackColor = false;
             // 
+            // 출하현황및매출현황ToolStripMenuItem
+            // 
+            this.출하현황및매출현황ToolStripMenuItem.Name = "출하현황및매출현황ToolStripMenuItem";
+            this.출하현황및매출현황ToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.출하현황및매출현황ToolStripMenuItem.Text = "출하 현황 및 매출현황";
+            this.출하현황및매출현황ToolStripMenuItem.Click += new System.EventHandler(this.출하현황및매출현황ToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1674,7 +1673,6 @@ namespace Team5_SmartMOM
         private System.Windows.Forms.ToolStripMenuItem 작업지시생성ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 작업지시현황ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 출하관리ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 출하현황ToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
@@ -1749,6 +1747,7 @@ namespace Team5_SmartMOM
         private System.Windows.Forms.ToolStripButton toolStripButton8;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem 출하및매출마감ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 출하현황및매출현황ToolStripMenuItem;
     }
 }
 

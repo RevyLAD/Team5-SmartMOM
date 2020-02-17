@@ -260,6 +260,7 @@
             this.txtTurn.Name = "txtTurn";
             this.txtTurn.Size = new System.Drawing.Size(172, 21);
             this.txtTurn.TabIndex = 19;
+            this.txtTurn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTurn_KeyPress);
             // 
             // cboMaterials
             // 

@@ -60,6 +60,10 @@
             this.button2.Text = "입고취소";
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button1
+            // 
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // panel2
             // 
             this.panel2.Size = new System.Drawing.Size(1202, 133);
@@ -98,7 +102,7 @@
             this.cbocompany.Name = "cbocompany";
             this.cbocompany.Size = new System.Drawing.Size(161, 20);
             this.cbocompany.TabIndex = 68;
-            this.cbocompany.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
+            this.cbocompany.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboPlanID_KeyPress);
             // 
             // label7
             // 
@@ -151,7 +155,7 @@
             this.cboPlanID.Name = "cboPlanID";
             this.cboPlanID.Size = new System.Drawing.Size(161, 20);
             this.cboPlanID.TabIndex = 81;
-            this.cboPlanID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
+            this.cboPlanID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboPlanID_KeyPress);
             // 
             // Material_Ledger_State
             // 

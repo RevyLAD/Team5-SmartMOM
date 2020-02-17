@@ -31,15 +31,13 @@ namespace Team5_SmartMOM.HSM
         {
             CommonCodeService service = new CommonCodeService();
 
-            List<PlanIDVO> listPlanID = service.GetPlanIDByDemandPlan();
+            List<PlanIDVO> listPlanID = service.GetAllPlanID();
             List<CompanyCodeVO> listCompanyCode = service.GetAllCompanyCode();
             List<ItemCodeVO> listItemCode = service.GetAllItemCode();
 
 
 
             CommonUtil.ComboBinding(cboPlanID, listPlanID, "Plan_ID", "Plan_ID","전체");
-            CommonUtil.ComboBinding(cboCompany, listCompanyCode, "COM_Code", "COM_Name","");
-            CommonUtil.ComboBinding(cboProduct, listItemCode, "ITEM_Code", "ITEM_Name","");
 
         }
 
@@ -52,8 +50,6 @@ namespace Team5_SmartMOM.HSM
             plan.PlanId = cboPlanID.Text;
             plan.SALES_OrderDate = dtpDateStart.Value.ToShortDateString();
             plan.SALES_DueDate = dtpDateEnd.Value.ToShortDateString();
-            plan.ITEM_Code = cboProduct.Text;
-            plan.COM_Code = cboCompany.Text;
 
             if(cboPlanID.Text == "전체")
             {
@@ -153,5 +149,73 @@ namespace Team5_SmartMOM.HSM
             dtpDateEnd.Value = DateTime.Parse(arrDate[0]).AddMonths(1);
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application xlApp;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            int i, j;
+
+            saveFileDialog1.Filter = "Excel Files (*.xls)|*.xls";
+            saveFileDialog1.InitialDirectory = "C:";
+            saveFileDialog1.Title = "Save";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlWorkBook = xlApp.Workbooks.Add();
+                xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                xlWorkSheet.Cells[1, 1] = "고객주문번호";
+                xlWorkSheet.Cells[1, 2] = "고객사코드";
+                xlWorkSheet.Cells[1, 3] = "고객사명";
+                xlWorkSheet.Cells[1, 4] = "상품명";
+                xlWorkSheet.Cells[1, 5] = "납기일";
+
+
+
+                for (int k = 6; k < dataGridView1.ColumnCount; k++)
+                {
+                    xlWorkSheet.Cells[1, k] = dataGridView1.Columns[k].HeaderText.ToString();
+
+                }
+
+                for (i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    for (j = 0; j < dataGridView1.ColumnCount - 1; j++)
+                    {
+                        if (dataGridView1[j, i].Value != null)
+                            xlWorkSheet.Cells[i + 2, j + 1] = dataGridView1[j, i].Value.ToString();
+                    }
+                }
+
+                xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                xlWorkBook.Close(true);
+                xlApp.Quit();
+
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlApp);
+            }
+        }
+
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
     }
+    
 }

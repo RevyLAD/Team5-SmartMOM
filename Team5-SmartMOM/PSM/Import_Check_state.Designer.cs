@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelFull = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
@@ -40,7 +40,7 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnCheck_OK = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnexcel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -68,6 +68,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -180,7 +181,7 @@
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Controls.Add(this.btnCheck_OK);
-            this.panel5.Controls.Add(this.button4);
+            this.panel5.Controls.Add(this.btnexcel);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 143);
@@ -204,20 +205,21 @@
             this.btnCheck_OK.UseVisualStyleBackColor = false;
             this.btnCheck_OK.Click += new System.EventHandler(this.btnCheck_OK_Click);
             // 
-            // button4
+            // btnexcel
             // 
-            this.button4.BackColor = System.Drawing.Color.Snow;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button4.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Image = global::Team5_SmartMOM.Properties.Resources.microsoft_excel;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(1138, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(57, 24);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "엑셀";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnexcel.BackColor = System.Drawing.Color.Snow;
+            this.btnexcel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnexcel.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnexcel.Image = global::Team5_SmartMOM.Properties.Resources.microsoft_excel;
+            this.btnexcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnexcel.Location = new System.Drawing.Point(1138, 0);
+            this.btnexcel.Name = "btnexcel";
+            this.btnexcel.Size = new System.Drawing.Size(57, 24);
+            this.btnexcel.TabIndex = 14;
+            this.btnexcel.Text = "엑셀";
+            this.btnexcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnexcel.UseVisualStyleBackColor = false;
+            this.btnexcel.Click += new System.EventHandler(this.btnexcel_Click);
             // 
             // label2
             // 
@@ -236,28 +238,28 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 143);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1199, 479);
             this.dataGridView1.TabIndex = 35;
@@ -315,7 +317,7 @@
             this.cboplanid.Name = "cboplanid";
             this.cboplanid.Size = new System.Drawing.Size(191, 20);
             this.cboplanid.TabIndex = 94;
-            this.cboplanid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtitem_KeyPress);
+            this.cboplanid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboplanid_KeyPress);
             // 
             // label6
             // 
@@ -334,7 +336,7 @@
             this.cboResult.Name = "cboResult";
             this.cboResult.Size = new System.Drawing.Size(191, 20);
             this.cboResult.TabIndex = 92;
-            this.cboResult.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtitem_KeyPress);
+            this.cboResult.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboplanid_KeyPress);
             // 
             // cbocompany
             // 
@@ -343,7 +345,7 @@
             this.cbocompany.Name = "cbocompany";
             this.cbocompany.Size = new System.Drawing.Size(191, 20);
             this.cbocompany.TabIndex = 91;
-            this.cbocompany.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtitem_KeyPress);
+            this.cbocompany.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboplanid_KeyPress);
             // 
             // btnSearch
             // 
@@ -615,7 +617,8 @@
         protected System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridView3;
         protected System.Windows.Forms.Button btnCheck_OK;
-        protected System.Windows.Forms.Button button4;
+        protected System.Windows.Forms.Button btnexcel;
         protected System.Windows.Forms.Button button5;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

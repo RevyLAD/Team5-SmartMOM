@@ -33,6 +33,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.cbofactory = new System.Windows.Forms.ComboBox();
             this.txtitem = new System.Windows.Forms.TextBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -55,6 +56,10 @@
             this.button2.Location = new System.Drawing.Point(1056, 0);
             this.button2.Size = new System.Drawing.Size(85, 24);
             this.button2.Text = "이력조회";
+            // 
+            // button1
+            // 
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -119,7 +124,7 @@
             this.cbofactory.Name = "cbofactory";
             this.cbofactory.Size = new System.Drawing.Size(161, 20);
             this.cbofactory.TabIndex = 64;
-            this.cbofactory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtitem_KeyPress);
+            this.cbofactory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbofactory_KeyPress);
             // 
             // txtitem
             // 
@@ -156,5 +161,6 @@
         protected System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ComboBox cbofactory;
         private System.Windows.Forms.TextBox txtitem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

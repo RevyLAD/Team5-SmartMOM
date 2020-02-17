@@ -35,6 +35,7 @@
             this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
             this.dtpDateEnd = new System.Windows.Forms.DateTimePicker();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -69,6 +70,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(1148, 0);
             this.button1.Size = new System.Drawing.Size(50, 23);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -212,5 +214,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
         protected System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

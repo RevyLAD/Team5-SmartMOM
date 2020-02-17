@@ -41,7 +41,7 @@ namespace Team5_SmartMOM.HSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "양품수량", "WO_GoodQty", true, 80, DataGridViewContentAlignment.MiddleRight);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "불량수량", "WO_BadQty", true, 80, DataGridViewContentAlignment.MiddleRight);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "종료시간", "WO_WorkEndTime", true, 100, DataGridViewContentAlignment.MiddleCenter);
-
+            
             InitCombo();
             DataLoad();
         }
@@ -96,6 +96,62 @@ namespace Team5_SmartMOM.HSM
 
 
             dataGridView1.DataSource = list;
+        }
+
+        private void button1_Click(object sender, EventArgs e) //바코드출력
+        {
+            if(cboPlanID.Text != "전체")
+            {
+                DataTable dt = new DataTable();
+                dt = setDataTable(dataGridView1); // 원하는 항목을 데이터테이블로 변환
+
+                WorkOrderBarcode rpt = new WorkOrderBarcode();
+                rpt.DataSource = dt;
+                rpt.Parameters["Plan_ID"].Value = $"{cboPlanID.Text} ";
+                rpt.Parameters["Plan_ID"].Visible = false;
+                rpt.CreateDocument();
+
+
+                ShowReport frm = new ShowReport(rpt);
+
+
+                //frm.ShowDialog();
+            }
+        }
+
+        private DataTable setDataTable(DataGridView dgv)
+        {
+
+            DataTable dt = new DataTable(); // 담을 객체
+
+     
+            dt.Columns.Add("WO_ID", dgv.Columns[0].ValueType);
+            dt.Columns.Add("ITEM_Code", dgv.Columns[1].ValueType);
+            dt.Columns.Add("FAC_Name", dgv.Columns[3].ValueType);
+            dt.Columns.Add("WO_StartDate", dgv.Columns[4].ValueType);
+            dt.Columns.Add("WO_EndDate", dgv.Columns[5].ValueType);
+            dt.Columns.Add("directQty", dgv.Columns[7].ValueType);
+            
+            //컬럼 생성
+            // 0,1,3,4,5,7
+
+            for (int i = 0; i < dgv.Rows.Count; i++)
+            {
+                DataRow dr = dt.NewRow();
+
+
+                dr[0] = dgv[0, i].Value;
+                dr[1] = dgv[1, i].Value;
+                dr[2] = dgv[3, i].Value;
+                dr[3] = dgv[4, i].Value;
+                dr[4] = dgv[5, i].Value;
+                dr[5] = dgv[7, i].Value;
+
+                dt.Rows.Add(dr);
+
+            } //데이터 삽입
+            dt.AcceptChanges();
+            return dt;
         }
     }
 
