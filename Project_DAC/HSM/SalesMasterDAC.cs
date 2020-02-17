@@ -30,7 +30,45 @@ namespace Project_DAC.HSM
                 return list;
             }
         }
+        public List<SalesMasterAllVO> GetSalesMasterByVO(SalesMasterAllVO saleVO)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                string sql = @"select SO_WorkOrderID,sm.COM_Code,c.COM_Name,sm.ITEM_Code,i.ITEM_Name,
+                                PO_Type,SALES_OrderQty,ISNULL(SALES_ShipQty, 0) SALES_ShipQty,ISNULL(SALES_CancelQty, 0) SALES_CancelQty,  
+                                Convert(nvarchar(10), SALES_Duedate, 23) SALES_Duedate,Convert(nvarchar(10), SALES_OrderDate, 23) SALES_OrderDate,SALES_ORDER_STATE,sm.SALES_ORDER_STATE, SALES_Remark
+                                FROM SalesMaster sm, Company c, ITEM i
+                                WHERE SALES_Duedate BETWEEN @SALES_OrderDate AND @SALES_Duedate
+                                AND c.COM_Name = @COM_Name
+                                AND sm.COM_Code = c.COM_Code
+                                AND sm.ITEM_Code = i.ITEM_Code ";
 
+                if(saleVO.SO_WorkOrderID !="")
+                {
+                    sql = sql + "AND SO_WorkOrderID = @SO_WorkOrderID ";
+                }
+                
+                if(saleVO.SALES_ORDER_STATE != "전체")
+                {
+                    sql = sql + "AND SALES_ORDER_STATE = @SALES_ORDER_STATE";
+                }
+
+                cmd.CommandText = sql;
+                cmd.Parameters.AddWithValue("@SALES_ORDER_STATE", saleVO.SALES_ORDER_STATE);
+                cmd.Parameters.AddWithValue("@COM_Name", saleVO.COM_Name);
+                cmd.Parameters.AddWithValue("@SALES_OrderDate", saleVO.SALES_OrderDate);
+                cmd.Parameters.AddWithValue("@SALES_Duedate", saleVO.SALES_Duedate);
+                cmd.Parameters.AddWithValue("@SO_WorkOrderID", saleVO.SO_WorkOrderID);
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<SalesMasterAllVO> list = Helper.DataReaderMapToList<SalesMasterAllVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
         /// <summary>
         /// 상태가 '작업대기'인 항목조회
         /// </summary>

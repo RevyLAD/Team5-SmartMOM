@@ -237,6 +237,18 @@
     <Compile Include="HSM\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HSM\ShowReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\ShowReport.Designer.cs">
+      <DependentUpon>ShowReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\WorkOrderBarcode.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HSM\WorkOrderBarcode.Designer.cs">
+      <DependentUpon>WorkOrderBarcode.cs</DependentUpon>
+    </Compile>
     <Compile Include="HSM\WorkOrderList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -620,6 +632,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HSM\Demand_Plan.resx">
       <DependentUpon>Demand_Plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\WorkOrderBarcode.resx">
+      <DependentUpon>WorkOrderBarcode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HSM\WorkOrderList.resx">
       <DependentUpon>WorkOrderList.cs</DependentUpon>
