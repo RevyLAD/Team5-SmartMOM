@@ -81,9 +81,8 @@ namespace Team5_SmartMOM.PSM
             ps.Plan_ID = cboplanid.Text.Trim();
 
             PSM_Service service = new PSM_Service();
-            list = service.GetAllPurChasingState(ps);
-            dataGridView1.DataSource = list;
-                        
+            dataGridView1.DataSource = list = service.GetAllPurChasingState(ps);
+
 
             List<CompanyCodeVO> company = service.GetAllCompanyCode();
             List<MATERIAL_ORDER_STATEVO> ORDER_STATEVO = service.GetAllOrderState();
@@ -120,6 +119,7 @@ namespace Team5_SmartMOM.PSM
         //조회버튼 클릭시 검색조건 기준으로 검색 후 텍스트박스 초기화
         private void btnSearch_Click(object sender, EventArgs e)
         {
+
             PurchaseSearchVO ps = new PurchaseSearchVO();
             ps.startDate = dtpDateStart.Value.ToShortDateString();
             ps.endDate = dtpDateEnd.Value.ToShortDateString();
@@ -130,14 +130,17 @@ namespace Team5_SmartMOM.PSM
             
             PSM_Service service = new PSM_Service();
             list = service.GetAllPurChasingState(ps);
-            dataGridView1.DataSource = list;
+            if(!(list.Count < 1))
+            {
+                dataGridView1.DataSource = list;                
+            }
+            else
+            {
+                MessageBox.Show("검색 결과가 없습니다");
+            }
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
                 dataGridView1.Rows[i].Cells[10].ReadOnly = false;
-            }           
-
-        
         }
 
         //체크된 항목만 납기일자 변경
@@ -255,8 +258,7 @@ namespace Team5_SmartMOM.PSM
         //숫자로만 입력 및 검색후 엔터로 조회버튼
         private void txtVoID_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
-                e.Handled = true;
+            e.Handled = true;
             if ((e.KeyChar == 13))
             {
                 btnSearch_Click(null, new EventArgs());
@@ -267,6 +269,7 @@ namespace Team5_SmartMOM.PSM
         {
             string dtStart = dtpDateStart.Value.ToString("yyyyMMdd");
             string dtEnd = dtpDateEnd.Value.ToString("yyyyMMdd");
+            string planid = cboplanid.Text.Trim();
 
             string strConn = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
 
@@ -276,7 +279,7 @@ namespace Team5_SmartMOM.PSM
                 conn.Open();
                 string strSql = @"SELECT VO_ID, COM_Name, ITEM_Name, ITEM_Size, VO_Quantity, Convert(varchar(10),VO_StartDate,23) VO_StartDate
                                     FROM VendorOrder v inner join ITEM i on v.COM_Code = i.ITEM_Code
-                                    WHERE VO_EndDate between '" + dtStart + "'  and '" + dtEnd + "'ORDER BY VO_ID";
+                                    WHERE Plan_ID = '" + planid + "'  ORDER BY VO_ID";
                 SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
 
                 da.Fill(ds, "VendorOrder");
@@ -290,6 +293,73 @@ namespace Team5_SmartMOM.PSM
             Form2 frm = new Form2();
             frm.documentViewer1.DocumentSource = rpt;
             frm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application xlApp;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            int i, j;
+
+            saveFileDialog1.Filter = "Excel Files (*.xls)|*.xls";
+            saveFileDialog1.InitialDirectory = "C:";
+            saveFileDialog1.Title = "Save";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlWorkBook = xlApp.Workbooks.Add();
+                xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+               
+                xlWorkSheet.Cells[1, 1] = "No";
+                xlWorkSheet.Cells[1, 2] = "업체이름";
+                xlWorkSheet.Cells[1, 3] = "업체코드";
+                xlWorkSheet.Cells[1, 4] = "업체타입";
+                xlWorkSheet.Cells[1, 5] = "품목";
+                xlWorkSheet.Cells[1, 6] = "발주상태";
+                xlWorkSheet.Cells[1, 7] = "품목";
+                xlWorkSheet.Cells[1, 8] = "규격";
+                xlWorkSheet.Cells[1, 9] = "단위";
+                xlWorkSheet.Cells[1, 10] = "납기일";
+                xlWorkSheet.Cells[1, 11] = "발주량";
+                xlWorkSheet.Cells[1, 12] = "발주일";
+                xlWorkSheet.Cells[1, 13] = "입고일";
+
+
+                for (i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    for (j = 0; j < dataGridView1.ColumnCount - 1; j++)
+                    {
+                        if (dataGridView1[j, i].Value != null)
+                            xlWorkSheet.Cells[i + 2, j + 1] = dataGridView1[j, i].Value.ToString();
+                    }
+                }
+
+                xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                xlWorkBook.Close(true);
+                xlApp.Quit();
+
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlApp);
+            }
+        }
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
         }
     }    
 }

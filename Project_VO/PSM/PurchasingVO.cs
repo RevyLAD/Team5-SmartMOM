@@ -266,6 +266,10 @@ namespace Project_VO
         public string ITEM_Code { get; set; }
         public string ITEM_Name { get; set; }
         public int SALES_OrderQty { get; set; }
+        public int SALES_CancelQty { get; set; }
+        public int SALES_ShipQty { get; set; }
+        
+
     }
 
     public class ShipmentOrderSearchVO
@@ -279,11 +283,19 @@ namespace Project_VO
     {
         public string SO_WorkOrderID { get; set; }
     }
+    public class Shipment2VO
+    {
+        public string SO_WorkOrderID { get; set; }
+        public int SALES_OrderQty { get; set; }
+        public int SALES_CancelQty { get; set; }
+        
+    }
 
     public class DeadLinePutVO
     {
         public string SO_WorkOrderID { get; set; }        
         public DateTime DeadLine_Date { get; set; }
+        public int Price { get; set; }
     }
 
     public class DeadLineVO
@@ -296,5 +308,8 @@ namespace Project_VO
         public string ITEM_Name { get; set; }
         public int SALES_OrderQty { get; set; }
         public int Price { get; set; }
+        public int SALES_CancelQty { get; set; }
+        public int SALES_ShipQty { get; set; }
+        
     }
 }
