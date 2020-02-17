@@ -60,29 +60,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommonUtil.cs" />
-    <Compile Include="LoggingUtility.cs" />
-    <Compile Include="MainPoPForm.cs">
+    <Compile Include="FacControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FacControl.Designer.cs">
+      <DependentUpon>FacControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formm\ContorlForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainPoPForm.Designer.cs">
+    <Compile Include="Formm\ContorlForm.Designer.cs">
+      <DependentUpon>ContorlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service\CommonUtil.cs" />
+    <Compile Include="Service\LoggingUtility.cs" />
+    <Compile Include="Formm\MainPoPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formm\MainPoPForm.Designer.cs">
       <DependentUpon>MainPoPForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopDAC.cs" />
-    <Compile Include="POPGaDong.cs">
+    <Compile Include="Service\PopDAC.cs" />
+    <Compile Include="Formm\POPGaDong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="POPGaDong.Designer.cs">
+    <Compile Include="Formm\POPGaDong.Designer.cs">
       <DependentUpon>POPGaDong.cs</DependentUpon>
     </Compile>
-    <Compile Include="PoPMain.cs">
+    <Compile Include="Formm\PoPMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PoPMain.Designer.cs">
+    <Compile Include="Formm\PoPMain.Designer.cs">
       <DependentUpon>PoPMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopService.cs" />
-    <Compile Include="PopVO.cs" />
+    <Compile Include="Service\PopService.cs" />
+    <Compile Include="Service\PopVO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -90,14 +102,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UtilityClass.cs" />
-    <EmbeddedResource Include="MainPoPForm.resx">
+    <Compile Include="Service\UtilityClass.cs" />
+    <EmbeddedResource Include="FacControl.resx">
+      <DependentUpon>FacControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formm\ContorlForm.resx">
+      <DependentUpon>ContorlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formm\MainPoPForm.resx">
       <DependentUpon>MainPoPForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="POPGaDong.resx">
+    <EmbeddedResource Include="Formm\POPGaDong.resx">
       <DependentUpon>POPGaDong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PoPMain.resx">
+    <EmbeddedResource Include="Formm\PoPMain.resx">
       <DependentUpon>PoPMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -6692,6 +6692,8 @@
     <Content Include="dist\js\pages\dashboard2.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Image\LogoMakr_5ZxxPT.png" />
+    <Content Include="Image\product.PNG" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -6733,11 +6735,19 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
+    <Compile Include="Controllers\FactoryController.cs" />
+    <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="DAC\Chart_DAC.cs" />
     <Compile Include="DAC\Helper.cs" />
+    <Compile Include="DAC\Item_DAC.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Chart_VO.cs" />
+    <Compile Include="DAC\ConnectionAccess.cs" />
+    <Compile Include="Models\Item_VO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -7364,6 +7374,11 @@
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\Item\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage2.cshtml" />
+    <Content Include="Views\Item\Result.cshtml" />
+    <Content Include="Views\Factory\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -7378,7 +7393,6 @@
     <Folder Include="DAC\KIS\" />
     <Folder Include="DAC\LBJ\" />
     <Folder Include="DAC\PSM\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="bower_components\moment\moment.d.ts" />
