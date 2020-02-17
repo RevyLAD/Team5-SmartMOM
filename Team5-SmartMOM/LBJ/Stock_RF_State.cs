@@ -15,7 +15,7 @@ namespace Team5_SmartMOM.PSM
 {
     public partial class Stock_RF_State : Team5_SmartMOM.BaseGridForm
     {
-        List<StockStateVO> Stock;
+        List<StockStateVO> stockVO;
         public Stock_RF_State()
         {
             InitializeComponent();
@@ -35,45 +35,41 @@ namespace Team5_SmartMOM.PSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목형태", "ITEM_Type", true, 100, DataGridViewContentAlignment.MiddleRight);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "수불량", "InOut_Qty", true, 100, DataGridViewContentAlignment.MiddleRight);
 
+            List<CommonCodeVO> common = new List<CommonCodeVO>();
+            CommonCodeService comservice = new CommonCodeService();
+            common = comservice.GetAllCommonCode();
+
+            List<CommonCodeVO> INOUT = (from item in common
+                                        where item.Common_Type == "IN_OUT"
+                                        select item).ToList();
+            List<CommonCodeVO> Category = (from item in common
+                                           where item.Common_Type == "Product_material"
+                                           select item).ToList();
+
+            CommonUtil.ComboBinding(cboInOut, INOUT, "Common_Key", "Common_Value");
+            CommonUtil.ComboBinding(cboCategory, Category, "Common_Key", "Common_Value", "전체");
+
+
             LBJ_Service service = new LBJ_Service();
             dataGridView1.DataSource = service.StockState();
             DataLoad();
         }
         public void DataLoad()
         {
+
             LBJ_Service service = new LBJ_Service();
             List<StockStateVO> Stock = service.StockState();
-            dataGridView1.DataSource = Stock;
-
-            List<CommonCodeVO> Comlist = new List<CommonCodeVO>();
-
-            CommonCodeService service1 = new CommonCodeService();
-            Comlist = service1.GetAllCommonCode();
-
-            //공통코드링큐
-            List<CommonCodeVO> InOutList = (from item in Comlist
-                                            where item.Common_Type == "IN_OUT"
-                                            select item).ToList();
-
-            CommonUtil.ComboBinding(cboInOut, InOutList, "Common_Key", "Common_Value");
+            dataGridView1.DataSource = stockVO = Stock;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            LBJ_Service service = new LBJ_Service();
-            Stock = service.StockState();
-
-            List<StockStateVO> StockState = (from item in Stock
-                              where item.InOut_Date > dateTimePicker1.Value &&
-                                                item.InOut_Date <= dateTimePicker2.Value &&
-                                                item.InOut_Gubun == cboInOut.Text
-                              select item).ToList();
+            List<StockStateVO> StockState = (from item in stockVO
+                                             where item.InOut_Date > dateTimePicker1.Value &&
+                                                   item.InOut_Date <= dateTimePicker2.Value &&
+                                                   item.InOut_Gubun == cboInOut.Text 
+                                             select item).ToList();
             dataGridView1.DataSource = StockState;
-        }
-
-        private void btnAllSearch_Click(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = Stock;
         }
     }
 }

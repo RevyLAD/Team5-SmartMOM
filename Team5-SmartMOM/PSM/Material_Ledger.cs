@@ -210,12 +210,26 @@ namespace Team5_SmartMOM.PSM
                 xlApp = new Excel.Application();
                 xlWorkBook = xlApp.Workbooks.Add();
                 xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+                                              
+                xlWorkSheet.Cells[1, 1] = "No";
+                xlWorkSheet.Cells[1, 2] = "업체이름";
+                xlWorkSheet.Cells[1, 3] = "품목";
+                xlWorkSheet.Cells[1, 4] = "품명";
+                xlWorkSheet.Cells[1, 5] = "규격";
+                xlWorkSheet.Cells[1, 6] = "단위";
+                xlWorkSheet.Cells[1, 7] = "발주수량";
+                xlWorkSheet.Cells[1, 8] = "잔량";
+                xlWorkSheet.Cells[1, 9] = "납기일";
+                xlWorkSheet.Cells[1, 10] = "출발상태";
+                xlWorkSheet.Cells[1, 11] = "주문상태";
+                xlWorkSheet.Cells[1, 12] = "생성일";
 
-                for (i = 0; i <= dataGridView2.RowCount - 2; i++)
+                for (i = 0; i < dataGridView2.RowCount; i++)
                 {
-                    for (j = 0; j <= dataGridView2.ColumnCount - 1; j++)
+                    for (j = 0; j < dataGridView2.ColumnCount - 1; j++)
                     {
-                        xlWorkSheet.Cells[i + 1, j + 1] = dataGridView2[j, i].Value.ToString();
+                        if(dataGridView2[j, i].Value != null)
+                            xlWorkSheet.Cells[i + 2, j + 1] = dataGridView2[j, i].Value.ToString();
                     }
                 }
 
@@ -378,12 +392,29 @@ namespace Team5_SmartMOM.PSM
             mls.Plan_ID = cboplanid.Text.Trim();
 
             PSM_Service service = new PSM_Service();
-            list = service.Material_Ledger(mls);
-            dataGridView2.DataSource = list;
+            list = service.Material_Ledger(mls);           
+
+            if (!(list.Count < 1))
+            {
+                dataGridView2.DataSource = list;
+            }
+            else
+            {
+                MessageBox.Show("검색 결과가 없습니다");
+            }
         }
 
         private void txtitem_KeyPress(object sender, KeyPressEventArgs e)
         {
+           if ((e.KeyChar == 13))
+            {
+                BtnSearch_Click(null, new EventArgs());
+            }
+        }
+
+        private void cboplanid_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
             if ((e.KeyChar == 13))
             {
                 BtnSearch_Click(null, new EventArgs());

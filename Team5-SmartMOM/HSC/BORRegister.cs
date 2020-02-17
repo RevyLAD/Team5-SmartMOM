@@ -40,6 +40,7 @@ namespace Team5_SmartMOM
                 cboUMU.Text.Trim()!="")
             {
                 HSC_Service service = new HSC_Service();
+                thisvo = new BORVO();
                 thisvo.BOR_Ohters = txtExplain.Text;
                 thisvo.BOR_Priority = Convert.ToInt32(txtPriority.Text);
                 thisvo.BOR_TactTime = Convert.ToInt32(txtTacTime.Text);
