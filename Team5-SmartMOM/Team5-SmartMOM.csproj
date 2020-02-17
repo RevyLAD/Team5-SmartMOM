@@ -386,6 +386,12 @@
     <Compile Include="LBJ\office_hours_management.Designer.cs">
       <DependentUpon>office_hours_management.cs</DependentUpon>
     </Compile>
+    <Compile Include="LBJ\Stack_Status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LBJ\Stack_Status.Designer.cs">
+      <DependentUpon>Stack_Status.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -691,6 +697,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LBJ\office_hours_management.resx">
       <DependentUpon>office_hours_management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LBJ\Stack_Status.resx">
+      <DependentUpon>Stack_Status.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

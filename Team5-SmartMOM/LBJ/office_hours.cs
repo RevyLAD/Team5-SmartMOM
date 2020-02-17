@@ -79,7 +79,7 @@ namespace Team5_SmartMOM.LBJ
                                                  where item.Common_Type == "SHIFT"
                                                  select item).ToList();
 
-            CommonUtil.ComboBinding(cboShift, OrderShiftList, "Common_Key", "Common_Value" ,"전체");
+            CommonUtil.ComboBinding(cboShift, OrderShiftList, "Common_Key", "Common_Value", "전체");
 
             //if (cboShift.Text.Trim() == "전체" && cbosystem.Text.Trim() == "전체")
             //{
@@ -126,11 +126,9 @@ namespace Team5_SmartMOM.LBJ
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            List<ShiftVO> list = new List<ShiftVO>();
-
-            if (cboShift.Text.Trim() == "" && cbosystem.Text.Trim() == "")
+            if (cboShift.Text.Trim() == "전체")
             {
-                
+                dataGridView1.DataSource = list;
             }
             else 
             {
@@ -139,15 +137,14 @@ namespace Team5_SmartMOM.LBJ
         }
         private List<ShiftVO> ShiftSearch()
         {
-            list = new List<ShiftVO>();
+            List<ShiftVO> slist = new List<ShiftVO>();
 
             foreach (var item in list)
             {
-                if (item.SHIFT.Trim().Contains(cboShift.Text.Trim()) &&
-                        item.FAC_Code.Trim().Contains(cbosystem.Text.Trim()))
-                    list.Add(item);
+                if (item.SHIFT.Trim().Contains(cboShift.Text.Trim()))
+                    slist.Add(item);
             }
-            return list;
+            return slist;
         }
 
         private void button2_Click(object sender, EventArgs e)

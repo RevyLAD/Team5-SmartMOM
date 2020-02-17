@@ -450,6 +450,9 @@ namespace Team5_SmartMOM
 
         }
 
-       
+        private void 공정재고현황ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("공정재고현황", new Stack_Status());
+        }
     }
 }

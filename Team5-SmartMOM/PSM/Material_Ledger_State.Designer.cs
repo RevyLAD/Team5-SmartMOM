@@ -35,6 +35,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.cboPlanID = new System.Windows.Forms.ComboBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -181,5 +182,6 @@
         protected System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cboPlanID;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
