@@ -21,6 +21,7 @@ namespace Team5_Pop
         private void MainPoPForm_Load(object sender, EventArgs e)
         {
             CreateTabPages("메인 화면", new PoPMain(this));
+            CreateTabPages("설비 관리", new ContorlForm(this));
         }
 
         public void CreateTabPages(string text, Form OpenForm)

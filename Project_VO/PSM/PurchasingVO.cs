@@ -246,5 +246,55 @@ namespace Project_VO
         public string ITEM_Name { get; set; }
     }
 
+    public class InOutListVO
+    {        
+        public DateTime InOut_Date { get; set; }
+        public string InOut_Gubun { get; set; }
+        public string InOut_Category { get; set; }
+        public string From_WareHouse { get; set; }
+        public string In_WareHouse { get; set; }
+        public string ITEM_Code { get; set; }
+        public int InOut_Qty { get; set; }
+    }
 
+    public class ShipmentOrderVO
+    {
+        public string SO_WorkOrderID { get; set; }
+        public DateTime SALES_Duedate { get; set; }
+        public string COM_Code { get; set; }
+        public string COM_Name { get; set; }
+        public string ITEM_Code { get; set; }
+        public string ITEM_Name { get; set; }
+        public int SALES_OrderQty { get; set; }
+    }
+
+    public class ShipmentOrderSearchVO
+    {        
+        public string Company { get; set; }
+        public string Item { get; set; }
+        public string Plan_ID { get; set; }
+    }
+
+    public class ShipmentVO
+    {
+        public string SO_WorkOrderID { get; set; }
+    }
+
+    public class DeadLinePutVO
+    {
+        public string SO_WorkOrderID { get; set; }        
+        public DateTime DeadLine_Date { get; set; }
+    }
+
+    public class DeadLineVO
+    {
+        public string SO_WorkOrderID { get; set; }
+        public DateTime DeadLine_Date { get; set; }
+        public string COM_Code { get; set; }
+        public string COM_Name { get; set; }
+        public string ITEM_Code { get; set; }
+        public string ITEM_Name { get; set; }
+        public int SALES_OrderQty { get; set; }
+        public int Price { get; set; }
+    }
 }

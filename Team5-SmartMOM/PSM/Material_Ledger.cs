@@ -126,8 +126,7 @@ namespace Team5_SmartMOM.PSM
             PSM_Service service = new PSM_Service();
             list = service.Material_Ledger(mls);
             dataGridView2.DataSource = list;
-
-            PSM_Service service2 = new PSM_Service();
+            
             list2 = service.Receiving_processing();
             dataGridView3.DataSource = list2;
 
@@ -250,9 +249,24 @@ namespace Team5_SmartMOM.PSM
 
         private void button3_Click(object sender, EventArgs e)
         {
+            bool bFlag = false;
+            for (int i = 0; i < dataGridView3.RowCount; i++)
+            {
+                if ((bool)dataGridView3.Rows[i].Cells["Check"].EditedFormattedValue)
+                {
+                    bFlag = true;
+                    break;
+                }
+            }
+            if (bFlag == false)
+            {
+                MessageBox.Show("입고하실 항목을 선택해주세요.");
+                return;
+            }
             List<MaterialInDateVO> lists = new List<MaterialInDateVO>();
             List<MaterialsPlusVO> lists2 = new List<MaterialsPlusVO>();
-            foreach (DataGridViewRow row in dataGridView2.Rows)
+            List<InOutListVO> lists3 = new List<InOutListVO>();
+            foreach (DataGridViewRow row in dataGridView3.Rows)
             {
                 bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
 
@@ -266,38 +280,78 @@ namespace Team5_SmartMOM.PSM
                     list2.VOD_GoodEA = Convert.ToInt32(row.Cells[9].Value);
                     list2.ITEM_Code = row.Cells[2].Value.ToString();
                     lists2.Add(list2);
+
+                    InOutListVO list3 = new InOutListVO();
+                    list3.InOut_Date = (DateTime)row.Cells[8].Value;
+                    list3.In_WareHouse = row.Cells[7].Value.ToString();
+                    list3.ITEM_Code = row.Cells[2].Value.ToString();
+                    list3.InOut_Qty = Convert.ToInt32(row.Cells[9].Value);
+                    lists3.Add(list3);
+
+                    
                 }
             }
             PSM_Service service = new PSM_Service();
-            service.MaterialProcess(lists, lists2);
-
+            service.MaterialProcess(lists, lists2, lists3);
+            MessageBox.Show("선택하신 항목들을 입고처리 하였습니다.");
             DataLoad();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            List<DeleteOrder> lists = new List<DeleteOrder>();
-            foreach (DataGridViewRow row in dataGridView3.Rows)
+            bool bFlag = false;
+            for (int i = 0; i < dataGridView3.RowCount; i++)
             {
-                bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
-
-                if (isCellChecked)
+                if ((bool)dataGridView3.Rows[i].Cells["Check"].EditedFormattedValue)
                 {
-                    DeleteOrder list = new DeleteOrder();
-                    list.VO_ID = Convert.ToInt32(row.Cells[1].Value);
-                    lists.Add(list);
+                    bFlag = true;
+                    break;
                 }
             }
-            PSM_Service service = new PSM_Service();
-            service.MaterialsPutCancel(lists);
+            if (bFlag == false)
+            {
+                MessageBox.Show("취소하실 항목을 선택해주세요.");
+                return;
+            }
+            if (MessageBox.Show("선택하신 항목을 취소하시겠습니까?", "취소", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                List<DeleteOrder> lists = new List<DeleteOrder>();
+                foreach (DataGridViewRow row in dataGridView3.Rows)
+                {
+                    bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
 
-            DataLoad();
+                    if (isCellChecked)
+                    {
+                        DeleteOrder list = new DeleteOrder();
+                        list.VO_ID = Convert.ToInt32(row.Cells[1].Value);
+                        lists.Add(list);
+                    }
+                }
+                PSM_Service service = new PSM_Service();
+                service.MaterialsPutCancel(lists);
+
+                DataLoad();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            bool bFlag = false;
+            for (int i = 0; i < dataGridView2.RowCount; i++)
+            {
+                if ((bool)dataGridView2.Rows[i].Cells["Check"].EditedFormattedValue)
+                {
+                    bFlag = true;
+                    break;
+                }
+            }
+            if (bFlag == false)
+            {
+                MessageBox.Show("입고하실 항목을 선택해주세요.");
+                return;
+            }
             List<DeleteOrder> lists = new List<DeleteOrder>();
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            foreach (DataGridViewRow row in dataGridView2.Rows)
             {
                 bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
 

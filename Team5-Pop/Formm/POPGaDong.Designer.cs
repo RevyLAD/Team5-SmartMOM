@@ -54,11 +54,12 @@
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.btnBadInsert = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtSec = new System.Windows.Forms.TextBox();
             this.txtMin = new System.Windows.Forms.TextBox();
@@ -76,20 +77,19 @@
             this.textBox26 = new System.Windows.Forms.TextBox();
             this.txtNoCount = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnpause = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.lblprogres = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.textBox34 = new System.Windows.Forms.TextBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.textBox36 = new System.Windows.Forms.TextBox();
             this.textBox37 = new System.Windows.Forms.TextBox();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.lblprogres = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -438,16 +438,28 @@
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.button7);
             this.groupBox5.Controls.Add(this.btnStart);
-            this.groupBox5.Controls.Add(this.button5);
-            this.groupBox5.Controls.Add(this.button4);
-            this.groupBox5.Controls.Add(this.button3);
-            this.groupBox5.Controls.Add(this.button2);
+            this.groupBox5.Controls.Add(this.btnCancel);
+            this.groupBox5.Controls.Add(this.btnSave);
+            this.groupBox5.Controls.Add(this.btnStop);
+            this.groupBox5.Controls.Add(this.btnBadInsert);
             this.groupBox5.Location = new System.Drawing.Point(14, 492);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(1159, 94);
             this.groupBox5.TabIndex = 5;
             this.groupBox5.TabStop = false;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(1131, 61);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(22, 23);
+            this.button7.TabIndex = 5;
+            this.button7.Text = "ㅁ";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Visible = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // btnStart
             // 
@@ -461,50 +473,52 @@
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // button5
+            // btnCancel
             // 
-            this.button5.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(661, 16);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(109, 68);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "취 소";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnCancel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(661, 16);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(109, 68);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "취 소";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
+            // btnSave
             // 
-            this.button4.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.button4.Location = new System.Drawing.Point(529, 16);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(109, 68);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "실적저장";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSave.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSave.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnSave.Location = new System.Drawing.Point(529, 16);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(109, 68);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Text = "실적저장";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // button3
+            // btnStop
             // 
-            this.button3.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.ForeColor = System.Drawing.Color.DarkOrange;
-            this.button3.Location = new System.Drawing.Point(294, 16);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 68);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "작업중지";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnStop.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnStop.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnStop.Location = new System.Drawing.Point(294, 16);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(109, 68);
+            this.btnStop.TabIndex = 1;
+            this.btnStop.Text = "작업중지";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // btnBadInsert
             // 
-            this.button2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.ForeColor = System.Drawing.Color.DarkOrange;
-            this.button2.Location = new System.Drawing.Point(165, 16);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 68);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "불량등록";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnBadInsert.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnBadInsert.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnBadInsert.Location = new System.Drawing.Point(165, 16);
+            this.btnBadInsert.Name = "btnBadInsert";
+            this.btnBadInsert.Size = new System.Drawing.Size(109, 68);
+            this.btnBadInsert.TabIndex = 0;
+            this.btnBadInsert.Text = "불량등록";
+            this.btnBadInsert.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
@@ -735,7 +749,7 @@
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox7.Controls.Add(this.button6);
+            this.groupBox7.Controls.Add(this.btnpause);
             this.groupBox7.Controls.Add(this.textBox6);
             this.groupBox7.Controls.Add(this.textBox22);
             this.groupBox7.Location = new System.Drawing.Point(453, 327);
@@ -744,17 +758,18 @@
             this.groupBox7.TabIndex = 15;
             this.groupBox7.TabStop = false;
             // 
-            // button6
+            // btnpause
             // 
-            this.button6.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button6.ForeColor = System.Drawing.Color.DimGray;
-            this.button6.Location = new System.Drawing.Point(296, 6);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(122, 34);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "일시 정지";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnpause.Enabled = false;
+            this.btnpause.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnpause.ForeColor = System.Drawing.Color.DimGray;
+            this.btnpause.Location = new System.Drawing.Point(296, 6);
+            this.btnpause.Name = "btnpause";
+            this.btnpause.Size = new System.Drawing.Size(122, 34);
+            this.btnpause.TabIndex = 4;
+            this.btnpause.Text = "일시 정지";
+            this.btnpause.UseVisualStyleBackColor = true;
+            this.btnpause.Click += new System.EventHandler(this.button6_Click);
             // 
             // textBox6
             // 
@@ -795,6 +810,16 @@
             this.groupBox11.Size = new System.Drawing.Size(424, 52);
             this.groupBox11.TabIndex = 17;
             this.groupBox11.TabStop = false;
+            // 
+            // lblprogres
+            // 
+            this.lblprogres.AutoSize = true;
+            this.lblprogres.BackColor = System.Drawing.Color.Transparent;
+            this.lblprogres.Location = new System.Drawing.Point(262, 19);
+            this.lblprogres.Name = "lblprogres";
+            this.lblprogres.Size = new System.Drawing.Size(21, 12);
+            this.lblprogres.TabIndex = 15;
+            this.lblprogres.Text = "0%";
             // 
             // progressBar1
             // 
@@ -860,11 +885,6 @@
             this.textBox37.Text = "00 분";
             this.textBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // timer2
-            // 
-            this.timer2.Interval = 3000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
@@ -883,16 +903,6 @@
             // 
             this.timer3.Interval = 1000;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
-            // 
-            // lblprogres
-            // 
-            this.lblprogres.AutoSize = true;
-            this.lblprogres.BackColor = System.Drawing.Color.Transparent;
-            this.lblprogres.Location = new System.Drawing.Point(262, 19);
-            this.lblprogres.Name = "lblprogres";
-            this.lblprogres.Size = new System.Drawing.Size(21, 12);
-            this.lblprogres.TabIndex = 15;
-            this.lblprogres.Text = "0%";
             // 
             // POPGaDong
             // 
@@ -962,10 +972,10 @@
         private System.Windows.Forms.TextBox textBox18;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Button btnBadInsert;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox textBox24;
         private System.Windows.Forms.TextBox txtHour;
@@ -977,7 +987,7 @@
         private System.Windows.Forms.TextBox textBox26;
         private System.Windows.Forms.TextBox txtNoCount;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnpause;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox22;
         private System.Windows.Forms.GroupBox groupBox11;
@@ -989,7 +999,6 @@
         private System.Windows.Forms.TextBox txtPlanTE;
         private System.Windows.Forms.TextBox txtPlanTS;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.TextBox txtSec;
         private System.Windows.Forms.TextBox txtMin;
         private System.Windows.Forms.ListBox listBox1;
@@ -1001,5 +1010,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtGoodQty;
         private System.Windows.Forms.Label lblprogres;
+        public System.Windows.Forms.Button button7;
     }
 }

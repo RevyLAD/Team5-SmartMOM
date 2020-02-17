@@ -56,5 +56,23 @@ namespace Team5_Pop
             PopDAC dac = new PopDAC();
             return dac.GetItemName(code);
         }
+
+        public int GetPortNum(string id)
+        {
+            PopDAC dac = new PopDAC();
+            return dac.GetPortNum(id);
+        }
+
+        public void SavePopData(List<string> list)
+        {
+            PopDAC dac = new PopDAC();
+            dac.SavePopData(list);
+        }
+
+        public void WritePoPLog(List<string> list)
+        {
+            PopDAC dac = new PopDAC();
+            dac.WritePoPLog(list);
+        }
     }
 }

@@ -499,7 +499,7 @@ WHERE Plan_ID = @Plan_ID ";
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 string sql = @"select DISTINCT v.VO_ID, COM_Name, v.ITEM_Code, ITEM_Name, ITEM_Size, ITEM_Unit, VOD_GoodEA, FACD_Qty, VO_EndDate, VOD_Result, MATERIAL_ORDER_STATE, VOD_ResultDay
   from VendorOrder v inner join VendorOrderDetail d on v.VO_ID = d.VO_ID inner join ITEM i on v.ITEM_Code = i.ITEM_Code inner join FactoryDetail f on v.ITEM_Code = f.ITEM_Code
-  WHERE VOD_Result = '합격' and MATERIAL_ORDER_STATE = '입고대기' and v.Plan_ID = @Plan_ID ";
+  WHERE VOD_Result = '합격' and MATERIAL_ORDER_STATE = '입고대기' and v.Plan_ID = @Plan_ID and FACT_Name = '자재창고_01' ";
 
                 if (mls.Item != "")
                 {
@@ -609,7 +609,7 @@ order by VO_ID";
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 string sql = @"select v.VO_ID, VO_InDate, FACT_Name, v.ITEM_Code, ITEM_Name, ITEM_Size, ITEM_Unit, VOD_GoodEA, FACD_Qty, COM_Name
 from VendorOrder v inner join ITEM i on v.ITEM_Code = i.ITEM_Code inner join VendorOrderDetail d on v.VO_ID = d.VO_ID left outer join FactoryDetail f on v.ITEM_Code = f.ITEM_Code
-where MATERIAL_ORDER_STATE = '입고완료' and FACT_Name = '자재창고_01' and VO_EndDate Between @startDate and @endDate ";
+where MATERIAL_ORDER_STATE = '입고완료' and FACT_Name = '자재창고_01' and v.Plan_ID = @Plan_ID ";
                 #region 검색조건
                 if (sp.Item != "")
                 {
@@ -622,14 +622,12 @@ where MATERIAL_ORDER_STATE = '입고완료' and FACT_Name = '자재창고_01' an
                 else if (sp.Company != "")
                 {
                     sql = sql + " and c.COM_Name = @COM_Name";
-
                 }
 
                 #endregion
                 cmd.CommandText = sql;
 
-                cmd.Parameters.AddWithValue("@startDate", sp.startDate);
-                cmd.Parameters.AddWithValue("@endDate", sp.endDate);
+                cmd.Parameters.AddWithValue("@Plan_ID", sp.Plan_ID);
                 cmd.Parameters.AddWithValue("@ITEM_Name", sp.Item);
                 cmd.Parameters.AddWithValue("@COM_Name", sp.Company);
 
@@ -643,15 +641,17 @@ where MATERIAL_ORDER_STATE = '입고완료' and FACT_Name = '자재창고_01' an
             }
         }
 
-        public bool MaterialProcess(List<MaterialInDateVO> lists, List<MaterialsPlusVO> lists2)
+        public bool MaterialProcess(List<MaterialInDateVO> lists, List<MaterialsPlusVO> lists2, List<InOutListVO> lists3)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.Connection.Open();
-                cmd.CommandType = CommandType.Text;
+
                 try
                 {
+
+                    cmd.CommandType = CommandType.Text;
                     foreach (var item in lists)
                     {
                         cmd.CommandText = @"UPDATE VendorOrder SET MATERIAL_ORDER_STATE = '입고완료', VO_InDate = @VO_InDate WHERE VO_ID = @VO_ID";
@@ -666,11 +666,31 @@ where MATERIAL_ORDER_STATE = '입고완료' and FACT_Name = '자재창고_01' an
                     foreach (var item in lists2)
                     {
                         cmd.CommandText = @"UPDATE FactoryDetail  SET FACD_Qty = FACD_Qty + @VOD_GoodEA
-FROM ITEM i join FactoryDetail f on i.ITEM_Code = f.ITEM_Code
-WHERE FACT_Name = '자재창고_01' and f.ITEM_Code = @ITEM_Code";
+                                            FROM ITEM i join FactoryDetail f on i.ITEM_Code = f.ITEM_Code
+                                            WHERE FACT_Name = '자재창고_01' and f.ITEM_Code = @ITEM_Code";
 
                         cmd.Parameters.AddWithValue("@VOD_GoodEA", item.VOD_GoodEA);
                         cmd.Parameters.AddWithValue("@ITEM_Code", item.ITEM_Code);
+
+
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+
+
+                    foreach (var item in lists3)
+                    {
+                        cmd.CommandText = @"INSERT INTO InOutList (InOut_Date ,InOut_Gubun ,InOut_Category ,From_WareHouse ,In_WareHouse, ITEM_Code ,InOut_Qty) 
+                                            VALUES (@InOut_Date, @InOut_Gubun, @InOut_Category, @From_WareHouse, @In_WareHouse, @ITEM_Code, @InOut_Qty)";
+
+                        cmd.Parameters.AddWithValue("@InOut_Date", DateTime.Now.ToString("yyyy-MM-dd"));
+                        cmd.Parameters.AddWithValue("@InOut_Gubun", "입고");
+                        cmd.Parameters.AddWithValue("@InOut_Category", "생산실적");
+                        cmd.Parameters.AddWithValue("@From_WareHouse", "");
+                        cmd.Parameters.AddWithValue("@In_WareHouse", item.In_WareHouse);
+                        cmd.Parameters.AddWithValue("@ITEM_Code", item.ITEM_Code);
+                        cmd.Parameters.AddWithValue("@InOut_Qty", item.InOut_Qty);
 
 
 
@@ -685,6 +705,7 @@ WHERE FACT_Name = '자재창고_01' and f.ITEM_Code = @ITEM_Code";
                 catch (Exception err)
                 {
                     System.Diagnostics.Debug.WriteLine(err.Message);
+
                     cmd.Connection.Close();
                     return false;
                 }
@@ -761,19 +782,139 @@ WHERE FACT_Name = '자재창고_01' and f.ITEM_Code = @ITEM_Code";
                     }
                 }
 
-                    cmd.CommandText = sql;
+                cmd.CommandText = sql;
 
-                    cmd.Parameters.AddWithValue("@FACT_Name", ms.FACT_Name);
-                    cmd.Parameters.AddWithValue("@ITEM_Name", ms.ITEM_Name);
+                cmd.Parameters.AddWithValue("@FACT_Name", ms.FACT_Name);
+                cmd.Parameters.AddWithValue("@ITEM_Name", ms.ITEM_Name);
 
-                    cmd.Connection.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    List<Stock_StateVO> list = Helper.DataReaderMapToList<Stock_StateVO>(reader);
-                    cmd.Connection.Close();
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<Stock_StateVO> list = Helper.DataReaderMapToList<Stock_StateVO>(reader);
+                cmd.Connection.Close();
 
-                    return list;
-                
+                return list;
+
             }
         }
+
+        public List<ShipmentOrderVO> ShipmentOrder(ShipmentOrderSearchVO so)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                string sql = @"SELECT SO_WorkOrderID, SALES_Duedate, s.COM_Code, COM_Name, s.ITEM_Code, ITEM_Name, SALES_OrderQty
+                            FROM SalesMaster s inner join ITEM i on s.ITEM_Code = i.ITEM_Code inner join Company c on s.COM_Code = c.COM_Code
+                            WHERE SALES_ORDER_STATE = '작업완료' and Plan_ID = @Plan_ID and Shipment_State is null";
+                if (so.Item != "")
+                {
+                    sql = sql + " and ITEM_Name LIKE  '%' + @ITEM_Name +'%'";
+                    if (so.Company != "")
+                    {
+                        sql = sql + " and c.COM_Name = @COM_Name";
+                    }
+                }
+                else if (so.Company != "")
+                {
+                    sql = sql + " and c.COM_Name = @COM_Name";
+                }
+                cmd.CommandText = sql;
+
+                cmd.Parameters.AddWithValue("@Plan_ID", so.Plan_ID);
+                cmd.Parameters.AddWithValue("@COM_Name", so.Company);
+                cmd.Parameters.AddWithValue("@ITEM_Name", so.Item);
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ShipmentOrderVO> list = Helper.DataReaderMapToList<ShipmentOrderVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+
+            }
+        }
+        public bool Shipment(List<ShipmentVO> lists)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                cmd.CommandType = CommandType.Text;
+                try
+                {
+                    foreach (var item in lists)
+                    {
+                        cmd.CommandText = @"UPDATE SalesMaster set Shipment_State = '출하완료' WHERE SO_WorkOrderID = @SO_WorkOrderID";
+
+                        cmd.Parameters.AddWithValue("@SO_WorkOrderID", item.SO_WorkOrderID);
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+
+                    cmd.Connection.Close();
+                    return true;
+                }
+                catch (Exception err)
+                {
+                    System.Diagnostics.Debug.WriteLine(err.Message);
+                    cmd.Connection.Close();
+                    return false;
+                }
+            }
+        }
+
+        public List<DeadLineVO> DeadLine()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);                
+                cmd.CommandType = CommandType.Text;
+
+                cmd.CommandText = @"SELECT SO_WorkOrderID, s.COM_Code, COM_Name, s.ITEM_Code, ITEM_Name, SALES_OrderQty, (SALES_OrderQty * ITEM_Price)Price, DeadLine_Date
+                        FROM SalesMaster s inner join ITEM i on s.ITEM_Code = i.ITEM_Code inner join Company c on s.COM_Code = c.COM_Code
+                        WHERE Shipment_State = '출하완료' and DeadLine_State is null ";
+                
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<DeadLineVO> list = Helper.DataReaderMapToList<DeadLineVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+
+            }
+        }
+        public bool DeaLinePut(List<DeadLinePutVO> lists)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                cmd.CommandType = CommandType.Text;
+                try
+                {
+                    foreach (var item in lists)
+                    {
+                        cmd.CommandText = @"UPDATE SalesMaster set DeadLine_State = '마감완료', DeadLine_Date = @DeadLine_Date WHERE SO_WorkOrderID = @SO_WorkOrderID";
+
+                        cmd.Parameters.AddWithValue("@SO_WorkOrderID", item.SO_WorkOrderID);
+                        cmd.Parameters.AddWithValue("@DeadLine_Date", DateTime.Now.ToString("yyy-MM-dd"));
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+
+                    cmd.Connection.Close();
+                    return true;
+                }
+                catch (Exception err)
+                {
+                    System.Diagnostics.Debug.WriteLine(err.Message);
+                    cmd.Connection.Close();
+                    return false;
+                }
+            }
+        }
+
+
     }
 }

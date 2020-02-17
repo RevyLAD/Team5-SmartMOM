@@ -36,8 +36,12 @@ namespace Team5_SmartMOM.HSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "지시수량", "directQty", true, 100, DataGridViewContentAlignment.MiddleRight);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상태", "WO_State", true, 120, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "Plan_ID", "Plan_ID", true, 150, DataGridViewContentAlignment.MiddleCenter);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "소요시간(min)", "WO_Time", true, 130, DataGridViewContentAlignment.MiddleRight);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "우선순위", "WO_Priority", true, 100, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "소요시간(min)", "WO_Time", true, 100, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "우선순위", "WO_Priority", false, 100, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "양품수량", "WO_GoodQty", true, 80, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "불량수량", "WO_BadQty", true, 80, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "종료시간", "WO_WorkEndTime", true, 100, DataGridViewContentAlignment.MiddleCenter);
+
             InitCombo();
             DataLoad();
         }

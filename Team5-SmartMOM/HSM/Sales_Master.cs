@@ -24,19 +24,20 @@ namespace Team5_SmartMOM.HSM
 
         private void Sales_Master_Load(object sender, EventArgs e)
         {
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "고객WO", "SO_WorkOrderID", true, 180);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "고객사", "COM_Code", true, 80);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "고객사명", "COM_Name", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 100);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 200);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "주문유형", "PO_Type", true, 90);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "주문수량", "SALES_OrderQty", true, 90);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "출고수량", "SALES_ShipQty", true, 90);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "취소수량", "SALES_CancelQty", true, 90);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "SALES_Duedate", true, 100);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "주문일", "SALES_OrderDate", true, 100);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상태", "SALES_ORDER_STATE", true, 100);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "주문유형", "PO_Type", true, 90, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "주문수량", "SALES_OrderQty", true, 90, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "출고수량", "SALES_ShipQty", true, 90, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "취소수량", "SALES_CancelQty", true, 90, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "SALES_Duedate", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "주문일", "SALES_OrderDate", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상태", "SALES_ORDER_STATE", true, 100, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "비고", "SALES_Remark", true, 260);
 
             button2.PerformClick();

@@ -30,17 +30,13 @@ namespace Team5_SmartMOM.HSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "계획수량합계", "계획수량합계", true, 120);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "납기일", true, 200);
 
-
-
-
         }
 
         private void button3_Click(object sender, EventArgs e) //영업마스터 업로드
         {
             
             MasterCreate frm = new MasterCreate();
-            frm.StartPosition = FormStartPosition.CenterScreen;
-            
+            frm.StartPosition = FormStartPosition.CenterScreen;            
 
             if(frm.ShowDialog() == DialogResult.OK)
             {
