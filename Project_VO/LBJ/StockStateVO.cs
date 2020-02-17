@@ -20,4 +20,16 @@ namespace Project_VO.LBJ
         public string ITEM_Type { get; set; }
         public int InOut_Qty { get; set; }
     }
+    public class StackStatusVO
+    {
+        public int FACD_ID { get; set; }
+        public string FACT_Code { get; set; }
+        public string FACT_Name { get; set; }
+        public string ITEM_Code { get; set; }
+        public string ITEM_Name { get; set; }
+        public string ITEM_Type { get; set; }
+        public string ITEM_Size { get; set; }
+        public int FACD_Qty { get; set; }
+        public string ITEM_Unit { get; set; }
+    }
 }
