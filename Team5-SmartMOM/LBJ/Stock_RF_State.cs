@@ -56,7 +56,6 @@ namespace Team5_SmartMOM.PSM
         }
         public void DataLoad()
         {
-
             LBJ_Service service = new LBJ_Service();
             List<StockStateVO> Stock = service.StockState();
             dataGridView1.DataSource = stockVO = Stock;

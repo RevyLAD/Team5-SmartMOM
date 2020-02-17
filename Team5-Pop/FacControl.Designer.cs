@@ -195,9 +195,11 @@
             // 
             // RunningSginal_IMG
             // 
-            this.RunningSginal_IMG.Location = new System.Drawing.Point(191, 0);
+            this.RunningSginal_IMG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.RunningSginal_IMG.Location = new System.Drawing.Point(198, 3);
             this.RunningSginal_IMG.Name = "RunningSginal_IMG";
-            this.RunningSginal_IMG.Size = new System.Drawing.Size(37, 34);
+            this.RunningSginal_IMG.Size = new System.Drawing.Size(23, 22);
+            this.RunningSginal_IMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.RunningSginal_IMG.TabIndex = 18;
             this.RunningSginal_IMG.TabStop = false;
             // 

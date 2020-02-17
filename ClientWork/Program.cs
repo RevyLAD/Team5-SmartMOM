@@ -31,34 +31,34 @@ namespace ClientWork
 
             while (true)
             {
-                //Console.WriteLine("===설비를 선택하세요===");
-                //Console.WriteLine("[1] : Leg_조립반");
-                //Console.WriteLine("[2] : SEAT_가공반");
-                //Console.WriteLine("[3] : LEGS_가공반");
-                //Console.WriteLine("[4] : 최종_조립반");
-                //Console.WriteLine("[5] : 외주_작업장");
+                Console.WriteLine("===설비를 선택하세요===");
+                Console.WriteLine("[1] : Leg_조립반");
+                Console.WriteLine("[2] : SEAT_가공반");
+                Console.WriteLine("[3] : LEGS_가공반");
+                Console.WriteLine("[4] : 최종_조립반");
+                Console.WriteLine("[5] : 외주_작업장");
 
-                //Console.Write("입력 : ");
-                //choice = Console.ReadLine();
+                Console.Write("입력 : ");
+                choice = Console.ReadLine();
 
-                //switch (Convert.ToInt32(choice))
-                //{
-                //    case 1:
-                //        port = 1000;
-                //        break;
-                //    case 2:
-                //        port = 2000;
-                //        break;
-                //    case 3:
-                //        port = 3000;
-                //        break;
-                //    case 4:
-                //        port = 4000;
-                //        break;
-                //    case 5:
-                //        port = 5000;
-                //        break;
-                //}
+                switch (Convert.ToInt32(choice))
+                {
+                    case 1:
+                        port = 1000;
+                        break;
+                    case 2:
+                        port = 2000;
+                        break;
+                    case 3:
+                        port = 3000;
+                        break;
+                    case 4:
+                        port = 4000;
+                        break;
+                    case 5:
+                        port = 5000;
+                        break;
+                }
                 Console.ReadLine();
                 if (TcpConnection())
                 {
@@ -187,7 +187,13 @@ namespace ClientWork
                     badamount = 1;
                 }
 
-                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")} :: Good Qty :[{qttamount}] , Bad Qty : [{badamount}]";
+                int qty;
+                if (rnd.Next(0, 75) < 70)
+                    qty = 1;
+                else
+                    qty = 0;
+                
+                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")} :: {product} :: {qty}]";
                 byte[] buff = Encoding.ASCII.GetBytes(msg);
                 stream.Write(buff, 0, buff.Length);
 
