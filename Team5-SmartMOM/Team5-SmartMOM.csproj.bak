@@ -1,0 +1,857 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6DCF547A-4B7F-4DEC-ABCB-878B91038529}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Team5_SmartMOM</RootNamespace>
+    <AssemblyName>Team5-SmartMOM</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.7.0.7, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.7.0.7\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel">
+      <HintPath>..\..\..\..\..\Downloads\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseForm\BaseGridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\BaseGridForm.Designer.cs">
+      <DependentUpon>BaseGridForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\BaseOnlyGridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\BaseOnlyGridForm.Designer.cs">
+      <DependentUpon>BaseOnlyGridForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\BasePopUpDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\BasePopUpDialog.Designer.cs">
+      <DependentUpon>BasePopUpDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\CircleProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\CircleProgressBar.Designer.cs">
+      <DependentUpon>CircleProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\CircularProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseForm\CommonCodeService.cs" />
+    <Compile Include="BaseForm\Loading_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\Loading_Form.Designer.cs">
+      <DependentUpon>Loading_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\Textbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseForm\Textbox.Designer.cs">
+      <DependentUpon>Textbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\EnterPriseMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\EnterPriseMain.Designer.cs">
+      <DependentUpon>EnterPriseMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\BOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\BOR.Designer.cs">
+      <DependentUpon>BOR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\BORRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\BORRegister.Designer.cs">
+      <DependentUpon>BORRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\CustomerOrderStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\CustomerOrderStatus.Designer.cs">
+      <DependentUpon>CustomerOrderStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\EnterpriseRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\EnterpriseRegister.Designer.cs">
+      <DependentUpon>EnterpriseRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\Facilities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\Facilities.Designer.cs">
+      <DependentUpon>Facilities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\FacilitiesCrowRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\FacilitiesCrowRegister.Designer.cs">
+      <DependentUpon>FacilitiesCrowRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\FacilitiesDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\FacilitiesDetail.Designer.cs">
+      <DependentUpon>FacilitiesDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\FacilitiesMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\FacilitiesMain.Designer.cs">
+      <DependentUpon>FacilitiesMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\FacilitiesRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\FacilitiesRegister.Designer.cs">
+      <DependentUpon>FacilitiesRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\FactoryManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\FactoryManager.Designer.cs">
+      <DependentUpon>FactoryManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\FactoryRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\FactoryRegister.Designer.cs">
+      <DependentUpon>FactoryRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\ProductShipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\ProductShipment.Designer.cs">
+      <DependentUpon>ProductShipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC\ShipmentStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC\ShipmentStatus.Designer.cs">
+      <DependentUpon>ShipmentStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\Client_Deadline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\Client_Deadline.Designer.cs">
+      <DependentUpon>Client_Deadline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\Demand_Plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\Demand_Plan.Designer.cs">
+      <DependentUpon>Demand_Plan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\WorkOrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\WorkOrderList.Designer.cs">
+      <DependentUpon>WorkOrderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\WorkOrderPoPUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\WorkOrderPoPUp.Designer.cs">
+      <DependentUpon>WorkOrderPoPUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\WorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\WorkOrder.Designer.cs">
+      <DependentUpon>WorkOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\Sales_Master_Upload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\Sales_Master_Upload.Designer.cs">
+      <DependentUpon>Sales_Master_Upload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\MPS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\MPS.Designer.cs">
+      <DependentUpon>MPS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\MasterCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\MasterCreate.Designer.cs">
+      <DependentUpon>MasterCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\Meterial_Plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\Meterial_Plan.Designer.cs">
+      <DependentUpon>Meterial_Plan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\OutSourcing_Plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\OutSourcing_Plan.Designer.cs">
+      <DependentUpon>OutSourcing_Plan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\Product_Plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\Product_Plan.Designer.cs">
+      <DependentUpon>Product_Plan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\Sales_Closing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\Sales_Closing.Designer.cs">
+      <DependentUpon>Sales_Closing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\Sales_Closing_detailcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\Sales_Closing_detailcs.Designer.cs">
+      <DependentUpon>Sales_Closing_detailcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\Sales_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\Sales_Master.Designer.cs">
+      <DependentUpon>Sales_Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSM\SO_Insert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSM\SO_Insert.Designer.cs">
+      <DependentUpon>SO_Insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KIS\BOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KIS\BOM.Designer.cs">
+      <DependentUpon>BOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KIS\BOM_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KIS\BOM_detail.Designer.cs">
+      <DependentUpon>BOM_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KIS\ExChange_Rate_Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KIS\ExChange_Rate_Management.Designer.cs">
+      <DependentUpon>ExChange_Rate_Management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KIS\I.C_Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KIS\I.C_Information.Designer.cs">
+      <DependentUpon>I.C_Information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KIS\Item_Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KIS\Item_Management.Designer.cs">
+      <DependentUpon>Item_Management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KIS\Item_Management_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KIS\Item_Management_detail.Designer.cs">
+      <DependentUpon>Item_Management_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KIS\Material_Cost_Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KIS\Material_Cost_Management.Designer.cs">
+      <DependentUpon>Material_Cost_Management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KIS\Material_Cost_Management_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KIS\Material_Cost_Management_detail.Designer.cs">
+      <DependentUpon>Material_Cost_Management_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KIS\Sales_Price_Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KIS\Sales_Price_Management.Designer.cs">
+      <DependentUpon>Sales_Price_Management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KIS\Sales_Price_Management_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KIS\Sales_Price_Management_detail.Designer.cs">
+      <DependentUpon>Sales_Price_Management_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LBJ\office_hours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LBJ\office_hours.Designer.cs">
+      <DependentUpon>office_hours.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LBJ\office_hours_Insert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LBJ\office_hours_Insert.Designer.cs">
+      <DependentUpon>office_hours_Insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LBJ\office_hours_management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LBJ\office_hours_management.Designer.cs">
+      <DependentUpon>office_hours_management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PSM\CircularButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PSM\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\Import_Check_state.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Import_Check_state.Designer.cs">
+      <DependentUpon>Import_Check_state.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\Material_Ledger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Material_Ledger.Designer.cs">
+      <DependentUpon>Material_Ledger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LBJ\Material_Ledger_Export.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LBJ\Material_Ledger_Export.Designer.cs">
+      <DependentUpon>Material_Ledger_Export.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\Material_Ledger_State.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Material_Ledger_State.Designer.cs">
+      <DependentUpon>Material_Ledger_State.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LBJ\Materia_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LBJ\Materia_Request.Designer.cs">
+      <DependentUpon>Materia_Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\Purchasing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Purchasing.Designer.cs">
+      <DependentUpon>Purchasing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\Purchasing_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Purchasing_Order.Designer.cs">
+      <DependentUpon>Purchasing_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\Purchasing_State.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Purchasing_State.Designer.cs">
+      <DependentUpon>Purchasing_State.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LBJ\Stock_RF_State.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LBJ\Stock_RF_State.Designer.cs">
+      <DependentUpon>Stock_RF_State.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\ShipmentOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\ShipmentOrder.Designer.cs">
+      <DependentUpon>ShipmentOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\Stock_State.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Stock_State.Designer.cs">
+      <DependentUpon>Stock_State.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Supplier.Designer.cs">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PSM\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service\HSC_Service.cs" />
+    <Compile Include="Service\HSM_Service.cs" />
+    <Compile Include="Service\KIS_Service.cs" />
+    <Compile Include="Service\LBJ_Service.cs" />
+    <Compile Include="Service\PSM_Service.cs" />
+    <Compile Include="TabControl\CustomTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\NativeMethods.cs" />
+    <Compile Include="TabControl\TabStyle.cs" />
+    <Compile Include="TabControl\TabStyleProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\TabStyleProviders\TabStyleAngledProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\TabStyleProviders\TabStyleChromeProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\TabStyleProviders\TabStyleDefaultProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\TabStyleProviders\TabStyleIE8Provider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\TabStyleProviders\TabStyleNoneProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\TabStyleProviders\TabStyleRoundedProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\TabStyleProviders\TabStyleVisualStudioProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\TabStyleProviders\TabStyleVS2010Provider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\ThemedColors.cs" />
+    <Compile Include="Utility\ButtonZ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\CheckBoxZ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\CommonUtil.cs" />
+    <Compile Include="Utility\ExcelExportImport.cs" />
+    <Compile Include="Utility\FsButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\FsButton.designer.cs">
+      <DependentUpon>FsButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\GlobalClass.cs" />
+    <Compile Include="Utility\ImageConverterHelper.cs" />
+    <Compile Include="Utility\LabelZ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\PanelZ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\RadioButtonZ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\TabControlZ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\UtilityClass.cs" />
+    <EmbeddedResource Include="BaseForm\BaseGridForm.resx">
+      <DependentUpon>BaseGridForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\BaseOnlyGridForm.resx">
+      <DependentUpon>BaseOnlyGridForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\BasePopUpDialog.resx">
+      <DependentUpon>BasePopUpDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\CircleProgressBar.resx">
+      <DependentUpon>CircleProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\Loading_Form.resx">
+      <DependentUpon>Loading_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\Textbox.resx">
+      <DependentUpon>Textbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\EnterPriseMain.resx">
+      <DependentUpon>EnterPriseMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\BOR.resx">
+      <DependentUpon>BOR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\BORRegister.resx">
+      <DependentUpon>BORRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\CustomerOrderStatus.resx">
+      <DependentUpon>CustomerOrderStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\EnterpriseRegister.resx">
+      <DependentUpon>EnterpriseRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\Facilities.resx">
+      <DependentUpon>Facilities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\FacilitiesCrowRegister.resx">
+      <DependentUpon>FacilitiesCrowRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\FacilitiesDetail.resx">
+      <DependentUpon>FacilitiesDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\FacilitiesMain.resx">
+      <DependentUpon>FacilitiesMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\FacilitiesRegister.resx">
+      <DependentUpon>FacilitiesRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\FactoryManager.resx">
+      <DependentUpon>FactoryManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\FactoryRegister.resx">
+      <DependentUpon>FactoryRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\ProductShipment.resx">
+      <DependentUpon>ProductShipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC\ShipmentStatus.resx">
+      <DependentUpon>ShipmentStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\Client_Deadline.resx">
+      <DependentUpon>Client_Deadline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\Demand_Plan.resx">
+      <DependentUpon>Demand_Plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\WorkOrderList.resx">
+      <DependentUpon>WorkOrderList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\WorkOrderPoPUp.resx">
+      <DependentUpon>WorkOrderPoPUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\Sales_Master_Upload.resx">
+      <DependentUpon>Sales_Master_Upload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\MasterCreate.resx">
+      <DependentUpon>MasterCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\Meterial_Plan.resx">
+      <DependentUpon>Meterial_Plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\MPS.resx">
+      <DependentUpon>MPS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\OutSourcing_Plan.resx">
+      <DependentUpon>OutSourcing_Plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\Product_Plan.resx">
+      <DependentUpon>Product_Plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\Sales_Closing.resx">
+      <DependentUpon>Sales_Closing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\Sales_Closing_detailcs.resx">
+      <DependentUpon>Sales_Closing_detailcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\Sales_Master.resx">
+      <DependentUpon>Sales_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\SO_Insert.resx">
+      <DependentUpon>SO_Insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSM\WorkOrder.resx">
+      <DependentUpon>WorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KIS\BOM.resx">
+      <DependentUpon>BOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KIS\BOM_detail.resx">
+      <DependentUpon>BOM_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KIS\ExChange_Rate_Management.resx">
+      <DependentUpon>ExChange_Rate_Management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KIS\I.C_Information.resx">
+      <DependentUpon>I.C_Information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KIS\Item_Management.resx">
+      <DependentUpon>Item_Management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KIS\Item_Management_detail.resx">
+      <DependentUpon>Item_Management_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KIS\Material_Cost_Management.resx">
+      <DependentUpon>Material_Cost_Management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KIS\Material_Cost_Management_detail.resx">
+      <DependentUpon>Material_Cost_Management_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KIS\Sales_Price_Management.resx">
+      <DependentUpon>Sales_Price_Management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KIS\Sales_Price_Management_detail.resx">
+      <DependentUpon>Sales_Price_Management_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LBJ\office_hours.resx">
+      <DependentUpon>office_hours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LBJ\office_hours_Insert.resx">
+      <DependentUpon>office_hours_Insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LBJ\office_hours_management.resx">
+      <DependentUpon>office_hours_management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="PSM\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\Import_Check_state.resx">
+      <DependentUpon>Import_Check_state.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\Material_Ledger.resx">
+      <DependentUpon>Material_Ledger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LBJ\Material_Ledger_Export.resx">
+      <DependentUpon>Material_Ledger_Export.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\Material_Ledger_State.resx">
+      <DependentUpon>Material_Ledger_State.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LBJ\Materia_Request.resx">
+      <DependentUpon>Materia_Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\Purchasing.resx">
+      <DependentUpon>Purchasing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\Purchasing_Order.resx">
+      <DependentUpon>Purchasing_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\Purchasing_State.resx">
+      <DependentUpon>Purchasing_State.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LBJ\Stock_RF_State.resx">
+      <DependentUpon>Stock_RF_State.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\ShipmentOrder.resx">
+      <DependentUpon>ShipmentOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\Stock_State.resx">
+      <DependentUpon>Stock_State.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\Supplier.resx">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="bin\Debug\Team5-SmartMOM.exe.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\MetroFramework.dll" />
+    <Content Include="bin\Debug\MetroFramework.Fonts.dll" />
+    <Content Include="bin\Debug\Project_DAC.dll" />
+    <Content Include="bin\Debug\Project_DAC.pdb" />
+    <Content Include="bin\Debug\Project_VO.dll" />
+    <Content Include="bin\Debug\Project_VO.pdb" />
+    <Content Include="bin\Debug\Team5-SmartMOM.exe" />
+    <Content Include="bin\Debug\Team5-SmartMOM.pdb" />
+    <Content Include="bin\Debug\Team5_DEV.xml" />
+    <Content Include="MetroFramework.txt" />
+    <None Include="Resources\gmail.png" />
+    <None Include="Resources\chat.png" />
+    <None Include="Resources\calculator1.png" />
+    <None Include="Resources\memo.png" />
+    <None Include="Resources\calculator.png" />
+    <None Include="Resources\e438e1b7a4f6bb5a48cd5971f538571a1.gif" />
+    <None Include="Resources\e438e1b7a4f6bb5a48cd5971f538571a.gif" />
+    <None Include="Resources\please-wait-gif-8.gif" />
+    <None Include="Resources\microsoft-excel.png" />
+    <None Include="Resources\pencil.png" />
+    <None Include="Resources\note.png" />
+    <None Include="Resources\arrow.png" />
+    <None Include="Resources\star.png" />
+    <None Include="Resources\plus-sign %281%29.png" />
+    <None Include="Resources\file1.png" />
+    <None Include="Resources\oos.png" />
+    <None Include="Resources\delivery1.png" />
+    <None Include="Resources\document.png" />
+    <None Include="Resources\box %282%29.png" />
+    <None Include="Resources\architecture.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\checklist1.png" />
+    <None Include="Resources\courier.png" />
+    <None Include="Resources\deliveryman.png" />
+    <None Include="Resources\delivery.png" />
+    <None Include="Resources\waiting.png" />
+    <None Include="Resources\profile.png" />
+    <None Include="Resources\video-conference.png" />
+    <None Include="Resources\x-button2.png" />
+    <None Include="Resources\x-button1.png" />
+    <None Include="Resources\x-button.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\edit.jpg" />
+    <None Include="Resources\warehouse1.png" />
+    <None Include="Resources\file.png" />
+    <None Include="Resources\checklist.png" />
+    <None Include="Resources\process.png" />
+    <None Include="Resources\happy.png" />
+    <None Include="Resources\delivery-truck.png" />
+    <None Include="Resources\logistics %281%29.png" />
+    <None Include="Resources\handshake.png" />
+    <None Include="Resources\material.png" />
+    <None Include="Resources\menu.png" />
+    <None Include="Resources\purchase %281%29.png" />
+    <None Include="Resources\happy %281%29.png" />
+    <None Include="Resources\employee.png" />
+    <None Include="Resources\truck.png" />
+    <None Include="Resources\process %281%29.png" />
+    <None Include="Resources\warehouse.png" />
+    <None Include="Resources\box %281%29.png" />
+    <None Include="Resources\material %281%29.png" />
+    <None Include="Resources\bars-chart.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\chevron %281%29.png" />
+    <None Include="Resources\chevron.png" />
+    <None Include="Resources\shopping-bag.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\trophy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Project_DAC\Project_DAC.csproj">
+      <Project>{68769eee-d910-4ef3-aecf-e27ac2621d80}</Project>
+      <Name>Project_DAC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project_VO\Project_VO.csproj">
+      <Project>{c48d50b0-fd18-4417-9dee-8fabb0b4ab3e}</Project>
+      <Name>Project_VO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Team5-Pop\Team5-Pop.csproj">
+      <Project>{7832EC0A-67BF-4CD5-8827-97061167B8D5}</Project>
+      <Name>Team5-Pop</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

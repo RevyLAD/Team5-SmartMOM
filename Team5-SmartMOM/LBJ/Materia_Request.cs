@@ -85,10 +85,8 @@ namespace Team5_SmartMOM.PSM
         {
             List<MateriaVO> mvo = new List<MateriaVO>();
 
-            if (cboFacilities.Text.Trim() != "" && txtITEM_Code.Text != "" && txtWO_ID.Text != "")
+            if (cboFacilities.Text.Trim() != "")
             {
-                //string a = dateTimePicker1.Value.ToString("yyyy-MM-dd");
-                //string b = dateTimePicker2.Value.ToString("yyyy-MM-dd");
                 dataGridView1.DataSource = MateriaSearch();
             }
             else
@@ -115,6 +113,11 @@ namespace Team5_SmartMOM.PSM
         private void btnAllSearch_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = mvo;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

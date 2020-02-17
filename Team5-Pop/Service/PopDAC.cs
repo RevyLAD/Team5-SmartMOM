@@ -202,7 +202,45 @@ namespace Team5_Pop
                 cmd.Connection.Close();
             }
             return portnum;
+        }
 
+        public void SavePopData(List<string> list)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "insert into values() where WO_ID = @WO_ID";
+
+                cmd.Parameters.AddWithValue("@WO_ID", list[0]);
+                cmd.Parameters.AddWithValue("@WO_ID", list[1]);
+                cmd.Parameters.AddWithValue("@WO_ID", list[2]);
+                cmd.Parameters.AddWithValue("@WO_ID", list[3]);
+                cmd.Parameters.AddWithValue("@WO_ID", list[4]);
+                cmd.Parameters.AddWithValue("@WO_ID", list[5]);
+                cmd.Parameters.AddWithValue("@WO_ID", list[6]);
+
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+        }
+
+        public void WritePoPLog(List<string> list)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "insert into values() where WO_ID = @WO_ID";
+
+                cmd.Parameters.AddWithValue("@WO_ID", list[0]);
+                cmd.Parameters.AddWithValue("@WO_ID", list[1]);
+                cmd.Parameters.AddWithValue("@WO_ID", list[2]);
+                cmd.Parameters.AddWithValue("@WO_ID", list[3]);
+
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
         }
     }
 }
