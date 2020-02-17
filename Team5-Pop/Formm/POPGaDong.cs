@@ -32,6 +32,9 @@ namespace Team5_Pop
         PopVO thisvo;
         int thisport;
         bool start;
+        int qty;
+
+
         public POPGaDong(PopVO vo, int newport)
         {
             InitializeComponent();
@@ -39,7 +42,10 @@ namespace Team5_Pop
             this.thisvo = vo;
             this.thisport = newport;
             checkid = thisvo.WO_ID;
-            TickTime = Convert.ToString(((thisvo.WO_Time / thisvo.directQty) * 1000));
+            double wotime = thisvo.WO_Time;
+            double directqty = thisvo.directQty;
+
+            TickTime = Convert.ToString((wotime/directqty)*1000);
         }
         private void POPGaDong_Load(object sender, EventArgs e)
         {
@@ -61,7 +67,7 @@ namespace Team5_Pop
 
         private void SetMTimer()
         {
-            Mtimer = new System.Timers.Timer(Convert.ToInt32(TickTime));
+            Mtimer = new System.Timers.Timer((int)(Convert.ToDouble(TickTime)));
             Mtimer.Enabled = true;
             Mtimer.Elapsed += Mtimer_Elapsed;
             Mtimer.AutoReset = true;
@@ -83,8 +89,9 @@ namespace Team5_Pop
 
                 if (readmsg != null)
                 {
-                    goodqtt = Convert.ToInt32(readmsg.Substring(32, 1));
-                    badqtt = Convert.ToInt32(readmsg.Substring(48, 1));
+                    qty = Convert.ToInt32(readmsg.Substring(48, 1));
+                    //goodqtt = Convert.ToInt32(readmsg.Substring(25, 1));
+                    //badqtt = Convert.ToInt32(readmsg.Substring(48, 1));
                 }
                 
                 listBox1.Items.Add(readmsg);
@@ -104,14 +111,18 @@ namespace Team5_Pop
                 logvo.ITEM_Code = thisvo.ITEM_Code;
                 logvo.ProductTime = DateTime.Now;
 
-                if (goodqtt > 0)
+                if (qty == 1)
+                {
                     logvo.Qty = "G";
-                else if (badqtt > 0)
+                    txtGoodQty.Text = (Convert.ToInt64(txtGoodQty.Text) +1).ToString("0000");
+                }
+                else if (qty == 0)
+                {
                     logvo.Qty = "B";
+                    txtBadQty.Text = (Convert.ToInt64(txtBadQty.Text)+ 1).ToString("0000");
+                }
                 service.WritePoPLog(logvo);
                 
-                txtGoodQty.Text = (Convert.ToInt64(txtGoodQty.Text) + goodqtt).ToString("0000");
-                txtBadQty.Text = (Convert.ToInt64(txtBadQty.Text) + badqtt).ToString("0000");
                 txtCount.Text = (Convert.ToInt64(txtGoodQty.Text) + Convert.ToInt64(txtBadQty.Text)).ToString("0000");
                 GaDongTimeChange();
 
@@ -173,8 +184,6 @@ namespace Team5_Pop
                 await Task.Factory.StartNew(AsyncTcpProcess, tc);
             }
         }
-        int goodqtt;
-        int badqtt;
         string TickTime;
         public System.Timers.Timer Mtimer;
         private async Task AsyncTcpProcess(object o)
