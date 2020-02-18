@@ -89,7 +89,7 @@
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1202, 110);
+            this.panel2.Size = new System.Drawing.Size(1202, 82);
             // 
             // panelTop
             // 
@@ -101,7 +101,7 @@
             this.panelTop.Controls.Add(this.label5);
             this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Size = new System.Drawing.Size(1202, 90);
+            this.panelTop.Size = new System.Drawing.Size(1202, 62);
             // 
             // splitContainer2
             // 
@@ -123,7 +123,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(14, 18);
+            this.label2.Location = new System.Drawing.Point(14, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 12);
             this.label2.TabIndex = 0;
@@ -135,7 +135,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(389, 18);
+            this.label4.Location = new System.Drawing.Point(307, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 12);
             this.label4.TabIndex = 2;
@@ -146,7 +146,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(752, 18);
+            this.label5.Location = new System.Drawing.Point(604, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 12);
             this.label5.TabIndex = 3;
@@ -155,14 +155,14 @@
             // dtp_ExistingDate
             // 
             this.dtp_ExistingDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_ExistingDate.Location = new System.Drawing.Point(88, 14);
+            this.dtp_ExistingDate.Location = new System.Drawing.Point(88, 21);
             this.dtp_ExistingDate.Name = "dtp_ExistingDate";
             this.dtp_ExistingDate.Size = new System.Drawing.Size(162, 21);
             this.dtp_ExistingDate.TabIndex = 1;
             // 
             // txt_Item
             // 
-            this.txt_Item.Location = new System.Drawing.Point(451, 14);
+            this.txt_Item.Location = new System.Drawing.Point(369, 21);
             this.txt_Item.Name = "txt_Item";
             this.txt_Item.Size = new System.Drawing.Size(204, 21);
             this.txt_Item.TabIndex = 2;
@@ -170,7 +170,7 @@
             // cbo_Deployement
             // 
             this.cbo_Deployement.FormattingEnabled = true;
-            this.cbo_Deployement.Location = new System.Drawing.Point(827, 14);
+            this.cbo_Deployement.Location = new System.Drawing.Point(679, 21);
             this.cbo_Deployement.Name = "cbo_Deployement";
             this.cbo_Deployement.Size = new System.Drawing.Size(162, 20);
             this.cbo_Deployement.TabIndex = 3;
@@ -180,9 +180,9 @@
             this.btn_Search.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btn_Search.ForeColor = System.Drawing.Color.White;
-            this.btn_Search.Location = new System.Drawing.Point(1102, 42);
+            this.btn_Search.Location = new System.Drawing.Point(1103, 16);
             this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(93, 39);
+            this.btn_Search.Size = new System.Drawing.Size(92, 30);
             this.btn_Search.TabIndex = 4;
             this.btn_Search.Text = "조회";
             this.btn_Search.UseVisualStyleBackColor = false;
@@ -241,11 +241,11 @@
             this.btn_reset.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btn_reset.ForeColor = System.Drawing.Color.White;
-            this.btn_reset.Location = new System.Drawing.Point(1001, 42);
+            this.btn_reset.Location = new System.Drawing.Point(1002, 16);
             this.btn_reset.Name = "btn_reset";
-            this.btn_reset.Size = new System.Drawing.Size(93, 39);
+            this.btn_reset.Size = new System.Drawing.Size(92, 30);
             this.btn_reset.TabIndex = 8;
-            this.btn_reset.Text = "다시 불러오기";
+            this.btn_reset.Text = "전체조회";
             this.btn_reset.UseVisualStyleBackColor = false;
             this.btn_reset.Click += new System.EventHandler(this.Btn_reset_Click);
             // 

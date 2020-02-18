@@ -75,7 +75,7 @@ namespace Team5_SmartMOM.PSM
             company = common.GetAllCompanyCode();
             CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "");
 
-            List<PlanIDVO> planid = service.PlanID();
+            List<PlanIDVO> planid = service.Material_State_PlanID();
             CommonUtil.ComboBinding(cboPlanID, planid, "Plan_ID", "Plan_ID");
         }
 
@@ -148,6 +148,7 @@ namespace Team5_SmartMOM.PSM
             else
             {
                 MessageBox.Show("검색 결과가 없습니다");
+                dataGridView1.DataSource = null;
             }
         }
 

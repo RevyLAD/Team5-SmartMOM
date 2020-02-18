@@ -62,6 +62,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -136,6 +137,7 @@
             this.button3.Text = "추가";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Visible = false;
             // 
             // button5
             // 
@@ -151,6 +153,7 @@
             this.button5.Text = "저장";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Visible = false;
             // 
             // button1
             // 
@@ -166,6 +169,7 @@
             this.button1.Text = "취소";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
             // 
             // label2
             // 
@@ -212,6 +216,7 @@
             this.button2.Text = "엑셀";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -336,7 +341,6 @@
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Visible = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // panelZ1
             // 
@@ -393,11 +397,11 @@
             this.btnAllSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnAllSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAllSearch.ForeColor = System.Drawing.Color.White;
-            this.btnAllSearch.Location = new System.Drawing.Point(1051, 45);
+            this.btnAllSearch.Location = new System.Drawing.Point(1129, 45);
             this.btnAllSearch.Name = "btnAllSearch";
             this.btnAllSearch.Size = new System.Drawing.Size(81, 30);
             this.btnAllSearch.TabIndex = 62;
-            this.btnAllSearch.Text = "되돌리기";
+            this.btnAllSearch.Text = "전체 조회";
             this.btnAllSearch.UseVisualStyleBackColor = false;
             this.btnAllSearch.Click += new System.EventHandler(this.btnAllSearch_Click);
             // 
@@ -407,7 +411,7 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1138, 45);
+            this.btnSearch.Location = new System.Drawing.Point(1042, 45);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(81, 30);
             this.btnSearch.TabIndex = 62;
@@ -541,5 +545,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         protected System.Windows.Forms.Button btnAllSearch;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

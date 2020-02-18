@@ -180,7 +180,7 @@
             this.btn_Search.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btn_Search.ForeColor = System.Drawing.Color.White;
-            this.btn_Search.Location = new System.Drawing.Point(1102, 57);
+            this.btn_Search.Location = new System.Drawing.Point(1096, 34);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(93, 39);
             this.btn_Search.TabIndex = 6;
@@ -215,7 +215,7 @@
             this.cbo_UseorNot.FormattingEnabled = true;
             this.cbo_UseorNot.Location = new System.Drawing.Point(780, 20);
             this.cbo_UseorNot.Name = "cbo_UseorNot";
-            this.cbo_UseorNot.Size = new System.Drawing.Size(217, 20);
+            this.cbo_UseorNot.Size = new System.Drawing.Size(113, 20);
             this.cbo_UseorNot.TabIndex = 3;
             // 
             // Btn_Copy
@@ -270,11 +270,11 @@
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(1003, 57);
+            this.button4.Location = new System.Drawing.Point(997, 34);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(93, 39);
             this.button4.TabIndex = 7;
-            this.button4.Text = "다시 불러오기";
+            this.button4.Text = "전체조회";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
