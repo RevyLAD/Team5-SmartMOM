@@ -25,7 +25,7 @@ namespace Team5_Pop
         int CurrentPage;
         int MaxPage;
 
-        MainPoPForm mainform;
+        public MainPoPForm mainform;
         PopService service;
         List<FacVOp> fac_cbolist;
 
@@ -120,7 +120,7 @@ namespace Team5_Pop
         }
         List<ingdata> inglist;
 
-        private void DataLoad()
+        public void DataLoad()
         {
             dataGridView1.Columns.Clear();
             dataGridView1.AutoGenerateColumns = true;
@@ -360,20 +360,23 @@ namespace Team5_Pop
                     gadong_vo.Plan_ID = dataGridView1.Rows[e_temp.RowIndex].Cells[8].Value.ToString();
                     gadong_vo.WO_Priority = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[9].Value.ToString());
                     gadong_vo.WO_Time = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[10].Value.ToString());
+                    gadong_vo.restQty = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[11].Value.ToString());
 
                     PopService service = new PopService();
-                    
-                    POPGaDong newgadong = new POPGaDong(gadong_vo, service.GetPortNum(gadong_vo.WO_ID));
-                    //POPGaDong newgadong = new POPGaDong(gadong_vo, 9900);
 
-                    service.UpdateFacState(gadong_vo.FAC_Name, gadong_vo.WO_ID);
+                    if (service.GetFacState(gadong_vo.FAC_Name)=="가동")
+                    {
+                        MessageBox.Show("이미 공정이 실행중입니다.");
+                    }
+                    else
+                    {
+                        POPGaDong newgadong = new POPGaDong(gadong_vo, service.GetPortNum(gadong_vo.WO_ID), this);
+                        
                         mainform.CreateTabPages(gadong_vo.FAC_Name, newgadong);
-
-
-                    newgadong.DataGethering += new DataGetEventHandler(this.DataGet);
-
+                    }
+                    
+                    //newgadong.DataGethering += new DataGetEventHandler(this.DataGet);
                     //newgadong.Mtimer.Elapsed += new System.Timers.ElapsedEventHandler(DataUpdate(null, nullargs, gadong_vo));
-
                 }
                 else
                 {
@@ -385,22 +388,22 @@ namespace Team5_Pop
             }
         }
 
-        private void DataGet(object sender, PopEventAgrs e)
-        {
-            //POPGaDong pop = (POPGaDong)sender;
-            //Debug.WriteLine(pop.checkid);
-            foreach (var item in inglist)
-            {
-                if (item.woid.Equals(e.newid))
-                {
-                    item.totalqty = Convert.ToInt32(e.total.Trim());
-                    item.goodqty = Convert.ToInt32(e.good.Trim());
-                    item.badqty = Convert.ToInt32(e.bad.Trim());
+        //private void DataGet(object sender, PopEventAgrs e)
+        //{
+        //    //POPGaDong pop = (POPGaDong)sender;
+        //    //Debug.WriteLine(pop.checkid);
+        //    foreach (var item in inglist)
+        //    {
+        //        if (item.woid.Equals(e.newid))
+        //        {
+        //            item.totalqty = Convert.ToInt32(e.total.Trim());
+        //            item.goodqty = Convert.ToInt32(e.good.Trim());
+        //            item.badqty = Convert.ToInt32(e.bad.Trim());
 
-                    break;
-                }
-            }
-        }
+        //            break;
+        //        }
+        //    }
+        //}
 
         public class ingdata
         {
@@ -429,31 +432,18 @@ namespace Team5_Pop
                     {
                         string woId = frm.WorkOrderID.ToString();
                         PopService service = new PopService();
+
                         gadong_vo = service.GetPoPVOByWoId(woId)[0];
-                        //gadong_vo.ITEM_Code = dataGridView1.Rows[e_temp.RowIndex].Cells[1].Value.ToString();
-                        //gadong_vo.FAC_Name = dataGridView1.Rows[e_temp.RowIndex].Cells[2].Value.ToString();
-                        //gadong_vo.WO_StartDate = Convert.ToDateTime(dataGridView1.Rows[e_temp.RowIndex].Cells[3].Value.ToString());
-                        //gadong_vo.WO_EndDate = Convert.ToDateTime(dataGridView1.Rows[e_temp.RowIndex].Cells[4].Value.ToString());
-                        //gadong_vo.planQty = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[5].Value.ToString());
-                        //gadong_vo.directQty = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[6].Value.ToString());
-                        //gadong_vo.WO_State = dataGridView1.Rows[e_temp.RowIndex].Cells[7].Value.ToString();
-                        //gadong_vo.Plan_ID = dataGridView1.Rows[e_temp.RowIndex].Cells[8].Value.ToString();
-                        //gadong_vo.WO_Priority = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[9].Value.ToString());
-                        //gadong_vo.WO_Time = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[10].Value.ToString());
 
-                        
-
-                        POPGaDong newgadong = new POPGaDong(gadong_vo, service.GetPortNum(gadong_vo.WO_ID));
-                        //POPGaDong newgadong = new POPGaDong(gadong_vo, 9900);
-
-                        service.UpdateFacState(gadong_vo.FAC_Name, gadong_vo.WO_ID);
-                        mainform.CreateTabPages(gadong_vo.FAC_Name, newgadong);
-
-
-                        newgadong.DataGethering += new DataGetEventHandler(this.DataGet);
-
-                        //newgadong.Mtimer.Elapsed += new System.Timers.ElapsedEventHandler(DataUpdate(null, nullargs, gadong_vo));
-
+                        if (service.GetFacState(gadong_vo.FAC_Name) == "가동")
+                        {
+                            MessageBox.Show("이미 공정이 실행중입니다.");
+                        }
+                        else
+                        {
+                            POPGaDong newgadong = new POPGaDong(gadong_vo, service.GetPortNum(gadong_vo.WO_ID), this);
+                            mainform.CreateTabPages(gadong_vo.FAC_Name, newgadong);
+                        }
                     }
                     else
                     {

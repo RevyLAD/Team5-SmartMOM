@@ -1,27 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Net.Sockets;
-using System.Timers;
-using log4net.Core;
-using System.IO;
 using System.Configuration;
+using System.Drawing;
 using System.Net;
-using System.Data.SqlClient;
+using System.Net.Sockets;
+using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
+using System.Timers;
+using System.Windows.Forms;
 
 namespace Team5_Pop
 {
-    public delegate void DataGetEventHandler(object sender, PopEventAgrs args);
+    //public delegate void DataGetEventHandler(object sender, PopEventAgrs args);
     public partial class POPGaDong : Form
     {
-        public event DataGetEventHandler DataGethering;
+        //public event DataGetEventHandler DataGethering;
 
         static int machineID = 1;
         static string writeFolder = AppDomain.CurrentDomain.BaseDirectory + "\\Production";
@@ -33,11 +27,15 @@ namespace Team5_Pop
         int thisport;
         bool start;
         int qty;
+        string connected = "ㆍㆍㆍ 연결 대기중 ㆍㆍㆍ";
+        string endstate;
+        PoPMain mainform;
 
-
-        public POPGaDong(PopVO vo, int newport)
+        public POPGaDong(PopVO vo, int newport, PoPMain mainform)
         {
             InitializeComponent();
+
+            this.mainform = mainform;
 
             this.thisvo = vo;
             this.thisport = newport;
@@ -51,7 +49,12 @@ namespace Team5_Pop
         {
             CheckForIllegalCrossThreadCalls = false;
             DataLoad();
+            
+            btnStop.Enabled = false;
+            btnSave.Enabled = false;
+
             SetMTimer();
+            Mtimer.Stop();
 
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
             machineID = rnd.Next(1, 10);
@@ -85,11 +88,11 @@ namespace Team5_Pop
                 string readmsg = Encoding.ASCII.GetString(buff2);
 
                 timer1.Start();
-                connected = "ㆍㆍㆍ 연결 대기중 ㆍㆍㆍ";
 
                 if (readmsg != null)
                 {
-                    qty = Convert.ToInt32(readmsg.Substring(48, 1));
+                    qty = Convert.ToInt32(readmsg.Split('/')[5]);
+
                     //goodqtt = Convert.ToInt32(readmsg.Substring(25, 1));
                     //badqtt = Convert.ToInt32(readmsg.Substring(48, 1));
                 }
@@ -98,6 +101,9 @@ namespace Team5_Pop
                 
                 PopService service = new PopService();
                 PoPLogVO logvo = new PoPLogVO();
+
+                btnStop.Enabled = true;
+                btnStart.Enabled = false;
 
                 if (!start)
                 {
@@ -126,16 +132,16 @@ namespace Team5_Pop
                 txtCount.Text = (Convert.ToInt64(txtGoodQty.Text) + Convert.ToInt64(txtBadQty.Text)).ToString("0000");
                 GaDongTimeChange();
 
-                if (DataGethering != null)
-                {
-                    PopEventAgrs args = new PopEventAgrs();
-                    args.good = txtGoodQty.Text;
-                    args.bad = txtBadQty.Text;
-                    args.total = txtCount.Text;
-                    args.newid = thisvo.WO_ID;
+                //if (DataGethering != null)
+                //{
+                //    PopEventAgrs args = new PopEventAgrs();
+                //    args.good = txtGoodQty.Text;
+                //    args.bad = txtBadQty.Text;
+                //    args.total = txtCount.Text;
+                //    args.newid = thisvo.WO_ID;
 
-                    DataGethering(this, args);
-                }
+                //    DataGethering(this, args);
+                //}
             }
             catch
             {
@@ -152,7 +158,7 @@ namespace Team5_Pop
             PopService service = new PopService();
 
             txtOrderID.Text = thisvo.WO_ID;
-            txtDirectQty.Text = txtNoCount.Text = Convert.ToString(thisvo.directQty.ToString("0000"));
+            txtDirectQty.Text = txtNoCount.Text = Convert.ToString(thisvo.restQty.ToString("0000"));
 
             txtFacName.Text = thisvo.FAC_Name;
 
@@ -248,7 +254,7 @@ namespace Team5_Pop
             service.UpdateFacStateEnd(thisvo.FAC_Name);
         }
 
-        string connected = "ㆍㆍㆍ 연결 대기중 ㆍㆍㆍ";
+        
 
         private void GaDongTimeChange()
         {
@@ -273,11 +279,14 @@ namespace Team5_Pop
                 btnStop.Enabled = false;
 
                 string msg = "theend";
+                endstate = "작업종료";
                 byte[] buff = Encoding.ASCII.GetBytes(msg);
                 //stream.Write(buff, 0, buff.Length);
                 stream.WriteAsync(buff, 0, buff.Length);
 
                 listBox1.Items.Add("ㆍㆍㆍ 생산 종료 ㆍㆍㆍ");
+
+                btnSave.Enabled = true;
             }
             else
             {
@@ -329,6 +338,7 @@ namespace Team5_Pop
         private void button5_Click(object sender, EventArgs e)
         {
             this.Close();
+            this.mainform.mainform.DeleteTabPages(this);
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -380,6 +390,8 @@ namespace Team5_Pop
         {
             btnStart.Enabled = false;
             btnBadInsert.Enabled = false;
+            btnSave.Enabled = true;
+            btnpause.Enabled = false;
 
             timer1.Stop();
             Mtimer.Stop();
@@ -389,6 +401,13 @@ namespace Team5_Pop
             service.UpdateFacStateEnd(thisvo.FAC_Name);
 
             btnStop.Enabled = false;
+
+            string msg = "stop/"+txtNoCount.Text;
+            byte[] buff = Encoding.ASCII.GetBytes(msg);
+            stream.WriteAsync(buff, 0, buff.Length);
+
+            endstate = "작업중지";
+            listBox1.Items.Add("ㆍㆍㆍ 작업 중지 ㆍㆍㆍ");
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -404,26 +423,36 @@ namespace Team5_Pop
                 "\n화면을 종료하시겠습니까?","실적 저장" ,
                 MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                List<string> templist = new List<string>();
+                PoPEndVO tempvo = new PoPEndVO();
+
+                tempvo.WO_ID = thisvo.WO_ID;
+                tempvo.WO_State= endstate;
+                tempvo.GoodQty = Convert.ToInt32(txtGoodQty.Text.Trim());
+                tempvo.BadQty = Convert.ToInt32(txtBadQty.Text.Trim());
+                tempvo.restQty = Convert.ToInt32(txtNoCount.Text.Trim());
+                tempvo.WO_WorkEndTime = DateTime.Now;
+
                 PopService service = new PopService();
-                service.SavePopData(templist);
+                service.SavePopData(tempvo);
+                service.UpdateFacStateEnd(thisvo.FAC_Name);
 
                 this.Close();
+                this.mainform.mainform.DeleteTabPages(this);
+                this.mainform.DataLoad();
+                stream.Close();
             }
             else
             {
                 btnSave.Enabled = false;
             }
-
-            
         }
     }
 
-    public class PopEventAgrs:EventArgs
-    {
-        public string total;
-        public string good;
-        public string bad;
-        public string newid;        
-    }
+    //public class PopEventAgrs:EventArgs
+    //{
+    //    public string total;
+    //    public string good;
+    //    public string bad;
+    //    public string newid;        
+    //}
 }
