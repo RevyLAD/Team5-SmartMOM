@@ -213,12 +213,6 @@
     <Compile Include="HSC\ProductShipment.Designer.cs">
       <DependentUpon>ProductShipment.cs</DependentUpon>
     </Compile>
-    <Compile Include="HSC\ShipmentStatus.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HSC\ShipmentStatus.Designer.cs">
-      <DependentUpon>ShipmentStatus.cs</DependentUpon>
-    </Compile>
     <Compile Include="HSM\Client_Deadline.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -410,6 +404,12 @@
     <Compile Include="PSM\CircularButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="PSM\DeadLineState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\DeadLineState.Designer.cs">
+      <DependentUpon>DeadLineState.cs</DependentUpon>
+    </Compile>
     <Compile Include="PSM\Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -475,6 +475,18 @@
     </Compile>
     <Compile Include="PSM\ShipmentOrder.Designer.cs">
       <DependentUpon>ShipmentOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\ShipmentStateMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\ShipmentStateMain.Designer.cs">
+      <DependentUpon>ShipmentStateMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\ShipmentStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\ShipmentStatus.Designer.cs">
+      <DependentUpon>ShipmentStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="PSM\Stock_State.cs">
       <SubType>Form</SubType>
@@ -618,9 +630,6 @@
     <EmbeddedResource Include="HSC\ProductShipment.resx">
       <DependentUpon>ProductShipment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HSC\ShipmentStatus.resx">
-      <DependentUpon>ShipmentStatus.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HSM\Client_Deadline.resx">
       <DependentUpon>Client_Deadline.cs</DependentUpon>
     </EmbeddedResource>
@@ -723,6 +732,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="PSM\DeadLineState.resx">
+      <DependentUpon>DeadLineState.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PSM\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
@@ -755,6 +767,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PSM\ShipmentOrder.resx">
       <DependentUpon>ShipmentOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\ShipmentStateMain.resx">
+      <DependentUpon>ShipmentStateMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\ShipmentStatus.resx">
+      <DependentUpon>ShipmentStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PSM\Stock_State.resx">
       <DependentUpon>Stock_State.cs</DependentUpon>
