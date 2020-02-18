@@ -100,23 +100,33 @@ namespace Team5_SmartMOM.HSM
 
         private void button1_Click(object sender, EventArgs e) //바코드출력
         {
-            if(cboPlanID.Text != "전체")
+
+            if (cboPlanID.Text != "전체" || cboWorkState.Text =="작업지시")
             {
-                DataTable dt = new DataTable();
-                dt = setDataTable(dataGridView1); // 원하는 항목을 데이터테이블로 변환
-
-                WorkOrderBarcode rpt = new WorkOrderBarcode();
-                rpt.DataSource = dt;
-                rpt.Parameters["Plan_ID"].Value = $"{cboPlanID.Text} ";
-                rpt.Parameters["Plan_ID"].Visible = false;
-                rpt.CreateDocument();
-
-
-                ShowReport frm = new ShowReport(rpt);
-
-
-                //frm.ShowDialog();
+                //using (CircleProgressBar frm = new CircleProgressBar(CreateBarcode))
+                //{
+                //    frm.ShowDialog(this);
+                //}
+                CreateBarcode();
             }
+        }
+
+        private void CreateBarcode()
+        {
+            DataTable dt = new DataTable();
+            dt = setDataTable(dataGridView1); // 원하는 항목을 데이터테이블로 변환
+
+            WorkOrderBarcode rpt = new WorkOrderBarcode();
+            rpt.DataSource = dt;
+            rpt.Parameters["Plan_ID"].Value = $"{cboPlanID.Text} ";
+            rpt.Parameters["Plan_ID"].Visible = false;
+            rpt.CreateDocument();
+
+
+            ShowReport frm = new ShowReport(rpt);
+
+
+            //frm.ShowDialog();
         }
 
         private DataTable setDataTable(DataGridView dgv)

@@ -79,11 +79,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(493, 7);
+            this.label2.Location = new System.Drawing.Point(440, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 29);
+            this.label2.Size = new System.Drawing.Size(160, 29);
             this.label2.TabIndex = 0;
-            this.label2.Text = "설비 관리 [POP]";
+            this.label2.Text = "설비 관리 시스템";
             // 
             // lblNowDate
             // 
@@ -114,9 +114,12 @@
             // 
             this.FacilityIMG.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("FacilityIMG.ImageStream")));
             this.FacilityIMG.TransparentColor = System.Drawing.Color.Transparent;
-            this.FacilityIMG.Images.SetKeyName(0, "가동");
-            this.FacilityIMG.Images.SetKeyName(1, "일시정지");
-            this.FacilityIMG.Images.SetKeyName(2, "비가동");
+            this.FacilityIMG.Images.SetKeyName(0, "Facility1.jpg");
+            this.FacilityIMG.Images.SetKeyName(1, "Facility2.jpg");
+            this.FacilityIMG.Images.SetKeyName(2, "Facility3.jpg");
+            this.FacilityIMG.Images.SetKeyName(3, "Facility4.jpg");
+            this.FacilityIMG.Images.SetKeyName(4, "Facility5.jpg");
+            this.FacilityIMG.Images.SetKeyName(5, "Facility6.jpg");
             // 
             // ContorlForm
             // 

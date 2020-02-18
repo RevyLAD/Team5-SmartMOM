@@ -66,6 +66,12 @@
     <Compile Include="FacControl.Designer.cs">
       <DependentUpon>FacControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formm\BarcodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formm\BarcodeForm.Designer.cs">
+      <DependentUpon>BarcodeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formm\ContorlForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     <Compile Include="Service\UtilityClass.cs" />
     <EmbeddedResource Include="FacControl.resx">
       <DependentUpon>FacControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formm\BarcodeForm.resx">
+      <DependentUpon>BarcodeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formm\ContorlForm.resx">
       <DependentUpon>ContorlForm.cs</DependentUpon>
@@ -185,6 +194,18 @@
       <Project>{C48D50B0-FD18-4417-9DEE-8FABB0B4AB3E}</Project>
       <Name>Project_VO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\즐겨찾기.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\waiting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graph.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

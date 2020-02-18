@@ -11,10 +11,11 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Team5_SmartMOM.KIS
 {
+    
     public partial class BOM : Team5_SmartMOM.BaseGridForm
     {
         CheckBox headerCheckBox = new CheckBox();
-      
+        List<BOM_VO> list;
         int type;
         public BOM()
         {
@@ -90,7 +91,7 @@ namespace Team5_SmartMOM.KIS
             headerCheckBox.Click += new EventHandler(HeaderCheckBox_Click);
             dataGridView1.Controls.Add(headerCheckBox);
 
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "NO", "BOM_No", true, 50);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "NO", "BOM_No", false, 50);
             dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상위품목", "BOM_Code", true, 120);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 130);
@@ -123,7 +124,7 @@ namespace Team5_SmartMOM.KIS
             checkBoxColumn.Width = 30;
 
             dataGridView1.Columns.Add(checkBoxColumn);
-
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "NO", "BOM_No", true, 50);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상위품목", "BOM_Code", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 200);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 170);
@@ -170,7 +171,7 @@ namespace Team5_SmartMOM.KIS
         public void DataLoad()
         {
             KIS_Service service = new KIS_Service();
-            List<BOM_VO> list = new List<BOM_VO>();
+            
             list = service.ShowBOM();
 
             dataGridView1.DataSource = list;
@@ -509,6 +510,13 @@ namespace Team5_SmartMOM.KIS
             {
                 GC.Collect();
             }
+        }
+
+        private void Btn_reset_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Columns.Clear();
+            ShowGridView();
+            dataGridView1.DataSource = list;
         }
     }
 }
