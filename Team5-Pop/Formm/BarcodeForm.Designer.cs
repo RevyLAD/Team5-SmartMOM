@@ -32,9 +32,9 @@
             this.txtWorkOrderID = new System.Windows.Forms.TextBox();
             this.btnCheck = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.tileUpdate = new MetroFramework.Controls.MetroTile();
             this.tileSave = new MetroFramework.Controls.MetroTile();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +60,7 @@
             this.txtWorkOrderID.Size = new System.Drawing.Size(330, 50);
             this.txtWorkOrderID.TabIndex = 1;
             this.txtWorkOrderID.Text = "ㅎㅇㅎㅇ";
+            this.txtWorkOrderID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtWorkOrderID_KeyDown);
             // 
             // btnCheck
             // 
@@ -84,19 +85,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(454, 31);
             this.panel1.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(17, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 22);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "작업지시 바코드 확인";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tileUpdate
             // 
@@ -129,6 +117,19 @@
             this.tileSave.UseSelectable = true;
             this.tileSave.UseStyleColors = true;
             this.tileSave.UseTileImage = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Location = new System.Drawing.Point(17, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(165, 22);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "작업지시 바코드 확인";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // BarcodeForm
             // 
