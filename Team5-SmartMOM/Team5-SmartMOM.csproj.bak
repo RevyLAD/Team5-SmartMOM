@@ -37,25 +37,25 @@
       <HintPath>..\packages\CircularProgressBar.2.7.0.7\lib\net40\CircularProgressBar.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
     </Reference>
@@ -76,7 +76,6 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -213,24 +212,6 @@
     </Compile>
     <Compile Include="HSC\ProductShipment.Designer.cs">
       <DependentUpon>ProductShipment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PSM\DeadLineState.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PSM\DeadLineState.Designer.cs">
-      <DependentUpon>DeadLineState.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PSM\ShipmentStateMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PSM\ShipmentStateMain.Designer.cs">
-      <DependentUpon>ShipmentStateMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PSM\ShipmentStatus.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PSM\ShipmentStatus.Designer.cs">
-      <DependentUpon>ShipmentStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="HSM\Client_Deadline.cs">
       <SubType>Form</SubType>
@@ -376,6 +357,12 @@
     <Compile Include="KIS\Item_Management_detail.Designer.cs">
       <DependentUpon>Item_Management_detail.cs</DependentUpon>
     </Compile>
+    <Compile Include="KIS\Loading_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KIS\Loading_Form.Designer.cs">
+      <DependentUpon>Loading_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="KIS\Material_Cost_Management.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -434,6 +421,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PSM\CircularButton.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PSM\DeadLineState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\DeadLineState.Designer.cs">
+      <DependentUpon>DeadLineState.cs</DependentUpon>
     </Compile>
     <Compile Include="PSM\Form2.cs">
       <SubType>Form</SubType>
@@ -500,6 +493,18 @@
     </Compile>
     <Compile Include="PSM\ShipmentOrder.Designer.cs">
       <DependentUpon>ShipmentOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\ShipmentStateMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\ShipmentStateMain.Designer.cs">
+      <DependentUpon>ShipmentStateMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSM\ShipmentStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\ShipmentStatus.Designer.cs">
+      <DependentUpon>ShipmentStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="PSM\Stock_State.cs">
       <SubType>Form</SubType>
@@ -643,15 +648,6 @@
     <EmbeddedResource Include="HSC\ProductShipment.resx">
       <DependentUpon>ProductShipment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PSM\DeadLineState.resx">
-      <DependentUpon>DeadLineState.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PSM\ShipmentStateMain.resx">
-      <DependentUpon>ShipmentStateMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PSM\ShipmentStatus.resx">
-      <DependentUpon>ShipmentStatus.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HSM\Client_Deadline.resx">
       <DependentUpon>Client_Deadline.cs</DependentUpon>
     </EmbeddedResource>
@@ -718,6 +714,9 @@
     <EmbeddedResource Include="KIS\Item_Management_detail.resx">
       <DependentUpon>Item_Management_detail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KIS\Loading_Form.resx">
+      <DependentUpon>Loading_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KIS\Material_Cost_Management.resx">
       <DependentUpon>Material_Cost_Management.cs</DependentUpon>
     </EmbeddedResource>
@@ -757,6 +756,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="PSM\DeadLineState.resx">
+      <DependentUpon>DeadLineState.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PSM\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
@@ -789,6 +791,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PSM\ShipmentOrder.resx">
       <DependentUpon>ShipmentOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\ShipmentStateMain.resx">
+      <DependentUpon>ShipmentStateMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSM\ShipmentStatus.resx">
+      <DependentUpon>ShipmentStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PSM\Stock_State.resx">
       <DependentUpon>Stock_State.cs</DependentUpon>
