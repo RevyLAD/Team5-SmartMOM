@@ -16,11 +16,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Ionicons -->
     <link rel="stylesheet" href="/bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect. -->
-    <link rel="stylesheet" href="dist/css/skins/skin-green.min.css">
+    <link rel="stylesheet" href="/dist/css/skins/skin-green.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/bower_components/Ionicons/css/ionicons.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -72,19 +74,19 @@ desired effect
                 <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
                     <span class="sr-only">Toggle navigation</span>
                 </a>
-          
+
                 <!-- Navbar Right Menu -->
 
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                     
-                            <li>
-                                <a href="http://google.com" class="">
-                                    <i class="fa fa-fw fa-chrome">
-                                    </i>
-                                    Google
-                                </a>
-                             </li>
+
+                        <li>
+                            <a href="http://google.com" class="">
+                                <i class="fa fa-fw fa-chrome">
+                                </i>
+                                Google
+                            </a>
+                        </li>
                         <li>
                             <a href="https://github.com/RevyLAD/Team5-SmartMOM" class="">
                                 <i class="fa fa-fw fa-github">
@@ -95,7 +97,7 @@ desired effect
                     </ul>
 
                 </div>
-             
+
             </nav>
         </header>
         <!-- Left side column. contains the logo and sidebar -->
@@ -105,8 +107,6 @@ desired effect
             <section class="sidebar">
 
                 <!-- Sidebar user panel (optional) -->
-             
-
                 <!-- search form (Optional) -->
                 <form action="#" method="get" class="sidebar-form">
                     <div class="input-group">
@@ -123,17 +123,17 @@ desired effect
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">메뉴</li>
                     <li class="active"><a href="/main"><i class="fa fa-fw fa-television"></i> <span>Main</span></a></li>
-                    <li class="header">소개</li>
+                    <li class="header">제품</li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-fw fa-area-chart"></i> <span>상품 관련</span>
+                            <i class="fa fa-fw fa-area-chart"></i> <span>제품 관리</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="/Item">제품 정보</a></li>
-                            <li><a href="#">제품 BOM</a></li>
+                            <li><a href="/Item">BOM 관리</a></li>
+                            <li><a href="/Inout">입,출고 관리</a></li>
                         </ul>
                     </li>
                     <!-- Optionally, you can add icons to the links -->
@@ -143,7 +143,7 @@ desired effect
                     <li class="active"><a href="/Factory"><i class="fa fa-fw fa-area-chart"></i> <span>품목별 생산 통계</span></a></li>
 
                     <li class="header">공장 정보</li>
-                    <li class="active"><a href="#"><i class="fa fa-fw fa-area-chart"></i> <span>공정별 실적 통계</span></a></li>
+                    <li class="active"><a href="/WorkOrder"><i class="fa fa-fw fa-area-chart"></i> <span>공정별 실적 통계</span></a></li>
                     <li class="active"><a href="#"><i class="fa fa-fw fa-area-chart"></i> <span>작업지시 현황</span></a></li>
 
                 </ul>
@@ -263,21 +263,26 @@ desired effect
     </div>
     <!-- ./wrapper -->
     <!-- REQUIRED JS SCRIPTS -->
-    <!-- jQuery 3 -->
+    <!-- jQuery 3 d-->
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap 3.3.7 -->
+    <!-- Bootstrap 3.3.7d -->
     <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- AdminLTE App -->
+    <!-- SlimScroll -->
+    <script src="/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="/bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE Appd -->
     <script src="/dist/js/adminlte.min.js"></script>
     <!-- ChartJS -->
     <script src="/bower_components/Chart.js/Chart.js"></script>
-    <!-- FastClick -->
-    <script src="/bower_components/fastclick/lib/fastclick.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="/dist/js/demo.js"></script>
-    <!-- Optionally, you can add Slimscroll and FastClick plugins.
-         Both of these plugins are recommended to enhance the
-         user experience. -->
+    <!-- jQuery Knob -->
+    <script src="/bower_components/jquery-knob/js/jquery.knob.js"></script>
+    <!-- Sparkline -->
+    <script src="/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    <!-- page script -->
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

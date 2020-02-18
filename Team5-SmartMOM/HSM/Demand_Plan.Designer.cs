@@ -28,17 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label11 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.cboPlanID = new System.Windows.Forms.ComboBox();
-            this.cboCompany = new System.Windows.Forms.ComboBox();
             this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpDateEnd = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.cboProduct = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -63,6 +60,7 @@
             this.button2.Location = new System.Drawing.Point(1082, 0);
             this.button2.Size = new System.Drawing.Size(59, 24);
             this.button2.Text = "엑셀";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -70,7 +68,7 @@
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1202, 110);
+            this.panel2.Size = new System.Drawing.Size(1202, 77);
             // 
             // panelTop
             // 
@@ -79,14 +77,10 @@
             this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.dtpDateEnd);
             this.panelTop.Controls.Add(this.dtpDateStart);
-            this.panelTop.Controls.Add(this.cboProduct);
-            this.panelTop.Controls.Add(this.cboCompany);
             this.panelTop.Controls.Add(this.cboPlanID);
             this.panelTop.Controls.Add(this.label5);
-            this.panelTop.Controls.Add(this.label11);
-            this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Size = new System.Drawing.Size(1202, 90);
+            this.panelTop.Size = new System.Drawing.Size(1202, 57);
             // 
             // splitContainer2
             // 
@@ -95,60 +89,30 @@
             // 
             this.label1.Text = "수요계획";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(26, 57);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(45, 19);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "ㆍ업체";
-            // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(374, 16);
+            this.label2.Location = new System.Drawing.Point(371, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 19);
             this.label2.TabIndex = 6;
             this.label2.Text = "ㆍDate";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(374, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 19);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "ㆍ품목";
-            // 
             // cboPlanID
             // 
             this.cboPlanID.FormattingEnabled = true;
-            this.cboPlanID.Location = new System.Drawing.Point(118, 17);
+            this.cboPlanID.Location = new System.Drawing.Point(115, 19);
             this.cboPlanID.Name = "cboPlanID";
             this.cboPlanID.Size = new System.Drawing.Size(121, 20);
             this.cboPlanID.TabIndex = 7;
             this.cboPlanID.SelectedIndexChanged += new System.EventHandler(this.cboPlanID_SelectedIndexChanged);
             // 
-            // cboCompany
-            // 
-            this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(117, 56);
-            this.cboCompany.Name = "cboCompany";
-            this.cboCompany.Size = new System.Drawing.Size(121, 20);
-            this.cboCompany.TabIndex = 7;
-            // 
             // dtpDateStart
             // 
             this.dtpDateStart.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dtpDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateStart.Location = new System.Drawing.Point(446, 15);
+            this.dtpDateStart.Location = new System.Drawing.Point(443, 17);
             this.dtpDateStart.Name = "dtpDateStart";
             this.dtpDateStart.Size = new System.Drawing.Size(99, 21);
             this.dtpDateStart.TabIndex = 8;
@@ -156,7 +120,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(552, 20);
+            this.label4.Location = new System.Drawing.Point(549, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(14, 12);
             this.label4.TabIndex = 9;
@@ -165,7 +129,7 @@
             // dtpDateEnd
             // 
             this.dtpDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateEnd.Location = new System.Drawing.Point(572, 15);
+            this.dtpDateEnd.Location = new System.Drawing.Point(569, 17);
             this.dtpDateEnd.Name = "dtpDateEnd";
             this.dtpDateEnd.Size = new System.Drawing.Size(99, 21);
             this.dtpDateEnd.TabIndex = 8;
@@ -175,19 +139,11 @@
             // 
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(26, 17);
+            this.label5.Location = new System.Drawing.Point(23, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 19);
             this.label5.TabIndex = 5;
             this.label5.Text = "ㆍPlanID";
-            // 
-            // cboProduct
-            // 
-            this.cboProduct.FormattingEnabled = true;
-            this.cboProduct.Location = new System.Drawing.Point(446, 55);
-            this.cboProduct.Name = "cboProduct";
-            this.cboProduct.Size = new System.Drawing.Size(225, 20);
-            this.cboProduct.TabIndex = 7;
             // 
             // btnSearch
             // 
@@ -195,7 +151,7 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1082, 20);
+            this.btnSearch.Location = new System.Drawing.Point(1082, 8);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(93, 36);
             this.btnSearch.TabIndex = 78;
@@ -228,13 +184,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpDateEnd;
         private System.Windows.Forms.DateTimePicker dtpDateStart;
-        private System.Windows.Forms.ComboBox cboCompany;
         private System.Windows.Forms.ComboBox cboPlanID;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cboProduct;
         protected System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

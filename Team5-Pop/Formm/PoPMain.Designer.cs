@@ -37,9 +37,7 @@
             this.lblNowTime = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.MenuGroup = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnStart = new System.Windows.Forms.Button();
             this.TextGroup = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -87,6 +85,8 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnBarcode = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.MenuGroup.SuspendLayout();
             this.TextGroup.SuspendLayout();
@@ -155,7 +155,7 @@
             // MenuGroup
             // 
             this.MenuGroup.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.MenuGroup.Controls.Add(this.button3);
+            this.MenuGroup.Controls.Add(this.btnBarcode);
             this.MenuGroup.Controls.Add(this.button1);
             this.MenuGroup.Controls.Add(this.btnStart);
             this.MenuGroup.Dock = System.Windows.Forms.DockStyle.Right;
@@ -166,36 +166,16 @@
             this.MenuGroup.TabIndex = 3;
             this.MenuGroup.TabStop = false;
             // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(3, 163);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(71, 73);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Image = global::Team5_Pop.Properties.Resources.cancel1;
             this.button1.Location = new System.Drawing.Point(3, 90);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(71, 73);
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnStart
-            // 
-            this.btnStart.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnStart.Location = new System.Drawing.Point(3, 17);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(71, 73);
-            this.btnStart.TabIndex = 0;
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // TextGroup
             // 
@@ -766,6 +746,30 @@
             this.timer1.Interval = 200;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnBarcode
+            // 
+            this.btnBarcode.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBarcode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBarcode.Image = global::Team5_Pop.Properties.Resources.barcode;
+            this.btnBarcode.Location = new System.Drawing.Point(3, 163);
+            this.btnBarcode.Name = "btnBarcode";
+            this.btnBarcode.Size = new System.Drawing.Size(71, 73);
+            this.btnBarcode.TabIndex = 2;
+            this.btnBarcode.UseVisualStyleBackColor = true;
+            this.btnBarcode.Click += new System.EventHandler(this.btnBarcode_Click);
+            // 
+            // btnStart
+            // 
+            this.btnStart.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnStart.Image = global::Team5_Pop.Properties.Resources.next;
+            this.btnStart.Location = new System.Drawing.Point(3, 17);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(71, 73);
+            this.btnStart.TabIndex = 0;
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
             // PoPMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -845,7 +849,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnBarcode;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;

@@ -63,7 +63,7 @@ namespace Team5_SmartMOM.Service
             return dac.GetModiTime(code);
         }
 
-        public void UpdateFactory(FactoryVO fvo, string code)
+        public void UpdateFactory(FactoryVO fvo, int code)
         {
             FactoryDAC dac = new FactoryDAC();
             dac.UpdateFactory(fvo, code);

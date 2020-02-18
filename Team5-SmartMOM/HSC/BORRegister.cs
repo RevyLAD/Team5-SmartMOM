@@ -33,31 +33,43 @@ namespace Team5_SmartMOM
 
         private void button1_Click(object sender, EventArgs e)
         {
+            BORVO newvo = new BORVO();
+
             if(cboITEMCode.Text.Trim()!=""&&
                 cboFacCode.Text.Trim()!=""&&
                 cboFACG_Code.Text.Trim()!=""&&
                 txtPriority.Text.Trim()!=""&&
-                cboUMU.Text.Trim()!="")
+                cboUMU.Text.Trim()!=""&&
+                txtTacTime.Text.Trim()!="")
             {
                 HSC_Service service = new HSC_Service();
-                thisvo = new BORVO();
-                thisvo.BOR_Ohters = txtExplain.Text;
-                thisvo.BOR_Priority = Convert.ToInt32(txtPriority.Text);
-                thisvo.BOR_TactTime = Convert.ToInt32(txtTacTime.Text);
-                thisvo.BOR_UseOrNot = cboUMU.Text;
-                thisvo.BOR_yeild = Convert.ToInt32(txtYeild.Text.Trim());
-                thisvo.FACG_Code = cboFACG_Code.Text.Trim();
-                thisvo.FAC_Code = cboFacCode.Text;
-                thisvo.ITEM_Code = cboITEMCode.Text;
 
                 if (thisvo != null)
                 {
+                    thisvo.BOR_Ohters = txtExplain.Text;
+                    thisvo.BOR_Priority = Convert.ToInt32(txtPriority.Text);
+                    thisvo.BOR_TactTime = Convert.ToInt32(txtTacTime.Text);
+                    thisvo.BOR_UseOrNot = cboUMU.Text;
+                    thisvo.BOR_yeild = Convert.ToInt32(txtYeild.Text.Trim());
+                    thisvo.FACG_Code = cboFACG_Code.Text.Trim();
+                    thisvo.FAC_Code = cboFacCode.Text;
+                    thisvo.ITEM_Code = cboITEMCode.Text;
+
                     service.UpdateBOR(thisvo);
                     MessageBox.Show("성공적으로 수정되었습니다");
                 }
                 else
                 {
-                    service.InsertBOR(thisvo);
+                    newvo.BOR_Ohters = txtExplain.Text;
+                    newvo.BOR_Priority = Convert.ToInt32(txtPriority.Text);
+                    newvo.BOR_TactTime = Convert.ToInt32(txtTacTime.Text);
+                    newvo.BOR_UseOrNot = cboUMU.Text;
+                    newvo.BOR_yeild = Convert.ToInt32(txtYeild.Text.Trim());
+                    newvo.FACG_Code = cboFACG_Code.Text.Trim();
+                    newvo.FAC_Code = cboFacCode.Text;
+                    newvo.ITEM_Code = cboITEMCode.Text;
+
+                    service.InsertBOR(newvo);
                     MessageBox.Show("성공적으로 등록되었습니다");
 
                 }
@@ -94,6 +106,19 @@ namespace Team5_SmartMOM
                 cboFacCode.Text= thisvo.FAC_Code;
                 cboITEMCode.Text = thisvo.ITEM_Code;
                 cboITEMCode.Enabled = false;
+            }
+        }
+
+        private void txtTacTime_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txtTacTime_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
             }
         }
     }

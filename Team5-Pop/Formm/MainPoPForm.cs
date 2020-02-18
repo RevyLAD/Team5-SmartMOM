@@ -22,6 +22,7 @@ namespace Team5_Pop
         {
             CreateTabPages("메인 화면", new PoPMain(this));
             CreateTabPages("설비 관리", new ContorlForm(this));
+            this.metroTabControl1.SelectedIndex = 0;
         }
 
         public void CreateTabPages(string text, Form OpenForm)

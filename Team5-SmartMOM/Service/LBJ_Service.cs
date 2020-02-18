@@ -75,5 +75,10 @@ namespace Team5_SmartMOM.Service
             StockStateDAC dac = new StockStateDAC();
             return dac.StockState();
         }
+        public List<StackStatusVO> StackStatus()
+        {
+            StockStateDAC dac = new StockStateDAC();
+            return dac.StackStatus();
+        }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContorlForm));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblNowTime = new System.Windows.Forms.Label();
@@ -37,11 +38,6 @@
             this.TimeMangemer = new System.Windows.Forms.Timer(this.components);
             this.SignalIMG = new System.Windows.Forms.ImageList(this.components);
             this.FacilityIMG = new System.Windows.Forms.ImageList(this.components);
-            this.facControl4 = new Team5_Pop.FacControl();
-            this.facControl5 = new Team5_Pop.FacControl();
-            this.facControl3 = new Team5_Pop.FacControl();
-            this.facControl2 = new Team5_Pop.FacControl();
-            this.facControl1 = new Team5_Pop.FacControl();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,11 +79,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(493, 7);
+            this.label2.Location = new System.Drawing.Point(440, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 29);
+            this.label2.Size = new System.Drawing.Size(160, 29);
             this.label2.TabIndex = 0;
-            this.label2.Text = "설비 관리 [POP]";
+            this.label2.Text = "설비 관리 시스템";
             // 
             // lblNowDate
             // 
@@ -116,49 +112,14 @@
             // 
             // FacilityIMG
             // 
-            this.FacilityIMG.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.FacilityIMG.ImageSize = new System.Drawing.Size(16, 16);
+            this.FacilityIMG.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("FacilityIMG.ImageStream")));
             this.FacilityIMG.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // facControl4
-            // 
-            this.facControl4.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.facControl4.Location = new System.Drawing.Point(311, 346);
-            this.facControl4.Name = "facControl4";
-            this.facControl4.Size = new System.Drawing.Size(232, 291);
-            this.facControl4.TabIndex = 4;
-            // 
-            // facControl5
-            // 
-            this.facControl5.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.facControl5.Location = new System.Drawing.Point(310, 48);
-            this.facControl5.Name = "facControl5";
-            this.facControl5.Size = new System.Drawing.Size(235, 301);
-            this.facControl5.TabIndex = 3;
-            // 
-            // facControl3
-            // 
-            this.facControl3.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.facControl3.Location = new System.Drawing.Point(8, 346);
-            this.facControl3.Name = "facControl3";
-            this.facControl3.Size = new System.Drawing.Size(233, 301);
-            this.facControl3.TabIndex = 2;
-            // 
-            // facControl2
-            // 
-            this.facControl2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.facControl2.Location = new System.Drawing.Point(621, 48);
-            this.facControl2.Name = "facControl2";
-            this.facControl2.Size = new System.Drawing.Size(231, 301);
-            this.facControl2.TabIndex = 1;
-            // 
-            // facControl1
-            // 
-            this.facControl1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.facControl1.Location = new System.Drawing.Point(8, 48);
-            this.facControl1.Name = "facControl1";
-            this.facControl1.Size = new System.Drawing.Size(232, 301);
-            this.facControl1.TabIndex = 0;
+            this.FacilityIMG.Images.SetKeyName(0, "Facility1.jpg");
+            this.FacilityIMG.Images.SetKeyName(1, "Facility2.jpg");
+            this.FacilityIMG.Images.SetKeyName(2, "Facility3.jpg");
+            this.FacilityIMG.Images.SetKeyName(3, "Facility4.jpg");
+            this.FacilityIMG.Images.SetKeyName(4, "Facility5.jpg");
+            this.FacilityIMG.Images.SetKeyName(5, "Facility6.jpg");
             // 
             // ContorlForm
             // 
@@ -167,11 +128,6 @@
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(1164, 649);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.facControl4);
-            this.Controls.Add(this.facControl5);
-            this.Controls.Add(this.facControl3);
-            this.Controls.Add(this.facControl2);
-            this.Controls.Add(this.facControl1);
             this.Name = "ContorlForm";
             this.Text = "ContorlForm";
             this.Load += new System.EventHandler(this.ContorlForm_Load);
@@ -182,12 +138,6 @@
         }
 
         #endregion
-
-        private FacControl facControl1;
-        private FacControl facControl2;
-        private FacControl facControl3;
-        private FacControl facControl4;
-        private FacControl facControl5;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblNowTime;

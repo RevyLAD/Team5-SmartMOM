@@ -102,7 +102,7 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(318, 10);
+            this.button2.Location = new System.Drawing.Point(334, 10);
             // 
             // button1
             // 
@@ -110,7 +110,7 @@
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(682, 10);
+            this.tileSave.Location = new System.Drawing.Point(698, 10);
             this.tileSave.Click += new System.EventHandler(this.tileSave_Click);
             // 
             // txtExplain
@@ -180,6 +180,7 @@
             this.txtTacTime.Name = "txtTacTime";
             this.txtTacTime.Size = new System.Drawing.Size(172, 21);
             this.txtTacTime.TabIndex = 39;
+            this.txtTacTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTacTime_KeyPress);
             // 
             // cboFACG_Code
             // 
@@ -249,6 +250,7 @@
             this.txtYeild.Size = new System.Drawing.Size(172, 21);
             this.txtYeild.TabIndex = 60;
             this.txtYeild.Text = "0";
+            this.txtYeild.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTacTime_KeyPress);
             // 
             // label3
             // 
@@ -268,6 +270,7 @@
             this.txtPriority.Name = "txtPriority";
             this.txtPriority.Size = new System.Drawing.Size(172, 21);
             this.txtPriority.TabIndex = 62;
+            this.txtPriority.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTacTime_KeyPress);
             // 
             // BORRegister
             // 

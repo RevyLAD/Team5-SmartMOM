@@ -66,7 +66,7 @@ namespace Project_DAC.HSM
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = @"select WO_ID,w.Item_code,Item_Name, Fac_Name, CONVERT(nvarchar(10),WO_Startdate,23) WO_Startdate , CONVERT(nvarchar(10),WO_EndDate,23) WO_EndDate,
-                                    planQty, directQty, Wo_state, plan_ID, WO_Priority, WO_Time
+                                    planQty, directQty, Wo_state, plan_ID, WO_Priority, WO_Time,WO_GoodQty, WO_BadQty, WO_WorkEndTime
                                     from WorkOrder w , Item i
                                     where WO_State = '작업지시'
                                     and w.Item_code = i.ITEM_Code
@@ -87,7 +87,7 @@ namespace Project_DAC.HSM
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 string sql = @"select WO_ID,w.Item_code,Item_Name, Fac_Name, CONVERT(nvarchar(10),WO_Startdate,23) WO_Startdate , CONVERT(nvarchar(10),WO_EndDate,23) WO_EndDate,
-                                    planQty, directQty, Wo_state, plan_ID, WO_Priority, WO_Time
+                                    planQty, directQty, Wo_state, plan_ID, WO_Priority, WO_Time,WO_GoodQty, WO_BadQty, WO_WorkEndTime
                                     from WorkOrder w , Item i
                                     where Plan_Id = @Plan_Id
                                     and WO_StartDate >= @WO_Startdate
