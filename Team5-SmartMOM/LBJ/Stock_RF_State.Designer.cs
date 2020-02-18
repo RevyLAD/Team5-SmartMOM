@@ -51,11 +51,20 @@
             // 
             // button3
             // 
+            this.button3.Location = new System.Drawing.Point(952, 0);
             this.button3.Visible = false;
             // 
             // button2
             // 
+            this.button2.Location = new System.Drawing.Point(1009, 0);
             this.button2.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1066, 0);
+            this.button1.Size = new System.Drawing.Size(132, 24);
+            this.button1.Text = "입출고현황 출력";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 

@@ -3,12 +3,15 @@ using Project_VO.LBJ;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Team5_SmartMOM.BaseForm;
+using Team5_SmartMOM.LBJ;
 using Team5_SmartMOM.Service;
 
 namespace Team5_SmartMOM.PSM
@@ -69,6 +72,33 @@ namespace Team5_SmartMOM.PSM
                                                    item.InOut_Gubun == cboInOut.Text 
                                              select item).ToList();
             dataGridView1.DataSource = StockState;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string IO = cboInOut.Text.Trim();
+
+            string strConn = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
+
+            DataSet ds = new DataSet();
+            using (SqlConnection conn = new SqlConnection(strConn))
+            {
+                conn.Open();
+                string strSql = @"select InOut_No, InOut_Gubun, A.ITEM_Code, ITEM_Name, ITEM_Size, ITEM_Type 
+                                  from InOutList A inner join ITEM B on a.ITEM_Code = b.ITEM_Code
+                                  WHERE InOut_Gubun = '" + IO + "'  ORDER BY InOut_No";
+                SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
+
+                da.Fill(ds, "InOutList");
+                conn.Close();
+            }
+
+            XtraReport2 rpt = new XtraReport2();
+            rpt.DataSource = ds.Tables["InOutList"];
+
+            Form1 frm = new Form1();
+            frm.documentViewer1.DocumentSource = rpt;
+            frm.ShowDialog();
         }
     }
 }

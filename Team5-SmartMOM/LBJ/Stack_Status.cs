@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -106,6 +108,40 @@ namespace Team5_SmartMOM.LBJ
         private void button4_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = statusList;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string PType = cboProductType.Text.Trim();
+
+            string strConn = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
+
+            DataSet ds = new DataSet();
+            using (SqlConnection conn = new SqlConnection(strConn))
+            {
+                conn.Open();
+                string strSql = @"select FACD_ID, FACT_Name, A.ITEM_Code, ITEM_Type, ITEM_Size, FACD_Qty 
+                                  from FactoryDetail a inner join ITEM b on a.ITEM_Code = b.ITEM_Code
+                                  WHERE ITEM_Type = '" + PType + "'  ORDER BY FACD_ID";
+                SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
+
+                da.Fill(ds, "FactoryDetail");
+                conn.Close();
+            }
+
+            XtraReport1 rpt = new XtraReport1();
+            rpt.DataSource = ds.Tables["FactoryDetail"];
+            //ReportPreview frm = new ReportPreview(rpt);
+
+            Form1 frm = new Form1();
+            frm.documentViewer1.DocumentSource = rpt;
+            frm.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Record_Reference frm = new Record_Reference();
+            frm.Show();
         }
     }
 }

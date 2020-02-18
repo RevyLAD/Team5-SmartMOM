@@ -78,7 +78,7 @@ namespace Team5_SmartMOM.PSM
             dataGridView1.DataSource = lbjservice.MateriaRequest();
 
             List<FacilitieDetailVO> facvo = hscservice.GetAllFacilitiesDetail();
-            CommonUtil.ComboBinding(cboFacilities, facvo, "FAC_No", "FAC_Name", "전체");
+            CommonUtil.ComboBinding(cboFacilities, facvo, "FAC_No", "FAC_Name");
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -115,9 +115,66 @@ namespace Team5_SmartMOM.PSM
             dataGridView1.DataSource = mvo;
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
+            Microsoft.Office.Interop.Excel.Application xlApp;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            int i, j;
 
+            saveFileDialog1.Filter = "Excel Files (*.xls)|*.xls";
+            saveFileDialog1.InitialDirectory = "C:";
+            saveFileDialog1.Title = "Save";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlWorkBook = xlApp.Workbooks.Add();
+                xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                xlWorkSheet.Cells[1, 1] = "계획시작일자";
+                xlWorkSheet.Cells[1, 2] = "작업지시ID";
+                xlWorkSheet.Cells[1, 3] = "설비명";
+                xlWorkSheet.Cells[1, 4] = "소진창고";
+                xlWorkSheet.Cells[1, 5] = "품목";
+                xlWorkSheet.Cells[1, 6] = "품명";
+                xlWorkSheet.Cells[1, 7] = "지시수량";
+                xlWorkSheet.Cells[1, 8] = "단위";
+                xlWorkSheet.Cells[1, 9] = "작업지시";
+
+                for (i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    for (j = 0; j < dataGridView1.ColumnCount - 1; j++)
+                    {
+                        if (dataGridView1[j, i].Value != null)
+                            xlWorkSheet.Cells[i + 2, j + 1] = dataGridView1[j, i].Value.ToString();
+                    }
+                }
+
+                xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                xlWorkBook.Close(true);
+                xlApp.Quit();
+
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlApp);
+            }
+        }
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
         }
     }
 }
