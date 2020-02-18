@@ -340,11 +340,7 @@ namespace Team5_SmartMOM
         {
             CreateTabPages("고객주문별재고현황", new CustomerOrderStatus());
         }
-
-        private void 출하현황ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CreateTabPages("출하현황", new ShipmentStatus());
-        }
+        
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
@@ -393,6 +389,10 @@ namespace Team5_SmartMOM
         private void 출하및매출마감ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateTabPages("출하및매출마감", new ShipmentOrder());
+        }
+        private void 출하현황및매출현황ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("출하현황및매출현황", new ShipmentStateMain());
         }
 
         #endregion
@@ -450,6 +450,6 @@ namespace Team5_SmartMOM
 
         }
 
-       
+        
     }
 }

@@ -69,10 +69,46 @@ namespace Team5_Pop
             dac.SavePopData(list);
         }
 
-        public void WritePoPLog(List<string> list)
+        public void WritePoPLog(PoPLogVO logvo)
         {
             PopDAC dac = new PopDAC();
-            dac.WritePoPLog(list);
+            dac.WritePoPLog(logvo);
+        }
+
+        public List<ControlVO> GetInfoForControl(string name, string id)
+        {
+            PopDAC dac = new PopDAC();
+            return dac.GetInfoForControl(id, name);
+        }
+
+        public string GetFACSignal(string FacName)
+        {
+            PopDAC dac = new PopDAC();
+            return dac.GetFACSignal(FacName);
+        }
+
+        public List<NewControlVO> GetNewControl()
+        {
+            PopDAC dac = new PopDAC();
+            return dac.GetNewControl();
+        }
+
+        public string GetWO_ID(string FacName)
+        {
+            PopDAC dac = new PopDAC();
+            return dac.GetWO_ID(FacName);
+        }
+
+        public void UpdateFacStateEnd(string FacName)
+        {
+            PopDAC dac = new PopDAC();
+            dac.UpdateFacStateEnd(FacName);
+        }
+
+        public void UpdateFacStatePause(string FacName, int choice)
+        {
+            PopDAC dac = new PopDAC();
+            dac.UpdateFacStatePause(FacName, choice);
         }
     }
 }

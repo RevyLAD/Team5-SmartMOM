@@ -76,14 +76,14 @@ namespace Team5_SmartMOM.HSC
                 select_vo.FACT_No = Convert.ToInt32(dataGridView1.Rows[temp.RowIndex].Cells[0].Value);
                 select_vo.FACT_Group = dataGridView1.Rows[temp.RowIndex].Cells[1].Value.ToString();
                 select_vo.FACT_Class = dataGridView1.Rows[temp.RowIndex].Cells[2].Value.ToString();
-                select_vo.FACT_Type = dataGridView1.Rows[temp.RowIndex].Cells[3].Value.ToString();
+                select_vo.FACT_Type = Convert.ToString(dataGridView1.Rows[temp.RowIndex].Cells[3].Value);
                 select_vo.FACT_Code = dataGridView1.Rows[temp.RowIndex].Cells[4].Value.ToString();
                 select_vo.FACT_Name = dataGridView1.Rows[temp.RowIndex].Cells[5].Value.ToString();
                 select_vo.FACT_Parent = Convert.ToString(dataGridView1.Rows[temp.RowIndex].Cells[6].Value) ??"";
                 select_vo.FACT_MATDeducation =Convert.ToString(dataGridView1.Rows[temp.RowIndex].Cells[7].Value);
                 select_vo.FACT_UseOrNot = dataGridView1.Rows[temp.RowIndex].Cells[8].Value.ToString();
                 select_vo.FACT_Modifier = dataGridView1.Rows[temp.RowIndex].Cells[9].Value.ToString();
-                //select_vo.FACT_ModifyDate = dataGridView1.Rows[temp.RowIndex].Cells[10].Value.ToString();
+                select_vo.FACT_ModifyDate = Convert.ToDateTime(dataGridView1.Rows[temp.RowIndex].Cells[10].Value);
                 select_vo.FACT_Information =  Convert.ToString(dataGridView1.Rows[temp.RowIndex].Cells[11].Value);
 
                 FactoryRegister frm = new FactoryRegister(select_vo);
@@ -92,6 +92,7 @@ namespace Team5_SmartMOM.HSC
                 {
 
                 }
+                Factory_DataLoad();
             }
         }
         DataGridViewCellEventArgs temp;

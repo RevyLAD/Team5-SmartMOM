@@ -31,6 +31,10 @@ namespace Team5_Pop
         public string checkid;
         PopVO thisvo;
         int thisport;
+        bool start;
+        int qty;
+
+
         public POPGaDong(PopVO vo, int newport)
         {
             InitializeComponent();
@@ -38,7 +42,10 @@ namespace Team5_Pop
             this.thisvo = vo;
             this.thisport = newport;
             checkid = thisvo.WO_ID;
-            TickTime = Convert.ToString(((thisvo.WO_Time / thisvo.directQty) * 1000));
+            double wotime = thisvo.WO_Time;
+            double directqty = thisvo.directQty;
+
+            TickTime = Convert.ToString((wotime/directqty)*1000);
         }
         private void POPGaDong_Load(object sender, EventArgs e)
         {
@@ -50,6 +57,7 @@ namespace Team5_Pop
             machineID = rnd.Next(1, 10);
 
             textBox23.Text = DateTime.Now.ToLongTimeString();
+            start = false;
         }
 
         private void TcpListenerStart()
@@ -59,7 +67,7 @@ namespace Team5_Pop
 
         private void SetMTimer()
         {
-            Mtimer = new System.Timers.Timer(Convert.ToInt32(TickTime));
+            Mtimer = new System.Timers.Timer((int)(Convert.ToDouble(TickTime)));
             Mtimer.Enabled = true;
             Mtimer.Elapsed += Mtimer_Elapsed;
             Mtimer.AutoReset = true;
@@ -81,19 +89,40 @@ namespace Team5_Pop
 
                 if (readmsg != null)
                 {
-                    goodqtt = Convert.ToInt32(readmsg.Substring(32, 1));
-                    badqtt = Convert.ToInt32(readmsg.Substring(48, 1));
+                    qty = Convert.ToInt32(readmsg.Substring(48, 1));
+                    //goodqtt = Convert.ToInt32(readmsg.Substring(25, 1));
+                    //badqtt = Convert.ToInt32(readmsg.Substring(48, 1));
                 }
-
+                
                 listBox1.Items.Add(readmsg);
+                
                 PopService service = new PopService();
-                List<string> tmplist = new List<string>();
+                PoPLogVO logvo = new PoPLogVO();
+
+                if (!start)
+                {
+                    service.UpdateFacState(thisvo.FAC_Name, thisvo.WO_ID);
+                    start = true;
+                }
                 //tmplist.Add();
+
+                logvo.WO_ID = this.checkid;
+                logvo.FAC_Name = txtFacName.Text.Trim();
+                logvo.ITEM_Code = thisvo.ITEM_Code;
+                logvo.ProductTime = DateTime.Now;
+
+                if (qty == 1)
+                {
+                    logvo.Qty = "G";
+                    txtGoodQty.Text = (Convert.ToInt64(txtGoodQty.Text) +1).ToString("0000");
+                }
+                else if (qty == 0)
+                {
+                    logvo.Qty = "B";
+                    txtBadQty.Text = (Convert.ToInt64(txtBadQty.Text)+ 1).ToString("0000");
+                }
+                service.WritePoPLog(logvo);
                 
-                service.WritePoPLog(tmplist);
-                
-                txtGoodQty.Text = (Convert.ToInt64(txtGoodQty.Text) + goodqtt).ToString("0000");
-                txtBadQty.Text = (Convert.ToInt64(txtBadQty.Text) + badqtt).ToString("0000");
                 txtCount.Text = (Convert.ToInt64(txtGoodQty.Text) + Convert.ToInt64(txtBadQty.Text)).ToString("0000");
                 GaDongTimeChange();
 
@@ -107,9 +136,6 @@ namespace Team5_Pop
 
                     DataGethering(this, args);
                 }
-
-                
-
             }
             catch
             {
@@ -120,6 +146,7 @@ namespace Team5_Pop
         }
 
         NetworkStream stream;
+        string[] FACG;
         private void DataLoad()
         {
             PopService service = new PopService();
@@ -129,7 +156,7 @@ namespace Team5_Pop
 
             txtFacName.Text = thisvo.FAC_Name;
 
-            string[] FACG = service.GetGaDongInfo(thisvo.FAC_Name);
+            FACG = service.GetGaDongInfo(thisvo.FAC_Name);
             txtFACGName.Text = FACG[0] + " / " + FACG[1];
             txtItem.Text = $"{service.GetItemName(thisvo.ITEM_Code)} ({thisvo.ITEM_Code})";
 
@@ -157,8 +184,6 @@ namespace Team5_Pop
                 await Task.Factory.StartNew(AsyncTcpProcess, tc);
             }
         }
-        int goodqtt;
-        int badqtt;
         string TickTime;
         public System.Timers.Timer Mtimer;
         private async Task AsyncTcpProcess(object o)
@@ -218,6 +243,9 @@ namespace Team5_Pop
         {
             Mtimer.Stop();
             Mtimer.Dispose();
+
+            PopService service = new PopService();
+            service.UpdateFacStateEnd(thisvo.FAC_Name);
         }
 
         string connected = "ㆍㆍㆍ 연결 대기중 ㆍㆍㆍ";
@@ -260,12 +288,16 @@ namespace Team5_Pop
 
         private void button6_Click(object sender, EventArgs e)
         {
+            PopService service = new PopService();
+
             if (btnpause.Text == "일시 정지")
             {
                 listBox1.Items.Add("ㆍㆍㆍ 일시 정지 ㆍㆍㆍ");
                 Mtimer.Stop();
                 timer1.Stop();
                 timer3.Start();
+                service.UpdateFacStatePause(thisvo.FAC_Name, 1);
+                
                 progressBar1.ForeColor = Color.LightYellow;
                 btnpause.Text = "계속하기";
 
@@ -282,6 +314,8 @@ namespace Team5_Pop
                 Mtimer.Start();
                 timer1.Start();
                 timer3.Stop();
+                service.UpdateFacStatePause(thisvo.FAC_Name, 2);
+
                 progressBar1.ForeColor = Color.Aquamarine;
                 btnpause.Text = "일시 정지";
 
@@ -350,6 +384,10 @@ namespace Team5_Pop
             timer1.Stop();
             Mtimer.Stop();
             timer3.Stop();
+
+            PopService service = new PopService();
+            service.UpdateFacStateEnd(thisvo.FAC_Name);
+
             btnStop.Enabled = false;
         }
 

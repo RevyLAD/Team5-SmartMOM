@@ -25,5 +25,20 @@ namespace Project_DAC.LBJ
                 return StockList;
             }
         }
+        public List<StackStatusVO> StackStatus()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select FACD_ID, A.FACT_Code, FACT_Name, A.ITEM_Code, B.ITEM_Name, ITEM_Type, ITEM_Size, A.FACD_Qty, B.ITEM_Unit " +
+                    "FROM FactoryDetail A inner join ITEM B on A.ITEM_Code = b.ITEM_Code WHERE FACT_Name != '자재창고_01' order by FACD_ID";
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<StackStatusVO> StackList = Helper.DataReaderMapToList<StackStatusVO>(reader);
+                cmd.Connection.Close();
+
+                return StackList;
+            }
+        }
     }
 }

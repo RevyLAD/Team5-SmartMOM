@@ -53,6 +53,12 @@ namespace Team5_SmartMOM.Service
             SalesMasterDAC dac = new SalesMasterDAC();
             return dac.GetAllSalesMaster();
         }
+        public List<SalesMasterAllVO> GetSalesMasterByVO(SalesMasterAllVO saleVO)
+        {
+            SalesMasterDAC dac = new SalesMasterDAC();
+            return dac.GetSalesMasterByVO(saleVO);
+        }
+
         public List<SalesMasterWorkOrder> GetSalesMasterByPlanID(string planId)
         {
             SalesMasterDAC dac = new SalesMasterDAC();

@@ -113,7 +113,6 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1202, 401);
             this.dataGridView1.TabIndex = 35;
-            
             // 
             // panel4
             // 

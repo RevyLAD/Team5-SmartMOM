@@ -417,5 +417,11 @@ namespace Team5_Pop
                 totalqty = 0;
             }
         }
+
+        private void btnBarcode_Click(object sender, EventArgs e)
+        {
+            BarcodeForm frm = new BarcodeForm();
+            frm.ShowDialog();
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace Project_DAC.LBJ
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = @"select A.WO_StartDate, WO_ID, PlanQty, WO_State, B.ITEM_Name, A.ITEM_Code, ITEM_Unit, C.FAC_OutWareHouse, A.FAC_Name
+                cmd.CommandText = @"select A.WO_StartDate, A.WO_ID, PlanQty, WO_State, B.ITEM_Name, A.ITEM_Code, ITEM_Unit, C.FAC_OutWareHouse, A.FAC_Name
                                     from WorkOrder A inner
                                     join ITEM B on A.ITEM_Code = B.ITEM_Code inner
                                     join Facility C on A.FAC_Name = C.FAC_Name

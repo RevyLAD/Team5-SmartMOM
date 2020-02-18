@@ -104,16 +104,16 @@ namespace Project_DAC
             }
         }
 
-        public void UpdateFactory(FactoryVO fvo, string code)
+        public void UpdateFactory(FactoryVO fvo, int code)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = "update Factory Set " +
                     "FACT_Group=@FACT_Group, FACT_Class=@FACT_Class, FACT_Code=@FACT_Code, " +
-                    "FACT_Name=@FACT_Name, FACT_Parent=@FACT_Parent, FACT_MATDeduction=@FACT_MATDeduction, " +
+                    "FACT_Name=@FACT_Name, FACT_Parent=@FACT_Parent, FACT_MATDeducation=@FACT_MATDeduction, " +
                     "FACT_UseOrNot=@FACT_UseOrNot, FACT_Modifier=@FACT_Modifier, FACT_ModifyDate=@FACT_ModifyDate, " +
-                    "FACT_Information=@FACT_Information where @FACT_Code2";
+                    "FACT_Information=@FACT_Information where FACT_No=@FACT_No";
 
                 cmd.Parameters.AddWithValue("@FACT_Group", fvo.FACT_Group);
                 cmd.Parameters.AddWithValue("@FACT_Class", fvo.FACT_Class);
@@ -126,7 +126,7 @@ namespace Project_DAC
                 cmd.Parameters.AddWithValue("@FACT_ModifyDate", fvo.FACT_ModifyDate);
                 cmd.Parameters.AddWithValue("@FACT_Information", fvo.FACT_Information);
 
-                cmd.Parameters.AddWithValue("@FACT_Code2", code);
+                cmd.Parameters.AddWithValue("@FACT_No", code);
 
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();

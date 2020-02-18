@@ -20,4 +20,28 @@ namespace Team5_Pop
         public int WO_Priority { get; set; }
         public int WO_Time { get; set; }
     }
+
+    public class PoPLogVO
+    {
+        public string WO_ID { get; set; }
+        public string FAC_Name { get; set; }
+        public string ITEM_Code { get; set; }
+        public DateTime ProductTime { get; set; }
+        public string Qty { get; set; }
+    }
+    public class ControlVO
+    {
+        public string WO_ID { get; set; }
+        public string FAC_Name { get; set; }
+        public string ITEM_Code { get; set; }
+        public int directQty { get; set; }
+        public int GoodQty { get; set; }
+        public int BadQty { get; set; }
+    }
+
+    public class NewControlVO
+    {
+        public string WO_ID { get; set; }
+        public string FAC_Name { get; set; }
+    }
 }

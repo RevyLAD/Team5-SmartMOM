@@ -54,7 +54,7 @@ namespace Team5_SmartMOM
                 fvo.FACT_Information = txtExplain.Text.Trim();
                 fvo.FACT_MATDeducation = cboMaterials.Text.Trim();
                 fvo.FACT_Modifier = txtModifier.Text.Trim();
-                fvo.FACT_ModifyDate = Convert.ToDateTime(txtModifyTime.Text.Trim());
+                fvo.FACT_ModifyDate = DateTime.Now;
                 fvo.FACT_Name = txtFacName.Text.Trim();
                 fvo.FACT_Parent = cboHighFac.Text.Trim();
                 //fvo.FACT_Type = 
@@ -68,7 +68,7 @@ namespace Team5_SmartMOM
                 }
                 else if(mode == 2)
                 {
-                    service.UpdateFactory(fvo, txtFacCode.Text);
+                    service.UpdateFactory(fvo, update_vo.FACT_No);
                     MessageBox.Show("성공적으로 수정되었습니다");
                 }
                 this.Close();
@@ -107,6 +107,7 @@ namespace Team5_SmartMOM
                 cboMaterials.Text = update_vo.FACT_MATDeducation;
                 cboFacCate.Text = update_vo.FACT_Type;
                 cboUse.Text = update_vo.FACT_UseOrNot;
+                txtModifyTime.Text = DateTime.Now.ToString();
                 txtModifyTime.Text = service.GetModiTime(txtFacCode.Text.Trim());
             }
 
@@ -126,6 +127,14 @@ namespace Team5_SmartMOM
             CommonUtil.ComboBinding(cboUMU, cmservice.GetOffer(), "Common_Key", "Common_Value");
             CommonUtil.ComboBinding(cboCompany, cmservice.GetCompanyList(), "COM_Code", "COM_Name");
             CommonUtil.ComboBinding(cboHighFac, cmservice.GetFactoryList(), "FACT_Code", "FACT_Name");
+        }
+
+        private void txtTurn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
