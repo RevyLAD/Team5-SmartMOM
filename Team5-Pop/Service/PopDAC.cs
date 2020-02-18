@@ -16,7 +16,7 @@ namespace Team5_Pop
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "SELECT [WO_ID], [ITEM_Code], [FAC_Name], [WO_StartDate], [WO_EndDate], [planQty], [directQty], [WO_State], [Plan_ID], [WO_Priority], [WO_Time], [restQty] from [WorkOrder] where WO_State = '작업지시' or WO_State = '작업시작' or WO_State = '작업중지'";
+                cmd.CommandText = "SELECT [WO_ID], [ITEM_Code], [FAC_Name], [WO_StartDate], [WO_EndDate], [planQty], [directQty], [WO_State], [Plan_ID], [WO_Priority], [WO_Time] ,[WO_GoodQty] ,[WO_BadQty],[WO_WorkEndTime] ,[restQty] from [WorkOrder] where WO_State = '작업지시' or WO_State = '작업시작' or WO_State = '작업중지'";
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();

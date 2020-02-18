@@ -19,6 +19,9 @@ namespace Team5_Pop
         public string Plan_ID { get; set; }
         public int WO_Priority { get; set; }
         public int WO_Time { get; set; }
+        public int WO_GoodQty { get; set; }
+        public int WO_BadQty { get; set; }
+        public DateTime WO_WorkEndTime { get; set; }
         public int restQty { get; set; }
     }
 

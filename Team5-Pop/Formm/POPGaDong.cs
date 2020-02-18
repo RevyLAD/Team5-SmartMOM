@@ -446,6 +446,11 @@ namespace Team5_Pop
                 btnSave.Enabled = false;
             }
         }
+
+        private void btnBadInsert_Click(object sender, EventArgs e) //불량등록
+        {
+
+        }
     }
 
     //public class PopEventAgrs:EventArgs
