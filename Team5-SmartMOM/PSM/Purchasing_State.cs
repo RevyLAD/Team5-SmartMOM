@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Team5_SmartMOM.Service;
 using WinReport1;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Team5_SmartMOM.PSM
 {
@@ -298,9 +299,9 @@ namespace Team5_SmartMOM.PSM
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Microsoft.Office.Interop.Excel.Application xlApp;
-            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
-            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            Excel.Application xlApp;
+            Excel.Workbook xlWorkBook;
+            Excel.Worksheet xlWorkSheet;
             int i, j;
 
             saveFileDialog1.Filter = "Excel Files (*.xls)|*.xls";
@@ -308,9 +309,9 @@ namespace Team5_SmartMOM.PSM
             saveFileDialog1.Title = "Save";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlApp = new Excel.Application();
                 xlWorkBook = xlApp.Workbooks.Add();
-                xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+                xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
                
                 xlWorkSheet.Cells[1, 1] = "No";
                 xlWorkSheet.Cells[1, 2] = "업체이름";
@@ -327,16 +328,16 @@ namespace Team5_SmartMOM.PSM
                 xlWorkSheet.Cells[1, 13] = "입고일";
 
 
-                for (i = 0; i < dataGridView1.RowCount; i++)
+                for (i = 0; i < dataGridView1.RowCount -2; i++)
                 {
                     for (j = 0; j < dataGridView1.ColumnCount - 1; j++)
                     {
                         if (dataGridView1[j, i].Value != null)
-                            xlWorkSheet.Cells[i + 2, j + 1] = dataGridView1[j, i].Value.ToString();
+                            xlWorkSheet.Cells[i + 1, j + 1] = dataGridView1[j, i].Value.ToString();
                     }
                 }
 
-                xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                xlWorkBook.SaveAs(saveFileDialog1.FileName, Excel.XlFileFormat.xlWorkbookNormal);
                 xlWorkBook.Close(true);
                 xlApp.Quit();
 

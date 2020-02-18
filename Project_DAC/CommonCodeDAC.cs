@@ -98,7 +98,8 @@ namespace Project_DAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "select distinct Plan_ID from VendorOrder WHERE MATERIAL_ORDER_STATE = '입고처리대기' ";
+                cmd.CommandText = @"select distinct Plan_ID from VendorOrder v inner join VendorOrderDetail d on v.VO_ID = d.VO_ID 
+WHERE VOD_Result = '합격' and MATERIAL_ORDER_STATE = '입고대기' ";
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
