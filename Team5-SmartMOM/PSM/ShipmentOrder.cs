@@ -271,6 +271,7 @@ namespace Team5_SmartMOM.PSM
             else
             {
                 MessageBox.Show("검색 결과가 없습니다");
+                dataGridView2.DataSource = null;
             }
         }
 
@@ -346,6 +347,24 @@ namespace Team5_SmartMOM.PSM
             {
                 GC.Collect();
             }
+        }
+
+        private void cboplanid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] arrDate = cboplanid.Text.Split('_');
+            if (arrDate[0] == "전체")
+            {
+                return;
+            }
+            if (arrDate[0] == "Project")
+            {
+                return;
+            }
+            arrDate[0] = arrDate[0].Insert(4, "-");
+            arrDate[0] = arrDate[0].Insert(7, "-");
+            //20200101
+            dtpDateStart.Value = DateTime.Parse(arrDate[0]);
+            dtpDateEnd.Value = DateTime.Parse(arrDate[0]).AddMonths(1);
         }
     }
 }

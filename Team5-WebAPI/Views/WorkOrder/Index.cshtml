@@ -1,55 +1,75 @@
-﻿
+﻿@model IEnumerable<Team5_WebAPI.Models.WorkOrder_VO>
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
 <div class="col-xs-12">
-    <div class="box box-default">
-    
-        <!-- /.box-header -->
-        <div class="box-body">
-            <div class="row">
-                <div class="col-sm-3 col-md-3 text-center">
-                    <input type="text" class="knob" value="36" data-width="100" data-height="100" data-fgColor="#00c0ef" data-readonly="true">
-                    <div class="knob-label">data-width="20"</div>
-                </div>
-                <div class="col-sm-3 col-md-3  text-center" ">
-                    <table class="table table-condensed">
-                        <tbody>
-                            <tr>
-                                <th style="width: 10px">#</th>
-                                <th>Task</th>
-                                <th>Progress</th>
-                                <th style="width: 40px">Label</th>
-                            </tr>
-                            <tr>
-                                <td>1.</td>
-                                <td>Update software</td>
-                                <td>
-                                    <div class="progress progress-xs">
-                                        <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                    </div>
-                                </td>
-                                <td><span class="badge bg-red">55%</span></td>
-                            </tr>
-                            <tr>
-                                <td>2.</td>
-                                <td>Clean database</td>
-                                <td>
-                                    <div class="progress progress-xs">
-                                        <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                                    </div>
-                                </td>
-                                <td><span class="badge bg-yellow">70%</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <div class="callout callout-info">
+        <h4>Tip!</h4>
+
+        <p>
+            Add the layout-top-nav class to the body tag to get this layout. This feature can also be used with a
+            sidebar! So use this class if you want to remove the custom dropdown menus from the navbar and use regular
+            links instead.
+        </p>
+    </div>
+</div>
+
+@foreach (var type in Model)
+{
+    <div class="col-xs-12">
+        <div class="box box-default">
+            <!-- /.box-header(첫번째 foraech) -->
+            <div class="box-header with-border"><h4>공정 : @type.FAC_Name</h4></div>
+            <div class="box-body">
+                <!-- /.box-header(두번째 foraech) -->
+                <div class="row">
+                    <div class="col-sm-2 col-md-2 text-center">
+                        <input type="text" class="knob" value="@type.G_QtyMIN" data-width="100" data-height="100" data-fgColor="#00c0ef" data-readonly="true">
+                        <div class="knob-label">생산률</div>
+                    </div>
+                    <!-- /.box-header(세번째 foraech) -->
+                    <div class="col-sm-2 col-md-2 text-center">
+                        <input type="text" class="knob" value="@type.B_QtyMIN" data-width="100" data-height="100" data-fgColor="#f56954" data-readonly="true">
+                        <div class="knob-label">불량률</div>
+                    </div>
+                    <!-- /.box-header(네번째 foraech) -->
+                    <div class="col-sm-8 col-md-8">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th style="font :1000">공정 명</th>
+                                    <th style="font :700">공정 생산 실적</th>
+                                    <th style="font :700">실적 통계</th>
+                                    <th style="font :700">생산량</th>
+                                </tr>
+                                <tr>
+                                    <td style="font : 500">@type.FAC_Name</td>
+                                    <td style="font : 500">생산률</td>
+                                    <td>
+                                        <div class="progress progress-xs">
+                                            <div class="progress-bar progress-bar-aqua" style="width: @type.G_QtyMIN%"></div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge bg-aqua" style="font : 500">@type.Q_qty</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="font : 500">@type.FAC_Name</td>
+                                    <td style="font : 500">불량률</td>
+                                    <td>
+                                        <div class="progress progress-xs">
+                                            <div class="progress-bar progress-bar-danger" style="width: @type.B_QtyMIN%"></div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge bg-danger" style="font : 500">@type.B_Qty</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+}
 
 
 
@@ -63,28 +83,8 @@
 
 
 
-
-
-                <!-- jQuery 3 d-->
-                <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
-                <!-- Bootstrap 3.3.7d -->
-                <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-                <!-- SlimScroll -->
-                <script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-                <!-- FastClick -->
-                <script src="../../bower_components/fastclick/lib/fastclick.js"></script>
-                <!-- AdminLTE Appd -->
-                <script src="../../dist/js/adminlte.min.js"></script>
-                <!-- ChartJS -->
-                <script src="/bower_components/Chart.js/Chart.js"></script>
-                <!-- AdminLTE for demo purposes -->
-                <script src="../../dist/js/demo.js"></script>
-                <!-- jQuery Knob -->
-                <script src="../../bower_components/jquery-knob/js/jquery.knob.js"></script>
-                <!-- Sparkline -->
-                <script src="../../bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-                <!-- page script -->
-                <script>
+@section Scripts {
+    <script>
   $(function () {
     /* jQueryKnob */
 
@@ -249,13 +249,7 @@
     });
   }
 
-  /**
-   ** Draw the little mouse speed animated graph
-   ** This just attaches a handler to the mousemove event to see
-   ** (roughly) how far the mouse has moved
-   ** and then updates the display a couple of times a second via
-   ** setTimeout()
-   **/
+
   function drawMouseSpeedDemo() {
     var mrefreshinterval = 500; // update display every 500ms
     var lastmousex = -1;
@@ -290,6 +284,7 @@
     // We could use setInterval instead, but I prefer to do it this way
     setTimeout(mdraw, mrefreshinterval);
   }
-                </script>
+    </script>
+}
 
 

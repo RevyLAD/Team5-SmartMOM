@@ -77,6 +77,7 @@ namespace Team5_SmartMOM.HSC
             else
             {
                 MessageBox.Show("검색 결과가 없습니다");
+                dataGridView2.DataSource = null;
             }
         }
 

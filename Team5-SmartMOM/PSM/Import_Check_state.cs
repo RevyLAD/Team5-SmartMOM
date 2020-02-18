@@ -89,7 +89,7 @@ namespace Team5_SmartMOM.PSM
             List<CompanyCodeVO> company = service.GetAllCompanyCode();
             CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "");
 
-            List<PlanIDVO> planid = service.PlanID();           
+            List<PlanIDVO> planid = service.CheckPlanID();           
             CommonUtil.ComboBinding(cboplanid, planid, "Plan_ID", "Plan_ID");
 
 
@@ -272,6 +272,24 @@ namespace Team5_SmartMOM.PSM
             {
                 GC.Collect();
             }
+        }
+
+        private void cboplanid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] arrDate = cboplanid.Text.Split('_');
+            if (arrDate[0] == "전체")
+            {
+                return;
+            }
+            if (arrDate[0] == "Project")
+            {
+                return;
+            }
+            arrDate[0] = arrDate[0].Insert(4, "-");
+            arrDate[0] = arrDate[0].Insert(7, "-");
+            //20200101
+            dtpDateStart.Value = DateTime.Parse(arrDate[0]);
+            dtpDateEnd.Value = DateTime.Parse(arrDate[0]).AddMonths(1);
         }
     }    
 }

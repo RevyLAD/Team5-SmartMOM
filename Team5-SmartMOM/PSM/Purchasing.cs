@@ -28,6 +28,8 @@ namespace Team5_SmartMOM.PSM
             dtpDateEnd.Value = DateTime.Now.AddMonths(1);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);            
             InitCombo();
+            btnSearch_Click(null, new EventArgs());
+            dgvSettings();
         }
 
         public void InitCombo()
@@ -72,6 +74,8 @@ namespace Team5_SmartMOM.PSM
 
             DataSet ds = service.GetMRP(plan);
             dataGridView1.DataSource = ds.Tables[0];
+
+            dgvSettings();
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -171,6 +175,26 @@ namespace Team5_SmartMOM.PSM
             {
                 GC.Collect();
             }
+        }
+
+        private void dgvSettings()
+        {
+            dataGridView1.Columns[0].Width = 180;
+            dataGridView1.Columns[1].Width = 100;
+            dataGridView1.Columns[2].Width = 100;
+         
+
+            dataGridView1.Columns[0].HeaderText = "품목코드";
+            dataGridView1.Columns[1].HeaderText = "품명";
+            dataGridView1.Columns[2].HeaderText = "카테고리";
+           
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+          
         }
     }
 }

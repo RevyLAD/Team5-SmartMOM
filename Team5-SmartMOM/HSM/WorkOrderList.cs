@@ -94,7 +94,6 @@ namespace Team5_SmartMOM.HSM
             List<WorkOrderVO> list = new List<WorkOrderVO>();
             list = service.GetWorkOrderByPlan(wo);
 
-
             dataGridView1.DataSource = list;
         }
 
@@ -164,6 +163,4 @@ namespace Team5_SmartMOM.HSM
             return dt;
         }
     }
-
-
 }

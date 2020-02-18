@@ -421,7 +421,50 @@ namespace Team5_Pop
         private void btnBarcode_Click(object sender, EventArgs e)
         {
             BarcodeForm frm = new BarcodeForm();
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    if (dataGridView1.SelectedRows.Count > 0)
+                    {
+                        string woId = frm.WorkOrderID.ToString();
+                        PopService service = new PopService();
+                        gadong_vo = service.GetPoPVOByWoId(woId)[0];
+                        //gadong_vo.ITEM_Code = dataGridView1.Rows[e_temp.RowIndex].Cells[1].Value.ToString();
+                        //gadong_vo.FAC_Name = dataGridView1.Rows[e_temp.RowIndex].Cells[2].Value.ToString();
+                        //gadong_vo.WO_StartDate = Convert.ToDateTime(dataGridView1.Rows[e_temp.RowIndex].Cells[3].Value.ToString());
+                        //gadong_vo.WO_EndDate = Convert.ToDateTime(dataGridView1.Rows[e_temp.RowIndex].Cells[4].Value.ToString());
+                        //gadong_vo.planQty = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[5].Value.ToString());
+                        //gadong_vo.directQty = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[6].Value.ToString());
+                        //gadong_vo.WO_State = dataGridView1.Rows[e_temp.RowIndex].Cells[7].Value.ToString();
+                        //gadong_vo.Plan_ID = dataGridView1.Rows[e_temp.RowIndex].Cells[8].Value.ToString();
+                        //gadong_vo.WO_Priority = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[9].Value.ToString());
+                        //gadong_vo.WO_Time = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[10].Value.ToString());
+
+                        
+
+                        POPGaDong newgadong = new POPGaDong(gadong_vo, service.GetPortNum(gadong_vo.WO_ID));
+                        //POPGaDong newgadong = new POPGaDong(gadong_vo, 9900);
+
+                        service.UpdateFacState(gadong_vo.FAC_Name, gadong_vo.WO_ID);
+                        mainform.CreateTabPages(gadong_vo.FAC_Name, newgadong);
+
+
+                        newgadong.DataGethering += new DataGetEventHandler(this.DataGet);
+
+                        //newgadong.Mtimer.Elapsed += new System.Timers.ElapsedEventHandler(DataUpdate(null, nullargs, gadong_vo));
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("선택된 작업이 없습니다");
+                    }
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.Message);
+                }
+            }
         }
     }
 }
