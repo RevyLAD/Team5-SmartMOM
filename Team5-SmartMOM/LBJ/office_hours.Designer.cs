@@ -88,7 +88,7 @@
             // 
             // cboShift
             // 
-            this.cboShift.Location = new System.Drawing.Point(112, 19);
+            this.cboShift.Location = new System.Drawing.Point(114, 21);
             this.cboShift.Name = "cboShift";
             this.cboShift.Size = new System.Drawing.Size(121, 20);
             this.cboShift.TabIndex = 8;
@@ -96,8 +96,8 @@
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(334, 19);
+            this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(275, 21);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 24);
             this.label5.TabIndex = 4;
@@ -106,7 +106,7 @@
             // cbosystem
             // 
             this.cbosystem.FormattingEnabled = true;
-            this.cbosystem.Location = new System.Drawing.Point(431, 19);
+            this.cbosystem.Location = new System.Drawing.Point(410, 21);
             this.cbosystem.Name = "cbosystem";
             this.cbosystem.Size = new System.Drawing.Size(142, 20);
             this.cbosystem.TabIndex = 1;
@@ -118,7 +118,7 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1114, 22);
+            this.btnSearch.Location = new System.Drawing.Point(1099, 15);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(81, 30);
             this.btnSearch.TabIndex = 6;
@@ -130,10 +130,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(39, 18);
+            this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 24);
+            this.label2.Size = new System.Drawing.Size(54, 19);
             this.label2.TabIndex = 7;
             this.label2.Text = "Shift";
             // 

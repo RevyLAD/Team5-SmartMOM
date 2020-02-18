@@ -83,6 +83,7 @@
             this.panelTop.Controls.Add(this.label4);
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Size = new System.Drawing.Size(1202, 54);
+            this.panelTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTop_Paint);
             // 
             // splitContainer2
             // 
@@ -101,7 +102,7 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(17, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 24);
@@ -111,7 +112,7 @@
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(411, 17);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 27);
@@ -129,7 +130,7 @@
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(798, 18);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 27);
@@ -147,7 +148,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(109, 17);
+            this.dateTimePicker1.Location = new System.Drawing.Point(109, 15);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(98, 21);
             this.dateTimePicker1.TabIndex = 8;
@@ -156,7 +157,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Location = new System.Drawing.Point(214, 21);
+            this.label8.Location = new System.Drawing.Point(214, 19);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(14, 12);
             this.label8.TabIndex = 9;
@@ -165,7 +166,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(234, 17);
+            this.dateTimePicker2.Location = new System.Drawing.Point(234, 15);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(98, 21);
             this.dateTimePicker2.TabIndex = 8;

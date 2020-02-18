@@ -133,7 +133,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(367, 21);
+            this.label3.Location = new System.Drawing.Point(351, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 12);
             this.label3.TabIndex = 1;
@@ -209,7 +209,7 @@
             // txt_date
             // 
             this.txt_date.BackColor = System.Drawing.Color.Transparent;
-            this.txt_date.Location = new System.Drawing.Point(116, 17);
+            this.txt_date.Location = new System.Drawing.Point(123, 17);
             this.txt_date.Name = "txt_date";
             this.txt_date.Size = new System.Drawing.Size(193, 23);
             this.txt_date.TabIndex = 0;

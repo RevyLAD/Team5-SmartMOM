@@ -133,7 +133,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(357, 19);
+            this.label3.Location = new System.Drawing.Point(358, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 12);
             this.label3.TabIndex = 1;
@@ -141,7 +141,7 @@
             // 
             // txt_item
             // 
-            this.txt_item.Location = new System.Drawing.Point(441, 15);
+            this.txt_item.Location = new System.Drawing.Point(441, 13);
             this.txt_item.Name = "txt_item";
             this.txt_item.Size = new System.Drawing.Size(208, 21);
             this.txt_item.TabIndex = 1;
@@ -209,7 +209,7 @@
             // dtp_ExistingDate
             // 
             this.dtp_ExistingDate.BackColor = System.Drawing.Color.Transparent;
-            this.dtp_ExistingDate.Location = new System.Drawing.Point(112, 15);
+            this.dtp_ExistingDate.Location = new System.Drawing.Point(126, 13);
             this.dtp_ExistingDate.Name = "dtp_ExistingDate";
             this.dtp_ExistingDate.Size = new System.Drawing.Size(193, 23);
             this.dtp_ExistingDate.TabIndex = 0;
