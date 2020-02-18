@@ -77,6 +77,7 @@ namespace Team5_SmartMOM
             this.공정재고현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.출하관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.출하및매출마감ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.출하현황및매출현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -145,7 +146,6 @@ namespace Team5_SmartMOM
             this.btnMatList = new System.Windows.Forms.Button();
             this.btnSubMenu1 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
-            this.출하현황및매출현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.ts.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -287,14 +287,14 @@ namespace Team5_SmartMOM
             // shift기준정보ToolStripMenuItem
             // 
             this.shift기준정보ToolStripMenuItem.Name = "shift기준정보ToolStripMenuItem";
-            this.shift기준정보ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.shift기준정보ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.shift기준정보ToolStripMenuItem.Text = "Shift 기준정보";
             this.shift기준정보ToolStripMenuItem.Click += new System.EventHandler(this.shift기준정보ToolStripMenuItem_Click);
             // 
             // shift스케줄관리ToolStripMenuItem
             // 
             this.shift스케줄관리ToolStripMenuItem.Name = "shift스케줄관리ToolStripMenuItem";
-            this.shift스케줄관리ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.shift스케줄관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.shift스케줄관리ToolStripMenuItem.Text = "Shift 스케줄관리";
             this.shift스케줄관리ToolStripMenuItem.Click += new System.EventHandler(this.shift스케줄관리ToolStripMenuItem_Click);
             // 
@@ -497,20 +497,21 @@ namespace Team5_SmartMOM
             // 작업지시생성ToolStripMenuItem
             // 
             this.작업지시생성ToolStripMenuItem.Name = "작업지시생성ToolStripMenuItem";
-            this.작업지시생성ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.작업지시생성ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.작업지시생성ToolStripMenuItem.Text = "작업지시생성";
             // 
             // 작업지시현황ToolStripMenuItem
             // 
             this.작업지시현황ToolStripMenuItem.Name = "작업지시현황ToolStripMenuItem";
-            this.작업지시현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.작업지시현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.작업지시현황ToolStripMenuItem.Text = "작업지시현황";
             // 
             // 공정재고현황ToolStripMenuItem
             // 
             this.공정재고현황ToolStripMenuItem.Name = "공정재고현황ToolStripMenuItem";
-            this.공정재고현황ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.공정재고현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.공정재고현황ToolStripMenuItem.Text = "공정재고현황";
+            this.공정재고현황ToolStripMenuItem.Click += new System.EventHandler(this.공정재고현황ToolStripMenuItem_Click);
             // 
             // 출하관리ToolStripMenuItem
             // 
@@ -527,6 +528,13 @@ namespace Team5_SmartMOM
             this.출하및매출마감ToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.출하및매출마감ToolStripMenuItem.Text = "출하 및 매출마감";
             this.출하및매출마감ToolStripMenuItem.Click += new System.EventHandler(this.출하및매출마감ToolStripMenuItem_Click);
+            // 
+            // 출하현황및매출현황ToolStripMenuItem
+            // 
+            this.출하현황및매출현황ToolStripMenuItem.Name = "출하현황및매출현황ToolStripMenuItem";
+            this.출하현황및매출현황ToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.출하현황및매출현황ToolStripMenuItem.Text = "출하 현황 및 매출현황";
+            this.출하현황및매출현황ToolStripMenuItem.Click += new System.EventHandler(this.출하현황및매출현황ToolStripMenuItem_Click);
             // 
             // BottomToolStripPanel
             // 
@@ -1588,13 +1596,6 @@ namespace Team5_SmartMOM
             this.button22.Text = "현황보기";
             this.button22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button22.UseVisualStyleBackColor = false;
-            // 
-            // 출하현황및매출현황ToolStripMenuItem
-            // 
-            this.출하현황및매출현황ToolStripMenuItem.Name = "출하현황및매출현황ToolStripMenuItem";
-            this.출하현황및매출현황ToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.출하현황및매출현황ToolStripMenuItem.Text = "출하 현황 및 매출현황";
-            this.출하현황및매출현황ToolStripMenuItem.Click += new System.EventHandler(this.출하현황및매출현황ToolStripMenuItem_Click);
             // 
             // MainForm
             // 

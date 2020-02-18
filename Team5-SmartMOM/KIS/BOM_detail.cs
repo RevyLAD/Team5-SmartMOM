@@ -248,5 +248,15 @@ namespace Team5_SmartMOM
                 cbo_differenceItem.Enabled = false;
             }
         }
+
+        private void Dtp_Enddate_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtp_Startdate.Value >= dtp_Enddate.Value)
+            {
+                MessageBox.Show("시작일보다 빠를 수 없습니다.");
+                dtp_Enddate.Value = dtp_Startdate.Value.AddDays(1);
+                return;
+            }
+        }
     }
 }

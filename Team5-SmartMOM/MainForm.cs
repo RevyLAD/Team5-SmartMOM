@@ -394,6 +394,10 @@ namespace Team5_SmartMOM
         {
             CreateTabPages("출하현황및매출현황", new ShipmentStateMain());
         }
+        private void 공정재고현황ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("공정재고현황", new Stack_Status());
+        }
 
         #endregion
         private void ToolStripButton4_Click(object sender, EventArgs e)
@@ -450,6 +454,6 @@ namespace Team5_SmartMOM
 
         }
 
-        
+       
     }
 }

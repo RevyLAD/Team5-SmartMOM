@@ -39,6 +39,7 @@
             this.Btn_newitem = new System.Windows.Forms.Button();
             this.Btn_Copy = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.btn_reset = new System.Windows.Forms.Button();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMid.SuspendLayout();
@@ -92,6 +93,7 @@
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.btn_reset);
             this.panelTop.Controls.Add(this.btn_Search);
             this.panelTop.Controls.Add(this.cbo_Deployement);
             this.panelTop.Controls.Add(this.txt_Item);
@@ -234,6 +236,19 @@
             this.Btn_Copy.UseVisualStyleBackColor = false;
             this.Btn_Copy.Click += new System.EventHandler(this.Btn_Copy_Click);
             // 
+            // btn_reset
+            // 
+            this.btn_reset.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.btn_reset.ForeColor = System.Drawing.Color.White;
+            this.btn_reset.Location = new System.Drawing.Point(1001, 42);
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.Size = new System.Drawing.Size(93, 39);
+            this.btn_reset.TabIndex = 8;
+            this.btn_reset.Text = "다시 불러오기";
+            this.btn_reset.UseVisualStyleBackColor = false;
+            this.btn_reset.Click += new System.EventHandler(this.Btn_reset_Click);
+            // 
             // BOM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -268,5 +283,6 @@
         protected System.Windows.Forms.Button Btn_Copy;
         protected System.Windows.Forms.Button Btn_Delete;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button btn_reset;
     }
 }
