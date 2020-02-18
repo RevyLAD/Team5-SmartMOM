@@ -254,6 +254,7 @@
             this.dtp_Enddate.Name = "dtp_Enddate";
             this.dtp_Enddate.Size = new System.Drawing.Size(175, 21);
             this.dtp_Enddate.TabIndex = 5;
+            this.dtp_Enddate.ValueChanged += new System.EventHandler(this.Dtp_Enddate_ValueChanged);
             // 
             // txt_Reviser
             // 
