@@ -60,7 +60,17 @@ namespace Team5_SmartMOM.PSM
             cboResult.Items.Add("불합격");
             DataLoad();
             Datagridview();
+
+            PSM_Service service = new PSM_Service();
+            List<CompanyCodeVO> company = service.GetAllCompanyCode();
+            CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "");
+
+            List<PlanIDVO> planid = service.CheckPlanID();
+            CommonUtil.ComboBinding(cboplanid, planid, "Plan_ID", "Plan_ID");
+
             btnSearch_Click(null, new EventArgs());
+
+            
         }
 
         public void Datagridview()
@@ -86,11 +96,7 @@ namespace Team5_SmartMOM.PSM
             list = service.ImportCheck(ics);
             dataGridView2.DataSource = list;
             
-            List<CompanyCodeVO> company = service.GetAllCompanyCode();
-            CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "");
-
-            List<PlanIDVO> planid = service.PlanID();           
-            CommonUtil.ComboBinding(cboplanid, planid, "Plan_ID", "Plan_ID");
+            
 
 
 
@@ -173,6 +179,7 @@ namespace Team5_SmartMOM.PSM
             else
             {
                 MessageBox.Show("검색 결과가 없습니다");
+                dataGridView2.DataSource = null;
             }
         }
 
@@ -238,12 +245,12 @@ namespace Team5_SmartMOM.PSM
                 xlWorkSheet.Cells[1, 10] = "비고";
               
 
-                for (i = 0; i < dataGridView2.RowCount; i++)
+                for (i = 0; i < dataGridView2.RowCount -2; i++)
                 {
                     for (j = 0; j < dataGridView2.ColumnCount - 1; j++)
                     {
                         if (dataGridView2[j, i].Value != null)
-                            xlWorkSheet.Cells[i + 2, j + 1] = dataGridView2[j, i].Value.ToString();
+                            xlWorkSheet.Cells[i + 1, j + 1] = dataGridView2[j, i].Value.ToString();
                     }
                 }
 
@@ -272,6 +279,24 @@ namespace Team5_SmartMOM.PSM
             {
                 GC.Collect();
             }
+        }
+
+        private void cboplanid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] arrDate = cboplanid.Text.Split('_');
+            if (arrDate[0] == "전체")
+            {
+                return;
+            }
+            if (arrDate[0] == "Project")
+            {
+                return;
+            }
+            arrDate[0] = arrDate[0].Insert(4, "-");
+            arrDate[0] = arrDate[0].Insert(7, "-");
+            //20200101
+            dtpDateStart.Value = DateTime.Parse(arrDate[0]);
+            dtpDateEnd.Value = DateTime.Parse(arrDate[0]).AddMonths(1);
         }
     }    
 }

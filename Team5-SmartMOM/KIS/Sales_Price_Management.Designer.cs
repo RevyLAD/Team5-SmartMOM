@@ -87,7 +87,7 @@
             // panel2
             // 
             this.panel2.Location = new System.Drawing.Point(0, 31);
-            this.panel2.Size = new System.Drawing.Size(1202, 63);
+            this.panel2.Size = new System.Drawing.Size(1202, 81);
             // 
             // panelTop
             // 
@@ -96,7 +96,7 @@
             this.panelTop.Controls.Add(this.txt_item);
             this.panelTop.Controls.Add(this.label3);
             this.panelTop.Controls.Add(this.label2);
-            this.panelTop.Size = new System.Drawing.Size(1202, 43);
+            this.panelTop.Size = new System.Drawing.Size(1202, 61);
             // 
             // splitContainer2
             // 
@@ -122,7 +122,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(18, 15);
+            this.label2.Location = new System.Drawing.Point(18, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 12);
             this.label2.TabIndex = 0;
@@ -133,7 +133,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(367, 15);
+            this.label3.Location = new System.Drawing.Point(351, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 12);
             this.label3.TabIndex = 1;
@@ -144,7 +144,7 @@
             this.btn_Search.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btn_Search.ForeColor = System.Drawing.Color.White;
-            this.btn_Search.Location = new System.Drawing.Point(1102, 0);
+            this.btn_Search.Location = new System.Drawing.Point(1100, 8);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(93, 39);
             this.btn_Search.TabIndex = 2;
@@ -154,7 +154,7 @@
             // 
             // txt_item
             // 
-            this.txt_item.Location = new System.Drawing.Point(430, 11);
+            this.txt_item.Location = new System.Drawing.Point(430, 17);
             this.txt_item.Name = "txt_item";
             this.txt_item.Size = new System.Drawing.Size(208, 21);
             this.txt_item.TabIndex = 1;
@@ -209,7 +209,7 @@
             // txt_date
             // 
             this.txt_date.BackColor = System.Drawing.Color.Transparent;
-            this.txt_date.Location = new System.Drawing.Point(116, 11);
+            this.txt_date.Location = new System.Drawing.Point(123, 17);
             this.txt_date.Name = "txt_date";
             this.txt_date.Size = new System.Drawing.Size(193, 23);
             this.txt_date.TabIndex = 0;

@@ -132,7 +132,8 @@ namespace Team5_SmartMOM.PSM
 
             List<CompanyCodeVO> company = service.GetAllCompanyCode();
             CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "");
-            List<PlanIDVO> planid = service.PlanID();
+
+            List<PlanIDVO> planid = service.Material_Ledger_PlanID();
             CommonUtil.ComboBinding(cboplanid, planid, "Plan_ID", "Plan_ID");
 
         }
@@ -224,12 +225,12 @@ namespace Team5_SmartMOM.PSM
                 xlWorkSheet.Cells[1, 11] = "주문상태";
                 xlWorkSheet.Cells[1, 12] = "생성일";
 
-                for (i = 0; i < dataGridView2.RowCount; i++)
+                for (i = 0; i < dataGridView2.RowCount -2; i++)
                 {
                     for (j = 0; j < dataGridView2.ColumnCount - 1; j++)
                     {
                         if(dataGridView2[j, i].Value != null)
-                            xlWorkSheet.Cells[i + 2, j + 1] = dataGridView2[j, i].Value.ToString();
+                            xlWorkSheet.Cells[i + 1, j + 1] = dataGridView2[j, i].Value.ToString();
                     }
                 }
 
@@ -401,6 +402,7 @@ namespace Team5_SmartMOM.PSM
             else
             {
                 MessageBox.Show("검색 결과가 없습니다");
+                dataGridView2.DataSource = null;
             }
         }
 
@@ -419,6 +421,24 @@ namespace Team5_SmartMOM.PSM
             {
                 BtnSearch_Click(null, new EventArgs());
             }
+        }
+
+        private void cboplanid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] arrDate = cboplanid.Text.Split('_');
+            if (arrDate[0] == "전체")
+            {
+                return;
+            }
+            if (arrDate[0] == "Project")
+            {
+                return;
+            }
+            arrDate[0] = arrDate[0].Insert(4, "-");
+            arrDate[0] = arrDate[0].Insert(7, "-");
+            //20200101
+            dtpDateStart.Value = DateTime.Parse(arrDate[0]);
+            dtpDateEnd.Value = DateTime.Parse(arrDate[0]).AddMonths(1);
         }
     }
 }
