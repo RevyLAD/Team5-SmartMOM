@@ -44,6 +44,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1066, 591);
             this.Name = "Record_Reference";
+            this.Text = "이력 조회";
             this.Load += new System.EventHandler(this.Record_Reference_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
