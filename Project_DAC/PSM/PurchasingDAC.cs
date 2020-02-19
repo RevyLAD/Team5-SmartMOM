@@ -868,7 +868,7 @@ WHERE FACT_Name = '자재창고_01' and f.ITEM_Code = @ITEM_Code";
 
             }
         }
-        public bool Shipment(List<ShipmentVO> lists, List<Shipment2VO> lists2)
+        public bool Shipment(List<ShipmentVO> lists)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -876,25 +876,18 @@ WHERE FACT_Name = '자재창고_01' and f.ITEM_Code = @ITEM_Code";
                 cmd.Connection.Open();
                 cmd.CommandType = CommandType.Text;
                 try
-                {
-                    foreach (var item in lists2)
-                    {
-                        cmd.CommandText = @"UPDATE SalesMaster SET SALES_ShipQty = (@SALES_OrderQty - @SALES_CancelQty) WHERE SO_WorkOrderID = @SO_WorkOrderID";
-
-                        cmd.Parameters.AddWithValue("@SO_WorkOrderID", item.SO_WorkOrderID);
-                        cmd.Parameters.AddWithValue("@SALES_OrderQty", item.SALES_OrderQty);
-                        cmd.Parameters.AddWithValue("@SALES_CancelQty", item.SALES_CancelQty);
-
-
-                        cmd.ExecuteNonQuery();
-                        cmd.Parameters.Clear();
-                    }
+                {                    
 
                     foreach (var item in lists)
                     {
-                        cmd.CommandText = @"UPDATE SalesMaster set Shipment_State = '출하완료' WHERE SO_WorkOrderID = @SO_WorkOrderID";
-
+                        cmd.CommandText = "Shipment";
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@SALES_ShipQty", item.SALES_ShipQty);
+                        cmd.Parameters.AddWithValue("@ITEM_Code", item.ITEM_Code);
+                        cmd.Parameters.AddWithValue("@SALES_OrderQty", item.SALES_OrderQty);
+                        cmd.Parameters.AddWithValue("@SALES_CancelQty", item.SALES_CancelQty);
                         cmd.Parameters.AddWithValue("@SO_WorkOrderID", item.SO_WorkOrderID);
+                        
 
                         cmd.ExecuteNonQuery();
                         cmd.Parameters.Clear();

@@ -232,10 +232,10 @@ namespace Team5_SmartMOM.Service
             return dac.ShipmentState(so);
         }
 
-        public bool Shipment(List<ShipmentVO> lists, List<Shipment2VO> lists2)
+        public bool Shipment(List<ShipmentVO> lists)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.Shipment(lists, lists2);
+            return dac.Shipment(lists);
         }
         public List<DeadLineVO> DeadLine()
         {
