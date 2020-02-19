@@ -180,13 +180,15 @@ namespace Team5_Pop
             //thisvo.WO_State;
             //thisvo.WO_Time;
         }
+        TcpListener listener;
+        TcpClient tc;
         async Task AsyncEchoServer()
         {
-            TcpListener listener = new TcpListener(IPAddress.Any, thisport);
+            listener = new TcpListener(IPAddress.Any, thisport);
             listener.Start();
             while (true)
             {
-                TcpClient tc = await listener.AcceptTcpClientAsync().ConfigureAwait(false);
+                tc= await listener.AcceptTcpClientAsync().ConfigureAwait(false);
                 await Task.Factory.StartNew(AsyncTcpProcess, tc);
             }
         }
@@ -436,10 +438,14 @@ namespace Team5_Pop
                 service.SavePopData(tempvo);
                 service.UpdateFacStateEnd(thisvo.FAC_Name);
 
-                this.Close();
+                
                 this.mainform.mainform.DeleteTabPages(this);
                 this.mainform.DataLoad();
+
                 stream.Close();
+                tc.Close();
+
+                this.Close();
             }
             else
             {
