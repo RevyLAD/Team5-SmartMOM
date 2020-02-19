@@ -15,6 +15,8 @@ using Team5_SmartMOM.HSM;
 using Team5_SmartMOM.KIS;
 using System.Reflection;
 using Team5_SmartMOM.Properties;
+using System.Net;
+using System.IO;
 
 namespace Team5_SmartMOM
 {
@@ -344,6 +346,9 @@ namespace Team5_SmartMOM
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
+           
+            string Url = "https://team5-webapi.azurewebsites.net";
+            System.Diagnostics.Process.Start(Url);
 
         }
 
