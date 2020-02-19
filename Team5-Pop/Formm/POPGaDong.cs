@@ -158,9 +158,18 @@ namespace Team5_Pop
             PopService service = new PopService();
 
             txtOrderID.Text = thisvo.WO_ID;
-            txtDirectQty.Text = txtNoCount.Text = Convert.ToString(thisvo.restQty.ToString("0000"));
+            txtDirectQty.Text = Convert.ToString(thisvo.directQty.ToString("0000"));
+            txtNoCount.Text = Convert.ToString(thisvo.restQty.ToString("0000"));
+
+            int gq = thisvo.WO_GoodQty;
+            int bq = thisvo.WO_BadQty;
+            txtGoodQty.Text = Convert.ToString(gq.ToString("0000"));
+            txtBadQty.Text = Convert.ToString(bq.ToString("0000"));
+            txtCount.Text = Convert.ToString((gq + bq).ToString("0000"));
 
             txtFacName.Text = thisvo.FAC_Name;
+            progressBar1.Value =  (int)(((double)thisvo.WO_GoodQty / (double)thisvo.directQty) * 100);
+            lblprogres.Text = Convert.ToString(progressBar1.Value)+"%";
 
             FACG = service.GetGaDongInfo(thisvo.FAC_Name);
             txtFACGName.Text = FACG[0] + " / " + FACG[1];
@@ -201,7 +210,7 @@ namespace Team5_Pop
             
             string msg = thisvo.ITEM_Code + '/' + txtDirectQty.Text + '/' + txtNoCount.Text + '/' + TickTime;
             byte[] buff = Encoding.ASCII.GetBytes(msg);
-            stream.Write(buff, 0, buff.Length);
+            await stream.WriteAsync(buff, 0, buff.Length);
 
 
             //var readTask = stream.Read(buff2, 0, buff2.Length);
@@ -443,13 +452,12 @@ namespace Team5_Pop
                 this.mainform.DataLoad();
 
                 stream.Close();
+                stream.Dispose();
+                
                 tc.Close();
+                tc.Dispose();
 
                 this.Close();
-            }
-            else
-            {
-                btnSave.Enabled = false;
             }
         }
 
