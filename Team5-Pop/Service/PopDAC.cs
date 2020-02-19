@@ -16,7 +16,7 @@ namespace Team5_Pop
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "SELECT [WO_ID], [ITEM_Code], [FAC_Name], [WO_StartDate], [WO_EndDate], [planQty], [directQty], [WO_State], [Plan_ID], [WO_Priority], [WO_Time] from [WorkOrder]";
+                cmd.CommandText = "SELECT [WO_ID], [ITEM_Code], [FAC_Name], [WO_StartDate], [WO_EndDate], [planQty], [directQty], [WO_State], [Plan_ID], [WO_Priority], [WO_Time] ,[WO_GoodQty] ,[WO_BadQty],[WO_WorkEndTime] ,[restQty] from [WorkOrder] where WO_State = '작업지시' or WO_State = '작업시작' or WO_State = '작업중지'";
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -31,13 +31,12 @@ namespace Team5_Pop
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "SELECT [WO_ID], [ITEM_Code], [FAC_Name], [WO_StartDate], [WO_EndDate], [planQty], [directQty], [WO_State], [Plan_ID], [WO_Priority], [WO_Time] from [WorkOrder] where WO_ID = @WO_ID ";
+                cmd.CommandText = "SELECT [WO_ID], [ITEM_Code], [FAC_Name], [WO_StartDate], [WO_EndDate], [planQty], [directQty], [WO_State], [Plan_ID], [WO_Priority], [WO_Time], [restQty] from [WorkOrder] where WO_ID = @WO_ID ";
                 cmd.Parameters.AddWithValue("@WO_ID", woId);
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<PopVO> list = Helper.DataReaderMapToList<PopVO>(reader);
                 cmd.Connection.Close();
-
                 return list;
             }
         }
@@ -236,20 +235,19 @@ namespace Team5_Pop
             return portnum;
         }
 
-        public void SavePopData(List<string> list)
+        public void SavePopData(PoPEndVO vo)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "insert into values() where WO_ID = @WO_ID";
+                cmd.CommandText = "update WorkOrder set WO_State = @WO_State, WO_GoodQty = @GoodQty, WO_BadQty = @BadQty, restQty = @restQty, WO_WorkEndTime = @WO_WorkEndTime where WO_ID = @WO_ID";
 
-                cmd.Parameters.AddWithValue("@WO_ID", list[0]);
-                cmd.Parameters.AddWithValue("@WO_ID", list[1]);
-                cmd.Parameters.AddWithValue("@WO_ID", list[2]);
-                cmd.Parameters.AddWithValue("@WO_ID", list[3]);
-                cmd.Parameters.AddWithValue("@WO_ID", list[4]);
-                cmd.Parameters.AddWithValue("@WO_ID", list[5]);
-                cmd.Parameters.AddWithValue("@WO_ID", list[6]);
+                cmd.Parameters.AddWithValue("@WO_ID", vo.WO_ID);
+                cmd.Parameters.AddWithValue("@WO_State", vo.WO_State);
+                cmd.Parameters.AddWithValue("@GoodQty", vo.GoodQty);
+                cmd.Parameters.AddWithValue("@BadQty", vo.BadQty);
+                cmd.Parameters.AddWithValue("@restQty", vo.restQty);
+                cmd.Parameters.AddWithValue("@WO_WorkEndTime", vo.WO_WorkEndTime);
 
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();

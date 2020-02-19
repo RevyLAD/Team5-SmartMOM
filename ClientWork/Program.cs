@@ -93,6 +93,7 @@ namespace ClientWork
         static NetworkStream stream;
         static string product;
         static int TickTime;
+        static string[] data;
         private static bool TcpConnection()
         {
             try
@@ -104,7 +105,7 @@ namespace ClientWork
                 int nbytes = stream.Read(outbuff, 0, outbuff.Length);
                 string outMsg = Encoding.ASCII.GetString(outbuff, 0, nbytes);
 
-                string[] data;
+
 
                 product = outMsg;
                 data = product.Split('/');
@@ -166,6 +167,13 @@ namespace ClientWork
                     Log.WriteInfo($"{DateTime.Now.ToLongTimeString()} : {product}  :   == 생산 종료 == ");
                     timer2.Stop();
                     timer1.Stop();
+                }else if (outMsg.Contains("stop"))
+                {
+                    Console.WriteLine("ㆍㆍㆍ생산 중지ㆍㆍㆍ");
+                    Log.WriteInfo($"{DateTime.Now.ToLongTimeString()} : {product}  :   == 생산 중지 == ");
+                    Log.WriteInfo($"{DateTime.Now.ToLongTimeString()} : 잔여 수량    :   == {outMsg.Substring(5)} == ");
+                    timer2.Stop();
+                    timer1.Stop();
                 }
             }
             catch(Exception err)
@@ -193,7 +201,7 @@ namespace ClientWork
                 else
                     qty = 0;
                 
-                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")} :: {product} :: {qty}]";
+                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/{product}/{qty}";
                 byte[] buff = Encoding.ASCII.GetBytes(msg);
                 stream.Write(buff, 0, buff.Length);
 

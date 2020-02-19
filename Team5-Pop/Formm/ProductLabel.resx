@@ -117,13 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 16</value>
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
-  <metadata name="timer3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>104, 16</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>56</value>
-  </metadata>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlByb2R1Y3Rpb25Mb2ciPjxGaWVsZCBOYW1lPSJMb2dJRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IldPX0lEIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkZBQ19OYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IklURU1fQ29kZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJQcm9kdWN0VGltZSIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IlF0eSIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48VmlldyBOYW1lPSJXb3JrT3JkZXIiPjxGaWVsZCBOYW1lPSJXT19JRCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJJVEVNX0NvZGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRkFDX05hbWUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iV09fU3RhcnREYXRlIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iV09fRW5kRGF0ZSIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9InBsYW5RdHkiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJkaXJlY3RRdHkiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJXT19TdGF0ZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJQbGFuX0lEIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IldPX1ByaW9yaXR5IiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iV09fVGltZSIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IldPX091dFN0YXRlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IldPX0dvb2RRdHkiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJXT19CYWRRdHkiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJXT19Xb3JrRW5kVGltZSIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9InJlc3RRdHkiIFR5cGU9IkludDMyIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+  </data>
 </root>

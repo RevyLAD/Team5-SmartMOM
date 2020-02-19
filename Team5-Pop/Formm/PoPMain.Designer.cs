@@ -37,7 +37,6 @@
             this.lblNowTime = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.MenuGroup = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.TextGroup = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -85,7 +84,10 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnProductLabel = new System.Windows.Forms.Button();
+            this.btnBadLabel = new System.Windows.Forms.Button();
             this.btnBarcode = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.MenuGroup.SuspendLayout();
@@ -155,6 +157,8 @@
             // MenuGroup
             // 
             this.MenuGroup.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.MenuGroup.Controls.Add(this.btnBadLabel);
+            this.MenuGroup.Controls.Add(this.btnProductLabel);
             this.MenuGroup.Controls.Add(this.btnBarcode);
             this.MenuGroup.Controls.Add(this.button1);
             this.MenuGroup.Controls.Add(this.btnStart);
@@ -165,17 +169,6 @@
             this.MenuGroup.Size = new System.Drawing.Size(77, 599);
             this.MenuGroup.TabIndex = 3;
             this.MenuGroup.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Image = global::Team5_Pop.Properties.Resources.cancel1;
-            this.button1.Location = new System.Drawing.Point(3, 90);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 73);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // TextGroup
             // 
@@ -746,6 +739,29 @@
             this.timer1.Interval = 200;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnProductLabel
+            // 
+            this.btnProductLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProductLabel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnProductLabel.Location = new System.Drawing.Point(3, 236);
+            this.btnProductLabel.Name = "btnProductLabel";
+            this.btnProductLabel.Size = new System.Drawing.Size(71, 73);
+            this.btnProductLabel.TabIndex = 3;
+            this.btnProductLabel.Text = "제품라벨출력";
+            this.btnProductLabel.UseVisualStyleBackColor = true;
+            this.btnProductLabel.Click += new System.EventHandler(this.btnProductLabel_Click);
+            // 
+            // btnBadLabel
+            // 
+            this.btnBadLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBadLabel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBadLabel.Location = new System.Drawing.Point(3, 309);
+            this.btnBadLabel.Name = "btnBadLabel";
+            this.btnBadLabel.Size = new System.Drawing.Size(71, 73);
+            this.btnBadLabel.TabIndex = 4;
+            this.btnBadLabel.Text = "불량라벨 출력";
+            this.btnBadLabel.UseVisualStyleBackColor = true;
+            // 
             // btnBarcode
             // 
             this.btnBarcode.Dock = System.Windows.Forms.DockStyle.Top;
@@ -757,6 +773,17 @@
             this.btnBarcode.TabIndex = 2;
             this.btnBarcode.UseVisualStyleBackColor = true;
             this.btnBarcode.Click += new System.EventHandler(this.btnBarcode_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Image = global::Team5_Pop.Properties.Resources.cancel1;
+            this.button1.Location = new System.Drawing.Point(3, 90);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(71, 73);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // btnStart
             // 
@@ -856,5 +883,7 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnBadLabel;
+        private System.Windows.Forms.Button btnProductLabel;
     }
 }
