@@ -15,6 +15,13 @@ namespace Team5_Pop
             return dac.PopGetData();
         }
 
+        public List<PopVO> GetPoPVOByWoId(string WoId)
+        {
+            PopDAC dac = new PopDAC();
+            return dac.GetPoPVOByWoId(WoId);
+        }
+
+
         public List<FacGroupVO> GetFACGName()
         {
             PopDAC dac = new PopDAC();
@@ -28,6 +35,12 @@ namespace Team5_Pop
             return dac.GetFACName();
         }
 
+        public string GetFACNameByWoId(string woId)
+        {
+            PopDAC dac = new PopDAC();
+            return dac.GetFACNameByWoId(woId);
+        }
+        
         public void UpdateFacState(string name, string id)
         {
             PopDAC dac = new PopDAC();

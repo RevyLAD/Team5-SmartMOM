@@ -26,6 +26,22 @@ namespace Team5_Pop
                 return list;
             }
         }
+        public List<PopVO> GetPoPVOByWoId(string woId)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "SELECT [WO_ID], [ITEM_Code], [FAC_Name], [WO_StartDate], [WO_EndDate], [planQty], [directQty], [WO_State], [Plan_ID], [WO_Priority], [WO_Time] from [WorkOrder] where WO_ID = @WO_ID ";
+                cmd.Parameters.AddWithValue("@WO_ID", woId);
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<PopVO> list = Helper.DataReaderMapToList<PopVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+        
 
         public List<FacGroupVO> GetFACGName()
         {
@@ -56,6 +72,22 @@ namespace Team5_Pop
                 cmd.Connection.Close();
 
                 return list;
+            }
+        }
+
+        public string GetFACNameByWoId(string woId)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "SELECT distinct FAC_Name from WorkOrder where WO_ID = @WO_ID";
+                cmd.Parameters.AddWithValue("@WO_ID", woId);
+
+                cmd.Connection.Open();
+                string facName = cmd.ExecuteScalar().ToString();
+                cmd.Connection.Close();
+
+                return facName;
             }
         }
 

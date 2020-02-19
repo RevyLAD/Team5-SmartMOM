@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,6 +15,7 @@ namespace Team5_Pop
     public partial class BarcodeForm : Form
     {
         String msg;
+        string workorderId;
         #region 시리얼포트 연결
         /* 시리얼포트 정의 */
         private SerialPort _Port;
@@ -66,8 +68,8 @@ namespace Team5_Pop
         {
             set
             {
-            //    if (_Strings != null)
-            //        _Strings.Clear();
+                if (_Strings != null)
+                    _Strings.Clear();
                 if (_Strings == null)
                     _Strings = new StringBuilder(1024);
            // 로그 길이가 1024자가 되면 이전 로그 삭제
@@ -82,7 +84,11 @@ namespace Team5_Pop
 
 
         #endregion
-
+        public string WorkOrderID 
+        {
+            get { return workorderId; }
+            set { this.workorderId = value; } 
+        }
         private void SerialPortConnecting()
         {
             //if (!Port.IsOpen)
@@ -107,17 +113,17 @@ namespace Team5_Pop
 
         private void Port_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
+            Thread.Sleep(500);
+
             msg = Port.ReadExisting();
-            MessageBox.Show(msg);
+            
 
             this.Invoke(new EventHandler(delegate
             {
                 Strings = String.Format("{0}", msg);
             }));
    
-  
         }
-
 
         public BarcodeForm()
         {
@@ -136,7 +142,19 @@ namespace Team5_Pop
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+                if (txtWorkOrderID.TextLength > 0)
+                {
+                    this.workorderId = txtWorkOrderID.Text.Trim();
+                    this.DialogResult = DialogResult.OK;
+                }
+            }
+            catch
+            {
+
+            }
         }
 
         private void BarcodeForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -144,5 +162,12 @@ namespace Team5_Pop
             Port.Close();
         }
 
+        private void txtWorkOrderID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnCheck.PerformClick();
+            }
+        }
     }
 }

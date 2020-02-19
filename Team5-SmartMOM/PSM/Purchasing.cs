@@ -28,6 +28,7 @@ namespace Team5_SmartMOM.PSM
             dtpDateEnd.Value = DateTime.Now.AddMonths(1);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);            
             InitCombo();
+            btnSearch_Click(null, new EventArgs());
         }
 
         public void InitCombo()
