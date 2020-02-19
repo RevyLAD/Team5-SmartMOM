@@ -6833,12 +6833,14 @@
     <Compile Include="DAC\Chart_DAC.cs" />
     <Compile Include="DAC\Helper.cs" />
     <Compile Include="DAC\Item_DAC.cs" />
+    <Compile Include="DAC\WorkOrder_DAC.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Chart_VO.cs" />
     <Compile Include="DAC\ConnectionAccess.cs" />
     <Compile Include="Models\Item_VO.cs" />
+    <Compile Include="Models\WorkOrder_VO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
