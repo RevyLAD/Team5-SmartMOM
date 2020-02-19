@@ -281,14 +281,11 @@ namespace Project_VO
 
     public class ShipmentVO
     {
-        public string SO_WorkOrderID { get; set; }
-    }
-    public class Shipment2VO
-    {
-        public string SO_WorkOrderID { get; set; }
+        public string SO_WorkOrderID { get; set; }          
         public int SALES_OrderQty { get; set; }
-        public int SALES_CancelQty { get; set; }
-        
+        public int SALES_CancelQty { get; set; }           
+        public string ITEM_Code { get; set; }
+        public int SALES_ShipQty { get; set; }      
     }
 
     public class DeadLinePutVO

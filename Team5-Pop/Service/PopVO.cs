@@ -19,6 +19,10 @@ namespace Team5_Pop
         public string Plan_ID { get; set; }
         public int WO_Priority { get; set; }
         public int WO_Time { get; set; }
+        public int WO_GoodQty { get; set; }
+        public int WO_BadQty { get; set; }
+        public DateTime WO_WorkEndTime { get; set; }
+        public int restQty { get; set; }
     }
 
     public class PoPLogVO
@@ -43,5 +47,15 @@ namespace Team5_Pop
     {
         public string WO_ID { get; set; }
         public string FAC_Name { get; set; }
+    }
+
+    public class PoPEndVO
+    {
+        public string WO_ID { get; set; }
+        public string WO_State { get; set; }
+        public int GoodQty { get; set; }
+        public int BadQty { get; set; }
+        public int restQty { get; set; }
+        public DateTime WO_WorkEndTime{ get; set; }
     }
 }

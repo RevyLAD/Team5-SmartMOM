@@ -130,12 +130,12 @@ namespace Team5_SmartMOM.HSC
                 xlWorkSheet.Cells[1, 13] = "취소수량";
                 
 
-                for (i = 0; i < dataGridView2.RowCount; i++)
+                for (i = 0; i < dataGridView2.RowCount -2; i++)
                 {
                     for (j = 0; j < dataGridView2.ColumnCount - 1; j++)
                     {
                         if (dataGridView2[j, i].Value != null)
-                            xlWorkSheet.Cells[i + 2, j + 1] = dataGridView2[j, i].Value.ToString();
+                            xlWorkSheet.Cells[i + 1, j + 1] = dataGridView2[j, i].Value.ToString();
                     }
                 }
 

@@ -141,12 +141,12 @@ namespace Team5_SmartMOM.PSM
                 xlWorkSheet.Cells[1, 3] = "카테고리";
                 xlWorkSheet.Cells[1, 4] = "날짜";
 
-                for (i = 0; i < dataGridView1.RowCount; i++)
+                for (i = 0; i < dataGridView1.RowCount -2; i++)
                 {
                     for (j = 0; j < dataGridView1.ColumnCount - 1; j++)
                     {
                         if (dataGridView1[j, i].Value != null)
-                            xlWorkSheet.Cells[i + 2, j + 1] = dataGridView1[j, i].Value.ToString();
+                            xlWorkSheet.Cells[i + 1, j + 1] = dataGridView1[j, i].Value.ToString();
                     }
                 }
 

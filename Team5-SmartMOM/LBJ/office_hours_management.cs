@@ -128,5 +128,10 @@ namespace Team5_SmartMOM.LBJ
                 return;
             }
         }
+
+        private void panelTop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

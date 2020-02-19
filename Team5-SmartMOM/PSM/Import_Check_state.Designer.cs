@@ -33,10 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelFull = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnCheck_OK = new System.Windows.Forms.Button();
@@ -71,8 +67,6 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panelFull.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -94,13 +88,11 @@
             this.panelFull.Location = new System.Drawing.Point(0, 0);
             this.panelFull.Name = "panelFull";
             this.panelFull.Padding = new System.Windows.Forms.Padding(10);
-            this.panelFull.Size = new System.Drawing.Size(1219, 642);
+            this.panelFull.Size = new System.Drawing.Size(1219, 665);
             this.panelFull.TabIndex = 1;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView3);
-            this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.dataGridView2);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.dataGridView1);
@@ -112,58 +104,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1199, 622);
+            this.panel1.Size = new System.Drawing.Size(1199, 645);
             this.panel1.TabIndex = 0;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView3.Location = new System.Drawing.Point(0, 459);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.Size = new System.Drawing.Size(1199, 260);
-            this.dataGridView3.TabIndex = 43;
-            // 
-            // panel6
-            // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel6.Controls.Add(this.button5);
-            this.panel6.Controls.Add(this.label9);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 431);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1199, 28);
-            this.panel6.TabIndex = 42;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Snow;
-            this.button5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button5.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.Image = global::Team5_SmartMOM.Properties.Resources.note;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(1138, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(57, 24);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "취소";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // label9
-            // 
-            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label9.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label9.Location = new System.Drawing.Point(0, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(88, 24);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "이력조회";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dataGridView2
             // 
@@ -173,7 +115,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 171);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1199, 260);
+            this.dataGridView2.Size = new System.Drawing.Size(1199, 462);
             this.dataGridView2.TabIndex = 41;
             this.dataGridView2.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView2_CellFormatting);
             // 
@@ -261,7 +203,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1199, 479);
+            this.dataGridView1.Size = new System.Drawing.Size(1199, 502);
             this.dataGridView1.TabIndex = 35;
             // 
             // panel4
@@ -558,15 +500,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1219, 642);
+            this.ClientSize = new System.Drawing.Size(1219, 665);
             this.Controls.Add(this.panelFull);
             this.Name = "Import_Check_state";
             this.Text = "Import_Check_state";
             this.Load += new System.EventHandler(this.Import_Check_state_Load);
             this.panelFull.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -616,12 +556,8 @@
         protected System.Windows.Forms.Panel panel5;
         protected System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView2;
-        protected System.Windows.Forms.Panel panel6;
-        protected System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView3;
         protected System.Windows.Forms.Button btnCheck_OK;
         protected System.Windows.Forms.Button btnexcel;
-        protected System.Windows.Forms.Button button5;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

@@ -132,6 +132,7 @@ namespace Team5_SmartMOM.PSM
 
             List<CompanyCodeVO> company = service.GetAllCompanyCode();
             CommonUtil.ComboBinding(cbocompany, company, "COM_Code", "COM_Name", "");
+
             List<PlanIDVO> planid = service.Material_Ledger_PlanID();
             CommonUtil.ComboBinding(cboplanid, planid, "Plan_ID", "Plan_ID");
 
@@ -224,12 +225,12 @@ namespace Team5_SmartMOM.PSM
                 xlWorkSheet.Cells[1, 11] = "주문상태";
                 xlWorkSheet.Cells[1, 12] = "생성일";
 
-                for (i = 0; i < dataGridView2.RowCount; i++)
+                for (i = 0; i < dataGridView2.RowCount -2; i++)
                 {
                     for (j = 0; j < dataGridView2.ColumnCount - 1; j++)
                     {
                         if(dataGridView2[j, i].Value != null)
-                            xlWorkSheet.Cells[i + 2, j + 1] = dataGridView2[j, i].Value.ToString();
+                            xlWorkSheet.Cells[i + 1, j + 1] = dataGridView2[j, i].Value.ToString();
                     }
                 }
 

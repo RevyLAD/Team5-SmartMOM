@@ -76,10 +76,10 @@ namespace Team5_Pop
             return dac.GetPortNum(id);
         }
 
-        public void SavePopData(List<string> list)
+        public void SavePopData(PoPEndVO vo)
         {
             PopDAC dac = new PopDAC();
-            dac.SavePopData(list);
+            dac.SavePopData(vo);
         }
 
         public void WritePoPLog(PoPLogVO logvo)
