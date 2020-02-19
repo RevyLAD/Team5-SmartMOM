@@ -110,7 +110,6 @@ namespace Team5_SmartMOM.PSM
             btnSearch_Click(null, new EventArgs());
         }        
 
-        //콤보바인딩 및 데이터조회
         public void Datagridview()
         {
             dtpDateStart.Value = DateTime.Now;

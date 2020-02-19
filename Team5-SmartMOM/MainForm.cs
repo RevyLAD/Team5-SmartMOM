@@ -404,6 +404,11 @@ namespace Team5_SmartMOM
             CreateTabPages("공정재고현황", new Stack_Status());
         }
 
+        private void 작입실적및공정이동ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateTabPages("작입실적및공정이동", new Process_operation());
+        }
+
         #endregion
         private void ToolStripButton4_Click(object sender, EventArgs e)
         {
@@ -459,6 +464,6 @@ namespace Team5_SmartMOM
 
         }
 
-       
+        
     }
 }

@@ -845,6 +845,7 @@
     <None Include="BaseForm.zip" />
     <None Include="bin\Debug\Team5-SmartMOM.exe.config" />
     <None Include="packages.config" />
+    <None Include="Properties\licenses.licx.bak" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
