@@ -55,7 +55,6 @@ namespace Team5_SmartMOM.PSM
                                            select item).ToList();
 
             CommonUtil.ComboBinding(cboInOut, INOUT, "Common_Key", "Common_Value");
-            CommonUtil.ComboBinding(cboCategory, Category, "Common_Key", "Common_Value", "전체");
 
 
             LBJ_Service service = new LBJ_Service();
@@ -66,12 +65,12 @@ namespace Team5_SmartMOM.PSM
         {
             LBJ_Service service = new LBJ_Service();
             List<StockStateVO> Stock = service.StockState();
-            dataGridView1.DataSource = stockVO = Stock;
+            dataGridView1.DataSource = stockVO = StockState = Stock;
         }
-
+        List<StockStateVO> StockState;
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            List<StockStateVO> StockState = (from item in stockVO
+            StockState = (from item in stockVO
                                              where item.InOut_Date > dateTimePicker1.Value &&
                                                    item.InOut_Date <= dateTimePicker2.Value &&
                                                    item.InOut_Gubun == cboInOut.Text 
@@ -84,26 +83,67 @@ namespace Team5_SmartMOM.PSM
             string IO = cboInOut.Text.Trim();
 
             string strConn = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
+            List<StockStateVO> templist = new List<StockStateVO>();
 
-            DataSet ds = new DataSet();
-            using (SqlConnection conn = new SqlConnection(strConn))
+            StockStateVO vo = new StockStateVO();
+
+            foreach (StockStateVO tempvo in StockState)
             {
-                conn.Open();
-                string strSql = @"select InOut_No, InOut_Gubun, A.ITEM_Code, ITEM_Name, ITEM_Size, ITEM_Type 
-                                  from InOutList A inner join ITEM B on a.ITEM_Code = b.ITEM_Code
-                                  WHERE InOut_Gubun = '" + IO + "'  ORDER BY InOut_No";
-                SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
+                vo.InOut_No = tempvo.InOut_No;
+                vo.InOut_Gubun = tempvo.InOut_Gubun;
+                vo.ITEM_Code = tempvo.ITEM_Code;
+                vo.ITEM_Name = tempvo.ITEM_Name;
+                vo.ITEM_Size = tempvo.ITEM_Size;
+                vo.ITEM_Type = tempvo.ITEM_Type;
 
-                da.Fill(ds, "InOutList");
-                conn.Close();
+                templist.Add(vo);
             }
 
+            //DataSet ds = new DataSet();
+            //using (SqlConnection conn = new SqlConnection(strConn))
+            //{
+            //    conn.Open();
+            //    string strSql = @"select InOut_No, InOut_Gubun, A.ITEM_Code, ITEM_Name, ITEM_Size, ITEM_Type 
+            //                      from InOutList A inner join ITEM B on a.ITEM_Code = b.ITEM_Code
+            //                      WHERE InOut_Gubun = '" + IO + "'  ORDER BY InOut_No";
+
+
+            //    SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
+
+            //    da.Fill(ds, "InOutList");
+            //    conn.Close();
+            //}
+
             XtraReport2 rpt = new XtraReport2();
-            rpt.DataSource = ds.Tables["InOutList"];
+            //rpt.DataSource = ds.Tables["InOutList"];
+
+            DataTable dt = new DataTable();
+            dt = ConvertToDataTable<StockStateVO>(templist);
+            rpt.DataSource = dt;
 
             Form1 frm = new Form1();
             frm.documentViewer1.DocumentSource = rpt;
             frm.ShowDialog();
+        }
+
+        public DataTable ConvertToDataTable<T>(IList<T> data)
+        {
+            PropertyDescriptorCollection props = TypeDescriptor.GetProperties(typeof(T));
+            DataTable table = new DataTable();
+            for (int i = 0; i < props.Count; i++)
+            {
+                PropertyDescriptor prop = props[i];
+                table.Columns.Add(prop.Name, prop.PropertyType);
+            }
+            object[] values = new object[props.Count];
+            foreach (T item in data)
+            {
+                for (int i = 0; i < values.Length; i++)
+                    values[i] = props[i].GetValue(item);
+
+                table.Rows.Add(values);
+            }
+            return table;
         }
     }
 }
