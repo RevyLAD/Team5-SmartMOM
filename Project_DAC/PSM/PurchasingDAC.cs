@@ -887,12 +887,12 @@ WHERE FACT_Name = '자재창고_01' and f.ITEM_Code = @ITEM_Code";
                         cmd.Parameters.AddWithValue("@SALES_OrderQty", item.SALES_OrderQty);
                         cmd.Parameters.AddWithValue("@SALES_CancelQty", item.SALES_CancelQty);
                         cmd.Parameters.AddWithValue("@SO_WorkOrderID", item.SO_WorkOrderID);
-                        
+                        cmd.Parameters.AddWithValue("@InOut_Date", DateTime.Now.ToString("yyyy-MM-dd"));
+                        cmd.Parameters.AddWithValue("@InOut_Qty", item.InOut_Qty);
 
                         cmd.ExecuteNonQuery();
                         cmd.Parameters.Clear();
                     }
-
                     cmd.Connection.Close();
                     return true;
                 }
@@ -997,6 +997,103 @@ FROM SalesMaster s inner join ITEM i on s.ITEM_Code = i.ITEM_Code inner join Com
             }
         }
 
+        public List<Process_operationVO> Process_operation()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandType = CommandType.Text;
 
+                cmd.CommandText = @"select WO_StartDate, FAC_Code, f.FAC_Name, w.ITEM_Code, ITEM_Name, WO_State, FAC_OutWareHouse, planQty, WO_GoodQty, WO_BadQty, restQty, w.WO_ID
+  from Facility f inner join WorkOrder w on f.FAC_Name = w.FAC_Name inner join ITEM i on w.ITEM_Code = i.ITEM_Code
+  where WO_State = '작업완료' and f.FAC_Name = '최종조립반' and OP_State is null ";     
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<Process_operationVO> list = Helper.DataReaderMapToList<Process_operationVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+
+            }
+        }
+        public bool OP_StateChange(List<WO_IDVO> lists)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                cmd.CommandType = CommandType.Text;
+                try
+                {
+                    foreach (var item in lists)
+                    {
+                        cmd.CommandText = @"UPDATE WorkOrder SET OP_State = '공정이동대기' WHERE WO_ID = @WO_ID";
+
+                        cmd.Parameters.AddWithValue("@WO_ID", item.WO_ID);
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+                    cmd.Connection.Close();
+                    return true;
+                }
+                catch (Exception err)
+                {
+                    System.Diagnostics.Debug.WriteLine(err.Message);
+                    cmd.Connection.Close();
+                    return false;
+                }
+            }
+        }
+        public List<Process_operation_finishVO> Process_operation_finish()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandType = CommandType.Text;
+
+                cmd.CommandText = @"select w.ITEM_Code, ITEM_Name, ITEM_Size, FACD_Qty, FACT_Name, WO_GoodQty, WO_ID
+  from WorkOrder w inner join item i on w.ITEM_Code = i.ITEM_Code inner join FactoryDetail f on f.ITEM_Code = w.ITEM_Code
+  where OP_State = '공정이동대기' and  FACT_Name = 'Halb 창고_01' ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<Process_operation_finishVO> list = Helper.DataReaderMapToList<Process_operation_finishVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+
+            }
+        }
+        public bool OP_StateChange2(List<WO_IDVO> lists)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                cmd.CommandType = CommandType.Text;
+                try
+                {
+                    foreach (var item in lists)
+                    {
+                        cmd.CommandText = @"UPDATE WorkOrder SET OP_State = '공정이동완료' WHERE WO_ID = @WO_ID";
+
+                        cmd.Parameters.AddWithValue("@WO_ID", item.WO_ID);
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+                    cmd.Connection.Close();
+                    return true;
+                }
+                catch (Exception err)
+                {
+                    System.Diagnostics.Debug.WriteLine(err.Message);
+                    cmd.Connection.Close();
+                    return false;
+                }
+            }
+        }
     }
 }

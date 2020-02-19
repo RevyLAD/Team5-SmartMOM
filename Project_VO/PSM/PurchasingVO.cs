@@ -285,7 +285,9 @@ namespace Project_VO
         public int SALES_OrderQty { get; set; }
         public int SALES_CancelQty { get; set; }           
         public string ITEM_Code { get; set; }
-        public int SALES_ShipQty { get; set; }      
+        public int SALES_ShipQty { get; set; }
+        public DateTime InOut_Date { get; set; }
+        public int InOut_Qty { get; set; }
     }
 
     public class DeadLinePutVO
@@ -306,7 +308,38 @@ namespace Project_VO
         public int SALES_OrderQty { get; set; }
         public int Price { get; set; }
         public int SALES_CancelQty { get; set; }
-        public int SALES_ShipQty { get; set; }
-        
+        public int SALES_ShipQty { get; set; }        
+    }
+    public class Process_operationVO
+    {
+        public DateTime WO_StartDate { get; set; }
+        public string FAC_Code { get; set; }
+        public string FAC_Name { get; set; }
+        public string ITEM_Code { get; set; }
+        public string ITEM_Name { get; set; }
+        public string WO_State { get; set; }
+        public string FAC_OutWareHouse { get; set; }
+        public int planQty { get; set; }
+        public int WO_GoodQty { get; set; }
+        public int WO_BadQty { get; set; }
+        public int restQty { get; set; }
+        public string WO_ID { get; set; }
+    }
+
+    public class WO_IDVO
+    {
+        public string WO_ID { get; set; }
+    }
+
+    public class Process_operation_finishVO
+    {
+        public string ITEM_Code { get; set; }
+        public string ITEM_Name { get; set; }
+        public string ITEM_Size { get; set; }
+        public int FACD_Qty { get; set; }
+        public string FACT_Name { get; set; }
+        public int WO_GoodQty { get; set; }
+        public string WO_ID { get; set; }
+
     }
 }

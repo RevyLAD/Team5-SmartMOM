@@ -189,6 +189,7 @@ namespace Team5_SmartMOM.PSM
                     list.SALES_OrderQty = Convert.ToInt32(row.Cells[12].Value);
                     list.SALES_CancelQty = Convert.ToInt32(row.Cells[13].Value);
                     list.SALES_ShipQty = Convert.ToInt32(row.Cells[14].Value);
+                    list.InOut_Qty = Convert.ToInt32(row.Cells[14].Value);
                     
                     lists.Add(list);
 
