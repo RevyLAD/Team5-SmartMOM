@@ -75,7 +75,7 @@ namespace Project_DAC.LBJ
                 return list;
             }
         }
-        public bool MateriaTran(List<MateriaExportOkVO> mevo )
+        public bool MateriaTran(List<MateriaExportOkVO> mevo)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
