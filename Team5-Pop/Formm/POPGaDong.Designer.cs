@@ -519,6 +519,7 @@
             this.btnBadInsert.TabIndex = 0;
             this.btnBadInsert.Text = "불량등록";
             this.btnBadInsert.UseVisualStyleBackColor = true;
+            this.btnBadInsert.Click += new System.EventHandler(this.btnBadInsert_Click);
             // 
             // groupBox6
             // 
