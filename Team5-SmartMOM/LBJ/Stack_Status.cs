@@ -23,6 +23,7 @@ namespace Team5_SmartMOM.LBJ
 
         private void Stack_Status_Load(object sender, EventArgs e)
         {
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "No", "FACD_ID", true, 50, DataGridViewContentAlignment.MiddleRight);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "창고코드", "FACT_Code", true, 130, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "창고", "FACT_Name", true, 150, DataGridViewContentAlignment.MiddleCenter);

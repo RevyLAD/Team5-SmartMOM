@@ -20,6 +20,7 @@ namespace Team5_SmartMOM.LBJ
 
         private void Record_Reference_Load(object sender, EventArgs e)
         {
+            dgvMain.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             UtilityClass.AddNewColumnToDataGridView(dgvMain, "No", "InOut_No", true, 50, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dgvMain, "입출고일", "InOut_Date", true, 100, DataGridViewContentAlignment.MiddleRight);
             UtilityClass.AddNewColumnToDataGridView(dgvMain, "구분", "InOut_Gubun", true, 100, DataGridViewContentAlignment.MiddleCenter);

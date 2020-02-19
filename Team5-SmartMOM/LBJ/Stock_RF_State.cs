@@ -18,6 +18,7 @@ namespace Team5_SmartMOM.PSM
 {
     public partial class Stock_RF_State : Team5_SmartMOM.BaseGridForm
     {
+        DateTimePicker dtp;
         List<StockStateVO> stockVO;
         public Stock_RF_State()
         {
@@ -26,6 +27,10 @@ namespace Team5_SmartMOM.PSM
 
         private void Stock_RF_State_Load(object sender, EventArgs e)
         {
+            DateTimePicker dtp = new DateTimePicker();
+            dateTimePicker1.Value = dtp.Value;
+            dateTimePicker2.Value = dateTimePicker1.Value.AddDays(7);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "No", "InOut_No", true, 50, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "입출고일", "InOut_Date", true, 100, DataGridViewContentAlignment.MiddleRight);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "구분", "InOut_Gubun", true, 100, DataGridViewContentAlignment.MiddleCenter);

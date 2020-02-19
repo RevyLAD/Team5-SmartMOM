@@ -488,6 +488,12 @@
     <Compile Include="LBJ\Materia_Request.Designer.cs">
       <DependentUpon>Materia_Request.cs</DependentUpon>
     </Compile>
+    <Compile Include="PSM\Process_operation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSM\Process_operation.Designer.cs">
+      <DependentUpon>Process_operation.cs</DependentUpon>
+    </Compile>
     <Compile Include="PSM\Purchasing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -813,6 +819,9 @@
     <EmbeddedResource Include="LBJ\Materia_Request.resx">
       <DependentUpon>Materia_Request.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PSM\Process_operation.resx">
+      <DependentUpon>Process_operation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PSM\Purchasing.resx">
       <DependentUpon>Purchasing.cs</DependentUpon>
     </EmbeddedResource>
@@ -846,6 +855,7 @@
     <None Include="BaseForm.zip" />
     <None Include="bin\Debug\Team5-SmartMOM.exe.config" />
     <None Include="packages.config" />
+    <None Include="Properties\licenses.licx.bak" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

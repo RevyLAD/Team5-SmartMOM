@@ -45,6 +45,26 @@ namespace Project_DAC.LBJ
                     return list;
                 }
         }
+        public List<ShiftmanageVO> ShiftManage2()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = @"select FAC_No, a.FAC_Name " +
+                    "from BOR A inner join Facility B on A.FAC_Code = B.FAC_Code where A.FAC_Name != '외주작업장'";
+
+                //select FAC_No, FACG_Code, FAC_Code, FAC_Name, FAC_OutWareHouse, FAC_InWareHouse, FAC_BadWareHouse, FAC_UseOrNot, FAC_Modifier, FAC_ModifiyDate, FAC_Remark, FAC_Others from Facility
+                //select SHIFT_ID, a.SHIFT_StartTime, SHIFT_EndTime, SHIFT_InputPeople, b.FAC_Name from Shift A inner join Facility b on a.FAC_Code = b.FAC_Code where a.FAC_Code = 1
+
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ShiftmanageVO> list = Helper.DataReaderMapToList<ShiftmanageVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
         public void ShiftInsert(ShiftVO svo)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -90,6 +110,7 @@ namespace Project_DAC.LBJ
 
             }
         }
+
         public bool DeleteShift(string list)
         {
             using (SqlCommand cmd = new SqlCommand())

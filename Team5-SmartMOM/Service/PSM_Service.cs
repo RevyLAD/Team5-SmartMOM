@@ -232,10 +232,10 @@ namespace Team5_SmartMOM.Service
             return dac.ShipmentState(so);
         }
 
-        public bool Shipment(List<ShipmentVO> lists, List<Shipment2VO> lists2)
+        public bool Shipment(List<ShipmentVO> lists)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.Shipment(lists, lists2);
+            return dac.Shipment(lists);
         }
         public List<DeadLineVO> DeadLine()
         {
@@ -253,6 +253,29 @@ namespace Team5_SmartMOM.Service
         {
             PurchasingDAC dac = new PurchasingDAC();
             return dac.DeaLinePut(lists);
+        }
+
+        public List<Process_operationVO> Process_operation()
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.Process_operation();
+        }
+
+        public bool OP_StateChange(List<WO_IDVO> lists)
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.OP_StateChange(lists);
+        }
+        
+        public List<Process_operation_finishVO> Process_operation_finish()
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.Process_operation_finish();
+        }
+        public bool OP_StateChange2(List<WO_IDVO> lists)
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.OP_StateChange2(lists);
         }
 
     }
