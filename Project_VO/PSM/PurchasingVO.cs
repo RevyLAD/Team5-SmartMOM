@@ -342,4 +342,17 @@ namespace Project_VO
         public string WO_ID { get; set; }
 
     }
+
+    public class ProductADDVO
+    {
+        public string ITEM_Code { get; set; }
+        public string FACT_Name { get; set; }
+        public int WO_GoodQty { get; set; }
+    }
+
+    public class OPSearchVO
+    {
+        public string startDate { get; set; }
+        public string endDate { get; set; }
+    }
 }

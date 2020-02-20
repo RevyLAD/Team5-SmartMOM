@@ -26,6 +26,8 @@ namespace Team5_SmartMOM.PSM
 
         private void Process_operation_Load(object sender, EventArgs e)
         {
+            dtpDateStart.Value = DateTime.Now;
+            dtpDateEnd.Value = dtpDateStart.Value.AddMonths(1);
             dataGridView2.AutoGenerateColumns = false;
             dataGridView2.AllowUserToAddRows = false;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -77,24 +79,28 @@ namespace Team5_SmartMOM.PSM
             dataGridView3.Controls.Add(headerCheckBox2);
             dataGridView3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;          
 
-            UtilityClass.AddNewColumnToDataGridView(dataGridView3, "품목", "ITEM_Code", true, 250);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView3, "품목", "ITEM_Code", true, 250, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView3, "품명", "ITEM_Name", true, 250);
             UtilityClass.AddNewColumnToDataGridView(dataGridView3, "규격", "ITEM_Size", true, 250);
             UtilityClass.AddNewColumnToDataGridView(dataGridView3, "현재고", "FACD_Qty", true, 150, DataGridViewContentAlignment.MiddleRight);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView3, "이동창고", "FACT_Name", true, 150);            
+            UtilityClass.AddNewColumnToDataGridView(dataGridView3, "이동창고", "FACT_Name", true, 150, DataGridViewContentAlignment.MiddleCenter);            
             UtilityClass.AddNewColumnToDataGridView(dataGridView3, "이동수량", "WO_GoodQty", true, 150, DataGridViewContentAlignment.MiddleRight);            
             UtilityClass.AddNewColumnToDataGridView(dataGridView3, "비고", "", true, 200);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView3, "WO_ID", "WO_ID", true, 200, DataGridViewContentAlignment.MiddleRight);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView3, "WO_ID", "WO_ID", true, 200);
 
             Dataload();
             Datagridview();
         }
         public void Dataload()
         {
+            OPSearchVO op = new OPSearchVO();
+            op.startDate = dtpDateStart.Value.ToString("yyyy-MM-dd");
+            op.endDate = dtpDateEnd.Value.ToString("yyyy-MM-dd");
+
             PSM_Service service = new PSM_Service();
-            list = service.Process_operation();
-            dataGridView2.DataSource = list;
-            
+            list = service.Process_operation(op);
+            dataGridView2.DataSource = list;            
+
             list2 = service.Process_operation_finish();
             dataGridView3.DataSource = list2;
         }
@@ -189,6 +195,7 @@ namespace Team5_SmartMOM.PSM
             }
 
             List<WO_IDVO> lists = new List<WO_IDVO>();
+            List<ProductADDVO> lists2 = new List<ProductADDVO>();
             foreach (DataGridViewRow row in dataGridView3.Rows)
             {
                 bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
@@ -198,12 +205,30 @@ namespace Team5_SmartMOM.PSM
                     WO_IDVO list = new WO_IDVO();
                     list.WO_ID = row.Cells[8].Value.ToString();
                     lists.Add(list);
+
+                    ProductADDVO list2 = new ProductADDVO();
+                    list2.ITEM_Code = row.Cells[1].Value.ToString();
+                    list2.FACT_Name = row.Cells[5].Value.ToString();
+                    list2.WO_GoodQty = Convert.ToInt32(row.Cells[6].Value);
+                    lists2.Add(list2);
                 }
             }
-            PSM_Service service = new PSM_Service();
-            service.OP_StateChange2(lists);
 
+            PSM_Service service = new PSM_Service();
+            service.OP_StateChange2(lists, lists2);
+            MessageBox.Show("공정이동이 완료되었습니다.");
             Dataload();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            OPSearchVO op = new OPSearchVO();
+            op.startDate = dtpDateStart.Value.ToString("yyyy-MM-dd");
+            op.endDate = dtpDateEnd.Value.ToString("yyyy-MM-dd");
+
+            PSM_Service service = new PSM_Service();
+            list = service.Process_operation(op);
+            dataGridView2.DataSource = list;
         }
     }
 }
