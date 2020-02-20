@@ -16,8 +16,10 @@ namespace Team5_SmartMOM.PSM
     {        
         List<ComPanyListVO> list;        
         List<GetOrderVO> list2;
-        public Purchasing_Order(PlanIDVO listPlanID)
+        private Purchasing mainForm;
+        public Purchasing_Order(PlanIDVO listPlanID, Purchasing purchasing)
         {
+            this.mainForm = purchasing;
             InitializeComponent();
 
             lblPlanID.Text = listPlanID.Plan_ID.ToString();
@@ -79,6 +81,7 @@ namespace Team5_SmartMOM.PSM
 
         private void button2_Click(object sender, EventArgs e)
         {
+            mainForm.InitCombo();
             this.Close();
         }      
        

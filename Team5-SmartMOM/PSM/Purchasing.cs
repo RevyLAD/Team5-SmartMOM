@@ -47,7 +47,7 @@ namespace Team5_SmartMOM.PSM
             PlanIDVO listPlanID = new PlanIDVO();
             listPlanID.Plan_ID = cboPlanID.Text;
 
-            Purchasing_Order frm = new Purchasing_Order(listPlanID);
+            Purchasing_Order frm = new Purchasing_Order(listPlanID, this);            
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
         }
