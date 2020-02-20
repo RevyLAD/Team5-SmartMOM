@@ -16,10 +16,11 @@ namespace Team5_WebAPI.DAC
             StrConn = WebConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
         }
 
+
         public List<Chart_VO> GetChartData()
         {
             List<Chart_VO> list = new List<Chart_VO>();
-            string sql = @"select COM_Code, sum(SALES_OrderQty) as Qty , Month(SALES_OrderDate) as MM from SalesMaster where ITEM_Code ='CHAIR_01' group by  Month(SALES_OrderDate) ,COM_Code ";
+            string sql = @"select COM_Code, sum(SALES_OrderQty) as Qty , coalesce(sum(Sales_shipQty),0) as Sales_shipQty, Month(SALES_OrderDate) as MM from SalesMaster  group by  Month(SALES_OrderDate) ,COM_Code";
 
             using (SqlConnection conn = new SqlConnection(StrConn))
             {

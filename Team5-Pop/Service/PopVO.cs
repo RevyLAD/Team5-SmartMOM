@@ -58,4 +58,16 @@ namespace Team5_Pop
         public int restQty { get; set; }
         public DateTime WO_WorkEndTime{ get; set; }
     }
+
+    public class PortCheck
+    {
+        public string Fac_Name;
+        public int port;
+
+        public PortCheck(string name, int pt)
+        {
+            this.Fac_Name = name;
+            this.port = pt;
+        }
+    }
 }

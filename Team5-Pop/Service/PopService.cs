@@ -123,5 +123,11 @@ namespace Team5_Pop
             PopDAC dac = new PopDAC();
             dac.UpdateFacStatePause(FacName, choice);
         }
+
+        public void UpdateRequire(string item)
+        {
+            PopDAC dac = new PopDAC();
+            dac.UpdateRequire(item);
+        }
     }
 }

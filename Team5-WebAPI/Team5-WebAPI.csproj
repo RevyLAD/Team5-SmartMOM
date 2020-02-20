@@ -6826,6 +6826,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\ChartController.cs" />
+    <Compile Include="Controllers\DaysMasterController.cs" />
     <Compile Include="Controllers\FactoryController.cs" />
     <Compile Include="Controllers\InoutController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
@@ -6833,6 +6834,7 @@
     <Compile Include="Controllers\WorkOrderController.cs" />
     <Compile Include="DAC\Chart_DAC.cs" />
     <Compile Include="DAC\Helper.cs" />
+    <Compile Include="DAC\InOut_DAC.cs" />
     <Compile Include="DAC\Item_DAC.cs" />
     <Compile Include="DAC\WorkOrder_DAC.cs" />
     <Compile Include="Global.asax.cs">
@@ -6840,6 +6842,7 @@
     </Compile>
     <Compile Include="Models\Chart_VO.cs" />
     <Compile Include="DAC\ConnectionAccess.cs" />
+    <Compile Include="Models\InOut_VO.cs" />
     <Compile Include="Models\Item_VO.cs" />
     <Compile Include="Models\WorkOrder_VO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -7475,6 +7478,7 @@
     <Content Include="Views\Factory\Index.cshtml" />
     <Content Include="Views\Inout\Index.cshtml" />
     <Content Include="Views\WorkOrder\Index.cshtml" />
+    <Content Include="Views\DaysMaster\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

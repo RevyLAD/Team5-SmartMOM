@@ -203,6 +203,7 @@ namespace Team5_Pop
         public int GetPortNum(string id)
         {
             int portnum = 0;
+            string ipaddress = string.Empty;
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
@@ -215,21 +216,25 @@ namespace Team5_Pop
                 {
                     case "Leg_조립반":
                         portnum = 1000;
+                        //ipaddress = "127.0.0.1";
                         break;
                     case "SEAT 가공반":
+                        //ipaddress = "127.0.0.2";
                         portnum = 2000;
                         break;
                     case "LEGS 가공반":
+                        //ipaddress = "127.0.0.3";
                         portnum = 3000;
                         break;
                     case "최종조립반":
+                        //ipaddress = "127.0.0.4";
                         portnum = 4000;
                         break;
                     case "외주작업장":
+                        //ipaddress = "127.0.0.5";
                         portnum = 5000;
                         break;
                 }
-                
                 cmd.Connection.Close();
             }
             return portnum;
@@ -270,6 +275,26 @@ namespace Team5_Pop
 
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
+
+                cmd.CommandText = "DECLARE " +
+                    "@REQUIRE int, " +
+                    "@ITEM VARCHAR(50)  " +
+                    "DECLARE CUR CURSOR FOR " +
+                    "select BOM_Require, ITEM_Code from BOM " +
+                    "where BOM_Code = @ITEM_Code " +
+                    "OPEN CUR " +
+                    "FETCH NEXT FROM CUR INTO @REQUIRE, @ITEM " +
+                    "WHILE @@FETCH_STATUS = 0 " +
+                    "BEGIN " +
+                    "update FactoryDetail " +
+                    "set FACD_Qty = FACD_Qty - @REQUIRE " +
+                    "where ITEM_Code = @ITEM and FACT_Code = 'H_01' " +
+                    "FETCH NEXT FROM CUR INTO @REQUIRE, @ITEM " +
+                    "END " +
+                    "CLOSE CUR " +
+                    "DEALLOCATE CUR";
+                cmd.ExecuteNonQuery();
+                
                 cmd.Connection.Close();
             }
         }
@@ -379,6 +404,21 @@ namespace Team5_Pop
                 
                 cmd.Parameters.AddWithValue("@FAC_Name", FacName);
 
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+        }
+
+        public void UpdateRequire(string item)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "  update FactoryDetail set FACD_Qty = FACD_Qty - (select BOM_Require from BOM where BOM_Code = @BOM_Code) " +
+                    "where ITEM_Code = (select ITEM_Code from BOM where BOM_Code = @BOM_Code) and FACT_Code = 'H_01'";
+               
+                cmd.Parameters.AddWithValue("@BOM_Code", item);
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
                 cmd.Connection.Close();

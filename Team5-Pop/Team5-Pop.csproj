@@ -162,7 +162,6 @@
     <EmbeddedResource Include="Formm\ProductLabel.resx">
       <DependentUpon>ProductLabel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>

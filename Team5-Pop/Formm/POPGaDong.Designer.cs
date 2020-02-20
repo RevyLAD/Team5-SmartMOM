@@ -816,9 +816,10 @@
             // 
             this.lblprogres.AutoSize = true;
             this.lblprogres.BackColor = System.Drawing.Color.Transparent;
-            this.lblprogres.Location = new System.Drawing.Point(262, 19);
+            this.lblprogres.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblprogres.Location = new System.Drawing.Point(257, 16);
             this.lblprogres.Name = "lblprogres";
-            this.lblprogres.Size = new System.Drawing.Size(21, 12);
+            this.lblprogres.Size = new System.Drawing.Size(33, 17);
             this.lblprogres.TabIndex = 15;
             this.lblprogres.Text = "0%";
             // 
@@ -888,11 +889,12 @@
             // 
             // listBox1
             // 
+            this.listBox1.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
+            this.listBox1.ItemHeight = 15;
             this.listBox1.Location = new System.Drawing.Point(886, 15);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(287, 472);
+            this.listBox1.Size = new System.Drawing.Size(287, 469);
             this.listBox1.TabIndex = 19;
             // 
             // timer1

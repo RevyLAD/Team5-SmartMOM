@@ -17,6 +17,7 @@ namespace Project_VO.HSM
         public int planQty { get; set; }
         public int directQty { get; set; }
         public string WO_State { get; set; }
+        public string WO_OutState { get; set; }
         public string Plan_ID { get; set; }
         public int WO_Priority { get; set; }
         public int WO_Time { get; set; }
