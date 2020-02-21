@@ -72,6 +72,11 @@ namespace Team5_SmartMOM.Service
             CommonCodeDAC dac = new CommonCodeDAC();
             return dac.PlanID2();
         }
+        public List<PlanIDVO> PlanID10()
+        {
+            CommonCodeDAC dac = new CommonCodeDAC();
+            return dac.PlanID10();
+        }
         public List<PlanIDVO> PlanID3()
         {
             CommonCodeDAC dac = new CommonCodeDAC();

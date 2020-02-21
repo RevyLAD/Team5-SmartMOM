@@ -102,7 +102,7 @@ namespace Team5_SmartMOM.PSM
         {
             PSM_Service service = new PSM_Service();
 
-            List<PlanIDVO> planid = service.PlanID2();
+            List<PlanIDVO> planid = service.PlanID10();
             CommonUtil.ComboBinding(cboplanid, planid, "Plan_ID", "Plan_ID");
 
             List<CompanyCodeVO> company = service.GetAllCompanyCode2();

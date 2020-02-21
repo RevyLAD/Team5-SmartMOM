@@ -156,6 +156,21 @@ WHERE VOD_Result = '합격' and MATERIAL_ORDER_STATE = '입고대기' ";
                 return list;
             }
         }
+        public List<PlanIDVO> PlanID10()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select distinct Plan_ID from WorkOrder WHERE OP_State = '공정이동완료' ";
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<PlanIDVO> list = Helper.DataReaderMapToList<PlanIDVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
 
         public List<PlanIDVO> PlanID3()
         {
