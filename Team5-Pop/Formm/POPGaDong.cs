@@ -307,7 +307,7 @@ namespace Team5_Pop
                 btnStop.Enabled = false;
 
                 string msg = "theend";
-                endstate = "작업종료";
+                endstate = "작업완료";
                 byte[] buff = Encoding.ASCII.GetBytes(msg);
                 //stream.Write(buff, 0, buff.Length);
                 stream.WriteAsync(buff, 0, buff.Length);

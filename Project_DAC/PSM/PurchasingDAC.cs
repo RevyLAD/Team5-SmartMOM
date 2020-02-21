@@ -1058,7 +1058,7 @@ FROM SalesMaster s inner join ITEM i on s.ITEM_Code = i.ITEM_Code inner join Com
 
                 cmd.CommandText = @"select w.ITEM_Code, ITEM_Name, ITEM_Size, FACD_Qty, FACT_Name, WO_GoodQty, WO_ID
   from WorkOrder w inner join item i on w.ITEM_Code = i.ITEM_Code inner join FactoryDetail f on f.ITEM_Code = w.ITEM_Code
-  where OP_State = '공정이동대기' and  FACT_Name = 'Halb 창고_01' ";
+  where OP_State = '공정이동대기' and  FACT_Name = '고객사창고' ";
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -1090,7 +1090,7 @@ FROM SalesMaster s inner join ITEM i on s.ITEM_Code = i.ITEM_Code inner join Com
 
                     foreach (var item in lists2)
                     {
-                        cmd.CommandText = @"UPDATE FactoryDetail SET FACD_Qty = FACD_Qty + WO_GoodQty WHERE ITEM_Code = @ITEM_Code and FACT_Name = @FACT_Name";
+                        cmd.CommandText = @"UPDATE FactoryDetail SET FACD_Qty = FACD_Qty + @WO_GoodQty WHERE ITEM_Code = @ITEM_Code and FACT_Name = @FACT_Name";
 
                         cmd.Parameters.AddWithValue("@ITEM_Code", item.ITEM_Code);
                         cmd.Parameters.AddWithValue("@FACT_Name", item.FACT_Name);

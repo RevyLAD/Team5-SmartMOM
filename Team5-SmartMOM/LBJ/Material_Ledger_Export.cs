@@ -203,12 +203,12 @@ namespace Team5_SmartMOM.PSM
         }
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-            if (dateTimePicker1.Value > dateTimePicker2.Value)
-            {
-                MessageBox.Show("시작일보다 빠를 수 없습니다.");
-                dateTimePicker2.Value = dtp.Value.AddMonths(6);
-                return;
-            }
+            //if (dateTimePicker1.Value > dateTimePicker2.Value)
+            //{
+            //    MessageBox.Show("시작일보다 빠를 수 없습니다.");
+            //    dateTimePicker2.Value = dtp.Value.AddMonths(6);
+            //    return;
+            //}
         }
 
         private void button1_Click(object sender, EventArgs e)
