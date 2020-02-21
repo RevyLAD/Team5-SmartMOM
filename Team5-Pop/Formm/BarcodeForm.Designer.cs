@@ -144,7 +144,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BarcodeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "작업지시 바코드 확인";
+            this.Text = "  ";
             this.Activated += new System.EventHandler(this.BarcodeForm_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BarcodeForm_FormClosed);
             this.Load += new System.EventHandler(this.BarcodeForm_Load);

@@ -29,6 +29,11 @@ namespace Team5_SmartMOM.Service
             ImportDAC dac = new ImportDAC();
             return dac.Imports();
         }
+        public List<ShiftmanageVO> ShiftManage2()
+        {
+            ShiftDAC dac = new ShiftDAC();
+            return dac.ShiftManage2();
+        }
         public List<ImportSearch> ImportSearch()
         {
             ImportDAC dac = new ImportDAC();
@@ -44,6 +49,7 @@ namespace Team5_SmartMOM.Service
             ShiftDAC dac = new ShiftDAC();
             return dac.GetShiftManagement(mvo);
         }
+
         public bool DeleteShift(string list)
         {
             ShiftDAC dac = new ShiftDAC();

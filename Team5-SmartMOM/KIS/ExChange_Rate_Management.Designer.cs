@@ -106,7 +106,7 @@
             // dtp_ExistingDate
             // 
             this.dtp_ExistingDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_ExistingDate.Location = new System.Drawing.Point(108, 15);
+            this.dtp_ExistingDate.Location = new System.Drawing.Point(108, 16);
             this.dtp_ExistingDate.Name = "dtp_ExistingDate";
             this.dtp_ExistingDate.Size = new System.Drawing.Size(177, 21);
             this.dtp_ExistingDate.TabIndex = 14;
@@ -137,9 +137,9 @@
             // 
             this.btn_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btn_Search.ForeColor = System.Drawing.Color.White;
-            this.btn_Search.Location = new System.Drawing.Point(1056, 14);
+            this.btn_Search.Location = new System.Drawing.Point(1099, 14);
             this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(128, 23);
+            this.btn_Search.Size = new System.Drawing.Size(85, 29);
             this.btn_Search.TabIndex = 16;
             this.btn_Search.Text = "조회";
             this.btn_Search.UseVisualStyleBackColor = false;

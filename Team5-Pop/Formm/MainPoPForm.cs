@@ -55,5 +55,12 @@ namespace Team5_Pop
 
             metroTabControl1.SelectedTab = myTabPage;
         }
+
+        public void DeleteTabPages(Form OpenForm)
+        {
+            metroTabControl1.TabPages.RemoveAt(metroTabControl1.SelectedIndex);
+            metroTabControl1.Controls.Remove(OpenForm);
+            metroTabControl1.SelectedIndex = 0;
+        }
     }
 }

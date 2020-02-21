@@ -54,20 +54,28 @@ namespace Team5_SmartMOM.LBJ
         }
         public void DataLoad2()
         {
-            List<FacilitieDetailVO> list = new List<FacilitieDetailVO>();
+            //List<FacilitieDetailVO> list = new List<FacilitieDetailVO>();
+            List<ShiftmanageVO> list = new List<ShiftmanageVO>();
+            
 
-            HSC_Service service = new HSC_Service();
+            LBJ_Service service1 = new LBJ_Service();
 
-            list = service.GetAllFacilitiesDetail();
+            //HSC_Service service = new HSC_Service();
+
+            //list = service.GetAllFacilitiesDetail();
+            list = service1.ShiftManage2();
             string FacName = cboSystem.Text.Trim();
 
-            List<FacilitieDetailVO> temp = (from item in list
-                                            where item.FAC_Name.Contains(FacName)
-                                            select item).Distinct().ToList();
+            //List<FacilitieDetailVO> temp = (from item in list
+            //                                where item.FAC_Name.Contains(FacName)
+            //                                select item).Distinct().ToList();
+            List<ShiftmanageVO> temp = (from item in list
+                                        where item.FAC_Name.Contains(FacName)
+                                        select item).Distinct().ToList();
 
-            List<FacilitieDetailVO> FacList = new List<FacilitieDetailVO>();
+            List<ShiftmanageVO> FacList = new List<ShiftmanageVO>();
 
-            foreach (FacilitieDetailVO item1 in temp)
+            foreach (ShiftmanageVO item1 in temp)
             {
                 bool addok = true;
                 if (FacList.Count < 1)
@@ -109,19 +117,7 @@ namespace Team5_SmartMOM.LBJ
                 dataGridView1.DataSource = ds.Tables[0];
             }           
         }
-        private List<ShiftManagementVO> ShiftSearch()
-        {
-            List<ShiftManagementVO> mvo = new List<ShiftManagementVO>();
-        
-            foreach (var item in list)
-            {
-                if (cboShift.Text.Trim() == item.SHIFT && cboSystem.Text.Trim() == item.FAC_Name) 
-                {
-                    list.Add(item);
-                }
-            }
-            return mvo;
-        }
+      
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
@@ -131,6 +127,11 @@ namespace Team5_SmartMOM.LBJ
                 dateTimePicker2.Value = dateTimePicker1.Value.AddDays(-7);
                 return;
             }
+        }
+
+        private void panelTop_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

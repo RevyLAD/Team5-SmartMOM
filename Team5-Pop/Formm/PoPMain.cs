@@ -25,7 +25,7 @@ namespace Team5_Pop
         int CurrentPage;
         int MaxPage;
 
-        MainPoPForm mainform;
+        public MainPoPForm mainform;
         PopService service;
         List<FacVOp> fac_cbolist;
 
@@ -43,12 +43,13 @@ namespace Team5_Pop
         private void PoPMain_Load(object sender, EventArgs e)
         {
             service = new PopService();
+            portCheck = new List<PortCheck>();
             //현재 시간 상단 출력
             lblNowDate.Text = DateTime.Now.ToLongDateString();
             lblNowTime.Text = DateTime.Now.ToLongTimeString();
             timer1.Start();
 
-            port = 7000;
+
 
             DataLoad();
             ComboLoad();
@@ -120,12 +121,13 @@ namespace Team5_Pop
         }
         List<ingdata> inglist;
 
-        private void DataLoad()
+        public void DataLoad()
         {
+
             dataGridView1.Columns.Clear();
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.RowTemplate.Height = 48;
-            
+
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "번호", "WO_ID", true, 296);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목 코드", "ITEM_Code", true, 250);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "설비명", "FAC_Name", false, 100);
@@ -137,6 +139,10 @@ namespace Team5_Pop
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "계획번호", "Plan_ID", false, 102);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "우선순위", "WO_Priority", false, 40);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "소요시간(분)", "WO_Time", false, 60);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "양품수량", "WO_GoodQty", false, 120);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "불량수량", "WO_BadQty", false, 60);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "잔량", "restQty", false, 60);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "종료시간", "WO_WorkEndTime", false, 60);
 
             this.dataGridView1.Font = new Font("맑은고딕", 16, FontStyle.Regular);
             this.dataGridView1.ColumnHeadersHeight = 100;
@@ -161,7 +167,7 @@ namespace Team5_Pop
 
             dataGridView1_CellClick(new object(), new DataGridViewCellEventArgs(0, 0));
         }
-        
+
         #region 페이징
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
@@ -172,7 +178,7 @@ namespace Team5_Pop
 
             using (Brush brush = new SolidBrush(Color.Black))
             {
-                e.Graphics.DrawString(Convert.ToString(Convert.ToInt32(((CurrentPage-1)*ContentNum)) + Convert.ToInt32((e.RowIndex + 1).ToString())), e.InheritedRowStyle.Font,
+                e.Graphics.DrawString(Convert.ToString(Convert.ToInt32(((CurrentPage - 1) * ContentNum)) + Convert.ToInt32((e.RowIndex + 1).ToString())), e.InheritedRowStyle.Font,
                 brush, e.RowBounds.Location.X + 35, e.RowBounds.Location.Y + 4, drawFormat);
             }
         }
@@ -204,22 +210,22 @@ namespace Team5_Pop
             lblNowDate.Text = DateTime.Now.ToLongDateString();
             lblNowTime.Text = DateTime.Now.ToLongTimeString();
 
-            if(inglist != null)
-            {
-                 foreach(var item in inglist)
-                {
-                    if (item.woid != "")
-                    {
-                        if (item.woid.Equals(textBox3.Text))
-                        {
-                            txtSNum.Text = Convert.ToString(item.totalqty);
-                            txtGoodNum.Text = Convert.ToString(item.goodqty);
-                            txtBadNum.Text = Convert.ToString(item.badqty);
-                            txtProductNum.Text = Convert.ToString(Convert.ToInt32(txtOrderNum.Text) - item.goodqty);
-                        }
-                    }
-                }
-            }
+            //if(inglist != null)
+            //{
+            //     foreach(var item in inglist)
+            //    {
+            //        if (item.woid != "")
+            //        {
+            //            if (item.woid.Equals(textBox3.Text))
+            //            {
+            //                txtSNum.Text = Convert.ToString(item.totalqty);
+            //                txtGoodNum.Text = Convert.ToString(item.goodqty);
+            //                txtBadNum.Text = Convert.ToString(item.badqty);
+            //                txtProductNum.Text = Convert.ToString(Convert.ToInt32(txtOrderNum.Text) - item.goodqty);
+            //            }
+            //        }
+            //    }
+            //}
         }
         PopVO gadong_vo;
         DataGridViewCellEventArgs e_temp;
@@ -233,12 +239,15 @@ namespace Team5_Pop
                 textBox8.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
 
                 txtOrderNum.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
-
+                txtGoodNum.Text = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
+                txtBadNum.Text = dataGridView1.Rows[e.RowIndex].Cells[12].Value.ToString();
+                txtProductNum.Text = dataGridView1.Rows[e.RowIndex].Cells[14].Value.ToString();
+                txtSNum.Text = (Convert.ToInt32(txtGoodNum.Text) + Convert.ToInt32(txtBadNum.Text)).ToString();
                 this.e_temp = e;
             }
-            catch
+            catch (Exception err)
             {
-
+                MessageBox.Show(err.Message);
             }
         }
 
@@ -291,12 +300,12 @@ namespace Team5_Pop
             List<PopVO> temp = new List<PopVO>();
             CurrentPage = 1;
 
-            if (comboBox2.Text != "전체") 
+            if (comboBox2.Text != "전체")
             {
                 foreach (PopVO item in volist)
                 {
                     if (item.FAC_Name == comboBox2.Text.Trim() &&
-                        item.WO_StartDate > dateTimePicker1.Value && 
+                        item.WO_StartDate > dateTimePicker1.Value &&
                         item.WO_EndDate < dateTimePicker2.Value)
                     {
                         temp.Add(item);
@@ -317,7 +326,7 @@ namespace Team5_Pop
                 nowlist = PagePaging(temp);
             }
 
-            dataGridView1_CellClick(new object(), new DataGridViewCellEventArgs(0,0));
+            dataGridView1_CellClick(new object(), new DataGridViewCellEventArgs(0, 0));
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -328,7 +337,7 @@ namespace Team5_Pop
                 List<FacVOp> temp = new List<FacVOp>();
                 foreach (FacVOp item in fac_cbolist)
                 {
-                    if(item.FACG_Code == comboBox1.SelectedValue.ToString())
+                    if (item.FACG_Code == comboBox1.SelectedValue.ToString())
                     {
                         temp.Add(item);
                     }
@@ -343,64 +352,95 @@ namespace Team5_Pop
             }
         }
         int port;
+        List<PortCheck> portCheck;
         private void btnStart_Click(object sender, EventArgs e)
         {
-            try
+
+            if (dataGridView1.SelectedRows.Count > 0)
             {
-                if (dataGridView1.SelectedRows.Count > 0)
+                gadong_vo.WO_ID = dataGridView1.Rows[e_temp.RowIndex].Cells[0].Value.ToString();
+                gadong_vo.ITEM_Code = dataGridView1.Rows[e_temp.RowIndex].Cells[1].Value.ToString();
+                gadong_vo.FAC_Name = dataGridView1.Rows[e_temp.RowIndex].Cells[2].Value.ToString();
+                gadong_vo.WO_StartDate = Convert.ToDateTime(dataGridView1.Rows[e_temp.RowIndex].Cells[3].Value.ToString());
+                gadong_vo.WO_EndDate = Convert.ToDateTime(dataGridView1.Rows[e_temp.RowIndex].Cells[4].Value.ToString());
+                gadong_vo.planQty = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[5].Value.ToString());
+                gadong_vo.directQty = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[6].Value.ToString());
+                gadong_vo.WO_State = dataGridView1.Rows[e_temp.RowIndex].Cells[7].Value.ToString();
+                gadong_vo.Plan_ID = dataGridView1.Rows[e_temp.RowIndex].Cells[8].Value.ToString();
+                gadong_vo.WO_Priority = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[9].Value.ToString());
+                gadong_vo.WO_Time = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[10].Value.ToString());
+                gadong_vo.restQty = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[14].Value.ToString());
+                gadong_vo.WO_GoodQty = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[11].Value.ToString());
+                gadong_vo.WO_BadQty = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[12].Value.ToString());
+                PopService service = new PopService();
+
+                if (service.GetFacState(gadong_vo.FAC_Name) == "가동")
                 {
-                    gadong_vo.WO_ID = dataGridView1.Rows[e_temp.RowIndex].Cells[0].Value.ToString();
-                    gadong_vo.ITEM_Code = dataGridView1.Rows[e_temp.RowIndex].Cells[1].Value.ToString();
-                    gadong_vo.FAC_Name = dataGridView1.Rows[e_temp.RowIndex].Cells[2].Value.ToString();
-                    gadong_vo.WO_StartDate = Convert.ToDateTime(dataGridView1.Rows[e_temp.RowIndex].Cells[3].Value.ToString());
-                    gadong_vo.WO_EndDate = Convert.ToDateTime(dataGridView1.Rows[e_temp.RowIndex].Cells[4].Value.ToString());
-                    gadong_vo.planQty = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[5].Value.ToString());
-                    gadong_vo.directQty = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[6].Value.ToString());
-                    gadong_vo.WO_State = dataGridView1.Rows[e_temp.RowIndex].Cells[7].Value.ToString();
-                    gadong_vo.Plan_ID = dataGridView1.Rows[e_temp.RowIndex].Cells[8].Value.ToString();
-                    gadong_vo.WO_Priority = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[9].Value.ToString());
-                    gadong_vo.WO_Time = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[10].Value.ToString());
-
-                    PopService service = new PopService();
-                    
-                    POPGaDong newgadong = new POPGaDong(gadong_vo, service.GetPortNum(gadong_vo.WO_ID));
-                    //POPGaDong newgadong = new POPGaDong(gadong_vo, 9900);
-
-                    service.UpdateFacState(gadong_vo.FAC_Name, gadong_vo.WO_ID);
-                        mainform.CreateTabPages(gadong_vo.FAC_Name, newgadong);
-
-
-                    newgadong.DataGethering += new DataGetEventHandler(this.DataGet);
-
-                    //newgadong.Mtimer.Elapsed += new System.Timers.ElapsedEventHandler(DataUpdate(null, nullargs, gadong_vo));
-
+                    MessageBox.Show("이미 공정이 실행중입니다.");
                 }
                 else
                 {
-                    MessageBox.Show("선택된 작업이 없습니다");
+                    if (gadong_vo.WO_State.Trim() == "작업완료")
+                    {
+                        MessageBox.Show("이미 완료된 작업입니다");
+                    }
+                    else if (gadong_vo.WO_State.Trim() == "작업시작")
+                    {
+                        MessageBox.Show("이미 작업이 시작되었습니다");
+                    }
+                    else
+                    {
+                        bool umu = false;
+                        port = 0;
+                        foreach (PortCheck item in portCheck)
+                        {
+                            if (item.Fac_Name.Equals(gadong_vo.FAC_Name))
+                            {
+                                item.port = item.port + 1;
+                                umu = true;
+                                port = item.port;
+                                break;
+                            }
+                        }
+
+                        if (!umu)
+                        {
+                            port = service.GetPortNum(gadong_vo.WO_ID);
+                            PortCheck tempcheck = new PortCheck(gadong_vo.FAC_Name, port);
+                            portCheck.Add(tempcheck);
+                        }
+
+                        POPGaDong newgadong = new POPGaDong(gadong_vo, port, this);
+                        mainform.CreateTabPages(gadong_vo.FAC_Name, newgadong);
+                    }
                 }
-            }catch(Exception err)
-            {
-                MessageBox.Show(err.Message);
+
+                //newgadong.DataGethering += new DataGetEventHandler(this.DataGet);
+                //newgadong.Mtimer.Elapsed += new System.Timers.ElapsedEventHandler(DataUpdate(null, nullargs, gadong_vo));
             }
+            else
+            {
+                MessageBox.Show("선택된 작업이 없습니다");
+            }
+
         }
 
-        private void DataGet(object sender, PopEventAgrs e)
-        {
-            //POPGaDong pop = (POPGaDong)sender;
-            //Debug.WriteLine(pop.checkid);
-            foreach (var item in inglist)
-            {
-                if (item.woid.Equals(e.newid))
-                {
-                    item.totalqty = Convert.ToInt32(e.total.Trim());
-                    item.goodqty = Convert.ToInt32(e.good.Trim());
-                    item.badqty = Convert.ToInt32(e.bad.Trim());
+        //private void DataGet(object sender, PopEventAgrs e)
+        //{
+        //    //POPGaDong pop = (POPGaDong)sender;
+        //    //Debug.WriteLine(pop.checkid);
+        //    foreach (var item in inglist)
+        //    {
+        //        if (item.woid.Equals(e.newid))
+        //        {
+        //            item.totalqty = Convert.ToInt32(e.total.Trim());
+        //            item.goodqty = Convert.ToInt32(e.good.Trim());
+        //            item.badqty = Convert.ToInt32(e.bad.Trim());
 
-                    break;
-                }
-            }
-        }
+        //            break;
+        //        }
+        //    }
+        //}
 
         public class ingdata
         {
@@ -429,31 +469,18 @@ namespace Team5_Pop
                     {
                         string woId = frm.WorkOrderID.ToString();
                         PopService service = new PopService();
+
                         gadong_vo = service.GetPoPVOByWoId(woId)[0];
-                        //gadong_vo.ITEM_Code = dataGridView1.Rows[e_temp.RowIndex].Cells[1].Value.ToString();
-                        //gadong_vo.FAC_Name = dataGridView1.Rows[e_temp.RowIndex].Cells[2].Value.ToString();
-                        //gadong_vo.WO_StartDate = Convert.ToDateTime(dataGridView1.Rows[e_temp.RowIndex].Cells[3].Value.ToString());
-                        //gadong_vo.WO_EndDate = Convert.ToDateTime(dataGridView1.Rows[e_temp.RowIndex].Cells[4].Value.ToString());
-                        //gadong_vo.planQty = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[5].Value.ToString());
-                        //gadong_vo.directQty = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[6].Value.ToString());
-                        //gadong_vo.WO_State = dataGridView1.Rows[e_temp.RowIndex].Cells[7].Value.ToString();
-                        //gadong_vo.Plan_ID = dataGridView1.Rows[e_temp.RowIndex].Cells[8].Value.ToString();
-                        //gadong_vo.WO_Priority = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[9].Value.ToString());
-                        //gadong_vo.WO_Time = Convert.ToInt32(dataGridView1.Rows[e_temp.RowIndex].Cells[10].Value.ToString());
 
-                        
-
-                        POPGaDong newgadong = new POPGaDong(gadong_vo, service.GetPortNum(gadong_vo.WO_ID));
-                        //POPGaDong newgadong = new POPGaDong(gadong_vo, 9900);
-
-                        service.UpdateFacState(gadong_vo.FAC_Name, gadong_vo.WO_ID);
-                        mainform.CreateTabPages(gadong_vo.FAC_Name, newgadong);
-
-
-                        newgadong.DataGethering += new DataGetEventHandler(this.DataGet);
-
-                        //newgadong.Mtimer.Elapsed += new System.Timers.ElapsedEventHandler(DataUpdate(null, nullargs, gadong_vo));
-
+                        if (service.GetFacState(gadong_vo.FAC_Name) == "가동")
+                        {
+                            MessageBox.Show("이미 공정이 실행중입니다.");
+                        }
+                        else
+                        {
+                            POPGaDong newgadong = new POPGaDong(gadong_vo, service.GetPortNum(gadong_vo.WO_ID), this);
+                            mainform.CreateTabPages(gadong_vo.FAC_Name, newgadong);
+                        }
                     }
                     else
                     {
@@ -465,6 +492,78 @@ namespace Team5_Pop
                     MessageBox.Show(err.Message);
                 }
             }
+        }
+
+        private void btnProductLabel_Click(object sender, EventArgs e)
+        {
+            CreateBarcode();
+        }
+
+
+        private void CreateBarcode() //바코드생성
+        {
+            DataTable dt = new DataTable();
+            dt = setDataTable(dataGridView1, Convert.ToInt32(dataGridView1.CurrentRow.Cells[11].Value)); // 원하는 항목을 데이터테이블로 변환
+
+            ProductLabel rpt = new ProductLabel();
+            rpt.DataSource = dt;
+            rpt.CreateDocument();
+
+
+            ShowBarcode frm = new ShowBarcode(rpt);
+
+
+            //frm.ShowDialog();
+        }
+
+        private DataTable setDataTable(DataGridView dgv, int Qty)
+        {
+
+            DataTable dt = new DataTable(); // 담을 객체
+
+
+            dt.Columns.Add("WO_ID", dgv.Columns[0].ValueType);
+            dt.Columns.Add("ITEM_Code", dgv.Columns[1].ValueType);
+            dt.Columns.Add("WO_GoodQty", dgv.Columns[11].ValueType);
+            dt.Columns.Add("WO_WorkEndTime", dgv.Columns[3].ValueType);
+            //컬럼 생성
+            // 0,1,3,4,5,7
+            int tot = 30;
+            int count = Qty / 30;
+
+            if (Qty < tot)
+                count = 1;
+
+            else if (Qty % tot != 0)
+                count = count + 1;
+
+
+            for (int i = 0; i < count; i++)
+            {
+                DataRow dr = dt.NewRow();
+
+                if (Qty < tot)
+                {
+                    dr[0] = dgv[0, i].Value;
+                    dr[1] = dgv[1, i].Value;
+                    dr[2] = Qty;
+                    dr[3] = DateTime.Now;
+                }
+                else
+                {
+                    dr[0] = dgv[0, i].Value;
+                    dr[1] = dgv[1, i].Value;
+                    dr[2] = tot;
+                    dr[3] = DateTime.Now;
+
+                    Qty = Qty - tot;
+                }
+
+                dt.Rows.Add(dr);
+
+            } //데이터 삽입
+            dt.AcceptChanges();
+            return dt;
         }
     }
 }

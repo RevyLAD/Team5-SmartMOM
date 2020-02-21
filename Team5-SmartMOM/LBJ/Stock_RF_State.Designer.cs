@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.btnSearch = new System.Windows.Forms.Button();
-            this.cboCategory = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
@@ -51,11 +49,20 @@
             // 
             // button3
             // 
+            this.button3.Location = new System.Drawing.Point(952, 0);
             this.button3.Visible = false;
             // 
             // button2
             // 
+            this.button2.Location = new System.Drawing.Point(1009, 0);
             this.button2.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1066, 0);
+            this.button1.Size = new System.Drawing.Size(132, 24);
+            this.button1.Text = "입출고현황 출력";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -65,8 +72,6 @@
             // 
             this.panelTop.Controls.Add(this.cboInOut);
             this.panelTop.Controls.Add(this.btnSearch);
-            this.panelTop.Controls.Add(this.cboCategory);
-            this.panelTop.Controls.Add(this.label2);
             this.panelTop.Controls.Add(this.dateTimePicker2);
             this.panelTop.Controls.Add(this.dateTimePicker1);
             this.panelTop.Controls.Add(this.label10);
@@ -96,24 +101,6 @@
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // cboCategory
-            // 
-            this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Location = new System.Drawing.Point(798, 14);
-            this.cboCategory.Name = "cboCategory";
-            this.cboCategory.Size = new System.Drawing.Size(161, 20);
-            this.cboCategory.TabIndex = 117;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(693, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 19);
-            this.label2.TabIndex = 116;
-            this.label2.Text = "* 카테고리";
             // 
             // dateTimePicker2
             // 
@@ -195,8 +182,6 @@
 
         #endregion
         protected System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.ComboBox cboCategory;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label10;

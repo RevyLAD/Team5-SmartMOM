@@ -29,6 +29,7 @@ namespace Team5_SmartMOM.PSM
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);            
             InitCombo();
             btnSearch_Click(null, new EventArgs());
+            dgvSettings();
         }
 
         public void InitCombo()
@@ -73,6 +74,8 @@ namespace Team5_SmartMOM.PSM
 
             DataSet ds = service.GetMRP(plan);
             dataGridView1.DataSource = ds.Tables[0];
+
+            dgvSettings();
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -138,12 +141,12 @@ namespace Team5_SmartMOM.PSM
                 xlWorkSheet.Cells[1, 3] = "카테고리";
                 xlWorkSheet.Cells[1, 4] = "날짜";
 
-                for (i = 0; i < dataGridView1.RowCount; i++)
+                for (i = 0; i < dataGridView1.RowCount -2; i++)
                 {
                     for (j = 0; j < dataGridView1.ColumnCount - 1; j++)
                     {
                         if (dataGridView1[j, i].Value != null)
-                            xlWorkSheet.Cells[i + 2, j + 1] = dataGridView1[j, i].Value.ToString();
+                            xlWorkSheet.Cells[i + 1, j + 1] = dataGridView1[j, i].Value.ToString();
                     }
                 }
 
@@ -172,6 +175,26 @@ namespace Team5_SmartMOM.PSM
             {
                 GC.Collect();
             }
+        }
+
+        private void dgvSettings()
+        {
+            dataGridView1.Columns[0].Width = 180;
+            dataGridView1.Columns[1].Width = 100;
+            dataGridView1.Columns[2].Width = 100;
+         
+
+            dataGridView1.Columns[0].HeaderText = "품목코드";
+            dataGridView1.Columns[1].HeaderText = "품명";
+            dataGridView1.Columns[2].HeaderText = "카테고리";
+           
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+          
         }
     }
 }

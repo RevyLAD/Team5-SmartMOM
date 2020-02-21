@@ -61,7 +61,8 @@ namespace Team5_SmartMOM.HSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "WO_EndDate", true, 120, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "계획수량", "planQty", true, 100, DataGridViewContentAlignment.MiddleRight);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "지시수량", "directQty", true, 100, DataGridViewContentAlignment.MiddleRight);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상태", "WO_State", true, 120, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "작업상태", "WO_State", true, 120, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "출고상태", "WO_OutState", true, 120, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "Plan_ID", "Plan_ID", true, 150, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "소요시간(min)", "WO_Time", true, 130, DataGridViewContentAlignment.MiddleRight);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "우선순위", "WO_Priority", true, 100, DataGridViewContentAlignment.MiddleRight);
@@ -151,6 +152,13 @@ namespace Team5_SmartMOM.HSM
             {
                 if(dataGridView1[9, j].Value.ToString()=="작업생성")
                     dataGridView1[9, j].Style.BackColor = Color.LightYellow;
+                
+                if(dataGridView1[2, j].Value.ToString() != "CHAIR_01")
+                {
+                    if (dataGridView1[10, j].Value.ToString() == "출고대기")
+                        dataGridView1[10, j].Style.BackColor = Color.Red;
+
+                }
 
             }
         }
@@ -173,6 +181,16 @@ namespace Team5_SmartMOM.HSM
                         MessageBox.Show("'작업생성' 상태인 작업만 확정이 가능합니다.", "확인");
                         return;
                     }
+
+                    if(row.Cells[2].Value.ToString() != "CHAIR_01")
+                    {
+                        if (row.Cells[10].Value.ToString() == "출고대기")
+                        {
+                            MessageBox.Show("원자재 불출을 먼저 해주세요.", "확인");
+                            return;
+                        }
+                    }
+
 
                     WorkOrderVO wo = new WorkOrderVO();
                     wo.WO_ID = row.Cells[1].Value.ToString();

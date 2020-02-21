@@ -61,7 +61,7 @@
             // panelMid
             // 
             this.panelMid.Controls.Add(this.metroButton3);
-            this.panelMid.Size = new System.Drawing.Size(1100, 40);
+            this.panelMid.Size = new System.Drawing.Size(1100, 34);
             this.panelMid.Controls.SetChildIndex(this.lblArrow, 0);
             this.panelMid.Controls.SetChildIndex(this.metroButton3, 0);
             this.panelMid.Controls.SetChildIndex(this.label1, 0);
@@ -73,14 +73,14 @@
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Dock = System.Windows.Forms.DockStyle.None;
-            this.button3.Location = new System.Drawing.Point(847, 8);
+            this.button3.Location = new System.Drawing.Point(745, 2);
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Dock = System.Windows.Forms.DockStyle.None;
-            this.button2.Location = new System.Drawing.Point(906, 8);
+            this.button2.Location = new System.Drawing.Point(804, 2);
             this.button2.Text = "수정";
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -88,13 +88,13 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Dock = System.Windows.Forms.DockStyle.None;
-            this.button1.Location = new System.Drawing.Point(965, 8);
+            this.button1.Location = new System.Drawing.Point(863, 2);
             this.button1.Text = "삭제";
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(0, 40);
+            this.panel2.Location = new System.Drawing.Point(0, 34);
             this.panel2.Size = new System.Drawing.Size(1100, 78);
             // 
             // panelTop
@@ -121,17 +121,17 @@
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(255, 36);
+            this.label1.Size = new System.Drawing.Size(255, 30);
             this.label1.Text = "Bill Of Resource";
             // 
             // lblArrow
             // 
-            this.lblArrow.Size = new System.Drawing.Size(16, 36);
+            this.lblArrow.Size = new System.Drawing.Size(16, 30);
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.Location = new System.Drawing.Point(726, 18);
+            this.textBox2.Location = new System.Drawing.Point(695, 18);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(187, 22);
             this.textBox2.TabIndex = 19;
@@ -142,7 +142,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(666, 19);
+            this.label4.Location = new System.Drawing.Point(635, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 19);
             this.label4.TabIndex = 18;
@@ -151,7 +151,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(123, 18);
+            this.textBox1.Location = new System.Drawing.Point(92, 18);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(187, 22);
             this.textBox1.TabIndex = 17;
@@ -161,7 +161,7 @@
             // 
             this.cboFacCrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboFacCrow.FormattingEnabled = true;
-            this.cboFacCrow.Location = new System.Drawing.Point(418, 16);
+            this.cboFacCrow.Location = new System.Drawing.Point(387, 16);
             this.cboFacCrow.Name = "cboFacCrow";
             this.cboFacCrow.Size = new System.Drawing.Size(168, 24);
             this.cboFacCrow.TabIndex = 16;
@@ -171,7 +171,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(358, 19);
+            this.label3.Location = new System.Drawing.Point(327, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 19);
             this.label3.TabIndex = 14;
@@ -182,7 +182,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(63, 19);
+            this.label5.Location = new System.Drawing.Point(32, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 19);
             this.label5.TabIndex = 20;
@@ -194,7 +194,7 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.btnSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1012, 16);
+            this.btnSearch.Location = new System.Drawing.Point(1012, 13);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(81, 30);
             this.btnSearch.TabIndex = 21;
@@ -205,7 +205,7 @@
             // metroButton3
             // 
             this.metroButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton3.Location = new System.Drawing.Point(1028, 8);
+            this.metroButton3.Location = new System.Drawing.Point(1028, 2);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(65, 23);
             this.metroButton3.TabIndex = 5;
@@ -218,7 +218,7 @@
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
             this.button4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(930, 16);
+            this.button4.Location = new System.Drawing.Point(930, 13);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(81, 30);
             this.button4.TabIndex = 22;

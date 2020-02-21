@@ -16,7 +16,7 @@ namespace Team5_Pop
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "SELECT [WO_ID], [ITEM_Code], [FAC_Name], [WO_StartDate], [WO_EndDate], [planQty], [directQty], [WO_State], [Plan_ID], [WO_Priority], [WO_Time] from [WorkOrder]";
+                cmd.CommandText = "SELECT [WO_ID], [ITEM_Code], [FAC_Name], [WO_StartDate], [WO_EndDate], [planQty], [directQty], [WO_State], [Plan_ID], [WO_Priority], [WO_Time] ,[WO_GoodQty] ,[WO_BadQty],[WO_WorkEndTime] ,[restQty] from [WorkOrder] where WO_State = '작업지시' or WO_State = '작업시작' or WO_State = '작업중지'";
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -31,13 +31,12 @@ namespace Team5_Pop
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "SELECT [WO_ID], [ITEM_Code], [FAC_Name], [WO_StartDate], [WO_EndDate], [planQty], [directQty], [WO_State], [Plan_ID], [WO_Priority], [WO_Time] from [WorkOrder] where WO_ID = @WO_ID ";
+                cmd.CommandText = "SELECT [WO_ID], [ITEM_Code], [FAC_Name], [WO_StartDate], [WO_EndDate], [planQty], [directQty], [WO_State], [Plan_ID], [WO_Priority], [WO_Time], [restQty] from [WorkOrder] where WO_ID = @WO_ID ";
                 cmd.Parameters.AddWithValue("@WO_ID", woId);
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<PopVO> list = Helper.DataReaderMapToList<PopVO>(reader);
                 cmd.Connection.Close();
-
                 return list;
             }
         }
@@ -204,6 +203,7 @@ namespace Team5_Pop
         public int GetPortNum(string id)
         {
             int portnum = 0;
+            string ipaddress = string.Empty;
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
@@ -216,40 +216,43 @@ namespace Team5_Pop
                 {
                     case "Leg_조립반":
                         portnum = 1000;
+                        //ipaddress = "127.0.0.1";
                         break;
                     case "SEAT 가공반":
+                        //ipaddress = "127.0.0.2";
                         portnum = 2000;
                         break;
                     case "LEGS 가공반":
+                        //ipaddress = "127.0.0.3";
                         portnum = 3000;
                         break;
                     case "최종조립반":
+                        //ipaddress = "127.0.0.4";
                         portnum = 4000;
                         break;
                     case "외주작업장":
+                        //ipaddress = "127.0.0.5";
                         portnum = 5000;
                         break;
                 }
-                
                 cmd.Connection.Close();
             }
             return portnum;
         }
 
-        public void SavePopData(List<string> list)
+        public void SavePopData(PoPEndVO vo)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "insert into values() where WO_ID = @WO_ID";
+                cmd.CommandText = "update WorkOrder set WO_State = @WO_State, WO_GoodQty = @GoodQty, WO_BadQty = @BadQty, restQty = @restQty, WO_WorkEndTime = @WO_WorkEndTime where WO_ID = @WO_ID";
 
-                cmd.Parameters.AddWithValue("@WO_ID", list[0]);
-                cmd.Parameters.AddWithValue("@WO_ID", list[1]);
-                cmd.Parameters.AddWithValue("@WO_ID", list[2]);
-                cmd.Parameters.AddWithValue("@WO_ID", list[3]);
-                cmd.Parameters.AddWithValue("@WO_ID", list[4]);
-                cmd.Parameters.AddWithValue("@WO_ID", list[5]);
-                cmd.Parameters.AddWithValue("@WO_ID", list[6]);
+                cmd.Parameters.AddWithValue("@WO_ID", vo.WO_ID);
+                cmd.Parameters.AddWithValue("@WO_State", vo.WO_State);
+                cmd.Parameters.AddWithValue("@GoodQty", vo.GoodQty);
+                cmd.Parameters.AddWithValue("@BadQty", vo.BadQty);
+                cmd.Parameters.AddWithValue("@restQty", vo.restQty);
+                cmd.Parameters.AddWithValue("@WO_WorkEndTime", vo.WO_WorkEndTime);
 
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
@@ -272,6 +275,26 @@ namespace Team5_Pop
 
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
+
+                cmd.CommandText = "DECLARE " +
+                    "@REQUIRE int, " +
+                    "@ITEM VARCHAR(50)  " +
+                    "DECLARE CUR CURSOR FOR " +
+                    "select BOM_Require, ITEM_Code from BOM " +
+                    "where BOM_Code = @ITEM_Code " +
+                    "OPEN CUR " +
+                    "FETCH NEXT FROM CUR INTO @REQUIRE, @ITEM " +
+                    "WHILE @@FETCH_STATUS = 0 " +
+                    "BEGIN " +
+                    "update FactoryDetail " +
+                    "set FACD_Qty = FACD_Qty - @REQUIRE " +
+                    "where ITEM_Code = @ITEM and FACT_Code = 'H_01' " +
+                    "FETCH NEXT FROM CUR INTO @REQUIRE, @ITEM " +
+                    "END " +
+                    "CLOSE CUR " +
+                    "DEALLOCATE CUR";
+                cmd.ExecuteNonQuery();
+                
                 cmd.Connection.Close();
             }
         }
@@ -381,6 +404,21 @@ namespace Team5_Pop
                 
                 cmd.Parameters.AddWithValue("@FAC_Name", FacName);
 
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+        }
+
+        public void UpdateRequire(string item)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "  update FactoryDetail set FACD_Qty = FACD_Qty - (select BOM_Require from BOM where BOM_Code = @BOM_Code) " +
+                    "where ITEM_Code = (select ITEM_Code from BOM where BOM_Code = @BOM_Code) and FACT_Code = 'H_01'";
+               
+                cmd.Parameters.AddWithValue("@BOM_Code", item);
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
                 cmd.Connection.Close();

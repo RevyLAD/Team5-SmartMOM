@@ -174,9 +174,9 @@ namespace Team5_SmartMOM.PSM
                 MessageBox.Show("출하하실 제품을 선택하십시오.");
                 return;
             }
-
+            
             List<ShipmentVO> lists = new List<ShipmentVO>();
-            List<Shipment2VO> lists2 = new List<Shipment2VO>();
+       
             foreach (DataGridViewRow row in dataGridView2.Rows)
             {
                 bool isCellChecked = Convert.ToBoolean(row.Cells["Check"].EditedFormattedValue);
@@ -185,16 +185,19 @@ namespace Team5_SmartMOM.PSM
                 {
                     ShipmentVO list = new ShipmentVO();
                     list.SO_WorkOrderID = row.Cells[1].Value.ToString();
+                    list.ITEM_Code = row.Cells[9].Value.ToString();
+                    list.SALES_OrderQty = Convert.ToInt32(row.Cells[12].Value);
+                    list.SALES_CancelQty = Convert.ToInt32(row.Cells[13].Value);
+                    list.SALES_ShipQty = Convert.ToInt32(row.Cells[14].Value);
+                    list.InOut_Qty = Convert.ToInt32(row.Cells[14].Value);
+                    
                     lists.Add(list);
 
-                    Shipment2VO list2 = new Shipment2VO();
-                    list2.SO_WorkOrderID = row.Cells[1].Value.ToString();
-                    list2.SALES_OrderQty = Convert.ToInt32(row.Cells[12].Value);
-                    lists2.Add(list2);
+                    
                 }
             }
             PSM_Service service = new PSM_Service();
-            service.Shipment(lists, lists2);
+            service.Shipment(lists);
 
             DataLoad();
         }
@@ -271,6 +274,7 @@ namespace Team5_SmartMOM.PSM
             else
             {
                 MessageBox.Show("검색 결과가 없습니다");
+                dataGridView2.DataSource = null;
             }
         }
 
@@ -312,12 +316,12 @@ namespace Team5_SmartMOM.PSM
                 xlWorkSheet.Cells[1, 14] = "출하수량";
                 
 
-                for (i = 0; i < dataGridView2.RowCount; i++)
+                for (i = 0; i < dataGridView2.RowCount -2; i++)
                 {
                     for (j = 0; j < dataGridView2.ColumnCount - 1; j++)
                     {
                         if (dataGridView2[j, i].Value != null)
-                            xlWorkSheet.Cells[i + 2, j + 1] = dataGridView2[j, i].Value.ToString();
+                            xlWorkSheet.Cells[i + 1, j + 1] = dataGridView2[j, i].Value.ToString();
                     }
                 }
 
@@ -346,6 +350,24 @@ namespace Team5_SmartMOM.PSM
             {
                 GC.Collect();
             }
+        }
+
+        private void cboplanid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] arrDate = cboplanid.Text.Split('_');
+            if (arrDate[0] == "전체")
+            {
+                return;
+            }
+            if (arrDate[0] == "Project")
+            {
+                return;
+            }
+            arrDate[0] = arrDate[0].Insert(4, "-");
+            arrDate[0] = arrDate[0].Insert(7, "-");
+            //20200101
+            dtpDateStart.Value = DateTime.Parse(arrDate[0]);
+            dtpDateEnd.Value = DateTime.Parse(arrDate[0]).AddMonths(1);
         }
     }
 }

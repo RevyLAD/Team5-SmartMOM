@@ -26,44 +26,85 @@ namespace ClientWork
         static string ipAddress = ConfigurationManager.AppSettings["MachineIP"];
         static void Main(string[] args)
         {
+            Console.SetWindowSize(45, 27);
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
             machineID = rnd.Next(1, 10);
+                while (true)
+                {
+                    Console.WriteLine("===설비를 선택하세요===");
+                    Console.WriteLine("[1] : Leg_조립반");
+                    Console.WriteLine("[2] : SEAT_가공반");
+                    Console.WriteLine("[3] : LEGS_가공반");
+                    Console.WriteLine("[4] : 최종_조립반");
+                    Console.WriteLine("[5] : 외주_작업장");
+
+                    Console.Write("입력 : ");
+                    choice = Console.ReadLine();
+
+                    switch (Convert.ToInt32(choice))
+                    {
+                        case 1:
+                            //ipAddress = "127.0.0.1";
+                            port = 1000;
+                            break;
+                        case 2:
+                            //ipAddress = "127.0.0.2";
+                            port = 2000;
+                            break;
+                        case 3:
+                            //ipAddress = "127.0.0.3";
+                            port = 3000;
+                            break;
+                        case 4:
+                            //ipAddress = "127.0.0.4";
+                            port = 4000;
+                            break;
+                        case 5:
+                            //ipAddress = "127.0.0.5";
+                            port = 5000;
+                            break;
+                    }
+                    Console.ReadLine();
+                    if (TcpConnection())
+                    {
+                        Console.WriteLine("연결 확인");
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("연결이 확인되지 않았습니다");
+                        Console.WriteLine("서버 오픈 확인 후 다시 시도하십시오");
+                        Console.ReadLine();
+                    }
+                }
+
+                SetTimer();
+                timer1.Stop();
+                SetTimer2();
+
+                Console.WriteLine("\n\n생산량 전송 프로그램 시작");
+
+                timer2.Start();
+                timer1.Start();
+
+                Console.ReadLine();
+
+                timer1.Stop();
+                Console.WriteLine("생산량 전송 프로그램 종료");
+                Console.ReadLine();
+
+            
 
             while (true)
             {
-                Console.WriteLine("===설비를 선택하세요===");
-                Console.WriteLine("[1] : Leg_조립반");
-                Console.WriteLine("[2] : SEAT_가공반");
-                Console.WriteLine("[3] : LEGS_가공반");
-                Console.WriteLine("[4] : 최종_조립반");
-                Console.WriteLine("[5] : 외주_작업장");
-
-                Console.Write("입력 : ");
-                choice = Console.ReadLine();
-
-                switch (Convert.ToInt32(choice))
-                {
-                    case 1:
-                        port = 1000;
-                        break;
-                    case 2:
-                        port = 2000;
-                        break;
-                    case 3:
-                        port = 3000;
-                        break;
-                    case 4:
-                        port = 4000;
-                        break;
-                    case 5:
-                        port = 5000;
-                        break;
-                }
-                Console.ReadLine();
                 if (TcpConnection())
                 {
                     Console.WriteLine("연결 확인");
-                    break;
+                    Console.WriteLine("생산량 전송 재시작");
+                    port++;
+                    timer1.Start();
+
+                    Console.ReadLine();
                 }
                 else
                 {
@@ -72,31 +113,18 @@ namespace ClientWork
                     Console.ReadLine();
                 }
             }
-
-            SetTimer();
-            timer1.Stop();
-            SetTimer2();
-
-            Console.WriteLine("\n\n생산량 전송 프로그램 시작");
-            
-            timer2.Start();
-            timer1.Start();
-
-            Console.ReadLine();
-
-            timer1.Dispose();
-            Console.WriteLine("생산량 전송 프로그램 종료");
-            Console.ReadLine();
         }
 
         static TcpClient tc;
         static NetworkStream stream;
         static string product;
         static int TickTime;
+        static string[] data;
         private static bool TcpConnection()
         {
             try
             {
+                Random rnd = new Random();
                 tc = new TcpClient(ipAddress, port);
                 stream = tc.GetStream();
 
@@ -104,7 +132,7 @@ namespace ClientWork
                 int nbytes = stream.Read(outbuff, 0, outbuff.Length);
                 string outMsg = Encoding.ASCII.GetString(outbuff, 0, nbytes);
 
-                string[] data;
+
 
                 product = outMsg;
                 data = product.Split('/');
@@ -166,6 +194,13 @@ namespace ClientWork
                     Log.WriteInfo($"{DateTime.Now.ToLongTimeString()} : {product}  :   == 생산 종료 == ");
                     timer2.Stop();
                     timer1.Stop();
+                }else if (outMsg.Contains("stop"))
+                {
+                    Console.WriteLine("ㆍㆍㆍ생산 중지ㆍㆍㆍ");
+                    Log.WriteInfo($"{DateTime.Now.ToLongTimeString()} : {product}  :   == 생산 중지 == ");
+                    Log.WriteInfo($"{DateTime.Now.ToLongTimeString()} : 잔여 수량    :   == {outMsg.Substring(5)} == ");
+                    timer2.Stop();
+                    timer1.Stop();
                 }
             }
             catch(Exception err)
@@ -193,7 +228,7 @@ namespace ClientWork
                 else
                     qty = 0;
                 
-                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")} :: {product} :: {qty}]";
+                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/{product}/{qty}";
                 byte[] buff = Encoding.ASCII.GetBytes(msg);
                 stream.Write(buff, 0, buff.Length);
 

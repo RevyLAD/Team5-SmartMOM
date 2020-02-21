@@ -156,6 +156,7 @@
             // 
             // dtpDateEnd
             // 
+            this.dtpDateEnd.Enabled = false;
             this.dtpDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDateEnd.Location = new System.Drawing.Point(536, 21);
             this.dtpDateEnd.Name = "dtpDateEnd";
@@ -166,6 +167,7 @@
             // 
             // dtpDateStart
             // 
+            this.dtpDateStart.Enabled = false;
             this.dtpDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDateStart.Location = new System.Drawing.Point(428, 21);
             this.dtpDateStart.Name = "dtpDateStart";
@@ -247,6 +249,7 @@
             this.cboplanid.Name = "cboplanid";
             this.cboplanid.Size = new System.Drawing.Size(191, 20);
             this.cboplanid.TabIndex = 37;
+            this.cboplanid.SelectedIndexChanged += new System.EventHandler(this.cboplanid_SelectedIndexChanged);
             this.cboplanid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVoID_KeyPress);
             // 
             // label5

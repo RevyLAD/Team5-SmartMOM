@@ -30,4 +30,9 @@ namespace Project_VO.LBJ
         public DateTime SHIFT_StartDate { get; set; }
         public DateTime SHIFT_EndDate { get; set; }
     }
+    public class ShiftmanageVO
+    {   
+        public int FAC_No { get; set; }
+        public string FAC_Name { get; set; }       
+    }
 }

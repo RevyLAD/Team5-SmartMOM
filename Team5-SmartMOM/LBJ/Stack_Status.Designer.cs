@@ -50,14 +50,21 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1012, 0);
-            this.button3.Size = new System.Drawing.Size(72, 24);
-            this.button3.Text = "이력조회";
+            this.button3.Location = new System.Drawing.Point(936, 0);
+            this.button3.Size = new System.Drawing.Size(117, 24);
+            this.button3.Text = "재고현황 출력";
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
-            this.button2.Enabled = false;
-            this.button2.Visible = false;
+            this.button2.Location = new System.Drawing.Point(1053, 0);
+            this.button2.Size = new System.Drawing.Size(88, 24);
+            this.button2.Text = "이력조회";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Visible = false;
             // 
             // panel2
             // 
