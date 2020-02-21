@@ -233,10 +233,10 @@
             // Work_ID
             // 
             this.Work_ID.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Work_ID.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Work_ID.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Work_ID.Location = new System.Drawing.Point(97, 162);
             this.Work_ID.Name = "Work_ID";
-            this.Work_ID.Size = new System.Drawing.Size(123, 27);
+            this.Work_ID.Size = new System.Drawing.Size(123, 25);
             this.Work_ID.TabIndex = 19;
             this.Work_ID.Text = "0";
             this.Work_ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
