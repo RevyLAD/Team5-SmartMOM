@@ -43,7 +43,10 @@ namespace Team5_Pop
             double wotime = thisvo.WO_Time;
             double directqty = thisvo.directQty;
 
-            TickTime = Convert.ToString((wotime/directqty)*1000);
+            if(label2.Text.Trim() == "label2")
+            {
+                label2.Text = TickTime = Convert.ToString((wotime / directqty) * 300);
+            }
         }
         private void POPGaDong_Load(object sender, EventArgs e)
         {
@@ -95,53 +98,58 @@ namespace Team5_Pop
 
                     //goodqtt = Convert.ToInt32(readmsg.Substring(25, 1));
                     //badqtt = Convert.ToInt32(readmsg.Substring(48, 1));
+
+                    listBox1.Items.Add(readmsg);
+
+                    PopService service = new PopService();
+                    PoPLogVO logvo = new PoPLogVO();
+
+                    btnStop.Enabled = true;
+                    btnStart.Enabled = false;
+
+                    //if (!start)
+                    //{
+                        
+                    //    start = true;
+                    //}
+                    //tmplist.Add();
+                    string temp = txtItem.Text.Split('(')[1];
+                    string temp2 = temp.Substring(0, temp.Length - 1);
+
+                    logvo.WO_ID = this.checkid;
+                    logvo.FAC_Name = txtFacName.Text.Trim();
+                    logvo.ITEM_Code = temp2;
+                    logvo.ProductTime = DateTime.Now;
+
+                    service.UpdateFacState(txtFacName.Text.Trim(), txtOrderID.Text.Trim());
+                    
+                    if (qty == 1)
+                    {
+                        logvo.Qty = "G";
+                        txtGoodQty.Text = (Convert.ToInt64(txtGoodQty.Text) + 1).ToString("0000");
+                    }
+                    else if (qty == 0)
+                    {
+                        logvo.Qty = "B";
+                        txtBadQty.Text = (Convert.ToInt64(txtBadQty.Text) + 1).ToString("0000");
+                    }
+
+                    service.WritePoPLog(logvo);
+
+                    txtCount.Text = (Convert.ToInt64(txtGoodQty.Text) + Convert.ToInt64(txtBadQty.Text)).ToString("0000");
+                    GaDongTimeChange();
+
+                    //if (DataGethering != null)
+                    //{
+                    //    PopEventAgrs args = new PopEventAgrs();
+                    //    args.good = txtGoodQty.Text;
+                    //    args.bad = txtBadQty.Text;
+                    //    args.total = txtCount.Text;
+                    //    args.newid = thisvo.WO_ID;
+
+                    //    DataGethering(this, args);
+                    //}
                 }
-                
-                listBox1.Items.Add(readmsg);
-                
-                PopService service = new PopService();
-                PoPLogVO logvo = new PoPLogVO();
-
-                btnStop.Enabled = true;
-                btnStart.Enabled = false;
-
-                if (!start)
-                {
-                    service.UpdateFacState(thisvo.FAC_Name, thisvo.WO_ID);
-                    start = true;
-                }
-                //tmplist.Add();
-
-                logvo.WO_ID = this.checkid;
-                logvo.FAC_Name = txtFacName.Text.Trim();
-                logvo.ITEM_Code = thisvo.ITEM_Code;
-                logvo.ProductTime = DateTime.Now;
-
-                if (qty == 1)
-                {
-                    logvo.Qty = "G";
-                    txtGoodQty.Text = (Convert.ToInt64(txtGoodQty.Text) +1).ToString("0000");
-                }
-                else if (qty == 0)
-                {
-                    logvo.Qty = "B";
-                    txtBadQty.Text = (Convert.ToInt64(txtBadQty.Text)+ 1).ToString("0000");
-                }
-                service.WritePoPLog(logvo);
-                
-                txtCount.Text = (Convert.ToInt64(txtGoodQty.Text) + Convert.ToInt64(txtBadQty.Text)).ToString("0000");
-                GaDongTimeChange();
-
-                //if (DataGethering != null)
-                //{
-                //    PopEventAgrs args = new PopEventAgrs();
-                //    args.good = txtGoodQty.Text;
-                //    args.bad = txtBadQty.Text;
-                //    args.total = txtCount.Text;
-                //    args.newid = thisvo.WO_ID;
-
-                //    DataGethering(this, args);
-                //}
             }
             catch
             {
@@ -152,12 +160,14 @@ namespace Team5_Pop
         }
 
         NetworkStream stream;
-        string[] FACG;
+
         private void DataLoad()
         {
             PopService service = new PopService();
 
-            txtOrderID.Text = thisvo.WO_ID;
+            if(txtOrderID.Text.Trim()=="0000")
+                txtOrderID.Text = thisvo.WO_ID;
+            
             txtDirectQty.Text = Convert.ToString(thisvo.directQty.ToString("0000"));
             txtNoCount.Text = Convert.ToString(thisvo.restQty.ToString("0000"));
 
@@ -167,16 +177,20 @@ namespace Team5_Pop
             txtBadQty.Text = Convert.ToString(bq.ToString("0000"));
             txtCount.Text = Convert.ToString((gq + bq).ToString("0000"));
 
-            txtFacName.Text = thisvo.FAC_Name;
-            progressBar1.Value =  (int)(((double)thisvo.WO_GoodQty / (double)thisvo.directQty) * 100);
+            //progressBar1.Value =  (int)(((double)thisvo.WO_GoodQty / (double)thisvo.directQty) * 100);
             lblprogres.Text = Convert.ToString(progressBar1.Value)+"%";
 
-            FACG = service.GetGaDongInfo(thisvo.FAC_Name);
+
+            string[] FACG = null;
+            if (txtItem.Text.Trim() == "ITEM_Name")
+                txtItem.Text = $"{service.GetItemName(thisvo.ITEM_Code)} ({thisvo.ITEM_Code})";
+            if (txtFacName.Text.Trim() == "작업장(FAC)")
+                txtFacName.Text = thisvo.FAC_Name;
+            if(FACG == null)
+                FACG = service.GetGaDongInfo(thisvo.FAC_Name);
             txtFACGName.Text = FACG[0] + " / " + FACG[1];
-            txtItem.Text = $"{service.GetItemName(thisvo.ITEM_Code)} ({thisvo.ITEM_Code})";
 
             string[] Time = service.GetPlanTime(thisvo.FAC_Name);
-
 
             txtPlanTS.Text = TimeSub(Time[0]);
             txtPlanTE.Text = TimeSub(Time[1]);
@@ -207,8 +221,11 @@ namespace Team5_Pop
         {
             TcpClient tc = (TcpClient)o;
             stream = tc.GetStream();
-            
-            string msg = thisvo.ITEM_Code + '/' + txtDirectQty.Text + '/' + txtNoCount.Text + '/' + TickTime;
+
+            string temp = txtItem.Text.Split('(')[1];
+            string temp2 = temp.Substring(0, temp.Length - 1);
+
+            string msg = temp2 + '/' + txtDirectQty.Text + '/' + txtNoCount.Text + '/' + TickTime;
             byte[] buff = Encoding.ASCII.GetBytes(msg);
             await stream.WriteAsync(buff, 0, buff.Length);
 
@@ -301,7 +318,7 @@ namespace Team5_Pop
             }
             else
             {
-                progressBar1.Value = (int)((Convert.ToDouble(txtCount.Text) / Convert.ToDouble(txtDirectQty.Text)) * 100);
+                progressBar1.Value = (int)((Convert.ToDouble(txtGoodQty.Text) / Convert.ToDouble(txtDirectQty.Text)) * 100);
                 lblprogres.Text = string.Format(progressBar1.Value +" %");
             }
         }
@@ -316,7 +333,7 @@ namespace Team5_Pop
                 Mtimer.Stop();
                 timer1.Stop();
                 timer3.Start();
-                service.UpdateFacStatePause(thisvo.FAC_Name, 1);
+                service.UpdateFacStatePause(txtFacName.Text.Trim(), 1);
                 
                 progressBar1.ForeColor = Color.LightYellow;
                 btnpause.Text = "계속하기";
@@ -334,7 +351,7 @@ namespace Team5_Pop
                 Mtimer.Start();
                 timer1.Start();
                 timer3.Stop();
-                service.UpdateFacStatePause(thisvo.FAC_Name, 2);
+                service.UpdateFacStatePause(txtFacName.Text.Trim(), 2);
 
                 progressBar1.ForeColor = Color.Aquamarine;
                 btnpause.Text = "일시 정지";
@@ -409,7 +426,7 @@ namespace Team5_Pop
             timer3.Stop();
 
             PopService service = new PopService();
-            service.UpdateFacStateEnd(thisvo.FAC_Name);
+            service.UpdateFacStateEnd(txtFacName.Text.Trim());
 
             btnStop.Enabled = false;
 
@@ -436,17 +453,18 @@ namespace Team5_Pop
             {
                 PoPEndVO tempvo = new PoPEndVO();
 
-                tempvo.WO_ID = thisvo.WO_ID;
+                tempvo.WO_ID = txtOrderID.Text.Trim();
                 tempvo.WO_State= endstate;
                 tempvo.GoodQty = Convert.ToInt32(txtGoodQty.Text.Trim());
                 tempvo.BadQty = Convert.ToInt32(txtBadQty.Text.Trim());
                 tempvo.restQty = Convert.ToInt32(txtNoCount.Text.Trim());
                 tempvo.WO_WorkEndTime = DateTime.Now;
+                string temp = txtItem.Text.Split('(')[1];
+                tempvo.ITEM_Code = temp.Substring(0, temp.Length-1);
+                tempvo.FAC_Name = txtFacName.Text.Trim();
 
                 PopService service = new PopService();
                 service.SavePopData(tempvo);
-                service.UpdateFacStateEnd(thisvo.FAC_Name);
-
                 
                 this.mainform.mainform.DeleteTabPages(this);
                 this.mainform.DataLoad();

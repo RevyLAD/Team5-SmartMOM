@@ -465,29 +465,53 @@ namespace Team5_Pop
             {
                 try
                 {
-                    if (dataGridView1.SelectedRows.Count > 0)
+                    string woId = frm.WorkOrderID.ToString();
+                    PopService service = new PopService();
+                    gadong_vo = service.GetPoPVOByWoId(woId)[0];
+
+                    if (service.GetFacState(gadong_vo.FAC_Name) == "가동")
                     {
-                        string woId = frm.WorkOrderID.ToString();
-                        PopService service = new PopService();
-
-                        gadong_vo = service.GetPoPVOByWoId(woId)[0];
-
-                        if (service.GetFacState(gadong_vo.FAC_Name) == "가동")
-                        {
-                            MessageBox.Show("이미 공정이 실행중입니다.");
-                        }
-                        else
-                        {
-                            POPGaDong newgadong = new POPGaDong(gadong_vo, service.GetPortNum(gadong_vo.WO_ID), this);
-                            mainform.CreateTabPages(gadong_vo.FAC_Name, newgadong);
-                        }
+                        MessageBox.Show("이미 공정이 실행중입니다.");
                     }
                     else
                     {
-                        MessageBox.Show("선택된 작업이 없습니다");
+                        if (gadong_vo.WO_State.Trim() == "작업완료")
+                        {
+                            MessageBox.Show("이미 완료된 작업입니다");
+                        }
+                        else if (gadong_vo.WO_State.Trim() == "작업시작")
+                        {
+                            MessageBox.Show("이미 작업이 시작되었습니다");
+                        }
+                        else
+                        {
+                            bool umu = false;
+                            port = 0;
+
+                            foreach (PortCheck item in portCheck)
+                            {
+                                if (item.Fac_Name.Equals(gadong_vo.FAC_Name))
+                                {
+                                    item.port = item.port + 1;
+                                    umu = true;
+                                    port = item.port;
+                                    break;
+                                }
+                            }
+
+                            if (!umu)
+                            {
+                                port = service.GetPortNum(gadong_vo.WO_ID);
+                                PortCheck tempcheck = new PortCheck(gadong_vo.FAC_Name, port);
+                                portCheck.Add(tempcheck);
+                            }
+
+                            POPGaDong newgadong = new POPGaDong(gadong_vo, port, this);
+                            mainform.CreateTabPages(gadong_vo.FAC_Name, newgadong);
+                        }
                     }
                 }
-                catch (Exception err)
+                catch(Exception err)
                 {
                     MessageBox.Show(err.Message);
                 }

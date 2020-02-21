@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.IO.Ports;
@@ -16,6 +17,7 @@ namespace Team5_Pop
     {
         String msg;
         string workorderId;
+        string barcordPort = ConfigurationManager.AppSettings["BarcodePort"].ToString();
         #region 시리얼포트 연결
         /* 시리얼포트 정의 */
         private SerialPort _Port;
@@ -29,7 +31,7 @@ namespace Team5_Pop
                 if (_Port == null)
                 {
                     _Port = new SerialPort();
-                    _Port.PortName = "COM3";
+                    _Port.PortName = barcordPort;
                     _Port.BaudRate = 9600;
                     _Port.DataBits = 8;
                     _Port.Parity = Parity.None;

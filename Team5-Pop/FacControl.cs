@@ -22,7 +22,7 @@ namespace Team5_Pop
         private void GoodAmount_TextChanged(object sender, EventArgs e)
         {
             TotalAmount.Text = Convert.ToString((Convert.ToInt32(GoodAmount.Text.Trim()) + Convert.ToInt32(BadAmount.Text.Trim())).ToString("0000"));
-            RestAmount.Text = Convert.ToString((Convert.ToInt32(Order_Amount.Text.Trim()) - Convert.ToInt32(TotalAmount.Text.Trim())).ToString("0000"));
+            RestAmount.Text = Convert.ToString((Convert.ToInt32(Order_Amount.Text.Trim()) - Convert.ToInt32(GoodAmount.Text.Trim())).ToString("0000"));
         }
 
         private void ControlTimer_Tick(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace Team5_Pop
             service = new PopService();
 
             int Signal = 0;
-            switch (service.GetFACSignal(FAC_Name))
+            switch (service.GetFACSignal(groupBox1.Text.Trim()))
             {
                 case "가동":
                     Signal = 1;
@@ -58,8 +58,8 @@ namespace Team5_Pop
 
             if (Signal == 1 || Signal == 3)
             {
-                string WO_ID = service.GetWO_ID(FAC_Name);
-                List<ControlVO> thisvo = service.GetInfoForControl(FAC_Name, WO_ID);
+                string WO_ID = service.GetWO_ID(groupBox1.Text.Trim());
+                List<ControlVO> thisvo = service.GetInfoForControl(groupBox1.Text.Trim(), WO_ID);
                 if (thisvo.Count >0 && thisvo != null)
                 {
                     Order_Amount.Text = Convert.ToString(thisvo[0].directQty.ToString("0000"));

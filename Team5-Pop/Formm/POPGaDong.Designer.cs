@@ -90,6 +90,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -252,7 +253,7 @@
             this.txtItem.ReadOnly = true;
             this.txtItem.Size = new System.Drawing.Size(324, 30);
             this.txtItem.TabIndex = 6;
-            this.txtItem.Text = "ITEM_Name(ITEM_Code)";
+            this.txtItem.Text = "ITEM_Name";
             this.txtItem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox8
@@ -438,6 +439,7 @@
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.label2);
             this.groupBox5.Controls.Add(this.button7);
             this.groupBox5.Controls.Add(this.btnStart);
             this.groupBox5.Controls.Add(this.btnCancel);
@@ -907,6 +909,16 @@
             this.timer3.Interval = 1000;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1112, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 12);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "label2";
+            this.label2.Visible = false;
+            // 
             // POPGaDong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -937,6 +949,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox8.ResumeLayout(false);
@@ -1014,5 +1027,6 @@
         private System.Windows.Forms.TextBox txtGoodQty;
         private System.Windows.Forms.Label lblprogres;
         public System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label2;
     }
 }

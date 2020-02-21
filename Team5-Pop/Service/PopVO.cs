@@ -57,6 +57,8 @@ namespace Team5_Pop
         public int BadQty { get; set; }
         public int restQty { get; set; }
         public DateTime WO_WorkEndTime{ get; set; }
+        public string ITEM_Code { get; set; }
+        public string FAC_Name { get; set; }
     }
 
     public class PortCheck
