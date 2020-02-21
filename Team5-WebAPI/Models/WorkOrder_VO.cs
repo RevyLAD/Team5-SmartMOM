@@ -13,4 +13,8 @@ namespace Team5_WebAPI.Models
         public double G_QtyMIN { get; set; }
         public double B_QtyMIN { get; set; }
     }
-}
+    public class WorkOrder_VO2
+    {
+        public int Allcount { get; set; }
+    }
+    }

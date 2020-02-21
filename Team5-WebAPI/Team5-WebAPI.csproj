@@ -6836,6 +6836,7 @@
     <Compile Include="DAC\Helper.cs" />
     <Compile Include="DAC\InOut_DAC.cs" />
     <Compile Include="DAC\Item_DAC.cs" />
+    <Compile Include="DAC\Sales_DAC.cs" />
     <Compile Include="DAC\WorkOrder_DAC.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -6844,6 +6845,7 @@
     <Compile Include="DAC\ConnectionAccess.cs" />
     <Compile Include="Models\InOut_VO.cs" />
     <Compile Include="Models\Item_VO.cs" />
+    <Compile Include="Models\Sales_VO.cs" />
     <Compile Include="Models\WorkOrder_VO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
