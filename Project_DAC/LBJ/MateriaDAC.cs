@@ -52,11 +52,11 @@ namespace Project_DAC.LBJ
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = @"select WO_ID,WO_StartDate,b.ITEM_Code,FAC_Name,ITEM_Size,ITEM_Type,FACT_Name,FACT_Name1,FACD_Qty ,planQty,directQty,WO_OutState from
+                cmd.CommandText = @"select WO_ID,WO_StartDate,b.ITEM_Code,FAC_Name,ITEM_Size,ITEM_Type,FACT_Name,FACT_Name1,FACD_Qty ,planQty,directQty, WO_OutState from
                                     (
                                     SELECT WO_ID,WO_StartDate,b.ITEM_Code,FAC_Name,C.ITEM_Size,ITEM_Type,D.FACT_Name,
                                     CASE WHEN ITEM_Type = '원자재' THEN '자재창고_01' ELSE  '자재창고_01' END AS 'FACT_Name1' ,
-                                     planQty,directQty, WO_OutState
+                                     planQty,BOM_Require, b.BOM_Require *(product_qty) as directQty, WO_OutState
                                     FROM WorkOrder a, BOM b ,ITEM c,  FactoryDetail d
                                     where B.BOM_Code = A.ITEM_Code
                                     and  C.ITEM_Code = b.ITEM_Code
@@ -66,7 +66,9 @@ namespace Project_DAC.LBJ
                                     and D.FACT_Name != '자재창고_01' ) A LEFT OUTER JOIN
 
                                     (
-                                    select ITEM_Code, FACD_Qty from FactoryDetail where FACT_Code = 'R_01') B ON A.ITEM_Code = B.ITEM_Code";
+                                    select ITEM_Code, FACD_Qty from FactoryDetail where FACT_Code = 'R_01') B ON A.ITEM_Code = B.ITEM_Code
+
+									order by 1";
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<MateriaExportVO> list = Helper.DataReaderMapToList<MateriaExportVO>(reader);

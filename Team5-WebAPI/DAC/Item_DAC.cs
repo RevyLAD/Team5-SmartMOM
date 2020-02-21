@@ -32,5 +32,21 @@ namespace Team5_WebAPI.DAC
                 return list;
             }
         }
+        public List<WorkOrder_VO2> Count_Item()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(StrConn);
+                cmd.CommandText = $"select count(ITEM_Code) as Allcount from ITEM";
+
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkOrder_VO2> list = Helper.DataReaderMapToList<WorkOrder_VO2>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
     }
 }

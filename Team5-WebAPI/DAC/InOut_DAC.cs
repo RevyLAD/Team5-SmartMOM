@@ -32,5 +32,21 @@ namespace Team5_WebAPI.DAC
                 return list;
             }
         }
+        public List<Item_VO2> InoutCount()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(StrConn);
+                cmd.CommandText = "select count(case when InOut_Gubun ='입고' then 1 end) as Initem,count(case when InOut_Gubun ='출고' then 1 end) as OutItem from InOutList ";
+
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<Item_VO2> list = Helper.DataReaderMapToList<Item_VO2>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
     }
 }

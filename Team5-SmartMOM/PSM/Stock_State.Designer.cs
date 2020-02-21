@@ -56,6 +56,7 @@
             this.button2.Location = new System.Drawing.Point(1056, 0);
             this.button2.Size = new System.Drawing.Size(85, 24);
             this.button2.Text = "이력조회";
+            this.button2.Visible = false;
             // 
             // button1
             // 
