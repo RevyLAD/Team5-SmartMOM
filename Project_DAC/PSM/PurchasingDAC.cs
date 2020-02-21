@@ -997,7 +997,7 @@ FROM SalesMaster s inner join ITEM i on s.ITEM_Code = i.ITEM_Code inner join Com
             }
         }
 
-        public List<Process_operationVO> Process_operation()
+        public List<Process_operationVO> Process_operation(OPSearchVO op)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -1006,7 +1006,10 @@ FROM SalesMaster s inner join ITEM i on s.ITEM_Code = i.ITEM_Code inner join Com
 
                 cmd.CommandText = @"select WO_StartDate, FAC_Code, f.FAC_Name, w.ITEM_Code, ITEM_Name, WO_State, FAC_OutWareHouse, planQty, WO_GoodQty, WO_BadQty, restQty, w.WO_ID
   from Facility f inner join WorkOrder w on f.FAC_Name = w.FAC_Name inner join ITEM i on w.ITEM_Code = i.ITEM_Code
-  where WO_State = '작업완료' and f.FAC_Name = '최종조립반' and OP_State is null ";     
+  where WO_State = '작업완료' and f.FAC_Name = '최종조립반' and OP_State is null and WO_StartDate between @startDate and @endDate ";
+
+                cmd.Parameters.AddWithValue("@startDate", op.startDate);
+                cmd.Parameters.AddWithValue("@endDate", op.endDate);
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -1066,7 +1069,7 @@ FROM SalesMaster s inner join ITEM i on s.ITEM_Code = i.ITEM_Code inner join Com
 
             }
         }
-        public bool OP_StateChange2(List<WO_IDVO> lists)
+        public bool OP_StateChange2(List<WO_IDVO> lists, List<ProductADDVO> lists2)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -1080,6 +1083,18 @@ FROM SalesMaster s inner join ITEM i on s.ITEM_Code = i.ITEM_Code inner join Com
                         cmd.CommandText = @"UPDATE WorkOrder SET OP_State = '공정이동완료' WHERE WO_ID = @WO_ID";
 
                         cmd.Parameters.AddWithValue("@WO_ID", item.WO_ID);
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+
+                    foreach (var item in lists2)
+                    {
+                        cmd.CommandText = @"UPDATE FactoryDetail SET FACD_Qty = FACD_Qty + WO_GoodQty WHERE ITEM_Code = @ITEM_Code and FACT_Name = @FACT_Name";
+
+                        cmd.Parameters.AddWithValue("@ITEM_Code", item.ITEM_Code);
+                        cmd.Parameters.AddWithValue("@FACT_Name", item.FACT_Name);
+                        cmd.Parameters.AddWithValue("@WO_GoodQty", item.WO_GoodQty);
 
                         cmd.ExecuteNonQuery();
                         cmd.Parameters.Clear();

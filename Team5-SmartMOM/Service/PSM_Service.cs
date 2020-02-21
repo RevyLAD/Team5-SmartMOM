@@ -255,10 +255,10 @@ namespace Team5_SmartMOM.Service
             return dac.DeaLinePut(lists);
         }
 
-        public List<Process_operationVO> Process_operation()
+        public List<Process_operationVO> Process_operation(OPSearchVO op)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.Process_operation();
+            return dac.Process_operation(op);
         }
 
         public bool OP_StateChange(List<WO_IDVO> lists)
@@ -272,10 +272,10 @@ namespace Team5_SmartMOM.Service
             PurchasingDAC dac = new PurchasingDAC();
             return dac.Process_operation_finish();
         }
-        public bool OP_StateChange2(List<WO_IDVO> lists)
+        public bool OP_StateChange2(List<WO_IDVO> lists, List<ProductADDVO> lists2)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.OP_StateChange2(lists);
+            return dac.OP_StateChange2(lists, lists2);
         }
 
     }
