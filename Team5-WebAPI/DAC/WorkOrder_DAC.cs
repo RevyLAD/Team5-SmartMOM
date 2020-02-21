@@ -30,5 +30,34 @@ namespace Team5_WebAPI.DAC
                 return list;
             }
         }
+        public List<WorkOrder_VO2> CountLog()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(StrConn);
+                cmd.CommandText = $"select Count(*) Allcount from ProductionLog";
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkOrder_VO2> list = Helper.DataReaderMapToList<WorkOrder_VO2>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+        public List<WorkOrder_VO2> CountMaga()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(StrConn);
+                cmd.CommandText = $"select count(distinct FAC_Name) as Allcount from ProductionLog";
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkOrder_VO2> list = Helper.DataReaderMapToList<WorkOrder_VO2>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
     }
 }

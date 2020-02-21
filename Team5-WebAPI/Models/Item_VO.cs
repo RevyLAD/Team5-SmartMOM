@@ -22,4 +22,9 @@ namespace Team5_WebAPI.Models
         public string ITEM_Name { get; set; }
         public string ITEM_Type { get; set; }
     }
+    public class Item_VO2
+    {
+        public int Initem { get; set; }
+        public int OutItem { get; set; }
+    }
 }
