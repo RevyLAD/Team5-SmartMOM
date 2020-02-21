@@ -9,6 +9,7 @@ namespace Team5_WebAPI.Models
     {
         public int MM { get; set; }
         public int Qty { get; set; }
+        public int Sales_shipQty { get; set; }
         public string COM_Code { get; set; }
     }
 }
