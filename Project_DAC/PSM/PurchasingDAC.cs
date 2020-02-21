@@ -840,7 +840,7 @@ WHERE FACT_Name = '자재창고_01' and f.ITEM_Code = @ITEM_Code";
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 string sql = @"SELECT SO_WorkOrderID, SALES_Duedate, s.COM_Code, COM_Name, s.ITEM_Code, ITEM_Name, SALES_OrderQty, SALES_ShipQty, SALES_CancelQty
                             FROM SalesMaster s inner join ITEM i on s.ITEM_Code = i.ITEM_Code inner join Company c on s.COM_Code = c.COM_Code
-                            WHERE Shipment_State = '출하완료'";
+                            WHERE Shipment_State = '출하완료' and Plan_ID = @Plan_ID ";
                 if (so.Item != "")
                 {
                     sql = sql + " and ITEM_Name LIKE  '%' + @ITEM_Name +'%'";
