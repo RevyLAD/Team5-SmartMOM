@@ -142,6 +142,7 @@
             this.xrLabel7,
             this.xrLabel8});
             this.Detail1.HeightF = 257.9167F;
+            this.Detail1.KeepTogether = true;
             this.Detail1.MultiColumn.ColumnCount = 2;
             this.Detail1.MultiColumn.Layout = DevExpress.XtraPrinting.ColumnLayout.AcrossThenDown;
             this.Detail1.MultiColumn.Mode = DevExpress.XtraReports.UI.MultiColumnMode.UseColumnCount;
