@@ -568,15 +568,15 @@ namespace Team5_Pop
 
                 if (Qty < tot)
                 {
-                    dr[0] = dgv[0, i].Value;
-                    dr[1] = dgv[1, i].Value;
+                    dr[0] = dgv[0, e_temp.RowIndex].Value;
+                    dr[1] = dgv[1, e_temp.RowIndex].Value;
                     dr[2] = Qty;
                     dr[3] = DateTime.Now;
                 }
                 else
                 {
-                    dr[0] = dgv[0, i].Value;
-                    dr[1] = dgv[1, i].Value;
+                    dr[0] = dgv[0, e_temp.RowIndex].Value;
+                    dr[1] = dgv[1, e_temp.RowIndex].Value;
                     dr[2] = tot;
                     dr[3] = DateTime.Now;
 
