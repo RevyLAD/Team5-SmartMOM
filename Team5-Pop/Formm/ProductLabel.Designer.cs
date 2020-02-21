@@ -108,7 +108,7 @@
             // 
             // BottomMargin
             // 
-            this.BottomMargin.HeightF = 80F;
+            this.BottomMargin.HeightF = 1.458295F;
             this.BottomMargin.Name = "BottomMargin";
             // 
             // Detail
@@ -141,7 +141,7 @@
             this.xrLabel6,
             this.xrLabel7,
             this.xrLabel8});
-            this.Detail1.HeightF = 250F;
+            this.Detail1.HeightF = 257.9167F;
             this.Detail1.MultiColumn.ColumnCount = 2;
             this.Detail1.MultiColumn.Layout = DevExpress.XtraPrinting.ColumnLayout.AcrossThenDown;
             this.Detail1.MultiColumn.Mode = DevExpress.XtraReports.UI.MultiColumnMode.UseColumnCount;
@@ -523,7 +523,7 @@
             this.DataMember = "ProductionLog";
             this.DataSource = this.sqlDataSource1;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(30, 30, 15, 80);
+            this.Margins = new System.Drawing.Printing.Margins(30, 30, 15, 1);
             this.PageHeight = 1169;
             this.PageWidth = 827;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
