@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Team5_Pop;
+using System.Deployment.Application;
 
 namespace Team5_Pop
 {
@@ -16,8 +17,35 @@ namespace Team5_Pop
         public MainPoPForm()
         {
             InitializeComponent();
+            CheckUpdate();
         }
+        private void CheckUpdate()
+        {
+            UpdateCheckInfo info = null;
 
+            if (!ApplicationDeployment.IsNetworkDeployed)
+            {
+                MessageBox.Show("not deployed using Clickonce");
+            }
+            else
+            {
+                ApplicationDeployment appDeploy = ApplicationDeployment.CurrentDeployment;
+                info = appDeploy.CheckForDetailedUpdate();
+
+                if (info.UpdateAvailable)
+                {
+                    bool doUpdate = true;
+
+                    if (doUpdate)
+                    {
+                        appDeploy.Update();
+                        MessageBox.Show("프로그램이 업그레이드 되어서 재시작 합니다.");
+                        this.Close();
+                        Application.Restart();
+                    }
+                }
+            }
+        }
         private void MainPoPForm_Load(object sender, EventArgs e)
         {
             CreateTabPages("메인 화면", new PoPMain(this));
