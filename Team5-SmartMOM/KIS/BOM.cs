@@ -124,7 +124,7 @@ namespace Team5_SmartMOM.KIS
             checkBoxColumn.Width = 30;
 
             dataGridView1.Columns.Add(checkBoxColumn);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "NO", "BOM_No", true, 50);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView1, "NO", "BOM_No", false, 50);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "상위품목", "BOM_Code", true, 140);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품목", "ITEM_Code", true, 200);
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "품명", "ITEM_Name", true, 170);

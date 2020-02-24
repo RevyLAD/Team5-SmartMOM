@@ -232,6 +232,7 @@
             this.Btn_Copy.Text = "복사";
             this.Btn_Copy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_Copy.UseVisualStyleBackColor = false;
+            this.Btn_Copy.Visible = false;
             // 
             // Btn_Delete
             // 
