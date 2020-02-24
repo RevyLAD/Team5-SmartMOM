@@ -205,6 +205,7 @@
             this.btn_copy.Text = "복사";
             this.btn_copy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_copy.UseVisualStyleBackColor = false;
+            this.btn_copy.Visible = false;
             // 
             // dtp_ExistingDate
             // 

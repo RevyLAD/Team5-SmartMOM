@@ -149,7 +149,7 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(382, 15);
+            this.button2.Location = new System.Drawing.Point(515, 15);
             this.button2.TabIndex = 21;
             // 
             // button1
@@ -161,7 +161,7 @@
             // 
             // tileSave
             // 
-            this.tileSave.Location = new System.Drawing.Point(2436, 10);
+            this.tileSave.Location = new System.Drawing.Point(2569, 10);
             // 
             // label2
             // 
@@ -256,6 +256,7 @@
             this.label13.Size = new System.Drawing.Size(70, 12);
             this.label13.TabIndex = 20;
             this.label13.Text = "ㆍ발주방식";
+            this.label13.Visible = false;
             // 
             // label14
             // 
@@ -447,6 +448,7 @@
             this.cbo_orderType.Name = "cbo_orderType";
             this.cbo_orderType.Size = new System.Drawing.Size(116, 20);
             this.cbo_orderType.TabIndex = 18;
+            this.cbo_orderType.Visible = false;
             // 
             // cbo_itemtype
             // 

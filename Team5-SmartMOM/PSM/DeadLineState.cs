@@ -27,9 +27,7 @@ namespace Team5_SmartMOM.PSM
             dataGridView2.AllowUserToAddRows = false;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "고객주문번호", "SO_WorkOrderID", true, 200);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "PO NO", "", true, 100);
-            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "고객사코드", "COM_Code", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            UtilityClass.AddNewColumnToDataGridView(dataGridView2, "고객주문번호", "SO_WorkOrderID", true, 200);            
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "고객사", "COM_Name", true, 150);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "도착지코드", "COM_Code", true, 100, DataGridViewContentAlignment.MiddleCenter);
             UtilityClass.AddNewColumnToDataGridView(dataGridView2, "도착지명", "COM_Name", true, 150);
