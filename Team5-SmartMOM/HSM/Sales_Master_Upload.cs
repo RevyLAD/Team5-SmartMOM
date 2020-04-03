@@ -32,6 +32,8 @@ namespace Team5_SmartMOM.HSM
 
         }
 
+        #region btnClick Methods
+
         private void button3_Click(object sender, EventArgs e) //영업마스터 업로드
         {
             
@@ -141,6 +143,8 @@ namespace Team5_SmartMOM.HSM
                 GC.Collect();
             }
         }
+
+        #endregion
 
     }
 }

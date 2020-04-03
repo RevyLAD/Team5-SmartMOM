@@ -47,6 +47,7 @@ namespace Team5_SmartMOM.HSM
 
         }
 
+        #region DataLoad()
         private void DataLoad()
         {
             dtpDateEnd.Value = DateTime.Now.AddMonths(1);
@@ -68,11 +69,31 @@ namespace Team5_SmartMOM.HSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "우선순위", "WO_Priority", true, 100, DataGridViewContentAlignment.MiddleRight);
         }
 
+        #endregion
 
+        #region Settings
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dgvYellow();
         }
+
+        private void dgvYellow()
+        {
+            for (int j = 0; j < dataGridView1.RowCount; j++)
+            {
+                if (dataGridView1[9, j].Value.ToString() == "작업생성")
+                    dataGridView1[9, j].Style.BackColor = Color.LightYellow;
+
+                if (dataGridView1[2, j].Value.ToString() != "CHAIR_01")
+                {
+                    if (dataGridView1[10, j].Value.ToString() == "출고대기")
+                        dataGridView1[10, j].Style.BackColor = Color.Red;
+
+                }
+
+            }
+        }
+
         private void HeaderCheckBox_Click(object sender, EventArgs e)
         {
             dataGridView1.EndEdit();
@@ -102,12 +123,36 @@ namespace Team5_SmartMOM.HSM
 
 
         }
+
+        private void cboPlanID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] arrDate = cboPlanID.Text.Split('_');
+            if (arrDate[0] == "전체")
+            {
+                return;
+            }
+            if (arrDate[0] == "Project")
+            {
+                return;
+            }
+            arrDate[0] = arrDate[0].Insert(4, "-");
+            arrDate[0] = arrDate[0].Insert(7, "-");
+            //20200101
+            dtpDateStart.Value = DateTime.Parse(arrDate[0]);
+            dtpDateEnd.Value = DateTime.Parse(arrDate[0]).AddMonths(1);
+
+        }
+
+        #endregion
+
+        #region btnClick Methods
+
         /// <summary>
         /// 작업지시 생성
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) //작업지시생성
         {
             WorkOrderPoPUp frm = new WorkOrderPoPUp();
             frm.StartPosition = FormStartPosition.CenterScreen;
@@ -118,7 +163,7 @@ namespace Team5_SmartMOM.HSM
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e) //조회
         {
             dataGridView1.DataSource = null;
 
@@ -130,35 +175,12 @@ namespace Team5_SmartMOM.HSM
                 wo.WO_EndDate = dtpDateEnd.Value.ToShortDateString();
                 wo.WO_State = cboWorkState.Text;
 
-
-
-
                 HSM_Service service = new HSM_Service();
 
                 List<WorkOrderVO> list = new List<WorkOrderVO>();
                 list = service.GetWorkOrderByPlanId(wo);
 
-
                 dataGridView1.DataSource = list;
-
-
-            }
-
-        }
-
-        private void dgvYellow()
-        {
-            for (int j = 0; j < dataGridView1.RowCount; j++)
-            {
-                if(dataGridView1[9, j].Value.ToString()=="작업생성")
-                    dataGridView1[9, j].Style.BackColor = Color.LightYellow;
-                
-                if(dataGridView1[2, j].Value.ToString() != "CHAIR_01")
-                {
-                    if (dataGridView1[10, j].Value.ToString() == "출고대기")
-                        dataGridView1[10, j].Style.BackColor = Color.Red;
-
-                }
 
             }
         }
@@ -170,8 +192,6 @@ namespace Team5_SmartMOM.HSM
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 bool isCellChecked = Convert.ToBoolean(row.Cells["chk"].EditedFormattedValue);
-
-
 
                 if (isCellChecked)
                 {
@@ -190,23 +210,16 @@ namespace Team5_SmartMOM.HSM
                             return;
                         }
                     }
-
-
                     WorkOrderVO wo = new WorkOrderVO();
                     wo.WO_ID = row.Cells[1].Value.ToString();
-
                     list.Add(wo);
-
                 }
             }
-
             if (list.Count == 0)
             {
                 MessageBox.Show("확정할 작업을 먼저 선택하세요", "확인");
                 return;
             }
-               
-
             HSM_Service service = new HSM_Service();
             if (service.UpdateWorkOrderConfirm(list))
             {
@@ -237,28 +250,11 @@ namespace Team5_SmartMOM.HSM
             }
         }
 
-        private void cboPlanID_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string[] arrDate = cboPlanID.Text.Split('_');
-            if (arrDate[0] == "전체")
-            {
-                return;
-            }
-            if (arrDate[0] == "Project")
-            {
-                return;
-            }
-            arrDate[0] = arrDate[0].Insert(4, "-");
-            arrDate[0] = arrDate[0].Insert(7, "-");
-            //20200101
-            dtpDateStart.Value = DateTime.Parse(arrDate[0]);
-            dtpDateEnd.Value = DateTime.Parse(arrDate[0]).AddMonths(1);
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
 
         }
+
+        #endregion
     }
 }

@@ -20,12 +20,12 @@ namespace Team5_SmartMOM.HSM
             InitializeComponent();
         }
 
- 
-
         private void SO_Insert_Load(object sender, EventArgs e)
         {
             InitCombo();
         }
+
+        #region Settings
 
         private void InitCombo()
         {
@@ -48,6 +48,9 @@ namespace Team5_SmartMOM.HSM
 
         }
 
+        #endregion
+
+        #region btnClick Methods
         private void button1_Click(object sender, EventArgs e) //저장
         {
             if(txtCustomerWO.TextLength > 0 || txtOrderQuantity.TextLength > 0)
@@ -88,5 +91,7 @@ namespace Team5_SmartMOM.HSM
             }
             
         }
+
+        #endregion
     }
 }

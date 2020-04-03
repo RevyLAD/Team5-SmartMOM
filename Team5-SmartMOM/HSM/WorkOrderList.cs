@@ -46,6 +46,9 @@ namespace Team5_SmartMOM.HSM
             InitCombo();
             DataLoad();
         }
+
+        #region Settings
+
         private void InitCombo() //콥보박스 바인딩
         {
             CommonCodeService service = new CommonCodeService();
@@ -78,9 +81,10 @@ namespace Team5_SmartMOM.HSM
 
             dataGridView1.DataSource = list;
 
-
         }
+        #endregion
 
+        #region btnClick Method
         private void btnSearch_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
@@ -163,5 +167,7 @@ namespace Team5_SmartMOM.HSM
             dt.AcceptChanges();
             return dt;
         }
+
+        #endregion
     }
 }

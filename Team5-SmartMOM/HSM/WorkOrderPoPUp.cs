@@ -29,6 +29,7 @@ namespace Team5_SmartMOM.HSM
             UtilityClass.AddNewColumnToDataGridView(dataGridView1, "납기일", "SALES_Duedate", true, 100);
         }
 
+        #region Settings
         private void InitCombo() //콥보박스 바인딩
         {
             CommonCodeService service = new CommonCodeService();
@@ -38,9 +39,9 @@ namespace Team5_SmartMOM.HSM
             CommonUtil.ComboBinding(cboPlanID, listPlanID, "Plan_ID", "Plan_ID");
 
         }
+        #endregion
 
-
-
+        #region btnClick Methods
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (cboPlanID.Text.Length > 0)
@@ -80,5 +81,7 @@ namespace Team5_SmartMOM.HSM
 
             }
         }
+
+        #endregion
     }
 }
