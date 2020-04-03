@@ -266,12 +266,6 @@
     <Compile Include="HSM\Demand_Plan.Designer.cs">
       <DependentUpon>Demand_Plan.cs</DependentUpon>
     </Compile>
-    <Compile Include="HSM\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HSM\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="HSM\ShowReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,12 +302,6 @@
     <Compile Include="HSM\Sales_Master_Upload.Designer.cs">
       <DependentUpon>Sales_Master_Upload.cs</DependentUpon>
     </Compile>
-    <Compile Include="HSM\MPS.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HSM\MPS.Designer.cs">
-      <DependentUpon>MPS.cs</DependentUpon>
-    </Compile>
     <Compile Include="HSM\MasterCreate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,18 +325,6 @@
     </Compile>
     <Compile Include="HSM\Product_Plan.Designer.cs">
       <DependentUpon>Product_Plan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HSM\Sales_Closing.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HSM\Sales_Closing.Designer.cs">
-      <DependentUpon>Sales_Closing.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HSM\Sales_Closing_detailcs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HSM\Sales_Closing_detailcs.Designer.cs">
-      <DependentUpon>Sales_Closing_detailcs.cs</DependentUpon>
     </Compile>
     <Compile Include="HSM\Sales_Master.cs">
       <SubType>Form</SubType>
@@ -743,20 +719,11 @@
     <EmbeddedResource Include="HSM\Meterial_Plan.resx">
       <DependentUpon>Meterial_Plan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HSM\MPS.resx">
-      <DependentUpon>MPS.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HSM\OutSourcing_Plan.resx">
       <DependentUpon>OutSourcing_Plan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HSM\Product_Plan.resx">
       <DependentUpon>Product_Plan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HSM\Sales_Closing.resx">
-      <DependentUpon>Sales_Closing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HSM\Sales_Closing_detailcs.resx">
-      <DependentUpon>Sales_Closing_detailcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HSM\Sales_Master.resx">
       <DependentUpon>Sales_Master.cs</DependentUpon>

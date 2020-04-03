@@ -27,7 +27,11 @@ namespace Team5_SmartMOM.HSM
             InitCombo();
 
         }
-        private void InitCombo()
+
+
+        #region Settings
+
+        private void InitCombo() //콤보박스 바인딩
         {
             CommonCodeService service = new CommonCodeService();
 
@@ -38,28 +42,8 @@ namespace Team5_SmartMOM.HSM
             CommonUtil.ComboBinding(cboPlanID, listPlanID, "Plan_ID", "Plan_ID");
 
         }
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = null;
-            
 
-            PlanningVO plan = new PlanningVO();
-            HSM_Service service = new HSM_Service();
-
-            plan.PlanId = cboPlanID.Text;
-            plan.SALES_OrderDate = dtpDateStart.Value.ToShortDateString();
-            plan.SALES_DueDate = dtpDateEnd.Value.ToShortDateString();
-
-    
-            DataSet ds = service.GetMRP(plan);
-            dataGridView1.DataSource = ds.Tables[0];
- 
-            dgvSettings();
-            dgvYellow();
-
-
-        }
-        private void dgvSettings()
+        private void dgvSettings() // 그리드뷰 기본세팅
         {
 
             dataGridView1.Columns[1].Width = 180;
@@ -130,5 +114,30 @@ namespace Team5_SmartMOM.HSM
             dtpDateEnd.Value = DateTime.Parse(arrDate[0]).AddMonths(1);
 
         }
+        #endregion
+
+        #region btnClick Methods
+        private void btnSearch_Click(object sender, EventArgs e) //조회
+        {
+            dataGridView1.DataSource = null;
+            
+
+            PlanningVO plan = new PlanningVO();
+            HSM_Service service = new HSM_Service();
+
+            plan.PlanId = cboPlanID.Text;
+            plan.SALES_OrderDate = dtpDateStart.Value.ToShortDateString();
+            plan.SALES_DueDate = dtpDateEnd.Value.ToShortDateString();
+
+    
+            DataSet ds = service.GetMRP(plan);
+            dataGridView1.DataSource = ds.Tables[0];
+ 
+            dgvSettings();
+            dgvYellow();
+
+
+        }
+        #endregion
     }
 }

@@ -27,11 +27,8 @@ namespace Team5_SmartMOM.HSM
             btnSearch.PerformClick();
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
         }
-        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            dgvYellow();
-        }
 
+        #region Settings
         private void InitCombo() //콥보박스 바인딩
         {
             CommonCodeService service = new CommonCodeService();
@@ -42,26 +39,13 @@ namespace Team5_SmartMOM.HSM
             CommonUtil.ComboBinding(cboPlanID, listPlanID, "Plan_ID", "Plan_ID");
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            dataGridView1.DataSource = null;
-            PlanningVO plan = new PlanningVO();
-            HSM_Service service = new HSM_Service();
-
-            plan.PlanId = cboPlanID.Text;
-            plan.SALES_OrderDate = dtpDateStart.Value.ToShortDateString();
-            plan.SALES_DueDate = dtpDateEnd.Value.ToShortDateString();
-
-
-            DataSet ds = service.GetProductPlan(plan);
-            dataGridView1.DataSource = ds.Tables[0];
-
-            dgvSettings();
-                   
+            dgvYellow();
         }
 
         private void dgvSettings()
-        {            
+        {
             dataGridView1.Columns[0].Width = 180;
             dataGridView1.Columns[1].Width = 100;
             dataGridView1.Columns[2].Width = 100;
@@ -77,7 +61,7 @@ namespace Team5_SmartMOM.HSM
             dataGridView1.Columns[5].HeaderText = "우선순위";
 
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            
+
             dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -138,8 +122,32 @@ namespace Team5_SmartMOM.HSM
             dtpDateStart.Value = DateTime.Parse(arrDate[0]);
             dtpDateEnd.Value = DateTime.Parse(arrDate[0]).AddMonths(1);
         }
+        #endregion
 
-        private void button1_Click(object sender, EventArgs e)
+        #region btnClick Methods
+
+        private void btnSearch_Click(object sender, EventArgs e) //조회
+        {
+            dataGridView1.DataSource = null;
+            PlanningVO plan = new PlanningVO();
+            HSM_Service service = new HSM_Service();
+
+            plan.PlanId = cboPlanID.Text;
+            plan.SALES_OrderDate = dtpDateStart.Value.ToShortDateString();
+            plan.SALES_DueDate = dtpDateEnd.Value.ToShortDateString();
+
+
+            DataSet ds = service.GetProductPlan(plan);
+            dataGridView1.DataSource = ds.Tables[0];
+
+            dgvSettings();
+                   
+        }
+        #endregion
+
+        #region Excel
+
+        private void button1_Click(object sender, EventArgs e) //엑셀저장
         {
             Microsoft.Office.Interop.Excel.Application xlApp;
             Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
@@ -204,6 +212,8 @@ namespace Team5_SmartMOM.HSM
                 GC.Collect();
             }
         }
+
+        #endregion
 
     }
 }

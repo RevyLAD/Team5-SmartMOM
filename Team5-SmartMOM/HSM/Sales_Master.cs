@@ -2,11 +2,9 @@
 using Project_VO.HSM;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Team5_SmartMOM.BaseForm;
 using Team5_SmartMOM.Service;
@@ -19,7 +17,6 @@ namespace Team5_SmartMOM.HSM
         {
             InitializeComponent();
         }
-
 
 
         private void Sales_Master_Load(object sender, EventArgs e)
@@ -48,6 +45,7 @@ namespace Team5_SmartMOM.HSM
 
         }
 
+        #region Settings
         private void InitCombo()
         {
             CommonCodeService service = new CommonCodeService();
@@ -66,6 +64,9 @@ namespace Team5_SmartMOM.HSM
             CommonUtil.ComboBinding(cboCustomer, listCompanyCode, "COM_Code", "COM_Name");
 
         }
+        #endregion
+
+        #region btnClick Methods
         private void button2_Click(object sender, EventArgs e) //영업마스터 생성
         {
             dataGridView1.DataSource = null;
@@ -86,10 +87,6 @@ namespace Team5_SmartMOM.HSM
             }
             else
                 MessageBox.Show("생성할 영업마스터 정보가 없습니다.\n영업마스터를 업로드 해주시길 바랍니다.", "확인");
-           
-
-            
-
         }
 
         private void button3_Click(object sender, EventArgs e) //영업마스터 수동생성
@@ -158,8 +155,6 @@ namespace Team5_SmartMOM.HSM
             List<SalesMasterAllVO> list = new List<SalesMasterAllVO>();
             list = service.GetSalesMasterByVO(saleVo);
 
-            
-
             if (list.Count != 0)
             {
                 dataGridView1.DataSource = list;
@@ -174,5 +169,7 @@ namespace Team5_SmartMOM.HSM
                 MessageBox.Show("조회결과가 없습니다.", "확인");
 
         }
+
+        #endregion
     }
 }

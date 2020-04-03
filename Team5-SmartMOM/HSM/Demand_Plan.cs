@@ -27,6 +27,7 @@ namespace Team5_SmartMOM.HSM
 
         }
 
+        #region InitCombo()
         private void InitCombo() //콥보박스 바인딩
         {
             CommonCodeService service = new CommonCodeService();
@@ -35,37 +36,12 @@ namespace Team5_SmartMOM.HSM
             List<CompanyCodeVO> listCompanyCode = service.GetAllCompanyCode();
             List<ItemCodeVO> listItemCode = service.GetAllItemCode();
 
-
-
             CommonUtil.ComboBinding(cboPlanID, listPlanID, "Plan_ID", "Plan_ID","전체");
-
         }
 
-        private void btnSearch_Click(object sender, EventArgs e) //조회버튼
-        {
-            dataGridView1.DataSource = null;
-            PlanningVO plan = new PlanningVO();
-            HSM_Service service = new HSM_Service();
+        #endregion
 
-            plan.PlanId = cboPlanID.Text;
-            plan.SALES_OrderDate = dtpDateStart.Value.ToShortDateString();
-            plan.SALES_DueDate = dtpDateEnd.Value.ToShortDateString();
-
-            if(cboPlanID.Text == "전체")
-            {
-                DataSet ds = service.GetAllDemandPlan(plan);
-                dataGridView1.DataSource = ds.Tables[0];
-                
-            }
-            else
-            {
-                DataSet ds = service.GetAllDemandPlanByPlanID(plan);
-                dataGridView1.DataSource = ds.Tables[0];
-            }
-            dgvSettings();
-            dgvYellow();
-
-        }
+        #region Settings
 
         private void dgvSettings()
         {
@@ -100,6 +76,55 @@ namespace Team5_SmartMOM.HSM
             }
         }
 
+        private void cboPlanID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            string[] arrDate = cboPlanID.Text.Split('_');
+            if (arrDate[0] == "전체")
+            {
+                return;
+            }
+            if (arrDate[0] == "Project")
+            {
+                return;
+            }
+            arrDate[0] = arrDate[0].Insert(4, "-");
+            arrDate[0] = arrDate[0].Insert(7, "-");
+            //20200101
+            dtpDateStart.Value = DateTime.Parse(arrDate[0]);
+            dtpDateEnd.Value = DateTime.Parse(arrDate[0]).AddMonths(1);
+
+        }
+
+        #endregion
+
+        #region btnClick Methods
+        private void btnSearch_Click(object sender, EventArgs e) //조회버튼
+        {
+            dataGridView1.DataSource = null;
+            PlanningVO plan = new PlanningVO();
+            HSM_Service service = new HSM_Service();
+
+            plan.PlanId = cboPlanID.Text;
+            plan.SALES_OrderDate = dtpDateStart.Value.ToShortDateString();
+            plan.SALES_DueDate = dtpDateEnd.Value.ToShortDateString();
+
+            if (cboPlanID.Text == "전체")
+            {
+                DataSet ds = service.GetAllDemandPlan(plan);
+                dataGridView1.DataSource = ds.Tables[0];
+
+            }
+            else
+            {
+                DataSet ds = service.GetAllDemandPlanByPlanID(plan);
+                dataGridView1.DataSource = ds.Tables[0];
+            }
+            dgvSettings();
+            dgvYellow();
+
+        }
+
         private void button3_Click(object sender, EventArgs e) //생산계획 생성
         {
             HSM_Service service = new HSM_Service();
@@ -130,27 +155,9 @@ namespace Team5_SmartMOM.HSM
             }
         }
 
-        private void cboPlanID_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-            string[] arrDate = cboPlanID.Text.Split('_');
-            if(arrDate[0] == "전체" )
-            {
-                return;
-            }
-            if (arrDate[0] == "Project")
-            {
-                return;
-            }
-            arrDate[0]=  arrDate[0].Insert(4, "-");
-            arrDate[0] = arrDate[0].Insert(7, "-");
-            //20200101
-            dtpDateStart.Value = DateTime.Parse(arrDate[0]);
-            dtpDateEnd.Value = DateTime.Parse(arrDate[0]).AddMonths(1);
 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) //엑셀출력
         {
             Microsoft.Office.Interop.Excel.Application xlApp;
             Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
@@ -216,6 +223,8 @@ namespace Team5_SmartMOM.HSM
                 GC.Collect();
             }
         }
+
+        #endregion
     }
-    
+
 }

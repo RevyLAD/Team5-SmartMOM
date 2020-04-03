@@ -32,6 +32,7 @@ namespace Team5_SmartMOM.HSM
             InitializeComponent();
         }
 
+        #region btnClick Methods
         private void btnFindFile_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Excel File (*.xlsx)|*.xlsx|Excel File 97~2003 (*.xls)|*.xls|All Files (*.*)|*.*";
@@ -47,7 +48,7 @@ namespace Team5_SmartMOM.HSM
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //영업마스터 업로드
         {
             using (CircleProgressBar frm = new CircleProgressBar(ImportExcel))
             {
@@ -55,8 +56,10 @@ namespace Team5_SmartMOM.HSM
             }
         }
 
+        #endregion
 
-        private void ImportExcel()
+        #region ExcelImport()
+        private void ImportExcel() // 엑셀파일 import
         {
             if (txtFileName.Text.Length < 0)
             {
@@ -150,6 +153,8 @@ namespace Team5_SmartMOM.HSM
             }
         }
 
-        
+        #endregion
+
+
     }
 }
