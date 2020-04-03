@@ -33,39 +33,15 @@ namespace Team5_SmartMOM
             InitializeComponent();
             CheckUpdate();
         }
-        private void CheckUpdate()
-        {
-            UpdateCheckInfo info = null;
-
-            if (!ApplicationDeployment.IsNetworkDeployed)
-            {
-                MessageBox.Show("not deployed using Clickonce");
-            }
-            else
-            {
-                ApplicationDeployment appDeploy = ApplicationDeployment.CurrentDeployment;
-                info = appDeploy.CheckForDetailedUpdate();
-
-                if (info.UpdateAvailable)
-                {
-                    bool doUpdate = true;
-
-                    if (doUpdate)
-                    {
-                        appDeploy.Update();
-                        MessageBox.Show("프로그램이 업그레이드 되어서 재시작 합니다.");
-                        this.Close();
-                        Application.Restart();
-                    }
-                }
-            }
-        }
-        public Bitmap CloseImage { get; private set; }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
+        #region Slide Menu Design
+
+        public Bitmap CloseImage { get; private set; }
+
         private void Form_Gradient(object sender, PaintEventArgs e)
         {
             LinearGradientBrush br = new LinearGradientBrush(this.panelSideMenu.ClientRectangle,
@@ -100,10 +76,6 @@ namespace Team5_SmartMOM
         {
 
         }
-
-
-        #region Slide Menu Design
-
         //private void hideSubMenu()
         //{
         //    if (panelSubMenu1.Visible == true)
@@ -194,32 +166,71 @@ namespace Team5_SmartMOM
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
 
-                ToolStripButton button = (ToolStripButton)sender;
-                char sp = '.';
-                char sp2 = ',';
-                string[] start;
-                string[] end;
-                string sub = button.Tag.ToString();
-                start = button.Tag.ToString().Split(sp);
-                end = start[2].Split(sp2);
+            ToolStripButton button = (ToolStripButton)sender;
+            char sp = '.';
+            char sp2 = ',';
+            string[] start;
+            string[] end;
+            string sub = button.Tag.ToString();
+            start = button.Tag.ToString().Split(sp);
+            end = start[2].Split(sp2);
 
 
-                string form = sub.Substring(0, 18);
-                string namespaced = end[0];
-                Assembly cuasm = Assembly.GetExecutingAssembly();
-                Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", form, namespaced));
-                check = true;
-                CreateTabPages(button.Name, frm);
+            string form = sub.Substring(0, 18);
+            string namespaced = end[0];
+            Assembly cuasm = Assembly.GetExecutingAssembly();
+            Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", form, namespaced));
+            check = true;
+            CreateTabPages(button.Name, frm);
 
-                start = null;
-                end = null;
-            
-          
+            start = null;
+            end = null;
+
+
         }
 
         #endregion
 
+        #region CheckUpdate()
+        /// <summary>
+        /// ClickOnce 업데이트 확인
+        /// </summary>
+        private void CheckUpdate()
+        {
+            UpdateCheckInfo info = null;
 
+            if (!ApplicationDeployment.IsNetworkDeployed)
+            {
+                MessageBox.Show("not deployed using Clickonce");
+            }
+            else
+            {
+                ApplicationDeployment appDeploy = ApplicationDeployment.CurrentDeployment;
+                info = appDeploy.CheckForDetailedUpdate();
+
+                if (info.UpdateAvailable)
+                {
+                    bool doUpdate = true;
+
+                    if (doUpdate)
+                    {
+                        appDeploy.Update();
+                        MessageBox.Show("프로그램이 업그레이드 되어서 재시작 합니다.");
+                        this.Close();
+                        Application.Restart();
+                    }
+                }
+            }
+        }
+
+        #endregion
+
+        #region CreateTabPage()
+        /// <summary>
+        /// 메뉴 클릭 시 동적으로 해당하는 메뉴 탭페이지로 생성
+        /// </summary>
+        /// <param name="text">메뉴의 이름</param>
+        /// <param name="OpenForm">메뉴에 해당하는 폼</param>
         private void CreateTabPages(string text, Form OpenForm)
         {
             string first;
@@ -256,16 +267,18 @@ namespace Team5_SmartMOM
             tabControl1.SelectedTab = myTabPage;
         }
 
+        #endregion
+
+        #region 탭페이지 생성
 
         private void btnMatList_Click(object sender, EventArgs e)
         {
-          
+
             BaseGridForm frm = new BaseGridForm();
             CreateTabPages(btnMatList.Text, frm);
 
         }
 
-        #region 탭페이지 생성
         private void 공장관리ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateTabPages("공장관리", new FactoryManager());
@@ -438,6 +451,8 @@ namespace Team5_SmartMOM
         }
 
         #endregion
+
+        #region 즐겨찾기 및 SmallIcon 기능
         private void ToolStripButton4_Click(object sender, EventArgs e)
         {
             bool truefalse = true;
@@ -492,6 +507,6 @@ namespace Team5_SmartMOM
 
         }
 
-        
+        #endregion
     }
 }
